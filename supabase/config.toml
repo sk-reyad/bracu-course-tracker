@@ -1,0 +1,18 @@
+[auth]
+site_url = "http://localhost:4173"
+additional_redirect_urls = ["http://localhost:4173/**"]
+minimum_password_length = 12
+password_requirements = "lower_upper_letters_digits_symbols"
+
+[auth.email]
+enable_confirmations = true
+secure_password_change = true
+max_frequency = "1m"
+otp_length = 8
+
+[auth.mfa.totp]
+enroll_enabled = true
+verify_enabled = true
+
+[functions.support-desk]
+verify_jwt = false
