@@ -1,1 +1,1 @@
-# bracu-cs-course-tracker
+# bracu-course-tracker
