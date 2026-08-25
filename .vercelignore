@@ -1,0 +1,19 @@
+# Local configuration and tool state
+.env*
+.git/
+.gitignore
+.vercel/
+.superpowers/
+.tmp/
+tmp/
+node_modules/
+
+# Development, test, and backend deployment sources
+tests/
+docs/
+scripts/
+supabase/
+coverage/
+*.log
+*.md
+*.pdf
