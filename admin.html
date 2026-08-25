@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Account and access management for BRACU Course Tracker."
+    />
+    <title>Admin Panel · BRACU Course Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/ui-states.css" />
+    <link rel="stylesheet" href="css/admin-support.css" />
+  </head>
+  <body class="admin-page" data-page-state="loading" aria-busy="true">
+    <canvas
+      id="dotGridBackground"
+      class="dot-grid-background"
+      aria-hidden="true"
+    ></canvas>
+    <div
+      id="pageSkeleton"
+      class="page-skeleton skeleton-admin"
+      aria-hidden="true"
+    >
+      <div class="skeleton-admin-shell">
+        <div class="skeleton-admin-top skeleton-surface">
+          <span class="skeleton-block skeleton-logo"></span
+          ><span class="skeleton-block skeleton-brand-line"></span
+          ><span class="skeleton-block skeleton-admin-actions"></span>
+        </div>
+        <div class="skeleton-admin-heading">
+          <span class="skeleton-block skeleton-kicker"></span
+          ><span class="skeleton-block skeleton-title"></span
+          ><span class="skeleton-block skeleton-copy"></span>
+        </div>
+        <div class="skeleton-surface skeleton-admin-panel">
+          <div class="skeleton-admin-tabs">
+            <span class="skeleton-block skeleton-tab"></span
+            ><span class="skeleton-block skeleton-tab"></span>
+          </div>
+          <div class="skeleton-admin-filters">
+            <span class="skeleton-block skeleton-search"></span
+            ><span class="skeleton-block skeleton-filter"></span
+            ><span class="skeleton-block skeleton-filter"></span>
+          </div>
+          <div class="skeleton-admin-rows">
+            <span class="skeleton-block skeleton-table-row"></span
+            ><span class="skeleton-block skeleton-table-row"></span
+            ><span class="skeleton-block skeleton-table-row"></span
+            ><span class="skeleton-block skeleton-table-row"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p id="pageLoadingStatus" class="state-sr-only" aria-live="polite">
+      Loading accounts…
+    </p>
+    <header class="admin-header">
+      <a class="admin-brand" href="admin.html"
+        ><span class="admin-brand-mark">CS</span
+        ><span
+          ><strong>BRACU Course Tracker</strong
+          ><small>Access management</small></span
+        ></a
+      >
+      <div class="admin-header-actions">
+        <span id="adminIdentity" class="admin-identity">Loading account…</span>
+        <button
+          id="adminThemeToggle"
+          class="admin-icon-button"
+          type="button"
+          aria-label="Switch theme"
+        >
+          <i data-lucide="moon"></i>
+        </button>
+        <button id="adminSignOut" class="admin-secondary" type="button">
+          <i data-lucide="log-out"></i><span>Sign out</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="admin-main" aria-busy="true">
+      <div class="admin-page-heading">
+        <div>
+          <span class="admin-kicker">Administration</span>
+          <h1>Accounts &amp; access</h1>
+          <p>Review profiles, roles, permissions, and account status.</p>
+        </div>
+        <button id="openCreateAdmin" class="admin-primary" type="button" hidden>
+          <i data-lucide="user-plus"></i>Create admin
+        </button>
+      </div>
+
+      <nav class="admin-section-nav" aria-label="Admin sections">
+        <button
+          class="active"
+          type="button"
+          data-admin-view="accounts"
+          aria-current="page"
+        >
+          <i data-lucide="users-round"></i>Accounts
+        </button>
+        <button type="button" data-admin-view="support">
+          <i data-lucide="messages-square"></i>Support
+        </button>
+      </nav>
+
+      <section
+        id="accountsAdminView"
+        class="admin-panel"
+        aria-labelledby="accountsHeading"
+      >
+        <div class="admin-tabs" role="tablist" aria-label="Account type">
+          <button
+            class="active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            data-account-view="users"
+          >
+            Users
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected="false"
+            data-account-view="admins"
+          >
+            Admins
+          </button>
+        </div>
+        <h2 id="accountsHeading" class="sr-only">Accounts</h2>
+
+        <div class="admin-filters">
+          <label class="admin-search"
+            ><span>Search</span><i data-lucide="search"></i
+            ><input
+              id="adminSearch"
+              type="search"
+              placeholder="Search name, email, or student ID"
+              autocomplete="off"
+          /></label>
+          <label
+            ><span>Status</span
+            ><select id="adminStatusFilter">
+              <option value="">All statuses</option>
+              <option value="pending">Pending</option>
+              <option value="active">Active</option>
+              <option value="suspended">Suspended</option>
+            </select></label
+          >
+          <label
+            ><span>Role</span
+            ><select id="adminRoleFilter">
+              <option value="">Default role</option>
+              <option value="student">Student</option>
+              <option value="admin">Admin</option>
+              <option value="super_admin">Super admin</option>
+            </select></label
+          >
+          <button
+            id="refreshAdminList"
+            class="admin-icon-button"
+            type="button"
+            aria-label="Refresh accounts"
+          >
+            <i data-lucide="refresh-cw"></i>
+          </button>
+        </div>
+
+        <div
+          id="adminLoading"
+          class="admin-state admin-list-skeleton"
+          aria-label="Loading accounts"
+        >
+          <span class="skeleton-block skeleton-table-row"></span>
+          <span class="skeleton-block skeleton-table-row"></span>
+          <span class="skeleton-block skeleton-table-row"></span>
+          <span class="skeleton-block skeleton-table-row"></span>
+          <span class="skeleton-block skeleton-table-row"></span>
+        </div>
+        <div id="adminEmpty" class="admin-state" hidden>
+          <i data-lucide="users"></i>
+          <h3>No accounts found</h3>
+          <p>Try changing your search or filters.</p>
+        </div>
+        <div
+          id="adminError"
+          class="admin-state admin-error"
+          role="alert"
+          hidden
+        >
+          <i data-lucide="triangle-alert"></i>
+          <h3>Couldn’t load accounts</h3>
+          <p id="adminErrorCopy"></p>
+          <button id="retryAdminList" class="admin-secondary" type="button">
+            Try again
+          </button>
+        </div>
+
+        <div id="adminResults" hidden>
+          <div class="admin-table-scroll">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Account</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                  <th>Program</th>
+                  <th>First registered</th>
+                  <th>Daily</th>
+                  <th>Weekly</th>
+                  <th>Monthly</th>
+                  <th>Total</th>
+                  <th>Onboarding</th>
+                  <th aria-label="Actions"></th>
+                </tr>
+              </thead>
+              <tbody id="adminTableBody"></tbody>
+            </table>
+          </div>
+          <div id="adminAccountCards" class="admin-account-cards"></div>
+          <div class="admin-pagination">
+            <button id="adminPrevPage" class="admin-secondary" type="button">
+              <i data-lucide="chevron-left"></i>Previous</button
+            ><span id="adminPageStatus">Page 1</span
+            ><button id="adminNextPage" class="admin-secondary" type="button">
+              Next<i data-lucide="chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="supportAdminView"
+        class="admin-support-view"
+        hidden
+        aria-labelledby="supportDeskHeading"
+      >
+        <div class="maintenance-control" id="maintenanceControl" hidden>
+          <div>
+            <span class="admin-kicker">Site control</span>
+            <h2>Maintenance state</h2>
+            <p>
+              When enabled, public pages show the maintenance screen. Admin
+              access stays available.
+            </p>
+          </div>
+          <label class="maintenance-switch"
+            ><input id="maintenanceStateToggle" type="checkbox" /><span
+              aria-hidden="true"
+            ></span
+            ><strong id="maintenanceStateLabel">Off</strong></label
+          >
+        </div>
+        <section class="admin-panel support-desk-panel">
+          <div class="support-desk-head">
+            <div>
+              <span class="admin-kicker">Support desk</span>
+              <h2 id="supportDeskHeading">Tickets</h2>
+              <p>Review requests, update progress, and reply to users.</p>
+            </div>
+            <label
+              >Status<select id="supportStatusFilter">
+                <option value="">All statuses</option>
+                <option value="active">Active</option>
+                <option value="working_on_it">Working on it</option>
+                <option value="solved">Solved</option>
+                <option value="cancelled">Cancelled</option>
+              </select></label
+            >
+          </div>
+          <div
+            id="supportTicketList"
+            class="admin-ticket-list"
+            aria-live="polite"
+          >
+            <div class="admin-state">
+              <span class="admin-spinner"></span>
+              <p>Loading tickets…</p>
+            </div>
+          </div>
+          <div class="support-load-more">
+            <button
+              id="loadMoreSupportTickets"
+              class="admin-secondary"
+              type="button"
+              hidden
+            >
+              Load more tickets
+            </button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div id="drawerBackdrop" class="drawer-backdrop" hidden></div>
+    <aside
+      id="profileDrawer"
+      class="profile-drawer"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="drawerTitle"
+      hidden
+    >
+      <div class="drawer-head">
+        <div>
+          <span class="admin-kicker">Profile summary</span>
+          <h2 id="drawerTitle">Account</h2>
+        </div>
+        <button
+          id="closeProfileDrawer"
+          class="admin-icon-button"
+          type="button"
+          aria-label="Close profile"
+        >
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div id="profileDrawerBody" class="drawer-body"></div>
+    </aside>
+
+    <dialog
+      id="createAdminDialog"
+      class="admin-dialog"
+      aria-labelledby="createAdminTitle"
+    >
+      <form id="createAdminForm" method="dialog">
+        <div class="drawer-head">
+          <div>
+            <span class="admin-kicker">Super admin</span>
+            <h2 id="createAdminTitle">Create administrator</h2>
+          </div>
+          <button
+            id="closeCreateAdmin"
+            class="admin-icon-button"
+            type="button"
+            aria-label="Close"
+          >
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <label
+          >Full name<input name="fullName" required autocomplete="name"
+        /></label>
+        <label
+          >Email<input name="email" type="email" required autocomplete="email"
+        /></label>
+        <label
+          >Temporary password<input
+            name="password"
+            type="password"
+            minlength="12"
+            required
+            autocomplete="new-password"
+            aria-describedby="createAdminPasswordHint"
+        /></label>
+        <p id="createAdminPasswordHint" class="admin-field-hint">
+          12+ characters with uppercase, lowercase, number, and symbol.
+        </p>
+        <label
+          >Role<select id="createAdminRole" name="role">
+            <option value="admin">Admin</option>
+            <option value="super_admin">Super admin</option>
+          </select></label
+        >
+        <fieldset class="permission-fieldset">
+          <legend>Permissions</legend>
+          <div id="createAdminPermissions" class="permission-list"></div>
+        </fieldset>
+        <p id="createAdminError" class="dialog-error" role="alert" hidden></p>
+        <div class="dialog-actions">
+          <button id="cancelCreateAdmin" class="admin-secondary" type="button">
+            Cancel</button
+          ><button class="admin-primary" type="submit">
+            <i data-lucide="user-plus"></i>Create admin
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog
+      id="deleteAccountDialog"
+      class="admin-dialog danger-dialog"
+      aria-labelledby="deleteAccountTitle"
+    >
+      <form id="deleteAccountForm" method="dialog">
+        <h2 id="deleteAccountTitle">Delete account?</h2>
+        <p>This permanently removes the account and tracker data.</p>
+        <label
+          >Type the account email to confirm
+          <input
+            id="deleteConfirmationEmail"
+            name="confirmationEmail"
+            type="email"
+            required
+            autocomplete="off"
+          />
+        </label>
+        <p id="deleteAccountError" class="dialog-error" role="alert" hidden></p>
+        <div class="dialog-actions">
+          <button
+            id="cancelDeleteAccount"
+            class="admin-secondary"
+            type="button"
+          >
+            Cancel
+          </button>
+          <button class="admin-danger" type="submit">
+            <i data-lucide="trash-2"></i>Delete account
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <div
+      id="adminToast"
+      class="admin-toast"
+      role="status"
+      aria-live="polite"
+      hidden
+    ></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/access.js"></script>
+    <script src="js/motion.js"></script>
+    <script src="shared/password-policy.js"></script>
+    <script src="js/admin-permissions.js"></script>
+    <script src="js/ui-states.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/admin-support.js"></script>
+  </body>
+</html>

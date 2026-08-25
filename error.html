@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" class="error-root">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <meta name="description" content="BRACU Course Tracker error page." />
+    <title>BRACU Course Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/ui-states.css" />
+  </head>
+  <body class="error-page" data-page-state="ready">
+    <canvas
+      id="dotGridBackground"
+      class="dot-grid-background"
+      aria-hidden="true"
+    ></canvas>
+
+    <header class="state-topbar">
+      <a
+        class="state-brand"
+        href="index.html"
+        aria-label="BRACU Course Tracker home"
+      >
+        <span class="state-brand-mark" aria-hidden="true">CS</span>
+        <span>BRACU Course Tracker</span>
+      </a>
+      <button
+        id="errorThemeToggle"
+        class="state-icon-button"
+        type="button"
+        aria-label="Switch to dark theme"
+      >
+        <i data-lucide="moon" aria-hidden="true"></i>
+      </button>
+    </header>
+
+    <main class="error-main">
+      <section class="error-card" aria-labelledby="errorTitle">
+        <div class="error-visual" aria-hidden="true">
+          <span class="error-orbit error-orbit-one"></span>
+          <span class="error-orbit error-orbit-two"></span>
+          <span class="error-icon-shell"
+            ><i id="errorIcon" data-lucide="triangle-alert"></i
+          ></span>
+        </div>
+        <p id="errorCode" class="error-code">500</p>
+        <h1 id="errorTitle" tabindex="-1">Something went wrong</h1>
+        <p id="errorMessage" class="error-message">
+          An unexpected error occurred.
+        </p>
+        <div
+          id="errorActions"
+          class="error-actions"
+          aria-label="Error recovery actions"
+        ></div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4"></script>
+    <script src="js/config.js"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/support-core.js"></script>
+    <script src="js/maintenance-guard.js"></script>
+    <script src="js/motion.js"></script>
+    <script src="js/ui-states.js"></script>
+  </body>
+</html>
