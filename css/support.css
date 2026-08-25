@@ -1,0 +1,443 @@
+:root {
+  --support-surface: rgba(250, 253, 255, 0.96);
+  --support-surface-2: #eef5ff;
+  --support-text: #0c203b;
+  --support-muted: #5e7190;
+  --support-line: #cbdcf3;
+  --support-blue: #1763ce;
+  --support-blue-strong: #0d4da8;
+  --support-danger: #d23b49;
+  --support-success: #16845a;
+  --support-warning: #a36800;
+  --support-shadow: 0 28px 90px rgba(4, 24, 56, 0.28);
+}
+
+[data-theme="dark"] {
+  --support-surface: rgba(9, 27, 51, 0.97);
+  --support-surface-2: #102d52;
+  --support-text: #f2f7ff;
+  --support-muted: #a9bad3;
+  --support-line: #28496f;
+  --support-blue: #70aaff;
+  --support-blue-strong: #96c1ff;
+  --support-danger: #ff7681;
+  --support-success: #64d7a5;
+  --support-warning: #ffc76b;
+  --support-shadow: 0 32px 100px rgba(0, 0, 0, 0.48);
+}
+
+.support-dialog {
+  width: min(520px, calc(100% - 24px));
+  max-height: min(760px, calc(100dvh - 24px));
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--support-line);
+  border-radius: 24px;
+  color: var(--support-text);
+  background: var(--support-surface);
+  box-shadow: var(--support-shadow);
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+.support-dialog::backdrop {
+  background: rgba(2, 13, 31, 0.58);
+  backdrop-filter: blur(8px);
+}
+.support-dialog form {
+  padding: 24px;
+  display: grid;
+  gap: 15px;
+}
+.support-dialog-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--support-line);
+}
+.support-dialog-kicker {
+  color: var(--support-blue);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.support-dialog h2 {
+  margin: 4px 0 0;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: 1.65rem;
+  letter-spacing: -0.03em;
+}
+.support-dialog-close {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border: 1px solid var(--support-line);
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  color: var(--support-text);
+  background: var(--support-surface-2);
+  cursor: pointer;
+}
+.support-dialog-close svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.support-intro {
+  margin: -4px 0 0;
+  color: var(--support-muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+.support-dialog label {
+  display: grid;
+  gap: 7px;
+  color: var(--support-muted);
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+.support-dialog input,
+.support-dialog textarea {
+  width: 100%;
+  border: 1px solid var(--support-line);
+  border-radius: 14px;
+  padding: 13px 14px;
+  color: var(--support-text);
+  background: color-mix(in srgb, var(--support-surface-2) 72%, transparent);
+  outline: none;
+  font: inherit;
+}
+.support-dialog input {
+  min-height: 48px;
+}
+.support-dialog textarea {
+  min-height: 118px;
+  max-height: 220px;
+  resize: vertical;
+  line-height: 1.55;
+}
+.support-dialog input:focus,
+.support-dialog textarea:focus {
+  border-color: var(--support-blue);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--support-blue) 20%, transparent);
+}
+.support-submit {
+  min-height: 48px;
+  border: 0;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #fff;
+  background: var(--support-blue);
+  box-shadow: 0 12px 25px
+    color-mix(in srgb, var(--support-blue) 25%, transparent);
+  font-weight: 800;
+  cursor: pointer;
+}
+[data-theme="dark"] .support-submit {
+  color: #07172d;
+}
+.support-submit:hover {
+  background: var(--support-blue-strong);
+}
+.support-submit:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+.support-message {
+  margin: 0;
+  color: var(--support-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+.support-privacy-note {
+  margin: -2px 0 0;
+  color: var(--support-muted);
+  font-size: 0.74rem;
+  line-height: 1.45;
+}
+.support-privacy-note a {
+  color: var(--support-blue);
+  font-weight: 700;
+  text-underline-offset: 2px;
+}
+.support-message[data-kind="error"] {
+  color: var(--support-danger);
+}
+.support-message[data-kind="success"] {
+  color: var(--support-success);
+}
+.support-message[data-kind="warning"] {
+  color: var(--support-warning);
+}
+.support-notice {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 10000;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  width: min(410px, calc(100% - 36px));
+  min-height: 82px;
+  padding: 16px 48px 18px 16px;
+  border: 1px solid
+    color-mix(in srgb, var(--support-success) 45%, var(--support-line));
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  color: var(--support-text);
+  background: var(--support-surface);
+  box-shadow: var(--support-shadow);
+  overflow: hidden;
+  isolation: isolate;
+  opacity: 0;
+  transform: translateY(14px) scale(0.98);
+}
+.support-notice[hidden] {
+  display: none;
+}
+.support-notice.is-visible {
+  animation: support-notice-in 240ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.support-notice[data-kind="warning"] {
+  border-color: color-mix(
+    in srgb,
+    var(--support-warning) 48%,
+    var(--support-line)
+  );
+}
+.support-notice-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: var(--support-success);
+  background: color-mix(in srgb, var(--support-success) 14%, transparent);
+}
+.support-notice[data-kind="warning"] .support-notice-icon {
+  color: var(--support-warning);
+  background: color-mix(in srgb, var(--support-warning) 14%, transparent);
+}
+.support-notice-icon svg,
+.support-notice-close svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.support-notice-copy {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+.support-notice-copy strong {
+  font-size: 0.9rem;
+  line-height: 1.25;
+}
+.support-notice-copy > span {
+  color: var(--support-muted);
+  font-size: 0.79rem;
+  line-height: 1.4;
+}
+.support-notice-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  color: var(--support-muted);
+  background: transparent;
+  cursor: pointer;
+}
+.support-notice-close:hover,
+.support-notice-close:focus-visible {
+  color: var(--support-text);
+  background: var(--support-surface-2);
+}
+.support-notice-timer {
+  position: absolute;
+  inset: auto 0 0;
+  height: 3px;
+  background: var(--support-success);
+  transform-origin: left;
+}
+.support-notice[data-kind="warning"] .support-notice-timer {
+  background: var(--support-warning);
+}
+.support-notice.is-visible .support-notice-timer {
+  animation: support-notice-countdown 8s linear forwards;
+}
+.support-turnstile {
+  min-height: 65px;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+}
+.support-turnstile[hidden] {
+  display: none;
+}
+.support-honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
+.support-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+.support-trigger svg {
+  width: 17px;
+  height: 17px;
+}
+.support-tickets-panel {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid var(--border, var(--support-line));
+  border-radius: 18px;
+  color: var(--text, var(--support-text));
+  background: var(--surface-soft, var(--support-surface-2));
+}
+.support-tickets-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 13px;
+}
+.support-tickets-head h3 {
+  margin: 0;
+}
+.support-tickets-head p {
+  margin: 4px 0 0;
+  color: var(--muted, #5e7190);
+  font-size: 0.82rem;
+}
+.support-ticket-list {
+  display: grid;
+  gap: 10px;
+}
+.support-ticket {
+  padding: 14px;
+  border: 1px solid var(--border, var(--support-line));
+  border-radius: 14px;
+  background: var(--surface, var(--support-surface));
+}
+.support-ticket-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.support-ticket time {
+  color: var(--muted, #5e7190);
+  font-size: 0.74rem;
+}
+.support-ticket > p {
+  margin: 10px 0 0;
+  line-height: 1.5;
+}
+.support-ticket-reply {
+  margin-top: 11px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--support-blue);
+  border-radius: 8px;
+  color: var(--muted, #5e7190);
+  background: var(--support-surface-2);
+  font-size: 0.82rem;
+}
+.support-status {
+  padding: 5px 8px;
+  border-radius: 999px;
+  color: var(--support-blue);
+  background: color-mix(in srgb, var(--support-blue) 10%, transparent);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+@media (max-width: 560px) {
+  .support-dialog form {
+    padding: 18px;
+  }
+  .support-dialog {
+    border-radius: 20px;
+  }
+  .support-tickets-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .support-tickets-head .support-trigger {
+    width: 100%;
+  }
+  .support-notice {
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    width: calc(100% - 24px);
+  }
+}
+@media (max-height: 560px) and (orientation: landscape) {
+  .support-dialog form {
+    padding: 16px;
+    gap: 10px;
+  }
+  .support-dialog-head {
+    padding-bottom: 10px;
+  }
+  .support-dialog h2 {
+    font-size: 1.35rem;
+  }
+  .support-intro {
+    display: none;
+  }
+  .support-dialog textarea {
+    min-height: 76px;
+    max-height: 110px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .support-dialog,
+  .support-dialog::backdrop {
+    scroll-behavior: auto;
+  }
+  .support-notice,
+  .support-notice-timer {
+    animation: none !important;
+  }
+  .support-notice.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes support-notice-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes support-notice-countdown {
+  to {
+    transform: scaleX(0);
+  }
+}

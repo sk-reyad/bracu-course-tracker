@@ -1,0 +1,254 @@
+html,
+body.maintenance-production {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+body.maintenance-production {
+  height: 100dvh;
+  min-height: 100dvh;
+  grid-template-rows: auto minmax(0, 1fr);
+  overflow: hidden;
+}
+.maintenance-production .maintenance-header {
+  padding-block: 14px 8px;
+}
+.maintenance-production .maintenance-main {
+  min-height: 0;
+  padding: 8px 0 14px;
+}
+.maintenance-production .maintenance-shell {
+  height: min(100%, 760px);
+  min-height: 0;
+  padding: clamp(24px, 4vw, 52px);
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  gap: clamp(28px, 4vw, 60px);
+}
+.maintenance-production .maintenance-copy {
+  max-width: 540px;
+}
+.headline-split {
+  display: grid;
+  color: var(--maintenance-text);
+}
+.headline-split .headline-lead {
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: clamp(1.48rem, 2.15vw, 2.15rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+.headline-split h1 {
+  max-width: none;
+  margin: 0;
+  color: var(--maintenance-primary);
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: clamp(2.65rem, 4vw, 4.2rem);
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+}
+.headline-split .headline-apology {
+  width: fit-content;
+  margin: 15px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--maintenance-border);
+  color: var(--maintenance-muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+.maintenance-support-link {
+  padding: 0 14px;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+.maintenance-production .maintenance-visual img {
+  width: min(100%, 560px);
+  max-height: min(49dvh, 480px);
+}
+@media (max-width: 720px) {
+  .maintenance-production .maintenance-header,
+  .maintenance-production .maintenance-main {
+    width: min(100% - 28px, 620px);
+  }
+  .maintenance-production .maintenance-shell {
+    padding: clamp(18px, 5vw, 26px);
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    align-content: center;
+    gap: 12px;
+    overflow: hidden;
+  }
+  .maintenance-production .maintenance-visual {
+    order: -1;
+    min-height: 0;
+  }
+  .maintenance-production .maintenance-visual img {
+    width: min(76%, 300px);
+    max-height: min(22dvh, 190px);
+  }
+  .headline-split .headline-lead {
+    font-size: clamp(1.15rem, 4.8vw, 1.5rem);
+  }
+  .headline-split h1 {
+    font-size: clamp(2.2rem, 9.5vw, 3rem);
+  }
+  .maintenance-production .maintenance-copy > p {
+    margin-top: 14px;
+    line-height: 1.48;
+  }
+  .maintenance-production .maintenance-meta {
+    margin-top: 14px;
+  }
+  .maintenance-production .maintenance-retry {
+    width: auto;
+    margin-top: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .maintenance-support-link span,
+  .maintenance-admin-link span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .maintenance-support-link,
+  .maintenance-admin-link {
+    width: 44px;
+    padding: 0;
+  }
+}
+.maintenance-legal {
+  position: fixed;
+  z-index: 5;
+  right: 22px;
+  bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--maintenance-muted);
+  font-size: 0.72rem;
+}
+.maintenance-legal a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+.maintenance-legal a:hover {
+  color: var(--maintenance-primary);
+}
+@media (max-width: 640px) {
+  .maintenance-legal {
+    right: 14px;
+    bottom: 8px;
+  }
+}
+@media (max-height: 650px) and (min-width: 721px) {
+  .maintenance-production .maintenance-header {
+    padding-block: 7px 3px;
+  }
+  .maintenance-production .maintenance-shell {
+    padding-block: 18px;
+  }
+  .maintenance-production .maintenance-status {
+    margin-bottom: 9px;
+  }
+  .maintenance-production .maintenance-copy > p {
+    margin-top: 11px;
+    line-height: 1.4;
+  }
+  .maintenance-production .maintenance-meta {
+    margin-top: 10px;
+  }
+  .maintenance-production .maintenance-retry {
+    margin-top: 12px;
+  }
+  .maintenance-production .maintenance-visual img {
+    max-height: 42dvh;
+  }
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  .maintenance-production .maintenance-header {
+    padding-block: 5px 2px;
+  }
+  .maintenance-production .maintenance-brand-mark {
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+  }
+  .maintenance-production .maintenance-action {
+    min-height: 36px;
+  }
+  .maintenance-production .maintenance-theme-toggle,
+  .maintenance-production .maintenance-support-link,
+  .maintenance-production .maintenance-admin-link {
+    width: 36px;
+    padding: 0;
+  }
+  .maintenance-production .maintenance-support-link span,
+  .maintenance-production .maintenance-admin-link span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .maintenance-production .maintenance-main {
+    padding: 2px 0 5px;
+  }
+  .maintenance-production .maintenance-shell {
+    height: 100%;
+    padding: 7px 12px;
+    grid-template-columns: minmax(0, 1fr) minmax(120px, 0.58fr);
+    grid-template-rows: 1fr;
+    gap: 12px;
+  }
+  .maintenance-production .maintenance-visual {
+    order: 0;
+    min-height: 0;
+  }
+  .maintenance-production .maintenance-visual img {
+    width: min(100%, 270px);
+    max-height: 52dvh;
+  }
+  .maintenance-production .maintenance-status {
+    margin-bottom: 5px;
+    padding: 4px 8px;
+    font-size: 0.62rem;
+  }
+  .headline-split .headline-lead {
+    font-size: 0.98rem;
+  }
+  .headline-split h1 {
+    font-size: 1.9rem;
+  }
+  .headline-split .headline-apology {
+    margin-top: 4px;
+    padding-top: 4px;
+    font-size: 0.75rem;
+    line-height: 1.25;
+  }
+  .maintenance-production .maintenance-copy > p {
+    margin-top: 6px;
+    font-size: 0.72rem;
+    line-height: 1.32;
+  }
+  .maintenance-production .maintenance-meta {
+    margin-top: 6px;
+    gap: 6px;
+    font-size: 0.69rem;
+  }
+  .maintenance-production .maintenance-meta svg {
+    width: 15px;
+    height: 15px;
+  }
+  .maintenance-production .maintenance-retry {
+    min-height: 34px;
+    margin-top: 7px;
+    padding-inline: 13px;
+    font-size: 0.75rem;
+  }
+}
