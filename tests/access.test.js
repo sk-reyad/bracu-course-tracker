@@ -224,6 +224,57 @@ test('cloud state wins over local state and saves remain scoped to the authentic
   assert.equal(JSON.parse(local.getItem('bracuCsCourseTracker.v2:user-a')).semesters[0].id, 'cloud');
 });
 
+test('faculty catalog migration adds verified defaults once without overwriting user faculty records', () => {
+  const defaults = defaultData();
+  defaults.facultyCatalogVersion = 1;
+  defaults.defaultFaculties = [
+    { id: 'fac-default-a', initial: 'AAA', name: 'Default A', email: 'a@bracu.ac.bd', department: 'CSE' },
+    { id: 'fac-default-b', initial: 'BBB', name: 'Default B', email: 'b@bracu.ac.bd', department: 'CSE' }
+  ];
+  const manager = StorageModule.createStorageManager({ defaultData: defaults, normalizeCourseCode: value => value });
+  const migrated = manager.migrateState({
+    settings: {},
+    faculties: [
+      { id: 'fac-user-a', initial: 'AAA', name: 'User A', email: 'custom@example.com', department: 'CSE' },
+      { id: 'fac-custom', initial: 'CUSTOM', name: 'Custom Faculty', email: '', department: 'CSE' }
+    ]
+  });
+
+  assert.equal(migrated.settings.facultyCatalogVersion, 1);
+  assert.equal(migrated.faculties.length, 3);
+  assert.equal(migrated.faculties.find(faculty => faculty.initial === 'AAA').name, 'User A');
+  assert.equal(migrated.faculties.find(faculty => faculty.initial === 'BBB').name, 'Default B');
+  assert.equal(migrated.faculties.find(faculty => faculty.initial === 'CUSTOM').name, 'Custom Faculty');
+
+  const rerun = manager.migrateState(migrated);
+  assert.equal(rerun.faculties.length, 3);
+});
+
+test('faculty catalog migration persists its version for an existing local user', () => {
+  const defaults = defaultData();
+  defaults.facultyCatalogVersion = 1;
+  defaults.defaultFaculties = [
+    { id: 'fac-default-a', initial: 'AAA', name: 'Default A', email: 'a@bracu.ac.bd', department: 'CSE' },
+    { id: 'fac-default-b', initial: 'BBB', name: 'Default B', email: 'b@bracu.ac.bd', department: 'CSE' }
+  ];
+  const key = 'bracuCsCourseTracker.v2:existing-user';
+  const local = memoryStorage({
+    [key]: JSON.stringify({
+      profile: { email: 'existing@g.bracu.ac.bd' },
+      settings: {},
+      faculties: [{ id: 'fac-default-a', initial: 'AAA', name: 'Default A', email: 'a@bracu.ac.bd', department: 'CSE' }],
+      semesters: []
+    })
+  });
+  const manager = StorageModule.createStorageManager({ defaultData: defaults, storage: local, normalizeCourseCode: value => value });
+
+  manager.loadUserState('existing-user', { profile: { email: 'existing@g.bracu.ac.bd' } });
+  const persisted = JSON.parse(local.getItem(key));
+
+  assert.equal(persisted.settings.facultyCatalogVersion, 1);
+  assert.deepEqual(persisted.faculties.map(faculty => faculty.initial), ['AAA', 'BBB']);
+});
+
 test('preview state is generic, read-only, and does not use Supabase', () => {
   let supabaseCalls = 0;
   const preview = PreviewModule.createPreviewManager({ defaultData: defaultData() });
