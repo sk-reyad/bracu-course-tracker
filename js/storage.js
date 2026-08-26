@@ -88,6 +88,7 @@
         return {
           theme: store.getItem(THEME_STORAGE_KEY) || "light",
           autoCountHighestRetake: true,
+          facultyCatalogVersion: Number(data.facultyCatalogVersion || 0),
           lastUpdated: now().toISOString(),
           cloudSync: { provider: "supabase" },
         };
@@ -190,6 +191,12 @@
       function migrateState(input, { authenticatedProfile } = {}) {
         const fresh = createInitialState();
         const state = input && typeof input === "object" ? clone(input) : {};
+        const previousFacultyCatalogVersion = Number(
+          state.settings?.facultyCatalogVersion || 0,
+        );
+        const currentFacultyCatalogVersion = Number(
+          data.facultyCatalogVersion || 0,
+        );
         state.profile = { ...fresh.profile, ...(state.profile || {}) };
         if (authenticatedProfile)
           state.profile = {
@@ -265,6 +272,23 @@
           department: "CSE",
           ...faculty,
         }));
+        if (previousFacultyCatalogVersion < currentFacultyCatalogVersion) {
+          const existingInitials = new Set(
+            state.faculties
+              .map((faculty) => String(faculty.initial || "").trim().toUpperCase())
+              .filter(Boolean),
+          );
+          fresh.faculties.forEach((faculty) => {
+            const initial = String(faculty.initial || "").trim().toUpperCase();
+            if (!initial || existingInitials.has(initial)) return;
+            state.faculties.push(clone(faculty));
+            existingInitials.add(initial);
+          });
+        }
+        state.settings.facultyCatalogVersion = Math.max(
+          previousFacultyCatalogVersion,
+          currentFacultyCatalogVersion,
+        );
         state.semesters = Array.isArray(state.semesters)
           ? state.semesters
           : fresh.semesters;
@@ -343,8 +367,19 @@
           local ||
           legacy ||
           createFreshAuthenticatedState(profile);
+        const sourceFacultyCatalogVersion = Number(
+          source?.settings?.facultyCatalogVersion || 0,
+        );
         const next = migrateState(source, { authenticatedProfile: profile });
-        if (cloudState || legacy || (!local && !cloudState))
+        const facultyCatalogWasUpgraded =
+          Number(next.settings?.facultyCatalogVersion || 0) >
+          sourceFacultyCatalogVersion;
+        if (
+          cloudState ||
+          legacy ||
+          (!local && !cloudState) ||
+          facultyCatalogWasUpgraded
+        )
           saveUserState(userId, next);
         return next;
       }
