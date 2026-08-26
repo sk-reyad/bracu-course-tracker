@@ -7,6 +7,7 @@ const { pathToFileURL } = require('node:url');
 const functionPath = path.join(__dirname, '..', 'supabase', 'functions', 'admin-access', 'index.ts');
 const actionsPath = path.join(__dirname, '..', 'supabase', 'functions', 'admin-access', 'account-actions.mjs');
 const policyPath = path.join(__dirname, '..', 'supabase', 'functions', 'admin-access', 'account-policy.mjs');
+const accountListPath = path.join(__dirname, '..', 'supabase', 'functions', 'admin-access', 'account-list.mjs');
 const rateLimitPath = path.join(__dirname, '..', 'supabase', 'functions', 'admin-access', 'admin-rate-limit.mjs');
 const root = path.join(__dirname, '..');
 
@@ -823,19 +824,65 @@ test('login metrics migration exposes only deduplicated service-side account agg
   assert.doesNotMatch(migration, /grant select on (?:table )?public\.(?:login_events|admin_account_login_metrics) to (?:anon|authenticated|public)/i);
 });
 
-test('admin Edge Function loads the current page and login metrics through one RPC', () => {
-  const source = fs.readFileSync(path.join(__dirname, '..', 'supabase', 'functions', 'admin-access', 'account-list.mjs'), 'utf8');
-  assert.match(source, /rpc\(['"]admin_list_accounts['"]/);
-  for (const metric of ['daily_login_count', 'weekly_login_count', 'monthly_login_count', 'total_login_count']) {
-    assert.match(source, new RegExp(`${metric}\\s*:\\s*Number\\(account\\.${metric}`));
-  }
+test('admin Edge Function loads and normalizes the current account page through exactly one RPC', async () => {
+  const { listAccounts } = await import(`${pathToFileURL(accountListPath).href}?test=${Date.now()}-${Math.random()}`);
+  const calls = [];
+  const admin = {
+    async rpc(name, input) {
+      calls.push([name, input]);
+      return {
+        data: [{
+          id: 'account-1',
+          role_name: 'admin',
+          total_count: 31,
+          daily_login_count: '2',
+          weekly_login_count: '4',
+          monthly_login_count: '7',
+          total_login_count: '11'
+        }],
+        error: null
+      };
+    }
+  };
+
+  const result = await listAccounts(admin, {
+    page: 2,
+    pageSize: 15,
+    role: 'admin',
+    status: 'active',
+    search: ' A,(lice) '
+  });
+
+  assert.deepEqual(calls, [[
+    'admin_list_accounts',
+    {
+      target_role: 'admin',
+      target_status: 'active',
+      target_search: 'Alice',
+      page_offset: 15,
+      page_limit: 15
+    }
+  ]]);
+  assert.deepEqual(result, {
+    accounts: [{
+      id: 'account-1',
+      daily_login_count: 2,
+      weekly_login_count: 4,
+      monthly_login_count: 7,
+      total_login_count: 11,
+      user_roles: { app_roles: { name: 'admin' } }
+    }],
+    page: 2,
+    pageSize: 15,
+    total: 31
+  });
 });
 
 test('Admin Panel contains guarded account views, filters, states, drawer, dialog, and sign out', () => {
   const html = fs.readFileSync(path.join(__dirname, '..', 'admin.html'), 'utf8');
   assert.match(html, /BRACU Course Tracker/);
-  assert.match(html, /data-account-view="users"[^>]*>Users</);
-  assert.match(html, /data-account-view="admins"[^>]*>Admins</);
+  assert.match(html, /<button(?=[^>]*data-account-view="users")[^>]*>\s*Users\s*<\/button>/);
+  assert.match(html, /<button(?=[^>]*data-account-view="admins")[^>]*>\s*Admins\s*<\/button>/);
   assert.match(html, /id="adminSearch"/);
   assert.match(html, /id="adminStatusFilter"/);
   assert.match(html, /id="adminRoleFilter"/);
@@ -856,7 +903,7 @@ test('Admin Panel mounts the shared Dot Grid behind its interactive content', ()
   const html = fs.readFileSync(path.join(__dirname, '..', 'admin.html'), 'utf8');
   const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'admin.css'), 'utf8');
 
-  assert.match(html, /<canvas\s+id="dotGridBackground"\s+class="dot-grid-background"\s+aria-hidden="true"><\/canvas>/);
+  assert.match(html, /<canvas(?=[^>]*id="dotGridBackground")(?=[^>]*class="dot-grid-background")(?=[^>]*aria-hidden="true")[^>]*>\s*<\/canvas>/);
   assert.ok(html.indexOf('js/motion.js') < html.indexOf('js/admin.js'), 'motion starts before Admin Panel logic');
   assert.match(css, /--dot-grid-base:/);
   assert.match(css, /--dot-grid-active:/);
@@ -1132,7 +1179,7 @@ test('Admin Panel wires permission-aware actions with confirmation and refresh',
   assert.match(js, /set-account-status/);
   assert.match(js, /set-user-permissions/);
   assert.doesNotMatch(js, /invokeAction\("set-role"/);
-  assert.match(js, /invokeAction\("set-user-permissions",\s*\{\s*id,\s*role:\s*nextRole,\s*permissions\s*\}\)/);
+  assert.match(js, /invokeAction\("set-user-permissions",\s*\{\s*id,\s*role:\s*nextRole,\s*permissions,?\s*\}\)/);
   assert.match(js, /create-admin/);
   assert.match(js, /confirm\(/);
   assert.match(js, /createAccountListCache/);

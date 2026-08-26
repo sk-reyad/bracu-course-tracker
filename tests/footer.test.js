@@ -43,7 +43,7 @@ test("footer exposes all approved contact destinations with icons", () => {
 
 test("footer credits link to the approved portfolio and BRAC University", () => {
   assert.match(footer, /id="footerDeveloper"[^>]+href="https:\/\/sk-reyad\.github\.io\/Portfolio-Website_1-Reyad\/"/);
-  assert.match(footer, /href="https:\/\/www\.bracu\.ac\.bd\/"[^>]*>BRAC University<\/a>/);
+  assert.match(footer, /<a(?=[^>]*href="https:\/\/www\.bracu\.ac\.bd\/")[^>]*>\s*BRAC University\s*<\/a\s*>/);
   assert.doesNotMatch(footer, />Project</);
   assert.match(html, /id="openSettingsBtn"/);
 });

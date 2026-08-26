@@ -86,13 +86,13 @@ test("shutter variants keep semantic colors and accessible interaction gates", (
 });
 
 test("cancel and destructive actions render the approved Lucide icons", () => {
-  assert.match(pageHtml, /id="cancelSemesterBtn"[^>]*><i data-lucide="x"><\/i> Cancel<\/button>/);
+  assert.match(pageHtml, /id="cancelSemesterBtn"[^>]*>\s*<i data-lucide="x"><\/i>\s*Cancel\s*<\/button>/);
 
   for (const action of ["cancel-semester-edit", "cancel-profile-edit"]) {
-    assert.match(appScript, new RegExp(`data-action="${action}"[^>]*><i data-lucide="x"><\\/i> Cancel`));
+    assert.match(appScript, new RegExp(`data-action="${action}"[^>]*>\\s*<i data-lucide="x"><\\/i>\\s*Cancel`));
   }
-  assert.match(appScript, /data-close-modal="courseModal"[^>]*><i data-lucide="x"><\/i> Cancel/);
-  assert.match(appScript, /data-close-modal="departmentModal"[^>]*><i data-lucide="x"><\/i> Cancel/);
+  assert.match(appScript, /data-close-modal="courseModal"[^>]*>\s*<i data-lucide="x"><\/i>\s*Cancel/);
+  assert.match(appScript, /data-close-modal="departmentModal"[^>]*>\s*<i data-lucide="x"><\/i>\s*Cancel/);
 
   for (const action of ["delete-semester", "delete-attempt", "remove-course", "delete-faculty", "remove-department"]) {
     assert.match(appScript, new RegExp(`data-action="${action}"[^>]*><i data-lucide="trash-2"><\\/i>`));

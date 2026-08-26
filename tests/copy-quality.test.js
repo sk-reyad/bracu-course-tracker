@@ -11,9 +11,9 @@ test('public copy uses canonical spelling and product terminology', () => {
   const privacy = read('privacy.html');
   const terms = read('terms.html');
   const auth = read(path.join('js', 'auth.js'));
-  const setup = read(path.join('docs', 'SETUP.md'));
+  const readme = read('README.md');
 
-  for (const source of [index, privacy, terms, auth, setup]) {
+  for (const source of [index, privacy, terms, auth, readme]) {
     assert.doesNotMatch(source, /Please use you official/i);
     assert.doesNotMatch(source, /G-suite/);
   }
@@ -35,5 +35,8 @@ test('deployed auth-function copy receives a forward-only correction migration',
   assert.match(migration, /hook_restrict_signup\(jsonb\)/i);
   assert.match(migration, /complete_student_onboarding\(text,text,text,integer,text,text\)/i);
   assert.match(migration, /Please use your official BRAC University G-Suite email/);
+  assert.match(migration, /if\s+position\(legacy_message\s+in\s+function_definition\)\s*>\s*0\s+then/i);
+  assert.match(migration, /execute\s+replace\(function_definition,\s*legacy_message,\s*corrected_message\)/i);
+  assert.match(migration, /elsif\s+position\(corrected_message\s+in\s+function_definition\)\s*=\s*0\s+then/i);
   assert.doesNotMatch(migration, /\b(?:insert|update|delete|truncate|drop)\b/i);
 });

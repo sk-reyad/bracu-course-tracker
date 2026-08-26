@@ -68,5 +68,5 @@ test('report metadata uses the deployed page URL and approved profile links', ()
   );
   assert.equal(data.resolveReportWebsiteUrl('', 'file:///tracker/index.html'), 'this website');
   assert.equal(data.DEFAULT_DATA.program.linkedinUrl, 'https://www.linkedin.com/in/sk-reyad/');
-  assert.match(app, /resolveReportWebsiteUrl\(DEFAULT_DATA\.program\.websiteUrl,\s*window\.location\.href\)/);
+  assert.match(app, /resolveReportWebsiteUrl\(\s*DEFAULT_DATA\.program\.websiteUrl,\s*window\.location\.href,?\s*\)/);
 });

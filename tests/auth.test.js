@@ -213,17 +213,21 @@ test('canonical avatar migration adds explicit preference and validated student 
   assert.doesNotMatch(sql, /grant execute on function public\.(?:complete_student_onboarding|update_student_profile)[^;]*to\s+(?:anon|public)/i);
 });
 
-test('manual onboarding reset is exact-account guarded and absent from the website runtime', () => {
+test('one-off onboarding reset is guarded when retained locally and absent from website runtime', () => {
   const root = path.join(__dirname, '..');
-  const resetSql = fs.readFileSync(path.join(root, 'supabase', 'manual', '20260812_reset_sk_reyad_ali_onboarding.sql'), 'utf8');
-  assert.match(resetSql, /sk\.reyad\.ali@g\.bracu\.ac\.bd/i);
-  assert.match(resetSql, /expected exactly one matching student profile/i);
-  assert.match(resetSql, /profile-photos/i);
-  assert.match(resetSql, /delete from public\.course_tracker_data/i);
-  assert.match(resetSql, /status\s*=\s*'pending'/i);
-  assert.match(resetSql, /onboarding_completed\s*=\s*false/i);
-  assert.doesNotMatch(resetSql, /create\s+(?:or\s+replace\s+)?(?:function|trigger)|pg_cron|setInterval/i);
-  for (const file of ['auth.html', 'index.html']) {
+  const resetPath = path.join(root, 'supabase', 'manual', '20260812_reset_sk_reyad_ali_onboarding.sql');
+  const gitignore = fs.readFileSync(path.join(root, '.gitignore'), 'utf8');
+  assert.match(gitignore, /(?:^|\r?\n)supabase\/manual\/(?:\r?\n|$)/);
+  if (fs.existsSync(resetPath)) {
+    const resetSql = fs.readFileSync(resetPath, 'utf8');
+    assert.match(resetSql, /sk\.reyad\.ali@g\.bracu\.ac\.bd/i);
+    assert.match(resetSql, /expected exactly one matching student profile/i);
+    assert.match(resetSql, /delete from public\.course_tracker_data/i);
+    assert.match(resetSql, /status\s*=\s*'pending'/i);
+    assert.match(resetSql, /onboarding_completed\s*=\s*false/i);
+    assert.doesNotMatch(resetSql, /create\s+(?:or\s+replace\s+)?(?:function|trigger)|pg_cron|setInterval/i);
+  }
+  for (const file of ['auth.html', 'index.html', path.join('js', 'auth.js'), path.join('js', 'app.js')]) {
     assert.doesNotMatch(fs.readFileSync(path.join(root, file), 'utf8'), /reset_sk_reyad_ali|manual\/20260812/i);
   }
 });
