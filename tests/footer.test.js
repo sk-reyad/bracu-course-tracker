@@ -10,7 +10,7 @@ const footer = html.slice(html.indexOf('<footer class="site-footer">'), html.ind
 test("footer presents the approved compact brand copy", () => {
   assert.match(footer, />BRACU Course Tracker</);
   assert.match(footer, />Plan smarter &amp; track every semester</);
-  assert.match(footer, />v0\.1\.4\.31</);
+  assert.match(footer, />v0\.9\.0-beta\.1</);
   assert.doesNotMatch(footer, /A modern academic planning companion/);
   assert.doesNotMatch(footer, /BSc in Computer Science/);
   assert.doesNotMatch(footer, /Your progress stays under your control/);

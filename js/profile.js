@@ -20,6 +20,76 @@
       return String(value == null ? "" : value).trim();
     }
 
+    function getDhakaYear(date = new Date()) {
+      const value = new Intl.DateTimeFormat("en-US", {
+        timeZone: "Asia/Dhaka",
+        year: "numeric",
+      }).format(date);
+      return Number(value);
+    }
+
+    function semesterYearOptions(currentYear = getDhakaYear(), selectedYear = 0) {
+      const year = Number(currentYear);
+      const lastYear = Number.isInteger(year) ? year + 10 : getDhakaYear() + 10;
+      const years = [];
+      for (let value = lastYear; value >= 2001; value -= 1) years.push(value);
+      const selected = Number(selectedYear);
+      if (
+        Number.isInteger(selected) &&
+        selected >= 2001 &&
+        selected <= 2100 &&
+        !years.includes(selected)
+      ) {
+        years.push(selected);
+        years.sort((left, right) => right - left);
+      }
+      return years;
+    }
+
+    function parseSemesterName(name) {
+      const match = clean(name).match(/^(spring|summer|fall)\s+(\d{4})$/i);
+      if (!match) return null;
+      const term = TERMS.find(
+        (item) => item.toLowerCase() === match[1].toLowerCase(),
+      );
+      const year = Number(match[2]);
+      if (!term || year < 2001 || year > 2100) return null;
+      return { term, year, name: `${term} ${year}` };
+    }
+
+    function validateSemesterSelection({
+      term,
+      year,
+      semesters = [],
+      excludeId = "",
+      currentYear = getDhakaYear(),
+    } = {}) {
+      const normalizedTerm = TERMS.find(
+        (item) => item.toLowerCase() === clean(term).toLowerCase(),
+      );
+      const normalizedYear = Number(year);
+      if (!normalizedTerm || !clean(year))
+        return { error: "Select a term and year." };
+      const lastYear = Number(currentYear) + 10;
+      if (
+        !Number.isInteger(normalizedYear) ||
+        normalizedYear < 2001 ||
+        normalizedYear > lastYear
+      ) {
+        return { error: `Select a year from 2001 to ${lastYear}.` };
+      }
+      const name = `${normalizedTerm} ${normalizedYear}`;
+      const duplicate = (Array.isArray(semesters) ? semesters : []).some(
+        (semester) =>
+          String(semester?.id || "") !== String(excludeId || "") &&
+          parseSemesterName(semester?.name)?.name === name,
+      );
+      if (duplicate) return { error: "That semester already exists." };
+      return {
+        value: { term: normalizedTerm, year: normalizedYear, name },
+      };
+    }
+
     function getInitials(name) {
       return (
         clean(name || "CS")
@@ -354,6 +424,10 @@
     return Object.freeze({
       PROGRAMS,
       TERMS,
+      getDhakaYear,
+      semesterYearOptions,
+      parseSemesterName,
+      validateSemesterSelection,
       AVATAR_PREFERENCES,
       MAX_PHOTO_BYTES,
       normalizeCanonicalProfile,

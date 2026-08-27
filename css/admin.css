@@ -730,6 +730,230 @@ select:focus-visible {
 .admin-account-cards {
   display: none;
 }
+.catalog-admin-view {
+  overflow: hidden;
+}
+.catalog-head {
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.catalog-head h2,
+.catalog-head p,
+.catalog-form-head h3 {
+  margin: 0;
+}
+.catalog-head h2 {
+  margin-top: 5px;
+  font: 700 1.55rem/1.15 "Space Grotesk";
+}
+.catalog-head p {
+  margin-top: 6px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.catalog-tabs {
+  overflow-x: auto;
+}
+.catalog-filters {
+  padding: 16px 18px 0;
+  display: grid;
+  grid-template-columns: minmax(240px, 2fr) minmax(180px, 1fr) minmax(170px, 1fr) auto;
+  align-items: end;
+  gap: 12px;
+}
+.catalog-filters label {
+  min-width: 0;
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+.catalog-filters input,
+.catalog-filters select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--ink);
+  background-color: var(--surface);
+  outline: none;
+}
+.catalog-filters select {
+  appearance: none;
+  padding-right: 38px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.25 6 6.25 11 1.25' fill='none' stroke='%235d6b7f' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+.catalog-filters input:focus,
+.catalog-filters select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue) 18%, transparent);
+}
+.catalog-search {
+  position: relative;
+}
+.catalog-search i,
+.catalog-search svg {
+  position: absolute;
+  left: 13px;
+  bottom: 13px;
+  width: 17px;
+  height: 17px;
+  color: var(--muted);
+  pointer-events: none;
+}
+.catalog-search input {
+  padding-left: 40px;
+}
+.catalog-filter-count {
+  min-width: 90px;
+  min-height: 44px;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.catalog-form {
+  margin: 18px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface2);
+}
+.catalog-form-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.catalog-form-head h3 {
+  margin-top: 4px;
+  font: 700 1.15rem/1.2 "Space Grotesk";
+}
+.catalog-form-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+.catalog-form-fields label {
+  min-width: 0;
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+.catalog-form-fields input:not([type="checkbox"]),
+.catalog-form-fields select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--ink);
+  background-color: var(--surface);
+  outline: none;
+}
+.catalog-form-fields input[readonly] {
+  color: var(--muted);
+  background: color-mix(in srgb, var(--surface2) 82%, var(--surface));
+}
+.catalog-form-fields select {
+  appearance: none;
+  padding-right: 38px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.25 6 6.25 11 1.25' fill='none' stroke='%235d6b7f' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+.catalog-form-fields input:not([type="checkbox"]):focus,
+.catalog-form-fields select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue) 18%, transparent);
+}
+.catalog-field-wide {
+  grid-column: span 2;
+}
+.catalog-optional {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+.catalog-form-fields .catalog-check {
+  min-height: 44px;
+  padding: 0 14px;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  align-self: end;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--ink);
+  background: var(--surface);
+}
+.catalog-check input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--blue);
+}
+.catalog-form-actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+}
+.catalog-form-actions .catalog-delete {
+  margin-right: auto;
+}
+.catalog-list {
+  padding: 18px;
+  display: grid;
+  gap: 10px;
+}
+.catalog-row {
+  min-width: 0;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--surface2);
+}
+.catalog-row-copy {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(70px, auto) minmax(180px, 1fr) minmax(180px, auto);
+  align-items: center;
+  gap: 14px;
+}
+.catalog-row-copy span {
+  color: var(--blue);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+.catalog-row-copy strong,
+.catalog-row-copy small {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.catalog-row-copy small {
+  color: var(--muted);
+  line-height: 1.45;
+}
 @media (hover: hover) and (pointer: fine) {
   .admin-primary:hover {
     box-shadow: 0 14px 28px rgba(12, 76, 170, 0.28);
@@ -747,6 +971,15 @@ select:focus-visible {
   .admin-filters {
     grid-template-columns: 1fr 1fr;
   }
+  .catalog-filters {
+    grid-template-columns: 1fr 1fr;
+  }
+  .catalog-search {
+    grid-column: 1 / -1;
+  }
+  .catalog-filter-count {
+    justify-content: start;
+  }
   .admin-search {
     grid-column: 1/-1;
   }
@@ -758,6 +991,15 @@ select:focus-visible {
   }
   .admin-identity {
     display: none;
+  }
+  .catalog-form-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .catalog-row-copy {
+    grid-template-columns: minmax(72px, auto) minmax(0, 1fr);
+  }
+  .catalog-row-copy small {
+    grid-column: 2;
   }
 }
 @media (max-width: 640px) {
@@ -783,6 +1025,13 @@ select:focus-visible {
   }
   .admin-filters {
     grid-template-columns: 1fr;
+  }
+  .catalog-filters {
+    padding: 12px 12px 0;
+    grid-template-columns: 1fr;
+  }
+  .catalog-search {
+    grid-column: auto;
   }
   .admin-search {
     grid-column: auto;
@@ -823,6 +1072,52 @@ select:focus-visible {
   .danger-dialog .dialog-actions > *,
   .danger-zone .drawer-actions > * {
     min-height: 44px;
+    width: 100%;
+  }
+  .catalog-head {
+    padding: 18px;
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .catalog-head .admin-primary {
+    width: 100%;
+  }
+  .catalog-form {
+    margin: 12px;
+    padding: 14px;
+  }
+  .catalog-form-fields {
+    grid-template-columns: 1fr;
+  }
+  .catalog-field-wide {
+    grid-column: auto;
+  }
+  .catalog-form-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .catalog-form-actions > * {
+    width: 100%;
+  }
+  .catalog-form-actions .catalog-delete {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .catalog-list {
+    padding: 12px;
+  }
+  .catalog-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .catalog-row-copy {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  .catalog-row-copy small {
+    grid-column: auto;
+  }
+  .catalog-row .catalog-edit {
     width: 100%;
   }
 }

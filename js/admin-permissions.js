@@ -62,6 +62,12 @@
         description: "Turn website maintenance mode on or off.",
         codes: ["maintenance.manage"],
       },
+      {
+        key: "manage_catalog",
+        label: "Manage global catalog",
+        description: "Add and manage shared departments, courses, and faculty.",
+        codes: ["catalog.manage"],
+      },
     ]);
 
     function keysForCodes(codes) {

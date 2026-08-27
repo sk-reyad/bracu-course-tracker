@@ -7,6 +7,7 @@
       previewManager: root.BracuPreview,
       storageManager: root.BracuStorage,
       supabaseApi: root.BracuSupabase,
+      catalogApi: root.BracuCatalog,
       initializeApp: (payload) => root.initializeTrackerApp(payload),
     });
 })(
@@ -19,6 +20,7 @@
       previewManager,
       storageManager,
       supabaseApi,
+      catalogApi,
       initializeApp,
       setTimer = (callback, delay) => setTimeout(callback, delay),
       clearTimer = (timer) => clearTimeout(timer),
@@ -110,6 +112,19 @@
           profile: context.profile,
           cloudState,
         });
+        if (catalogApi?.fetchGlobalCatalog) {
+          try {
+            const globalCatalog = await catalogApi.fetchGlobalCatalog(client);
+            catalogApi.mergeGlobalCatalog?.(trackerState, globalCatalog);
+            storageManager.saveUserState?.(context.user.id, trackerState);
+          } catch (error) {
+            if (typeof console !== "undefined" && console.warn)
+              console.warn(
+                "Global catalog could not be loaded; using the local user copy.",
+                error,
+              );
+          }
+        }
         initializeApp({
           state: trackerState,
           context,

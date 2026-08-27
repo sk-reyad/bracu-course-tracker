@@ -3,7 +3,7 @@ const DEFAULT_DATA = {
     name: "BSc in Computer Science",
     university: "BRAC University",
     requiredCredits: 124,
-    version: "v0.1.4.31",
+    version: "v0.9.0-beta.1",
     websiteUrl: "",
     developerName: "SK Reyad Ali",
     githubUrl: "https://github.com/sk-reyad",

@@ -5,6 +5,7 @@ import { jwtAssuranceLevel } from "../_shared/jwt-assurance.mjs";
 import { listAccounts } from "./account-list.mjs";
 import { accountListPermission, assertProfileSummaryAllowed } from "./account-policy.mjs";
 import { enforceAdminRateLimit, isAdminRateLimitExceeded } from "./admin-rate-limit.mjs";
+import { deleteCatalogItem, listCatalog, upsertCatalogItem } from "./catalog-actions.mjs";
 import {
   assertAdministratorActor,
   createAdministrator,
@@ -26,7 +27,10 @@ type Action =
   | "set-account-status"
   | "set-role"
   | "set-user-permissions"
-  | "get-profile-summary";
+  | "get-profile-summary"
+  | "list-catalog"
+  | "upsert-catalog-item"
+  | "delete-catalog-item";
 
 type MutationAudit = {
   targetId: string | null;
@@ -49,7 +53,10 @@ const ACTION_PERMISSIONS: Record<Action, string> = {
   "set-account-status": "users.status.manage",
   "set-role": "permissions.manage",
   "set-user-permissions": "permissions.manage",
-  "get-profile-summary": "profiles.read"
+  "get-profile-summary": "profiles.read",
+  "list-catalog": "catalog.manage",
+  "upsert-catalog-item": "catalog.manage",
+  "delete-catalog-item": "catalog.manage"
 };
 
 const ALLOWED_ACTIONS = new Set<Action>(Object.keys(ACTION_PERMISSIONS) as Action[]);
@@ -60,7 +67,13 @@ const MUTATION_ACTIONS = new Set<Action>([
   "delete-account",
   "set-account-status",
   "set-role",
-  "set-user-permissions"
+  "set-user-permissions",
+  "upsert-catalog-item",
+  "delete-catalog-item"
+]);
+const ATOMIC_AUDIT_ACTIONS = new Set<Action>([
+  "upsert-catalog-item",
+  "delete-catalog-item"
 ]);
 
 const PUBLIC_ERROR_MESSAGES = new Set([
@@ -90,6 +103,34 @@ const PUBLIC_ERROR_MESSAGES = new Set([
   "Only a Super Admin can grant administrator access.",
   "A valid account role is required.",
   "Student accounts cannot receive administrator permissions.",
+  "Catalog management access is required.",
+  "Choose a valid catalog item type.",
+  "Enter a valid department ID.",
+  "Enter a valid course code.",
+  "Enter a valid faculty initial.",
+  "Enter a valid faculty email address.",
+  "Department name is required.",
+  "Faculty name is required.",
+  "Course title is required.",
+  "Department name is too long.",
+  "Faculty name is too long.",
+  "Course title is too long.",
+  "Source note is too long.",
+  "Enter a valid department color.",
+  "Enter valid course credits.",
+  "Enter a valid course category.",
+  "Enter a valid roadmap level.",
+  "Enter a valid roadmap order.",
+  "Hard prerequisites must be a short array of course codes.",
+  "Soft prerequisites must be a short array of course codes.",
+  "Roadmap slot must be true or false.",
+  "A course cannot require itself.",
+  "Catalog item is referenced by another catalog record.",
+  "The selected department does not exist.",
+  "Every course prerequisite must already exist in the global catalog.",
+  "This department is referenced by existing global courses.",
+  "This department is referenced by existing global catalog items.",
+  "The global catalog item was not found.",
   "A valid account and status are required.",
   "Too many administrator changes. Please try again later."
 ]);
@@ -172,7 +213,11 @@ Deno.serve(async request => {
   if (!secretKey) return jsonResponse({ data: null, error: "Server configuration is incomplete.", requestId }, 500, requestId, origin);
   const admin = createClient(supabaseUrl, secretKey, { auth: { persistSession: false, autoRefreshToken: false } });
   const mutationAudit: MutationAudit = {
-    targetId: payload.id ? String(payload.id) : null,
+    targetId: ATOMIC_AUDIT_ACTIONS.has(action)
+      ? null
+      : payload.id
+        ? String(payload.id)
+        : null,
     beforeValues: {},
     afterValues: {}
   };
@@ -205,6 +250,9 @@ Deno.serve(async request => {
       case "set-account-status": data = await setAccountStatus({ admin, payload, actor, audit: mutationAudit }); break;
       case "set-role": data = await setAccountRole({ admin, payload, actor, audit: mutationAudit }); break;
       case "set-user-permissions": data = await setAccountPermissions({ admin, payload, actor, audit: mutationAudit }); break;
+      case "list-catalog": data = await listCatalog({ admin }); break;
+      case "upsert-catalog-item": data = await upsertCatalogItem({ admin, payload, actor, requestId, audit: mutationAudit }); break;
+      case "delete-catalog-item": data = await deleteCatalogItem({ admin, payload, actor, requestId, audit: mutationAudit }); break;
     }
   } catch (error) {
     const rateLimited = isAdminRateLimitExceeded(error);
@@ -245,7 +293,7 @@ Deno.serve(async request => {
     return jsonResponse({ data: null, error: message, requestId }, status, requestId, origin);
   }
 
-  if (MUTATION_ACTIONS.has(action)) {
+  if (MUTATION_ACTIONS.has(action) && !ATOMIC_AUDIT_ACTIONS.has(action)) {
     try {
       await writeMutationAudit(
         admin,

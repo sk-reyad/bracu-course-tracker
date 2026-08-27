@@ -7,7 +7,8 @@ export const PERMISSION_BUNDLES = Object.freeze({
   manage_permissions: Object.freeze(['permissions.manage']),
   view_support: Object.freeze(['support.read']),
   manage_support: Object.freeze(['support.read', 'support.manage']),
-  manage_maintenance: Object.freeze(['maintenance.manage'])
+  manage_maintenance: Object.freeze(['maintenance.manage']),
+  manage_catalog: Object.freeze(['catalog.manage'])
 });
 
 export function accountListPermission(payload = {}) {

@@ -9,10 +9,15 @@ const actionsPath = path.join(__dirname, '..', 'supabase', 'functions', 'admin-a
 const policyPath = path.join(__dirname, '..', 'supabase', 'functions', 'admin-access', 'account-policy.mjs');
 const accountListPath = path.join(__dirname, '..', 'supabase', 'functions', 'admin-access', 'account-list.mjs');
 const rateLimitPath = path.join(__dirname, '..', 'supabase', 'functions', 'admin-access', 'admin-rate-limit.mjs');
+const catalogActionsPath = path.join(__dirname, '..', 'supabase', 'functions', 'admin-access', 'catalog-actions.mjs');
 const root = path.join(__dirname, '..');
 
 async function loadAccountActions() {
   return import(`${pathToFileURL(actionsPath).href}?test=${Date.now()}-${Math.random()}`);
+}
+
+async function loadCatalogActions() {
+  return import(`${pathToFileURL(catalogActionsPath).href}?test=${Date.now()}-${Math.random()}`);
 }
 
 test('administrator creation rejects weak passwords before creating an Auth user', async () => {
@@ -57,6 +62,8 @@ test('privileged administrator mutations use action-specific server-side rate li
   assert.deepEqual(limiter.adminRateLimitForAction('update-admin-identity'), { windowSeconds: 600, maxRequests: 5 });
   assert.deepEqual(limiter.adminRateLimitForAction('set-account-status'), { windowSeconds: 300, maxRequests: 20 });
   assert.equal(limiter.adminRateLimitForAction('list-accounts'), null);
+  assert.deepEqual(limiter.adminRateLimitForAction('upsert-catalog-item'), { windowSeconds: 300, maxRequests: 20 });
+  assert.deepEqual(limiter.adminRateLimitForAction('delete-catalog-item'), { windowSeconds: 300, maxRequests: 20 });
 
   const calls = [];
   const admin = {
@@ -78,6 +85,177 @@ test('privileged administrator mutations use action-specific server-side rate li
     'consume_admin_rate_limit',
     { actor_id: 'actor-1', action_name: 'create-admin', window_seconds: 600, max_requests: 5 }
   ]]);
+});
+
+test('catalog mutations normalize allowed fields and write only the selected catalog record', async () => {
+  const catalog = await loadCatalogActions();
+  const calls = [];
+  const admin = {
+    async rpc(name, input) {
+      calls.push([name, input]);
+      return {
+        data: {
+          kind: input.catalog_kind,
+          item: {
+            ...input.catalog_item,
+            created_by: 'super-1',
+            created_at: '2026-08-27T00:00:00Z',
+            updated_at: '2026-08-27T00:00:00Z'
+          }
+        },
+        error: null
+      };
+    }
+  };
+  const audit = { targetId: 'unsafe-target', beforeValues: { unsafe: true }, afterValues: { unsafe: true } };
+  const result = await catalog.upsertCatalogItem({
+    admin,
+    actor: { id: 'super-1', role: 'super_admin', permissions: ['catalog.manage'] },
+    requestId: '11111111-1111-4111-8111-111111111111',
+    payload: {
+      kind: 'course', code: ' cse 420 ', title: ' Advanced Software Engineering ', credits: '3',
+      department: 'cse', category: 'program-core', roadmapLevel: 7, roadmapOrder: 2,
+      hardPrerequisites: ['cse 370', ' CSE370 '], softPrerequisites: [' CSE 320 '],
+      ignored: '<script>alert(1)</script>'
+    },
+    audit,
+  });
+
+  assert.deepEqual(result, {
+    kind: 'course',
+    item: {
+      code: 'CSE420', title: 'Advanced Software Engineering', credits: 3, department: 'CSE',
+      category: 'program-core', roadmap_level: 7, roadmap_order: 2,
+      hard_prerequisites: ['CSE370'], soft_prerequisites: ['CSE320'],
+      source_note: null, is_roadmap_slot: false
+    }
+  });
+  assert.deepEqual(calls, [[
+    'mutate_global_catalog',
+    {
+      catalog_action: 'upsert', catalog_kind: 'course', catalog_item: result.item,
+      actor_id: 'super-1', audit_request_id: '11111111-1111-4111-8111-111111111111'
+    }
+  ]]);
+  assert.deepEqual(audit, {
+    targetId: null,
+    beforeValues: { kind: 'course', key: 'CSE420' },
+    afterValues: {}
+  });
+  assert.equal(Object.hasOwn(result.item, 'created_by'), false);
+  assert.equal(Object.hasOwn(result.item, 'created_at'), false);
+  assert.equal(JSON.stringify(calls).includes('ignored'), false);
+});
+
+test('catalog listing selects and returns public fields only', async () => {
+  const catalog = await loadCatalogActions();
+  const calls = [];
+  const rows = {
+    catalog_departments: [{ id: 'CSE', name: 'CSE', color: 'blue', created_by: 'secret' }],
+    catalog_courses: [{ code: 'CSE110', title: 'Programming', credits: 3, department: 'CSE', category: 'core', created_at: 'secret' }],
+    catalog_faculties: [{ initial: 'ABC', name: 'Faculty', email: null, department: 'CSE', updated_at: 'secret' }]
+  };
+  const admin = {
+    from(table) {
+      return {
+        select(columns) {
+          calls.push([table, columns]);
+          return { async order() { return { data: rows[table], error: null }; } };
+        }
+      };
+    }
+  };
+  const result = await catalog.listCatalog({ admin });
+  assert.equal(JSON.stringify(result).includes('secret'), false);
+  assert.deepEqual(calls, [
+    ['catalog_departments', 'id, name, color'],
+    ['catalog_courses', 'code, title, credits, department, category, roadmap_level, roadmap_order, hard_prerequisites, soft_prerequisites, source_note, is_roadmap_slot'],
+    ['catalog_faculties', 'initial, name, email, department']
+  ]);
+});
+
+test('regular Admin with catalog.manage can mutate the catalog through the atomic RPC', async () => {
+  const catalog = await loadCatalogActions();
+  const calls = [];
+  const admin = { async rpc(name, input) { calls.push([name, input]); return { data: { kind: 'department', item: input.catalog_item }, error: null }; } };
+  await assert.doesNotReject(() => catalog.upsertCatalogItem({
+    admin,
+    actor: { id: 'admin-1', role: 'admin', permissions: ['catalog.manage'] },
+    requestId: '22222222-2222-4222-8222-222222222222',
+    payload: { kind: 'department', id: 'cse', name: 'Computer Science', color: 'blue' }
+  }));
+  assert.equal(calls[0][0], 'mutate_global_catalog');
+});
+
+test('course validation rejects unsafe credits and self prerequisites before the database call', async () => {
+  const catalog = await loadCatalogActions();
+  const admin = { rpc() { throw new Error('database should not be reached'); } };
+  const base = { kind: 'course', code: 'CSE420', title: 'Advanced', department: 'CSE', category: 'core' };
+  for (const credits of [null, [], {}]) {
+    await assert.rejects(() => catalog.upsertCatalogItem({
+      admin, actor: { id: 'super-1', role: 'super_admin', permissions: [] }, requestId: crypto.randomUUID(),
+      payload: { ...base, credits }
+    }), /valid course credits/i);
+  }
+  assert.doesNotThrow(() => catalog.normalizeCatalogPayload({ ...base, credits: 0 }));
+  await assert.rejects(() => catalog.upsertCatalogItem({
+    admin, actor: { id: 'super-1', role: 'super_admin', permissions: [] }, requestId: crypto.randomUUID(),
+    payload: { ...base, credits: 3, hardPrerequisites: ['CSE420'] }
+  }), /cannot require itself/i);
+});
+
+test('catalog mutations reject an ungranted Admin and unsafe identifiers before database access', async () => {
+  const catalog = await loadCatalogActions();
+  const admin = { from() { throw new Error('database should not be reached'); } };
+  await assert.rejects(() => catalog.upsertCatalogItem({
+    admin,
+    actor: { id: 'admin-1', role: 'admin', permissions: [] },
+    payload: { kind: 'department', id: 'CSE', name: 'Computer Science' },
+    audit: { targetId: null, beforeValues: {}, afterValues: {} }
+  }), /catalog management access/i);
+  await assert.rejects(() => catalog.upsertCatalogItem({
+    admin,
+    actor: { id: 'super-1', role: 'super_admin', permissions: ['catalog.manage'] },
+    payload: { kind: 'faculty', initial: 'CSE;DROP', name: 'Unsafe', department: 'CSE' },
+    audit: { targetId: null, beforeValues: {}, afterValues: {} }
+  }), /valid faculty initial/i);
+});
+
+test('catalog delete delegates dependency enforcement to the atomic RPC', async () => {
+  const catalog = await loadCatalogActions();
+  const calls = [];
+  const admin = {
+    async rpc(name, input) {
+      calls.push([name, input]);
+      return { data: null, error: { message: 'Catalog item is referenced by another catalog record.' } };
+    }
+  };
+  await assert.rejects(() => catalog.deleteCatalogItem({
+    admin,
+    actor: { id: 'super-1', role: 'super_admin', permissions: ['catalog.manage'] },
+    payload: { kind: 'department', id: 'CSE' },
+    audit: { targetId: null, beforeValues: {}, afterValues: {} },
+    requestId: '33333333-3333-4333-8333-333333333333'
+  }), /referenced by another catalog record/i);
+  assert.equal(calls[0][0], 'mutate_global_catalog');
+});
+
+test('failed catalog mutation audit context contains only normalized kind and key', async () => {
+  const catalog = await loadCatalogActions();
+  const audit = { targetId: 'unsafe', beforeValues: { payload: 'unsafe' }, afterValues: { payload: 'unsafe' } };
+  const admin = { async rpc() { return { data: null, error: { message: 'internal database detail' } }; } };
+  await assert.rejects(() => catalog.deleteCatalogItem({
+    admin,
+    actor: { id: 'admin-1', role: 'admin', permissions: ['catalog.manage'] },
+    payload: { kind: 'faculty', initial: ' abc ', ignored: 'must not be audited' },
+    requestId: '44444444-4444-4444-8444-444444444444',
+    audit
+  }), /Could not delete/i);
+  assert.deepEqual(audit, {
+    targetId: null,
+    beforeValues: { kind: 'faculty', key: 'ABC' },
+    afterValues: {}
+  });
 });
 
 test('admin rate-limit migration is atomic and service-role only', () => {
@@ -1247,7 +1425,8 @@ test('Admin permission UI uses short English copy and hides technical codes', ()
     ['Manage permissions', 'Change roles and access.'],
     ['View support', 'View support tickets and replies.'],
     ['Manage support', 'Update ticket status and send replies.'],
-    ['Maintenance mode', 'Turn website maintenance mode on or off.']
+    ['Maintenance mode', 'Turn website maintenance mode on or off.'],
+    ['Manage global catalog', 'Add and manage shared departments, courses, and faculty.']
   ]);
   assert.deepEqual(Permissions.keysForCodes(['admins.read', 'profiles.read', 'users.read']), [
     'view_profiles', 'view_admins'
@@ -1261,6 +1440,51 @@ test('Admin Panel loads the permission catalog before its page logic and provide
   const html = fs.readFileSync(path.join(root, 'admin.html'), 'utf8');
   assert.ok(html.indexOf('js/admin-permissions.js') < html.indexOf('js/admin.js'));
   assert.match(html, /id="createAdminPermissions"/);
+});
+
+test('Admin Catalog UI is permission-aware and exposes managed CRUD states', async () => {
+  const html = fs.readFileSync(path.join(root, 'admin.html'), 'utf8');
+  const js = fs.readFileSync(path.join(root, 'js', 'admin-catalog.js'), 'utf8');
+  const permissions = require('../js/admin-permissions.js');
+  const policy = await import(`${pathToFileURL(policyPath).href}?test=${Date.now()}-${Math.random()}`);
+  const catalogPermission = permissions.CATALOG.find((item) => item.key === 'manage_catalog');
+
+  assert.deepEqual(catalogPermission, {
+    key: 'manage_catalog',
+    label: 'Manage global catalog',
+    description: 'Add and manage shared departments, courses, and faculty.',
+    codes: ['catalog.manage'],
+  });
+  assert.deepEqual(policy.expandPermissionKeys(['manage_catalog']), ['catalog.manage']);
+  assert.match(html, /data-admin-view="catalog"/);
+  assert.match(html, /id="catalogAdminView"/);
+  assert.match(html, /data-catalog-kind="department"/);
+  assert.match(html, /data-catalog-kind="course"/);
+  assert.match(html, /data-catalog-kind="faculty"/);
+  assert.match(html, /js\/admin-catalog\.js/);
+  assert.match(js, /permissions[^\n]*includes\("catalog\.manage"\)/);
+  assert.match(js, /"list-catalog"/);
+  assert.match(js, /"upsert-catalog-item"/);
+  assert.match(js, /"delete-catalog-item"/);
+  const uiSource = `${html}\n${js}`;
+  assert.match(uiSource, /Edit/);
+  assert.match(uiSource, /Save/);
+  assert.match(uiSource, /Cancel/);
+  assert.match(uiSource, /Delete/);
+});
+
+test('Admin Catalog exposes and applies kind-specific search and select filters', () => {
+  const html = fs.readFileSync(path.join(root, 'admin.html'), 'utf8');
+  const js = fs.readFileSync(path.join(root, 'js', 'admin-catalog.js'), 'utf8');
+  assert.match(html, /id="catalogSearch"/);
+  assert.match(html, /id="catalogDepartmentFilter"/);
+  assert.match(html, /id="catalogCategoryFilter"/);
+  assert.match(html, /id="catalogFilterCount"[^>]*role="status"/);
+  assert.match(html, /id="catalogNoResults"/);
+  assert.match(js, /BracuCatalog\.filterCatalogItems/);
+  assert.match(js, /catalogSearch[\s\S]*addEventListener\("input"/);
+  assert.match(js, /catalogDepartmentFilter[\s\S]*addEventListener\("change"/);
+  assert.match(js, /catalogCategoryFilter[\s\S]*addEventListener\("change"/);
 });
 
 test('Create Admin uses the shared strong-password policy in the browser and server', () => {

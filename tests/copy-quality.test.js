@@ -40,3 +40,18 @@ test('deployed auth-function copy receives a forward-only correction migration',
   assert.match(migration, /elsif\s+position\(corrected_message\s+in\s+function_definition\)\s*=\s*0\s+then/i);
   assert.doesNotMatch(migration, /\b(?:insert|update|delete|truncate|drop)\b/i);
 });
+
+test('all runtime version surfaces use the current release candidate', () => {
+  const index = read('index.html');
+  const app = read(path.join('js', 'app.js'));
+  const { DEFAULT_DATA } = require(path.join(root, 'js', 'data.js'));
+  const currentVersion = 'v0.9.0-beta.1';
+
+  assert.equal(DEFAULT_DATA.program.version, currentVersion);
+  assert.match(index, new RegExp(`id="footerVersion">${currentVersion.replaceAll('.', '\\.')}`));
+  assert.match(app, new RegExp(`program\\.version \\|\\| "${currentVersion.replaceAll('.', '\\.')}"`));
+
+  for (const source of [index, app]) {
+    assert.doesNotMatch(source, /v0\.1\.4\.31/);
+  }
+});

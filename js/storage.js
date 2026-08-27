@@ -78,6 +78,56 @@
       let activeUserId = null;
       let activeProfile = null;
 
+      function resolveFacultyEdit({
+        faculties = [],
+        departments = [],
+        facultyId = "",
+        action = "cancel",
+        draft = {},
+      } = {}) {
+        const currentFaculties = Array.isArray(faculties) ? faculties : [];
+        const unchanged = clone(currentFaculties);
+        if (action === "cancel") return { faculties: unchanged, cancelled: true };
+        const current = currentFaculties.find((faculty) => faculty.id === facultyId);
+        if (!current) return { faculties: unchanged, error: "Faculty not found" };
+
+        const name = String(draft?.name || "").trim();
+        const initial = String(draft?.initial || "")
+          .trim()
+          .toUpperCase()
+          .replace(/\s+/g, "");
+        const email = String(draft?.email || "").trim();
+        const department = String(draft?.department || "").trim();
+        if (!name || !initial)
+          return {
+            faculties: unchanged,
+            error: "Faculty name and initial are required",
+          };
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+          return { faculties: unchanged, error: "Enter a valid faculty email" };
+        if (!departments.some((item) => item?.id === department))
+          return { faculties: unchanged, error: "Select an existing department" };
+        const duplicate = currentFaculties.some(
+          (faculty) =>
+            faculty.id !== facultyId &&
+            String(faculty.initial || "")
+              .trim()
+              .toUpperCase()
+              .replace(/\s+/g, "") === initial,
+        );
+        if (duplicate)
+          return { faculties: unchanged, error: "Faculty initial already exists" };
+
+        return {
+          faculties: currentFaculties.map((faculty) =>
+            faculty.id === facultyId
+              ? { ...faculty, name, initial, email, department }
+              : clone(faculty),
+          ),
+          saved: true,
+        };
+      }
+
       function keyForUser(userId) {
         if (!userId || !String(userId).trim())
           throw new Error("A user id is required for tracker storage.");
@@ -89,6 +139,7 @@
           theme: store.getItem(THEME_STORAGE_KEY) || "light",
           autoCountHighestRetake: true,
           facultyCatalogVersion: Number(data.facultyCatalogVersion || 0),
+          catalogTombstones: {},
           lastUpdated: now().toISOString(),
           cloudSync: { provider: "supabase" },
         };
@@ -210,6 +261,13 @@
           autoCountHighestRetake: true,
         };
         state.settings.cloudSync = { provider: "supabase" };
+        const catalogTombstones = state.settings.catalogTombstones;
+        state.settings.catalogTombstones =
+          catalogTombstones &&
+          typeof catalogTombstones === "object" &&
+          !Array.isArray(catalogTombstones)
+            ? catalogTombstones
+            : {};
 
         state.courses =
           Array.isArray(state.courses) && state.courses.length
@@ -228,26 +286,43 @@
           .map((course) => {
             const code = normalize(course.code);
             const defaultCourse = defaultCourseMap.get(code);
-            const normalized = {
-              ...course,
-              code,
-              title: course.title || course.code,
-              credits: Number(course.credits ?? 3),
-              hardPrerequisites: (course.hardPrerequisites || [])
+            const normalized = { ...course, code };
+            if (Object.prototype.hasOwnProperty.call(course, "title"))
+              normalized.title = course.title || course.code;
+            if (Object.prototype.hasOwnProperty.call(course, "credits"))
+              normalized.credits = Number(course.credits ?? 3);
+            if (Object.prototype.hasOwnProperty.call(course, "hardPrerequisites"))
+              normalized.hardPrerequisites = (course.hardPrerequisites || [])
                 .map(normalize)
                 .filter(
                   (value) => value && !REMOVED_DEFAULT_COURSES.has(value),
-                ),
-              softPrerequisites: (course.softPrerequisites || [])
+                );
+            if (Object.prototype.hasOwnProperty.call(course, "softPrerequisites"))
+              normalized.softPrerequisites = (course.softPrerequisites || [])
                 .map(normalize)
                 .filter(
                   (value) => value && !REMOVED_DEFAULT_COURSES.has(value),
-                ),
-              roadmapOrder: Number(course.roadmapOrder || 99),
-              isRoadmapSlot: Boolean(course.isRoadmapSlot),
-            };
+                );
+            if (Object.prototype.hasOwnProperty.call(course, "roadmapOrder"))
+              normalized.roadmapOrder = Number(course.roadmapOrder || 99);
+            if (Object.prototype.hasOwnProperty.call(course, "isRoadmapSlot"))
+              normalized.isRoadmapSlot = Boolean(course.isRoadmapSlot);
+            if (!defaultCourse) {
+              if (!Object.prototype.hasOwnProperty.call(course, "title"))
+                normalized.title = code;
+              if (!Object.prototype.hasOwnProperty.call(course, "credits"))
+                normalized.credits = 3;
+              if (!Object.prototype.hasOwnProperty.call(course, "hardPrerequisites"))
+                normalized.hardPrerequisites = [];
+              if (!Object.prototype.hasOwnProperty.call(course, "softPrerequisites"))
+                normalized.softPrerequisites = [];
+              if (!Object.prototype.hasOwnProperty.call(course, "roadmapOrder"))
+                normalized.roadmapOrder = 99;
+              if (!Object.prototype.hasOwnProperty.call(course, "isRoadmapSlot"))
+                normalized.isRoadmapSlot = false;
+            }
             return defaultCourse
-              ? { ...normalized, ...clone(defaultCourse) }
+              ? { ...clone(defaultCourse), ...normalized }
               : normalized;
           });
         fresh.courses.forEach((defaultCourse) => {
@@ -261,10 +336,9 @@
           Array.isArray(state.departments) && state.departments.length
             ? state.departments
             : fresh.departments;
-        state.gradeScale =
-          Array.isArray(state.gradeScale) && state.gradeScale.length
-            ? state.gradeScale
-            : fresh.gradeScale;
+        // BRAC University uses one published scale. Older local/cloud backups may
+        // contain editable UI values, so always restore the canonical data here.
+        state.gradeScale = clone(fresh.gradeScale);
         state.faculties = Array.isArray(state.faculties)
           ? state.faculties
           : fresh.faculties;
@@ -449,6 +523,7 @@
         createInitialState,
         createFreshAuthenticatedState,
         validateBackupState,
+        resolveFacultyEdit,
         migrateState,
         findLegacyMigrationCandidate,
         loadUserState,

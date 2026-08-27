@@ -41,6 +41,46 @@ test('settings expose account sync without browser credentials', () => {
   assert.match(app, /id="accountSignOutBtn"/);
 });
 
+test('settings use a read-only faculty editor and a canonical grade scale table', () => {
+  assert.match(app, /let editingFacultyId = null/);
+  assert.match(app, /data-action="edit-faculty"[^>]*>[\s\S]{0,120}data-lucide="pencil"/);
+  assert.match(app, /data-action="save-faculty-edit"[^>]*>[\s\S]{0,120}data-lucide="check"/);
+  assert.match(app, /data-action="cancel-faculty-edit"[^>]*>[\s\S]{0,120}data-lucide="x"/);
+  assert.match(app, /function validateFacultyDraft\(/);
+  assert.match(app, /Faculty initial already exists/);
+  assert.match(app, /class="grade-scale-table"/);
+  assert.match(app, /<th scope="col">Grade<\/th>/);
+  assert.match(app, /<th scope="col">Grade point<\/th>/);
+  assert.doesNotMatch(app, /data-action="update-grade-scale"/);
+});
+
+test('faculty settings filter locally while preserving the active edit row', () => {
+  assert.match(app, /id="facultySearch"/);
+  assert.match(app, /id="facultyDepartmentFilter"/);
+  assert.match(app, /id="facultyFilterCount"[^>]*role="status"/);
+  assert.match(app, /BracuCatalog\.filterCatalogItems\("faculty"[\s\S]*preserveKey:\s*editingFacultyId/);
+  assert.match(app, /facultySearch[\s\S]*renderFacultyList/);
+  assert.match(app, /facultyDepartmentFilter[\s\S]*renderFacultyList/);
+});
+
+test('semester add and edit use canonical term and dynamic year selectors', () => {
+  assert.match(html, /<select[^>]*id="semesterTermInput"/);
+  assert.match(html, /<select[^>]*id="semesterYearInput"/);
+  assert.doesNotMatch(html, /id="semesterNameInput"/);
+  assert.match(app, /data-semester-term-draft/);
+  assert.match(app, /data-semester-year-draft/);
+  assert.match(app, /BracuProfile\.semesterYearOptions/);
+  assert.match(app, /BracuProfile\.validateSemesterSelection/);
+});
+
+test('preview mode blocks faculty saving before any state mutation', () => {
+  const previewGuard = app.slice(app.indexOf('function installPreviewMutationGuard'), app.indexOf('function initializeApp'));
+  assert.match(previewGuard, /data-action='save-faculty-edit'/);
+  const saveHandler = app.slice(app.indexOf('if (action === "save-faculty-edit")'), app.indexOf('if (action === "edit-course")'));
+  assert.match(saveHandler, /if \(appAccessContext\?\.preview\)/);
+  assert.match(saveHandler, /return showToast\("Preview mode is read-only"\)/);
+});
+
 test('dashboard photo editor reuses private avatar choices and responsive drop behavior', () => {
   assert.match(app, /id="dashboardPhotoDropzone"/);
   assert.match(app, /id="dashboardPhotoInput"[^>]*accept="image\/jpeg,image\/png,image\/webp"/);

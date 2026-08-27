@@ -120,8 +120,10 @@
   }
   function showView(view) {
     const support = view === "support";
-    $("#accountsAdminView").hidden = support;
+    const catalog = view === "catalog";
+    $("#accountsAdminView").hidden = support || catalog;
     $("#supportAdminView").hidden = !support;
+    $("#catalogAdminView").hidden = !catalog;
     documentObject.querySelectorAll("[data-admin-view]").forEach((button) => {
       const active = button.dataset.adminView === view;
       button.classList.toggle("active", active);
@@ -132,10 +134,16 @@
       loadTickets();
       loadMaintenance();
     }
+    documentObject.dispatchEvent(
+      new CustomEvent("admin:view-change", { detail: { view, context } }),
+    );
   }
   async function boot() {
     context = await root.BracuAccess.requireAdminAccess();
     if (!context) return;
+    const catalogButton = $("[data-admin-view='catalog']");
+    if (catalogButton)
+      catalogButton.hidden = !has("catalog.manage");
     documentObject
       .querySelectorAll("[data-admin-view]")
       .forEach((button) =>

@@ -9,6 +9,10 @@ const pageHtml = fs.readFileSync(path.join(__dirname, "..", "index.html"), "utf8
 const interactionLayer = styles.slice(styles.indexOf("/* Approved modern interaction layer */"));
 const stylesBeforeInteractionLayer = styles.slice(0, styles.indexOf("/* Approved modern interaction layer */"));
 
+function read(relativePath) {
+  return fs.readFileSync(path.join(__dirname, "..", relativePath), "utf8");
+}
+
 function ruleBody(selector) {
   const escaped = selector.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   return styles.match(new RegExp(`${escaped}\\s*{([^}]*)}`, "s"))?.[1] || "";
@@ -97,6 +101,18 @@ test("cancel and destructive actions render the approved Lucide icons", () => {
   for (const action of ["delete-semester", "delete-attempt", "remove-course", "delete-faculty", "remove-department"]) {
     assert.match(appScript, new RegExp(`data-action="${action}"[^>]*><i data-lucide="trash-2"><\\/i>`));
   }
+  assert.match(appScript, /action === "delete-faculty"[\s\S]*confirm\([\s\S]*Faculty[\s\S]*course attempts/i);
+});
+
+test("Admin Catalog tabs support keyboard navigation and panel relationships", () => {
+  const adminHtml = read("admin.html");
+  const catalogScript = read("js/admin-catalog.js");
+  assert.match(adminHtml, /role="tab"[^>]*aria-controls="catalogContent"/);
+  assert.match(adminHtml, /id="catalogContent"[^>]*role="tabpanel"[^>]*aria-labelledby="catalogTabDepartment"/);
+  assert.match(catalogScript, /setAttribute\("aria-labelledby",\s*activeTab\.id\)/);
+  assert.match(catalogScript, /ArrowLeft|ArrowRight/);
+  assert.match(catalogScript, /Home|End/);
+  assert.match(catalogScript, /tabIndex/);
 });
 
 test("dashboard profile controls remain responsive and touch accessible", () => {
@@ -115,6 +131,18 @@ test("dashboard profile controls remain responsive and touch accessible", () => 
 test("dashboard profile omits the redundant Google account management note", () => {
   assert.doesNotMatch(functionBody("renderDashboardProfileView"), /Managed by your Google account/);
   assert.doesNotMatch(functionBody("renderDashboardProfileEditor"), /Managed by your Google account/);
+});
+
+test("faculty and grade settings use controlled responsive layouts", () => {
+  assert.match(ruleBody(".faculty-row"), /grid-template-columns:\s*minmax\(0, 1fr\) auto/);
+  assert.match(ruleBody(".faculty-row-editing"), /grid-template-columns:\s*repeat\(4, minmax\(0, 1fr\)\)/);
+  assert.match(ruleBody(".grade-scale-table"), /width:\s*100%/);
+  assert.match(ruleBody(".grade-scale-table th"), /text-align:\s*left/);
+  assert.match(ruleBody(".grade-scale-table-wrap"), /overflow-x:\s*auto/);
+  const mobile = atRuleBody("@media (max-width: 780px)");
+  assert.match(mobile, /\.faculty-row-editing[\s\S]*grid-template-columns:\s*1fr/);
+  assert.match(mobile, /\.faculty-row\s*\{[\s\S]*grid-template-columns:\s*1fr/);
+  assert.match(mobile, /\.faculty-row\s*>\s*\.secondary-btn[\s\S]*width:\s*100%/);
 });
 
 test("PDF report keeps attempt tags inside the course-code columns", () => {

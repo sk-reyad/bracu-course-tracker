@@ -275,6 +275,81 @@ test('faculty catalog migration persists its version for an existing local user'
   assert.deepEqual(persisted.faculties.map(faculty => faculty.initial), ['AAA', 'BBB']);
 });
 
+test('state migration restores the canonical BRACU grade scale instead of accepting backup edits', () => {
+  const defaults = defaultData();
+  defaults.gradeScale = [
+    { grade: 'A+', point: 4, range: '97 - 100' },
+    { grade: 'F', point: 0, range: '0 - <50' }
+  ];
+  const manager = StorageModule.createStorageManager({
+    defaultData: defaults,
+    normalizeCourseCode: value => value
+  });
+
+  const migrated = manager.migrateState({
+    gradeScale: [{ grade: 'A+', point: 1, range: 'Custom range' }]
+  });
+
+  assert.deepEqual(migrated.gradeScale, defaults.gradeScale);
+  assert.notEqual(migrated.gradeScale, defaults.gradeScale);
+});
+
+test('faculty edit transitions validate saves and leave source data unchanged on cancel or rejection', () => {
+  const manager = StorageModule.createStorageManager({
+    defaultData: defaultData(),
+    normalizeCourseCode: value => value
+  });
+  const faculties = [
+    { id: 'fac-1', name: 'Alice Faculty', initial: 'ALC', email: 'alice@bracu.ac.bd', department: 'CSE' },
+    { id: 'fac-2', name: 'Bob Faculty', initial: 'BOB', email: '', department: 'CSE' }
+  ];
+  const original = structuredClone(faculties);
+
+  const cancelled = manager.resolveFacultyEdit({
+    faculties,
+    departments: defaultData().departments,
+    facultyId: 'fac-1',
+    action: 'cancel',
+    draft: { name: 'Unsaved name', initial: 'ZZZ', email: '', department: 'CSE' }
+  });
+  assert.equal(cancelled.cancelled, true);
+  assert.deepEqual(cancelled.faculties, original);
+  assert.deepEqual(faculties, original);
+
+  const duplicate = manager.resolveFacultyEdit({
+    faculties,
+    departments: defaultData().departments,
+    facultyId: 'fac-1',
+    action: 'save',
+    draft: { name: 'Alice Revised', initial: 'bob', email: 'alice@bracu.ac.bd', department: 'CSE' }
+  });
+  assert.equal(duplicate.error, 'Faculty initial already exists');
+  assert.deepEqual(duplicate.faculties, original);
+  assert.deepEqual(faculties, original);
+
+  const saved = manager.resolveFacultyEdit({
+    faculties,
+    departments: defaultData().departments,
+    facultyId: 'fac-1',
+    action: 'save',
+    draft: { name: 'Alice Revised', initial: 'alc2', email: 'alice.revised@bracu.ac.bd', department: 'CSE' }
+  });
+  assert.equal(saved.saved, true);
+  assert.equal(saved.faculties.find(item => item.id === 'fac-1').initial, 'ALC2');
+  assert.equal(saved.faculties.find(item => item.id === 'fac-1').name, 'Alice Revised');
+  assert.deepEqual(faculties, original);
+
+  const spaced = manager.resolveFacultyEdit({
+    faculties,
+    departments: defaultData().departments,
+    facultyId: 'fac-1',
+    action: 'save',
+    draft: { name: 'Alice Revised', initial: 'a lc 2', email: '', department: 'CSE' }
+  });
+  assert.equal(spaced.saved, true);
+  assert.equal(spaced.faculties.find(item => item.id === 'fac-1').initial, 'ALC2');
+});
+
 test('preview state is generic, read-only, and does not use Supabase', () => {
   let supabaseCalls = 0;
   const preview = PreviewModule.createPreviewManager({ defaultData: defaultData() });

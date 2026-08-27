@@ -8,7 +8,9 @@ const STANDARD_ACTIONS = new Set([
   'update-user-identity',
   'set-account-status',
   'set-role',
-  'set-user-permissions'
+  'set-user-permissions',
+  'upsert-catalog-item',
+  'delete-catalog-item'
 ]);
 
 export class AdminRateLimitExceededError extends Error {

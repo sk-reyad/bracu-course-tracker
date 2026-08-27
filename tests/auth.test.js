@@ -640,3 +640,14 @@ test('admin password recovery suppresses normal student-session resume routing',
   assert.equal(AuthPageServices.shouldResumeStudentAuth('?mode=admin'), true);
   assert.equal(AuthPageServices.shouldResumeStudentAuth(''), true);
 });
+
+test('migration 018 grants catalog management only to the Super Admin role by default', () => {
+  const sql = fs.readFileSync(
+    path.join(__dirname, '..', 'supabase', 'migrations', '202608260018_global_catalog.sql'),
+    'utf8'
+  );
+  assert.match(sql, /insert into public\.app_permissions \(name, description\)[\s\S]*?\('catalog\.manage',/i);
+  assert.match(sql, /permission\.name = 'catalog\.manage'[\s\S]*?role\.name = 'super_admin'/i);
+  assert.doesNotMatch(sql, /permission\.name = 'catalog\.manage'[\s\S]{0,180}role\.name = 'admin'/i);
+  assert.match(sql, /manageable_permissions constant text\[\][\s\S]*?'catalog\.manage'/i);
+});

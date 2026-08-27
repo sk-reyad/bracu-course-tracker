@@ -5,6 +5,8 @@ let syncTrackerNow = async () => ({ skipped: true });
 let toastTimer = null;
 let editingCourseCode = null;
 let editingDepartmentId = null;
+let editingFacultyId = null;
+let facultyEditDraftState = null;
 let dashboardProfileEditing = false;
 let dashboardAvatarDraft = null;
 let dashboardSelectedPhotoUrl = "";
@@ -20,6 +22,8 @@ let dashboardAvatarDisplay = {
   error: null,
 };
 let editingSemesterId = null;
+let facultySearchQuery = "";
+let facultyDepartmentFilter = "";
 let activeFacultyTooltipTimer = null;
 let siteChromeFrame = null;
 let pageLoadingController = null;
@@ -161,6 +165,7 @@ function renderAll() {
   applyTheme();
   renderRoadmap(state);
   renderQuickAddOptions();
+  populateSemesterCreateOptions();
   updateQuickAddVisibility();
   renderSemesters();
   renderCourseList();
@@ -200,7 +205,7 @@ function configureFooter() {
   if (year) year.textContent = new Date().getFullYear();
   if (developer)
     developer.textContent = program.developerName || "SK Reyad Ali";
-  if (version) version.textContent = program.version || "v0.1.4.31";
+  if (version) version.textContent = program.version || "v0.9.0-beta.1";
 }
 
 function updateSiteChrome() {
@@ -331,6 +336,47 @@ function renderQuickAddOptions() {
     .join("");
 }
 
+function semesterTermOptions(selected = "") {
+  return (
+    '<option value="">Select term</option>' +
+    BracuProfile.TERMS.map(
+      (term) =>
+        `<option value="${term}" ${term === selected ? "selected" : ""}>${term}</option>`,
+    ).join("")
+  );
+}
+
+function semesterYearOptions(selected = "") {
+  return (
+    '<option value="">Select year</option>' +
+    BracuProfile.semesterYearOptions(undefined, selected)
+      .map(
+        (year) =>
+          `<option value="${year}" ${year === Number(selected) ? "selected" : ""}>${year}</option>`,
+      )
+      .join("")
+  );
+}
+
+function populateSemesterCreateOptions() {
+  const termSelect = $("#semesterTermInput");
+  const yearSelect = $("#semesterYearInput");
+  if (!termSelect || !yearSelect) return;
+  const selectedTerm = termSelect.value;
+  const selectedYear = yearSelect.value;
+  termSelect.innerHTML = semesterTermOptions(selectedTerm);
+  yearSelect.innerHTML = semesterYearOptions(selectedYear);
+}
+
+function validateSemesterChoice(term, year, excludeId = "") {
+  return BracuProfile.validateSemesterSelection({
+    term,
+    year,
+    semesters: state.semesters,
+    excludeId,
+  });
+}
+
 function renderSemesters() {
   const list = $("#semesterList");
   if (!state.semesters.length) {
@@ -349,8 +395,9 @@ function renderSemesters() {
         const course = courseByCode(state, attempt.code);
         return sum + Number(attempt.creditsOverride || course?.credits || 0);
       }, 0);
+      const semesterSelection = BracuProfile.parseSemesterName(semester.name);
       const titleBlock = isEditing
-        ? `<input class="semester-name-edit" value="${escapeHtml(semester.name)}" data-semester-name-draft="${semester.id}" aria-label="Semester name" />`
+        ? `<div class="semester-name-edit semester-name-selects"><label><span class="visually-hidden">Semester term</span><select data-semester-term-draft="${semester.id}" aria-label="Semester term">${semesterTermOptions(semesterSelection?.term)}</select></label><label><span class="visually-hidden">Semester year</span><select data-semester-year-draft="${semester.id}" aria-label="Semester year">${semesterYearOptions(semesterSelection?.year)}</select></label></div>`
         : `<h3>${escapeHtml(semester.name)}</h3>`;
       const actionBlock = isEditing
         ? `<div class="button-row semester-edit-actions"><button class="primary-btn small-btn" type="button" data-action="save-semester-edit" data-semester-id="${semester.id}">Save</button><button class="ghost-btn small-btn" type="button" data-action="cancel-semester-edit" data-semester-id="${semester.id}"><i data-lucide="x"></i> Cancel</button><button class="danger-btn small-btn" type="button" data-action="delete-semester" data-semester-id="${semester.id}"><i data-lucide="trash-2"></i> Delete</button></div>`
@@ -1156,6 +1203,109 @@ function renderSettings() {
   renderCloudEditor();
 }
 
+function facultyDepartmentLabel(id) {
+  const department = state.departments.find((item) => item.id === id);
+  return department ? `${department.id} — ${department.name}` : id || "Not assigned";
+}
+
+function validateFacultyDraft(draft, { excludeId = "" } = {}) {
+  const name = String(draft?.name || "").trim();
+  const initial = String(draft?.initial || "")
+    .trim()
+    .toUpperCase()
+    .replace(/\s+/g, "");
+  const email = String(draft?.email || "").trim();
+  const department = String(draft?.department || "").trim();
+  if (!name || !initial)
+    return { error: "Faculty name and initial are required" };
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+    return { error: "Enter a valid faculty email" };
+  if (!state.departments.some((item) => item.id === department))
+    return { error: "Select an existing department" };
+  const duplicate = state.faculties.some(
+    (faculty) =>
+      faculty.id !== excludeId &&
+      String(faculty.initial || "")
+        .trim()
+        .toUpperCase()
+        .replace(/\s+/g, "") === initial,
+  );
+  if (duplicate) return { error: "Faculty initial already exists" };
+  return { value: { name, initial, email, department } };
+}
+
+function facultyEditDraft(facultyId) {
+  if (editingFacultyId === facultyId && facultyEditDraftState)
+    return facultyEditDraftState.snapshot();
+  const fieldValue = (field) =>
+    document.querySelector(
+      `[data-faculty-draft="${facultyId}"][data-field="${field}"]`,
+    )?.value;
+  return {
+    name: fieldValue("name"),
+    email: fieldValue("email"),
+    initial: fieldValue("initial"),
+    department: fieldValue("department"),
+  };
+}
+
+function facultyDepartmentFilterOptions(selected = "") {
+  return (
+    '<option value="">All departments</option>' +
+    state.departments
+      .map(
+        (department) =>
+          `<option value="${escapeHtml(department.id)}" ${department.id === selected ? "selected" : ""}>${escapeHtml(department.id)} — ${escapeHtml(department.name)}</option>`,
+      )
+      .join("")
+  );
+}
+
+function facultyRowMarkup(faculty) {
+  const isEditing = editingFacultyId === faculty.id;
+  const displayedFaculty =
+    isEditing && facultyEditDraftState
+      ? facultyEditDraftState.snapshot()
+      : faculty;
+  if (isEditing)
+    return `<article class="faculty-row faculty-row-editing" data-faculty-id="${faculty.id}">
+          <label>Faculty name<input value="${escapeHtml(displayedFaculty.name)}" data-faculty-draft="${faculty.id}" data-field="name" autocomplete="off" /></label>
+          <label>Email <span class="field-optional">optional</span><input type="email" value="${escapeHtml(displayedFaculty.email || "")}" data-faculty-draft="${faculty.id}" data-field="email" autocomplete="off" /></label>
+          <label>Initial<input value="${escapeHtml(displayedFaculty.initial || "")}" data-faculty-draft="${faculty.id}" data-field="initial" maxlength="20" autocomplete="off" /></label>
+          <label>Department<select data-faculty-draft="${faculty.id}" data-field="department">${departmentOptions(displayedFaculty.department)}</select></label>
+          <div class="faculty-edit-actions">
+            <button class="primary-btn" type="button" data-action="save-faculty-edit" data-faculty-id="${faculty.id}"><i data-lucide="check"></i> Save</button>
+            <button class="ghost-btn" type="button" data-action="cancel-faculty-edit"><i data-lucide="x"></i> Cancel</button>
+            <button class="danger-btn" type="button" data-action="delete-faculty" data-faculty-id="${faculty.id}"><i data-lucide="trash-2"></i> Delete</button>
+          </div>
+        </article>`;
+  return `<article class="faculty-row" data-faculty-id="${faculty.id}">
+        <div class="faculty-row-summary">
+          <span class="faculty-row-initial">${escapeHtml(faculty.initial || "—")}</span>
+          <div><strong>${escapeHtml(faculty.name || "Unnamed faculty")}</strong><small>${escapeHtml(faculty.email || "Email not added")}</small></div>
+          <span class="faculty-row-department">${escapeHtml(facultyDepartmentLabel(faculty.department))}</span>
+        </div>
+        <button class="secondary-btn" type="button" data-action="edit-faculty" data-faculty-id="${faculty.id}"><i data-lucide="pencil"></i> Edit</button>
+      </article>`;
+}
+
+function renderFacultyList() {
+  const list = $("#facultyList");
+  const count = $("#facultyFilterCount");
+  if (!list || !count) return;
+  const allFaculties = getFacultiesAlphabetically();
+  const visibleFaculties = BracuCatalog.filterCatalogItems("faculty", allFaculties, {
+    query: facultySearchQuery,
+    department: facultyDepartmentFilter,
+    preserveKey: editingFacultyId,
+  });
+  count.textContent = `${visibleFaculties.length} of ${allFaculties.length} ${allFaculties.length === 1 ? "faculty member" : "faculty members"}`;
+  list.innerHTML = visibleFaculties.length
+    ? visibleFaculties.map(facultyRowMarkup).join("")
+    : `<div class="empty-state">${allFaculties.length ? "No matching faculty. Try changing your search or department." : "No faculty added yet."}</div>`;
+  refreshIcons();
+}
+
 function renderFacultyEditor() {
   $("#facultyEditor").innerHTML = `
     <div class="editor-card">
@@ -1168,23 +1318,21 @@ function renderFacultyEditor() {
         <button class="primary-btn" type="submit">Add faculty</button>
       </form>
     </div>
-    <div class="inline-list">
-      ${
-        state.faculties.length
-          ? getFacultiesAlphabetically()
-              .map(
-                (faculty) =>
-                  `<div class="inline-item" data-faculty-id="${faculty.id}"><input value="${escapeHtml(faculty.name)}" data-action="update-faculty" data-field="name" data-faculty-id="${faculty.id}" placeholder="Name" /><input value="${escapeHtml(faculty.email || "")}" data-action="update-faculty" data-field="email" data-faculty-id="${faculty.id}" placeholder="Email" /><input value="${escapeHtml(faculty.initial || "")}" data-action="update-faculty" data-field="initial" data-faculty-id="${faculty.id}" placeholder="Initial" /><select data-action="update-faculty" data-field="department" data-faculty-id="${faculty.id}">${departmentOptions(faculty.department)}</select><button class="danger-btn" type="button" data-action="delete-faculty" data-faculty-id="${faculty.id}"><i data-lucide="trash-2"></i> Delete</button></div>`,
-              )
-              .join("")
-          : `<div class="empty-state">No faculty added yet.</div>`
-      }
-    </div>`;
+    <div class="faculty-filter-bar" aria-label="Faculty filters">
+      <label class="faculty-search"><span>Search faculty</span><input id="facultySearch" type="search" value="${escapeHtml(facultySearchQuery)}" placeholder="Search initial, name, or email" autocomplete="off" /></label>
+      <label><span>Department</span><select id="facultyDepartmentFilter">${facultyDepartmentFilterOptions(facultyDepartmentFilter)}</select></label>
+      <p id="facultyFilterCount" class="faculty-filter-count" role="status" aria-live="polite"></p>
+    </div>
+    <div id="facultyList" class="faculty-list"></div>`;
+  renderFacultyList();
 }
 
 function renderGradeEditor() {
-  $("#gradeEditor").innerHTML =
-    `<div class="grade-grid">${state.gradeScale.map((item, index) => `<div class="grade-item"><label>Grade<input value="${escapeHtml(item.grade)}" data-action="update-grade-scale" data-index="${index}" data-field="grade" /></label><label>Point<input type="number" step="0.1" value="${item.point ?? ""}" data-action="update-grade-scale" data-index="${index}" data-field="point" /></label><label>Range<input value="${escapeHtml(item.range || "")}" data-action="update-grade-scale" data-index="${index}" data-field="range" /></label></div>`).join("")}</div>`;
+  const scale = DEFAULT_DATA.gradeScale || state.gradeScale || [];
+  $("#gradeEditor").innerHTML = `<section class="grade-scale-panel" aria-labelledby="gradeScaleTitle">
+    <div class="grade-scale-heading"><div><h3 id="gradeScaleTitle">BRACU unified grading scale</h3><p>This official scale is used for all CGPA calculations.</p></div><span class="grade-scale-lock"><i data-lucide="lock-keyhole"></i> Fixed scale</span></div>
+    <div class="grade-scale-table-wrap" tabindex="0"><table class="grade-scale-table"><thead><tr><th scope="col">Grade</th><th scope="col">Grade point</th><th scope="col">Marks range</th></tr></thead><tbody>${scale.map((item) => `<tr><th scope="row">${escapeHtml(item.grade)}</th><td>${item.point === null || item.point === undefined ? "—" : escapeHtml(Number(item.point).toFixed(1).replace(/\.0$/, ""))}</td><td>${escapeHtml(item.range || "—")}</td></tr>`).join("")}</tbody></table></div>
+  </section>`;
 }
 
 function renderBackupEditor() {
@@ -1233,15 +1381,20 @@ function categoryOptions(selected = "") {
     .join("");
 }
 
-function addSemester(name) {
-  if (!name.trim()) return showToast("Semester name is required");
+function addSemester(term, year) {
+  const result = validateSemesterChoice(term, year);
+  if (result.error) {
+    showToast(result.error);
+    return false;
+  }
   state.semesters.push({
     id: uid("sem"),
     number: state.semesters.length + 1,
-    name: name.trim(),
+    name: result.value.name,
     courses: [],
   });
   persist("Semester added");
+  return true;
 }
 
 function addAttempt(data) {
@@ -1359,13 +1512,27 @@ function saveCourseFromForm(form) {
   };
   if (!payload.title) return showToast("Course title is required");
   if (editingCourseCode) {
+    const existingCourse = state.courses.find(
+      (course) => course.code === editingCourseCode,
+    );
+    const catalogEdit =
+      typeof BracuCatalog !== "undefined"
+        ? BracuCatalog.prepareCatalogEdit("course", existingCourse, payload)
+        : { item: payload };
+    const nextCourse = catalogEdit.item;
     if (
       editingCourseCode !== newCode &&
       state.courses.some((course) => course.code === newCode)
     )
       return showToast("Another course already uses this code");
+    if (catalogEdit.catalogTombstoneKey)
+      BracuCatalog.markCatalogDeleted(state, "course", {
+        code: catalogEdit.catalogTombstoneKey,
+        catalogOrigin: "global",
+        catalogKey: catalogEdit.catalogTombstoneKey,
+      });
     state.courses = state.courses.map((course) =>
-      course.code === editingCourseCode ? payload : course,
+      course.code === editingCourseCode ? nextCourse : course,
     );
     state.courses.forEach((course) => {
       course.hardPrerequisites = (course.hardPrerequisites || []).map((code) =>
@@ -1399,6 +1566,9 @@ function removeCourse(code) {
   )
     return;
   if (!used && !confirm(`Remove ${code}?`)) return;
+  const removedCourse = state.courses.find((course) => course.code === code);
+  if (typeof BracuCatalog !== "undefined")
+    BracuCatalog.markCatalogDeleted(state, "course", removedCourse);
   state.courses = state.courses.filter((course) => course.code !== code);
   state.courses.forEach((course) => {
     course.hardPrerequisites = (course.hardPrerequisites || []).filter(
@@ -1439,13 +1609,31 @@ function saveDepartmentFromForm(form) {
     color: String(fd.get("color") || "blue").trim(),
   };
   if (editingDepartmentId) {
+    const existingDepartment = state.departments.find(
+      (department) => department.id === editingDepartmentId,
+    );
+    const catalogEdit =
+      typeof BracuCatalog !== "undefined"
+        ? BracuCatalog.prepareCatalogEdit(
+            "department",
+            existingDepartment,
+            payload,
+          )
+        : { item: payload };
+    const nextDepartment = catalogEdit.item;
     if (
       editingDepartmentId !== newId &&
       state.departments.some((dept) => dept.id === newId)
     )
       return showToast("Another department already uses this code");
+    if (catalogEdit.catalogTombstoneKey)
+      BracuCatalog.markCatalogDeleted(state, "department", {
+        id: catalogEdit.catalogTombstoneKey,
+        catalogOrigin: "global",
+        catalogKey: catalogEdit.catalogTombstoneKey,
+      });
     state.departments = state.departments.map((dept) =>
-      dept.id === editingDepartmentId ? payload : dept,
+      dept.id === editingDepartmentId ? nextDepartment : dept,
     );
     state.courses.forEach((course) => {
       if (course.department === editingDepartmentId) course.department = newId;
@@ -1466,6 +1654,9 @@ function saveDepartmentFromForm(form) {
 function removeDepartment(id) {
   if (id === "OTH") return showToast("OTH department cannot be removed");
   if (!confirm(`Remove ${id}? Courses and faculty will move to OTH.`)) return;
+  const removedDepartment = state.departments.find((department) => department.id === id);
+  if (typeof BracuCatalog !== "undefined")
+    BracuCatalog.markCatalogDeleted(state, "department", removedDepartment);
   if (!state.departments.some((dept) => dept.id === "OTH"))
     state.departments.push({
       id: "OTH",
@@ -1533,15 +1724,22 @@ function bindEvents() {
   );
   $("#addSemesterBtn").addEventListener("click", () => {
     $("#semesterCreate").hidden = false;
-    $("#semesterNameInput").focus();
+    populateSemesterCreateOptions();
+    $("#semesterTermInput").focus();
   });
-  $("#cancelSemesterBtn").addEventListener(
-    "click",
-    () => ($("#semesterCreate").hidden = true),
-  );
+  $("#cancelSemesterBtn").addEventListener("click", () => {
+    $("#semesterCreate").hidden = true;
+    $("#semesterTermInput").value = "";
+    $("#semesterYearInput").value = "";
+  });
   $("#saveSemesterBtn").addEventListener("click", () => {
-    addSemester($("#semesterNameInput").value);
-    $("#semesterNameInput").value = "";
+    const added = addSemester(
+      $("#semesterTermInput").value,
+      $("#semesterYearInput").value,
+    );
+    if (!added) return;
+    $("#semesterTermInput").value = "";
+    $("#semesterYearInput").value = "";
     $("#semesterCreate").hidden = true;
   });
   $("#quickStatus").addEventListener("change", updateQuickAddVisibility);
@@ -1647,6 +1845,8 @@ function bindEvents() {
       ) {
         state = resetState();
         editingSemesterId = null;
+        editingFacultyId = null;
+        facultyEditDraftState = null;
         persist("Data reset");
       }
       return;
@@ -1665,14 +1865,22 @@ function bindEvents() {
       refreshIcons();
     }
     if (action === "save-semester-edit") {
-      const input = document.querySelector(
-        `[data-semester-name-draft="${target.dataset.semesterId}"]`,
+      const termSelect = document.querySelector(
+        `[data-semester-term-draft="${target.dataset.semesterId}"]`,
+      );
+      const yearSelect = document.querySelector(
+        `[data-semester-year-draft="${target.dataset.semesterId}"]`,
       );
       const semester = state.semesters.find(
         (item) => item.id === target.dataset.semesterId,
       );
-      if (semester && input && input.value.trim())
-        semester.name = input.value.trim();
+      const result = validateSemesterChoice(
+        termSelect?.value,
+        yearSelect?.value,
+        target.dataset.semesterId,
+      );
+      if (result.error) return showToast(result.error);
+      if (semester) semester.name = result.value.name;
       editingSemesterId = null;
       persist("Semester saved");
     }
@@ -1692,6 +1900,19 @@ function bindEvents() {
     if (action === "delete-attempt")
       deleteAttempt(target.dataset.semesterId, target.dataset.attemptId);
     if (action === "delete-faculty") {
+      const removedFaculty = state.faculties.find(
+        (item) => item.id === target.dataset.facultyId,
+      );
+      if (!removedFaculty) return showToast("Faculty not found");
+      const facultyLabel = removedFaculty.name || removedFaculty.initial;
+      if (
+        !confirm(
+          `Delete ${facultyLabel}? Faculty assignments will be cleared from linked course attempts.`,
+        )
+      )
+        return;
+      if (typeof BracuCatalog !== "undefined")
+        BracuCatalog.markCatalogDeleted(state, "faculty", removedFaculty);
       state.faculties = state.faculties.filter(
         (item) => item.id !== target.dataset.facultyId,
       );
@@ -1701,7 +1922,71 @@ function bindEvents() {
             attempt.facultyId = "";
         }),
       );
+      editingFacultyId = null;
+      facultyEditDraftState = null;
       persist("Faculty deleted");
+    }
+    if (action === "edit-faculty") {
+      editingFacultyId = target.dataset.facultyId;
+      const faculty = state.faculties.find(
+        (item) => item.id === editingFacultyId,
+      );
+      facultyEditDraftState = faculty
+        ? BracuCatalog.createFacultyEditDraft(faculty)
+        : null;
+      renderFacultyEditor();
+      refreshIcons();
+    }
+    if (action === "cancel-faculty-edit") {
+      state.faculties = BracuStorage.resolveFacultyEdit({
+        faculties: state.faculties,
+        action: "cancel",
+      }).faculties;
+      editingFacultyId = null;
+      facultyEditDraftState = null;
+      renderFacultyEditor();
+      refreshIcons();
+    }
+    if (action === "save-faculty-edit") {
+      if (appAccessContext?.preview)
+        return showToast("Preview mode is read-only");
+      const result = BracuStorage.resolveFacultyEdit({
+        faculties: state.faculties,
+        departments: state.departments,
+        facultyId: target.dataset.facultyId,
+        action: "save",
+        draft: facultyEditDraft(target.dataset.facultyId),
+      });
+      if (result.error) {
+        showToast(result.error);
+        return;
+      }
+      const currentFaculty = state.faculties.find(
+        (faculty) => faculty.id === target.dataset.facultyId,
+      );
+      const editedFaculty = result.faculties.find(
+        (faculty) => faculty.id === target.dataset.facultyId,
+      );
+      const catalogEdit =
+        typeof BracuCatalog !== "undefined"
+          ? BracuCatalog.prepareCatalogEdit(
+              "faculty",
+              currentFaculty,
+              editedFaculty,
+            )
+          : { item: editedFaculty };
+      if (catalogEdit.catalogTombstoneKey)
+        BracuCatalog.markCatalogDeleted(state, "faculty", {
+          initial: catalogEdit.catalogTombstoneKey,
+          catalogOrigin: "global",
+          catalogKey: catalogEdit.catalogTombstoneKey,
+        });
+      state.faculties = result.faculties.map((faculty) =>
+        faculty.id === target.dataset.facultyId ? catalogEdit.item : faculty,
+      );
+      editingFacultyId = null;
+      facultyEditDraftState = null;
+      persist("Faculty saved");
     }
     if (action === "edit-course") openCourseModal(target.dataset.code);
     if (action === "remove-course") removeCourse(target.dataset.code);
@@ -1773,6 +2058,18 @@ function bindEvents() {
 async function handleInputChange(event) {
   const target = event.target;
   const action = target.dataset.action;
+  if (
+    target.dataset.facultyDraft === editingFacultyId &&
+    facultyEditDraftState
+  ) {
+    facultyEditDraftState.update(target.dataset.field, target.value);
+    return;
+  }
+  if (target.id === "facultyDepartmentFilter") {
+    facultyDepartmentFilter = target.value;
+    renderFacultyList();
+    return;
+  }
   if (target.id === "importBackupInput" && target.files?.[0]) {
     try {
       state = await importStateFile(target.files[0]);
@@ -1794,40 +2091,23 @@ async function handleInputChange(event) {
       target.dataset.field,
       target.value,
     );
-  if (action === "update-faculty") {
-    const faculty = state.faculties.find(
-      (item) => item.id === target.dataset.facultyId,
-    );
-    if (faculty) {
-      faculty[target.dataset.field] =
-        target.dataset.field === "initial"
-          ? target.value.toUpperCase()
-          : target.value;
-      saveWithoutFullRender();
-      renderQuickAddOptions();
-      renderSemesters();
-      renderReport();
-    }
-  }
-  if (action === "update-grade-scale") {
-    const item = state.gradeScale[Number(target.dataset.index)];
-    if (item) {
-      const field = target.dataset.field;
-      item[field] =
-        field === "point"
-          ? target.value === ""
-            ? null
-            : Number(target.value)
-          : target.value;
-      saveWithoutFullRender();
-      renderSemesters();
-      renderReport();
-    }
-  }
 }
 
 function handleLiveInput(event) {
-  // Live input intentionally kept lightweight. Semester names are saved only after pressing Save in edit mode.
+  if (
+    event.target.dataset.facultyDraft === editingFacultyId &&
+    facultyEditDraftState
+  ) {
+    facultyEditDraftState.update(
+      event.target.dataset.field,
+      event.target.value,
+    );
+    return;
+  }
+  if (event.target.id === "facultySearch") {
+    facultySearchQuery = event.target.value;
+    renderFacultyList();
+  }
 }
 
 function handleSubmit(event) {
@@ -1837,9 +2117,9 @@ function handleSubmit(event) {
     const email = $("#facultyEmail").value.trim();
     const initial = $("#facultyInitial").value.trim().toUpperCase();
     const department = $("#facultyDepartment").value;
-    if (!name && !initial)
-      return showToast("Faculty name or initial is required");
-    state.faculties.push({ id: uid("fac"), name, email, initial, department });
+    const result = validateFacultyDraft({ name, email, initial, department });
+    if (result.error) return showToast(result.error);
+    state.faculties.push({ id: uid("fac"), ...result.value });
     persist("Faculty added");
   }
   if (event.target.id === "dashboardProfileForm") {
@@ -1877,6 +2157,7 @@ function installPreviewMutationGuard() {
     "[data-action^='remove-']",
     "[data-action^='update-']",
     "[data-action='save-semester-edit']",
+    "[data-action='save-faculty-edit']",
   ].join(",");
   const block = (event) => {
     if (!event.target.closest?.(mutationSelector)) return;

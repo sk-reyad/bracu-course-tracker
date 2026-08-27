@@ -3,6 +3,47 @@ const assert = require('node:assert/strict');
 
 const Profile = require('../js/profile.js');
 
+test('semester choices use the Dhaka year and create one canonical term-year name', () => {
+  assert.equal(
+    Profile.getDhakaYear(new Date('2026-12-31T18:30:00.000Z')),
+    2027
+  );
+  const years = Profile.semesterYearOptions(2026);
+  assert.equal(years[0], 2036);
+  assert.equal(years.at(-1), 2001);
+  assert.equal(years.length, 36);
+  assert.deepEqual(Profile.parseSemesterName('Fall 2024'), {
+    term: 'Fall', year: 2024, name: 'Fall 2024'
+  });
+  assert.equal(Profile.parseSemesterName('Autumn 2024'), null);
+});
+
+test('semester selection rejects incomplete, out-of-range, and duplicate choices but permits the edited row', () => {
+  const semesters = [
+    { id: 'semester-1', name: 'Fall 2024' },
+    { id: 'semester-2', name: 'Spring 2025' },
+  ];
+
+  assert.deepEqual(
+    Profile.validateSemesterSelection({ term: '', year: 2026, semesters, currentYear: 2026 }),
+    { error: 'Select a term and year.' }
+  );
+  assert.deepEqual(
+    Profile.validateSemesterSelection({ term: 'Fall', year: 2037, semesters, currentYear: 2026 }),
+    { error: 'Select a year from 2001 to 2036.' }
+  );
+  assert.deepEqual(
+    Profile.validateSemesterSelection({ term: 'fall', year: 2024, semesters, currentYear: 2026 }),
+    { error: 'That semester already exists.' }
+  );
+  assert.deepEqual(
+    Profile.validateSemesterSelection({
+      term: 'Fall', year: 2024, semesters, excludeId: 'semester-1', currentYear: 2026
+    }),
+    { value: { term: 'Fall', year: 2024, name: 'Fall 2024' } }
+  );
+});
+
 test('canonical profile mapping uses database field names and serializable avatar identity only', () => {
   assert.deepEqual(Profile.normalizeCanonicalProfile({
     full_name: 'Student Name',

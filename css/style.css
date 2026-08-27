@@ -1165,8 +1165,21 @@ main {
   margin-bottom: 14px;
 }
 
-.semester-create input {
+.semester-create-fields {
   flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.semester-create-fields label,
+.semester-name-selects label {
+  min-width: 0;
+}
+
+.semester-create-fields select,
+.semester-name-selects select {
+  margin-bottom: 0;
 }
 
 .semester-create[hidden] {
@@ -1275,6 +1288,12 @@ textarea:focus {
 .semester-name-edit {
   max-width: 360px;
   font-weight: 800;
+}
+
+.semester-name-selects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 8px;
 }
 
 .semester-meta {
@@ -2150,6 +2169,120 @@ textarea:focus {
   margin-top: 14px;
 }
 
+.faculty-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.faculty-filter-bar {
+  margin-top: 14px;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: minmax(240px, 1.6fr) minmax(210px, 1fr) auto;
+  align-items: end;
+  gap: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-soft);
+}
+
+.faculty-filter-bar label {
+  min-width: 0;
+  display: grid;
+  gap: 0.42rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.faculty-filter-bar input,
+.faculty-filter-bar select {
+  margin-bottom: 0;
+}
+
+.faculty-filter-count {
+  min-height: 42px;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.faculty-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.faculty-row-summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(150px, 0.7fr);
+  gap: 12px;
+  align-items: center;
+  min-width: 0;
+}
+
+.faculty-row-initial {
+  display: grid;
+  min-width: 46px;
+  min-height: 40px;
+  padding: 0 8px;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+}
+
+.faculty-row-summary strong,
+.faculty-row-summary small,
+.faculty-row-department {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.faculty-row-summary small,
+.faculty-row-department,
+.field-optional {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.faculty-row-summary small { margin-top: 0.18rem; }
+
+.faculty-row-editing {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: end;
+}
+
+.faculty-row-editing label {
+  display: grid;
+  gap: 0.42rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.faculty-edit-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding-top: 2px;
+}
+
 .inline-item {
   border: 1px solid var(--border);
   background: var(--surface);
@@ -2161,20 +2294,71 @@ textarea:focus {
   align-items: center;
 }
 
-.grade-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
+.grade-scale-panel {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  overflow: hidden;
 }
 
-.grade-item {
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 10px;
-  background: var(--surface);
-  display: grid;
-  gap: 8px;
+.grade-scale-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 15px 16px;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface-soft) 58%, var(--surface));
 }
+
+.grade-scale-heading h3,
+.grade-scale-heading p { margin: 0; }
+.grade-scale-heading p { margin-top: 0.3rem; color: var(--muted); font-size: 0.84rem; }
+
+.grade-scale-lock {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.62rem;
+  border: 1px solid color-mix(in srgb, var(--primary) 28%, var(--border));
+  border-radius: 999px;
+  color: var(--primary);
+  background: var(--primary-soft);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.grade-scale-lock svg { width: 14px; height: 14px; }
+
+.grade-scale-table-wrap { overflow-x: auto; }
+
+.grade-scale-table {
+  width: 100%;
+  min-width: 460px;
+  border-collapse: collapse;
+}
+
+.grade-scale-table th,
+.grade-scale-table td {
+  padding: 0.78rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  text-align: left;
+}
+
+.grade-scale-table th { text-align: left; }
+
+.grade-scale-table thead th {
+  color: var(--muted);
+  font-size: 0.74rem;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.grade-scale-table tbody th { color: var(--primary); }
+.grade-scale-table tbody tr:last-child th,
+.grade-scale-table tbody tr:last-child td { border-bottom: 0; }
 
 .file-input {
   padding-top: 10px;
@@ -2352,7 +2536,6 @@ textarea:focus {
   .department-grid,
   .stats-grid,
   .editor-grid,
-  .grade-grid,
   .report-metrics {
     grid-template-columns: 1fr;
   }
@@ -2377,10 +2560,27 @@ textarea:focus {
   }
 
   .inline-item,
+  .faculty-row-editing,
   .roadmap-like-head,
   .path-fields {
     grid-template-columns: 1fr;
   }
+
+  .faculty-row {
+    grid-template-columns: 1fr;
+  }
+
+  .faculty-row > .secondary-btn {
+    width: 100%;
+  }
+
+  .faculty-row-summary {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .faculty-row-department { grid-column: 2; }
+
+  .grade-scale-heading { flex-direction: column; }
 
   .filters input,
   .filters select {
@@ -2389,6 +2589,16 @@ textarea:focus {
 
   .semester-create {
     flex-direction: column;
+  }
+
+  .semester-create-fields,
+  .semester-name-selects,
+  .faculty-filter-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .faculty-filter-count {
+    justify-content: start;
   }
 
   .report-content {
