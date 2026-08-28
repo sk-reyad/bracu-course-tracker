@@ -8,6 +8,19 @@ const { pathToFileURL } = require('node:url');
 
 const root = path.join(__dirname, '..');
 
+test('production CSP permits only the Google Identity Services browser boundaries it uses', () => {
+  const vercel = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'));
+  const headers = vercel.headers.flatMap(entry => entry.headers || []);
+  const policy = headers.find(header => header.key === 'Content-Security-Policy')?.value || '';
+  assert.match(policy, /script-src[^;]*https:\/\/accounts\.google\.com\/gsi\/client/);
+  assert.match(policy, /connect-src[^;]*https:\/\/accounts\.google\.com\/gsi\//);
+  assert.match(policy, /frame-src[^;]*https:\/\/accounts\.google\.com\/gsi\//);
+
+  const publicConfig = fs.readFileSync(path.join(root, 'js', 'config.js'), 'utf8');
+  const authSource = fs.readFileSync(path.join(root, 'js', 'auth.js'), 'utf8');
+  assert.doesNotMatch(`${publicConfig}\n${authSource}`, /googleClientSecret|client_secret/i);
+});
+
 test('Supabase Auth config mirrors the administrator password policy', () => {
   const config = fs.readFileSync(path.join(root, 'supabase', 'config.toml'), 'utf8');
   assert.match(config, /minimum_password_length\s*=\s*12/);
@@ -308,6 +321,8 @@ test('catalog Edge actions use explicit authorization, allowlists, AAL2, and aud
   assert.match(actions, /pickAllowed|allowed/i);
   assert.match(actions, /assertCatalogManager/);
   assert.match(actions, /normalizeCatalogPayload|cleanCourseCode/);
+  assert.match(actions, /cleanVisibility/);
+  assert.match(actions, /visibility/);
   assert.match(actions, /admin\.rpc\('mutate_global_catalog'/);
   assert.match(actions, /PUBLIC_FIELDS/);
   assert.doesNotMatch(actions, /\.select\('\*'\)/);

@@ -13,6 +13,8 @@
       adminPageUrl: "admin.html",
       errorPageUrl: "error.html",
       turnstileSiteKey: "0x4AAAAAAEX2Osurb6IGHo9a",
+      googleClientId:
+        "164348695751-2gve1nggfkit4eecu15kntset1trf7f3.apps.googleusercontent.com",
     };
   },
 );

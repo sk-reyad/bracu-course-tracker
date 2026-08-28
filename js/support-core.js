@@ -65,7 +65,6 @@
         page !== "maintenance.html"
       )
         return "maintenance.html";
-      if (!enabled && page === "maintenance.html") return "index.html";
       return null;
     }
 

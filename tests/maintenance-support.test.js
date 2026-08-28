@@ -2,6 +2,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
+const vm = require("node:vm");
 
 const root = path.join(__dirname, "..");
 
@@ -20,6 +21,43 @@ test("production maintenance page uses Split design and exposes support plus adm
   assert.match(html, /js\/maintenance-preview\.js/);
   assert.match(html, /js\/maintenance-guard\.js/);
   assert.match(html, /js\/support-widget\.js/);
+});
+
+test("maintenance Check again makes one fresh request to the public entry point", () => {
+  const source = fs.readFileSync(
+    path.join(root, "js", "maintenance-preview.js"),
+    "utf8",
+  );
+  let retry = null;
+  let assigned = "";
+  let reloads = 0;
+  const retryButton = {
+    addEventListener(event, callback) {
+      if (event === "click") retry = callback;
+    },
+  };
+  const sandbox = {
+    document: {
+      documentElement: { dataset: {} },
+      getElementById(id) {
+        return id === "maintenanceRetry" ? retryButton : null;
+      },
+    },
+    localStorage: { getItem() { return "light"; }, setItem() {} },
+    location: {
+      assign(value) { assigned = value; },
+      reload() { reloads += 1; },
+    },
+    matchMedia() { return { matches: false }; },
+  };
+  sandbox.globalThis = sandbox;
+
+  vm.runInNewContext(source, sandbox);
+  assert.equal(typeof retry, "function");
+  retry();
+
+  assert.equal(assigned, "index.html");
+  assert.equal(reloads, 0);
 });
 
 test("production maintenance assets remain theme-safe, responsive, and motion-safe", () => {

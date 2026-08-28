@@ -83,6 +83,62 @@
       );
     }
 
+    function mountGoogleIdentityButton({
+      google,
+      container,
+      clientId,
+      theme = "light",
+      onCredential,
+      onError,
+    } = {}) {
+      const normalizedClientId = String(clientId || "").trim();
+      if (
+        !/^[a-z0-9._-]+\.apps\.googleusercontent\.com$/i.test(
+          normalizedClientId,
+        )
+      ) {
+        throw new Error("Google sign-in is not configured yet.");
+      }
+      if (!google?.accounts?.id || !container) {
+        throw new Error("Google sign-in could not be loaded. Refresh and try again.");
+      }
+      if (typeof onCredential !== "function") {
+        throw new Error("Google sign-in callback is unavailable.");
+      }
+
+      const reportError = (error) => {
+        if (typeof onError === "function") onError(error);
+      };
+      google.accounts.id.initialize({
+        client_id: normalizedClientId,
+        auto_select: false,
+        hd: "g.bracu.ac.bd",
+        callback(response) {
+          const credential = String(response?.credential || "").trim();
+          if (!credential) {
+            reportError(
+              new Error("Google sign-in did not return a credential. Try again."),
+            );
+            return;
+          }
+          Promise.resolve(onCredential(credential)).catch(reportError);
+        },
+      });
+
+      const width = Math.floor(Number(container.clientWidth) || 0);
+      const buttonOptions = {
+        type: "standard",
+        theme: theme === "dark" ? "filled_black" : "outline",
+        size: "large",
+        text: "continue_with",
+        shape: "rectangular",
+        logo_alignment: "left",
+      };
+      if (width > 0) buttonOptions.width = width;
+      google.accounts.id.renderButton(container, buttonOptions);
+      return container;
+    }
+
     function createAuthController({
       client,
       authCore,
@@ -97,16 +153,19 @@
           ? window.location
           : { href: "http://localhost/auth.html" });
 
-      async function startStudentGoogleAuth() {
-        const redirectTo = new URL(
-          config.authPageUrl || "auth.html",
-          currentLocation.href,
-        ).href;
-        const { error } = await client.auth.signInWithOAuth({
+      async function signInStudentWithGoogleIdToken(credential) {
+        const token = String(credential || "").trim();
+        if (!token) {
+          throw new Error(
+            "Google sign-in did not return a credential. Try again.",
+          );
+        }
+        const { error } = await client.auth.signInWithIdToken({
           provider: "google",
-          options: { redirectTo },
+          token,
         });
         if (error) throw error;
+        return completeStudentOAuth();
       }
 
       async function completeStudentOAuth() {
@@ -283,7 +342,7 @@
       }
 
       return Object.freeze({
-        startStudentGoogleAuth,
+        signInStudentWithGoogleIdToken,
         completeStudentOAuth,
         submitOnboarding,
         submitAdminLogin,
@@ -303,6 +362,7 @@
       shouldResumeStudentAuth,
       getOAuthCallbackError,
       buildOnboardingPayload,
+      mountGoogleIdentityButton,
       createAuthController,
     });
   },
@@ -658,31 +718,67 @@
   async function resumeAuthenticatedStudent() {
     try {
       const result = await controller.completeStudentOAuth();
-      if (!result) return;
-      if (result.route === "auth.html?step=onboarding") {
-        presentOnboardingIdentity(result.context);
-        setAuthView("onboarding");
-        return;
-      }
-      root.location.replace(result.route);
+      presentAuthenticatedStudent(result);
     } catch (error) {
       showMessage("#studentAuthError", error.message);
       setAuthView("student");
     }
   }
 
+  function presentAuthenticatedStudent(result) {
+    if (!result) return;
+    if (result.route === "auth.html?step=onboarding") {
+      presentOnboardingIdentity(result.context);
+      setAuthView("onboarding");
+      return;
+    }
+    root.location.replace(result.route);
+  }
+
+  function setGoogleButtonBusy(busy) {
+    const container = $("#studentGoogleButton");
+    container.dataset.busy = String(Boolean(busy));
+    container.setAttribute("aria-busy", String(Boolean(busy)));
+  }
+
+  function showGoogleSignInError(error) {
+    setGoogleButtonBusy(false);
+    showMessage(
+      "#studentAuthError",
+      (error && error.message) || "Google sign-in failed. Try again.",
+    );
+    setAuthView("student");
+  }
+
+  function mountStudentGoogleIdentity() {
+    const container = $("#studentGoogleButton");
+    try {
+      root.AuthPageServices.mountGoogleIdentityButton({
+        google: root.google,
+        container,
+        clientId: root.BRACU_CONFIG.googleClientId,
+        theme: currentTheme(),
+        async onCredential(credential) {
+          setGoogleButtonBusy(true);
+          showMessage("#studentAuthError", "");
+          try {
+            const result =
+              await controller.signInStudentWithGoogleIdToken(credential);
+            presentAuthenticatedStudent(result);
+          } catch (error) {
+            showGoogleSignInError(error);
+          } finally {
+            setGoogleButtonBusy(false);
+          }
+        },
+        onError: showGoogleSignInError,
+      });
+    } catch (error) {
+      showGoogleSignInError(error);
+    }
+  }
+
   function bindEvents() {
-    $("#studentGoogleButton").addEventListener("click", async () => {
-      const button = $("#studentGoogleButton");
-      setButtonBusy(button, true);
-      showMessage("#studentAuthError", "");
-      try {
-        await controller.startStudentGoogleAuth();
-      } catch (error) {
-        showMessage("#studentAuthError", error.message);
-        setButtonBusy(button, false);
-      }
-    });
     $("#profilePhoto").addEventListener("change", (event) => {
       applySelectedPhoto(event.target.files && event.target.files[0]);
     });
@@ -895,6 +991,7 @@
       $("#backToStudent").hidden = adminOnlyMode;
       $("#openAdminView").hidden = adminOnlyMode;
       setTheme(preferredTheme);
+      if (!adminOnlyMode) mountStudentGoogleIdentity();
       const params = new URLSearchParams(root.location.search);
       const oauthCallbackError = root.AuthPageServices.getOAuthCallbackError(
         root.location.search,

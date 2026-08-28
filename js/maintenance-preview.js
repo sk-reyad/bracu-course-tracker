@@ -32,7 +32,9 @@
     );
   });
 
-  retryButton?.addEventListener("click", () => root.location.reload());
+  retryButton?.addEventListener("click", () =>
+    root.location.assign("index.html"),
+  );
 
   setTheme(preferredTheme());
 })(typeof globalThis !== "undefined" ? globalThis : window);

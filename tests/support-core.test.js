@@ -40,7 +40,7 @@ test("maintenance routing never blocks admin entry points", () => {
   assert.equal(maintenanceDestination({ enabled: true, pathname: "/index.html", search: "" }), "maintenance.html");
   assert.equal(maintenanceDestination({ enabled: true, pathname: "/admin.html", search: "" }), null);
   assert.equal(maintenanceDestination({ enabled: true, pathname: "/auth.html", search: "?mode=admin" }), null);
-  assert.equal(maintenanceDestination({ enabled: false, pathname: "/maintenance.html", search: "" }), "index.html");
+  assert.equal(maintenanceDestination({ enabled: false, pathname: "/maintenance.html", search: "" }), null);
 });
 
 test("support notice stays visible for eight seconds and supports manual dismissal", () => {

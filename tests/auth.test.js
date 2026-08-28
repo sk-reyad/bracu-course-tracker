@@ -84,8 +84,13 @@ test('public browser configuration contains the supplied project and no server s
   assert.equal(config.appPageUrl, 'index.html');
   assert.equal(config.adminPageUrl, 'admin.html');
   assert.equal(config.turnstileSiteKey, '0x4AAAAAAEX2Osurb6IGHo9a');
+  assert.match(
+    config.googleClientId,
+    /^(?:|[a-z0-9._-]+\.apps\.googleusercontent\.com)$/i
+  );
   assert.equal('serviceRoleKey' in config, false);
   assert.equal('secretKey' in config, false);
+  assert.equal('googleClientSecret' in config, false);
 });
 
 test('database migrations enforce profile, role, permission, hook, and onboarding boundaries', () => {
@@ -286,7 +291,8 @@ test('auth page exposes the approved centered brand, compact navigation, and uni
   assert.doesNotMatch(html, /role-switcher|Student\s*\|\s*Admin/i);
   assert.doesNotMatch(html, /id="studentModeTabs"/);
   assert.doesNotMatch(html, /id="studentLoginTab"|id="studentSignupTab"/);
-  assert.match(html, /id="studentGoogleButton"/);
+  assert.match(html, /<div[^>]+id="studentGoogleButton"/);
+  assert.match(html, /https:\/\/accounts\.google\.com\/gsi\/client/);
   assert.match(html, /Welcome back/);
   assert.doesNotMatch(html, /Only accounts ending in @g\.bracu\.ac\.bd are accepted\./);
   assert.doesNotMatch(html, /Continue with your official BRACU account\./);
@@ -310,21 +316,97 @@ test('auth page pins Vanta NET dependencies and provides an accessible reduced-m
   assert.match(css, /min-height:\s*44px/);
 });
 
-test('student Google access uses one OAuth entry point without login or signup intent', async () => {
-  let oauthRequest;
+test('student Google access exchanges one ID token without login or signup intent', async () => {
+  let idTokenRequest;
   const controller = AuthPageServices.createAuthController({
     authCore: AuthCore,
-    config: { authPageUrl: 'auth.html' },
-    location: { href: 'http://localhost:4173/auth.html' },
     sessionStore: { setItem() { throw new Error('Student OAuth must not store an auth intent.'); } },
-    client: { auth: { async signInWithOAuth(value) { oauthRequest = value; return { data: {}, error: null }; } } }
+    client: {
+      auth: {
+        async signInWithIdToken(value) {
+          idTokenRequest = value;
+          return { data: { session: { user: { email: 'student@g.bracu.ac.bd' } } }, error: null };
+        }
+      }
+    },
+    getSessionContext: async () => ({
+      user: { email: 'student@g.bracu.ac.bd' },
+      profile: { status: 'active', onboarding_completed: true },
+      role: 'student'
+    })
   });
-  await controller.startStudentGoogleAuth();
-  assert.deepEqual(oauthRequest, {
+  const result = await controller.signInStudentWithGoogleIdToken('google-id-token');
+  assert.deepEqual(idTokenRequest, {
     provider: 'google',
-    options: { redirectTo: 'http://localhost:4173/auth.html' }
+    token: 'google-id-token'
   });
+  assert.equal(result.route, 'index.html');
   assert.equal(AuthPageServices.AUTH_INTENT_KEY, undefined);
+});
+
+test('student Google ID-token exchange rejects missing credentials and surfaces provider errors', async () => {
+  let calls = 0;
+  const controller = AuthPageServices.createAuthController({
+    authCore: AuthCore,
+    client: {
+      auth: {
+        async signInWithIdToken() {
+          calls += 1;
+          return { data: null, error: new Error('Google provider rejected the token.') };
+        }
+      }
+    }
+  });
+
+  await assert.rejects(
+    () => controller.signInStudentWithGoogleIdToken('  '),
+    /Google sign-in did not return a credential/i
+  );
+  assert.equal(calls, 0);
+  await assert.rejects(
+    () => controller.signInStudentWithGoogleIdToken('bad-token'),
+    /Google provider rejected the token/i
+  );
+  assert.equal(calls, 1);
+});
+
+test('Google Identity Services renders one official button and forwards its credential', async () => {
+  let initializeOptions;
+  let renderedContainer;
+  let renderOptions;
+  let receivedCredential = '';
+  const container = { clientWidth: 348 };
+  const google = {
+    accounts: {
+      id: {
+        initialize(options) { initializeOptions = options; },
+        renderButton(target, options) {
+          renderedContainer = target;
+          renderOptions = options;
+        }
+      }
+    }
+  };
+
+  AuthPageServices.mountGoogleIdentityButton({
+    google,
+    container,
+    clientId: '123-example.apps.googleusercontent.com',
+    theme: 'dark',
+    async onCredential(credential) { receivedCredential = credential; }
+  });
+
+  assert.equal(initializeOptions.client_id, '123-example.apps.googleusercontent.com');
+  assert.equal(initializeOptions.auto_select, false);
+  assert.equal(initializeOptions.hd, 'g.bracu.ac.bd');
+  assert.equal(renderedContainer, container);
+  assert.equal(renderOptions.text, 'continue_with');
+  assert.equal(renderOptions.theme, 'filled_black');
+  assert.equal(renderOptions.width, 348);
+
+  initializeOptions.callback({ credential: 'literal-google-credential' });
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(receivedCredential, 'literal-google-credential');
 });
 
 test('OAuth completion signs out non-BRACU accounts with the exact required error', async () => {
@@ -473,7 +555,8 @@ test('auth controller delegates onboarding photo transactions to the shared prof
 test('browser auth wiring connects Google, photo, onboarding, toast, and return-session flows', () => {
   const js = fs.readFileSync(path.join(__dirname, '..', 'js', 'auth.js'), 'utf8');
   const profileJs = fs.readFileSync(path.join(__dirname, '..', 'js', 'profile.js'), 'utf8');
-  assert.match(js, /studentGoogleButton[\s\S]*addEventListener[\s\S]*startStudentGoogleAuth\(\)/);
+  assert.match(js, /mountGoogleIdentityButton[\s\S]*signInStudentWithGoogleIdToken/);
+  assert.doesNotMatch(js, /signInWithOAuth/);
   assert.match(js, /profilePhoto[\s\S]*addEventListener/);
   assert.match(js, /removePhoto[\s\S]*addEventListener/);
   assert.match(profileJs, /async function compressProfilePhoto/);

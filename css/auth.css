@@ -158,7 +158,6 @@ a {
 }
 .auth-nav a:active,
 .auth-nav button:active,
-.google-button:active,
 .auth-primary:active {
   transform: scale(0.97);
 }
@@ -212,7 +211,6 @@ a {
   line-height: 1.55;
 }
 
-.google-button,
 .auth-primary {
   width: 100%;
   min-height: 52px;
@@ -228,14 +226,20 @@ a {
     box-shadow 180ms ease,
     border-color 180ms ease;
 }
-.google-button {
-  border: 1px solid var(--auth-line);
-  color: var(--auth-ink);
-  background: color-mix(in srgb, var(--auth-card) 88%, white);
+.google-button-host {
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
-.google-button svg {
-  width: 19px;
-  height: 19px;
+.google-button-host > div {
+  max-width: 100%;
+}
+.google-button-host[data-busy="true"] {
+  pointer-events: none;
+  opacity: 0.65;
 }
 .auth-primary {
   border: 1px solid #1053b8;
@@ -247,8 +251,7 @@ a {
   width: 18px;
   height: 18px;
 }
-.auth-primary:disabled,
-.google-button:disabled {
+.auth-primary:disabled {
   cursor: wait;
   opacity: 0.65;
 }
@@ -706,10 +709,6 @@ body[data-auth-view="onboarding"] .auth-primary {
   .auth-nav button:hover {
     color: var(--auth-ink);
     background: var(--auth-soft);
-  }
-  .google-button:hover {
-    border-color: var(--auth-blue);
-    box-shadow: 0 10px 24px rgba(18, 85, 181, 0.14);
   }
   .auth-primary:hover {
     box-shadow: 0 15px 31px rgba(12, 77, 171, 0.31);
