@@ -33,6 +33,29 @@ test('Supabase Auth config mirrors the administrator password policy', () => {
   assert.match(config, /max_frequency\s*=\s*"1m"/);
   assert.match(config, /otp_length\s*=\s*8/);
 });
+
+test('versioned tracker migration enforces ownership, optimistic concurrency, snapshots, and bounded history', () => {
+  const sql = fs.readFileSync(
+    path.join(root, 'supabase', 'migrations', '202608280022_versioned_tracker_storage.sql'),
+    'utf8'
+  );
+  assert.match(sql, /add column if not exists revision bigint not null default 1/i);
+  assert.match(sql, /create table if not exists public\.course_tracker_data_history/i);
+  assert.match(sql, /primary key \(user_id, revision\)/i);
+  assert.match(sql, /create index[^;]+\(user_id, revision desc\)/i);
+  assert.match(sql, /enable row level security/i);
+  assert.match(sql, /\(select auth\.uid\(\)\) = user_id/i);
+  assert.match(sql, /create or replace function public\.save_course_tracker_state/i);
+  assert.match(sql, /security definer[\s\S]*set search_path = ''/i);
+  assert.doesNotMatch(sql, /p_user_id/i);
+  assert.match(sql, /for update/i);
+  assert.match(sql, /p_expected_revision[\s\S]*tracker_revision_conflict/i);
+  assert.match(sql, /tracker_blank_overwrite_blocked/i);
+  assert.match(sql, /insert into public\.course_tracker_data_history/i);
+  assert.match(sql, /offset 20/i);
+  assert.match(sql, /revoke insert, update, delete on table public\.course_tracker_data from authenticated/i);
+  assert.match(sql, /grant execute on function public\.save_course_tracker_state\(bigint, jsonb, boolean\) to authenticated/i);
+});
 const publicErrorPath = path.join(root, 'supabase', 'functions', '_shared', 'public-error.mjs');
 const roadmapSource = fs.readFileSync(path.join(root, 'js', 'roadmap.js'), 'utf8');
 
@@ -234,6 +257,28 @@ test('migration 018 makes the global catalog readable but never browser-writable
   assert.match(migration, /revoke all on function public\.mutate_global_catalog[\s\S]*from public, anon, authenticated/i);
   assert.match(migration, /grant execute on function public\.mutate_global_catalog[\s\S]*to service_role/i);
   assert.match(migration, /revoke all on function public\.set_account_access\(uuid, text, text\[\]\) from public, anon, authenticated/i);
+});
+
+test('migration 023 lets authenticated students read course visibility without opening catalog writes', () => {
+  const migrationPath = path.join(
+    root,
+    'supabase',
+    'migrations',
+    '202608290023_catalog_visibility_read_grant.sql'
+  );
+  assert.equal(
+    fs.existsSync(migrationPath),
+    true,
+    'the forward catalog visibility grant migration must exist'
+  );
+
+  const migration = fs.readFileSync(migrationPath, 'utf8');
+  assert.match(
+    migration,
+    /grant\s+select\s*\(\s*visibility\s*\)\s+on\s+table\s+public\.catalog_courses\s+to\s+authenticated/i
+  );
+  assert.doesNotMatch(migration, /to\s+(?:public|anon)\b/i);
+  assert.doesNotMatch(migration, /grant\s+(?:insert|update|delete|all)\b/i);
 });
 
 test('migration 019 seeds every canonical global catalog item without overwriting existing rows', () => {
