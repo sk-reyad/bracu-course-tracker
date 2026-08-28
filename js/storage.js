@@ -77,6 +77,10 @@
                 .toUpperCase();
       let activeUserId = null;
       let activeProfile = null;
+      let lastLoadResolution = Object.freeze({
+        source: "fresh",
+        shouldSync: false,
+      });
 
       function resolveFacultyEdit({
         faculties = [],
@@ -417,6 +421,53 @@
           : null;
       }
 
+      function hasAcademicHistory(state) {
+        return Boolean(
+          state &&
+            Array.isArray(state.semesters) &&
+            state.semesters.length > 0,
+        );
+      }
+
+      function lastUpdatedTime(state) {
+        const value = Date.parse(state?.settings?.lastUpdated || "");
+        return Number.isFinite(value) ? value : 0;
+      }
+
+      function resolveAuthenticatedSource({ local, legacy, cloudState, profile }) {
+        const deviceState = local || legacy;
+        const deviceSource = local ? "local" : legacy ? "legacy" : "";
+        if (deviceState && cloudState) {
+          const deviceHasHistory = hasAcademicHistory(deviceState);
+          const cloudHasHistory = hasAcademicHistory(cloudState);
+          if (deviceHasHistory && !cloudHasHistory) {
+            return { state: deviceState, source: deviceSource, shouldSync: true };
+          }
+          if (cloudHasHistory && !deviceHasHistory) {
+            return { state: cloudState, source: "cloud", shouldSync: false };
+          }
+          if (
+            deviceHasHistory &&
+            cloudHasHistory &&
+            lastUpdatedTime(deviceState) > lastUpdatedTime(cloudState)
+          ) {
+            return { state: deviceState, source: deviceSource, shouldSync: true };
+          }
+          return { state: cloudState, source: "cloud", shouldSync: false };
+        }
+        if (cloudState) {
+          return { state: cloudState, source: "cloud", shouldSync: false };
+        }
+        if (deviceState) {
+          return { state: deviceState, source: deviceSource, shouldSync: true };
+        }
+        return {
+          state: createFreshAuthenticatedState(profile),
+          source: "fresh",
+          shouldSync: false,
+        };
+      }
+
       function saveUserState(userId, state) {
         const next = state;
         next.settings = {
@@ -432,15 +483,20 @@
         activeProfile = profile;
         const key = keyForUser(userId);
         const local = parseStored(key);
-        const legacy =
-          !local && !cloudState
-            ? findLegacyMigrationCandidate(profile.email)
-            : null;
-        const source =
-          cloudState ||
-          local ||
-          legacy ||
-          createFreshAuthenticatedState(profile);
+        const legacy = !local
+          ? findLegacyMigrationCandidate(profile.email)
+          : null;
+        const resolution = resolveAuthenticatedSource({
+          local,
+          legacy,
+          cloudState,
+          profile,
+        });
+        const source = resolution.state;
+        lastLoadResolution = Object.freeze({
+          source: resolution.source,
+          shouldSync: resolution.shouldSync,
+        });
         const sourceFacultyCatalogVersion = Number(
           source?.settings?.facultyCatalogVersion || 0,
         );
@@ -456,6 +512,10 @@
         )
           saveUserState(userId, next);
         return next;
+      }
+
+      function getLastLoadResolution() {
+        return lastLoadResolution;
       }
 
       function setActiveStorageUser(userId) {
@@ -527,6 +587,7 @@
         migrateState,
         findLegacyMigrationCandidate,
         loadUserState,
+        getLastLoadResolution,
         saveUserState,
         setActiveStorageUser,
         loadState,

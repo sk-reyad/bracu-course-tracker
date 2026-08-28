@@ -112,6 +112,7 @@
           profile: context.profile,
           cloudState,
         });
+        const loadResolution = storageManager.getLastLoadResolution?.();
         let availableCatalogCourses = trackerState.courses || [];
         if (catalogApi?.fetchGlobalCatalog) {
           try {
@@ -136,6 +137,7 @@
           queueCloudSync,
           syncNow: writeCloudState,
         });
+        if (loadResolution?.shouldSync) queueCloudSync(trackerState);
         return Object.freeze({
           context,
           state: trackerState,
