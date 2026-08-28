@@ -92,7 +92,8 @@
             permissions: [],
           };
 
-        await recordLoginEvent(current, session);
+        // Login analytics is best-effort and must never delay authentication.
+        void recordLoginEvent(current, session);
 
         let user = session.user;
         if (verifyUser) {

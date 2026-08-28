@@ -144,6 +144,39 @@ test('login tracking records one event per browser session and never blocks sess
   assert.equal(rpcCalls, 1);
 });
 
+test('a pending login metrics request cannot hold the authenticated session open', async () => {
+  const session = {
+    access_token: 'header.pending-metrics.signature',
+    user: { id: 'admin-1', app_metadata: { app_role: 'admin' } }
+  };
+  const client = {
+    auth: { async getSession() { return { data: { session }, error: null }; } },
+    from() {
+      return {
+        select() { return this; },
+        eq() { return this; },
+        async maybeSingle() { return { data: { id: 'admin-1', status: 'active' }, error: null }; }
+      };
+    },
+    async rpc(name) {
+      assert.equal(name, 'record_login_event');
+      return new Promise(() => {});
+    }
+  };
+  const api = SupabaseModule.createSupabaseApi({
+    config: { supabaseUrl: 'https://example.supabase.co', supabasePublishableKey: 'public-key' },
+    sdk: { createClient() { return client; } }
+  });
+
+  const outcome = await Promise.race([
+    api.getSessionContext().then(context => ({ context })),
+    new Promise(resolve => setTimeout(() => resolve({ timeout: true }), 50))
+  ]);
+
+  assert.equal(outcome.timeout, undefined);
+  assert.equal(outcome.context.role, 'admin');
+});
+
 test('login metrics migration deduplicates Auth sessions and uses Dhaka calendar periods', () => {
   const sql = fs.readFileSync(path.join(__dirname, '..', 'supabase', 'migrations', '202608130007_login_session_metrics.sql'), 'utf8');
   assert.match(sql, /create table(?: if not exists)? public\.login_events/i);
