@@ -1,8 +1,10 @@
 let state = null;
+let availableCatalogCourses = [];
 let appAccessContext = null;
 let queueTrackerCloudSync = () => {};
 let syncTrackerNow = async () => ({ skipped: true });
 let toastTimer = null;
+let modalReturnFocus = null;
 let editingCourseCode = null;
 let editingDepartmentId = null;
 let editingFacultyId = null;
@@ -1459,6 +1461,10 @@ function deleteAttempt(semesterId, attemptId) {
 
 function openCourseModal(code = null) {
   editingCourseCode = code;
+  if (!code) {
+    openCourseCatalogPicker();
+    return;
+  }
   const course = code
     ? state.courses.find((item) => item.code === code)
     : {
@@ -1472,7 +1478,7 @@ function openCourseModal(code = null) {
         softPrerequisites: [],
         sourceNote: "Custom course",
       };
-  $("#courseModalTitle").textContent = code ? `Edit ${code}` : "Add New Course";
+  $("#courseModalTitle").textContent = `Edit ${code}`;
   $("#courseForm").innerHTML = `
     <label class="editor-card">Course Code<input name="code" value="${escapeHtml(course.code)}" required /></label>
     <label class="editor-card">Course Title<input name="title" value="${escapeHtml(course.title)}" required /></label>
@@ -1485,6 +1491,127 @@ function openCourseModal(code = null) {
     <label class="editor-card full">Source Note<textarea name="sourceNote">${escapeHtml(course.sourceNote || "")}</textarea></label>
     <div class="button-row full"><button class="primary-btn" type="submit">Save course</button><button class="ghost-btn" type="button" data-close-modal="courseModal"><i data-lucide="x"></i> Cancel</button></div>`;
   openModal("courseModal");
+}
+
+function catalogDepartmentOptions(selected = "") {
+  const departments = [
+    ...new Set(
+      availableCatalogCourses
+        .map((course) => String(course.department || "").trim().toUpperCase())
+        .filter(Boolean),
+    ),
+  ].sort((left, right) => left.localeCompare(right));
+  return [
+    `<option value="">All departments</option>`,
+    ...departments.map((department) => {
+      const details = state.departments.find(
+        (item) => String(item.id || "").toUpperCase() === department,
+      );
+      const label = details?.name
+        ? `${department} — ${details.name}`
+        : department;
+      return `<option value="${escapeHtml(department)}" ${department === selected ? "selected" : ""}>${escapeHtml(label)}</option>`;
+    }),
+  ].join("");
+}
+
+function courseAlreadyAdded(code) {
+  const key = BracuCatalog.normalizeCatalogKey("course", code);
+  return state.courses.some(
+    (course) => BracuCatalog.normalizeCatalogKey("course", course) === key,
+  );
+}
+
+function renderCourseCatalogResults() {
+  const resultsElement = $("#courseCatalogResults");
+  if (!resultsElement) return;
+  const query = $("#courseCatalogSearch")?.value || "";
+  const department = $("#courseCatalogDepartment")?.value || "";
+  const matches = BracuCatalog.searchCatalogCourses(availableCatalogCourses, {
+    query,
+    department,
+  });
+  const visible = matches.slice(0, 50);
+  const countElement = $("#courseCatalogCount");
+  if (countElement) {
+    countElement.textContent = matches.length > visible.length
+      ? `${visible.length} of ${matches.length} matches`
+      : `${matches.length} ${matches.length === 1 ? "match" : "matches"}`;
+  }
+  if (!visible.length) {
+    resultsElement.innerHTML = `
+      <div class="catalog-course-empty">
+        <i data-lucide="search-x" aria-hidden="true"></i>
+        <strong>No matching courses</strong>
+        <span>Try a course code, title, or another department.</span>
+      </div>`;
+    refreshIcons();
+    return;
+  }
+
+  resultsElement.innerHTML = visible
+    .map((course) => {
+      const added = courseAlreadyAdded(course.code);
+      const creditsMissing =
+        course.credits === null ||
+        course.credits === undefined ||
+        course.credits === "";
+      const curriculum =
+        String(course.visibility || "curriculum").toLowerCase() !== "search_only";
+      return `
+        <article class="catalog-course-result" data-catalog-course-row="${escapeHtml(course.code)}">
+          <div class="catalog-course-code">${escapeHtml(course.code)}</div>
+          <div class="catalog-course-copy">
+            <strong>${escapeHtml(course.title || "Untitled course")}</strong>
+            ${curriculum ? `<span class="catalog-course-plan-badge">CS degree plan</span>` : ""}
+          </div>
+          <div class="catalog-course-meta">
+            <span>${escapeHtml(course.department || "Department not set")}</span>
+            ${creditsMissing
+              ? `<label class="catalog-credit-input">Credits<input data-catalog-credits="${escapeHtml(course.code)}" type="number" min="0" max="20" step="0.5" inputmode="decimal" placeholder="Required" ${added ? "disabled" : ""} /></label>`
+              : `<span>${Number(course.credits)} ${Number(course.credits) === 1 ? "credit" : "credits"}</span>`}
+          </div>
+          <button class="${added ? "secondary-btn" : "primary-btn"} small-btn" type="button" data-action="add-catalog-course" data-add-catalog-course="${escapeHtml(course.code)}" ${added ? "disabled" : ""}>
+            ${added ? `<i data-lucide="check"></i> Added` : `<i data-lucide="plus"></i> Add`}
+          </button>
+        </article>`;
+    })
+    .join("");
+  refreshIcons();
+}
+
+function openCourseCatalogPicker() {
+  $("#courseModalTitle").textContent = "Add a course";
+  $("#courseForm").innerHTML = `
+    <div class="catalog-course-picker full">
+      <p class="catalog-course-intro">Search all BRACU courses. Adding one places it in your Course List.</p>
+      <div class="catalog-course-filters">
+        <label>
+          <span class="sr-only">Search courses</span>
+          <input id="courseCatalogSearch" type="search" autocomplete="off" placeholder="Search course code or title" />
+        </label>
+        <label>
+          <span class="sr-only">Filter by department</span>
+          <select id="courseCatalogDepartment">${catalogDepartmentOptions()}</select>
+        </label>
+      </div>
+      <div class="catalog-course-summary">
+        <span>Search results</span>
+        <span id="courseCatalogCount" role="status"></span>
+      </div>
+      <div id="courseCatalogResults" class="catalog-course-results"></div>
+    </div>`;
+  openModal("courseModal");
+  renderCourseCatalogResults();
+  $("#courseCatalogSearch")?.addEventListener(
+    "input",
+    renderCourseCatalogResults,
+  );
+  $("#courseCatalogDepartment")?.addEventListener(
+    "change",
+    renderCourseCatalogResults,
+  );
+  $("#courseCatalogSearch")?.focus();
 }
 
 function saveCourseFromForm(form) {
@@ -1676,6 +1803,7 @@ function removeDepartment(id) {
 
 function openModal(id) {
   const modal = document.getElementById(id);
+  modalReturnFocus = document.activeElement;
   modal.hidden = false;
   mountDotGridInModal(modal);
   refreshIcons();
@@ -1688,6 +1816,8 @@ function closeModal(id) {
     resetDashboardProfileDraft();
   }
   restoreDotGridHost();
+  if (modalReturnFocus?.isConnected) modalReturnFocus.focus();
+  modalReturnFocus = null;
 }
 
 function downloadPdfReport() {
@@ -1766,6 +1896,7 @@ function bindEvents() {
   // submit handlers directly so saving does not depend on document-level event delegation.
   $("#courseForm").addEventListener("submit", (event) => {
     event.preventDefault();
+    if (!editingCourseCode) return;
     saveCourseFromForm(event.currentTarget);
   });
   $("#departmentForm").addEventListener("submit", (event) => {
@@ -1849,6 +1980,27 @@ function bindEvents() {
         facultyEditDraftState = null;
         persist("Data reset");
       }
+      return;
+    }
+    const addCatalogButton = event.target.closest("[data-add-catalog-course]");
+    if (addCatalogButton) {
+      if (appAccessContext?.preview)
+        return showToast("Preview mode is read-only");
+      const code = addCatalogButton.dataset.addCatalogCourse;
+      const source = availableCatalogCourses.find(
+        (course) =>
+          BracuCatalog.normalizeCatalogKey("course", course) ===
+          BracuCatalog.normalizeCatalogKey("course", code),
+      );
+      if (!source) return showToast("Course not found in the catalog");
+      const row = addCatalogButton.closest("[data-catalog-course-row]");
+      const creditsInput = row?.querySelector("[data-catalog-credits]");
+      const result = BracuCatalog.addCatalogCourse(state, source, {
+        credits: creditsInput?.value,
+      });
+      if (!result.added) return showToast(result.error);
+      persist(`${result.course.code} added`);
+      renderCourseCatalogResults();
       return;
     }
     const target = event.target.closest("[data-action]");
@@ -2032,6 +2184,15 @@ function bindEvents() {
       window.setTimeout(() => compactFacultySelectOptions(event.target), 0);
   });
   document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      const openModals = $all(".modal-backdrop:not([hidden])");
+      const activeModal = openModals[openModals.length - 1];
+      if (activeModal) {
+        event.preventDefault();
+        closeModal(activeModal.id);
+        return;
+      }
+    }
     if (
       event.target.matches("select.path-faculty-select") &&
       ["Enter", " ", "ArrowDown", "ArrowUp"].includes(event.key)
@@ -2174,6 +2335,9 @@ function initializeTrackerApp(payload) {
   state = migrateState(payload.state, {
     authenticatedProfile: payload.context?.profile,
   });
+  availableCatalogCourses = Array.isArray(payload.availableCatalogCourses)
+    ? payload.availableCatalogCourses
+    : state.courses;
   appAccessContext = payload.context;
   queueTrackerCloudSync = payload.queueCloudSync || (() => {});
   syncTrackerNow = payload.syncNow || (async () => ({ skipped: true }));

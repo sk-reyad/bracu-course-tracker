@@ -761,7 +761,7 @@ select:focus-visible {
 .catalog-filters {
   padding: 16px 18px 0;
   display: grid;
-  grid-template-columns: minmax(240px, 2fr) minmax(180px, 1fr) minmax(170px, 1fr) auto;
+  grid-template-columns: minmax(240px, 2fr) repeat(3, minmax(160px, 1fr)) auto;
   align-items: end;
   gap: 12px;
 }
@@ -888,6 +888,32 @@ select:focus-visible {
   color: var(--muted);
   font-size: 0.68rem;
   font-weight: 500;
+}
+.catalog-custom-category[hidden] {
+  display: none;
+}
+.catalog-visibility-badge {
+  width: fit-content;
+  min-height: 24px;
+  padding: 3px 9px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.catalog-visibility-badge[data-visibility="curriculum"] {
+  color: var(--success);
+  background: color-mix(in srgb, var(--success) 12%, var(--surface));
+}
+.catalog-visibility-badge[data-visibility="search_only"] {
+  color: var(--warning);
+  background: color-mix(in srgb, var(--warning) 13%, var(--surface));
+}
+.catalog-row-copy small .catalog-visibility-badge {
+  margin-top: 6px;
 }
 .catalog-form-fields .catalog-check {
   min-height: 44px;

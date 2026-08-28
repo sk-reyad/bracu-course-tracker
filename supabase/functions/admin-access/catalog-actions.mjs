@@ -2,7 +2,7 @@ const KIND_CONFIG = Object.freeze({
   department: Object.freeze({ table: 'catalog_departments', key: 'id', fields: 'id, name, color' }),
   course: Object.freeze({
     table: 'catalog_courses', key: 'code',
-    fields: 'code, title, credits, department, category, roadmap_level, roadmap_order, hard_prerequisites, soft_prerequisites, source_note, is_roadmap_slot'
+    fields: 'code, title, credits, department, category, visibility, roadmap_level, roadmap_order, hard_prerequisites, soft_prerequisites, source_note, is_roadmap_slot'
   }),
   faculty: Object.freeze({ table: 'catalog_faculties', key: 'initial', fields: 'initial, name, email, department' })
 });
@@ -11,7 +11,7 @@ const PUBLIC_FIELDS = Object.freeze(Object.fromEntries(
 ));
 
 const DEPARTMENT_ID = /^[A-Z][A-Z0-9_-]{1,15}$/;
-const COURSE_CODE = /^[A-Z]{2,6}[0-9]{2,4}[A-Z]?$/;
+const COURSE_CODE = /^[A-Z]{2,6}[0-9]{2,4}([A-Z]|\([A-Z]\))?$/;
 const FACULTY_INITIAL = /^[A-Z][A-Z0-9]{1,9}$/;
 const CATEGORY = /^[a-z0-9][a-z0-9-]{0,49}$/;
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -70,6 +70,7 @@ function cleanInteger(value, label, { min, max, required = false } = {}) {
 }
 
 function cleanCredits(value) {
+  if (value === undefined || value === null || value === '') return null;
   if (!['number', 'string'].includes(typeof value) || (typeof value === 'string' && !value.trim())) {
     throw new Error('Enter valid course credits.');
   }
@@ -78,6 +79,14 @@ function cleanCredits(value) {
     throw new Error('Enter valid course credits.');
   }
   return credits;
+}
+
+function cleanVisibility(value) {
+  const visibility = String(value || 'curriculum').trim().toLowerCase();
+  if (!['curriculum', 'search_only'].includes(visibility)) {
+    throw new Error('Enter a valid student visibility.');
+  }
+  return visibility;
 }
 
 function cleanCourseCodes(value, label) {
@@ -140,7 +149,7 @@ export function normalizeCatalogPayload(payload) {
 
   const input = pickAllowed(payload, [
     'code', 'title', 'credits', 'department', 'category', 'roadmapLevel', 'roadmapOrder',
-    'hardPrerequisites', 'softPrerequisites', 'sourceNote', 'isRoadmapSlot'
+    'hardPrerequisites', 'softPrerequisites', 'sourceNote', 'isRoadmapSlot', 'visibility'
   ]);
   const code = cleanCourseCode(input.code);
   const hardPrerequisites = cleanCourseCodes(input.hardPrerequisites, 'Hard prerequisites');
@@ -156,6 +165,7 @@ export function normalizeCatalogPayload(payload) {
       credits: cleanCredits(input.credits),
       department: cleanDepartmentId(input.department),
       category: cleanCategory(input.category),
+      visibility: cleanVisibility(input.visibility),
       roadmap_level: cleanInteger(input.roadmapLevel, 'Roadmap level', { min: 1, max: 30 }),
       roadmap_order: cleanInteger(input.roadmapOrder, 'Roadmap order', { min: 1, max: 100 }),
       hard_prerequisites: hardPrerequisites,

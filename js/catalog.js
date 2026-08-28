@@ -23,9 +23,25 @@
     const PUBLIC_COLUMNS = {
       departments: "id, name, color",
       courses:
-        "code, title, credits, department, category, roadmap_level, roadmap_order, hard_prerequisites, soft_prerequisites, source_note, is_roadmap_slot",
+        "code, title, credits, department, category, visibility, roadmap_level, roadmap_order, hard_prerequisites, soft_prerequisites, source_note, is_roadmap_slot",
       faculties: "initial, name, email, department",
     };
+    const CATEGORY_LABELS = Object.freeze({
+      "stream-1-writing": "Stream 1: Writing",
+      "stream-2-math-and-natural-sciences":
+        "Stream 2: Math and Natural Sciences",
+      "stream-3-arts-and-humanities": "Stream 3: Arts and Humanities",
+      "stream-4-social-sciences": "Stream 4: Social Sciences",
+      "stream-5-communities-seeking-transformation":
+        "Stream 5: Communities Seeking Transformation",
+      "school-core": "School Core",
+      "program-core": "Program Core",
+      "program-elective": "Program Elective",
+      "general-elective": "General Elective",
+      gened: "GenEd",
+      "non-credit": "Non-credit",
+      capstone: "Project / Internship / Thesis",
+    });
 
     function canonicalKind(kind) {
       return KIND_ALIASES[String(kind || "").trim().toLowerCase()] || "";
@@ -48,6 +64,7 @@
       const query = String(filters.query || "").trim().toLowerCase();
       const department = String(filters.department || "").trim().toUpperCase();
       const category = String(filters.category || "").trim().toLowerCase();
+      const visibility = String(filters.visibility || "").trim().toLowerCase();
       const preserveValue = String(filters.preserveKey || "").trim();
       const preserveKey = normalizeCatalogKey(collection, preserveValue);
       const searchFields = {
@@ -80,11 +97,133 @@
         ) {
           return false;
         }
+        if (
+          collection === "courses" &&
+          visibility &&
+          visibility !== "all" &&
+          String(item?.visibility || "curriculum").trim().toLowerCase() !==
+            visibility
+        ) {
+          return false;
+        }
         if (!query) return true;
         return searchFields.some((field) =>
           String(item?.[field] || "").toLowerCase().includes(query),
         );
       });
+    }
+
+    function partitionCatalogCourses(items) {
+      const all = Array.isArray(items) ? items.filter(Boolean) : [];
+      const searchOnly = all.filter(
+        (course) => String(course?.visibility || "curriculum").toLowerCase() === "search_only",
+      );
+      const curriculum = all.filter(
+        (course) => String(course?.visibility || "curriculum").toLowerCase() !== "search_only",
+      );
+      return Object.freeze({ all, curriculum, searchOnly });
+    }
+
+    function searchCatalogCourses(items, filters = {}) {
+      return filterCatalogItems("course", items, filters).sort((left, right) =>
+        String(left?.code || "").localeCompare(String(right?.code || ""), undefined, {
+          sensitivity: "base",
+          numeric: true,
+        }),
+      );
+    }
+
+    function addCatalogCourse(state, source, options = {}) {
+      if (!state || typeof state !== "object")
+        return { added: false, error: "Course data is unavailable." };
+      if (!Array.isArray(state.courses)) state.courses = [];
+      const code = normalizeCatalogKey("course", source);
+      if (!code) return { added: false, error: "Course code is required." };
+      if (
+        state.courses.some(
+          (course) => normalizeCatalogKey("course", course) === code,
+        )
+      ) {
+        return { added: false, error: `${code} is already in your Course List.` };
+      }
+
+      const sourceCredits = source?.credits;
+      const creditValue =
+        sourceCredits === null || sourceCredits === undefined || sourceCredits === ""
+          ? options.credits
+          : sourceCredits;
+      const credits = Number(creditValue);
+      if (
+        creditValue === null ||
+        creditValue === undefined ||
+        creditValue === "" ||
+        !Number.isFinite(credits) ||
+        credits < 0 ||
+        credits > 20
+      ) {
+        return {
+          added: false,
+          error: "Enter valid course credits before adding this course.",
+        };
+      }
+
+      const course = {
+        ...normalizeServerRow("courses", source || {}),
+        code,
+        credits,
+      };
+      delete course.visibility;
+      delete course.catalogOrigin;
+      delete course.catalogKey;
+      delete course.catalogOverridden;
+      state.courses.push(course);
+      return { added: true, course };
+    }
+
+    function slugifyCategoryLabel(value) {
+      return (
+        String(value || "")
+          .trim()
+          .toLowerCase()
+          .normalize("NFKD")
+          .replace(/[’']/g, "")
+          .replace(/&/g, " and ")
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "")
+          .slice(0, 50)
+          .replace(/-+$/g, "") || ""
+      );
+    }
+
+    function categoryDisplayLabel(value) {
+      const slug = slugifyCategoryLabel(value);
+      if (!slug) return "Uncategorized";
+      if (CATEGORY_LABELS[slug]) return CATEGORY_LABELS[slug];
+      const acronyms = new Set(["cse", "eee", "ece", "mps", "bba", "cst"]);
+      return slug
+        .split("-")
+        .filter(Boolean)
+        .map((word) =>
+          acronyms.has(word)
+            ? word.toUpperCase()
+            : `${word.charAt(0).toUpperCase()}${word.slice(1)}`,
+        )
+        .join(" ")
+        .replace(/\bAnd\b/g, "and");
+    }
+
+    async function functionErrorMessage(error, data, fallback = "Request failed.") {
+      if (data?.error) return String(data.error);
+      const response = error?.context;
+      if (response && typeof response.json === "function") {
+        try {
+          const body = await response.json();
+          if (body?.error) return String(body.error);
+        } catch (_) {
+          // Fall through to the SDK message when the body is unavailable.
+        }
+      }
+      return String(error?.message || fallback);
     }
 
     function createFacultyEditDraft(item = {}) {
@@ -138,19 +277,36 @@
       if (!state || typeof state !== "object") return state;
       if (!state.settings || typeof state.settings !== "object") state.settings = {};
 
+      const coursePartitions = partitionCatalogCourses(catalog.courses);
+      const searchOnlyCourseKeys = new Set(
+        coursePartitions.searchOnly.map((course) =>
+          normalizeCatalogKey("courses", course),
+        ),
+      );
+
       for (const collection of Object.keys(IDENTITY_FIELDS)) {
         const sourceRows =
-          catalog[collection] ||
+          (collection === "courses"
+            ? coursePartitions.curriculum
+            : catalog[collection]) ||
           (collection === "faculties" ? catalog.faculty : undefined);
         const rows = Array.isArray(sourceRows) ? sourceRows : [];
         if (!Array.isArray(state[collection])) state[collection] = [];
-        state[collection] = state[collection].filter(
-          (item) =>
-            !(
-              item?.catalogOrigin === "global" &&
-              hasTombstone(state.settings, collection, normalizeCatalogKey(collection, item))
-            ),
-        );
+        state[collection] = state[collection].filter((item) => {
+          const key = normalizeCatalogKey(collection, item);
+          if (
+            item?.catalogOrigin === "global" &&
+            item?.catalogOverridden !== true &&
+            collection === "courses" &&
+            searchOnlyCourseKeys.has(key)
+          ) {
+            return false;
+          }
+          return !(
+            item?.catalogOrigin === "global" &&
+            hasTombstone(state.settings, collection, key)
+          );
+        });
         for (const row of rows) {
           if (!row || typeof row !== "object") continue;
           const key = normalizeCatalogKey(collection, row);
@@ -263,6 +419,7 @@
         credits: row.credits,
         department: row.department,
         category: row.category,
+        visibility: row.visibility || "curriculum",
         roadmapLevel: row.roadmapLevel ?? row.roadmap_level ?? null,
         roadmapOrder: row.roadmapOrder ?? row.roadmap_order ?? null,
         hardPrerequisites:
@@ -277,6 +434,12 @@
     return Object.freeze({
       normalizeCatalogKey,
       filterCatalogItems,
+      partitionCatalogCourses,
+      searchCatalogCourses,
+      addCatalogCourse,
+      slugifyCategoryLabel,
+      categoryDisplayLabel,
+      functionErrorMessage,
       createFacultyEditDraft,
       prepareCatalogEdit,
       mergeGlobalCatalog,

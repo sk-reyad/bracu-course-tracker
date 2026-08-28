@@ -118,6 +118,7 @@ const PUBLIC_ERROR_MESSAGES = new Set([
   "Source note is too long.",
   "Enter a valid department color.",
   "Enter valid course credits.",
+  "Enter a valid student visibility.",
   "Enter a valid course category.",
   "Enter a valid roadmap level.",
   "Enter a valid roadmap order.",

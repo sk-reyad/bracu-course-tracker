@@ -27,9 +27,9 @@
   let editingKey = null;
   let loading = false;
   const filters = {
-    department: { query: "", department: "", category: "" },
-    course: { query: "", department: "", category: "" },
-    faculty: { query: "", department: "", category: "" },
+    department: { query: "", department: "", category: "", visibility: "" },
+    course: { query: "", department: "", category: "", visibility: "" },
+    faculty: { query: "", department: "", category: "", visibility: "" },
   };
 
   function escapeHtml(value) {
@@ -58,8 +58,14 @@
       await root.BracuSupabase.getClient().functions.invoke("admin-access", {
         body: { action, payload },
       });
-    if (error || data?.error)
-      throw new Error(data?.error || error?.message || "Request failed.");
+    if (error || data?.error) {
+      const message = await root.BracuCatalog.functionErrorMessage(
+        error,
+        data,
+        "Request failed.",
+      );
+      throw new Error(message);
+    }
     return data?.data;
   }
 
@@ -82,6 +88,37 @@
     return `<option value="">Select department</option>${options.join("")}`;
   }
 
+  function categoryPresetOptions(selected = "") {
+    const categories = new Set([
+      "stream-1-writing",
+      "stream-2-math-and-natural-sciences",
+      "stream-3-arts-and-humanities",
+      "stream-4-social-sciences",
+      "stream-5-communities-seeking-transformation",
+      "school-core",
+      "program-core",
+      "program-elective",
+      "general-elective",
+      "capstone",
+      ...catalog.courses.map((course) => course.category).filter(Boolean),
+    ]);
+    if (selected) categories.add(selected);
+    return [
+      '<option value="">Select category</option>',
+      ...[...categories]
+        .sort((left, right) =>
+          root.BracuCatalog
+            .categoryDisplayLabel(left)
+            .localeCompare(root.BracuCatalog.categoryDisplayLabel(right)),
+        )
+        .map(
+          (category) =>
+            `<option value="${escapeHtml(category)}" ${category === selected ? "selected" : ""}>${escapeHtml(root.BracuCatalog.categoryDisplayLabel(category))}</option>`,
+        ),
+      '<option value="__custom__">Custom category…</option>',
+    ].join("");
+  }
+
   function fieldMarkup(current = {}) {
     if (kind === "department") {
       return `<label>Department ID<input name="id" maxlength="16" required value="${escapeHtml(current.id)}" ${editingKey ? "readonly" : ""} placeholder="CSE"></label>
@@ -98,9 +135,11 @@
     const soft = current.soft_prerequisites || [];
     return `<label>Course code<input name="code" maxlength="11" required value="${escapeHtml(current.code)}" ${editingKey ? "readonly" : ""} placeholder="CSE110"></label>
       <label class="catalog-field-wide">Course title<input name="title" maxlength="180" required value="${escapeHtml(current.title)}" placeholder="Programming Language I"></label>
-      <label>Credits<input name="credits" type="number" min="0" max="20" step="0.1" required value="${escapeHtml(current.credits ?? 3)}"></label>
+      <label>Credits <span class="catalog-optional">Optional</span><input name="credits" type="number" min="0" max="20" step="0.1" value="${escapeHtml(current.credits ?? "")}" placeholder="Not set"></label>
       <label>Department<select name="department" required>${departmentOptions(current.department)}</select></label>
-      <label>Category<input name="category" maxlength="50" required value="${escapeHtml(current.category || "core")}" placeholder="core"></label>
+      <label>Category<select name="categoryPreset" required>${categoryPresetOptions(current.category || "program-core")}</select></label>
+      <label class="catalog-custom-category" hidden>Custom category<input name="categoryCustom" maxlength="80" placeholder="Example: Architecture Studio"></label>
+      <label>Student visibility<select name="visibility" required><option value="curriculum" ${(current.visibility || "curriculum") === "curriculum" ? "selected" : ""}>Visible in Course List</option><option value="search_only" ${current.visibility === "search_only" ? "selected" : ""}>Add Course only</option></select></label>
       <label>Roadmap level <span class="catalog-optional">Optional</span><input name="roadmapLevel" type="number" min="1" max="30" value="${escapeHtml(current.roadmap_level)}"></label>
       <label>Roadmap order <span class="catalog-optional">Optional</span><input name="roadmapOrder" type="number" min="1" max="100" value="${escapeHtml(current.roadmap_order)}"></label>
       <label class="catalog-field-wide">Hard prerequisites <span class="catalog-optional">Comma-separated</span><input name="hardPrerequisites" value="${escapeHtml(hard.join(", "))}" placeholder="CSE110, MAT110"></label>
@@ -114,6 +153,7 @@
     editingKey = item ? String(item[keyName]) : null;
     $("#catalogFormTitle").textContent = `${item ? "Edit" : "Add"} ${LABELS[kind]}`;
     $("#catalogFormFields").innerHTML = fieldMarkup(item || {});
+    syncCustomCategoryField();
     $("#catalogFormError").hidden = true;
     $("#catalogItemForm").hidden = false;
     const deleteButton = $("#catalogItemForm .catalog-delete");
@@ -135,10 +175,29 @@
     return [...new Set(String(value || "").split(",").map((code) => code.trim().toUpperCase()).filter(Boolean))];
   }
 
+  function syncCustomCategoryField() {
+    const form = $("#catalogItemForm");
+    const preset = form?.elements?.categoryPreset;
+    const custom = form?.elements?.categoryCustom;
+    const label = custom?.closest(".catalog-custom-category");
+    if (!preset || !custom || !label) return;
+    const active = preset.value === "__custom__";
+    label.hidden = !active;
+    custom.required = active;
+    if (active) custom.focus();
+  }
+
   function formPayload(form) {
     const values = Object.fromEntries(new FormData(form));
     if (kind === "course") {
-      values.credits = Number(values.credits);
+      values.credits = values.credits === "" ? null : Number(values.credits);
+      const categoryValue =
+        values.categoryPreset === "__custom__"
+          ? values.categoryCustom
+          : values.categoryPreset;
+      values.category = root.BracuCatalog.slugifyCategoryLabel(categoryValue);
+      delete values.categoryPreset;
+      delete values.categoryCustom;
       values.roadmapLevel = values.roadmapLevel ? Number(values.roadmapLevel) : null;
       values.roadmapOrder = values.roadmapOrder ? Number(values.roadmapOrder) : null;
       values.hardPrerequisites = splitCodes(values.hardPrerequisites);
@@ -153,7 +212,14 @@
       return `<span>${escapeHtml(item.id)}</span><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.color)}</small>`;
     if (kind === "faculty")
       return `<span>${escapeHtml(item.initial)}</span><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.email || "No email")} · ${escapeHtml(item.department)}</small>`;
-    return `<span>${escapeHtml(item.code)}</span><strong>${escapeHtml(item.title)}</strong><small>${escapeHtml(item.credits)} credits · ${escapeHtml(item.department)} · ${escapeHtml(item.category)}</small>`;
+    const creditCopy =
+      item.credits === null || item.credits === undefined
+        ? "Credits not set"
+        : `${escapeHtml(item.credits)} credits`;
+    const visibility = item.visibility || "curriculum";
+    const visibilityCopy =
+      visibility === "search_only" ? "Add Course only" : "Visible in Course List";
+    return `<span>${escapeHtml(item.code)}</span><strong>${escapeHtml(item.title)}</strong><small>${creditCopy} · ${escapeHtml(item.department)} · ${escapeHtml(root.BracuCatalog.categoryDisplayLabel(item.category))}<span class="catalog-visibility-badge" data-visibility="${escapeHtml(visibility)}">${visibilityCopy}</span></small>`;
   }
 
   function optionMarkup(value, label) {
@@ -164,8 +230,10 @@
     const current = filters[kind];
     const departmentWrap = $("#catalogDepartmentFilterWrap");
     const categoryWrap = $("#catalogCategoryFilterWrap");
+    const visibilityWrap = $("#catalogVisibilityFilterWrap");
     const departmentSelect = $("#catalogDepartmentFilter");
     const categorySelect = $("#catalogCategoryFilter");
+    const visibilitySelect = $("#catalogVisibilityFilter");
     $("#catalogSearch").placeholder = {
       department: "Search code or department name",
       course: "Search course code or title",
@@ -197,9 +265,19 @@
       .sort((left, right) => left.localeCompare(right));
     categorySelect.innerHTML =
       '<option value="">All categories</option>' +
-      categories.map((category) => optionMarkup(category, category)).join("");
+      categories
+        .map((category) =>
+          optionMarkup(
+            category,
+            root.BracuCatalog.categoryDisplayLabel(category),
+          ),
+        )
+        .join("");
     if (!categories.includes(current.category)) current.category = "";
     categorySelect.value = current.category;
+
+    visibilityWrap.hidden = kind !== "course";
+    visibilitySelect.value = current.visibility;
   }
 
   function renderList() {
@@ -321,6 +399,13 @@
     $("#catalogCategoryFilter").addEventListener("change", (event) => {
       filters[kind].category = event.target.value;
       renderList();
+    });
+    $("#catalogVisibilityFilter").addEventListener("change", (event) => {
+      filters[kind].visibility = event.target.value;
+      renderList();
+    });
+    $("#catalogItemForm").addEventListener("change", (event) => {
+      if (event.target.name === "categoryPreset") syncCustomCategoryField();
     });
     $("#catalogList").addEventListener("click", (event) => {
       const edit = event.target.closest(".catalog-edit");

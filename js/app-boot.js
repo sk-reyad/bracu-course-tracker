@@ -84,6 +84,7 @@
           const previewState = previewManager.createSanitizedState();
           initializeApp({
             state: previewState,
+            availableCatalogCourses: previewState.courses || [],
             context,
             queueCloudSync() {},
             syncNow: async () => ({ skipped: true }),
@@ -112,9 +113,13 @@
           profile: context.profile,
           cloudState,
         });
+        let availableCatalogCourses = trackerState.courses || [];
         if (catalogApi?.fetchGlobalCatalog) {
           try {
             const globalCatalog = await catalogApi.fetchGlobalCatalog(client);
+            availableCatalogCourses = Array.isArray(globalCatalog?.courses)
+              ? globalCatalog.courses
+              : availableCatalogCourses;
             catalogApi.mergeGlobalCatalog?.(trackerState, globalCatalog);
             storageManager.saveUserState?.(context.user.id, trackerState);
           } catch (error) {
@@ -127,6 +132,7 @@
         }
         initializeApp({
           state: trackerState,
+          availableCatalogCourses,
           context,
           queueCloudSync,
           syncNow: writeCloudState,
