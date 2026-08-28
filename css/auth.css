@@ -228,13 +228,27 @@ a {
 }
 .google-button-host {
   width: 100%;
-  min-height: 44px;
+  min-height: 52px;
+  padding: 5px;
+  border: 1px solid var(--auth-line);
+  border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: color-mix(in srgb, var(--auth-card) 88%, white);
+  transition:
+    transform 140ms var(--ease-out),
+    box-shadow 180ms ease,
+    border-color 180ms ease;
 }
 .google-button-host > div {
+  width: 100% !important;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.google-button-host iframe {
   max-width: 100%;
 }
 .google-button-host[data-busy="true"] {

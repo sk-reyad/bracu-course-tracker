@@ -405,4 +405,5 @@ test('main boot waits for access, bypasses cloud in preview, and debounces per-u
   assert.equal(writes.length, 1);
   assert.equal(writes[0].user_id, 'user-1');
   assert.equal(writes[0].data.marker, 2);
+  assert.equal('user_email' in writes[0], false);
 });

@@ -45,7 +45,6 @@
         if (!context || context.preview || !client) return { skipped: true };
         const row = {
           user_id: context.user.id,
-          user_email: context.user.email,
           data: state,
           updated_at: new Date().toISOString(),
         };

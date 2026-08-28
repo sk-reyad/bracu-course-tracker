@@ -284,6 +284,7 @@ test('browser JavaScript never contains a service-role credential', () => {
 
 test('auth page exposes the approved centered brand, compact navigation, and unified student access', () => {
   const html = fs.readFileSync(path.join(__dirname, '..', 'auth.html'), 'utf8');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'auth.css'), 'utf8');
   assert.match(html, /<strong>BRACU Course Tracker<\/strong>/);
   assert.match(html, /href="index\.html\?preview=1"[^>]*>[^<]*<i[^>]+>[^<]*<\/i>\s*<span>Preview<\/span>/s);
   assert.match(html, /id="openAdminView"/);
@@ -294,6 +295,13 @@ test('auth page exposes the approved centered brand, compact navigation, and uni
   assert.match(html, /<div[^>]+id="studentGoogleButton"/);
   assert.match(html, /https:\/\/accounts\.google\.com\/gsi\/client/);
   assert.match(html, /Welcome back/);
+  const googleShell = css.slice(
+    css.indexOf('.google-button-host {'),
+    css.indexOf('.google-button-host[data-busy="true"]'),
+  );
+  assert.match(googleShell, /min-height:\s*52px/);
+  assert.match(googleShell, /border-radius:\s*15px/);
+  assert.match(googleShell, /background:\s*color-mix\(/);
   assert.doesNotMatch(html, /Only accounts ending in @g\.bracu\.ac\.bd are accepted\./);
   assert.doesNotMatch(html, /Continue with your official BRACU account\./);
 });
