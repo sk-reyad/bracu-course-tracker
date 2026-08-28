@@ -58,13 +58,13 @@ function setSaveState(message = "Saved locally") {
   saveStateElement.innerHTML = `<span class="save-state-dot" aria-hidden="true"></span><span>${escapeHtml(message)}</span>`;
 }
 
-function persist(message = "Saved locally") {
+function persist(message = "Saved locally", options = {}) {
   if (appAccessContext?.preview) {
     showToast("Preview mode is read-only");
     return false;
   }
   saveState(state);
-  queueTrackerCloudSync(state);
+  queueTrackerCloudSync(state, options);
   setSaveState(message);
   showToast(message);
   renderAll();
@@ -1956,8 +1956,16 @@ function bindEvents() {
         })
         .catch((error) => {
           console.error(error);
-          setSaveState("Sync paused");
-          showToast("Could not sync right now");
+          if (error?.code === "SYNC_CONFLICT") {
+            setSaveState("Sync conflict · local data preserved");
+            showToast("Another device changed this tracker. Reload before syncing.");
+          } else if (error?.code === "SYNC_BLANK_BLOCKED") {
+            setSaveState("Protected from blank overwrite");
+            showToast(error.message);
+          } else {
+            setSaveState("Sync paused");
+            showToast("Could not sync right now");
+          }
         });
       return;
     }
@@ -1975,10 +1983,14 @@ function bindEvents() {
         )
       ) {
         state = resetState();
+        state.settings = {
+          ...(state.settings || {}),
+          intentionalResetAt: new Date().toISOString(),
+        };
         editingSemesterId = null;
         editingFacultyId = null;
         facultyEditDraftState = null;
-        persist("Data reset");
+        persist("Data reset", { allowDestructive: true });
       }
       return;
     }
@@ -2234,7 +2246,7 @@ async function handleInputChange(event) {
   if (target.id === "importBackupInput" && target.files?.[0]) {
     try {
       state = await importStateFile(target.files[0]);
-      persist("Backup imported");
+      persist("Backup imported", { allowDestructive: true });
     } catch (error) {
       showToast(error.message);
     }
@@ -2357,6 +2369,9 @@ function initializeTrackerApp(payload) {
     BracuPreview.applyLockdown(document);
     installPreviewMutationGuard();
     setSaveState("Read-only preview");
+  } else if (payload.syncConflict) {
+    setSaveState("Sync conflict · local data preserved");
+    showToast("Another device changed this tracker. Reload before syncing.");
   } else {
     setSaveState(
       `Synced${state.settings.lastUpdated ? ` · ${new Date(state.settings.lastUpdated).toLocaleDateString()}` : ""}`,

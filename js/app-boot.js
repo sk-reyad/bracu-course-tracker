@@ -30,41 +30,96 @@
       let client = null;
       let syncTimer = null;
       let pendingState = null;
+      let pendingOptions = null;
+      let cloudRevision = 0;
+      let writeChain = Promise.resolve();
 
       async function readCloudState(userId) {
         const { data, error } = await client
           .from("course_tracker_data")
-          .select("data")
+          .select("data, revision, updated_at")
           .eq("user_id", userId)
           .maybeSingle();
         if (error) throw error;
-        return data && data.data ? data.data : null;
-      }
-
-      async function writeCloudState(state) {
-        if (!context || context.preview || !client) return { skipped: true };
-        const row = {
-          user_id: context.user.id,
-          data: state,
-          updated_at: new Date().toISOString(),
+        if (!data || !data.data) return null;
+        return {
+          data: data.data,
+          revision: Number(data.revision || 0),
+          updatedAt: data.updated_at || null,
         };
-        const { error } = await client
-          .from("course_tracker_data")
-          .upsert(row, { onConflict: "user_id" });
-        if (error) throw error;
-        return { skipped: false };
       }
 
-      function queueCloudSync(nextState) {
+      function normalizeSyncError(error) {
+        const message = String(error?.message || "");
+        if (error?.code === "40001" || message.includes("tracker_revision_conflict")) {
+          const conflict = new Error(
+            "Your tracker changed on another device. Your local copy is preserved; reload before syncing again.",
+          );
+          conflict.code = "SYNC_CONFLICT";
+          return conflict;
+        }
+        if (message.includes("tracker_blank_overwrite_blocked")) {
+          const blocked = new Error(
+            "A blank tracker cannot replace your existing course history without an explicit reset.",
+          );
+          blocked.code = "SYNC_BLANK_BLOCKED";
+          return blocked;
+        }
+        return error;
+      }
+
+      async function writeCloudState(state, { allowDestructive = false } = {}) {
+        if (!context || context.preview || !client) return { skipped: true };
+        storageManager.markSyncPending?.(context.user.id, cloudRevision);
+        const { data, error } = await client.rpc("save_course_tracker_state", {
+          p_expected_revision: cloudRevision,
+          p_data: state,
+          p_allow_destructive: Boolean(allowDestructive),
+        });
+        if (error) throw normalizeSyncError(error);
+        const result = Array.isArray(data) ? data[0] : data;
+        const newRevision = Number(result?.new_revision);
+        if (!Number.isSafeInteger(newRevision) || newRevision < 1)
+          throw new Error("Cloud sync returned an invalid revision.");
+        cloudRevision = newRevision;
+        storageManager.markSyncComplete?.(context.user.id, cloudRevision);
+        return {
+          skipped: false,
+          revision: cloudRevision,
+          savedAt: result?.saved_at || null,
+        };
+      }
+
+      function runSerializedWrite(state, options = {}) {
+        const write = writeChain
+          .catch(() => undefined)
+          .then(() => writeCloudState(state, options));
+        writeChain = write;
+        return write;
+      }
+
+      function syncNow(state, options = {}) {
+        if (syncTimer) clearTimer(syncTimer);
+        syncTimer = null;
+        pendingState = null;
+        pendingOptions = null;
+        return runSerializedWrite(state, options);
+      }
+
+      function queueCloudSync(nextState, options = {}) {
         if (!context || context.preview) return;
         pendingState = nextState;
+        pendingOptions = options;
+        storageManager.markSyncPending?.(context.user.id, cloudRevision);
         if (syncTimer) clearTimer(syncTimer);
         syncTimer = setTimer(async () => {
           const stateToWrite = pendingState;
+          const optionsForWrite = pendingOptions;
           pendingState = null;
+          pendingOptions = null;
           syncTimer = null;
           try {
-            await writeCloudState(stateToWrite);
+            await runSerializedWrite(stateToWrite, optionsForWrite);
           } catch (error) {
             if (typeof console !== "undefined" && console.warn)
               console.warn(
@@ -97,10 +152,12 @@
         }
 
         client = supabaseApi.getClient();
-        let cloudState = null;
+        let cloudRecord = null;
+        let cloudReadFailed = false;
         try {
-          cloudState = await readCloudState(context.user.id);
+          cloudRecord = await readCloudState(context.user.id);
         } catch (error) {
+          cloudReadFailed = true;
           if (typeof console !== "undefined" && console.warn)
             console.warn(
               "Cloud data could not be loaded; using the local user copy.",
@@ -108,9 +165,10 @@
             );
         }
         storageManager.setActiveStorageUser?.(context.user.id);
+        cloudRevision = Number(cloudRecord?.revision || 0);
         const trackerState = storageManager.loadUserState(context.user.id, {
           profile: context.profile,
-          cloudState,
+          cloudRecord,
         });
         const loadResolution = storageManager.getLastLoadResolution?.();
         let availableCatalogCourses = trackerState.courses || [];
@@ -135,14 +193,16 @@
           availableCatalogCourses,
           context,
           queueCloudSync,
-          syncNow: writeCloudState,
+          syncNow,
+          syncConflict: Boolean(loadResolution?.conflict),
         });
-        if (loadResolution?.shouldSync) queueCloudSync(trackerState);
+        if (!cloudReadFailed && loadResolution?.shouldSync)
+          queueCloudSync(trackerState);
         return Object.freeze({
           context,
           state: trackerState,
           queueCloudSync,
-          writeCloudState,
+          writeCloudState: syncNow,
         });
       }
 

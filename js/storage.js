@@ -23,6 +23,7 @@
 
     const LEGACY_STORAGE_KEY = "bracuCsCourseTracker.v1";
     const USER_STORAGE_PREFIX = "bracuCsCourseTracker.v2:";
+    const SYNC_META_PREFIX = "bracuCsCourseTracker.sync.v1:";
     const THEME_STORAGE_KEY = "bracuCourseTracker.theme";
     const MAX_BACKUP_BYTES = 2 * 1024 * 1024;
     const SAFE_IDENTIFIER = /^[A-Za-z0-9_-]{1,100}$/;
@@ -80,6 +81,8 @@
       let lastLoadResolution = Object.freeze({
         source: "fresh",
         shouldSync: false,
+        conflict: false,
+        revision: 0,
       });
 
       function resolveFacultyEdit({
@@ -136,6 +139,50 @@
         if (!userId || !String(userId).trim())
           throw new Error("A user id is required for tracker storage.");
         return `${USER_STORAGE_PREFIX}${String(userId).trim()}`;
+      }
+
+      function syncMetaKey(userId) {
+        if (!userId || !String(userId).trim())
+          throw new Error("A user id is required for tracker sync metadata.");
+        return `${SYNC_META_PREFIX}${String(userId).trim()}`;
+      }
+
+      function normalizeRevision(value) {
+        const revision = Number(value);
+        return Number.isSafeInteger(revision) && revision >= 0 ? revision : 0;
+      }
+
+      function getSyncMeta(userId) {
+        const fallback = { revision: 0, pending: false, protocolVersion: 0 };
+        const stored = parseStored(syncMetaKey(userId));
+        if (!stored || typeof stored !== "object" || Array.isArray(stored))
+          return fallback;
+        return {
+          revision: normalizeRevision(stored.revision),
+          pending: stored.pending === true,
+          protocolVersion: stored.protocolVersion === 1 ? 1 : 0,
+        };
+      }
+
+      function writeSyncMeta(userId, meta) {
+        const normalized = {
+          revision: normalizeRevision(meta?.revision),
+          pending: meta?.pending === true,
+          protocolVersion: 1,
+        };
+        store.setItem(syncMetaKey(userId), JSON.stringify(normalized));
+        return normalized;
+      }
+
+      function markSyncPending(userId, baseRevision) {
+        return writeSyncMeta(userId, {
+          revision: baseRevision,
+          pending: true,
+        });
+      }
+
+      function markSyncComplete(userId, revision) {
+        return writeSyncMeta(userId, { revision, pending: false });
       }
 
       function defaultSettings() {
@@ -425,46 +472,89 @@
         return Boolean(
           state &&
             Array.isArray(state.semesters) &&
-            state.semesters.length > 0,
+            state.semesters.some(
+              (semester) =>
+                Array.isArray(semester?.courses) && semester.courses.length > 0,
+            ),
         );
       }
 
-      function lastUpdatedTime(state) {
-        const value = Date.parse(state?.settings?.lastUpdated || "");
-        return Number.isFinite(value) ? value : 0;
-      }
-
-      function resolveAuthenticatedSource({ local, legacy, cloudState, profile }) {
+      function resolveAuthenticatedSource({
+        local,
+        legacy,
+        cloudRecord,
+        profile,
+        syncMeta,
+      }) {
         const deviceState = local || legacy;
         const deviceSource = local ? "local" : legacy ? "legacy" : "";
+        const cloudState = cloudRecord?.data || null;
+        const cloudRevision = normalizeRevision(cloudRecord?.revision);
+        const base = {
+          conflict: false,
+          revision: cloudRevision,
+        };
+
+        if (deviceState && syncMeta.pending) {
+          if (syncMeta.revision === cloudRevision) {
+            return {
+              state: deviceState,
+              source: `${deviceSource}-pending`,
+              shouldSync: true,
+              ...base,
+            };
+          }
+          return {
+            state: deviceState,
+            source: `${deviceSource}-conflict`,
+            shouldSync: false,
+            conflict: true,
+            revision: cloudRevision,
+          };
+        }
+
         if (deviceState && cloudState) {
-          const deviceHasHistory = hasAcademicHistory(deviceState);
-          const cloudHasHistory = hasAcademicHistory(cloudState);
-          if (deviceHasHistory && !cloudHasHistory) {
-            return { state: deviceState, source: deviceSource, shouldSync: true };
+          const isLegacyRecovery =
+            syncMeta.protocolVersion === 0 &&
+            hasAcademicHistory(deviceState) &&
+            !hasAcademicHistory(cloudState) &&
+            !cloudState?.settings?.intentionalResetAt;
+          if (isLegacyRecovery) {
+            return {
+              state: deviceState,
+              source: deviceSource,
+              shouldSync: true,
+              ...base,
+            };
           }
-          if (cloudHasHistory && !deviceHasHistory) {
-            return { state: cloudState, source: "cloud", shouldSync: false };
-          }
-          if (
-            deviceHasHistory &&
-            cloudHasHistory &&
-            lastUpdatedTime(deviceState) > lastUpdatedTime(cloudState)
-          ) {
-            return { state: deviceState, source: deviceSource, shouldSync: true };
-          }
-          return { state: cloudState, source: "cloud", shouldSync: false };
+          return {
+            state: cloudState,
+            source: "cloud",
+            shouldSync: false,
+            ...base,
+          };
         }
-        if (cloudState) {
-          return { state: cloudState, source: "cloud", shouldSync: false };
-        }
+
+        if (cloudState)
+          return {
+            state: cloudState,
+            source: "cloud",
+            shouldSync: false,
+            ...base,
+          };
         if (deviceState) {
-          return { state: deviceState, source: deviceSource, shouldSync: true };
+          return {
+            state: deviceState,
+            source: deviceSource,
+            shouldSync: true,
+            ...base,
+          };
         }
         return {
           state: createFreshAuthenticatedState(profile),
           source: "fresh",
           shouldSync: false,
+          ...base,
         };
       }
 
@@ -479,23 +569,31 @@
         return next;
       }
 
-      function loadUserState(userId, { profile = {}, cloudState = null } = {}) {
+      function loadUserState(
+        userId,
+        { profile = {}, cloudRecord = null, cloudState = null } = {},
+      ) {
         activeProfile = profile;
         const key = keyForUser(userId);
         const local = parseStored(key);
         const legacy = !local
           ? findLegacyMigrationCandidate(profile.email)
           : null;
+        const normalizedCloudRecord = cloudRecord ||
+          (cloudState ? { data: cloudState, revision: 0, updatedAt: null } : null);
         const resolution = resolveAuthenticatedSource({
           local,
           legacy,
-          cloudState,
+          cloudRecord: normalizedCloudRecord,
           profile,
+          syncMeta: getSyncMeta(userId),
         });
         const source = resolution.state;
         lastLoadResolution = Object.freeze({
           source: resolution.source,
           shouldSync: resolution.shouldSync,
+          conflict: resolution.conflict,
+          revision: resolution.revision,
         });
         const sourceFacultyCatalogVersion = Number(
           source?.settings?.facultyCatalogVersion || 0,
@@ -505,9 +603,9 @@
           Number(next.settings?.facultyCatalogVersion || 0) >
           sourceFacultyCatalogVersion;
         if (
-          cloudState ||
+          normalizedCloudRecord ||
           legacy ||
-          (!local && !cloudState) ||
+          (!local && !normalizedCloudRecord) ||
           facultyCatalogWasUpgraded
         )
           saveUserState(userId, next);
@@ -578,8 +676,13 @@
       return Object.freeze({
         LEGACY_STORAGE_KEY,
         USER_STORAGE_PREFIX,
+        SYNC_META_PREFIX,
         THEME_STORAGE_KEY,
         keyForUser,
+        syncMetaKey,
+        getSyncMeta,
+        markSyncPending,
+        markSyncComplete,
         createInitialState,
         createFreshAuthenticatedState,
         validateBackupState,
