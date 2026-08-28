@@ -273,9 +273,27 @@
       return false;
     }
 
+    function clearLegacyCourseTombstones(settings) {
+      const tombstones = settings?.catalogTombstones;
+      if (
+        !tombstones ||
+        typeof tombstones !== "object" ||
+        Array.isArray(tombstones) ||
+        !Object.prototype.hasOwnProperty.call(tombstones, "courses")
+      ) {
+        return;
+      }
+      delete tombstones.courses;
+      if (Object.keys(tombstones).length === 0) delete settings.catalogTombstones;
+    }
+
     function mergeGlobalCatalog(state, catalog = {}) {
       if (!state || typeof state !== "object") return state;
       if (!state.settings || typeof state.settings !== "object") state.settings = {};
+      // Curriculum courses are shared reference data. Older account snapshots could
+      // permanently hide one with a per-user tombstone, producing different course
+      // lists for different users. Repair those snapshots during every catalog merge.
+      clearLegacyCourseTombstones(state.settings);
 
       const coursePartitions = partitionCatalogCourses(catalog.courses);
       const searchOnlyCourseKeys = new Set(
@@ -380,6 +398,10 @@
       const collection = canonicalKind(kind);
       const key = normalizeCatalogKey(collection, item?.catalogKey || item);
       if (!collection || !key || item?.catalogOrigin !== "global") return state;
+      // Global courses are canonical and must remain discoverable for every account.
+      // Search-only courses are copied as user-owned rows when added, so they do not
+      // need a global course tombstone either.
+      if (collection === "courses") return state;
       if (!state.settings || typeof state.settings !== "object") state.settings = {};
       const values = tombstoneSet(state.settings, collection);
       if (!values.includes(key)) values.push(key);

@@ -991,6 +991,10 @@ function renderCourseList() {
         .map((course) => {
           const status = getCourseStatus(state, course.code);
           const prereq = checkPrerequisites(state, course);
+          const removeButton =
+            course.catalogOrigin === "global"
+              ? ""
+              : `<button class="danger-btn small-btn" data-action="remove-course" data-code="${course.code}" type="button"><i data-lucide="trash-2"></i> Remove</button>`;
           return `
       <article class="list-course-card" data-status="${status}">
         <div class="list-top">
@@ -999,7 +1003,7 @@ function renderCourseList() {
         </div>
         <div class="card-meta"><span class="badge">${course.department}</span><span class="badge">${course.credits} credits</span><span class="badge">${categoryLabel(state, course.category)}</span></div>
         <div class="course-prereq-row">${renderPrereqBadge(state, "HP", course.hardPrerequisites)}${renderPrereqBadge(state, "SP", course.softPrerequisites)}</div>
-        <div class="button-row"><button class="secondary-btn small-btn" data-action="edit-course" data-code="${course.code}" type="button">Edit</button><button class="danger-btn small-btn" data-action="remove-course" data-code="${course.code}" type="button"><i data-lucide="trash-2"></i> Remove</button></div>
+        <div class="button-row"><button class="secondary-btn small-btn" data-action="edit-course" data-code="${course.code}" type="button">Edit</button>${removeButton}</div>
       </article>
     `;
         })
@@ -1684,6 +1688,11 @@ function saveCourseFromForm(form) {
 }
 
 function removeCourse(code) {
+  const removedCourse = state.courses.find((course) => course.code === code);
+  if (removedCourse?.catalogOrigin === "global") {
+    showToast("Shared catalog courses cannot be removed from the Course List");
+    return;
+  }
   const used = getAllAttempts(state).some((attempt) => attempt.code === code);
   if (
     used &&
@@ -1693,7 +1702,6 @@ function removeCourse(code) {
   )
     return;
   if (!used && !confirm(`Remove ${code}?`)) return;
-  const removedCourse = state.courses.find((course) => course.code === code);
   if (typeof BracuCatalog !== "undefined")
     BracuCatalog.markCatalogDeleted(state, "course", removedCourse);
   state.courses = state.courses.filter((course) => course.code !== code);

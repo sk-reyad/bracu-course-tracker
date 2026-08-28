@@ -15,6 +15,15 @@
   function buildBootModule() {
     "use strict";
 
+    function catalogFingerprint(state) {
+      return JSON.stringify({
+        courses: Array.isArray(state?.courses) ? state.courses : [],
+        departments: Array.isArray(state?.departments) ? state.departments : [],
+        faculties: Array.isArray(state?.faculties) ? state.faculties : [],
+        catalogTombstones: state?.settings?.catalogTombstones || null,
+      });
+    }
+
     function createTrackerBoot({
       accessManager,
       previewManager,
@@ -172,13 +181,17 @@
         });
         const loadResolution = storageManager.getLastLoadResolution?.();
         let availableCatalogCourses = trackerState.courses || [];
+        let catalogChanged = false;
         if (catalogApi?.fetchGlobalCatalog) {
           try {
             const globalCatalog = await catalogApi.fetchGlobalCatalog(client);
             availableCatalogCourses = Array.isArray(globalCatalog?.courses)
               ? globalCatalog.courses
               : availableCatalogCourses;
+            const catalogBeforeMerge = catalogFingerprint(trackerState);
             catalogApi.mergeGlobalCatalog?.(trackerState, globalCatalog);
+            catalogChanged =
+              catalogBeforeMerge !== catalogFingerprint(trackerState);
             storageManager.saveUserState?.(context.user.id, trackerState);
           } catch (error) {
             if (typeof console !== "undefined" && console.warn)
@@ -196,7 +209,11 @@
           syncNow,
           syncConflict: Boolean(loadResolution?.conflict),
         });
-        if (!cloudReadFailed && loadResolution?.shouldSync)
+        if (
+          !cloudReadFailed &&
+          !loadResolution?.conflict &&
+          (loadResolution?.shouldSync || catalogChanged)
+        )
           queueCloudSync(trackerState);
         return Object.freeze({
           context,

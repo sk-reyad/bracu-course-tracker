@@ -47,9 +47,9 @@ test('catalog filters find the intended records by kind and exact select filters
     { id: 'MNS', name: 'Mathematics and Natural Sciences' },
   ];
   const courses = [
-    { code: 'CSE110', title: 'Programming Language I', department: 'CSE', category: 'core' },
-    { code: 'MAT110', title: 'Mathematics I', department: 'MNS', category: 'math' },
-    { code: 'CSE220', title: 'Data Structures', department: 'CSE', category: 'core' },
+    { code: 'CSE110', title: 'Programming Language I', department: 'CSE', category: 'core', visibility: 'curriculum' },
+    { code: 'MAT110', title: 'Mathematics I', department: 'MNS', category: 'math', visibility: 'curriculum' },
+    { code: 'CSE220', title: 'Data Structures', department: 'CSE', category: 'core', visibility: 'search_only' },
   ];
   const faculties = [
     { initial: 'ADU', name: 'Ahmed Mahir Ruhan', email: 'ahmed.ruhan@bracu.ac.bd', department: 'CSE' },
@@ -75,6 +75,89 @@ test('catalog filters find the intended records by kind and exact select filters
   assert.deepEqual(
     CatalogModule.filterCatalogItems('course', courses, { department: 'MNS', category: 'core' }),
     []
+  );
+  assert.deepEqual(
+    CatalogModule.filterCatalogItems('course', courses, { visibility: 'search_only' }).map((item) => item.code),
+    ['CSE220']
+  );
+});
+
+test('catalog partitions curriculum courses from Add Course only records', () => {
+  const result = CatalogModule.partitionCatalogCourses([
+    { code: 'CSE110', visibility: 'curriculum' },
+    { code: 'ARC201', visibility: 'search_only' },
+    { code: 'MAT110' },
+  ]);
+
+  assert.deepEqual(result.all.map((course) => course.code), ['CSE110', 'ARC201', 'MAT110']);
+  assert.deepEqual(result.curriculum.map((course) => course.code), ['CSE110', 'MAT110']);
+  assert.deepEqual(result.searchOnly.map((course) => course.code), ['ARC201']);
+});
+
+test('student catalog search covers all courses while filtering by department', () => {
+  const courses = [
+    { code: 'CSE110', title: 'Programming Language I', department: 'CSE' },
+    { code: 'ARC201', title: 'Design Studio III', department: 'ARC', visibility: 'search_only' },
+    { code: 'CSE220', title: 'Data Structures', department: 'CSE' },
+  ];
+
+  assert.deepEqual(
+    CatalogModule.searchCatalogCourses(courses, { query: 'design', department: 'ARC' })
+      .map((course) => course.code),
+    ['ARC201'],
+  );
+  assert.deepEqual(
+    CatalogModule.searchCatalogCourses(courses, { department: 'CSE' })
+      .map((course) => course.code),
+    ['CSE110', 'CSE220'],
+  );
+});
+
+test('adding from the master catalog blocks duplicates and requires unknown credits', () => {
+  const state = { courses: [{ code: 'cse110', title: 'My existing course' }] };
+  const duplicate = CatalogModule.addCatalogCourse(state, {
+    code: ' CSE 110 ', title: 'Global duplicate', credits: 3,
+  });
+  assert.equal(duplicate.added, false);
+  assert.match(duplicate.error, /already/i);
+  assert.equal(state.courses.length, 1);
+
+  const unknown = { code: 'ARC201', title: 'Design Studio III', credits: null, visibility: 'search_only' };
+  const missingCredits = CatalogModule.addCatalogCourse(state, unknown);
+  assert.equal(missingCredits.added, false);
+  assert.match(missingCredits.error, /credits/i);
+
+  const added = CatalogModule.addCatalogCourse(state, unknown, { credits: 3 });
+  assert.equal(added.added, true);
+  assert.equal(state.courses.length, 2);
+  assert.deepEqual(
+    { code: added.course.code, credits: added.course.credits, title: added.course.title },
+    { code: 'ARC201', credits: 3, title: 'Design Studio III' },
+  );
+  assert.equal(added.course.visibility, undefined);
+  assert.equal(added.course.catalogOrigin, undefined);
+});
+
+test('catalog presents friendly category labels while storing validated slugs', () => {
+  assert.equal(CatalogModule.slugifyCategoryLabel('Stream 4: Social Sciences'), 'stream-4-social-sciences');
+  assert.equal(CatalogModule.slugifyCategoryLabel('Math & Natural Sciences'), 'math-and-natural-sciences');
+  assert.equal(CatalogModule.categoryDisplayLabel('stream-4-social-sciences'), 'Stream 4: Social Sciences');
+  assert.equal(CatalogModule.categoryDisplayLabel('architecture-core'), 'Architecture Core');
+});
+
+test('catalog extracts the Edge Function JSON error instead of the generic SDK message', async () => {
+  const response = new Response(JSON.stringify({ error: 'Enter a valid course category.' }), {
+    status: 400,
+    headers: { 'content-type': 'application/json' },
+  });
+  const sdkError = Object.assign(
+    new Error('Edge Function returned a non-2xx status code'),
+    { context: response },
+  );
+
+  assert.equal(
+    await CatalogModule.functionErrorMessage(sdkError, null),
+    'Enter a valid course category.',
   );
 });
 
@@ -221,15 +304,15 @@ test('mergeGlobalCatalog preserves user rows and injects missing globals with or
   assert.equal(state.faculties.find((item) => item.initial === 'DEF').catalogOrigin, 'global');
 });
 
-test('mergeGlobalCatalog is idempotent and tombstones keep deleted globals out', () => {
+test('mergeGlobalCatalog is idempotent and non-course tombstones keep deleted globals out', () => {
   const state = catalogState();
-  state.settings.catalogTombstones = { courses: ['CSE220'], departments: [], faculties: [] };
+  state.settings.catalogTombstones = { departments: ['MNS'], faculties: [] };
   const catalog = {
     courses: [
-      { code: 'CSE220', title: 'Deleted global course' },
+      { code: 'CSE220', title: 'Data Structures' },
       { code: 'CSE330', title: 'Algorithms' },
     ],
-    departments: [],
+    departments: [{ id: 'MNS', name: 'Mathematics and Natural Sciences' }],
     faculties: [],
   };
 
@@ -238,16 +321,71 @@ test('mergeGlobalCatalog is idempotent and tombstones keep deleted globals out',
   CatalogModule.mergeGlobalCatalog(state, catalog);
 
   assert.deepEqual(state, first);
-  assert.equal(state.courses.some((item) => item.code === 'CSE220'), false);
+  assert.equal(state.departments.some((item) => item.id === 'MNS'), false);
+  assert.equal(state.courses.find((item) => item.code === 'CSE220').catalogOrigin, 'global');
   assert.equal(state.courses.find((item) => item.code === 'CSE330').catalogOrigin, 'global');
 });
 
-test('mergeGlobalCatalog removes a previously injected global row once its tombstone is set', () => {
-  const state = { courses: [{ code: 'CSE220', catalogOrigin: 'global', catalogKey: 'CSE220' }], settings: {
-    catalogTombstones: { courses: ['CSE220'] },
+test('mergeGlobalCatalog removes a previously injected non-course row once its tombstone is set', () => {
+  const state = { departments: [{ id: 'MNS', catalogOrigin: 'global', catalogKey: 'MNS' }], settings: {
+    catalogTombstones: { departments: ['MNS'] },
   } };
-  CatalogModule.mergeGlobalCatalog(state, { courses: [{ code: 'CSE220', title: 'Reintroduced' }] });
-  assert.deepEqual(state.courses, []);
+  CatalogModule.mergeGlobalCatalog(state, { departments: [{ id: 'MNS', name: 'Reintroduced' }] });
+  assert.deepEqual(state.departments, []);
+});
+
+test('mergeGlobalCatalog repairs legacy course tombstones so curriculum courses stay canonical for every account', () => {
+  const state = {
+    courses: [], departments: [], faculties: [],
+    settings: {
+      catalogTombstones: {
+        courses: ['SOC101'],
+        faculties: ['ABC'],
+      },
+    },
+  };
+
+  CatalogModule.mergeGlobalCatalog(state, {
+    courses: [{
+      code: 'SOC101', title: 'Introduction to Sociology',
+      visibility: 'curriculum', department: 'ESS', credits: 3,
+    }],
+    departments: [], faculties: [],
+  });
+
+  assert.equal(state.courses.some((course) => course.code === 'SOC101'), true);
+  assert.equal(state.courses.find((course) => course.code === 'SOC101').catalogOrigin, 'global');
+  assert.deepEqual(state.settings.catalogTombstones, { faculties: ['ABC'] });
+});
+
+test('mergeGlobalCatalog keeps Add Course only records out of the default Course List', () => {
+  const userOwned = { code: 'ARC202', title: 'User-added catalog course' };
+  const overridden = {
+    code: 'ARC203', title: 'User override', catalogOrigin: 'global',
+    catalogKey: 'ARC203', catalogOverridden: true,
+  };
+  const state = {
+    courses: [
+      { code: 'ARC201', title: 'Previously injected', catalogOrigin: 'global', catalogKey: 'ARC201' },
+      userOwned,
+      overridden,
+    ],
+    departments: [], faculties: [], settings: {},
+  };
+
+  CatalogModule.mergeGlobalCatalog(state, {
+    courses: [
+      { code: 'ARC201', title: 'Design Studio III', visibility: 'search_only' },
+      { code: 'ARC202', title: 'Design Studio IV', visibility: 'search_only' },
+      { code: 'ARC203', title: 'History of Architecture', visibility: 'search_only' },
+      { code: 'CSE110', title: 'Programming Language I', visibility: 'curriculum' },
+    ],
+  });
+
+  assert.equal(state.courses.some((course) => course.code === 'ARC201'), false);
+  assert.equal(state.courses.find((course) => course.code === 'ARC202'), userOwned);
+  assert.equal(state.courses.find((course) => course.code === 'ARC203'), overridden);
+  assert.equal(state.courses.find((course) => course.code === 'CSE110').catalogOrigin, 'global');
 });
 
 test('markCatalogDeleted records only global identities and leaves user data plus attempts intact', () => {
@@ -263,14 +401,14 @@ test('markCatalogDeleted records only global identities and leaves user data plu
   assert.equal(state.semesters[0].courses[0].facultyId, 'faculty-global');
 });
 
-test('markCatalogDeleted always records the original catalog key after a global item identity changes', () => {
+test('markCatalogDeleted never hides a canonical global course after its identity changes', () => {
   const state = { settings: {} };
   CatalogModule.markCatalogDeleted(state, 'course', {
     code: 'CSE330',
     catalogOrigin: 'global',
     catalogKey: 'CSE220',
   });
-  assert.deepEqual(state.settings.catalogTombstones, { courses: ['CSE220'] });
+  assert.deepEqual(state.settings.catalogTombstones, undefined);
 });
 
 test('edited global rows either retain their origin or tombstone the old key before future merges', () => {
@@ -294,7 +432,7 @@ test('edited global rows either retain their origin or tombstone the old key bef
     departments: [{ id: 'CSE', name: 'Returned department' }],
     faculties: [{ initial: 'ABC', name: 'Returned faculty' }],
   });
-  assert.equal(state.courses.find((item) => item.code === 'CSE220'), undefined);
+  assert.equal(state.courses.find((item) => item.code === 'CSE220').catalogOrigin, 'global');
   assert.equal(state.departments[0].catalogKey, 'CSE');
   assert.equal(state.departments[0].name, 'Edited');
   assert.equal(state.faculties.find((item) => item.initial === 'ABC'), undefined);
@@ -322,14 +460,14 @@ test('fetchGlobalCatalog reads only public catalog columns', async () => {
     departments: rows.catalog_departments,
     courses: [{
       code: 'CSE110', title: undefined, credits: undefined, department: undefined,
-      category: undefined, roadmapLevel: null, roadmapOrder: null,
+      category: undefined, visibility: 'curriculum', roadmapLevel: null, roadmapOrder: null,
       hardPrerequisites: [], softPrerequisites: [], sourceNote: null, isRoadmapSlot: false,
     }],
     faculties: rows.catalog_faculties,
   });
   assert.deepEqual(calls, [
     ['catalog_departments', 'id, name, color'],
-    ['catalog_courses', 'code, title, credits, department, category, roadmap_level, roadmap_order, hard_prerequisites, soft_prerequisites, source_note, is_roadmap_slot'],
+    ['catalog_courses', 'code, title, credits, department, category, visibility, roadmap_level, roadmap_order, hard_prerequisites, soft_prerequisites, source_note, is_roadmap_slot'],
     ['catalog_faculties', 'initial, name, email, department'],
   ]);
   assert.equal(JSON.stringify(calls).includes('created_by'), false);
@@ -381,6 +519,7 @@ test('authenticated boot merges catalog while preview never fetches it and catal
       async fetchGlobalCatalog() { throw new Error('offline'); },
     },
     initializeApp(payload) { initialized = payload; },
+    setTimer() { return 1; },
   });
   const previousWarn = console.warn;
   console.warn = () => {};
@@ -419,7 +558,13 @@ test('authenticated boot applies a successful global catalog before initializing
     catalogApi: {
       async fetchGlobalCatalog() {
         catalogReads += 3;
-        return { courses: [{ code: 'CSE220' }], departments: [], faculties: [] };
+        return {
+          courses: [
+            { code: 'CSE220', visibility: 'curriculum' },
+            { code: 'ARC201', visibility: 'search_only' },
+          ],
+          departments: [], faculties: [],
+        };
       },
       mergeGlobalCatalog(value, catalog) {
         value.courses.push(...catalog.courses);
@@ -427,9 +572,84 @@ test('authenticated boot applies a successful global catalog before initializing
       },
     },
     initializeApp(payload) { initialized = payload; },
+    setTimer() { return 1; },
   });
 
   await boot.start();
   assert.equal(catalogReads, 3);
   assert.equal(initialized.state.courses[0].code, 'CSE220');
+  assert.deepEqual(
+    initialized.availableCatalogCourses.map((course) => course.code),
+    ['CSE220', 'ARC201'],
+  );
+});
+
+test('authenticated boot persists fresh-account curriculum hydration to the cloud', async () => {
+  const localState = {
+    courses: [], departments: [], faculties: [], semesters: [], settings: {},
+  };
+  const rpcCalls = [];
+  let queuedWrite = Promise.resolve();
+  let initialized;
+  const client = {
+    from() {
+      return {
+        select() {
+          return {
+            eq() {
+              return { maybeSingle: async () => ({ data: null, error: null }) };
+            },
+          };
+        },
+      };
+    },
+    async rpc(name, args) {
+      rpcCalls.push([name, args]);
+      return {
+        data: [{ new_revision: 1, saved_at: '2026-08-29T00:00:00Z' }],
+        error: null,
+      };
+    },
+  };
+  const boot = BootModule.createTrackerBoot({
+    accessManager: {
+      async requireMainAccess() {
+        return { user: { id: 'new-user' }, profile: {}, preview: false };
+      },
+    },
+    storageManager: {
+      loadUserState() { return localState; },
+      getLastLoadResolution() { return { shouldSync: false }; },
+      saveUserState() {},
+      markSyncPending() {},
+      markSyncComplete() {},
+    },
+    supabaseApi: { getClient() { return client; } },
+    catalogApi: {
+      async fetchGlobalCatalog() {
+        return {
+          courses: [{
+            code: 'SOC101', title: 'Introduction to Sociology',
+            visibility: 'curriculum', department: 'ESS', credits: 3,
+          }],
+          departments: [], faculties: [],
+        };
+      },
+      mergeGlobalCatalog: CatalogModule.mergeGlobalCatalog,
+    },
+    initializeApp(payload) { initialized = payload; },
+    setTimer(callback) {
+      queuedWrite = Promise.resolve(callback());
+      return 1;
+    },
+  });
+
+  await boot.start();
+  await queuedWrite;
+
+  assert.equal(initialized.state.courses.some((course) => course.code === 'SOC101'), true);
+  assert.equal(rpcCalls.length, 1);
+  assert.equal(rpcCalls[0][0], 'save_course_tracker_state');
+  assert.equal(rpcCalls[0][1].p_expected_revision, 0);
+  assert.equal(rpcCalls[0][1].p_data, localState);
 });
