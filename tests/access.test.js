@@ -211,17 +211,128 @@ test('legacy v1 data migrates only for the same email and never deletes the lega
   assert.ok(local.getItem('bracuCsCourseTracker.v1'));
 });
 
-test('cloud state wins over local state and saves remain scoped to the authenticated user', () => {
+test('database state is canonical even when a non-pending local copy is newer', () => {
   const local = memoryStorage({
-    'bracuCsCourseTracker.v2:user-a': JSON.stringify({ profile: { email: 'a@g.bracu.ac.bd' }, semesters: [{ id: 'local' }] })
+    'bracuCsCourseTracker.v2:user-a': JSON.stringify({
+      profile: { email: 'a@g.bracu.ac.bd' },
+      semesters: [{ id: 'local', courses: [{ id: 'local-attempt', code: 'CSE110' }] }],
+      settings: { lastUpdated: '2026-08-28T00:00:00.000Z' }
+    })
   });
   const manager = StorageModule.createStorageManager({ defaultData: defaultData(), storage: local, normalizeCourseCode: value => value });
   const loaded = manager.loadUserState('user-a', {
     profile: { email: 'a@g.bracu.ac.bd' },
-    cloudState: { profile: { email: 'a@g.bracu.ac.bd' }, semesters: [{ id: 'cloud' }] }
+    cloudRecord: {
+      revision: 7,
+      updatedAt: '2026-08-20T00:00:00.000Z',
+      data: {
+        profile: { email: 'a@g.bracu.ac.bd' },
+        semesters: [{ id: 'cloud', courses: [{ id: 'cloud-attempt', code: 'CSE110' }] }],
+        settings: { lastUpdated: '2026-08-20T00:00:00.000Z' }
+      }
+    }
   });
   assert.equal(loaded.semesters[0].id, 'cloud');
   assert.equal(JSON.parse(local.getItem('bracuCsCourseTracker.v2:user-a')).semesters[0].id, 'cloud');
+  assert.deepEqual(manager.getLastLoadResolution(), {
+    source: 'cloud',
+    shouldSync: false,
+    conflict: false,
+    revision: 7
+  });
+});
+
+test('a one-time legacy local recovery can repair blank pre-versioned cloud data', () => {
+  const local = memoryStorage({
+    'bracuCsCourseTracker.v2:user-a': JSON.stringify({
+      profile: { email: 'a@g.bracu.ac.bd' },
+      semesters: [{ id: 'fall-2025', courses: [{ id: 'attempt-1', code: 'CSE110' }] }],
+      settings: { lastUpdated: '2026-08-01T00:00:00.000Z' }
+    })
+  });
+  const manager = StorageModule.createStorageManager({ defaultData: defaultData(), storage: local, normalizeCourseCode: value => value });
+  const loaded = manager.loadUserState('user-a', {
+    profile: { email: 'a@g.bracu.ac.bd' },
+    cloudRecord: {
+      revision: 1,
+      updatedAt: '2026-08-28T00:00:00.000Z',
+      data: {
+        profile: { email: 'a@g.bracu.ac.bd' },
+        semesters: [],
+        settings: { lastUpdated: '2026-08-28T00:00:00.000Z' }
+      }
+    }
+  });
+
+  assert.equal(loaded.semesters[0].id, 'fall-2025');
+  assert.deepEqual(manager.getLastLoadResolution(), {
+    source: 'local',
+    shouldSync: true,
+    conflict: false,
+    revision: 1
+  });
+});
+
+test('sync metadata is user scoped, survives reload, and clears only after a confirmed revision', () => {
+  const local = memoryStorage({
+    'bracuCsCourseTracker.sync.v1:broken': '{not-json'
+  });
+  const manager = StorageModule.createStorageManager({ defaultData: defaultData(), storage: local });
+
+  assert.deepEqual(manager.getSyncMeta('broken'), {
+    revision: 0,
+    pending: false,
+    protocolVersion: 0
+  });
+  manager.markSyncPending('user-a', 4);
+  assert.deepEqual(manager.getSyncMeta('user-a'), {
+    revision: 4,
+    pending: true,
+    protocolVersion: 1
+  });
+  assert.equal(manager.getSyncMeta('user-b').pending, false);
+  manager.markSyncComplete('user-a', 5);
+  assert.deepEqual(manager.getSyncMeta('user-a'), {
+    revision: 5,
+    pending: false,
+    protocolVersion: 1
+  });
+});
+
+test('compatible pending local data is retried while a revision mismatch is preserved as a conflict', () => {
+  const state = {
+    profile: { email: 'a@g.bracu.ac.bd' },
+    semesters: [{ id: 'local', courses: [{ id: 'attempt-1', code: 'CSE110' }] }],
+    settings: { lastUpdated: '2026-08-28T00:00:00.000Z' }
+  };
+  const key = 'bracuCsCourseTracker.v2:user-a';
+  const local = memoryStorage({ [key]: JSON.stringify(state) });
+  const manager = StorageModule.createStorageManager({ defaultData: defaultData(), storage: local, normalizeCourseCode: value => value });
+  manager.markSyncPending('user-a', 3);
+
+  let loaded = manager.loadUserState('user-a', {
+    profile: { email: 'a@g.bracu.ac.bd' },
+    cloudRecord: { revision: 3, data: { semesters: [] } }
+  });
+  assert.equal(loaded.semesters[0].id, 'local');
+  assert.deepEqual(manager.getLastLoadResolution(), {
+    source: 'local-pending',
+    shouldSync: true,
+    conflict: false,
+    revision: 3
+  });
+
+  loaded = manager.loadUserState('user-a', {
+    profile: { email: 'a@g.bracu.ac.bd' },
+    cloudRecord: { revision: 4, data: { semesters: [] } }
+  });
+  assert.equal(loaded.semesters[0].id, 'local');
+  assert.deepEqual(manager.getLastLoadResolution(), {
+    source: 'local-conflict',
+    shouldSync: false,
+    conflict: true,
+    revision: 4
+  });
 });
 
 test('faculty catalog migration adds verified defaults once without overwriting user faculty records', () => {
@@ -273,6 +384,85 @@ test('faculty catalog migration persists its version for an existing local user'
 
   assert.equal(persisted.settings.facultyCatalogVersion, 1);
   assert.deepEqual(persisted.faculties.map(faculty => faculty.initial), ['AAA', 'BBB']);
+});
+
+test('catalog data migration consolidates departments without changing academic history', () => {
+  const defaults = defaultData();
+  defaults.catalogDataVersion = 2;
+  defaults.departments = [
+    { id: 'MPS', name: 'Department of Mathematics & Physical Sciences' },
+    { id: 'GENED', name: 'School of General Education' },
+    { id: 'CSE', name: 'Computer Science and Engineering' },
+  ];
+  defaults.courses = [];
+  defaults.defaultFaculties = [];
+  const manager = StorageModule.createStorageManager({
+    defaultData: defaults,
+    normalizeCourseCode: value => String(value || '').toUpperCase(),
+  });
+  const history = [{
+    id: 'fall-2024', number: 1,
+    courses: [{ id: 'attempt-1', code: 'CSE161', status: 'completed', grade: 'A', facultyId: 'fac-mns' }],
+  }];
+  const migrated = manager.migrateState({
+    settings: { catalogDataVersion: 0 },
+    departments: [
+      { id: 'MNS', name: 'Old Mathematics' },
+      { id: 'MPS', name: 'New Mathematics' },
+      { id: 'GED', name: 'General Education' },
+      { id: 'SGE', name: 'School of General Education' },
+    ],
+    courses: [
+      { code: 'MAT110', title: 'Math', department: 'MNS' },
+      { code: 'SOC101', title: 'Sociology', department: 'SGE' },
+    ],
+    faculties: [
+      { id: 'fac-mns', initial: 'AAA', name: 'Math Faculty', department: 'MNS' },
+      { id: 'fac-ged', initial: 'BBB', name: 'GenEd Faculty', department: 'GED' },
+    ],
+    semesters: structuredClone(history),
+  });
+
+  assert.equal(migrated.settings.catalogDataVersion, 2);
+  assert.deepEqual(migrated.departments.map(item => item.id), ['MPS', 'GENED', 'CSE']);
+  assert.equal(migrated.courses.find(item => item.code === 'MAT110').department, 'MPS');
+  assert.equal(migrated.courses.find(item => item.code === 'SOC101').department, 'GENED');
+  assert.equal(migrated.faculties.find(item => item.initial === 'AAA').department, 'MPS');
+  assert.equal(migrated.faculties.find(item => item.initial === 'BBB').department, 'GENED');
+  assert.equal(migrated.semesters.length, history.length);
+  assert.equal(migrated.semesters[0].courses.length, history[0].courses.length);
+  for (const field of ['id', 'code', 'status', 'grade', 'facultyId']) {
+    assert.equal(migrated.semesters[0].courses[0][field], history[0].courses[0][field]);
+  }
+  assert.deepEqual(manager.migrateState(migrated), migrated, 'migration must be idempotent');
+});
+
+test('authenticated load persists and syncs a catalog data version upgrade', () => {
+  const defaults = defaultData();
+  defaults.catalogDataVersion = 2;
+  const local = memoryStorage();
+  const manager = StorageModule.createStorageManager({
+    defaultData: defaults,
+    storage: local,
+    normalizeCourseCode: value => String(value || '').toUpperCase(),
+  });
+  const loaded = manager.loadUserState('catalog-user', {
+    profile: { email: 'catalog@g.bracu.ac.bd' },
+    cloudRecord: {
+      revision: 4,
+      data: {
+        profile: { email: 'catalog@g.bracu.ac.bd' },
+        courses: [], departments: [], faculties: [], semesters: [],
+        settings: { catalogDataVersion: 0 },
+      },
+    },
+  });
+
+  assert.equal(loaded.settings.catalogDataVersion, 2);
+  assert.equal(JSON.parse(local.getItem(manager.keyForUser('catalog-user'))).settings.catalogDataVersion, 2);
+  assert.deepEqual(manager.getLastLoadResolution(), {
+    source: 'cloud', shouldSync: true, conflict: false, revision: 4,
+  });
 });
 
 test('state migration restores the canonical BRACU grade scale instead of accepting backup edits', () => {
@@ -361,7 +551,7 @@ test('preview state is generic, read-only, and does not use Supabase', () => {
   assert.equal(supabaseCalls, 0);
 });
 
-test('main boot waits for access, bypasses cloud in preview, and debounces per-user sync', async () => {
+test('main boot waits for access, bypasses cloud in preview, and debounces one revisioned RPC save', async () => {
   const events = [];
   let scheduled;
   const previewBoot = BootModule.createTrackerBoot({
@@ -376,21 +566,32 @@ test('main boot waits for access, bypasses cloud in preview, and debounces per-u
   await previewBoot.start();
   assert.deepEqual(events, ['access', 'preview', 'init']);
 
-  const writes = [];
+  const rpcCalls = [];
+  const pending = [];
+  const completed = [];
   const cloudClient = {
     from() {
       return {
-        select() { return { eq() { return { maybeSingle: async () => ({ data: null, error: null }) }; } }; },
-        upsert(row) { writes.push(row); return Promise.resolve({ error: null }); }
+        select(columns) {
+          assert.equal(columns, 'data, revision, updated_at');
+          return { eq() { return { maybeSingle: async () => ({ data: null, error: null }) }; } };
+        }
       };
+    },
+    async rpc(name, args) {
+      rpcCalls.push({ name, args });
+      return { data: [{ new_revision: 1, saved_at: '2026-08-28T00:00:00Z' }], error: null };
     }
   };
   const authenticatedBoot = BootModule.createTrackerBoot({
     accessManager: { async requireMainAccess() { return context(); } },
     previewManager: {},
     storageManager: {
+      setActiveStorageUser() {},
       loadUserState(userId) { return { owner: userId, settings: {}, semesters: [] }; },
-      saveUserState() {}
+      getLastLoadResolution() { return { source: 'fresh', shouldSync: false, conflict: false, revision: 0 }; },
+      markSyncPending(userId, revision) { pending.push({ userId, revision }); },
+      markSyncComplete(userId, revision) { completed.push({ userId, revision }); }
     },
     supabaseApi: { getClient() { return cloudClient; } },
     initializeApp() {},
@@ -400,10 +601,74 @@ test('main boot waits for access, bypasses cloud in preview, and debounces per-u
   const runtime = await authenticatedBoot.start();
   runtime.queueCloudSync({ marker: 1 });
   runtime.queueCloudSync({ marker: 2 });
-  assert.equal(writes.length, 0);
+  assert.equal(rpcCalls.length, 0);
+  assert.deepEqual(pending.at(-1), { userId: 'user-1', revision: 0 });
   await scheduled();
-  assert.equal(writes.length, 1);
-  assert.equal(writes[0].user_id, 'user-1');
-  assert.equal(writes[0].data.marker, 2);
-  assert.equal('user_email' in writes[0], false);
+  assert.equal(rpcCalls.length, 1);
+  assert.deepEqual(rpcCalls[0], {
+    name: 'save_course_tracker_state',
+    args: {
+      p_expected_revision: 0,
+      p_data: { marker: 2 },
+      p_allow_destructive: false
+    }
+  });
+  assert.deepEqual(completed, [{ userId: 'user-1', revision: 1 }]);
+});
+
+test('boot migrates legacy local history against the current cloud revision through the RPC', async () => {
+  let scheduled;
+  const rpcCalls = [];
+  const recovered = {
+    profile: { email: 'student@g.bracu.ac.bd' },
+    semesters: [{ id: 'spring-2026', courses: [] }],
+    settings: { lastUpdated: '2026-08-01T00:00:00.000Z' }
+  };
+  const client = {
+    from() {
+      return {
+        select() {
+          return {
+            eq() {
+              return {
+                maybeSingle: async () => ({
+                  data: { data: { semesters: [], settings: { lastUpdated: '2026-08-28T00:00:00.000Z' } }, revision: 6, updated_at: '2026-08-28T00:00:00Z' },
+                  error: null
+                })
+              };
+            }
+          };
+        },
+      };
+    },
+    async rpc(name, args) {
+      rpcCalls.push({ name, args });
+      return { data: [{ new_revision: 7, saved_at: '2026-08-28T01:00:00Z' }], error: null };
+    }
+  };
+  const boot = BootModule.createTrackerBoot({
+    accessManager: { async requireMainAccess() { return context(); } },
+    previewManager: {},
+    storageManager: {
+      setActiveStorageUser() {},
+      loadUserState() { return recovered; },
+      getLastLoadResolution() { return { source: 'local', shouldSync: true, conflict: false, revision: 6 }; },
+      markSyncPending() {},
+      markSyncComplete() {}
+    },
+    supabaseApi: { getClient() { return client; } },
+    initializeApp() {},
+    setTimer(callback) { scheduled = callback; return 1; },
+    clearTimer() {}
+  });
+
+  await boot.start();
+  assert.equal(rpcCalls.length, 0);
+  assert.equal(typeof scheduled, 'function');
+  await scheduled();
+  assert.equal(rpcCalls.length, 1);
+  assert.equal(rpcCalls[0].name, 'save_course_tracker_state');
+  assert.equal(rpcCalls[0].args.p_expected_revision, 6);
+  assert.equal(rpcCalls[0].args.p_data.semesters[0].id, 'spring-2026');
+  assert.equal(rpcCalls[0].args.p_allow_destructive, false);
 });

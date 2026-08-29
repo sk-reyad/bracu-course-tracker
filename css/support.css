@@ -397,6 +397,22 @@
     width: calc(100% - 24px);
   }
 }
+
+.dashboard-sign-out-row {
+  display: flex;
+  justify-content: flex-end;
+  padding: 4px 0 0;
+}
+
+.dashboard-sign-out-row .ghost-btn {
+  min-height: 42px;
+}
+
+@media (max-width: 560px) {
+  .dashboard-sign-out-row .ghost-btn {
+    width: 100%;
+  }
+}
 @media (max-height: 560px) and (orientation: landscape) {
   .support-dialog form {
     padding: 16px;

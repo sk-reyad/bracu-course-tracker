@@ -128,6 +128,15 @@ test("dashboard profile controls remain responsive and touch accessible", () => 
   assert.match(mobile, /\.dashboard-photo-control[\s\S]*grid-template-areas/);
 });
 
+test("stream detail triggers are keyboard-visible and responsive", () => {
+  assert.match(ruleBody(".stream-category"), /position:\s*relative/);
+  assert.match(ruleBody(".stream-category-trigger"), /cursor:\s*pointer/);
+  assert.match(styles, /\.stream-category-trigger\.tooltip-open\s*\+\s*\.stream-category-tooltip[\s\S]*visibility:\s*visible/);
+  assert.match(styles, /\.stream-see-more[\s\S]*min-height:\s*32px/);
+  const mobile = atRuleBody("@media (max-width: 780px)");
+  assert.match(mobile, /\.stream-category-tooltip[\s\S]*max-width/);
+});
+
 test("dashboard profile omits the redundant Google account management note", () => {
   assert.doesNotMatch(functionBody("renderDashboardProfileView"), /Managed by your Google account/);
   assert.doesNotMatch(functionBody("renderDashboardProfileEditor"), /Managed by your Google account/);
@@ -232,4 +241,11 @@ test("modal lifecycle hosts the single dot grid below translucent modal content"
 
   assert.match(appScript, /function openModal\([^)]*\)[\s\S]*?mountDotGridInModal/);
   assert.match(appScript, /function closeModal\([^)]*\)[\s\S]*?restoreDotGridHost/);
+});
+
+test("course catalog modal closes with Escape and restores the opening control focus", () => {
+  assert.match(appScript, /let modalReturnFocus = null/);
+  assert.match(appScript, /modalReturnFocus = document\.activeElement/);
+  assert.match(appScript, /event\.key === "Escape"[\s\S]*?closeModal/);
+  assert.match(appScript, /modalReturnFocus\?\.isConnected[\s\S]*?modalReturnFocus\.focus/);
 });

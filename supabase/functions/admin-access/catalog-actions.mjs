@@ -83,7 +83,7 @@ function cleanCredits(value) {
 
 function cleanVisibility(value) {
   const visibility = String(value || 'curriculum').trim().toLowerCase();
-  if (!['curriculum', 'search_only'].includes(visibility)) {
+  if (!['curriculum', 'search_only', 'alternative'].includes(visibility)) {
     throw new Error('Enter a valid student visibility.');
   }
   return visibility;

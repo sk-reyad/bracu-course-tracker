@@ -234,13 +234,13 @@ test("existing faculty records are preserved while verified corrections are used
 test("verified faculty names and emails remain byte-for-byte stable", () => {
   const canonicalCatalog = DEFAULT_DATA.defaultFaculties
     .map((faculty) =>
-      [faculty.initial, faculty.name, faculty.email, faculty.department].join("|"),
+      [faculty.initial, faculty.name, faculty.email].join("|"),
     )
     .sort()
     .join("\n");
 
   assert.equal(
     crypto.createHash("sha256").update(canonicalCatalog).digest("hex"),
-    "6743a8d0e57811dd8ee069aec075029026b07bf59d0e8e6358562c77e67e757b",
+    "c53d389912603ef22baa4c7ab1924243f592462fedd2487deb394c680830c9d6",
   );
 });

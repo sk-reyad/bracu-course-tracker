@@ -6,7 +6,19 @@ function normalizeCode(code) {
 }
 
 function completedCourseCodes(state) {
-  return new Set(getCountedAttempts(state).map((attempt) => attempt.code));
+  const completed = new Set(getCountedAttempts(state).map((attempt) => attempt.code));
+  if (typeof BracuCatalog !== "undefined") {
+    Object.keys(BracuCatalog.ALTERNATIVE_EQUIVALENCES || {}).forEach(
+      (canonicalCode) => {
+        const replacement = BracuCatalog.resolveAlternativeReplacement(
+          state,
+          canonicalCode,
+        );
+        if (replacement?.satisfied) completed.add(canonicalCode);
+      },
+    );
+  }
+  return completed;
 }
 
 function getAttemptPriority(status) {

@@ -843,6 +843,9 @@ function renderDashboardModal(open = true) {
       ${dashboardProfileEditing ? renderDashboardProfileEditor(profile) : renderDashboardProfileView(profile)}
     </section>
   `;
+  const dashboardSignOutButton = document.getElementById("accountSignOutBtn");
+  if (dashboardSignOutButton)
+    dashboardSignOutButton.disabled = Boolean(appAccessContext?.preview);
   if (open) openModal("dashboardModal");
   if (dashboardProfileEditing) bindDashboardPhotoDropzone();
   resolveDashboardAvatar().catch((error) =>
@@ -957,7 +960,7 @@ function renderCourseList() {
   departmentFilter.innerHTML =
     `<option value="all">All departments</option>` +
     state.departments
-      .map((dept) => `<option value="${dept.id}">${dept.id}</option>`)
+      .map((dept) => `<option value="${dept.id}">${BracuCatalog.departmentDisplayId(dept.id)}</option>`)
       .join("");
   departmentFilter.value = state.departments.some(
     (d) => d.id === currentDepartmentValue,
@@ -968,10 +971,17 @@ function renderCourseList() {
   const query = ($("#courseSearch").value || "").toLowerCase().trim();
   const statusFilter = $("#statusFilter").value || "all";
   const deptFilter = $("#departmentFilter").value || "all";
+  const curriculumFieldFilter = $("#curriculumFieldFilter").value || "all";
 
   const courses = state.courses
     .filter((course) => {
       if (course.isRoadmapSlot) return false;
+      if (
+        BracuCatalog.isAlternativeCourseCode(course.code) ||
+        String(course.visibility || course.catalogVisibility || "").toLowerCase() ===
+          "alternative"
+      )
+        return false;
       const status = getCourseStatus(state, course.code);
       const prereq = checkPrerequisites(state, course);
       const text =
@@ -979,6 +989,7 @@ function renderCourseList() {
       return (
         (!query || text.includes(query)) &&
         (deptFilter === "all" || course.department === deptFilter) &&
+        BracuCatalog.matchesCurriculumField(course.category, curriculumFieldFilter) &&
         (statusFilter === "all" ||
           status === statusFilter ||
           (statusFilter === "locked" && !prereq.eligible))
@@ -1001,7 +1012,7 @@ function renderCourseList() {
           <div><strong>${formatCode(course.code)}</strong><h3>${escapeHtml(course.title)}</h3></div>
           <span class="badge status-badge status-${status}">${statusLabel(status)}</span>
         </div>
-        <div class="card-meta"><span class="badge">${course.department}</span><span class="badge">${course.credits} credits</span><span class="badge">${categoryLabel(state, course.category)}</span></div>
+        <div class="card-meta"><span class="badge">${BracuCatalog.departmentDisplayId(course.department)}</span><span class="badge">${course.credits} credits</span>${renderCategoryBadge(state, course.category)}</div>
         <div class="course-prereq-row">${renderPrereqBadge(state, "HP", course.hardPrerequisites)}${renderPrereqBadge(state, "SP", course.softPrerequisites)}</div>
         <div class="button-row"><button class="secondary-btn small-btn" data-action="edit-course" data-code="${course.code}" type="button">Edit</button>${removeButton}</div>
       </article>
@@ -1010,6 +1021,24 @@ function renderCourseList() {
         .join("")
     : `<div class="empty-state">No course found with current filters.</div>`;
   refreshIcons();
+}
+
+function closeStreamCategoryTooltips(except = null) {
+  $all(".stream-category-trigger.tooltip-open").forEach((trigger) => {
+    if (trigger === except) return;
+    trigger.classList.remove("tooltip-open");
+    trigger.setAttribute("aria-expanded", "false");
+  });
+}
+
+function openCurriculumField(fieldId) {
+  const curriculumFieldFilter = document.getElementById("curriculumFieldFilter");
+  const coursesSection = document.getElementById("courses");
+  if (!curriculumFieldFilter || !coursesSection || !fieldId) return;
+  curriculumFieldFilter.value = fieldId;
+  renderCourseList();
+  coursesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  curriculumFieldFilter.focus({ preventScroll: true });
 }
 
 function renderDepartments() {
@@ -1023,7 +1052,7 @@ function renderDepartments() {
       ).length;
       return `
       <article class="department-card">
-        <div class="department-top"><div><h3>${dept.id}</h3><p>${escapeHtml(dept.name)}</p></div><button class="secondary-btn small-btn" data-action="edit-department" data-dept-id="${dept.id}" type="button">Edit</button></div>
+        <div class="department-top"><div><h3>${BracuCatalog.departmentDisplayId(dept.id)}</h3><p>${escapeHtml(dept.name)}</p></div><button class="secondary-btn small-btn" data-action="edit-department" data-dept-id="${dept.id}" type="button">Edit</button></div>
         <ul>
           <li><span>Total courses</span><strong>${courses.length}</strong></li>
           <li><span>Completed</span><strong>${completed}</strong></li>
@@ -1211,7 +1240,9 @@ function renderSettings() {
 
 function facultyDepartmentLabel(id) {
   const department = state.departments.find((item) => item.id === id);
-  return department ? `${department.id} — ${department.name}` : id || "Not assigned";
+  return department
+    ? `${BracuCatalog.departmentDisplayId(department.id)} — ${department.name}`
+    : BracuCatalog.departmentDisplayId(id) || "Not assigned";
 }
 
 function validateFacultyDraft(draft, { excludeId = "" } = {}) {
@@ -1261,7 +1292,7 @@ function facultyDepartmentFilterOptions(selected = "") {
     state.departments
       .map(
         (department) =>
-          `<option value="${escapeHtml(department.id)}" ${department.id === selected ? "selected" : ""}>${escapeHtml(department.id)} — ${escapeHtml(department.name)}</option>`,
+          `<option value="${escapeHtml(department.id)}" ${department.id === selected ? "selected" : ""}>${escapeHtml(BracuCatalog.departmentDisplayId(department.id))} — ${escapeHtml(department.name)}</option>`,
       )
       .join("")
   );
@@ -1355,7 +1386,7 @@ function renderCloudEditor() {
   $("#cloudEditor").innerHTML = `
     <div class="editor-grid">
       <div class="editor-card full">
-        <div class="account-sync-heading"><span class="account-sync-icon"><i data-lucide="cloud-check"></i></span><div><h3>Account &amp; Sync</h3><p>${syncLabel}</p></div></div>
+        <div class="account-sync-heading"><span class="account-sync-icon"><i data-lucide="cloud"></i></span><div><h3>Account &amp; Sync</h3><p>${syncLabel}</p></div></div>
       </div>
       <div class="editor-card account-summary-card">
         <span>Signed in as</span><strong>${escapeHtml(profile.name || "BRACU student")}</strong><small>${escapeHtml(profile.email || "")}</small>
@@ -1365,7 +1396,6 @@ function renderCloudEditor() {
       </div>
       <div class="editor-card full account-sync-actions">
         <button class="primary-btn" id="syncNowBtn" type="button" ${isPreview ? "disabled" : ""}><i data-lucide="refresh-cw"></i> Sync now</button>
-        <button class="ghost-btn" id="accountSignOutBtn" type="button" ${isPreview ? "disabled" : ""}><i data-lucide="log-out"></i> Sign out</button>
       </div>
     </div>`;
 }
@@ -1374,15 +1404,26 @@ function departmentOptions(selected = "") {
   return state.departments
     .map(
       (dept) =>
-        `<option value="${dept.id}" ${selected === dept.id ? "selected" : ""}>${dept.id} — ${escapeHtml(dept.name)}</option>`,
+        `<option value="${dept.id}" ${selected === dept.id ? "selected" : ""}>${BracuCatalog.departmentDisplayId(dept.id)} — ${escapeHtml(dept.name)}</option>`,
     )
     .join("");
 }
 function categoryOptions(selected = "") {
-  return DEFAULT_DATA.categories
+  const categories = new Map(
+    DEFAULT_DATA.categories.map((category) => [category.id, category.label]),
+  );
+  BracuCatalog.curriculumFieldOptions().forEach((field) =>
+    field.categories.forEach((category) => {
+      if (!categories.has(category))
+        categories.set(category, BracuCatalog.categoryDisplayLabel(category));
+    }),
+  );
+  if (selected && !categories.has(selected))
+    categories.set(selected, BracuCatalog.categoryDisplayLabel(selected));
+  return [...categories]
     .map(
-      (cat) =>
-        `<option value="${cat.id}" ${selected === cat.id ? "selected" : ""}>${cat.label}</option>`,
+      ([id, label]) =>
+        `<option value="${escapeHtml(id)}" ${selected === id ? "selected" : ""}>${escapeHtml(label)}</option>`,
     )
     .join("");
 }
@@ -1561,7 +1602,7 @@ function renderCourseCatalogResults() {
         course.credits === undefined ||
         course.credits === "";
       const curriculum =
-        String(course.visibility || "curriculum").toLowerCase() !== "search_only";
+        String(course.visibility || "curriculum").toLowerCase() === "curriculum";
       return `
         <article class="catalog-course-result" data-catalog-course-row="${escapeHtml(course.code)}">
           <div class="catalog-course-code">${escapeHtml(course.code)}</div>
@@ -1570,7 +1611,7 @@ function renderCourseCatalogResults() {
             ${curriculum ? `<span class="catalog-course-plan-badge">CS degree plan</span>` : ""}
           </div>
           <div class="catalog-course-meta">
-            <span>${escapeHtml(course.department || "Department not set")}</span>
+            <span>${escapeHtml(BracuCatalog.departmentDisplayId(course.department) || "Department not set")}</span>
             ${creditsMissing
               ? `<label class="catalog-credit-input">Credits<input data-catalog-credits="${escapeHtml(course.code)}" type="number" min="0" max="20" step="0.5" inputmode="decimal" placeholder="Required" ${added ? "disabled" : ""} /></label>`
               : `<span>${Number(course.credits)} ${Number(course.credits) === 1 ? "credit" : "credits"}</span>`}
@@ -1915,6 +1956,8 @@ function bindEvents() {
   $("#courseSearch").addEventListener("input", renderCourseList);
   $("#statusFilter").addEventListener("change", renderCourseList);
   $("#departmentFilter").addEventListener("change", renderCourseList);
+  const curriculumFieldFilter = $("#curriculumFieldFilter");
+  curriculumFieldFilter.addEventListener("change", renderCourseList);
   $("#redrawLinesBtn").addEventListener("click", () => drawRoadmapLines(state));
   $("#refreshReportBtn").addEventListener("click", () => {
     renderReport();
@@ -1931,6 +1974,26 @@ function bindEvents() {
   );
 
   document.addEventListener("click", (event) => {
+    const streamSeeMore = event.target.closest("[data-stream-see-more]");
+    if (streamSeeMore) {
+      event.preventDefault();
+      event.stopPropagation();
+      openCurriculumField(streamSeeMore.dataset.curriculumField);
+      return;
+    }
+    const streamTrigger = event.target.closest(".stream-category-trigger");
+    if (streamTrigger) {
+      event.preventDefault();
+      event.stopPropagation();
+      const wasOpen = streamTrigger.classList.contains("tooltip-open");
+      closeStreamCategoryTooltips();
+      if (!wasOpen) {
+        streamTrigger.classList.add("tooltip-open");
+        streamTrigger.setAttribute("aria-expanded", "true");
+      }
+      return;
+    }
+    closeStreamCategoryTooltips();
     const facultyEmailCopyBtn = event.target.closest(
       "[data-copy-faculty-email]",
     );
@@ -1955,7 +2018,7 @@ function bindEvents() {
     if (event.target.classList.contains("modal-backdrop"))
       return closeModal(event.target.id);
     if (event.target.id === "exportBackupBtn") return exportState(state);
-    if (event.target.id === "syncNowBtn") {
+    if (event.target.closest("#syncNowBtn")) {
       setSaveState("Syncing…");
       syncTrackerNow(state)
         .then(() => {
@@ -1977,7 +2040,7 @@ function bindEvents() {
         });
       return;
     }
-    if (event.target.id === "accountSignOutBtn") {
+    if (event.target.closest("#accountSignOutBtn")) {
       BracuAccess.signOutAndRedirect().catch((error) => {
         console.error(error);
         showToast("Could not sign out");
@@ -2205,6 +2268,7 @@ function bindEvents() {
   });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
+      closeStreamCategoryTooltips();
       const openModals = $all(".modal-backdrop:not([hidden])");
       const activeModal = openModals[openModals.length - 1];
       if (activeModal) {

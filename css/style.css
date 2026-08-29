@@ -891,6 +891,20 @@ main {
   outline-offset: 3px;
 }
 
+.alternative-replacement-card .code-row {
+  flex-wrap: wrap;
+}
+
+.alternative-replacement-card .code {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.course-card:has(.stream-category-trigger.tooltip-open),
+.list-course-card:has(.stream-category-trigger.tooltip-open) {
+  z-index: 30;
+}
+
 .code-row {
   display: flex;
   align-items: center;
@@ -1870,6 +1884,72 @@ textarea:focus {
   margin: 12px 0;
 }
 
+.stream-category {
+  position: relative;
+}
+
+.stream-category-trigger {
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.stream-category-trigger:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 24%, transparent);
+}
+
+.stream-category-tooltip {
+  position: absolute;
+  z-index: 50;
+  left: 0;
+  bottom: calc(100% + 8px);
+  width: max-content;
+  max-width: min(320px, calc(100vw - 40px));
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: grid;
+  gap: 8px;
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(5px);
+  pointer-events: none;
+  transition: opacity 150ms ease, transform 150ms ease, visibility 150ms ease;
+}
+
+.stream-category-trigger.tooltip-open + .stream-category-tooltip,
+.stream-category:focus-within .stream-category-tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.stream-category-tooltip strong {
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.stream-see-more {
+  min-height: 32px;
+  padding: 6px 10px;
+  border: 1px solid var(--primary);
+  border-radius: 9px;
+  color: var(--primary);
+  background: transparent;
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
 .department-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2625,6 +2705,10 @@ textarea:focus {
 }
 
 @media (max-width: 780px) {
+  .stream-category-tooltip {
+    max-width: min(280px, calc(100vw - 32px));
+  }
+
   .brand small {
     display: none;
   }

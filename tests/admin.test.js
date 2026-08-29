@@ -125,7 +125,7 @@ test('catalog mutations normalize allowed fields and write only the selected cat
     kind: 'course',
     item: {
       code: 'CSE420', title: 'Advanced Software Engineering', credits: 3, department: 'CSE',
-      category: 'program-core', roadmap_level: 7, roadmap_order: 2,
+      category: 'program-core', visibility: 'curriculum', roadmap_level: 7, roadmap_order: 2,
       hard_prerequisites: ['CSE370'], soft_prerequisites: ['CSE320'],
       source_note: null, is_roadmap_slot: false
     }
@@ -152,7 +152,7 @@ test('catalog listing selects and returns public fields only', async () => {
   const calls = [];
   const rows = {
     catalog_departments: [{ id: 'CSE', name: 'CSE', color: 'blue', created_by: 'secret' }],
-    catalog_courses: [{ code: 'CSE110', title: 'Programming', credits: 3, department: 'CSE', category: 'core', created_at: 'secret' }],
+    catalog_courses: [{ code: 'CSE110', title: 'Programming', credits: 3, department: 'CSE', category: 'core', visibility: 'curriculum', created_at: 'secret' }],
     catalog_faculties: [{ initial: 'ABC', name: 'Faculty', email: null, department: 'CSE', updated_at: 'secret' }]
   };
   const admin = {
@@ -169,7 +169,7 @@ test('catalog listing selects and returns public fields only', async () => {
   assert.equal(JSON.stringify(result).includes('secret'), false);
   assert.deepEqual(calls, [
     ['catalog_departments', 'id, name, color'],
-    ['catalog_courses', 'code, title, credits, department, category, roadmap_level, roadmap_order, hard_prerequisites, soft_prerequisites, source_note, is_roadmap_slot'],
+    ['catalog_courses', 'code, title, credits, department, category, visibility, roadmap_level, roadmap_order, hard_prerequisites, soft_prerequisites, source_note, is_roadmap_slot'],
     ['catalog_faculties', 'initial, name, email, department']
   ]);
 });
@@ -187,17 +187,27 @@ test('regular Admin with catalog.manage can mutate the catalog through the atomi
   assert.equal(calls[0][0], 'mutate_global_catalog');
 });
 
-test('course validation rejects unsafe credits and self prerequisites before the database call', async () => {
+test('course validation allows unknown credits but rejects unsafe credits, visibility, and self prerequisites', async () => {
   const catalog = await loadCatalogActions();
   const admin = { rpc() { throw new Error('database should not be reached'); } };
   const base = { kind: 'course', code: 'CSE420', title: 'Advanced', department: 'CSE', category: 'core' };
-  for (const credits of [null, [], {}]) {
+  for (const credits of [[], {}, -1, 20.5]) {
     await assert.rejects(() => catalog.upsertCatalogItem({
       admin, actor: { id: 'super-1', role: 'super_admin', permissions: [] }, requestId: crypto.randomUUID(),
       payload: { ...base, credits }
     }), /valid course credits/i);
   }
+  assert.equal(catalog.normalizeCatalogPayload({ ...base, credits: null }).item.credits, null);
+  assert.equal(catalog.normalizeCatalogPayload({ ...base, credits: '' }).item.credits, null);
   assert.doesNotThrow(() => catalog.normalizeCatalogPayload({ ...base, credits: 0 }));
+  assert.equal(catalog.normalizeCatalogPayload({ ...base, code: 'ANT401(B)', credits: null }).item.code, 'ANT401(B)');
+  assert.equal(catalog.normalizeCatalogPayload({ ...base, credits: 3 }).item.visibility, 'curriculum');
+  assert.equal(catalog.normalizeCatalogPayload({ ...base, credits: 3, visibility: 'search_only' }).item.visibility, 'search_only');
+  assert.equal(catalog.normalizeCatalogPayload({ ...base, credits: 3, visibility: 'alternative' }).item.visibility, 'alternative');
+  assert.throws(
+    () => catalog.normalizeCatalogPayload({ ...base, credits: 3, visibility: 'private' }),
+    /valid student visibility/i,
+  );
   await assert.rejects(() => catalog.upsertCatalogItem({
     admin, actor: { id: 'super-1', role: 'super_admin', permissions: [] }, requestId: crypto.randomUUID(),
     payload: { ...base, credits: 3, hardPrerequisites: ['CSE420'] }
@@ -1479,12 +1489,19 @@ test('Admin Catalog exposes and applies kind-specific search and select filters'
   assert.match(html, /id="catalogSearch"/);
   assert.match(html, /id="catalogDepartmentFilter"/);
   assert.match(html, /id="catalogCategoryFilter"/);
+  assert.match(html, /id="catalogVisibilityFilter"/);
   assert.match(html, /id="catalogFilterCount"[^>]*role="status"/);
   assert.match(html, /id="catalogNoResults"/);
   assert.match(js, /BracuCatalog\.filterCatalogItems/);
   assert.match(js, /catalogSearch[\s\S]*addEventListener\("input"/);
   assert.match(js, /catalogDepartmentFilter[\s\S]*addEventListener\("change"/);
   assert.match(js, /catalogCategoryFilter[\s\S]*addEventListener\("change"/);
+  assert.match(js, /catalogVisibilityFilter[\s\S]*addEventListener\("change"/);
+  assert.match(js, /Add Course only/);
+  assert.match(js, /Visible in Course List/);
+  assert.match(js, /name="categoryPreset"/);
+  assert.match(js, /Custom category/);
+  assert.match(js, /slugifyCategoryLabel/);
 });
 
 test('Create Admin uses the shared strong-password policy in the browser and server', () => {

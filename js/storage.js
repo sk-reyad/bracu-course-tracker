@@ -27,6 +27,13 @@
     const THEME_STORAGE_KEY = "bracuCourseTracker.theme";
     const MAX_BACKUP_BYTES = 2 * 1024 * 1024;
     const SAFE_IDENTIFIER = /^[A-Za-z0-9_-]{1,100}$/;
+    const DEPARTMENT_ALIASES = Object.freeze({
+      MNS: "MPS",
+      MPS: "MPS",
+      GED: "GENED",
+      SGE: "GENED",
+      GENED: "GENED",
+    });
     const REMOVED_DEFAULT_COURSES = new Set([
       "GED101",
       "GED102",
@@ -190,6 +197,7 @@
           theme: store.getItem(THEME_STORAGE_KEY) || "light",
           autoCountHighestRetake: true,
           facultyCatalogVersion: Number(data.facultyCatalogVersion || 0),
+          catalogDataVersion: Number(data.catalogDataVersion || 0),
           catalogTombstones: {},
           lastUpdated: now().toISOString(),
           cloudSync: { provider: "supabase" },
@@ -299,6 +307,14 @@
         const currentFacultyCatalogVersion = Number(
           data.facultyCatalogVersion || 0,
         );
+        const previousCatalogDataVersion = Number(
+          state.settings?.catalogDataVersion || 0,
+        );
+        const currentCatalogDataVersion = Number(data.catalogDataVersion || 0);
+        const canonicalDepartment = (value) => {
+          const id = String(value || "").trim().toUpperCase().replace(/\s+/g, "");
+          return DEPARTMENT_ALIASES[id] || id;
+        };
         state.profile = { ...fresh.profile, ...(state.profile || {}) };
         if (authenticatedProfile)
           state.profile = {
@@ -337,7 +353,11 @@
           .map((course) => {
             const code = normalize(course.code);
             const defaultCourse = defaultCourseMap.get(code);
-            const normalized = { ...course, code };
+            const normalized = {
+              ...course,
+              code,
+              department: canonicalDepartment(course.department),
+            };
             if (Object.prototype.hasOwnProperty.call(course, "title"))
               normalized.title = course.title || course.code;
             if (Object.prototype.hasOwnProperty.call(course, "credits"))
@@ -376,6 +396,9 @@
               ? { ...clone(defaultCourse), ...normalized }
               : normalized;
           });
+        state.courses = [...new Map(
+          state.courses.map((course) => [normalize(course.code), course]),
+        ).values()];
         fresh.courses.forEach((defaultCourse) => {
           if (
             !state.courses.some((course) => course.code === defaultCourse.code)
@@ -387,6 +410,25 @@
           Array.isArray(state.departments) && state.departments.length
             ? state.departments
             : fresh.departments;
+        if (previousCatalogDataVersion < currentCatalogDataVersion) {
+          const canonicalDefaults = new Map(
+            fresh.departments.map((department) => [
+              canonicalDepartment(department.id),
+              clone(department),
+            ]),
+          );
+          const consolidated = new Map();
+          state.departments.forEach((department) => {
+            const id = canonicalDepartment(department?.id);
+            if (!id || consolidated.has(id)) return;
+            consolidated.set(id, { ...department, id });
+          });
+          canonicalDefaults.forEach((department, id) => {
+            const existing = consolidated.get(id) || {};
+            consolidated.set(id, { ...existing, ...department, id });
+          });
+          state.departments = [...consolidated.values()];
+        }
         // BRAC University uses one published scale. Older local/cloud backups may
         // contain editable UI values, so always restore the canonical data here.
         state.gradeScale = clone(fresh.gradeScale);
@@ -396,7 +438,14 @@
         state.faculties = state.faculties.map((faculty) => ({
           department: "CSE",
           ...faculty,
+          department: canonicalDepartment(faculty?.department || "CSE"),
         }));
+        state.faculties = [...new Map(
+          state.faculties.map((faculty) => [
+            String(faculty.initial || "").trim().toUpperCase().replace(/\s+/g, ""),
+            faculty,
+          ]),
+        ).values()];
         if (previousFacultyCatalogVersion < currentFacultyCatalogVersion) {
           const existingInitials = new Set(
             state.faculties
@@ -414,6 +463,10 @@
           previousFacultyCatalogVersion,
           currentFacultyCatalogVersion,
         );
+        state.settings.catalogDataVersion = Math.max(
+          previousCatalogDataVersion,
+          currentCatalogDataVersion,
+        );
         state.semesters = Array.isArray(state.semesters)
           ? state.semesters
           : fresh.semesters;
@@ -421,12 +474,7 @@
           ...semester,
           number: semester.number || index + 1,
           courses: (semester.courses || [])
-            .filter(
-              (attempt) =>
-                attempt &&
-                attempt.code &&
-                !REMOVED_DEFAULT_COURSES.has(normalize(attempt.code)),
-            )
+            .filter((attempt) => attempt && attempt.code)
             .map((attempt) => ({
               repeatType: attempt.repeatType || "",
               countsInCGPA:
@@ -598,15 +646,32 @@
         const sourceFacultyCatalogVersion = Number(
           source?.settings?.facultyCatalogVersion || 0,
         );
+        const sourceCatalogDataVersion = Number(
+          source?.settings?.catalogDataVersion || 0,
+        );
         const next = migrateState(source, { authenticatedProfile: profile });
         const facultyCatalogWasUpgraded =
           Number(next.settings?.facultyCatalogVersion || 0) >
           sourceFacultyCatalogVersion;
+        const catalogDataWasUpgraded =
+          Number(next.settings?.catalogDataVersion || 0) >
+          sourceCatalogDataVersion;
+        lastLoadResolution = Object.freeze({
+          source: resolution.source,
+          shouldSync:
+            !resolution.conflict &&
+            (resolution.shouldSync ||
+              facultyCatalogWasUpgraded ||
+              catalogDataWasUpgraded),
+          conflict: resolution.conflict,
+          revision: resolution.revision,
+        });
         if (
           normalizedCloudRecord ||
           legacy ||
           (!local && !normalizedCloudRecord) ||
-          facultyCatalogWasUpgraded
+          facultyCatalogWasUpgraded ||
+          catalogDataWasUpgraded
         )
           saveUserState(userId, next);
         return next;

@@ -281,6 +281,28 @@ test('migration 023 lets authenticated students read course visibility without o
   assert.doesNotMatch(migration, /grant\s+(?:insert|update|delete|all)\b/i);
 });
 
+test('migrations 024 and 025 expand alternative visibility then consolidate catalog data without tracker writes', () => {
+  const schema = fs.readFileSync(
+    path.join(root, 'supabase', 'migrations', '202608290024_catalog_alternative_visibility.sql'),
+    'utf8'
+  );
+  const data = fs.readFileSync(
+    path.join(root, 'supabase', 'migrations', '202608290025_canonical_catalog_consolidation.sql'),
+    'utf8'
+  );
+  assert.match(schema, /visibility\s+in\s*\(\s*'curriculum'\s*,\s*'search_only'\s*,\s*'alternative'\s*\)/i);
+  assert.doesNotMatch(schema, /update\s+public\.|delete\s+from|course_tracker_data/i);
+  assert.match(data, /insert\s+into\s+public\.catalog_departments[\s\S]*'MPS'[\s\S]*'GENED'/i);
+  assert.match(data, /update\s+public\.catalog_courses[\s\S]*when\s+department\s*=\s*'MNS'\s+then\s+'MPS'[\s\S]*when\s+department\s+in\s*\(\s*'GED'\s*,\s*'SGE'\s*\)\s+then\s+'GENED'/i);
+  assert.match(data, /update\s+public\.catalog_faculties/i);
+  for (const code of ['CSE161','CSE162L','EEE103','EEE103L','ECE103','ECE103L','EEE283','EEE283L','ECE283','ECE283L','EEE301','EEE302']) {
+    assert.match(data, new RegExp(`'${code}'`));
+  }
+  assert.match(data, /set\s+visibility\s*=\s*'alternative'/i);
+  assert.doesNotMatch(data, /course_tracker_data|course_tracker_data_history|auth\.users/i);
+  assert.doesNotMatch(data, /grant\s+(?:insert|update|delete|all)/i);
+});
+
 test('migration 019 seeds every canonical global catalog item without overwriting existing rows', () => {
   const migration = fs.readFileSync(
     path.join(root, 'supabase', 'migrations', '202608270019_seed_default_global_catalog.sql'),
@@ -300,15 +322,26 @@ test('migration 019 seeds every canonical global catalog item without overwritin
     .map((row, index) => `  (${row.join(', ')})${index === rows.length - 1 ? '' : ','}`)
     .join('\n');
   const realCourses = DEFAULT_DATA.courses.filter((item) => !item.isRoadmapSlot);
+  // Migration 019 is immutable and predates the canonical department rename.
+  // Migration 025 moves these legacy seed identities forward in production.
+  const legacyDepartment = (value) => ({ MPS: 'MNS', GENED: 'GED' })[value] || value;
   const expected = {
-    departments: DEFAULT_DATA.departments.map((item) => [
-      quote(item.id), quote(item.name), quote(item.color || 'gray'),
-    ]),
+    departments: DEFAULT_DATA.departments.map((item) => {
+      const id = legacyDepartment(item.id);
+      const legacy = id === 'MNS'
+        ? { name: 'Mathematics and Natural Sciences', color: 'teal' }
+        : id === 'GED'
+          ? { name: 'General Education', color: 'slate' }
+          : item;
+      return [
+      quote(id), quote(legacy.name), quote(legacy.color || 'gray'),
+      ];
+    }),
     courses: realCourses.map((item) => [
       quote(item.code),
       quote(item.title),
       String(item.credits),
-      quote(item.department),
+      quote(legacyDepartment(item.department)),
       quote(item.category),
       item.roadmapLevel == null ? 'null' : String(item.roadmapLevel),
       item.roadmapOrder == null ? 'null' : String(item.roadmapOrder),
@@ -321,7 +354,7 @@ test('migration 019 seeds every canonical global catalog item without overwritin
       quote(item.initial),
       quote(item.name),
       nullable(item.email ? item.email.toLowerCase() : null),
-      quote(item.department),
+      quote(legacyDepartment(item.department)),
     ]),
   };
 

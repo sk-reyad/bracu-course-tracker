@@ -27,7 +27,7 @@
       faculties: "initial, name, email, department",
     };
     const CATEGORY_LABELS = Object.freeze({
-      "stream-1-writing": "Stream 1: Writing",
+      "stream-1-writing": "Stream 1: Writing Comprehension",
       "stream-2-math-and-natural-sciences":
         "Stream 2: Math and Natural Sciences",
       "stream-3-arts-and-humanities": "Stream 3: Arts and Humanities",
@@ -41,6 +41,30 @@
       gened: "GenEd",
       "non-credit": "Non-credit",
       capstone: "Project / Internship / Thesis",
+    });
+    const CURRICULUM_FIELDS = Object.freeze([
+      Object.freeze({ id: "stream-1", label: "Stream 1: Writing Comprehension", categories: ["stream-1-writing"] }),
+      Object.freeze({ id: "stream-2", label: "Stream 2: Math and Natural Sciences", categories: ["stream-2-math-and-natural-sciences"] }),
+      Object.freeze({ id: "stream-3", label: "Stream 3: Arts and Humanities", categories: ["stream-3-arts-and-humanities"] }),
+      Object.freeze({ id: "stream-4", label: "Stream 4: Social Sciences", categories: ["stream-4-social-sciences"] }),
+      Object.freeze({ id: "stream-5", label: "Stream 5: Communities, Seeking Transformation", categories: ["stream-5-communities-seeking-transformation"] }),
+      Object.freeze({ id: "gened-electives", label: "GenEd Electives", categories: ["gened", "general-elective"] }),
+      Object.freeze({ id: "school-core", label: "School Core", categories: ["school-core"] }),
+      Object.freeze({ id: "program-core", label: "Program Core", categories: ["program-core"] }),
+      Object.freeze({ id: "program-elective", label: "Program Elective", categories: ["program-elective"] }),
+      Object.freeze({ id: "project", label: "Project / Internship / Thesis", categories: ["capstone", "thesis-project"] }),
+    ]);
+    const ALTERNATIVE_EQUIVALENCES = Object.freeze({
+      CSE110: Object.freeze([
+        Object.freeze(["CSE161", "CSE162L"]),
+        Object.freeze(["EEE103", "EEE103L"]),
+        Object.freeze(["ECE103", "ECE103L"]),
+      ]),
+      CSE260: Object.freeze([
+        Object.freeze(["EEE283", "EEE283L"]),
+        Object.freeze(["ECE283", "ECE283L"]),
+        Object.freeze(["EEE301", "EEE302"]),
+      ]),
     });
 
     function canonicalKind(kind) {
@@ -118,10 +142,105 @@
       const searchOnly = all.filter(
         (course) => String(course?.visibility || "curriculum").toLowerCase() === "search_only",
       );
-      const curriculum = all.filter(
-        (course) => String(course?.visibility || "curriculum").toLowerCase() !== "search_only",
+      const alternatives = all.filter(
+        (course) => String(course?.visibility || "curriculum").toLowerCase() === "alternative",
       );
-      return Object.freeze({ all, curriculum, searchOnly });
+      const curriculum = all.filter(
+        (course) => !["search_only", "alternative"].includes(
+          String(course?.visibility || "curriculum").toLowerCase(),
+        ),
+      );
+      return Object.freeze({ all, curriculum, searchOnly, alternatives, addable: all });
+    }
+
+    function curriculumFieldOptions() {
+      return CURRICULUM_FIELDS.map((field) => ({
+        id: field.id,
+        label: field.label,
+        categories: [...field.categories],
+      }));
+    }
+
+    function curriculumFieldForCategory(category) {
+      const slug = slugifyCategoryLabel(category);
+      return CURRICULUM_FIELDS.find((field) => field.categories.includes(slug))?.id || "";
+    }
+
+    function matchesCurriculumField(category, fieldId) {
+      if (!fieldId || fieldId === "all") return true;
+      return curriculumFieldForCategory(category) === fieldId;
+    }
+
+    function isAlternativeCourseCode(code) {
+      const normalizedCode = normalizeCatalogKey("courses", code);
+      return Object.values(ALTERNATIVE_EQUIVALENCES).some((groups) =>
+        groups.some((group) => group.includes(normalizedCode)),
+      );
+    }
+
+    function departmentDisplayId(id) {
+      const normalizedId = normalizeCatalogKey("departments", id);
+      return normalizedId === "GENED" ? "GenEd" : normalizedId;
+    }
+
+    function resolveAlternativeReplacement(state, canonicalCode) {
+      const groups = ALTERNATIVE_EQUIVALENCES[normalizeCatalogKey("courses", canonicalCode)] || [];
+      const attempts = (Array.isArray(state?.semesters) ? state.semesters : [])
+        .flatMap((semester) => Array.isArray(semester?.courses) ? semester.courses : [])
+        .filter(Boolean);
+      const attemptsByCode = new Map();
+      attempts.forEach((attempt, index) => {
+        const code = normalizeCatalogKey("courses", attempt);
+        if (!attemptsByCode.has(code)) attemptsByCode.set(code, []);
+        attemptsByCode.get(code).push({ attempt, index });
+      });
+      const candidates = groups
+        .map((codes) => {
+          const entries = codes.flatMap((code) => attemptsByCode.get(code) || []);
+          if (!entries.length) return null;
+          const matchedAttempts = entries.map((entry) => entry.attempt);
+          const completedCodes = codes.filter((code) =>
+            (attemptsByCode.get(code) || []).some(
+              ({ attempt }) =>
+                attempt.status === "completed" && attempt.countsInCGPA !== false,
+            ),
+          );
+          const satisfied = completedCodes.length === codes.length;
+          const status = satisfied
+            ? "completed"
+            : matchedAttempts.some((attempt) => attempt.status === "current") ||
+                completedCodes.length
+              ? "current"
+              : matchedAttempts.some((attempt) => attempt.status === "planned")
+                ? "planned"
+                : "not-started";
+          return {
+            codes,
+            matchedAttempts,
+            completedCodes,
+            satisfied,
+            status,
+            latestIndex: Math.max(...entries.map((entry) => entry.index)),
+          };
+        })
+        .filter(Boolean)
+        .sort((left, right) =>
+          Number(right.satisfied) - Number(left.satisfied) ||
+          right.completedCodes.length - left.completedCodes.length ||
+          ({ completed: 4, current: 3, planned: 2, "not-started": 1 }[right.status] || 0) -
+            ({ completed: 4, current: 3, planned: 2, "not-started": 1 }[left.status] || 0) ||
+          right.latestIndex - left.latestIndex,
+        );
+      const selected = candidates[0];
+      if (!selected) return null;
+      return Object.freeze({
+        canonicalCode: normalizeCatalogKey("courses", canonicalCode),
+        codes: [...selected.codes],
+        attempts: selected.matchedAttempts,
+        completedCount: selected.completedCodes.length,
+        satisfied: selected.satisfied,
+        status: selected.status,
+      });
     }
 
     function searchCatalogCourses(items, filters = {}) {
@@ -172,6 +291,9 @@
         code,
         credits,
       };
+      course.catalogVisibility = String(source?.visibility || "curriculum")
+        .trim()
+        .toLowerCase();
       delete course.visibility;
       delete course.catalogOrigin;
       delete course.catalogKey;
@@ -301,11 +423,24 @@
           normalizeCatalogKey("courses", course),
         ),
       );
+      const referencedCourseKeys = new Set(
+        [
+          ...(Array.isArray(state.courses) ? state.courses : []),
+          ...(Array.isArray(state.semesters)
+            ? state.semesters.flatMap((semester) =>
+                Array.isArray(semester?.courses) ? semester.courses : [],
+              )
+            : []),
+        ].map((course) => normalizeCatalogKey("courses", course)),
+      );
+      const retainedAlternatives = coursePartitions.alternatives.filter((course) =>
+        referencedCourseKeys.has(normalizeCatalogKey("courses", course)),
+      );
 
       for (const collection of Object.keys(IDENTITY_FIELDS)) {
         const sourceRows =
           (collection === "courses"
-            ? coursePartitions.curriculum
+            ? [...coursePartitions.curriculum, ...retainedAlternatives]
             : catalog[collection]) ||
           (collection === "faculties" ? catalog.faculty : undefined);
         const rows = Array.isArray(sourceRows) ? sourceRows : [];
@@ -336,6 +471,15 @@
           );
           if (existingIndex >= 0) {
             const existing = state[collection][existingIndex];
+            if (
+              collection === "courses" &&
+              String(row?.visibility || "curriculum").toLowerCase() === "alternative" &&
+              existing?.catalogOrigin !== "global"
+            ) {
+              // Preserve every user-owned course field while adopting the shared
+              // visibility classification used by Course List and Add Courses.
+              existing.catalogVisibility = "alternative";
+            }
             if (
               existing?.catalogOrigin === "global" &&
               existing?.catalogOverridden !== true &&
@@ -461,6 +605,13 @@
       addCatalogCourse,
       slugifyCategoryLabel,
       categoryDisplayLabel,
+      curriculumFieldOptions,
+      curriculumFieldForCategory,
+      matchesCurriculumField,
+      isAlternativeCourseCode,
+      departmentDisplayId,
+      resolveAlternativeReplacement,
+      ALTERNATIVE_EQUIVALENCES,
       functionErrorMessage,
       createFacultyEditDraft,
       prepareCatalogEdit,

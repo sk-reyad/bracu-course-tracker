@@ -6,6 +6,7 @@ const path = require('node:path');
 const root = path.join(__dirname, '..');
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const app = fs.readFileSync(path.join(root, 'js', 'app.js'), 'utf8');
+const roadmap = fs.readFileSync(path.join(root, 'js', 'roadmap.js'), 'utf8');
 const storage = fs.readFileSync(path.join(root, 'js', 'storage.js'), 'utf8');
 const data = require('../js/data.js');
 
@@ -17,6 +18,54 @@ test('main tracker uses the approved product name and guarded boot scripts', () 
   }
   assert.doesNotMatch(app, /let state\s*=\s*loadState\(\)/);
   assert.match(app, /BracuTrackerBoot\.start\(\)/);
+});
+
+test('Add Course searches the master catalog without exposing internal visibility labels', () => {
+  assert.match(app, /let availableCatalogCourses = \[\]/);
+  assert.match(app, /id="courseCatalogSearch"/);
+  assert.match(app, /id="courseCatalogDepartment"/);
+  assert.match(app, /id="courseCatalogResults"/);
+  assert.match(app, /data-add-catalog-course/);
+  assert.match(app, /data-catalog-credits/);
+  assert.match(app, /BracuCatalog\.searchCatalogCourses/);
+  assert.match(app, /BracuCatalog\.addCatalogCourse/);
+  assert.doesNotMatch(app, /Search-only catalog/);
+});
+
+test('Course List exposes every approved curriculum field and applies the shared category matcher', () => {
+  assert.match(html, /id="curriculumFieldFilter"/);
+  for (const label of [
+    'Stream 1: Writing Comprehension', 'Stream 2: Math and Natural Sciences',
+    'Stream 3: Arts and Humanities', 'Stream 4: Social Sciences',
+    'Stream 5: Communities, Seeking Transformation', 'GenEd Electives',
+    'School Core', 'Program Core', 'Program Elective', 'Project / Internship / Thesis',
+  ]) assert.ok(html.includes(label), label);
+  assert.match(app, /BracuCatalog\.matchesCurriculumField\(course\.category,\s*curriculumFieldFilter\)/);
+  assert.match(app, /curriculumFieldFilter[\s\S]*addEventListener\("change",\s*renderCourseList\)/);
+});
+
+test('stream badges disclose full names and See more opens the matching Course List filter', () => {
+  assert.match(roadmap, /function renderCategoryBadge\(/);
+  assert.match(roadmap, /class="badge category-badge stream-category"/);
+  assert.match(roadmap, /<button class="stream-category-trigger" type="button"/);
+  assert.match(roadmap, /data-curriculum-field=/);
+  assert.match(roadmap, />See more<\/button>/);
+  assert.match(app, /function openCurriculumField\(fieldId\)/);
+  assert.match(app, /curriculumFieldFilter\.value\s*=\s*fieldId/);
+  assert.match(app, /document\.getElementById\("courses"\)/);
+  assert.match(app, /data-stream-see-more/);
+});
+
+test('course editing preserves Stream and grouped curriculum categories', () => {
+  assert.match(app, /function categoryOptions\(selected = ""\)/);
+  assert.match(app, /BracuCatalog\.curriculumFieldOptions\(\)/);
+  assert.match(app, /if \(selected && !categories\.has\(selected\)\)/);
+});
+
+test('roadmap resolves semester alternatives without replacing stored attempt records', () => {
+  assert.match(roadmap, /BracuCatalog\.resolveAlternativeReplacement\(state,\s*course\.code\)/);
+  assert.match(roadmap, /alternativeReplacement/);
+  assert.match(roadmap, /completedCount/);
 });
 
 test('dashboard profile is read-only until Edit and uses canonical Supabase controls', () => {
@@ -38,7 +87,16 @@ test('dashboard profile is read-only until Edit and uses canonical Supabase cont
 test('settings expose account sync without browser credentials', () => {
   assert.doesNotMatch(app, /id="cloudUrl"|id="cloudAnonKey"|id="cloudPassword"|cloudConfigForm|cloudAuthForm/);
   assert.match(app, /id="syncNowBtn"/);
-  assert.match(app, /id="accountSignOutBtn"/);
+  assert.match(html, /supportTicketsPanel[\s\S]*dashboard-sign-out-row[\s\S]*id="accountSignOutBtn"/);
+  assert.doesNotMatch(app, /account-sync-actions[\s\S]{0,500}id="accountSignOutBtn"/);
+});
+
+test('only explicit reset and backup import may request a destructive cloud save', () => {
+  assert.match(app, /function persist\(message = "Saved locally", options = \{\}\)/);
+  assert.match(app, /queueTrackerCloudSync\(state, options\)/);
+  assert.match(app, /intentionalResetAt:\s*new Date\(\)\.toISOString\(\)/);
+  assert.match(app, /persist\("Data reset", \{ allowDestructive: true \}\)/);
+  assert.match(app, /persist\("Backup imported", \{ allowDestructive: true \}\)/);
 });
 
 test('settings use a read-only faculty editor and a canonical grade scale table', () => {

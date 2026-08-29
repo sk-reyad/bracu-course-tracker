@@ -28,6 +28,14 @@ test('normalizeCatalogKey uses the normalized identity field for each catalog ki
   assert.equal(CatalogModule.normalizeCatalogKey('unknown', { code: 'CSE110' }), '');
 });
 
+test('legacy alternative identities and canonical department labels are centralized', () => {
+  assert.equal(CatalogModule.isAlternativeCourseCode('cse 161'), true);
+  assert.equal(CatalogModule.isAlternativeCourseCode('EEE283L'), true);
+  assert.equal(CatalogModule.isAlternativeCourseCode('CSE110'), false);
+  assert.equal(CatalogModule.departmentDisplayId('GENED'), 'GenEd');
+  assert.equal(CatalogModule.departmentDisplayId('MPS'), 'MPS');
+});
+
 test('faculty identity ignores whitespace so a local row wins an equivalent global initial', () => {
   const local = { id: 'faculty-local', initial: 'A B', name: 'Local faculty' };
   const state = { courses: [], departments: [], faculties: [local], settings: {} };
@@ -86,12 +94,75 @@ test('catalog partitions curriculum courses from Add Course only records', () =>
   const result = CatalogModule.partitionCatalogCourses([
     { code: 'CSE110', visibility: 'curriculum' },
     { code: 'ARC201', visibility: 'search_only' },
+    { code: 'CSE161', visibility: 'alternative' },
     { code: 'MAT110' },
   ]);
 
-  assert.deepEqual(result.all.map((course) => course.code), ['CSE110', 'ARC201', 'MAT110']);
+  assert.deepEqual(result.all.map((course) => course.code), ['CSE110', 'ARC201', 'CSE161', 'MAT110']);
   assert.deepEqual(result.curriculum.map((course) => course.code), ['CSE110', 'MAT110']);
   assert.deepEqual(result.searchOnly.map((course) => course.code), ['ARC201']);
+  assert.deepEqual(result.alternatives.map((course) => course.code), ['CSE161']);
+  assert.deepEqual(result.addable.map((course) => course.code), ['CSE110', 'ARC201', 'CSE161', 'MAT110']);
+});
+
+test('curriculum fields preserve stable slugs while matching approved grouped filters', () => {
+  assert.deepEqual(CatalogModule.curriculumFieldOptions().map((item) => item.label), [
+    'Stream 1: Writing Comprehension',
+    'Stream 2: Math and Natural Sciences',
+    'Stream 3: Arts and Humanities',
+    'Stream 4: Social Sciences',
+    'Stream 5: Communities, Seeking Transformation',
+    'GenEd Electives',
+    'School Core',
+    'Program Core',
+    'Program Elective',
+    'Project / Internship / Thesis',
+  ]);
+  assert.equal(CatalogModule.curriculumFieldForCategory('stream-4-social-sciences'), 'stream-4');
+  assert.equal(CatalogModule.curriculumFieldForCategory('gened'), 'gened-electives');
+  assert.equal(CatalogModule.curriculumFieldForCategory('general-elective'), 'gened-electives');
+  assert.equal(CatalogModule.curriculumFieldForCategory('capstone'), 'project');
+  assert.equal(CatalogModule.curriculumFieldForCategory('thesis-project'), 'project');
+  assert.equal(CatalogModule.matchesCurriculumField('program-core', 'program-core'), true);
+  assert.equal(CatalogModule.matchesCurriculumField('school-core', 'program-core'), false);
+});
+
+test('alternative pairs replace only their canonical roadmap requirement without rewriting attempts', () => {
+  const state = {
+    semesters: [{
+      id: 'fall-2024',
+      courses: [
+        { id: 'one', code: 'CSE161', status: 'completed', grade: 'A' },
+        { id: 'two', code: 'CSE162L', status: 'current', grade: '' },
+      ],
+    }],
+  };
+  const before = structuredClone(state);
+  const replacement = CatalogModule.resolveAlternativeReplacement(state, 'CSE110');
+
+  assert.deepEqual(replacement.codes, ['CSE161', 'CSE162L']);
+  assert.equal(replacement.completedCount, 1);
+  assert.equal(replacement.satisfied, false);
+  assert.equal(replacement.status, 'current');
+  assert.equal(CatalogModule.resolveAlternativeReplacement(state, 'CSE260'), null);
+  assert.deepEqual(state, before);
+
+  state.semesters[0].courses[1].status = 'completed';
+  assert.equal(CatalogModule.resolveAlternativeReplacement(state, 'CSE110').satisfied, true);
+  assert.equal(CatalogModule.resolveAlternativeReplacement(state, 'CSE110').status, 'completed');
+});
+
+test('alternative resolution prefers a satisfied path over an earlier partial path', () => {
+  const state = {
+    semesters: [{ courses: [
+      { id: 'planned-first', code: 'CSE161', status: 'planned' },
+      { id: 'done-one', code: 'EEE103', status: 'completed', countsInCGPA: true },
+      { id: 'done-two', code: 'EEE103L', status: 'completed', countsInCGPA: true },
+    ] }],
+  };
+  const replacement = CatalogModule.resolveAlternativeReplacement(state, 'CSE110');
+  assert.deepEqual(replacement.codes, ['EEE103', 'EEE103L']);
+  assert.equal(replacement.satisfied, true);
 });
 
 test('student catalog search covers all courses while filtering by department', () => {
@@ -136,6 +207,26 @@ test('adding from the master catalog blocks duplicates and requires unknown cred
   );
   assert.equal(added.course.visibility, undefined);
   assert.equal(added.course.catalogOrigin, undefined);
+});
+
+test('alternative visibility follows an existing user course without overwriting its data', () => {
+  const state = {
+    courses: [{ code: 'ARC201', title: 'My saved title', credits: 4 }],
+    departments: [], faculties: [], semesters: [], settings: {},
+  };
+  CatalogModule.mergeGlobalCatalog(state, {
+    courses: [{ code: 'ARC201', title: 'Global title', credits: 3, visibility: 'alternative' }],
+    departments: [], faculties: [],
+  });
+  assert.equal(state.courses[0].title, 'My saved title');
+  assert.equal(state.courses[0].catalogVisibility, 'alternative');
+
+  const addedState = { courses: [] };
+  CatalogModule.addCatalogCourse(
+    addedState,
+    { code: 'EEE103', title: 'Alternative', credits: 3, visibility: 'alternative' },
+  );
+  assert.equal(addedState.courses[0].catalogVisibility, 'alternative');
 });
 
 test('catalog presents friendly category labels while storing validated slugs', () => {

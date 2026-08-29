@@ -83,7 +83,7 @@
   function departmentOptions(selected = "") {
     const options = catalog.departments.map(
       (department) =>
-        `<option value="${escapeHtml(department.id)}" ${department.id === selected ? "selected" : ""}>${escapeHtml(department.id)} — ${escapeHtml(department.name)}</option>`,
+        `<option value="${escapeHtml(department.id)}" ${department.id === selected ? "selected" : ""}>${escapeHtml(root.BracuCatalog.departmentDisplayId(department.id))} — ${escapeHtml(department.name)}</option>`,
     );
     return `<option value="">Select department</option>${options.join("")}`;
   }
@@ -139,7 +139,7 @@
       <label>Department<select name="department" required>${departmentOptions(current.department)}</select></label>
       <label>Category<select name="categoryPreset" required>${categoryPresetOptions(current.category || "program-core")}</select></label>
       <label class="catalog-custom-category" hidden>Custom category<input name="categoryCustom" maxlength="80" placeholder="Example: Architecture Studio"></label>
-      <label>Student visibility<select name="visibility" required><option value="curriculum" ${(current.visibility || "curriculum") === "curriculum" ? "selected" : ""}>Visible in Course List</option><option value="search_only" ${current.visibility === "search_only" ? "selected" : ""}>Add Course only</option></select></label>
+      <label>Student visibility<select name="visibility" required><option value="curriculum" ${(current.visibility || "curriculum") === "curriculum" ? "selected" : ""}>Visible in Course List</option><option value="search_only" ${current.visibility === "search_only" ? "selected" : ""}>Add Course only</option><option value="alternative" ${current.visibility === "alternative" ? "selected" : ""}>Alternative course</option></select></label>
       <label>Roadmap level <span class="catalog-optional">Optional</span><input name="roadmapLevel" type="number" min="1" max="30" value="${escapeHtml(current.roadmap_level)}"></label>
       <label>Roadmap order <span class="catalog-optional">Optional</span><input name="roadmapOrder" type="number" min="1" max="100" value="${escapeHtml(current.roadmap_order)}"></label>
       <label class="catalog-field-wide">Hard prerequisites <span class="catalog-optional">Comma-separated</span><input name="hardPrerequisites" value="${escapeHtml(hard.join(", "))}" placeholder="CSE110, MAT110"></label>
@@ -211,15 +211,19 @@
     if (kind === "department")
       return `<span>${escapeHtml(item.id)}</span><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.color)}</small>`;
     if (kind === "faculty")
-      return `<span>${escapeHtml(item.initial)}</span><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.email || "No email")} · ${escapeHtml(item.department)}</small>`;
+      return `<span>${escapeHtml(item.initial)}</span><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.email || "No email")} · ${escapeHtml(root.BracuCatalog.departmentDisplayId(item.department))}</small>`;
     const creditCopy =
       item.credits === null || item.credits === undefined
         ? "Credits not set"
         : `${escapeHtml(item.credits)} credits`;
     const visibility = item.visibility || "curriculum";
     const visibilityCopy =
-      visibility === "search_only" ? "Add Course only" : "Visible in Course List";
-    return `<span>${escapeHtml(item.code)}</span><strong>${escapeHtml(item.title)}</strong><small>${creditCopy} · ${escapeHtml(item.department)} · ${escapeHtml(root.BracuCatalog.categoryDisplayLabel(item.category))}<span class="catalog-visibility-badge" data-visibility="${escapeHtml(visibility)}">${visibilityCopy}</span></small>`;
+      visibility === "search_only"
+        ? "Add Course only"
+        : visibility === "alternative"
+          ? "Alternative course"
+          : "Visible in Course List";
+    return `<span>${escapeHtml(item.code)}</span><strong>${escapeHtml(item.title)}</strong><small>${creditCopy} · ${escapeHtml(root.BracuCatalog.departmentDisplayId(item.department))} · ${escapeHtml(root.BracuCatalog.categoryDisplayLabel(item.category))}<span class="catalog-visibility-badge" data-visibility="${escapeHtml(visibility)}">${visibilityCopy}</span></small>`;
   }
 
   function optionMarkup(value, label) {
@@ -248,7 +252,7 @@
         .map((department) =>
           optionMarkup(
             department.id,
-            `${department.id} — ${department.name}`,
+            `${root.BracuCatalog.departmentDisplayId(department.id)} — ${department.name}`,
           ),
         )
         .join("");

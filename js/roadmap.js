@@ -97,6 +97,13 @@ function getDisplayRoadmapCourses(state) {
   return courses
     .filter((course) => course.roadmapLevel)
     .map((course) => {
+      const alternativeReplacement =
+        typeof BracuCatalog !== "undefined"
+          ? BracuCatalog.resolveAlternativeReplacement(state, course.code)
+          : null;
+      if (alternativeReplacement) {
+        return { ...course, alternativeReplacement };
+      }
       if (course.category === "elective-slot") {
         const replacementCode = electiveCandidates[electiveIndex++];
         if (replacementCode) {
@@ -172,7 +179,8 @@ function renderPrereqBadge(state, type, prerequisites = []) {
 }
 
 function renderCourseCard(state, course) {
-  const status = getCourseStatus(state, course.code);
+  const alternativeReplacement = course.alternativeReplacement;
+  const status = alternativeReplacement?.status || getCourseStatus(state, course.code);
   const prereq = checkPrerequisites(state, course);
   const latestAttempt = getLatestAttempt(state, course.code);
   const department = state.departments.find(
@@ -182,17 +190,33 @@ function renderCourseCard(state, course) {
     !prereq.eligible && status === "not-started" ? "locked" : "";
   const slotClass = course.isRoadmapSlot ? "roadmap-slot-card" : "";
   const replacedClass = course.replacedSlotCode ? "replaced-slot-card" : "";
-  const attemptMeta = latestAttempt
+  const alternativeClass = alternativeReplacement
+    ? "alternative-replacement-card"
+    : "";
+  const attemptMeta = alternativeReplacement
+    ? renderAlternativeAttemptMeta(alternativeReplacement)
+    : latestAttempt
     ? renderAttemptMeta(state, latestAttempt, course)
     : renderEmptyAttemptMeta(course, status);
+  const displayCode = alternativeReplacement
+    ? alternativeReplacement.codes.map(formatCode).join(" + ")
+    : formatCode(course.code);
+  const displayTitle = alternativeReplacement
+    ? alternativeReplacement.codes
+        .map((code) => courseByCode(state, code)?.title || code)
+        .join(" + ")
+    : course.title;
+  const replacementNote = alternativeReplacement
+    ? `Alternative to ${formatCode(course.code)}`
+    : course.replacedSlotTitle || "";
 
   return `
-    <article class="course-card ${lockedClass} ${slotClass} ${replacedClass}" id="card-${escapeHtml(course.code)}" data-course-code="${escapeHtml(course.code)}" data-status="${status}">
-      <div class="code-row"><div class="code">${escapeHtml(formatCode(course.code))}</div>${course.replacedSlotTitle ? `<span class="slot-note">${escapeHtml(course.replacedSlotTitle)}</span>` : ""}</div>
-      <div class="title" title="${escapeHtml(course.title)}">${escapeHtml(course.title)}</div>
+    <article class="course-card ${lockedClass} ${slotClass} ${replacedClass} ${alternativeClass}" id="card-${escapeHtml(course.code)}" data-course-code="${escapeHtml(course.code)}" data-status="${status}">
+      <div class="code-row"><div class="code">${escapeHtml(displayCode)}</div>${replacementNote ? `<span class="slot-note">${escapeHtml(replacementNote)}</span>` : ""}</div>
+      <div class="title" title="${escapeHtml(displayTitle)}">${escapeHtml(displayTitle)}</div>
       <div class="card-meta card-meta-category">
-        <span class="badge category-badge">${escapeHtml(categoryLabel(state, course.category))}</span>
-        <span class="badge dept-badge">${escapeHtml(department?.id || course.department)}</span>
+        ${renderCategoryBadge(state, course.category)}
+        <span class="badge dept-badge">${escapeHtml(typeof BracuCatalog !== "undefined" ? BracuCatalog.departmentDisplayId(department?.id || course.department) : department?.id || course.department)}</span>
         <span class="badge credit-badge">${escapeHtml(course.credits)} credits</span>
       </div>
       <div class="card-meta card-meta-prereq">
@@ -206,6 +230,15 @@ function renderCourseCard(state, course) {
 
 function metaPill(className, label, value) {
   return `<span class="status-pill ${className}"><small>${label}</small><strong>${escapeHtml(String(value))}</strong></span>`;
+}
+
+function renderAlternativeAttemptMeta(alternativeReplacement) {
+  const progress = `${alternativeReplacement.completedCount} of ${alternativeReplacement.codes.length}`;
+  return [
+    metaPill("grade-pill", "COMPLETED", progress),
+    metaPill("gp-pill", "STATUS", statusLabel(alternativeReplacement.status)),
+    metaPill("faculty-pill", "DETAILS", "My Path"),
+  ].join("");
 }
 
 function renderFacultyTooltipPill(state, faculty) {
@@ -591,6 +624,29 @@ function categoryLabel(state, categoryId) {
   return (
     state.categories?.find((item) => item.id === categoryId)?.label ||
     DEFAULT_DATA.categories.find((item) => item.id === categoryId)?.label ||
-    categoryId
+    (typeof BracuCatalog !== "undefined"
+      ? BracuCatalog.categoryDisplayLabel(categoryId)
+      : categoryId)
   );
+}
+
+function renderCategoryBadge(state, categoryId) {
+  if (typeof BracuCatalog === "undefined") {
+    return `<span class="badge category-badge">${escapeHtml(categoryLabel(state, categoryId))}</span>`;
+  }
+  const fieldId = BracuCatalog.curriculumFieldForCategory(categoryId);
+  const field = BracuCatalog.curriculumFieldOptions().find(
+    (item) => item.id === fieldId,
+  );
+  if (!fieldId.startsWith("stream-") || !field) {
+    return `<span class="badge category-badge">${escapeHtml(categoryLabel(state, categoryId))}</span>`;
+  }
+  const compactLabel = `Stream-${fieldId.split("-")[1]}`;
+  return `<span class="badge category-badge stream-category">
+    <button class="stream-category-trigger" type="button" aria-expanded="false" data-curriculum-field="${escapeHtml(fieldId)}">${escapeHtml(compactLabel)}</button>
+    <span class="stream-category-tooltip" role="tooltip">
+      <strong>${escapeHtml(field.label)}</strong>
+      <button class="stream-see-more" type="button" data-stream-see-more data-curriculum-field="${escapeHtml(fieldId)}">See more</button>
+    </span>
+  </span>`;
 }
