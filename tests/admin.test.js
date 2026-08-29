@@ -1512,6 +1512,14 @@ test('Create Admin uses the shared strong-password policy in the browser and ser
   assert.match(html, /minlength="12"/);
   assert.match(js, /BracuPasswordPolicy\.assertAdminPassword/);
   assert.match(actions, /assertAdminPassword\(input\.password\)/);
+  assert.match(actions, /import '\.\/password-policy\.js'/);
+  assert.equal(
+    fs.readFileSync(
+      path.join(root, 'supabase', 'functions', 'admin-access', 'password-policy.js'),
+      'utf8',
+    ),
+    fs.readFileSync(path.join(root, 'shared', 'password-policy.js'), 'utf8'),
+  );
 });
 
 test('Admin permission and danger controls are responsive and accessible', () => {

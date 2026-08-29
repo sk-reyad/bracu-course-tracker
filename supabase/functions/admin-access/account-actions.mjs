@@ -4,7 +4,7 @@ import {
   assertTargetAllowed,
   expandPermissionKeys
 } from './account-policy.mjs';
-import '../../../shared/password-policy.js';
+import './password-policy.js';
 
 const { assertAdminPassword } = globalThis.BracuPasswordPolicy;
 
