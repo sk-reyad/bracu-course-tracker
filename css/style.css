@@ -1824,6 +1824,7 @@ textarea:focus {
 .course-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
   gap: 12px;
 }
 
@@ -1837,6 +1838,7 @@ textarea:focus {
   border-radius: var(--radius-md);
   background: color-mix(in srgb, var(--surface-soft) 85%, var(--surface));
   padding: 14px;
+  height: 100%;
   display: grid;
   gap: 9px;
   transition:
@@ -1863,6 +1865,15 @@ textarea:focus {
   align-items: flex-start;
   justify-content: space-between;
   gap: 10px;
+}
+
+.list-course-card .list-top > div {
+  min-width: 0;
+}
+
+.list-course-card .status-badge {
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 .list-course-card strong {

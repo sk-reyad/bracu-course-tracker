@@ -401,7 +401,8 @@
 .dashboard-sign-out-row {
   display: flex;
   justify-content: flex-end;
-  padding: 4px 0 0;
+  margin-top: 18px;
+  padding: 0;
 }
 
 .dashboard-sign-out-row .ghost-btn {

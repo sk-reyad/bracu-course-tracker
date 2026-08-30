@@ -4,6 +4,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const styles = fs.readFileSync(path.join(__dirname, "..", "css", "style.css"), "utf8");
+const supportStyles = fs.readFileSync(path.join(__dirname, "..", "css", "support.css"), "utf8");
 const appScript = fs.readFileSync(path.join(__dirname, "..", "js", "app.js"), "utf8");
 const pageHtml = fs.readFileSync(path.join(__dirname, "..", "index.html"), "utf8");
 const interactionLayer = styles.slice(styles.indexOf("/* Approved modern interaction layer */"));
@@ -16,6 +17,11 @@ function read(relativePath) {
 function ruleBody(selector) {
   const escaped = selector.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   return styles.match(new RegExp(`${escaped}\\s*{([^}]*)}`, "s"))?.[1] || "";
+}
+
+function supportRuleBody(selector) {
+  const escaped = selector.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return supportStyles.match(new RegExp(`${escaped}\\s*{([^}]*)}`, "s"))?.[1] || "";
 }
 
 function atRuleBody(atRule) {
@@ -135,6 +141,35 @@ test("stream detail triggers are keyboard-visible and responsive", () => {
   assert.match(styles, /\.stream-see-more[\s\S]*min-height:\s*32px/);
   const mobile = atRuleBody("@media (max-width: 780px)");
   assert.match(mobile, /\.stream-category-tooltip[\s\S]*max-width/);
+});
+
+test("dashboard sign out uses the same section gap as the surrounding panels", () => {
+  const signOutRow = supportRuleBody(".dashboard-sign-out-row");
+  assert.match(signOutRow, /margin-top:\s*18px/);
+  assert.match(signOutRow, /padding:\s*0/);
+  assert.match(
+    supportStyles,
+    /@media \(max-width: 560px\)[\s\S]*?\.dashboard-sign-out-row \.ghost-btn\s*{[^}]*width:\s*100%/,
+  );
+});
+
+test("course list keeps every card equal and long titles cannot wrap status badges", () => {
+  const courseList = ruleBody(".course-list");
+  assert.match(courseList, /grid-auto-rows:\s*1fr/);
+  assert.match(courseList, /gap:\s*12px/);
+  assert.match(ruleBody(".list-course-card"), /height:\s*100%/);
+  assert.match(ruleBody(".list-course-card .list-top > div"), /min-width:\s*0/);
+  const statusBadge = ruleBody(".list-course-card .status-badge");
+  assert.match(statusBadge, /flex:\s*0 0 auto/);
+  assert.match(statusBadge, /white-space:\s*nowrap/);
+  assert.match(
+    atRuleBody("@media (max-width: 1180px)"),
+    /\.course-list,[\s\S]*grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/,
+  );
+  assert.match(
+    atRuleBody("@media (max-width: 780px)"),
+    /\.course-list,[\s\S]*grid-template-columns:\s*1fr/,
+  );
 });
 
 test("dashboard profile omits the redundant Google account management note", () => {
