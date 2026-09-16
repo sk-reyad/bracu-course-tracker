@@ -4,6 +4,7 @@ import {
   ALTERNATIVE_COURSE_CODES,
   CURRICULUM_COURSES,
   DEPARTMENT_COLORS,
+  DEGREE_PLAN_COURSES,
   PDF_ONLY_COURSES,
 } from "./catalog-source-config.mjs";
 
@@ -239,7 +240,7 @@ async function runCli() {
   const result = buildCatalogSeed({
     ...source,
     curriculum: CURRICULUM_COURSES,
-    supplementalCourses: PDF_ONLY_COURSES,
+    supplementalCourses: [...PDF_ONLY_COURSES, ...DEGREE_PLAN_COURSES],
     alternativeCodes: ALTERNATIVE_COURSE_CODES,
   });
   await fs.writeFile(outputPath, result.sql, "utf8");

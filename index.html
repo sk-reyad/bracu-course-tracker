@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/degree-plan.css" />
     <link rel="stylesheet" href="css/ui-states.css" />
     <link rel="stylesheet" href="css/support.css" />
   </head>
@@ -534,19 +535,23 @@
         </div>
         <div class="editor-tabs" role="tablist" aria-label="Settings tabs">
           <button class="tab-btn active" data-tab="facultyEditor" type="button">
-            Faculty
+            Faculty List
+          </button>
+          <button class="tab-btn" data-tab="degreePlanEditor" type="button">
+            Degree Plan
           </button>
           <button class="tab-btn" data-tab="gradeEditor" type="button">
             Grade Scale
           </button>
           <button class="tab-btn" data-tab="backupEditor" type="button">
-            Backup
+            Backup &amp; Restore
           </button>
           <button class="tab-btn" data-tab="cloudEditor" type="button">
             Cloud Sync
           </button>
         </div>
         <div class="tab-panel active" id="facultyEditor"></div>
+        <div class="tab-panel" id="degreePlanEditor"></div>
         <div class="tab-panel" id="gradeEditor"></div>
         <div class="tab-panel" id="backupEditor"></div>
         <div class="tab-panel" id="cloudEditor"></div>
@@ -606,12 +611,15 @@
     <script src="js/supabase-client.js"></script>
     <script src="js/access.js"></script>
     <script src="js/profile.js"></script>
+    <script src="js/degree-plan-data.js"></script>
     <script src="js/data.js"></script>
     <script src="js/catalog.js"></script>
     <script src="js/storage.js"></script>
     <script src="js/preview.js"></script>
     <script src="js/gpa.js"></script>
     <script src="js/prerequisites.js"></script>
+    <script src="js/degree-plan.js"></script>
+    <script src="js/degree-plan-view.js"></script>
     <script src="js/roadmap.js"></script>
     <script src="js/motion.js"></script>
     <script src="js/ui-states.js"></script>

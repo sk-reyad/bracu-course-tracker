@@ -1,3 +1,11 @@
+import degreePlanData from "../js/degree-plan-data.js";
+
+export const DEGREE_PLAN_COURSES = Object.freeze(degreePlanData.catalogCourses().map(course => ({
+  code: course.code, title: course.title, credits: course.credits,
+  shortForm: course.department, category: course.category,
+  notes: "Approved CS degree plan",
+})));
+
 function curriculumEntries(category, label, codes) {
   return Object.fromEntries(
     codes.map((code) => [
@@ -117,6 +125,11 @@ export const CURRICULUM_COURSES = Object.freeze({
   ...curriculumEntries("capstone", "Project / Internship / Thesis", [
     "CSE400",
   ]),
+  ...Object.fromEntries(degreePlanData.catalogCourses().map(course => [
+    course.code,
+    { category: course.category === "thesis-project" ? "capstone" : course.category,
+      sourceNote: "CS degree plan: approved course list" },
+  ])),
 });
 
 export const ALTERNATIVE_COURSE_CODES = Object.freeze([

@@ -89,8 +89,16 @@ function getDisplayRoadmapCourses(state) {
     }
   }
 
+  const degreePlan = typeof BracuDegreePlan !== "undefined" ? BracuDegreePlan.calculate(state) : null;
+  const electiveSlots = new Map((degreePlan?.programElective.rows || [])
+    .filter((row) => row.allocated).map((row) => [row.slot, row.code]));
+  const fixedRoadmapCodes = new Set(courses.filter((course) => course.roadmapLevel && !course.isRoadmapSlot).map((course) => course.code));
   const electiveCandidates = getSlotCandidateCodes(state, "elective");
-  const codCandidates = getSlotCandidateCodes(state, "cod");
+  const codCandidates = degreePlan
+    ? [...degreePlan.streams.flatMap((stream) => stream.rows), ...degreePlan.gened.rows]
+      .filter((row) => row.allocated && ["completed", "current", "selected"].includes(row.status) && !fixedRoadmapCodes.has(row.code))
+      .sort((a, b) => a.order - b.order).map((row) => row.code)
+    : getSlotCandidateCodes(state, "cod");
   let electiveIndex = 0;
   let codIndex = 0;
 
@@ -105,7 +113,7 @@ function getDisplayRoadmapCourses(state) {
         return { ...course, alternativeReplacement };
       }
       if (course.category === "elective-slot") {
-        const replacementCode = electiveCandidates[electiveIndex++];
+        const replacementCode = degreePlan ? electiveSlots.get(course.code) : electiveCandidates[electiveIndex++];
         if (replacementCode) {
           const actual = state.courses.find(
             (item) => item.code === replacementCode,

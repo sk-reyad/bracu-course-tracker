@@ -1233,6 +1233,7 @@ function renderReport() {
 
 function renderSettings() {
   renderFacultyEditor();
+  BracuDegreePlanView.render($("#degreePlanEditor"), state);
   renderGradeEditor();
   renderBackupEditor();
   renderCloudEditor();
@@ -2419,9 +2420,12 @@ function initializeTrackerApp(payload) {
   state = migrateState(payload.state, {
     authenticatedProfile: payload.context?.profile,
   });
+  // Enrich the working catalog, not the immutable seed or saved attempts.
+  state.courses = BracuDegreePlanData.mergeCourses(state.courses);
   availableCatalogCourses = Array.isArray(payload.availableCatalogCourses)
     ? payload.availableCatalogCourses
     : state.courses;
+  availableCatalogCourses = BracuDegreePlanData.mergeCourses(availableCatalogCourses);
   appAccessContext = payload.context;
   queueTrackerCloudSync = payload.queueCloudSync || (() => {});
   syncTrackerNow = payload.syncNow || (async () => ({ skipped: true }));
