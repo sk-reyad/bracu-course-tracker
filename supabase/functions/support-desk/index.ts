@@ -1,5 +1,6 @@
 import { createClient, type SupabaseClient, type User } from "@supabase/supabase-js";
 import { publicErrorMessage } from "../_shared/public-error.mjs";
+import { jwtAssuranceLevel } from "../_shared/jwt-assurance.mjs";
 
 type Action = "submit-ticket" | "list-my-tickets" | "list-tickets" | "update-status" | "add-reply" | "update-reply" | "resend-notification" | "get-maintenance" | "set-maintenance";
 const PUBLIC_ACTIONS = new Set<Action>(["submit-ticket", "get-maintenance"]);
@@ -213,7 +214,14 @@ Deno.serve(async request => {
 
     const user = await requireUser(caller, authorization);
     const permission = ADMIN_PERMISSIONS[action];
-    if (permission) await requirePermission(caller, permission);
+    if (permission) {
+      // requireUser has already validated this exact bearer token with Auth.
+      // Keep public support and student-owned ticket reads outside the MFA gate.
+      if (jwtAssuranceLevel(authorization.slice(7)) !== "aal2") {
+        return response(origin, { data: null, error: "Multi-factor authentication required." }, 403);
+      }
+      await requirePermission(caller, permission);
+    }
 
     if (action === "list-my-tickets") {
       const { data, error } = await admin.from("support_tickets").select("id, message, source, status, created_at, updated_at, support_replies(id, body, delivery_method, created_at, updated_at)").eq("requester_user_id", user.id).order("created_at", { ascending: false });
