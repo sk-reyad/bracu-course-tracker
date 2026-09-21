@@ -204,7 +204,7 @@ Serve the application over HTTP rather than opening the HTML through `file://`. 
 > [!WARNING]
 > The repository contains deployment-specific configuration. For a separate installation, configure **your own Supabase project and authentication settings** before using authenticated pages. Do not run migrations or tests against somebody else's production project.
 
-Review [the setup guide](docs/SETUP.md), [Supabase migrations](supabase/migrations), and [Edge Function source](supabase/functions) together. The setup guide contains project-specific examples and an older migration checklist; it is not a complete, current one-command installer.
+Review [the setup guide](docs/SETUP.md), [Supabase migrations](supabase/migrations), and [Edge Function source](supabase/functions) together. Setup distinguishes local preview from a separately configured authenticated installation; it is not a one-command installer.
 
 A deployment requires:
 
@@ -277,6 +277,13 @@ bracu-course-tracker/
 ├── middleware.ts               # Vercel maintenance checks
 └── vercel.json                 # Hosting routes and security headers
 ```
+
+## Documentation
+
+- [Project and invariants](docs/PROJECT.md), [architecture](docs/ARCHITECTURE.md), and [design](docs/DESIGN.md)
+- [Data model](docs/DATA_MODEL.md) and [security boundaries](docs/SECURITY.md)
+- [Setup](docs/SETUP.md), [testing](docs/TESTING.md), and [deployment](docs/DEPLOYMENT.md)
+- [Decisions](docs/DECISIONS.md), [maintainer context](docs/MEMORY.md), and [known issues](docs/KNOWN_ISSUES.md)
 
 ## Possible Next Steps
 
