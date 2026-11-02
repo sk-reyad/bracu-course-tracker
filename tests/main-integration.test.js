@@ -10,6 +10,16 @@ const roadmap = fs.readFileSync(path.join(root, 'js', 'roadmap.js'), 'utf8');
 const storage = fs.readFileSync(path.join(root, 'js', 'storage.js'), 'utf8');
 const data = require('../js/data.js');
 
+test('faculty dropdown source uses shared initial ordering while preserving identities', () => {
+  const vm = require('node:vm');
+  const catalog = require('../js/catalog.js');
+  const source = app.slice(app.indexOf('function getFacultiesAlphabetically()'), app.indexOf('function renderQuickAddOptions()'));
+  const faculties = [{ id: 'psd', initial: 'PSD', name: 'Aaron' }, { id: 'alm', initial: 'ALM', name: 'Zoe' }];
+  const sorted = vm.runInNewContext(`${source}; getFacultiesAlphabetically()`, { state: { faculties }, BracuCatalog: catalog });
+  assert.deepEqual(Array.from(sorted, row => row.id), ['alm', 'psd']);
+  assert.deepEqual(faculties.map(row => row.id), ['psd', 'alm']);
+});
+
 test('main tracker uses the approved product name and guarded boot scripts', () => {
   assert.match(html, /<strong>BRACU Course Tracker<\/strong>/);
   assert.doesNotMatch(html, /<strong>BRACU CS Tracker<\/strong>/);

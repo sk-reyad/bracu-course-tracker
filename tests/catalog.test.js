@@ -4,6 +4,38 @@ const assert = require('node:assert/strict');
 const CatalogModule = require('../js/catalog.js');
 const BootModule = require('../js/app-boot.js');
 
+test('faculty lists sort lexicographically by normalized initial without changing saved order', () => {
+  const rows = [
+    { initial: 'PSD', name: 'Aaron', department: 'MPS' },
+    { initial: ' a2 ', name: 'First', department: 'ESS' },
+    { initial: 'ALM', name: 'Zoe', department: 'ESS' },
+    { initial: 'A10', name: 'Last', department: 'ESS' },
+  ];
+  const original = rows.slice();
+  const sorted = CatalogModule.sortFacultiesByInitial(rows);
+  assert.deepEqual(sorted.map(row => row.initial), ['A10', ' a2 ', 'ALM', 'PSD']);
+  assert.deepEqual(rows, original);
+  assert.equal(sorted[3], rows[0]);
+  assert.deepEqual(CatalogModule.sortFacultiesByInitial(null), []);
+});
+
+test('student and admin faculty search preserve initial order for every search field and department', () => {
+  const rows = [
+    { initial: 'PSD', name: 'Partho Sutra Dhor', email: 'partho.dhor@bracu.ac.bd', department: 'MPS' },
+    { initial: 'ALM', name: 'Md. Aftab Alam', email: 'aftab.alam@bracu.ac.bd', department: 'ESS' },
+  ];
+  for (const kind of ['faculty', 'faculties']) {
+    for (const query of ['', 'bracu.ac.bd']) {
+      assert.deepEqual(CatalogModule.filterCatalogItems(kind, rows, { query }).map(row => row.initial), ['ALM', 'PSD']);
+    }
+    for (const row of rows) {
+      for (const query of [row.initial.toLowerCase(), row.name, row.email]) {
+        assert.deepEqual(CatalogModule.filterCatalogItems(kind, rows, { query, department: row.department }), [row]);
+      }
+    }
+  }
+});
+
 function catalogState() {
   return {
     courses: [

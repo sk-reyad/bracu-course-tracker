@@ -82,9 +82,19 @@
         .replace(/\s+/g, "");
     }
 
+    function sortFacultiesByInitial(items) {
+      return (Array.isArray(items) ? [...items] : []).sort((left, right) => {
+        const a = normalizeCatalogKey("faculty", left);
+        const b = normalizeCatalogKey("faculty", right);
+        return a < b ? -1 : a > b ? 1 : 0;
+      });
+    }
+
     function filterCatalogItems(kind, items, filters = {}) {
       const collection = canonicalKind(kind);
-      const rows = Array.isArray(items) ? items : [];
+      const rows = collection === "faculties"
+        ? sortFacultiesByInitial(items)
+        : Array.isArray(items) ? items : [];
       const query = String(filters.query || "").trim().toLowerCase();
       const department = String(filters.department || "").trim().toUpperCase();
       const category = String(filters.category || "").trim().toLowerCase();
@@ -599,6 +609,7 @@
 
     return Object.freeze({
       normalizeCatalogKey,
+      sortFacultiesByInitial,
       filterCatalogItems,
       partitionCatalogCourses,
       searchCatalogCourses,

@@ -47,6 +47,8 @@ These are application roles; PostgreSQL authenticated and service_role are diffe
 
 ## Invariants to preserve
 
+Faculty lists, searches and selectors use lexicographical initial order (normalized uppercase, whitespace removed), not name or natural-number order. Search still matches initial, name and email; sorting does not rewrite personal faculty records.
+
 1. Personal tracker/history remains owner-scoped; admin permission is not a blanket grant to read every tracker.
 2. Anonymous preview boots without personal Auth/tracker/catalog loading or writes. The page can still load external libraries and the public maintenance guard; it is not a network-free mode.
 3. Google-provided student name/email are immutable through student profile actions. Authorized administrative identity flows are separate.

@@ -82,6 +82,8 @@ Files below are in [js/](../js). Change the owner rather than duplicating its lo
 
 ## End-to-end flows
 
+Faculty ordering belongs to catalog.js: sortFacultiesByInitial returns a sorted copy; faculty filtering and app.js selector sources reuse it. Student lists/search, Quick Add, attempt dropdowns and the admin catalog therefore share normalized-initial lexicographical order.
+
 1. **Boot:** app wiring starts BracuTrackerBoot → requireMainAccess → preview short circuit or session/profile checks → tracker row read → storage load resolution → fetch/merge shared catalog → initialize app. Cloud-read failure avoids automatic startup sync.
 2. **Save:** app changes local state → storage saves user copy → boot marks pending/debounces and serializes saves → save_course_tracker_state(expected revision, data, destructive flag) → update sync metadata. A conflict preserves local work; SQL enforces ownership independently.
 3. **Student auth/profile:** GIS returns ID token → signInWithIdToken → profile/access context → onboarding RPC. Custom avatar becomes a unique user-folder WebP object; profile RPC validates path/ownership, and failed persistence cleanup is handled in profile.js.

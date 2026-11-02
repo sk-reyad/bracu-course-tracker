@@ -110,6 +110,8 @@ Browser resolution preserves pending local work, detects base-revision conflicts
 
 ## Catalog sources and evolution
 
+Shared additions ALM (ESS) and PSD (MPS) are recorded in [the additive faculty seed](../supabase/seeds/faculty_additions_20261103.sql). They were added to the live catalog on 2026-11-03. On fresh installations, apply this seed explicitly after schema migrations; GitHub/frontend deployment does not execute SQL seeds. Existing initials are preserved on conflict. Bundled historical defaults are unchanged; authenticated clients load the shared catalog at boot.
+
 - js/degree-plan-data.js owns current requirement definitions and supplemental membership; js/data.js holds bundled reference/sample records.
 - scripts/catalog-source-config.mjs combines curriculum classification, PDF supplements, alternatives and degree-plan data.
 - scripts/catalog-workbook-reader.mjs expects external workbook sheets/ranges; scripts/catalog-import.mjs generates SQL. Source workbook availability is not guaranteed by checkout.

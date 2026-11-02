@@ -281,22 +281,7 @@ function resolveFacultyId(inputValue) {
 }
 
 function getFacultiesAlphabetically() {
-  return [...state.faculties].sort((a, b) => {
-    const nameCompare = String(a.name || a.initial || "").localeCompare(
-      String(b.name || b.initial || ""),
-      undefined,
-      { sensitivity: "base", numeric: true },
-    );
-    if (nameCompare !== 0) return nameCompare;
-    return String(a.initial || "").localeCompare(
-      String(b.initial || ""),
-      undefined,
-      {
-        sensitivity: "base",
-        numeric: true,
-      },
-    );
-  });
+  return BracuCatalog.sortFacultiesByInitial(state.faculties);
 }
 
 function renderQuickAddOptions() {
