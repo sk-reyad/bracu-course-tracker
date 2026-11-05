@@ -307,7 +307,7 @@ test('migration 019 seeds every canonical global catalog item without overwritin
   const migration = fs.readFileSync(
     path.join(root, 'supabase', 'migrations', '202608270019_seed_default_global_catalog.sql'),
     'utf8'
-  );
+  ).replace(/\r\n/g, '\n');
   const { DEFAULT_DATA } = require('../js/data.js');
   const quote = (value) => `'${String(value).replaceAll("'", "''")}'`;
   const nullable = (value) => (

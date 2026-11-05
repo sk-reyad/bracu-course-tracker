@@ -225,7 +225,7 @@ test("generated complete catalog seed has the verified counts and no duplicate c
       "202608280021_seed_complete_course_catalog.sql",
     ),
     "utf8",
-  );
+  ).replace(/\r\n/g, "\n");
   const departmentsBlock = migration.match(
     /insert into public\.catalog_departments[\s\S]*?\nvalues\n([\s\S]*?)\non conflict \(id\)/i,
   )?.[1] || "";
