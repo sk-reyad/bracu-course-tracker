@@ -1,0 +1,108 @@
+{
+  "assertions": 18,
+  "results": [
+    {
+      "variant": "original",
+      "toast": {
+        "parent": "",
+        "shown": true,
+        "opacity": "1",
+        "role": "status",
+        "text": "Synthetic validation feedback",
+        "withinViewport": true
+      },
+      "scroll": {
+        "before": {
+          "bodyY": 0,
+          "modalY": 0
+        },
+        "after": {
+          "bodyY": 0,
+          "modalY": 299
+        }
+      }
+    },
+    {
+      "variant": "option-a",
+      "toast": {
+        "parent": "",
+        "shown": true,
+        "opacity": "1",
+        "role": "status",
+        "text": "Synthetic validation feedback",
+        "withinViewport": true
+      },
+      "scroll": {
+        "before": {
+          "bodyY": 0,
+          "modalY": 0
+        },
+        "after": {
+          "bodyY": 0,
+          "modalY": 284
+        }
+      }
+    },
+    {
+      "variant": "native",
+      "toast": {
+        "parent": "settingsModal",
+        "shown": true,
+        "opacity": "1",
+        "role": "status",
+        "text": "Synthetic validation feedback",
+        "withinViewport": true
+      },
+      "scroll": {
+        "before": {
+          "bodyY": 0,
+          "modalY": 0
+        },
+        "after": {
+          "bodyY": 0,
+          "modalY": 284
+        }
+      }
+    },
+    {
+      "fallbackRequestClose": false,
+      "nested": {
+        "events": [
+          {
+            "type": "cancel",
+            "id": "supportDialog",
+            "cancelable": true
+          },
+          {
+            "type": "close",
+            "id": "supportDialog",
+            "cancelable": false
+          }
+        ],
+        "parentOpen": true,
+        "childOpen": false,
+        "focusedInsideParent": true
+      }
+    },
+    {
+      "fallbackRequestClose": true,
+      "nested": {
+        "events": [
+          {
+            "type": "cancel",
+            "id": "supportDialog",
+            "cancelable": true
+          },
+          {
+            "type": "close",
+            "id": "supportDialog",
+            "cancelable": false
+          }
+        ],
+        "parentOpen": true,
+        "childOpen": false,
+        "focusedInsideParent": true
+      }
+    }
+  ]
+}

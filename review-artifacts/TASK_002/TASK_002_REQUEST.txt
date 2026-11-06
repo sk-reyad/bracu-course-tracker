@@ -1,0 +1,256 @@
+# TASK_002 — R-010 Native Dialog Alternative: Isolated Before/After Review
+
+Repository: `sk-reyad/bracu-course-tracker`
+
+Review branch: `temp/ui-ux-audit-review`
+
+Verified review commit: `d2a22340c4fcf6afb5d865eb99ff4c48247b64d7`
+
+Original application base: `9d86db46b1134a3755a2e269252b1ee1234f2570`
+
+## Objective
+
+Begin the sequential review of the FIRST unreviewed recommendation in the approved Master Recommendation Register.
+
+**Recommendation R-010: Use native `dialog.showModal()` instead of custom tracker overlays.**
+
+Sources: `ecc:accessibility`, `ecc:frontend-a11y`.
+
+Finding: F-002.
+
+Priority: P1.
+
+This is a distinct implementation alternative to R-009, which was already demonstrated in Demo A and liked by the owner.
+
+Create a functional, isolated Before/After demonstration for **R-010 only**.
+
+Do NOT begin R-023 or any other recommendation.
+
+## 1. Read Existing Evidence
+
+Read:
+
+- Latest Master Recommendation Register and Review Ledger
+- Complete R-010 source recommendation and source citations
+- R-009 selected custom-modal implementation
+- Existing Demo A implementation and verification evidence
+- `FRONTEND_UI_MULTISKILL_AUDIT.md`
+- Relevant repository instructions
+- `index.html`
+- `js/app.js`
+- Modal-related CSS and supporting functions
+
+Verify the current modal architecture before editing anything.
+
+Do not assume that simply changing an element to `<dialog>` makes the behavior accessible or correct.
+
+## 2. Protect Previously Selected Work
+
+Demo A is a SELECTED CANDIDATE, not a production-approved change.
+
+Preserve the complete Demo A separately.
+
+Do not overwrite it, remove it, or change its owner decision.
+
+R-010 must be developed as an independent ALTERNATIVE implementation.
+
+Do not combine Demo A's custom focus-trap architecture with the native dialog architecture without clearly documenting which behavior belongs to which candidate.
+
+Maintain the functionality and accessibility outcomes already demonstrated in A.
+
+## 3. Provide Three-Way Comparison
+
+The owner needs to compare:
+
+**BEFORE — Original**
+
+The untouched application modal implementation from the verified original base commit.
+
+**OPTION A — Previously Selected Demo A**
+
+Existing custom overlay architecture with improved focus management and Settings accessibility.
+
+**OPTION B — R-010 Native Dialog**
+
+The same modal experience implemented using native `<dialog>` and `showModal()`.
+
+Option B must preserve the existing visual design.
+
+Do not modify shadows, badges, cards, typography, colors, radius, or layout unnecessarily.
+
+Demo D styling remains REJECTED.
+
+The comparison must explain whether Option B offers any demonstrable advantage or disadvantage over Option A.
+
+Do not claim native dialog is automatically superior.
+
+## 4. Functional Requirements for Option B
+
+Inspect all relevant student modals and preserve their existing workflows.
+
+Verify:
+
+- Correct initial keyboard focus
+- Tab and Shift+Tab containment
+- Background interaction prevention
+- Escape dismissal where appropriate
+- Accessible modal names and close-button labels
+- Focus restoration after closing
+- Existing save/cancel and programmatic-close behavior
+- Existing Settings content and interaction
+- Nested/native support-dialog interaction
+- Correct close/cancel event handling
+- No duplicate close side effects
+- Correct scroll and backdrop behavior
+- No hidden/open-state conflicts
+- No accidental changes to data, persistence, or academic calculations
+
+Maintain focus and keyboard behavior comparable to the approved Demo A.
+
+If a behavior cannot be preserved, report the limitation instead of concealing it.
+
+## 5. Visual Comparison
+
+Use actual browser screenshots, not AI mockups.
+
+Capture matched images for:
+
+- Original baseline
+- Demo A
+- R-010 native dialog candidate
+
+Include mobile and desktop views, with light and dark themes.
+
+Use identical viewport, zoom, content, modal state, and test data across each comparison.
+
+For keyboard interaction, collect real browser evidence of the focus sequence and Escape/close behavior.
+
+Create an easy-to-open side-by-side comparison gallery.
+
+The gallery must make it immediately clear which option is Original, Demo A, and R-010.
+
+## 6. Isolated Implementation
+
+Develop the R-010 candidate entirely outside the owner's original repository working tree.
+
+Do not edit or replace the completed Demo A/B/C/D workspaces.
+
+Do not change any unrelated application features.
+
+Do not touch:
+
+- API logic
+- Supabase or authentication
+- Academic calculations
+- GPA/CGPA calculations
+- Course and prerequisite logic
+- Real user data
+- Persistence contracts
+- PDF implementation
+- Deployment configuration
+
+Use the smallest reasonable code changes needed to demonstrate R-010.
+
+## 7. Testing
+
+Run relevant application tests and real browser interaction checks where possible.
+
+At minimum, validate the actual modal behavior across mouse and keyboard interaction.
+
+Include regression checks for:
+
+- Settings modal
+- Dashboard modal
+- Course modal
+- Department modal
+- Relevant nested support dialogs
+- Focus restoration
+- Light and dark themes
+- Mobile and desktop layouts
+- Browser console errors
+
+Report precise PASS, FAIL, BLOCKED, and NOT TESTED statuses.
+
+Do not claim authenticated or cloud workflows passed if they were not actually exercised.
+
+If a browser setup or required test cannot run, record the blocker clearly.
+
+## 8. Mandatory TASK_002 Verification Report
+
+Generate:
+
+`review-artifacts/TASK_002/TASK_REVIEW_002.md`
+
+It must explain:
+
+1. What the owner asked.
+2. What recommendation R-010 means.
+3. Which skills suggested it.
+4. How the original modal works.
+5. How selected Demo A works.
+6. How the R-010 alternative works.
+7. Exactly which files/functions/selectors changed.
+8. Why each change was necessary.
+9. Original vs Demo A vs R-010 behavior comparison.
+10. Accessibility and keyboard verification.
+11. Visual and responsive verification.
+12. Exact test commands and results.
+13. Regressions or compatibility risks.
+14. Missing or incomplete requirements.
+15. Evidence links.
+16. Whether the original repository remained untouched.
+17. Whether R-010 is technically ready for owner evaluation.
+
+Also generate:
+
+- `CHANGES.diff`
+- Relevant BEFORE/A/B screenshots
+- Browser interaction evidence
+- Test results
+- Evidence manifest and hashes
+- A self-contained review gallery or equivalent preview
+
+All evidence must be understandable to an independent ChatGPT reviewer without needing access to Windows localhost.
+
+Do not publish private data or secrets.
+
+## 9. Publish Review Evidence to GitHub
+
+Publish only review artifacts under:
+
+`review-artifacts/TASK_002/`
+
+Use the existing temporary branch:
+
+`temp/ui-ux-audit-review`
+
+Keep actual candidate application changes in the isolated demo workspace, not in the production repository or its main branch.
+
+The branch may contain the minimal review diff and relevant sanitized source evidence, but no unauthorized production implementation.
+
+Create a normal commit and push to the temporary review branch.
+
+Verify that the original `main` commit and original working directory remain unchanged.
+
+## 10. Stop for Independent Review
+
+After publication:
+
+- Provide the full review commit SHA.
+- Provide the direct TASK_REVIEW_002.md GitHub URL.
+- Provide the evidence gallery URL.
+- Provide the local interactive preview instructions for the owner.
+- Report technical limitations.
+- STOP.
+
+Do not automatically mark R-010 SELECTED or REJECTED.
+
+Do not start the next recommendation.
+
+ChatGPT will independently check your report and evidence first.
+
+Then the owner will decide whether to keep Demo A, prefer the native-dialog alternative, request a revision, or hold the decision.
+
+No production implementation, merge, deployment, or unrelated modification is authorized.
+
+**START TASK_002 NOW. COMPLETE ONLY R-010.**

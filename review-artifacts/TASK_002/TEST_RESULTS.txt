@@ -1,0 +1,27 @@
+TASK_002 final verification
+Node v24.16.0; Chrome 156 headless/CDP; Windows.
+
+node --test tests/*.test.js (each original / option-a / native): each 365 passed, 0 failed/skipped.
+node --test source-checks.cjs: 8 passed, 0 failed/skipped.
+node verify-browser.mjs: 2284 assertions, 48 matched modal/theme/width cases, 48 screenshots.
+node verify-extra.mjs: 18 assertions, toast/wheel scroll/nested requestClose and fallback; 3 more matched screenshots.
+All 16 A/B panel geometry/token/style measurements equal.
+
+Initial attempts and corrections (not hidden):
+- Shell quoting error in tooling preparation; corrected by file-based script.
+- Initial preview ports included unsafe 4190; moved all three to 4280/4281/4282. Sandbox-separated server/Chrome networking blocked initialization; reran both in reachable isolated loopback context.
+- Initial native suite 364/365: existing source-shape test assumed restoreDotGridHost was textually below closeModal. Native cleanup is in finishNativeModalClose; updated only the isolated owning assertion to require both cleanup and its close caller. All behavioral/source protection assertions preserved.
+- Pure native Tab traversal reached browser chrome (BODY active, document.hasFocus false); added explicit first/last boundary wrap, retaining strict in-page containment assertions.
+- Chrome close-watcher grouping cancelled support and parent on one Escape; added scoped nested requestClose/fallback. Advanced evidence records one child close, zero parent cancel, next Escape closes parent.
+- One toast check ran before transition settled; replaced fixed timing with computed-opacity polling, visibility assertion unchanged.
+
+NOT TESTED: authenticated/cloud workflows, real persistence, real support submission/security challenge, actual PDF export, Firefox/WebKit, real device/screen reader, production deployment. Save routines were exercised only in disposable synthetic page state with persistence mocked. Original/candidate Auth/cloud routes blocked by identical loopback server policy.
+
+node verify-picker.mjs: 8 assertions passed; A/native course-catalog search focus, populated results, Escape and opener return.
+Diffs applied in a disposable public rebuild and matched candidate files. Initial diff-check harness erroneously tried TEST_CHANGES.diff against already-patched native tests; corrected its target to the unmodified A test, without changing the patch/assertion.
+
+Artifact packaging: inherited review-wide text normalization would alter PNG bytes. Added TASK_002-only binary PNG attributes before commit and verified every staged blob hash. Archived unified diff context-marker spaces are intentionally excluded from whitespace checking; source files remain checked. Text source exports use canonical LF.
+
+node verify-console.mjs: 12 sampled loads, no console.error calls or Runtime exceptions; security/network browser entries separately recorded in console-results.json.
+
+A shared isolated-server 403 for [isolated preview]/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global occurred in all variants; no application console.error/Runtime exceptions.

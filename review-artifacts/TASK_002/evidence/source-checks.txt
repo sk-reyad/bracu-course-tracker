@@ -1,0 +1,16 @@
+✔ all original tracked files match verified base commit (line-ending-neutral export) (5573.1942ms)
+✔ only three UI source files differ in A; only those plus owning test differ in B (352.6658ms)
+✔ completed A/B/C/D workspaces and baseline remain byte-identical (177.3896ms)
+✔ Option A contains the selected custom modal helpers exactly, no native architecture (1.5982ms)
+✔ B has four named native hosts and no nested duplicate ARIA dialogs (0.7847ms)
+✔ B uses native modality without the custom A inert manager/focus redirect (0.836ms)
+✔ all academic/save/PDF/support implementations remain unchanged (2.4997ms)
+✔ no B/C/D visual or motion candidate changes leaked into the alternative (3.6251ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6179.7354

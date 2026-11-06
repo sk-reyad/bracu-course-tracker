@@ -1,0 +1,11 @@
+{
+  "head": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+  "branch": "main",
+  "status": "?? FRONTEND_UI_MULTISKILL_AUDIT.md",
+  "trackedDiff": "",
+  "stagedDiff": "",
+  "auditSha256": "9ad3924539bea8181d9337b6e8e970a116bf28b9109c7cdb589f9a1536ca54d9",
+  "expectedHead": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+  "expectedStatus": "?? FRONTEND_UI_MULTISKILL_AUDIT.md",
+  "completedWorkspaces": "All baseline/improved file hashes unchanged; 8 source-check tests actually ran; see preserved-workspace-hashes.json and source-checks.txt"
+}

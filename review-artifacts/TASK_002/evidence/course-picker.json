@@ -1,0 +1,29 @@
+{
+  "assertions": 8,
+  "results": [
+    {
+      "variant": "option-a",
+      "opened": {
+        "focused": "courseCatalogSearch",
+        "results": 50,
+        "native": false
+      },
+      "closed": {
+        "hidden": true,
+        "focus": "openSettingsBtn"
+      }
+    },
+    {
+      "variant": "native",
+      "opened": {
+        "focused": "courseCatalogSearch",
+        "results": 50,
+        "native": true
+      },
+      "closed": {
+        "hidden": true,
+        "focus": "openSettingsBtn"
+      }
+    }
+  ]
+}

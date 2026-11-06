@@ -1,0 +1,14 @@
+diff --git a/tests/interaction-layer.test.js b/tests/interaction-layer.test.js
+index a4d86c1..5a4a896 100644
+--- a/tests/interaction-layer.test.js
++++ b/tests/interaction-layer.test.js
+@@ -275,7 +275,8 @@ test("modal lifecycle hosts the single dot grid below translucent modal content"
+   assert.match(modalPanelRule, /background:\s*color-mix\(in srgb, var\(--surface\)/);
+ 
+   assert.match(appScript, /function openModal\([^)]*\)[\s\S]*?mountDotGridInModal/);
+-  assert.match(appScript, /function closeModal\([^)]*\)[\s\S]*?restoreDotGridHost/);
++  assert.match(appScript, /function finishNativeModalClose\([^)]*\)[\s\S]*?restoreDotGridHost/);
++  assert.match(appScript, /function closeModal\([^)]*\)[\s\S]*?modal\.close\(\)[\s\S]*?finishNativeModalClose/);
+ });
+ 
+ test("course catalog modal closes with Escape and restores the opening control focus", () => {

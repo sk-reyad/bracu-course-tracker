@@ -1,0 +1,233 @@
+{
+  "groups": 12,
+  "results": [
+    {
+      "variant": "original",
+      "width": 390,
+      "theme": "light",
+      "consoleErrorCalls": [],
+      "runtimeExceptions": [],
+      "otherBrowserErrors": [
+        {
+          "source": "network",
+          "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+        }
+      ],
+      "failedResponses": [
+        {
+          "status": 403,
+          "url": "[isolated preview]/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global"
+        }
+      ]
+    },
+    {
+      "variant": "option-a",
+      "width": 390,
+      "theme": "light",
+      "consoleErrorCalls": [],
+      "runtimeExceptions": [],
+      "otherBrowserErrors": [
+        {
+          "source": "network",
+          "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+        }
+      ],
+      "failedResponses": [
+        {
+          "status": 403,
+          "url": "[isolated preview]/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global"
+        }
+      ]
+    },
+    {
+      "variant": "native",
+      "width": 390,
+      "theme": "light",
+      "consoleErrorCalls": [],
+      "runtimeExceptions": [],
+      "otherBrowserErrors": [
+        {
+          "source": "network",
+          "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+        }
+      ],
+      "failedResponses": [
+        {
+          "status": 403,
+          "url": "[isolated preview]/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global"
+        }
+      ]
+    },
+    {
+      "variant": "original",
+      "width": 390,
+      "theme": "dark",
+      "consoleErrorCalls": [],
+      "runtimeExceptions": [],
+      "otherBrowserErrors": [
+        {
+          "source": "network",
+          "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+        }
+      ],
+      "failedResponses": [
+        {
+          "status": 403,
+          "url": "[isolated preview]/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global"
+        }
+      ]
+    },
+    {
+      "variant": "option-a",
+      "width": 390,
+      "theme": "dark",
+      "consoleErrorCalls": [],
+      "runtimeExceptions": [],
+      "otherBrowserErrors": [
+        {
+          "source": "network",
+          "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+        }
+      ],
+      "failedResponses": [
+        {
+          "status": 403,
+          "url": "[isolated preview]/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global"
+        }
+      ]
+    },
+    {
+      "variant": "native",
+      "width": 390,
+      "theme": "dark",
+      "consoleErrorCalls": [],
+      "runtimeExceptions": [],
+      "otherBrowserErrors": [
+        {
+          "source": "network",
+          "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+        }
+      ],
+      "failedResponses": [
+        {
+          "status": 403,
+          "url": "[isolated preview]/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global"
+        }
+      ]
+    },
+    {
+      "variant": "original",
+      "width": 1440,
+      "theme": "light",
+      "consoleErrorCalls": [],
+      "runtimeExceptions": [],
+      "otherBrowserErrors": [
+        {
+          "source": "network",
+          "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+        }
+      ],
+      "failedResponses": [
+        {
+          "status": 403,
+          "url": "[isolated preview]/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global"
+        }
+      ]
+    },
+    {
+      "variant": "option-a",
+      "width": 1440,
+      "theme": "light",
+      "consoleErrorCalls": [],
+      "runtimeExceptions": [],
+      "otherBrowserErrors": [
+        {
+          "source": "network",
+          "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+        }
+      ],
+      "failedResponses": [
+        {
+          "status": 403,
+          "url": "[isolated preview]/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global"
+        }
+      ]
+    },
+    {
+      "variant": "native",
+      "width": 1440,
+      "theme": "light",
+      "consoleErrorCalls": [],
+      "runtimeExceptions": [],
+      "otherBrowserErrors": [
+        {
+          "source": "network",
+          "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+        }
+      ],
+      "failedResponses": [
+        {
+          "status": 403,
+          "url": "[isolated preview]/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global"
+        }
+      ]
+    },
+    {
+      "variant": "original",
+      "width": 1440,
+      "theme": "dark",
+      "consoleErrorCalls": [],
+      "runtimeExceptions": [],
+      "otherBrowserErrors": [
+        {
+          "source": "network",
+          "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+        }
+      ],
+      "failedResponses": [
+        {
+          "status": 403,
+          "url": "[isolated preview]/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global"
+        }
+      ]
+    },
+    {
+      "variant": "option-a",
+      "width": 1440,
+      "theme": "dark",
+      "consoleErrorCalls": [],
+      "runtimeExceptions": [],
+      "otherBrowserErrors": [
+        {
+          "source": "network",
+          "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+        }
+      ],
+      "failedResponses": [
+        {
+          "status": 403,
+          "url": "[isolated preview]/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global"
+        }
+      ]
+    },
+    {
+      "variant": "native",
+      "width": 1440,
+      "theme": "dark",
+      "consoleErrorCalls": [],
+      "runtimeExceptions": [],
+      "otherBrowserErrors": [
+        {
+          "source": "network",
+          "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+        }
+      ],
+      "failedResponses": [
+        {
+          "status": 403,
+          "url": "[isolated preview]/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global"
+        }
+      ]
+    }
+  ]
+}

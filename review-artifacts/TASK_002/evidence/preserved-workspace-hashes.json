@@ -1,0 +1,1470 @@
+{
+  "baseline": [
+    {
+      "path": ".agents/skills/course-catalog/SKILL.md",
+      "sha256": "7bba1a78837e13c7a99977255df09658ed742bfae34609fa62f9c353012d66b9"
+    },
+    {
+      "path": ".agents/skills/database-migration/SKILL.md",
+      "sha256": "a6e14c323e1d051cabbf9a185658d599928b126589cb3b89d0a527a16eb4adf4"
+    },
+    {
+      "path": ".agents/skills/release-check/SKILL.md",
+      "sha256": "67e9135cc4912bb76897158181ec3f77cbe20823b440d4758f901eacee41c6c3"
+    },
+    {
+      "path": ".agents/skills/security-review/SKILL.md",
+      "sha256": "bcd1ca88730c745d410c3f478f5bf881ce88fbafce37bd7b5ece8f0f136c5248"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "4b7553b834d8be30085e8d4b7569bdb96c51afaf2e100e5046a49cfb048cd7d4"
+    },
+    {
+      "path": ".vercelignore",
+      "sha256": "a56adcc8f8c7010d96b381780c0bc26eb8f2bd0125a8f2108894a63289ef66db"
+    },
+    {
+      "path": "admin.html",
+      "sha256": "ae7cc7df49782da2bfbadf5bf24b01f9e3a417755197ceb66138b1b679d252be"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "f944f9bfe6c2a477b8f19582a86ebb1946c981577d5e817e32d088cafde16e69"
+    },
+    {
+      "path": "assets/maintenance-illustration.svg",
+      "sha256": "72f01e6f5d06d7de17cb68add921dad69588a20d6201e847d69180b645ca7a4e"
+    },
+    {
+      "path": "auth.html",
+      "sha256": "cd192c7d8e694b60852b092bc278e0f8d8961361025aa6d3fd66718e1379f7f1"
+    },
+    {
+      "path": "css/admin-support.css",
+      "sha256": "b706424d8db3a068679342eaa7585e6d6bb3fb110f398452bcbc9f65f0fb795b"
+    },
+    {
+      "path": "css/admin.css",
+      "sha256": "487436b4112c1708679264d4e2180c643a64568c4bc83c995d5976063d47e79a"
+    },
+    {
+      "path": "css/auth.css",
+      "sha256": "a4349791b0776a3e58f2b6b6820a019dcda85b71943b9bb322d6afcebea4a311"
+    },
+    {
+      "path": "css/degree-plan.css",
+      "sha256": "7db6ae8e8bad8f055c13e3f841a1e92314bad9632ea9d03a5571772802611754"
+    },
+    {
+      "path": "css/legal.css",
+      "sha256": "277adc1d9707cf5166b70474afb98e2f3ac898c45b47fe1a267384c220cd0cce"
+    },
+    {
+      "path": "css/maintenance-preview.css",
+      "sha256": "130392c0b787fa32951112ffce11245a70bbc91ff9aa96127e75380dd13d3318"
+    },
+    {
+      "path": "css/maintenance.css",
+      "sha256": "14cc296503b1e10985962e8f7ca7e8e8abd850b6df4bbd1a2add1503b9b71576"
+    },
+    {
+      "path": "css/style.css",
+      "sha256": "7f8db11e5be02de1e196fa657200738b589b0055f089d21877a60b3fcbed1778"
+    },
+    {
+      "path": "css/support.css",
+      "sha256": "27eea07252658ae7d05c30d268d040e81466a7d85e45c9806c59b72b595e67a5"
+    },
+    {
+      "path": "css/ui-states.css",
+      "sha256": "49c22e09ab8eb331a884e79290b7fe9c9b5241d7a276a97099b0d568f95b40f4"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "sha256": "8467aca27405f265ac79fece22c291fcbdb68e122943c6d8d6d89532b6453c7d"
+    },
+    {
+      "path": "docs/DATA_MODEL.md",
+      "sha256": "bbc75ca23924739b5a321d81e5f74eb4cca51df466b3bcc702cba62cb6fadd11"
+    },
+    {
+      "path": "docs/DECISIONS.md",
+      "sha256": "5bb08200eeec2b55f9b398a8012581c1188a3f76f0df577896cf83b8f50b45cf"
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "sha256": "e9c0207a5b40fabe42b7f37203cbdf8867f49e403150c714b1e46a317191ebfd"
+    },
+    {
+      "path": "docs/DESIGN.md",
+      "sha256": "0477d913ef72b8ab5822427a57d0ca7fc0d57e2604c53f1f5de268387523615a"
+    },
+    {
+      "path": "docs/KNOWN_ISSUES.md",
+      "sha256": "4f0efa2ba9a7e72f7b8103894f6467a4601c9c0456747a4d09af9a0bfe8042ca"
+    },
+    {
+      "path": "docs/MEMORY.md",
+      "sha256": "2f2d38b7f44bc46b165ceebd35ea4f7336d927fc59773df9abf813f4856a819d"
+    },
+    {
+      "path": "docs/PROJECT.md",
+      "sha256": "f06e212a61042c10c7284ff3b985f5b75211ccbd8c5736b6590054254bf1e333"
+    },
+    {
+      "path": "docs/SECURITY.md",
+      "sha256": "1e27a5f89d93a881eb5dcc737c20660654eb1f5d96ee2a52976004b41f695412"
+    },
+    {
+      "path": "docs/SETUP.md",
+      "sha256": "54741ebe36128a9b053c7d37787d43ce53c094a7684e5a756df03661ad34a563"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-07-responsive-footer-links.md",
+      "sha256": "ddf3a40ab06827b660c946d24392f47b64d1593c4612fd76f838dc2b17eba81d"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-08-inner-glow-adaptive-spotlight-modal-dot-grid.md",
+      "sha256": "d705df1ddcd5bdc2e1b87bbdbba225ec34b958e4616fc116cfa9c9c06bf0caf1"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-08-modern-hover-dot-grid.md",
+      "sha256": "ec5390180f737b66c4cd2f3751e8bc2980cc3b5438456bcf50d5e953c450176d"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-09-shutter-button-hover.md",
+      "sha256": "16526060158655e63fb7f78c10f08e43291eb3f1c40db221da67cf5a3535a8c7"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-09-zero-scale-shutter.md",
+      "sha256": "ec3ea38c9d706e92685f7a4fc4e52dcd0862ef7c139645ca0dd5c52e8651e8c7"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-12-auth-admin-access.md",
+      "sha256": "a501963940fa85197cd2aa42a9ba8dd447400a6a312ac51e8f23b4caff44ab81"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-12-canonical-student-profile-avatar.md",
+      "sha256": "082ad8a2617b3a07383fe50780a07efb7822c7860c71bc8a469ce8ea9d8908d1"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-12-onboarding-avatar-layout-refinement.md",
+      "sha256": "30d2489ecb05820aa3b0fed37381ec250829b5456487d5289148db7e3e909594"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-12-photo-dropzone-unified-oauth.md",
+      "sha256": "491ccc20c051fc8f50a7e76adcf6704d18ade36e80678df086d34a687c485d4a"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-13-admin-auth-login-metrics.md",
+      "sha256": "092fd9f4027f9f9d309178cb14fcde64b17d80cb27749a262abef6ce47b3e042"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-13-admin-permissions-identity-management.md",
+      "sha256": "38f629ec2e90e88fe6c198ac9827f30d9f87f22828da6fd5c3e95a096d6b2295"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-21-dynamic-error-skeleton-states.md",
+      "sha256": "9bf72ef08f9950804ddc963bdc053725c020bb7730c62b1dfd6d1a6772bb453e"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-26-global-catalog-settings.md",
+      "sha256": "30c0b8e7bd4a3c9329a51ad1eeb850a8bab6f2b3592207def48695e2b498dd33"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-28-complete-course-catalog.md",
+      "sha256": "0d82c9741a40a6df3082d0ff0a4833b1c6044bb6ad29dddf4379bced1fdf02a6"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-28-vercel-maintenance-google-id-token.md",
+      "sha256": "142cbf86ec1f769a716b6485f72afeb1d3f3a5c6cf588399e7ee3a1923b0e489"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-28-versioned-database-first-tracker-sync.md",
+      "sha256": "48ed19479461474cec4ecabb640fe9901cf86208b0d6622b95bd7672dea0e8fa"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-29-catalog-consolidation-streams-dashboard.md",
+      "sha256": "2e686c7280556f47d1b5b7947c724a32a50315162462825b654023ec52ec5f1a"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-16-degree-plan-integration.md",
+      "sha256": "231079fa375cd723e546911a5cfe1530885bb93f6644783e9271be63c8e7f67d"
+    },
+    {
+      "path": "docs/superpowers/reports/2026-08-13-admin-permissions-identity-management-verification.md",
+      "sha256": "2d1c1f961aca09a42f4625227d157eaff42e785752bce702578d2512756e9328"
+    },
+    {
+      "path": "docs/superpowers/reports/2026-08-28-complete-course-catalog-verification.md",
+      "sha256": "a977ca44dbd4cf6d506ba1abdfb2301860e6ebe75c4458d91b299b6fd2201067"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-07-footer-responsive-links-design.md",
+      "sha256": "e431c997a03e9f8e08ce0b856576ed94c64e1b8c19bd2dd4c1fe3531d0b8e37a"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-08-inner-glow-adaptive-spotlight-modal-dot-grid-design.md",
+      "sha256": "896c76d7081393e683a1ae1303eb55f626046795f4890d88e516db7ef5245111"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-08-modern-hover-dot-grid-design.md",
+      "sha256": "f0ba765df1e64062b18114d3e55d68006acfbb0bfffc06667e1e32ff96afdb75"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-09-shutter-button-hover-design.md",
+      "sha256": "135e3afbba956bb5937f034b3fa38fd2ac8d6f5ddcdcf03b3f26ce7286c0eb6c"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-09-zero-scale-shutter-design.md",
+      "sha256": "333b3751601754965f3a59aa188f7e5f15da1f60dc8b63e9e3daed657eb26381"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-12-auth-admin-access-design.md",
+      "sha256": "b5d2683db92e096a46900a44c0e16c40cb8ee608bce3ba3d212fecc43a38f476"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-12-canonical-student-profile-avatar-design.md",
+      "sha256": "0efd422a27a6db185146fbe5e540336f2e96c0b257732e9f37ba341e15fd8db7"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-12-onboarding-avatar-layout-refinement-design.md",
+      "sha256": "48d4fcbac3b5a2fddb87b2e810bd3b28b1ec0f3dc9781aca0305f4e3d11520b2"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-12-photo-dropzone-unified-oauth-design.md",
+      "sha256": "51966f6e5344cefd3f0b958521d3239c0a70a4739dd55ed5cba9b35223204028"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-13-admin-auth-login-metrics-design.md",
+      "sha256": "59fe5431b1277f22d9aeabb3f034505f33af16dc19c8631fd714d8104f4bd73e"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-13-admin-permissions-identity-management-design.md",
+      "sha256": "eb5c43425f28559b3c8a4ca9ccd3b08101701accb95d360c9151f36d85801444"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-14-admin-account-list-performance-design.md",
+      "sha256": "28c5157b31de58dd03f3f3c76ddb0e854a5d11d70aaf17c3368ddb1082030d26"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-21-dynamic-error-skeleton-states-design.md",
+      "sha256": "b4d0bd71dee81e3edfa462bf14325273ddf32bd1a63e4796835656b501307aeb"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-26-global-catalog-settings-design.md",
+      "sha256": "efab62ea09d664d89ee4fac52cc81633b44a585b43d773189e6515c2df564e2c"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-28-complete-course-catalog-design.md",
+      "sha256": "87b5127f3a0a41a5a9a087759e93162ae11dc8bed94f116c00b6146d9abcd52d"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-28-vercel-maintenance-google-id-token-design.md",
+      "sha256": "02bfa173eec4a88fb869637cd5abef717182ea4ead6328b1d37ea4f2445d5f86"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-28-versioned-database-first-tracker-sync-design.md",
+      "sha256": "2c29ec72dfc1298623ed9a9b8fbeb7043fe11789443a2cf16ea7496021a5b4bf"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-29-catalog-consolidation-streams-dashboard-design.md",
+      "sha256": "29fbd1923b6ce2a63ccd332ab57bace33c6fb1af4ac15d49468b98f12aa16b42"
+    },
+    {
+      "path": "docs/TESTING.md",
+      "sha256": "c10e5f586012e70e990edd4b6d44e1c020c36d82101eaefc1692ad12188ff3b5"
+    },
+    {
+      "path": "error.html",
+      "sha256": "bc3f1b61907f69baeb83fee0ca12a5b0a622502bb72119482747eb00ed0f3a06"
+    },
+    {
+      "path": "index.html",
+      "sha256": "163042853ec746ebb7b0d6d4d4870e86c7efafe480f12b8bf02dcea4dcf0be7e"
+    },
+    {
+      "path": "js/access.js",
+      "sha256": "855dfd3be04f0a92a66ab8d3c5e572a3bb6d1a8c5d74b362f6ac3bc24bf049bb"
+    },
+    {
+      "path": "js/admin-catalog.js",
+      "sha256": "34b6655fedea68fd328f34b77239ef4b7c16a58f310a463b28af2ce85072cd3e"
+    },
+    {
+      "path": "js/admin-permissions.js",
+      "sha256": "76cb1e17b580e957679224daed5aa0704a9e9672a35346cf8654fba60c3f6b79"
+    },
+    {
+      "path": "js/admin-support.js",
+      "sha256": "91543f4654801c44b5aedadf50cb8ad2720c124c2529696bdf9b567abcdf8868"
+    },
+    {
+      "path": "js/admin.js",
+      "sha256": "1dc5ee19030895f6cf5e12f7af13bcedc204f63af0d2c2cbbbeeeb33e268ac9f"
+    },
+    {
+      "path": "js/AGENTS.md",
+      "sha256": "c9361e8133dd6ff8f2087f8fdae960889819c871798e320c2e0d21fa10da5346"
+    },
+    {
+      "path": "js/app-boot.js",
+      "sha256": "173b9b4c9e1521ee00515dd312bc9294f6508d59d866987d932ca60e289325aa"
+    },
+    {
+      "path": "js/app.js",
+      "sha256": "2c022bce283f66f496eb463a12b36f0d9bbad28984b40681b50fbcb7428fa243"
+    },
+    {
+      "path": "js/auth-core.js",
+      "sha256": "1caf647015d74a5824a289df2bfafcbff224c04d8fea19242347f3e826df172d"
+    },
+    {
+      "path": "js/auth.js",
+      "sha256": "98ac96194376f4e3e69eaa453d43f39db00a0a5966bb0db56be1e0cebf80f46f"
+    },
+    {
+      "path": "js/catalog.js",
+      "sha256": "c30b4b715647205220ffb01fb19b15386577c5a352737963204fe66c46825405"
+    },
+    {
+      "path": "js/config.js",
+      "sha256": "4efe5550ab83f139108ccd1e36763195e49085f1c00619d4bd340ea0dca98694"
+    },
+    {
+      "path": "js/data.js",
+      "sha256": "42e37c81db1e80a1ab16abc10256115e234b0fb8fd0c6e21b6deb9bb20f4f26b"
+    },
+    {
+      "path": "js/degree-plan-data.js",
+      "sha256": "65325b6099676b00e385500c38f3a0d945472d1edc33aa4a6a369c25597e7540"
+    },
+    {
+      "path": "js/degree-plan-view.js",
+      "sha256": "b513104aa02b3759d270a42b041b0b4c8e504812c5d3befa8eb486398816eb03"
+    },
+    {
+      "path": "js/degree-plan.js",
+      "sha256": "107347e02808c02141be2bd632b115f35192e57cbf0b99e46f98028fa401fda7"
+    },
+    {
+      "path": "js/gpa.js",
+      "sha256": "dc2367c7f4e06921f0a61948e8efa21070fa49d8d2c0d049da4a5bb0c9d74ca9"
+    },
+    {
+      "path": "js/maintenance-guard.js",
+      "sha256": "d711b6c87c6d746221f4916df1ec46dd40d0f9174b0dd67f5b0be75589fab8cc"
+    },
+    {
+      "path": "js/maintenance-preview.js",
+      "sha256": "ac299694f56c9c364f280811bf52c6778677d7837c7e33aa3b4983cb10e61cb7"
+    },
+    {
+      "path": "js/motion.js",
+      "sha256": "159d2a043a8b812881f6cc4e2a86f6319feb1103fb0859700de3d3bf990bdaa1"
+    },
+    {
+      "path": "js/prerequisites.js",
+      "sha256": "49e48c3b9b67dc5b60a8aa054bed2fc662f9f48e360d3426e347a08a7d35c819"
+    },
+    {
+      "path": "js/preview.js",
+      "sha256": "1a049082d21c6a9be6bed8f6e3988f36b63fe9893d8b171a6e10f97aa40bdaa4"
+    },
+    {
+      "path": "js/profile.js",
+      "sha256": "35658c0b273eeb168b10220ef9b0ba9228b7d0b3c02de7b480637e476b6c23c9"
+    },
+    {
+      "path": "js/report-pdf.js",
+      "sha256": "fa6a8609f5c2a5c335bdd4ace3b1ebc547784d70f821f44f8cff7fe24fd2cffb"
+    },
+    {
+      "path": "js/roadmap.js",
+      "sha256": "2ff6bc59a98bd1be0ef066e6405ee1df98c73d3535d7a3219ffd36e4fedc0c23"
+    },
+    {
+      "path": "js/storage.js",
+      "sha256": "c98f4eb92d8d79960b782eb68a4158037f98b6eace94c9a576453e13b6d78e13"
+    },
+    {
+      "path": "js/supabase-client.js",
+      "sha256": "7b402b374af51fcb72d903b80f9ddf169e78bd8a378094d9360b26a5c2db1126"
+    },
+    {
+      "path": "js/support-core.js",
+      "sha256": "c9b4a2c35eb194aba7e79bd78f810e512f30ac74bc620e20fcd5ecd8853f35d8"
+    },
+    {
+      "path": "js/support-widget.js",
+      "sha256": "112ad25bdfd5cd2d1fbac9d2a38a548a4a0ae5b77aeda1dbe2df48b00b71e8e7"
+    },
+    {
+      "path": "js/ui-states.js",
+      "sha256": "babfba104c4e0ddb7bf89b658dc62758b1fd076b168e1dfa1595954862738926"
+    },
+    {
+      "path": "js/vendor/html2pdf.bundle.min.js",
+      "sha256": "917be8b20da93f22db22d1d887efff1ef5a11ee2e72c61bf0e4d96ea0149cf2e"
+    },
+    {
+      "path": "maintenance.html",
+      "sha256": "68be1ab773a376e28e87d05c7315069db85a8ad266823826e157ec0862433dd3"
+    },
+    {
+      "path": "middleware.ts",
+      "sha256": "fd85d74e0a73f66fffaf74a4f0e3023508cd54ca6aae6caaea9f367f80626623"
+    },
+    {
+      "path": "privacy.html",
+      "sha256": "2a328f68b1e31694de8661a0929d2b9a25eb989cbfce477c9e85eeb821c25383"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a808587a8618deff0ac82b983defb81b290b8069fb3a36d9fcc7040be85e8028"
+    },
+    {
+      "path": "scripts/catalog-import.mjs",
+      "sha256": "110cfb1647ab217142c1abbe7f2d8a75f91f8c26dfc39677cace2e45a371d0d0"
+    },
+    {
+      "path": "scripts/catalog-source-config.mjs",
+      "sha256": "6b974b22234e69933d33c2fd2614ba50948fead54bfd94c66cd011622aa2553f"
+    },
+    {
+      "path": "scripts/catalog-workbook-reader.mjs",
+      "sha256": "5a5e954a52fede3663c512c4be5deaaf02fbf482576cebb4560aed55d705af3a"
+    },
+    {
+      "path": "scripts/dev-server.js",
+      "sha256": "2d9dce081babeb9be5b8719b311b2f1c15a2e3a1bc82b66244a176cd3abffa71"
+    },
+    {
+      "path": "shared/password-policy.js",
+      "sha256": "80a2847672cc30b870c212fb9748dda50ede5beff73055526b38039e707ab557"
+    },
+    {
+      "path": "supabase/AGENTS.md",
+      "sha256": "3eb5d39337dbeef0a31f84d2ef4ce4fd0c94ef14b8d9bd08cbe7fec7382b5e9a"
+    },
+    {
+      "path": "supabase/config.toml",
+      "sha256": "fab9acee7e6a9d04b5ac4c418ac9d0c1c3d748ce8b316d6867ff39b114bcc064"
+    },
+    {
+      "path": "supabase/functions/admin-access/account-actions.mjs",
+      "sha256": "4873b546eb8e4c88e91f078b976250edea5686ef89b73f36dc208884c5258c97"
+    },
+    {
+      "path": "supabase/functions/admin-access/account-list.mjs",
+      "sha256": "bd35a6163ef6d73f111490110ad3042f9a5bddc7233394344d42b8ba043e1a9d"
+    },
+    {
+      "path": "supabase/functions/admin-access/account-policy.mjs",
+      "sha256": "a75d43e11ac3a6322808e5b8e555f7c7499968720b24cac96e6b660871c42277"
+    },
+    {
+      "path": "supabase/functions/admin-access/admin-rate-limit.mjs",
+      "sha256": "9548ccd59fcab47e1c1c8bf4f2c65f07747294b2c1f0d644b5c0647abe9bf961"
+    },
+    {
+      "path": "supabase/functions/admin-access/catalog-actions.mjs",
+      "sha256": "f88ef79b370f592bd3133f31788e1b2dfcbb661085dc21b6fdea0960da936273"
+    },
+    {
+      "path": "supabase/functions/admin-access/deno.json",
+      "sha256": "c4a7d8780ec8ff2cb1d52f1900edb51dd83981be2606a6e95cdbd26c00f79cd0"
+    },
+    {
+      "path": "supabase/functions/admin-access/http-response.mjs",
+      "sha256": "99ea2c4bde649d73f2c0c57a06547d1f8c09c0edee5ea7239da2953d4d65da6f"
+    },
+    {
+      "path": "supabase/functions/admin-access/index.ts",
+      "sha256": "52a43b3acc6656175b99e17a9cc5442252d33f9e284639915fa22a4763628e43"
+    },
+    {
+      "path": "supabase/functions/admin-access/password-policy.js",
+      "sha256": "80a2847672cc30b870c212fb9748dda50ede5beff73055526b38039e707ab557"
+    },
+    {
+      "path": "supabase/functions/support-desk/deno.json",
+      "sha256": "c4a7d8780ec8ff2cb1d52f1900edb51dd83981be2606a6e95cdbd26c00f79cd0"
+    },
+    {
+      "path": "supabase/functions/support-desk/index.ts",
+      "sha256": "686a76137439d0f18ae61075501813a4040a51f4546819895b0f036e5e28265b"
+    },
+    {
+      "path": "supabase/functions/_shared/jwt-assurance.mjs",
+      "sha256": "559b8d6c38cf17432d2a6fe798002bdc90fb005256d053d47c4f7818bb5232b9"
+    },
+    {
+      "path": "supabase/functions/_shared/public-error.mjs",
+      "sha256": "99ec1949fa43ed2051672e9d9ed7728b909dff0e7fb9c835b0987faa2e7b324e"
+    },
+    {
+      "path": "supabase/migrations/202608120001_auth_profiles_rbac.sql",
+      "sha256": "6bc67b2bce82645ef65d8fa434f182bcdf7b6a97dc811035399bda90fb114601"
+    },
+    {
+      "path": "supabase/migrations/202608120002_tracker_storage_rls.sql",
+      "sha256": "078b7ec750c04c5902bc5870e5b9163d587755ea7151cd78e0006e161306a329"
+    },
+    {
+      "path": "supabase/migrations/202608120003_authenticated_table_grants.sql",
+      "sha256": "5fcd0a194950bfbcebee0fd5b0188099f39e7ed5a7d62a2d0a077ea253b6dd9a"
+    },
+    {
+      "path": "supabase/migrations/202608120004_canonical_student_profile_avatar.sql",
+      "sha256": "514808d1c79dfc7fb841324c9c455644c134bfec052ff39cb7d7b70959fe83a8"
+    },
+    {
+      "path": "supabase/migrations/202608130005_admin_profile_relationships.sql",
+      "sha256": "40416a05c0a134f9a1b1cf52fc7047ab3e29498d766b1f54a06ee9cc70b6e8ba"
+    },
+    {
+      "path": "supabase/migrations/202608130006_admin_service_role_grants.sql",
+      "sha256": "e341ac7321f8d39898a323862bd1597959e650e733dc6de24ba94cd9b3de6e86"
+    },
+    {
+      "path": "supabase/migrations/202608130007_login_session_metrics.sql",
+      "sha256": "1c30ece3d8c501217a8db635a1054f62751041c7c8b809018c9d1e6e5a335acd"
+    },
+    {
+      "path": "supabase/migrations/202608130008_admin_permissions_identity_management.sql",
+      "sha256": "3608b2c430465c40c78b709675b4c13c52af7a0f597cff07d7ddc79ed408274b"
+    },
+    {
+      "path": "supabase/migrations/202608140009_admin_access_security_hardening.sql",
+      "sha256": "59aba83455212f783210a720a7e365cdfb25ce066e9a79f598a1c8405fffcc1e"
+    },
+    {
+      "path": "supabase/migrations/202608140010_admin_account_list_performance.sql",
+      "sha256": "ddfba31f0f1e039d87d70a76f8e0410b2290b9f3b59b322b220f2218644b43bc"
+    },
+    {
+      "path": "supabase/migrations/202608210011_maintenance_support_desk.sql",
+      "sha256": "98d3e8d721cf5bea52dce62b57932df8e3793e4a7acaae18f9b5054e70924705"
+    },
+    {
+      "path": "supabase/migrations/202608250012_security_hardening.sql",
+      "sha256": "92c395f61d59e94f05809f018957aea9e71ef20fada7a8b22d23dee4757d8761"
+    },
+    {
+      "path": "supabase/migrations/202608250013_admin_action_rate_limits.sql",
+      "sha256": "c835f998bbdb289761fa295c6fc6c007b257cf8d104894cccdd29c968e5916bd"
+    },
+    {
+      "path": "supabase/migrations/202608250014_internal_function_execute_lockdown.sql",
+      "sha256": "35321610c6b10dea4114a9b764916bc6e15b2cff3fd885a4a3a804fe7f8910af"
+    },
+    {
+      "path": "supabase/migrations/202608250015_admin_aal2_rls.sql",
+      "sha256": "fdb7e1a196e05f3b810f80ccf542e94ebc4812e658b779952616b54ebdc7c5c7"
+    },
+    {
+      "path": "supabase/migrations/202608250016_access_token_role_claim_fix.sql",
+      "sha256": "a4d059b6d7a580d283da9fc08952805cac8763b54f3743aa18dd48783a2c3e10"
+    },
+    {
+      "path": "supabase/migrations/202608260017_user_facing_copy_corrections.sql",
+      "sha256": "82f06e5dc693ccc005a09c7db7259c679736706e3728cfe5c079d15c0d77ff6f"
+    },
+    {
+      "path": "supabase/migrations/202608260018_global_catalog.sql",
+      "sha256": "ee623aa2a6910a682fee62668991d1049af9ea81bb5372873638673d06adea20"
+    },
+    {
+      "path": "supabase/migrations/202608270019_seed_default_global_catalog.sql",
+      "sha256": "3ba2d8c125529b7a4c941b16454d451264a15a730c1622d1607e191bca45ddf8"
+    },
+    {
+      "path": "supabase/migrations/202608280020_catalog_course_visibility.sql",
+      "sha256": "74f7dd709bae6869c6d4ebe947e74d7cf11dbda1e053578a528f504ad819f955"
+    },
+    {
+      "path": "supabase/migrations/202608280021_seed_complete_course_catalog.sql",
+      "sha256": "900b4c075cfff4312ef227544fdb15087fa36116940d7a12170437aa39aeabd1"
+    },
+    {
+      "path": "supabase/migrations/202608280022_versioned_tracker_storage.sql",
+      "sha256": "17aef27c69f99f4e55ee8035c363ff15a69a011bdaa17692c888db1ef1e9f22b"
+    },
+    {
+      "path": "supabase/migrations/202608290023_catalog_visibility_read_grant.sql",
+      "sha256": "f64c140964828ace3f7266302a4d1e7befa15f2ce52db1077571b47e1e9451db"
+    },
+    {
+      "path": "supabase/migrations/202608290024_catalog_alternative_visibility.sql",
+      "sha256": "1e0fffc0489eb8ebdb0b66b25ea002f05e328eaab8121d725459b5c481f132c2"
+    },
+    {
+      "path": "supabase/migrations/202608290025_canonical_catalog_consolidation.sql",
+      "sha256": "571f493ad20df6cf663345f3005c276891d9510b20a2575357dd1851f67820cb"
+    },
+    {
+      "path": "supabase/migrations/202609190026_revoke_client_truncate.sql",
+      "sha256": "c8aee6389a20017d2fd4574b8b37e06a2201daac49ae559fd4b9824bd1dfec4c"
+    },
+    {
+      "path": "supabase/migrations/202609190027_restrict_postgres_default_truncate.sql",
+      "sha256": "ba50c144655f6734eb54a4e2ca9dc4897fcbe73f3af77bd1554197e2c9f396cb"
+    },
+    {
+      "path": "supabase/seeds/faculty_additions_20261103.sql",
+      "sha256": "e10fc1b76af63c25af675e5acd05a3df64e2b2f71915716ad6e284c5d9b6b438"
+    },
+    {
+      "path": "terms.html",
+      "sha256": "2cd8257025786888a342b1499388881687a7a86b287c0ec2f418ce30eb0cf44e"
+    },
+    {
+      "path": "tests/access.test.js",
+      "sha256": "9e36bcc8d2b0860d8638a31ef36e3798fb1d6c17115dac1e26c96f35d723818d"
+    },
+    {
+      "path": "tests/admin-performance.test.js",
+      "sha256": "4501ab6ca0cb3654864fb42cf2d144039943484174469423984184b8bd100015"
+    },
+    {
+      "path": "tests/admin.test.js",
+      "sha256": "13895ca48d02d858c2e9c959e336cc744715c2e80346d5a2587dfe3677637b96"
+    },
+    {
+      "path": "tests/AGENTS.md",
+      "sha256": "d51105483360516f37145c2b3c21bf63316d23e1f59ba0ba680ca772e8b08dd4"
+    },
+    {
+      "path": "tests/auth.test.js",
+      "sha256": "95668830a44a3f53ca2b705fc6b8a61a5eaf834fd7fd33fb79812373a22f97fc"
+    },
+    {
+      "path": "tests/catalog-import.test.js",
+      "sha256": "fb891f14f190824704f7f317f006854f457656eabae865e0e775ae654d90be04"
+    },
+    {
+      "path": "tests/catalog.test.js",
+      "sha256": "d1e9b5120e720943aeb60e00cd97433cdcf6bd670e112e3634f6be5e69503cde"
+    },
+    {
+      "path": "tests/copy-quality.test.js",
+      "sha256": "55963a3055384c37011e02472bb548d4e5dea3c7d5a2341720188a21fea450af"
+    },
+    {
+      "path": "tests/degree-plan-browser.cjs",
+      "sha256": "9c233bf44011c16ded5f32292f5a8c4765b7faba44d40cb50de7efdf7c8863f3"
+    },
+    {
+      "path": "tests/degree-plan.test.js",
+      "sha256": "1b38602923f94584c0a96a04ee79e56b83395ab198e3a5ec5b35c19c282ba764"
+    },
+    {
+      "path": "tests/deployment-hygiene.test.js",
+      "sha256": "6d7efc595aa9be6432d131c47dedfc215cd23e7cc5ece4b9980720e164abed71"
+    },
+    {
+      "path": "tests/faculty-data.test.js",
+      "sha256": "0d243f551d4d8bd488d512676340c70daf36327292cb30b74f5b8ac6b1cda09b"
+    },
+    {
+      "path": "tests/footer.test.js",
+      "sha256": "b7e797d9ec6dcc247eea29e6ad8614f0fc48534111f58f64fe66796a0cc72e00"
+    },
+    {
+      "path": "tests/interaction-layer.test.js",
+      "sha256": "35810b97728d492c0209e7d6f5f77a4c6424f3a84739f136ac7be9224dea9198"
+    },
+    {
+      "path": "tests/legal-pages.test.js",
+      "sha256": "0be5d5eac3ac947b861791e2e30bfeefe5f21d23069d1941128581f571356855"
+    },
+    {
+      "path": "tests/main-integration.test.js",
+      "sha256": "e185861336300c452f3bce7cc039a4dec28f7549f85713511ed5d62d26c9736c"
+    },
+    {
+      "path": "tests/maintenance-support.test.js",
+      "sha256": "85283993aaf5efabc22f53fb05e93af4bb471097a32e2f5c757f3dd97cd14df7"
+    },
+    {
+      "path": "tests/motion.test.js",
+      "sha256": "393dc6b67992873954bbf06b66c5a9c7c315e5d0f9d0f07b9122820da9a9a841"
+    },
+    {
+      "path": "tests/password-policy.test.js",
+      "sha256": "0036f01af4fb054f6ebd085c04617c01b8afae60af39fd946ab3ad9704f0e919"
+    },
+    {
+      "path": "tests/prerequisites.test.js",
+      "sha256": "3cfef09b851f113d65bf8f77231ca78b55773bae59b09375a38e4555140bbe21"
+    },
+    {
+      "path": "tests/profile.test.js",
+      "sha256": "ab36481b1490a4ed2e0b2b41e13214328b53ad096bdab512496d8959128105bf"
+    },
+    {
+      "path": "tests/report-pdf.test.js",
+      "sha256": "81a6c90e1650788dd1b148631f373d6a3d0dba44895a3d12c9791accd2513fa2"
+    },
+    {
+      "path": "tests/security.test.js",
+      "sha256": "9c16e0fcc9f477ab82ef569a601765acc65f45912998a46a406e01f4ab14298a"
+    },
+    {
+      "path": "tests/support-core.test.js",
+      "sha256": "8b9acde41baa0f617c1e8cfc71e6589fda8e84998cd1bb7e649fae3f7e46e256"
+    },
+    {
+      "path": "tests/support-mfa.test.js",
+      "sha256": "df84efc58e13ecf3e0c9be0a34878d7740fc50895b089e52b9a2a6978d8c2490"
+    },
+    {
+      "path": "tests/ui-states.test.js",
+      "sha256": "949c3c8d868abcdae53e66e65d57312c68be052bcfc64efac8997ac4c0b68930"
+    },
+    {
+      "path": "vercel.json",
+      "sha256": "d7e7da0704371059bbc216e262b691defc570c954dc2864b8cfe3e267cf73ae2"
+    }
+  ],
+  "improved": [
+    {
+      "path": ".agents/skills/course-catalog/SKILL.md",
+      "sha256": "7bba1a78837e13c7a99977255df09658ed742bfae34609fa62f9c353012d66b9"
+    },
+    {
+      "path": ".agents/skills/database-migration/SKILL.md",
+      "sha256": "a6e14c323e1d051cabbf9a185658d599928b126589cb3b89d0a527a16eb4adf4"
+    },
+    {
+      "path": ".agents/skills/release-check/SKILL.md",
+      "sha256": "67e9135cc4912bb76897158181ec3f77cbe20823b440d4758f901eacee41c6c3"
+    },
+    {
+      "path": ".agents/skills/security-review/SKILL.md",
+      "sha256": "bcd1ca88730c745d410c3f478f5bf881ce88fbafce37bd7b5ece8f0f136c5248"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "4b7553b834d8be30085e8d4b7569bdb96c51afaf2e100e5046a49cfb048cd7d4"
+    },
+    {
+      "path": ".vercelignore",
+      "sha256": "a56adcc8f8c7010d96b381780c0bc26eb8f2bd0125a8f2108894a63289ef66db"
+    },
+    {
+      "path": "admin.html",
+      "sha256": "ae7cc7df49782da2bfbadf5bf24b01f9e3a417755197ceb66138b1b679d252be"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "f944f9bfe6c2a477b8f19582a86ebb1946c981577d5e817e32d088cafde16e69"
+    },
+    {
+      "path": "assets/maintenance-illustration.svg",
+      "sha256": "72f01e6f5d06d7de17cb68add921dad69588a20d6201e847d69180b645ca7a4e"
+    },
+    {
+      "path": "auth.html",
+      "sha256": "cd192c7d8e694b60852b092bc278e0f8d8961361025aa6d3fd66718e1379f7f1"
+    },
+    {
+      "path": "css/admin-support.css",
+      "sha256": "b706424d8db3a068679342eaa7585e6d6bb3fb110f398452bcbc9f65f0fb795b"
+    },
+    {
+      "path": "css/admin.css",
+      "sha256": "487436b4112c1708679264d4e2180c643a64568c4bc83c995d5976063d47e79a"
+    },
+    {
+      "path": "css/auth.css",
+      "sha256": "a4349791b0776a3e58f2b6b6820a019dcda85b71943b9bb322d6afcebea4a311"
+    },
+    {
+      "path": "css/degree-plan.css",
+      "sha256": "7db6ae8e8bad8f055c13e3f841a1e92314bad9632ea9d03a5571772802611754"
+    },
+    {
+      "path": "css/demo-polish.css",
+      "sha256": "6aa8674917b485989644de4292162fb4e21773350bbe16b45fd0427e9b62fe99"
+    },
+    {
+      "path": "css/legal.css",
+      "sha256": "277adc1d9707cf5166b70474afb98e2f3ac898c45b47fe1a267384c220cd0cce"
+    },
+    {
+      "path": "css/maintenance-preview.css",
+      "sha256": "130392c0b787fa32951112ffce11245a70bbc91ff9aa96127e75380dd13d3318"
+    },
+    {
+      "path": "css/maintenance.css",
+      "sha256": "14cc296503b1e10985962e8f7ca7e8e8abd850b6df4bbd1a2add1503b9b71576"
+    },
+    {
+      "path": "css/style.css",
+      "sha256": "20fd0f82ae40034ca652d199c13e8929e573422ac2f73fdc36be918ab77d4f2d"
+    },
+    {
+      "path": "css/support.css",
+      "sha256": "27eea07252658ae7d05c30d268d040e81466a7d85e45c9806c59b72b595e67a5"
+    },
+    {
+      "path": "css/ui-states.css",
+      "sha256": "49c22e09ab8eb331a884e79290b7fe9c9b5241d7a276a97099b0d568f95b40f4"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "sha256": "8467aca27405f265ac79fece22c291fcbdb68e122943c6d8d6d89532b6453c7d"
+    },
+    {
+      "path": "docs/DATA_MODEL.md",
+      "sha256": "bbc75ca23924739b5a321d81e5f74eb4cca51df466b3bcc702cba62cb6fadd11"
+    },
+    {
+      "path": "docs/DECISIONS.md",
+      "sha256": "5bb08200eeec2b55f9b398a8012581c1188a3f76f0df577896cf83b8f50b45cf"
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "sha256": "e9c0207a5b40fabe42b7f37203cbdf8867f49e403150c714b1e46a317191ebfd"
+    },
+    {
+      "path": "docs/DESIGN.md",
+      "sha256": "5011ea774b13dd458107452b76591d9b138f7312e614d22dd810285f690481e1"
+    },
+    {
+      "path": "docs/KNOWN_ISSUES.md",
+      "sha256": "4f0efa2ba9a7e72f7b8103894f6467a4601c9c0456747a4d09af9a0bfe8042ca"
+    },
+    {
+      "path": "docs/MEMORY.md",
+      "sha256": "2f2d38b7f44bc46b165ceebd35ea4f7336d927fc59773df9abf813f4856a819d"
+    },
+    {
+      "path": "docs/PROJECT.md",
+      "sha256": "f06e212a61042c10c7284ff3b985f5b75211ccbd8c5736b6590054254bf1e333"
+    },
+    {
+      "path": "docs/SECURITY.md",
+      "sha256": "1e27a5f89d93a881eb5dcc737c20660654eb1f5d96ee2a52976004b41f695412"
+    },
+    {
+      "path": "docs/SETUP.md",
+      "sha256": "54741ebe36128a9b053c7d37787d43ce53c094a7684e5a756df03661ad34a563"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-07-responsive-footer-links.md",
+      "sha256": "ddf3a40ab06827b660c946d24392f47b64d1593c4612fd76f838dc2b17eba81d"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-08-inner-glow-adaptive-spotlight-modal-dot-grid.md",
+      "sha256": "d705df1ddcd5bdc2e1b87bbdbba225ec34b958e4616fc116cfa9c9c06bf0caf1"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-08-modern-hover-dot-grid.md",
+      "sha256": "ec5390180f737b66c4cd2f3751e8bc2980cc3b5438456bcf50d5e953c450176d"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-09-shutter-button-hover.md",
+      "sha256": "16526060158655e63fb7f78c10f08e43291eb3f1c40db221da67cf5a3535a8c7"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-09-zero-scale-shutter.md",
+      "sha256": "ec3ea38c9d706e92685f7a4fc4e52dcd0862ef7c139645ca0dd5c52e8651e8c7"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-12-auth-admin-access.md",
+      "sha256": "a501963940fa85197cd2aa42a9ba8dd447400a6a312ac51e8f23b4caff44ab81"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-12-canonical-student-profile-avatar.md",
+      "sha256": "082ad8a2617b3a07383fe50780a07efb7822c7860c71bc8a469ce8ea9d8908d1"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-12-onboarding-avatar-layout-refinement.md",
+      "sha256": "30d2489ecb05820aa3b0fed37381ec250829b5456487d5289148db7e3e909594"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-12-photo-dropzone-unified-oauth.md",
+      "sha256": "491ccc20c051fc8f50a7e76adcf6704d18ade36e80678df086d34a687c485d4a"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-13-admin-auth-login-metrics.md",
+      "sha256": "092fd9f4027f9f9d309178cb14fcde64b17d80cb27749a262abef6ce47b3e042"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-13-admin-permissions-identity-management.md",
+      "sha256": "38f629ec2e90e88fe6c198ac9827f30d9f87f22828da6fd5c3e95a096d6b2295"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-21-dynamic-error-skeleton-states.md",
+      "sha256": "9bf72ef08f9950804ddc963bdc053725c020bb7730c62b1dfd6d1a6772bb453e"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-26-global-catalog-settings.md",
+      "sha256": "30c0b8e7bd4a3c9329a51ad1eeb850a8bab6f2b3592207def48695e2b498dd33"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-28-complete-course-catalog.md",
+      "sha256": "0d82c9741a40a6df3082d0ff0a4833b1c6044bb6ad29dddf4379bced1fdf02a6"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-28-vercel-maintenance-google-id-token.md",
+      "sha256": "142cbf86ec1f769a716b6485f72afeb1d3f3a5c6cf588399e7ee3a1923b0e489"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-28-versioned-database-first-tracker-sync.md",
+      "sha256": "48ed19479461474cec4ecabb640fe9901cf86208b0d6622b95bd7672dea0e8fa"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-29-catalog-consolidation-streams-dashboard.md",
+      "sha256": "2e686c7280556f47d1b5b7947c724a32a50315162462825b654023ec52ec5f1a"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-16-degree-plan-integration.md",
+      "sha256": "231079fa375cd723e546911a5cfe1530885bb93f6644783e9271be63c8e7f67d"
+    },
+    {
+      "path": "docs/superpowers/reports/2026-08-13-admin-permissions-identity-management-verification.md",
+      "sha256": "2d1c1f961aca09a42f4625227d157eaff42e785752bce702578d2512756e9328"
+    },
+    {
+      "path": "docs/superpowers/reports/2026-08-28-complete-course-catalog-verification.md",
+      "sha256": "a977ca44dbd4cf6d506ba1abdfb2301860e6ebe75c4458d91b299b6fd2201067"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-07-footer-responsive-links-design.md",
+      "sha256": "e431c997a03e9f8e08ce0b856576ed94c64e1b8c19bd2dd4c1fe3531d0b8e37a"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-08-inner-glow-adaptive-spotlight-modal-dot-grid-design.md",
+      "sha256": "896c76d7081393e683a1ae1303eb55f626046795f4890d88e516db7ef5245111"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-08-modern-hover-dot-grid-design.md",
+      "sha256": "f0ba765df1e64062b18114d3e55d68006acfbb0bfffc06667e1e32ff96afdb75"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-09-shutter-button-hover-design.md",
+      "sha256": "135e3afbba956bb5937f034b3fa38fd2ac8d6f5ddcdcf03b3f26ce7286c0eb6c"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-09-zero-scale-shutter-design.md",
+      "sha256": "333b3751601754965f3a59aa188f7e5f15da1f60dc8b63e9e3daed657eb26381"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-12-auth-admin-access-design.md",
+      "sha256": "b5d2683db92e096a46900a44c0e16c40cb8ee608bce3ba3d212fecc43a38f476"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-12-canonical-student-profile-avatar-design.md",
+      "sha256": "0efd422a27a6db185146fbe5e540336f2e96c0b257732e9f37ba341e15fd8db7"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-12-onboarding-avatar-layout-refinement-design.md",
+      "sha256": "48d4fcbac3b5a2fddb87b2e810bd3b28b1ec0f3dc9781aca0305f4e3d11520b2"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-12-photo-dropzone-unified-oauth-design.md",
+      "sha256": "51966f6e5344cefd3f0b958521d3239c0a70a4739dd55ed5cba9b35223204028"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-13-admin-auth-login-metrics-design.md",
+      "sha256": "59fe5431b1277f22d9aeabb3f034505f33af16dc19c8631fd714d8104f4bd73e"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-13-admin-permissions-identity-management-design.md",
+      "sha256": "eb5c43425f28559b3c8a4ca9ccd3b08101701accb95d360c9151f36d85801444"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-14-admin-account-list-performance-design.md",
+      "sha256": "28c5157b31de58dd03f3f3c76ddb0e854a5d11d70aaf17c3368ddb1082030d26"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-21-dynamic-error-skeleton-states-design.md",
+      "sha256": "b4d0bd71dee81e3edfa462bf14325273ddf32bd1a63e4796835656b501307aeb"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-26-global-catalog-settings-design.md",
+      "sha256": "efab62ea09d664d89ee4fac52cc81633b44a585b43d773189e6515c2df564e2c"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-28-complete-course-catalog-design.md",
+      "sha256": "87b5127f3a0a41a5a9a087759e93162ae11dc8bed94f116c00b6146d9abcd52d"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-28-vercel-maintenance-google-id-token-design.md",
+      "sha256": "02bfa173eec4a88fb869637cd5abef717182ea4ead6328b1d37ea4f2445d5f86"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-28-versioned-database-first-tracker-sync-design.md",
+      "sha256": "2c29ec72dfc1298623ed9a9b8fbeb7043fe11789443a2cf16ea7496021a5b4bf"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-29-catalog-consolidation-streams-dashboard-design.md",
+      "sha256": "29fbd1923b6ce2a63ccd332ab57bace33c6fb1af4ac15d49468b98f12aa16b42"
+    },
+    {
+      "path": "docs/TESTING.md",
+      "sha256": "ee9f78bceb437d0eeb3a3ca86e6284d1021f1158a81c39f18ce4d7d474247856"
+    },
+    {
+      "path": "error.html",
+      "sha256": "bc3f1b61907f69baeb83fee0ca12a5b0a622502bb72119482747eb00ed0f3a06"
+    },
+    {
+      "path": "index.html",
+      "sha256": "0e4a7cbd87d8a0018e9d0971a8517c2b9de42c90be9e49fe8c021efcf9700bea"
+    },
+    {
+      "path": "js/access.js",
+      "sha256": "855dfd3be04f0a92a66ab8d3c5e572a3bb6d1a8c5d74b362f6ac3bc24bf049bb"
+    },
+    {
+      "path": "js/admin-catalog.js",
+      "sha256": "24aff7637025b589d10ff995bb7671fc51352f8230ed2b00c241a8ce31acdb33"
+    },
+    {
+      "path": "js/admin-permissions.js",
+      "sha256": "76cb1e17b580e957679224daed5aa0704a9e9672a35346cf8654fba60c3f6b79"
+    },
+    {
+      "path": "js/admin-support.js",
+      "sha256": "91543f4654801c44b5aedadf50cb8ad2720c124c2529696bdf9b567abcdf8868"
+    },
+    {
+      "path": "js/admin.js",
+      "sha256": "1dc5ee19030895f6cf5e12f7af13bcedc204f63af0d2c2cbbbeeeb33e268ac9f"
+    },
+    {
+      "path": "js/AGENTS.md",
+      "sha256": "c9361e8133dd6ff8f2087f8fdae960889819c871798e320c2e0d21fa10da5346"
+    },
+    {
+      "path": "js/app-boot.js",
+      "sha256": "173b9b4c9e1521ee00515dd312bc9294f6508d59d866987d932ca60e289325aa"
+    },
+    {
+      "path": "js/app.js",
+      "sha256": "e57a457aff47e8b372f19d9b9cb9fe939da2915dc24985e0d526544cc4848e43"
+    },
+    {
+      "path": "js/auth-core.js",
+      "sha256": "1caf647015d74a5824a289df2bfafcbff224c04d8fea19242347f3e826df172d"
+    },
+    {
+      "path": "js/auth.js",
+      "sha256": "98ac96194376f4e3e69eaa453d43f39db00a0a5966bb0db56be1e0cebf80f46f"
+    },
+    {
+      "path": "js/catalog.js",
+      "sha256": "c30b4b715647205220ffb01fb19b15386577c5a352737963204fe66c46825405"
+    },
+    {
+      "path": "js/config.js",
+      "sha256": "4efe5550ab83f139108ccd1e36763195e49085f1c00619d4bd340ea0dca98694"
+    },
+    {
+      "path": "js/data.js",
+      "sha256": "42e37c81db1e80a1ab16abc10256115e234b0fb8fd0c6e21b6deb9bb20f4f26b"
+    },
+    {
+      "path": "js/degree-plan-data.js",
+      "sha256": "65325b6099676b00e385500c38f3a0d945472d1edc33aa4a6a369c25597e7540"
+    },
+    {
+      "path": "js/degree-plan-view.js",
+      "sha256": "b513104aa02b3759d270a42b041b0b4c8e504812c5d3befa8eb486398816eb03"
+    },
+    {
+      "path": "js/degree-plan.js",
+      "sha256": "107347e02808c02141be2bd632b115f35192e57cbf0b99e46f98028fa401fda7"
+    },
+    {
+      "path": "js/demo-polish.js",
+      "sha256": "bf0954263de8b130a610a3d3a90d27a8efa638cde6ecd42cd83fda24c3bcd79a"
+    },
+    {
+      "path": "js/gpa.js",
+      "sha256": "dc2367c7f4e06921f0a61948e8efa21070fa49d8d2c0d049da4a5bb0c9d74ca9"
+    },
+    {
+      "path": "js/maintenance-guard.js",
+      "sha256": "d711b6c87c6d746221f4916df1ec46dd40d0f9174b0dd67f5b0be75589fab8cc"
+    },
+    {
+      "path": "js/maintenance-preview.js",
+      "sha256": "ac299694f56c9c364f280811bf52c6778677d7837c7e33aa3b4983cb10e61cb7"
+    },
+    {
+      "path": "js/motion.js",
+      "sha256": "159d2a043a8b812881f6cc4e2a86f6319feb1103fb0859700de3d3bf990bdaa1"
+    },
+    {
+      "path": "js/prerequisites.js",
+      "sha256": "49e48c3b9b67dc5b60a8aa054bed2fc662f9f48e360d3426e347a08a7d35c819"
+    },
+    {
+      "path": "js/preview.js",
+      "sha256": "1a049082d21c6a9be6bed8f6e3988f36b63fe9893d8b171a6e10f97aa40bdaa4"
+    },
+    {
+      "path": "js/profile.js",
+      "sha256": "35658c0b273eeb168b10220ef9b0ba9228b7d0b3c02de7b480637e476b6c23c9"
+    },
+    {
+      "path": "js/report-pdf.js",
+      "sha256": "fa6a8609f5c2a5c335bdd4ace3b1ebc547784d70f821f44f8cff7fe24fd2cffb"
+    },
+    {
+      "path": "js/roadmap.js",
+      "sha256": "2a275b1b97a4c85f2001e22eeb7fa3d85b8843e2e009a7cd83f731fecc1f14a9"
+    },
+    {
+      "path": "js/storage.js",
+      "sha256": "c98f4eb92d8d79960b782eb68a4158037f98b6eace94c9a576453e13b6d78e13"
+    },
+    {
+      "path": "js/supabase-client.js",
+      "sha256": "7b402b374af51fcb72d903b80f9ddf169e78bd8a378094d9360b26a5c2db1126"
+    },
+    {
+      "path": "js/support-core.js",
+      "sha256": "c9b4a2c35eb194aba7e79bd78f810e512f30ac74bc620e20fcd5ecd8853f35d8"
+    },
+    {
+      "path": "js/support-widget.js",
+      "sha256": "112ad25bdfd5cd2d1fbac9d2a38a548a4a0ae5b77aeda1dbe2df48b00b71e8e7"
+    },
+    {
+      "path": "js/ui-states.js",
+      "sha256": "babfba104c4e0ddb7bf89b658dc62758b1fd076b168e1dfa1595954862738926"
+    },
+    {
+      "path": "js/vendor/html2pdf.bundle.min.js",
+      "sha256": "917be8b20da93f22db22d1d887efff1ef5a11ee2e72c61bf0e4d96ea0149cf2e"
+    },
+    {
+      "path": "maintenance.html",
+      "sha256": "68be1ab773a376e28e87d05c7315069db85a8ad266823826e157ec0862433dd3"
+    },
+    {
+      "path": "middleware.ts",
+      "sha256": "fd85d74e0a73f66fffaf74a4f0e3023508cd54ca6aae6caaea9f367f80626623"
+    },
+    {
+      "path": "privacy.html",
+      "sha256": "2a328f68b1e31694de8661a0929d2b9a25eb989cbfce477c9e85eeb821c25383"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a808587a8618deff0ac82b983defb81b290b8069fb3a36d9fcc7040be85e8028"
+    },
+    {
+      "path": "scripts/catalog-import.mjs",
+      "sha256": "110cfb1647ab217142c1abbe7f2d8a75f91f8c26dfc39677cace2e45a371d0d0"
+    },
+    {
+      "path": "scripts/catalog-source-config.mjs",
+      "sha256": "6b974b22234e69933d33c2fd2614ba50948fead54bfd94c66cd011622aa2553f"
+    },
+    {
+      "path": "scripts/catalog-workbook-reader.mjs",
+      "sha256": "5a5e954a52fede3663c512c4be5deaaf02fbf482576cebb4560aed55d705af3a"
+    },
+    {
+      "path": "scripts/dev-server.js",
+      "sha256": "2d9dce081babeb9be5b8719b311b2f1c15a2e3a1bc82b66244a176cd3abffa71"
+    },
+    {
+      "path": "shared/password-policy.js",
+      "sha256": "80a2847672cc30b870c212fb9748dda50ede5beff73055526b38039e707ab557"
+    },
+    {
+      "path": "supabase/AGENTS.md",
+      "sha256": "3eb5d39337dbeef0a31f84d2ef4ce4fd0c94ef14b8d9bd08cbe7fec7382b5e9a"
+    },
+    {
+      "path": "supabase/config.toml",
+      "sha256": "fab9acee7e6a9d04b5ac4c418ac9d0c1c3d748ce8b316d6867ff39b114bcc064"
+    },
+    {
+      "path": "supabase/functions/admin-access/account-actions.mjs",
+      "sha256": "4873b546eb8e4c88e91f078b976250edea5686ef89b73f36dc208884c5258c97"
+    },
+    {
+      "path": "supabase/functions/admin-access/account-list.mjs",
+      "sha256": "bd35a6163ef6d73f111490110ad3042f9a5bddc7233394344d42b8ba043e1a9d"
+    },
+    {
+      "path": "supabase/functions/admin-access/account-policy.mjs",
+      "sha256": "a75d43e11ac3a6322808e5b8e555f7c7499968720b24cac96e6b660871c42277"
+    },
+    {
+      "path": "supabase/functions/admin-access/admin-rate-limit.mjs",
+      "sha256": "9548ccd59fcab47e1c1c8bf4f2c65f07747294b2c1f0d644b5c0647abe9bf961"
+    },
+    {
+      "path": "supabase/functions/admin-access/catalog-actions.mjs",
+      "sha256": "f88ef79b370f592bd3133f31788e1b2dfcbb661085dc21b6fdea0960da936273"
+    },
+    {
+      "path": "supabase/functions/admin-access/deno.json",
+      "sha256": "c4a7d8780ec8ff2cb1d52f1900edb51dd83981be2606a6e95cdbd26c00f79cd0"
+    },
+    {
+      "path": "supabase/functions/admin-access/http-response.mjs",
+      "sha256": "99ea2c4bde649d73f2c0c57a06547d1f8c09c0edee5ea7239da2953d4d65da6f"
+    },
+    {
+      "path": "supabase/functions/admin-access/index.ts",
+      "sha256": "52a43b3acc6656175b99e17a9cc5442252d33f9e284639915fa22a4763628e43"
+    },
+    {
+      "path": "supabase/functions/admin-access/password-policy.js",
+      "sha256": "80a2847672cc30b870c212fb9748dda50ede5beff73055526b38039e707ab557"
+    },
+    {
+      "path": "supabase/functions/support-desk/deno.json",
+      "sha256": "c4a7d8780ec8ff2cb1d52f1900edb51dd83981be2606a6e95cdbd26c00f79cd0"
+    },
+    {
+      "path": "supabase/functions/support-desk/index.ts",
+      "sha256": "686a76137439d0f18ae61075501813a4040a51f4546819895b0f036e5e28265b"
+    },
+    {
+      "path": "supabase/functions/_shared/jwt-assurance.mjs",
+      "sha256": "559b8d6c38cf17432d2a6fe798002bdc90fb005256d053d47c4f7818bb5232b9"
+    },
+    {
+      "path": "supabase/functions/_shared/public-error.mjs",
+      "sha256": "99ec1949fa43ed2051672e9d9ed7728b909dff0e7fb9c835b0987faa2e7b324e"
+    },
+    {
+      "path": "supabase/migrations/202608120001_auth_profiles_rbac.sql",
+      "sha256": "6bc67b2bce82645ef65d8fa434f182bcdf7b6a97dc811035399bda90fb114601"
+    },
+    {
+      "path": "supabase/migrations/202608120002_tracker_storage_rls.sql",
+      "sha256": "078b7ec750c04c5902bc5870e5b9163d587755ea7151cd78e0006e161306a329"
+    },
+    {
+      "path": "supabase/migrations/202608120003_authenticated_table_grants.sql",
+      "sha256": "5fcd0a194950bfbcebee0fd5b0188099f39e7ed5a7d62a2d0a077ea253b6dd9a"
+    },
+    {
+      "path": "supabase/migrations/202608120004_canonical_student_profile_avatar.sql",
+      "sha256": "514808d1c79dfc7fb841324c9c455644c134bfec052ff39cb7d7b70959fe83a8"
+    },
+    {
+      "path": "supabase/migrations/202608130005_admin_profile_relationships.sql",
+      "sha256": "40416a05c0a134f9a1b1cf52fc7047ab3e29498d766b1f54a06ee9cc70b6e8ba"
+    },
+    {
+      "path": "supabase/migrations/202608130006_admin_service_role_grants.sql",
+      "sha256": "e341ac7321f8d39898a323862bd1597959e650e733dc6de24ba94cd9b3de6e86"
+    },
+    {
+      "path": "supabase/migrations/202608130007_login_session_metrics.sql",
+      "sha256": "1c30ece3d8c501217a8db635a1054f62751041c7c8b809018c9d1e6e5a335acd"
+    },
+    {
+      "path": "supabase/migrations/202608130008_admin_permissions_identity_management.sql",
+      "sha256": "3608b2c430465c40c78b709675b4c13c52af7a0f597cff07d7ddc79ed408274b"
+    },
+    {
+      "path": "supabase/migrations/202608140009_admin_access_security_hardening.sql",
+      "sha256": "59aba83455212f783210a720a7e365cdfb25ce066e9a79f598a1c8405fffcc1e"
+    },
+    {
+      "path": "supabase/migrations/202608140010_admin_account_list_performance.sql",
+      "sha256": "ddfba31f0f1e039d87d70a76f8e0410b2290b9f3b59b322b220f2218644b43bc"
+    },
+    {
+      "path": "supabase/migrations/202608210011_maintenance_support_desk.sql",
+      "sha256": "98d3e8d721cf5bea52dce62b57932df8e3793e4a7acaae18f9b5054e70924705"
+    },
+    {
+      "path": "supabase/migrations/202608250012_security_hardening.sql",
+      "sha256": "92c395f61d59e94f05809f018957aea9e71ef20fada7a8b22d23dee4757d8761"
+    },
+    {
+      "path": "supabase/migrations/202608250013_admin_action_rate_limits.sql",
+      "sha256": "c835f998bbdb289761fa295c6fc6c007b257cf8d104894cccdd29c968e5916bd"
+    },
+    {
+      "path": "supabase/migrations/202608250014_internal_function_execute_lockdown.sql",
+      "sha256": "35321610c6b10dea4114a9b764916bc6e15b2cff3fd885a4a3a804fe7f8910af"
+    },
+    {
+      "path": "supabase/migrations/202608250015_admin_aal2_rls.sql",
+      "sha256": "fdb7e1a196e05f3b810f80ccf542e94ebc4812e658b779952616b54ebdc7c5c7"
+    },
+    {
+      "path": "supabase/migrations/202608250016_access_token_role_claim_fix.sql",
+      "sha256": "a4d059b6d7a580d283da9fc08952805cac8763b54f3743aa18dd48783a2c3e10"
+    },
+    {
+      "path": "supabase/migrations/202608260017_user_facing_copy_corrections.sql",
+      "sha256": "82f06e5dc693ccc005a09c7db7259c679736706e3728cfe5c079d15c0d77ff6f"
+    },
+    {
+      "path": "supabase/migrations/202608260018_global_catalog.sql",
+      "sha256": "ee623aa2a6910a682fee62668991d1049af9ea81bb5372873638673d06adea20"
+    },
+    {
+      "path": "supabase/migrations/202608270019_seed_default_global_catalog.sql",
+      "sha256": "3ba2d8c125529b7a4c941b16454d451264a15a730c1622d1607e191bca45ddf8"
+    },
+    {
+      "path": "supabase/migrations/202608280020_catalog_course_visibility.sql",
+      "sha256": "74f7dd709bae6869c6d4ebe947e74d7cf11dbda1e053578a528f504ad819f955"
+    },
+    {
+      "path": "supabase/migrations/202608280021_seed_complete_course_catalog.sql",
+      "sha256": "900b4c075cfff4312ef227544fdb15087fa36116940d7a12170437aa39aeabd1"
+    },
+    {
+      "path": "supabase/migrations/202608280022_versioned_tracker_storage.sql",
+      "sha256": "17aef27c69f99f4e55ee8035c363ff15a69a011bdaa17692c888db1ef1e9f22b"
+    },
+    {
+      "path": "supabase/migrations/202608290023_catalog_visibility_read_grant.sql",
+      "sha256": "f64c140964828ace3f7266302a4d1e7befa15f2ce52db1077571b47e1e9451db"
+    },
+    {
+      "path": "supabase/migrations/202608290024_catalog_alternative_visibility.sql",
+      "sha256": "1e0fffc0489eb8ebdb0b66b25ea002f05e328eaab8121d725459b5c481f132c2"
+    },
+    {
+      "path": "supabase/migrations/202608290025_canonical_catalog_consolidation.sql",
+      "sha256": "571f493ad20df6cf663345f3005c276891d9510b20a2575357dd1851f67820cb"
+    },
+    {
+      "path": "supabase/migrations/202609190026_revoke_client_truncate.sql",
+      "sha256": "c8aee6389a20017d2fd4574b8b37e06a2201daac49ae559fd4b9824bd1dfec4c"
+    },
+    {
+      "path": "supabase/migrations/202609190027_restrict_postgres_default_truncate.sql",
+      "sha256": "ba50c144655f6734eb54a4e2ca9dc4897fcbe73f3af77bd1554197e2c9f396cb"
+    },
+    {
+      "path": "supabase/seeds/faculty_additions_20261103.sql",
+      "sha256": "e10fc1b76af63c25af675e5acd05a3df64e2b2f71915716ad6e284c5d9b6b438"
+    },
+    {
+      "path": "terms.html",
+      "sha256": "2cd8257025786888a342b1499388881687a7a86b287c0ec2f418ce30eb0cf44e"
+    },
+    {
+      "path": "tests/access.test.js",
+      "sha256": "9e36bcc8d2b0860d8638a31ef36e3798fb1d6c17115dac1e26c96f35d723818d"
+    },
+    {
+      "path": "tests/admin-performance.test.js",
+      "sha256": "4501ab6ca0cb3654864fb42cf2d144039943484174469423984184b8bd100015"
+    },
+    {
+      "path": "tests/admin.test.js",
+      "sha256": "13895ca48d02d858c2e9c959e336cc744715c2e80346d5a2587dfe3677637b96"
+    },
+    {
+      "path": "tests/AGENTS.md",
+      "sha256": "d51105483360516f37145c2b3c21bf63316d23e1f59ba0ba680ca772e8b08dd4"
+    },
+    {
+      "path": "tests/auth.test.js",
+      "sha256": "95668830a44a3f53ca2b705fc6b8a61a5eaf834fd7fd33fb79812373a22f97fc"
+    },
+    {
+      "path": "tests/catalog-import.test.js",
+      "sha256": "fb891f14f190824704f7f317f006854f457656eabae865e0e775ae654d90be04"
+    },
+    {
+      "path": "tests/catalog.test.js",
+      "sha256": "d1e9b5120e720943aeb60e00cd97433cdcf6bd670e112e3634f6be5e69503cde"
+    },
+    {
+      "path": "tests/copy-quality.test.js",
+      "sha256": "55963a3055384c37011e02472bb548d4e5dea3c7d5a2341720188a21fea450af"
+    },
+    {
+      "path": "tests/degree-plan-browser.cjs",
+      "sha256": "9c233bf44011c16ded5f32292f5a8c4765b7faba44d40cb50de7efdf7c8863f3"
+    },
+    {
+      "path": "tests/degree-plan.test.js",
+      "sha256": "1b38602923f94584c0a96a04ee79e56b83395ab198e3a5ec5b35c19c282ba764"
+    },
+    {
+      "path": "tests/deployment-hygiene.test.js",
+      "sha256": "6d7efc595aa9be6432d131c47dedfc215cd23e7cc5ece4b9980720e164abed71"
+    },
+    {
+      "path": "tests/faculty-data.test.js",
+      "sha256": "0d243f551d4d8bd488d512676340c70daf36327292cb30b74f5b8ac6b1cda09b"
+    },
+    {
+      "path": "tests/footer.test.js",
+      "sha256": "b7e797d9ec6dcc247eea29e6ad8614f0fc48534111f58f64fe66796a0cc72e00"
+    },
+    {
+      "path": "tests/interaction-layer.test.js",
+      "sha256": "35810b97728d492c0209e7d6f5f77a4c6424f3a84739f136ac7be9224dea9198"
+    },
+    {
+      "path": "tests/legal-pages.test.js",
+      "sha256": "0be5d5eac3ac947b861791e2e30bfeefe5f21d23069d1941128581f571356855"
+    },
+    {
+      "path": "tests/main-integration.test.js",
+      "sha256": "e185861336300c452f3bce7cc039a4dec28f7549f85713511ed5d62d26c9736c"
+    },
+    {
+      "path": "tests/maintenance-support.test.js",
+      "sha256": "85283993aaf5efabc22f53fb05e93af4bb471097a32e2f5c757f3dd97cd14df7"
+    },
+    {
+      "path": "tests/motion.test.js",
+      "sha256": "393dc6b67992873954bbf06b66c5a9c7c315e5d0f9d0f07b9122820da9a9a841"
+    },
+    {
+      "path": "tests/password-policy.test.js",
+      "sha256": "0036f01af4fb054f6ebd085c04617c01b8afae60af39fd946ab3ad9704f0e919"
+    },
+    {
+      "path": "tests/prerequisites.test.js",
+      "sha256": "3cfef09b851f113d65bf8f77231ca78b55773bae59b09375a38e4555140bbe21"
+    },
+    {
+      "path": "tests/profile.test.js",
+      "sha256": "ab36481b1490a4ed2e0b2b41e13214328b53ad096bdab512496d8959128105bf"
+    },
+    {
+      "path": "tests/report-pdf.test.js",
+      "sha256": "81a6c90e1650788dd1b148631f373d6a3d0dba44895a3d12c9791accd2513fa2"
+    },
+    {
+      "path": "tests/security.test.js",
+      "sha256": "9c16e0fcc9f477ab82ef569a601765acc65f45912998a46a406e01f4ab14298a"
+    },
+    {
+      "path": "tests/support-core.test.js",
+      "sha256": "8b9acde41baa0f617c1e8cfc71e6589fda8e84998cd1bb7e649fae3f7e46e256"
+    },
+    {
+      "path": "tests/support-mfa.test.js",
+      "sha256": "df84efc58e13ecf3e0c9be0a34878d7740fc50895b089e52b9a2a6978d8c2490"
+    },
+    {
+      "path": "tests/ui-states.test.js",
+      "sha256": "949c3c8d868abcdae53e66e65d57312c68be052bcfc64efac8997ac4c0b68930"
+    },
+    {
+      "path": "vercel.json",
+      "sha256": "d7e7da0704371059bbc216e262b691defc570c954dc2864b8cfe3e267cf73ae2"
+    }
+  ]
+}

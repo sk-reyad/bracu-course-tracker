@@ -1,0 +1,291 @@
+diff --git a/index.html b/index.html
+index d2bed3c..62b6eca 100644
+--- a/index.html
++++ b/index.html
+@@ -468,12 +468,9 @@
+       <i data-lucide="arrow-up"></i>
+     </button>
+ 
+-    <div class="modal-backdrop" id="dashboardModal" hidden>
++    <dialog class="modal-backdrop" id="dashboardModal" aria-label="Student dashboard" hidden>
+       <section
+         class="modal-panel wide-modal"
+-        role="dialog"
+-        aria-modal="true"
+-        aria-label="Student dashboard"
+       >
+         <div class="modal-head">
+           <h2>Student Dashboard</h2>
+@@ -515,14 +512,11 @@
+           </button>
+         </div>
+       </section>
+-    </div>
++    </dialog>
+ 
+-    <div class="modal-backdrop" id="settingsModal" hidden>
++    <dialog class="modal-backdrop" id="settingsModal" aria-label="Settings" hidden>
+       <section
+         class="modal-panel wide-modal"
+-        role="dialog"
+-        aria-modal="true"
+-        aria-label="Settings"
+       >
+         <div class="modal-head">
+           <h2>Settings</h2>
+@@ -558,14 +552,11 @@
+         <div class="tab-panel" id="backupEditor"></div>
+         <div class="tab-panel" id="cloudEditor"></div>
+       </section>
+-    </div>
++    </dialog>
+ 
+-    <div class="modal-backdrop" id="courseModal" hidden>
++    <dialog class="modal-backdrop" id="courseModal" aria-label="Course editor and catalog search" hidden>
+       <section
+         class="modal-panel"
+-        role="dialog"
+-        aria-modal="true"
+-        aria-label="Course editor and catalog search"
+       >
+         <div class="modal-head">
+           <h2 id="courseModalTitle">Course Editor</h2>
+@@ -580,14 +571,11 @@
+         </div>
+         <form id="courseForm" class="editor-grid"></form>
+       </section>
+-    </div>
++    </dialog>
+ 
+-    <div class="modal-backdrop" id="departmentModal" hidden>
++    <dialog class="modal-backdrop" id="departmentModal" aria-label="Department editor" hidden>
+       <section
+         class="modal-panel"
+-        role="dialog"
+-        aria-modal="true"
+-        aria-label="Department editor"
+       >
+         <div class="modal-head">
+           <h2 id="departmentModalTitle">Department Editor</h2>
+@@ -602,7 +590,7 @@
+         </div>
+         <form id="departmentForm" class="editor-grid"></form>
+       </section>
+-    </div>
++    </dialog>
+ 
+     <div class="toast" id="toast" role="status" aria-live="polite"></div>
+ 
+diff --git a/css/style.css b/css/style.css
+index 57cfa8c..b3f3c8a 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -3798,3 +3798,16 @@ body.report-print-mode .back-to-top {
+   outline: 2px solid var(--primary);
+   outline-offset: 2px;
+ }
++
++/* Reset only native host defaults; existing panel design and responsive rules remain. */
++dialog.modal-backdrop {
++  margin: 0;
++  width: 100%;
++  height: 100%;
++  max-width: none;
++  max-height: none;
++  border: 0;
++  color: inherit;
++}
++dialog.modal-backdrop:not([open]) { display: none; }
++dialog.modal-backdrop::backdrop { background: transparent; }
+diff --git a/js/app.js b/js/app.js
+index 7ae09ec..3286630 100644
+--- a/js/app.js
++++ b/js/app.js
+@@ -5,8 +5,9 @@ let queueTrackerCloudSync = () => {};
+ let syncTrackerNow = async () => ({ skipped: true });
+ let toastTimer = null;
+ let modalReturnFocus = null;
+-const modalFocusStack = [];
+-const modalBackgroundInert = new Map();
++const nativeModalSessions = new Map();
++let nativeEscapeOwner = null;
++let nativeToastNextSibling = null;
+ let modalBodyOverflow = "";
+ let editingCourseCode = null;
+ let editingDepartmentId = null;
+@@ -1839,28 +1840,30 @@ function removeDepartment(id) {
+   persist("Department removed");
+ }
+ 
+-function activeTrackerModal() {
+-  return modalFocusStack.at(-1)?.modal || null;
+-}
+-
+-function modalControls(modal) {
+-  return $all("button:not(:disabled), a[href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex]:not([tabindex='-1'])", modal)
+-    .filter((control) => !control.closest("[hidden], [inert]") && control.getClientRects().length);
+-}
+-
+-function syncModalBackground() {
+-  const active = activeTrackerModal();
+-  if (active) {
+-    for (const child of document.body.children) {
+-      if (["SCRIPT", "STYLE", "LINK", "DIALOG"].includes(child.tagName) || child.id === "toast") continue;
+-      if (!modalBackgroundInert.has(child)) modalBackgroundInert.set(child, child.inert);
+-      child.inert = child !== active;
+-    }
++// Native modality owns focus containment and background blocking; no custom Tab trap.
++function finishNativeModalClose(modal) {
++  const session = nativeModalSessions.get(modal);
++  if (!session || modal.open) return;
++  nativeModalSessions.delete(modal);
++  modal.hidden = true;
++  if (modal.id === "dashboardModal") {
++    dashboardProfileEditing = false;
++    resetDashboardProfileDraft();
++  }
++  restoreDotGridHost();
++  const remaining = [...nativeModalSessions.keys()].at(-1);
++  const toast = document.getElementById("toast");
++  if (remaining) {
++    mountDotGridInModal(remaining);
++    remaining.append(toast);
+   } else {
+-    for (const [child, inert] of modalBackgroundInert) child.inert = inert;
+-    modalBackgroundInert.clear();
+     document.body.style.overflow = modalBodyOverflow;
++    document.body.insertBefore(toast, nativeToastNextSibling?.parentNode === document.body ? nativeToastNextSibling : null);
++    nativeToastNextSibling = null;
+   }
++  modalReturnFocus = session.opener;
++  if (modalReturnFocus?.isConnected) modalReturnFocus.focus({ preventScroll: true });
++  modalReturnFocus = null;
+ }
+ 
+ function activateSettingsTab(tab, focus = false) {
+@@ -1885,34 +1888,30 @@ function activateSettingsTab(tab, focus = false) {
+ 
+ function openModal(id) {
+   const modal = document.getElementById(id);
+-  if (!modal || modalFocusStack.some((entry) => entry.modal === modal)) return;
++  if (!modal || modal.open) return;
+   modalReturnFocus = document.activeElement;
+-  if (!modalFocusStack.length) {
++  if (!nativeModalSessions.size) {
+     modalBodyOverflow = document.body.style.overflow;
+     document.body.style.overflow = "hidden";
++    nativeToastNextSibling = document.getElementById("toast").nextSibling;
+   }
+-  modalFocusStack.push({ modal, opener: modalReturnFocus });
++  nativeModalSessions.set(modal, { opener: modalReturnFocus });
+   modal.hidden = false;
+-  syncModalBackground();
++  modal.showModal();
++  // A body-level toast otherwise paints below the native top layer.
++  modal.append(document.getElementById("toast"));
+   mountDotGridInModal(modal);
+   refreshIcons();
+-  modalControls(modal)[0]?.focus({ preventScroll: true });
++  modal.querySelector("[data-close-modal]")?.focus({ preventScroll: true });
+ }
+ 
+ function closeModal(id) {
+-  const index = modalFocusStack.findIndex((entry) => entry.modal.id === id);
+-  if (index < 0) return;
+-  const [{ opener }] = modalFocusStack.splice(index, 1);
+-  document.getElementById(id).hidden = true;
+-  if (id === "dashboardModal") {
+-    dashboardProfileEditing = false;
+-    resetDashboardProfileDraft();
+-  }
+-  restoreDotGridHost();
+-  syncModalBackground();
+-  modalReturnFocus = opener;
+-  if (modalReturnFocus?.isConnected) modalReturnFocus.focus();
+-  modalReturnFocus = null;
++  const modal = document.getElementById(id);
++  if (!modal || !nativeModalSessions.has(modal)) return;
++  modal.close();
++  // Synchronous cleanup also preserves existing save/programmatic-close call order.
++  // The queued native close event is harmless after the session is removed.
++  finishNativeModalClose(modal);
+ }
+ 
+ function downloadPdfReport() {
+@@ -1931,6 +1930,40 @@ function downloadPdfReport() {
+ }
+ 
+ function bindEvents() {
++  // One Escape belongs to its originally focused dialog. Chrome may otherwise
++  // cancel several close-watchers opened in the same activation group.
++  document.addEventListener("keydown", (event) => {
++    if (event.key !== "Escape") return;
++    nativeEscapeOwner = event.target.closest("dialog");
++    if (nativeEscapeOwner && !nativeEscapeOwner.classList.contains("modal-backdrop") && nativeModalSessions.size) {
++      event.preventDefault();
++      if (typeof nativeEscapeOwner.requestClose === "function") nativeEscapeOwner.requestClose();
++      else if (nativeEscapeOwner.dispatchEvent(new Event("cancel", { cancelable: true }))) nativeEscapeOwner.close();
++    }
++  }, true);
++  document.addEventListener("keyup", (event) => {
++    if (event.key === "Escape") nativeEscapeOwner = null;
++  }, true);
++  $all("dialog.modal-backdrop").forEach((modal) => {
++    // Keep A's in-page first/last keyboard cycle. Native modality still owns
++    // background blocking; this is not the custom inert/focus-redirection layer.
++    modal.addEventListener("keydown", (event) => {
++      if (event.key !== "Tab" || !modal.matches(":modal")) return;
++      const controls = $all("button:not(:disabled), a[href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex]:not([tabindex='-1'])", modal)
++        .filter((control) => !control.closest("[hidden], [inert]") && control.getClientRects().length);
++      const edge = event.shiftKey ? controls[0] : controls.at(-1);
++      if (document.activeElement === edge) {
++        event.preventDefault();
++        (event.shiftKey ? controls.at(-1) : controls[0])?.focus();
++      }
++    });
++    modal.addEventListener("close", () => finishNativeModalClose(modal));
++    modal.addEventListener("cancel", (event) => {
++      event.preventDefault();
++      if (nativeEscapeOwner && nativeEscapeOwner !== modal) return;
++      closeModal(modal.id);
++    });
++  });
+   activateSettingsTab($("#settingsModal .tab-btn.active"));
+   $("#settingsModal .editor-tabs").addEventListener("keydown", (event) => {
+     if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+@@ -1942,11 +1975,6 @@ function bindEvents() {
+       (index + (event.key === "ArrowLeft" ? -1 : 1) + tabs.length) % tabs.length;
+     activateSettingsTab(tabs[next], true);
+   });
+-  document.addEventListener("focusin", (event) => {
+-    const modal = activeTrackerModal();
+-    if (modal && !document.querySelector("dialog[open]") && !modal.contains(event.target))
+-      modalControls(modal)[0]?.focus({ preventScroll: true });
+-  });
+ 
+   $("#themeToggle").addEventListener("click", toggleTheme);
+   $("#backToTopBtn")?.addEventListener("click", () =>
+@@ -2331,22 +2359,10 @@ function bindEvents() {
+   });
+   document.addEventListener("keydown", (event) => {
+     if (document.querySelector("dialog[open]")) return;
+-    const modal = activeTrackerModal();
+-    if (event.key === "Tab" && modal) {
+-      const controls = modalControls(modal);
+-      const first = controls[0], last = controls.at(-1);
+-      if (!first) { event.preventDefault(); return; }
+-      if ((event.shiftKey && document.activeElement === first) ||
+-          (!event.shiftKey && document.activeElement === last) ||
+-          !modal.contains(document.activeElement)) {
+-        event.preventDefault();
+-        (event.shiftKey ? last : first).focus();
+-      }
+-    }
+     if (event.key === "Escape") {
+       closeStreamCategoryTooltips();
+       const openModals = $all(".modal-backdrop:not([hidden])");
+-      const activeModal = activeTrackerModal() || openModals[openModals.length - 1];
++      const activeModal = openModals[openModals.length - 1];
+       if (activeModal) {
+         event.preventDefault();
+         closeModal(activeModal.id);

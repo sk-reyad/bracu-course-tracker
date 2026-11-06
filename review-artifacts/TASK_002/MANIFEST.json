@@ -1,0 +1,486 @@
+{
+  "task": "TASK_002",
+  "recommendation": "R-010",
+  "base": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+  "reviewParent": "d2a22340c4fcf6afb5d865eb99ff4c48247b64d7",
+  "runtimeSourceChanges": [
+    "index.html",
+    "css/style.css",
+    "js/app.js"
+  ],
+  "testChanges": [
+    "tests/interaction-layer.test.js"
+  ],
+  "affectedFunctions": [
+    "openModal",
+    "closeModal",
+    "finishNativeModalClose",
+    "bindEvents"
+  ],
+  "affectedSelectors": [
+    "dialog.modal-backdrop",
+    "dialog.modal-backdrop:not([open])",
+    "dialog.modal-backdrop::backdrop"
+  ],
+  "noOwnerDispositionChange": true,
+  "expectedPackageFiles": 92,
+  "checksumPolicy": "All package files except this manifest are SHA-256 listed; manifest is included without recursive self-hash. Public paths only; tooling preview addresses are not required to view gallery.",
+  "files": [
+    {
+      "path": "review-artifacts/TASK_002/.gitattributes",
+      "bytes": 32,
+      "sha256": "3515b5796add4178d3f6e8d30053df0251f1c4768c7a6a3c0a4c92807fa8ae0e"
+    },
+    {
+      "path": "review-artifacts/TASK_002/BASELINE_TO_A.diff",
+      "bytes": 7519,
+      "sha256": "a2bf2aa37de65be3c8c0d7aae0a52a8a1cd3e0801b9bf25a59abbf66609b6261"
+    },
+    {
+      "path": "review-artifacts/TASK_002/BASELINE_TO_B.diff",
+      "bytes": 11423,
+      "sha256": "f131f4d98329bd1bbf3928e884c7710fa5f346ec1d90d880ff707386090497a3"
+    },
+    {
+      "path": "review-artifacts/TASK_002/CHANGES.diff",
+      "bytes": 11379,
+      "sha256": "db38edfcfc3b6e6e05733f317afbd6632215b59750fdbb7bc440f21ff77768cd"
+    },
+    {
+      "path": "review-artifacts/TASK_002/GALLERY.html",
+      "bytes": 15960,
+      "sha256": "a2b79ece1dff9ea700dc9fcfbf2d8264872c3c267b8d398712c10aade280486e"
+    },
+    {
+      "path": "review-artifacts/TASK_002/GALLERY.md",
+      "bytes": 6247,
+      "sha256": "c14ba297ca014506869efb7630c74a7f2899d798102154770151ac1a818d8735"
+    },
+    {
+      "path": "review-artifacts/TASK_002/PREVIEW.md",
+      "bytes": 1052,
+      "sha256": "b323559e14f62816d90d58f7cf2e25bde20e1a7bba2592885922624ac040ac6d"
+    },
+    {
+      "path": "review-artifacts/TASK_002/TASK_002_REQUEST.txt",
+      "bytes": 7823,
+      "sha256": "b5eeea5bd9dc7ff547e2772d5e7f7b39cef5efc6b257605ac17dc686070e5ae3"
+    },
+    {
+      "path": "review-artifacts/TASK_002/TASK_REVIEW_002.md",
+      "bytes": 16251,
+      "sha256": "c9fae60a4d9d4d14f182c3e2e2fd8d62d31784b2c08f83cdc164692f070df846"
+    },
+    {
+      "path": "review-artifacts/TASK_002/TEST_CHANGES.diff",
+      "bytes": 862,
+      "sha256": "c65f4317f25e93fbc8da4983b5b7e6d8214d4deec26355a2958227d97eece4b2"
+    },
+    {
+      "path": "review-artifacts/TASK_002/TEST_RESULTS.txt",
+      "bytes": 3142,
+      "sha256": "4497834cde7f48fce221c2298605352430190609073fb90c17174dcfd44c0bf9"
+    },
+    {
+      "path": "review-artifacts/TASK_002/evidence/advanced-browser.json",
+      "bytes": 2188,
+      "sha256": "84c91533f26b0c22db17bf62344c5615e9ca58377d5b8c42e3d6d8655961af52"
+    },
+    {
+      "path": "review-artifacts/TASK_002/evidence/browser-results.json",
+      "bytes": 213298,
+      "sha256": "81d19caed1e2c6184c623baf46aaba4a54045e92382e7f5de34047a5712883d5"
+    },
+    {
+      "path": "review-artifacts/TASK_002/evidence/console-results.json",
+      "bytes": 6497,
+      "sha256": "9d1b4a597aae4fd5eb6f53f7d96ff405d64e10c1c12fe41ddd666555f84cd326"
+    },
+    {
+      "path": "review-artifacts/TASK_002/evidence/course-picker.json",
+      "bytes": 523,
+      "sha256": "df8779c61850d33c9dc409db8236b685dd50f7335c7a23a908f070fc3a964a9d"
+    },
+    {
+      "path": "review-artifacts/TASK_002/evidence/diff-application.txt",
+      "bytes": 166,
+      "sha256": "8e0e1bdc2f72b536f4822c2a3fb1af70fa661d003e47926101392b73655ff6d6"
+    },
+    {
+      "path": "review-artifacts/TASK_002/evidence/initial-failures.json",
+      "bytes": 980,
+      "sha256": "549d16c3649cef43b17c2d85a7a94033095b469d5a6723030602526a4fc52bbd"
+    },
+    {
+      "path": "review-artifacts/TASK_002/evidence/node-native.txt",
+      "bytes": 33770,
+      "sha256": "73a056c7c7c9d9265e10e4a46eebbf468a7cd0952052359df50afa576b384933"
+    },
+    {
+      "path": "review-artifacts/TASK_002/evidence/node-option-a.txt",
+      "bytes": 33765,
+      "sha256": "d73255e408a5e4851259934d20dd4fe6cd0b6c077c6843132b641b3fe5482ce8"
+    },
+    {
+      "path": "review-artifacts/TASK_002/evidence/node-original.txt",
+      "bytes": 33761,
+      "sha256": "291b1653f70047da9c9937da1495768b2019bd39776f8138151a02c552d8cdfb"
+    },
+    {
+      "path": "review-artifacts/TASK_002/evidence/node-summary.json",
+      "bytes": 483,
+      "sha256": "eee99abbb0cf90af305221de7dc95f338e728528625a92d3d04403da863aec7f"
+    },
+    {
+      "path": "review-artifacts/TASK_002/evidence/original-protection.json",
+      "bytes": 539,
+      "sha256": "4114202ff04acaa47791ce0026d02d508e9f2cac07fdf55affdc18188eabdee2"
+    },
+    {
+      "path": "review-artifacts/TASK_002/evidence/preserved-workspace-hashes.json",
+      "bytes": 55792,
+      "sha256": "ff75c29e8ed3b9b86223c21e9460fb5888f947a42b1607be51d9d4381ea35693"
+    },
+    {
+      "path": "review-artifacts/TASK_002/evidence/source-checks.txt",
+      "bytes": 826,
+      "sha256": "95a55e0e545a3088f92452867b1381dfb6e9da18e63b233df7aec506d74597ad"
+    },
+    {
+      "path": "review-artifacts/TASK_002/evidence/visual-parity.json",
+      "bytes": 13743,
+      "sha256": "1b87e1820e505b50bc83de6e16b855dcbe4e098a50fe5b97439625d66b2c2934"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/native-courseModal-1440-dark.png",
+      "bytes": 73853,
+      "sha256": "4a1bbb0e7a25ccae7348f8b4f7525aa5089c91e14a77ab7b67ba1ea2dd7d934b"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/native-courseModal-1440-light.png",
+      "bytes": 80988,
+      "sha256": "27a53fd72feeab6606b58a94cb3b1624499ce82385d92427a34afc2376263b4a"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/native-courseModal-390-dark.png",
+      "bytes": 48739,
+      "sha256": "8385adfda536b8c856fc2965ccb676cbbf8c58724d71d226ab729d9ba8ad3fd7"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/native-courseModal-390-light.png",
+      "bytes": 49223,
+      "sha256": "f7e1e41037dae00993cd385793c04ca2d5700b68fabfc167f336c8fef93804b9"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/native-dashboardModal-1440-dark.png",
+      "bytes": 155553,
+      "sha256": "1362b8978816a136c5e0f6d8e6fbc95d662d452602bd60ee5a7e5f8dadf67996"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/native-dashboardModal-1440-light.png",
+      "bytes": 158448,
+      "sha256": "624b371365abc77d5d2e538ac27da9a3b09a6afac2a1241ae1be9d78976214eb"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/native-dashboardModal-390-dark.png",
+      "bytes": 71179,
+      "sha256": "4f68662537f39f978b29e126e7cb68522146c626b556bcd74a45d7efe4c3bfb2"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/native-dashboardModal-390-light.png",
+      "bytes": 71948,
+      "sha256": "77fefa49b66880dfcd696a8165a50096bdc6de5a510570ad8c65e22b319bdc3c"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/native-departmentModal-1440-dark.png",
+      "bytes": 53324,
+      "sha256": "a9d022d1479bdd2f599dd5abd0d48c547c78aebad8210613ee18e97036a1ccf7"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/native-departmentModal-1440-light.png",
+      "bytes": 60887,
+      "sha256": "04768199c58bf03834c57c5fb79cf9c38c7b0759ead56b5ed89431c01e0639f3"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/native-departmentModal-390-dark.png",
+      "bytes": 40341,
+      "sha256": "451aa082904f39bfdcb87a6d0c910f2050b120e6ff1dbb1d31e80df25357e32f"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/native-departmentModal-390-light.png",
+      "bytes": 42047,
+      "sha256": "056a481eafa4055abd24e7898a181352fe028a79e009aa7ec12e7fda1fd18f60"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/native-settingsModal-1440-dark.png",
+      "bytes": 84500,
+      "sha256": "9ecbcafae14dbac02945e6b3559bdfc16e256d5145e905cce3879261d5d06fa4"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/native-settingsModal-1440-light.png",
+      "bytes": 88284,
+      "sha256": "8d098f72d49bdb0eb1e1f1fc007d2b0e38c3af2e13791ff23976015cdbbb5369"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/native-settingsModal-390-dark.png",
+      "bytes": 53222,
+      "sha256": "c414532f22e695f363079cae1e24df9b4baf2645924d842dedede72e611e1cad"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/native-settingsModal-390-light.png",
+      "bytes": 54262,
+      "sha256": "04b5e40453a55a798d2f17c8a41f81b87b4e34c963f4b15480ce61d01eb4f522"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/native-toast-390-light.png",
+      "bytes": 58839,
+      "sha256": "af271e02251de79f1652dede50caff64b5adf4a1c4f63760725625d151b62a98"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/option-a-courseModal-1440-dark.png",
+      "bytes": 73803,
+      "sha256": "a65037c8ab9d3024d5167ea06f5e50d5d45ddbe5f2a61dacb889df4ba36e4853"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/option-a-courseModal-1440-light.png",
+      "bytes": 80717,
+      "sha256": "39d5113cc429fed238ed43873550c51c59289d835315e222d7570aa30ca5262a"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/option-a-courseModal-390-dark.png",
+      "bytes": 48737,
+      "sha256": "75ee395966238ed27146eeeafeec80d5be6d2f9c557e7bd9e6a43fb747ca1e86"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/option-a-courseModal-390-light.png",
+      "bytes": 49211,
+      "sha256": "fad235c4032c421e6a15afc45d5f14a11696eb763ff1bab9cc74784cf04b614c"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/option-a-dashboardModal-1440-dark.png",
+      "bytes": 155548,
+      "sha256": "daff3f2d87986fd9ffd7aacda43cfe79e1fdb43b649c1caaea93478b2f877963"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/option-a-dashboardModal-1440-light.png",
+      "bytes": 158451,
+      "sha256": "01c5e6d5748923a9a7a351abce7abd0e9ffc69d28a6e98221b5f87293fd27919"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/option-a-dashboardModal-390-dark.png",
+      "bytes": 71179,
+      "sha256": "4f68662537f39f978b29e126e7cb68522146c626b556bcd74a45d7efe4c3bfb2"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/option-a-dashboardModal-390-light.png",
+      "bytes": 71948,
+      "sha256": "77fefa49b66880dfcd696a8165a50096bdc6de5a510570ad8c65e22b319bdc3c"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/option-a-departmentModal-1440-dark.png",
+      "bytes": 53295,
+      "sha256": "cf7dafab4702703ac8fb5747ae1bb0501cb12faeb056cbfafc1729b446bc258d"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/option-a-departmentModal-1440-light.png",
+      "bytes": 60887,
+      "sha256": "04768199c58bf03834c57c5fb79cf9c38c7b0759ead56b5ed89431c01e0639f3"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/option-a-departmentModal-390-dark.png",
+      "bytes": 40327,
+      "sha256": "95d9736e652794ad70bf5dc9fc8ff63b8df2629d5c86dfd03eb2d9ce391f95c9"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/option-a-departmentModal-390-light.png",
+      "bytes": 42071,
+      "sha256": "6332d5fe00076be04c7ae80d30ea2314a14c68308b844e0c04edaca0cce5fca9"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/option-a-settingsModal-1440-dark.png",
+      "bytes": 84500,
+      "sha256": "9ecbcafae14dbac02945e6b3559bdfc16e256d5145e905cce3879261d5d06fa4"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/option-a-settingsModal-1440-light.png",
+      "bytes": 88284,
+      "sha256": "8d098f72d49bdb0eb1e1f1fc007d2b0e38c3af2e13791ff23976015cdbbb5369"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/option-a-settingsModal-390-dark.png",
+      "bytes": 52935,
+      "sha256": "6f38f0d74f56a97bcd1e651e18c2a8aa9fa9261873eae74ddbb7d1c252e7c77a"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/option-a-settingsModal-390-light.png",
+      "bytes": 54035,
+      "sha256": "3236c1ce55ff332d388718a041b96520e0a013e6627e1e54120e03851b852240"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/option-a-toast-390-light.png",
+      "bytes": 58591,
+      "sha256": "13325ecacad9a83a0c9594504ebe8a1e67b7f2a0527be6ac9c3836028c725449"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/original-courseModal-1440-dark.png",
+      "bytes": 73995,
+      "sha256": "4a1110dae120c84cf887d240d17fbb96227dd449770fd9de696151e59c157d04"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/original-courseModal-1440-light.png",
+      "bytes": 80536,
+      "sha256": "d75d72f55b84a89bc8f33753c2f3c4a375701a6942a41c271bc96d0c4feadb9e"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/original-courseModal-390-dark.png",
+      "bytes": 49208,
+      "sha256": "424b883472ad104e486db5cb6b8aec501286394809d8ddcedfdb4b1b956ba593"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/original-courseModal-390-light.png",
+      "bytes": 49756,
+      "sha256": "e53c44ecb19a2e0381a9a3d57e826b9efdea007de676fcdb8c2b36f06436849d"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/original-dashboardModal-1440-dark.png",
+      "bytes": 157383,
+      "sha256": "99f9283a311bd6aef9bfea15d779516b35e8b608a08dcdb3d9b3f8cd4e6c5749"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/original-dashboardModal-1440-light.png",
+      "bytes": 158520,
+      "sha256": "2cbc27a181fcb3b79f87f6c6e63c0d01c33352ad2bf9d705b60048f13d969941"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/original-dashboardModal-390-dark.png",
+      "bytes": 70863,
+      "sha256": "f787a4b460c48d5ec72545c08b450da3eaaa1cc2ff011013711cc689c9ad167a"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/original-dashboardModal-390-light.png",
+      "bytes": 71734,
+      "sha256": "3936eee396b1a2eb09ae1c6e5f13283db6703394915c6e41830efe54759107c1"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/original-departmentModal-1440-dark.png",
+      "bytes": 54845,
+      "sha256": "10c19d17b33c0bb2f03de963a374464679bd46b5f54953d572b3c968d819412f"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/original-departmentModal-1440-light.png",
+      "bytes": 61508,
+      "sha256": "d760b58106052807d4d6bcd68a0d8f4c50587a774d2fe4475c25dc376a4c446c"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/original-departmentModal-390-dark.png",
+      "bytes": 40514,
+      "sha256": "7b16bbf19b5efb64e3e6fe5e48998de5c0ba4e03643ff28c30ea4ca82ccea6f0"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/original-departmentModal-390-light.png",
+      "bytes": 42006,
+      "sha256": "1b11f5cb52673212a969eb8c846dc43547189fb7bd6b6e3bb5b48ba1d5664d13"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/original-settingsModal-1440-dark.png",
+      "bytes": 87134,
+      "sha256": "176b5c34ee07bd410ab091749036a187fd49ca034e211e746e1156ee58367dd6"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/original-settingsModal-1440-light.png",
+      "bytes": 89141,
+      "sha256": "df092fbf3e21f65c3c313b036afbfe9bc3e42ba5bba3d11abafff57b8ded48c5"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/original-settingsModal-390-dark.png",
+      "bytes": 53845,
+      "sha256": "b72e0aeb2a7fad6838bc500f019c129bc7e995858709adf523515bbd37c61d55"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/original-settingsModal-390-light.png",
+      "bytes": 55180,
+      "sha256": "20e409bbdb5054766027ced73707d05d940d7f9579e23fc77606958bb28f36d1"
+    },
+    {
+      "path": "review-artifacts/TASK_002/screenshots/original-toast-390-light.png",
+      "bytes": 58956,
+      "sha256": "35cd0a17f02ba3fa477b9fc0e58987a5a0511b9102a080975df4f3627dd754d0"
+    },
+    {
+      "path": "review-artifacts/TASK_002/source/native/css/style.css",
+      "bytes": 74466,
+      "sha256": "3ff66fce59ee37f1307c52d5c2d81216a041c29193d16a2780d695a7118846fa"
+    },
+    {
+      "path": "review-artifacts/TASK_002/source/native/index.html",
+      "bytes": 25917,
+      "sha256": "cbe7b076f7b4e499c1e7d5c2b1f83ae5c53e2a74c9f9eb401abd991da4c96839"
+    },
+    {
+      "path": "review-artifacts/TASK_002/source/native/js/app.js",
+      "bytes": 104036,
+      "sha256": "35f0938479d1ffbfcf5a5ef9b5bc36f829d4a5e174631814373dbf2cf60c56a5"
+    },
+    {
+      "path": "review-artifacts/TASK_002/source/native/tests/interaction-layer.test.js",
+      "bytes": 15439,
+      "sha256": "574bd0b834d54510bbfcd67558f70b74cbb170297ce97a070adeebc76768df47"
+    },
+    {
+      "path": "review-artifacts/TASK_002/source/option-a/css/style.css",
+      "bytes": 74121,
+      "sha256": "1c4462201cdbd2bcbab2e6b2e6bfc6c0fb09890db835b102889ac732fcdded02"
+    },
+    {
+      "path": "review-artifacts/TASK_002/source/option-a/index.html",
+      "bytes": 26117,
+      "sha256": "1dbed383a05539636f012f8de777c5622f5ed787d3309c4d823c2faa0b53908a"
+    },
+    {
+      "path": "review-artifacts/TASK_002/source/option-a/js/app.js",
+      "bytes": 102839,
+      "sha256": "78716723e73d5a081dfbdfedee2838d764a9987bd7b0edbbac271d55dda8e554"
+    },
+    {
+      "path": "review-artifacts/TASK_002/tooling/cdp.mjs",
+      "bytes": 1868,
+      "sha256": "d9a1e0f3cebbbeae9dbe345cc0476500b201a15f030c257d7997bfceed752f00"
+    },
+    {
+      "path": "review-artifacts/TASK_002/tooling/rebuild-demo.cjs",
+      "bytes": 1397,
+      "sha256": "24d75992cc498c2e049d09903e29b5dc061c3184964dfa18247bd16c662c2ed0"
+    },
+    {
+      "path": "review-artifacts/TASK_002/tooling/serve.cjs",
+      "bytes": 1972,
+      "sha256": "b4c827e2b91adf28d2acafac6909b9d9e48b9faf80df7de33e4449659c3c46c4"
+    },
+    {
+      "path": "review-artifacts/TASK_002/tooling/source-checks.cjs",
+      "bytes": 4337,
+      "sha256": "d125d7445222c07ccb01f7d283a65b3b77e77f101f375a1e1db48408231e232c"
+    },
+    {
+      "path": "review-artifacts/TASK_002/tooling/verify-browser.mjs",
+      "bytes": 9124,
+      "sha256": "4741a0937e9f463cc6ece7c115462e46bbbf0ce371fe70ade96e635d4f36bd65"
+    },
+    {
+      "path": "review-artifacts/TASK_002/tooling/verify-console.mjs",
+      "bytes": 1786,
+      "sha256": "857012e9edb42c685cfe7444faa9d22af3ccb696a86c741caa323e12a60ca05b"
+    },
+    {
+      "path": "review-artifacts/TASK_002/tooling/verify-extra.mjs",
+      "bytes": 3897,
+      "sha256": "94b67fb73c91539411dd3badc37c92347ecc6ff64f0673c3cfdc70fa5ce0737c"
+    },
+    {
+      "path": "review-artifacts/TASK_002/tooling/verify-picker.mjs",
+      "bytes": 1047,
+      "sha256": "1cdcb9da846356cc4f5d3348420ac0819531b2820ee37cdd147cfb8a3a57e288"
+    }
+  ],
+  "zipPathPolicy": "ZIP entries start TASK_002/; strip review-artifacts/ from manifest repository-relative paths."
+}

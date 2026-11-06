@@ -1,0 +1,202 @@
+diff --git a/index.html b/index.html
+index 041751d..d2bed3c 100644
+--- a/index.html
++++ b/index.html
+@@ -481,6 +481,7 @@
+             class="icon-button"
+             type="button"
+             data-close-modal="dashboardModal"
++            aria-label="Close Dashboard"
+           >
+             <i data-lucide="x"></i>
+           </button>
+@@ -529,6 +530,7 @@
+             class="icon-button"
+             type="button"
+             data-close-modal="settingsModal"
++            aria-label="Close Settings"
+           >
+             <i data-lucide="x"></i>
+           </button>
+@@ -571,6 +573,7 @@
+             class="icon-button"
+             type="button"
+             data-close-modal="courseModal"
++            aria-label="Close Course Editor"
+           >
+             <i data-lucide="x"></i>
+           </button>
+@@ -592,6 +595,7 @@
+             class="icon-button"
+             type="button"
+             data-close-modal="departmentModal"
++            aria-label="Close Department Editor"
+           >
+             <i data-lucide="x"></i>
+           </button>
+diff --git a/css/style.css b/css/style.css
+index 312d56f..57cfa8c 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -3793,3 +3793,8 @@ body.report-print-mode .back-to-top {
+     transform: translateX(-50%);
+   }
+ }
++
++#settingsModal .tab-btn:focus-visible {
++  outline: 2px solid var(--primary);
++  outline-offset: 2px;
++}
+diff --git a/js/app.js b/js/app.js
+index 4ec8fcd..7ae09ec 100644
+--- a/js/app.js
++++ b/js/app.js
+@@ -5,6 +5,9 @@ let queueTrackerCloudSync = () => {};
+ let syncTrackerNow = async () => ({ skipped: true });
+ let toastTimer = null;
+ let modalReturnFocus = null;
++const modalFocusStack = [];
++const modalBackgroundInert = new Map();
++let modalBodyOverflow = "";
+ let editingCourseCode = null;
+ let editingDepartmentId = null;
+ let editingFacultyId = null;
+@@ -1836,21 +1839,78 @@ function removeDepartment(id) {
+   persist("Department removed");
+ }
+ 
++function activeTrackerModal() {
++  return modalFocusStack.at(-1)?.modal || null;
++}
++
++function modalControls(modal) {
++  return $all("button:not(:disabled), a[href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex]:not([tabindex='-1'])", modal)
++    .filter((control) => !control.closest("[hidden], [inert]") && control.getClientRects().length);
++}
++
++function syncModalBackground() {
++  const active = activeTrackerModal();
++  if (active) {
++    for (const child of document.body.children) {
++      if (["SCRIPT", "STYLE", "LINK", "DIALOG"].includes(child.tagName) || child.id === "toast") continue;
++      if (!modalBackgroundInert.has(child)) modalBackgroundInert.set(child, child.inert);
++      child.inert = child !== active;
++    }
++  } else {
++    for (const [child, inert] of modalBackgroundInert) child.inert = inert;
++    modalBackgroundInert.clear();
++    document.body.style.overflow = modalBodyOverflow;
++  }
++}
++
++function activateSettingsTab(tab, focus = false) {
++  const tabs = $all("#settingsModal .tab-btn");
++  tabs.forEach((button) => {
++    const active = button === tab;
++    button.id = button.id || "settings-tab-" + button.dataset.tab;
++    button.setAttribute("role", "tab");
++    button.setAttribute("aria-selected", String(active));
++    button.setAttribute("aria-controls", button.dataset.tab);
++    button.tabIndex = active ? 0 : -1;
++    button.classList.toggle("active", active);
++    const panel = document.getElementById(button.dataset.tab);
++    panel.setAttribute("role", "tabpanel");
++    panel.setAttribute("aria-labelledby", button.id);
++    panel.tabIndex = 0;
++    panel.hidden = !active;
++    panel.classList.toggle("active", active);
++  });
++  if (focus) tab.focus();
++}
++
+ function openModal(id) {
+   const modal = document.getElementById(id);
++  if (!modal || modalFocusStack.some((entry) => entry.modal === modal)) return;
+   modalReturnFocus = document.activeElement;
++  if (!modalFocusStack.length) {
++    modalBodyOverflow = document.body.style.overflow;
++    document.body.style.overflow = "hidden";
++  }
++  modalFocusStack.push({ modal, opener: modalReturnFocus });
+   modal.hidden = false;
++  syncModalBackground();
+   mountDotGridInModal(modal);
+   refreshIcons();
++  modalControls(modal)[0]?.focus({ preventScroll: true });
+ }
+ 
+ function closeModal(id) {
++  const index = modalFocusStack.findIndex((entry) => entry.modal.id === id);
++  if (index < 0) return;
++  const [{ opener }] = modalFocusStack.splice(index, 1);
+   document.getElementById(id).hidden = true;
+   if (id === "dashboardModal") {
+     dashboardProfileEditing = false;
+     resetDashboardProfileDraft();
+   }
+   restoreDotGridHost();
++  syncModalBackground();
++  modalReturnFocus = opener;
+   if (modalReturnFocus?.isConnected) modalReturnFocus.focus();
+   modalReturnFocus = null;
+ }
+@@ -1871,6 +1931,23 @@ function downloadPdfReport() {
+ }
+ 
+ function bindEvents() {
++  activateSettingsTab($("#settingsModal .tab-btn.active"));
++  $("#settingsModal .editor-tabs").addEventListener("keydown", (event) => {
++    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
++    const tabs = $all("#settingsModal .tab-btn");
++    const index = tabs.indexOf(event.target.closest(".tab-btn"));
++    if (index < 0) return;
++    event.preventDefault();
++    const next = event.key === "Home" ? 0 : event.key === "End" ? tabs.length - 1 :
++      (index + (event.key === "ArrowLeft" ? -1 : 1) + tabs.length) % tabs.length;
++    activateSettingsTab(tabs[next], true);
++  });
++  document.addEventListener("focusin", (event) => {
++    const modal = activeTrackerModal();
++    if (modal && !document.querySelector("dialog[open]") && !modal.contains(event.target))
++      modalControls(modal)[0]?.focus({ preventScroll: true });
++  });
++
+   $("#themeToggle").addEventListener("click", toggleTheme);
+   $("#backToTopBtn")?.addEventListener("click", () =>
+     window.scrollTo({ top: 0, behavior: "smooth" }),
+@@ -2253,10 +2330,23 @@ function bindEvents() {
+       window.setTimeout(() => compactFacultySelectOptions(event.target), 0);
+   });
+   document.addEventListener("keydown", (event) => {
++    if (document.querySelector("dialog[open]")) return;
++    const modal = activeTrackerModal();
++    if (event.key === "Tab" && modal) {
++      const controls = modalControls(modal);
++      const first = controls[0], last = controls.at(-1);
++      if (!first) { event.preventDefault(); return; }
++      if ((event.shiftKey && document.activeElement === first) ||
++          (!event.shiftKey && document.activeElement === last) ||
++          !modal.contains(document.activeElement)) {
++        event.preventDefault();
++        (event.shiftKey ? last : first).focus();
++      }
++    }
+     if (event.key === "Escape") {
+       closeStreamCategoryTooltips();
+       const openModals = $all(".modal-backdrop:not([hidden])");
+-      const activeModal = openModals[openModals.length - 1];
++      const activeModal = activeTrackerModal() || openModals[openModals.length - 1];
+       if (activeModal) {
+         event.preventDefault();
+         closeModal(activeModal.id);
+@@ -2276,6 +2366,10 @@ function bindEvents() {
+   document.addEventListener("click", (event) => {
+     const tab = event.target.closest(".tab-btn");
+     if (!tab) return;
++    if (tab.closest("#settingsModal")) {
++      activateSettingsTab(tab);
++      return;
++    }
+     const modal = tab.closest(".modal-panel") || document;
+     $all(".tab-btn", modal).forEach((btn) => btn.classList.remove("active"));
+     $all(".tab-panel", modal).forEach((panel) =>

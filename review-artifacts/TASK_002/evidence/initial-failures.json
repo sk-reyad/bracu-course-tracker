@@ -1,0 +1,26 @@
+{
+  "pureNativeTab": {
+    "observed": {
+      "activeTag": "BODY",
+      "documentHasFocus": false,
+      "nativeModal": "settingsModal"
+    },
+    "failure": "strict in-page containment failed",
+    "correction": "Explicit native host first/last boundary wrap; assertions unchanged"
+  },
+  "nestedEscape": {
+    "observed": "supportDialog and dashboardModal both received cancel and close on one Escape",
+    "correction": "Focused nested requestClose with fallback; parent remains open; next Escape closes parent"
+  },
+  "initialNode": {
+    "passed": 364,
+    "failed": 1,
+    "test": "modal lifecycle hosts the single dot grid below translucent modal content",
+    "correction": "Owning assertion follows native cleanup helper AND caller"
+  },
+  "environment": [
+    "Unsafe local port 4190",
+    "Sandbox-separated loopback prevented preview initialization"
+  ],
+  "toastReadiness": "One early transition sample failed; replaced fixed delay with computed-opacity polling"
+}
