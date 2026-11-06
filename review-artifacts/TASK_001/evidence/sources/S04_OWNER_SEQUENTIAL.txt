@@ -1,0 +1,384 @@
+# BRACU Course Tracker — Sequential Multi-Skill UI/UX Design Review
+
+## Objective
+
+Repository: https://github.com/sk-reyad/bracu-course-tracker
+
+I want to personally review **every distinct, actionable UI/UX improvement recommended by the previously completed design-skill and plugin audits**, one recommendation at a time.
+
+Do not perform a large redesign.
+
+Do not implement all recommendations at once.
+
+For each recommendation, create an isolated, working Before/After demonstration and STOP for my feedback.
+
+Only start the next recommendation after I explicitly finish reviewing the current one.
+
+**This is a sequential, user-controlled design-selection process, NOT production implementation.**
+
+## 1. Required Source Materials
+
+Read the following:
+
+- `FRONTEND_UI_SKILLS_AND_PLUGINS.md`
+- `FRONTEND_UI_MULTISKILL_AUDIT.md`
+- Original Impeccable audit findings, if accessible
+- `DEMO_REVIEW.md`
+- `CORRECTION_REVIEW.md`
+- Previous A+B+C and optional D demo files
+- `AGENTS.md` and applicable nested instructions
+- `docs/DESIGN.md`
+- `docs/PROJECT.md`
+- `docs/ARCHITECTURE.md`
+- `docs/TESTING.md`
+- Relevant current source files
+
+Use the complete audit reports, not just their executive summaries.
+
+Do not invent findings for skills that were skipped, unavailable, or not applicable.
+
+When prior reports are missing, clearly identify the missing evidence.
+
+## 2. My Decisions So Far
+
+Record these decisions before proceeding:
+
+- Demo A — Modal and Settings accessibility: LIKED / selected candidate.
+- Demo B — Responsive stream tooltips: LIKED / selected candidate.
+- Demo C — Reduced-motion behavior: ON HOLD. I want to understand and optionally compare it before deciding.
+- Demo D — CSE110 card and Grade Scale visual polish: REJECTED.
+
+Specifically, I do not like the Demo D changes that remove card shadows, weaken category badge backgrounds/borders, or make Grade/GP pills visually lighter.
+
+Do not reapply these rejected styling changes.
+
+Do not interpret my positive feedback for A or B as authorization to update the original repository.
+
+None of these decisions authorizes a production commit or deployment.
+
+## 3. Build a Complete Master Recommendation Register
+
+Before creating any new demo, extract every distinct, actionable recommendation from every applicable individual skill audit.
+
+For every recommendation, record:
+
+1. Recommendation ID.
+2. Exact recommendation.
+3. Which skill/plugin suggested it.
+4. Which other skills support it.
+5. Original audit finding ID, if available.
+6. Affected page/component.
+7. Technical or visual improvement category.
+8. Severity/priority.
+9. Evidence and verification status.
+10. Expected benefit.
+11. Implementation/regression risk.
+12. Whether it was already demonstrated.
+13. Existing owner decision.
+14. Current status: UNREVIEWED / SELECTED / REJECTED / HOLD / IN REVIEW.
+
+Deduplicate identical technical issues, but preserve all contributing skill names.
+
+If different skills recommend substantially different solutions to the same problem, record them as separately reviewable alternatives.
+
+Never discard a unique recommendation just because it has lower priority or is subjective.
+
+Include the nine findings F-001 through F-009.
+
+Also account for historical Impeccable recommendations not represented among the nine findings, including:
+
+- Degree Plan discoverability
+- Intermediate-width Admin table usability
+- Academic status label readability/contrast
+- Lazy loading of the PDF engine
+- Deferred or conditional decorative WebGL loading
+- External icon fallback resilience
+- Mobile navigation clarity
+- Shared semantic design-token consistency
+- Maintenance-page heading clarity
+- Remaining course-list/report responsive behavior, where independently reproducible
+
+These historical recommendations are not automatically confirmed bugs.
+
+Reverify each one before proposing changes.
+
+For recommendations that are only broad design principles, identify a precise affected component and concrete proposed change before creating a demo.
+
+Do not generate meaningless changes merely to satisfy the audit count.
+
+## 4. Absolute Project Protection
+
+Do not modify the original GitHub repository or its working tree.
+
+Do not commit, push, merge, or deploy.
+
+Do not change Supabase, APIs, authentication, RLS, database schemas, middleware, or real student records.
+
+Do not alter academic calculations, course identities, prerequisites, repeat/retake rules, persistence contracts, or PDF data.
+
+Create demonstrations only in isolated workspaces outside the original repository.
+
+Preserve the existing:
+
+- Blue-led academic theme
+- Typography and branding
+- Roadmap and prerequisite connectors
+- Status colors
+- Course-card information
+- Faculty tooltips
+- Navbar and footer
+- Dashboard and Settings functionality
+- Light and dark themes
+- Responsive conventions
+- Current user data contracts
+
+Avoid unnecessary dependencies, frameworks, broad refactors, or unrelated styling.
+
+Maintain a clean, unchanged baseline copy for fair comparisons.
+
+## 5. STRICT ONE-RECOMMENDATION-AT-A-TIME RULE
+
+This is the most important instruction.
+
+After preparing the master recommendation register:
+
+**Select exactly ONE unreviewed recommendation.**
+
+Prefer the highest-impact recommendation that has not already been selected or rejected.
+
+For that one recommendation only:
+
+1. Explain the problem.
+2. Identify the recommending skills/plugins.
+3. Show current implementation and evidence.
+4. Propose the smallest meaningful improvement.
+5. Implement it only in its isolated demo.
+6. Verify functionality.
+7. Capture actual Before/After evidence.
+8. Present the comparison to me.
+9. STOP and wait for my decision.
+
+Do not implement the second recommendation.
+
+Do not start another demo while I am reviewing the current one.
+
+Do not treat silence, a test passing, or an old approval as permission to proceed.
+
+## 6. How Every Before/After Must Be Presented
+
+For each recommendation, include:
+
+### A. Recommendation Information
+
+- Recommendation number and audit ID.
+- Exact skill/plugin attribution.
+- Affected page or component.
+- Why this change was recommended.
+- Whether the issue is verified, inferred, or a design preference.
+
+### B. BEFORE
+
+Show the original component as it currently exists.
+
+Use real browser screenshots captured from the unchanged baseline.
+
+Describe the actual current behavior.
+
+### C. AFTER
+
+Show only this one proposed change.
+
+Use a fully functional, isolated demo.
+
+Preserve unrelated UI and behavior.
+
+### D. Side-by-Side Comparison
+
+Capture matched Before and After screenshots at identical viewport sizes, theme, zoom, application state, and sample data.
+
+Provide relevant:
+
+- Desktop view
+- Mobile view
+- Light mode
+- Dark mode
+- Hover/focus/active states where applicable
+
+Do not use AI-generated mockups as evidence of browser implementation.
+
+### E. Interactive Demo
+
+Provide working local preview URLs or clear local launch instructions.
+
+For interactive changes, demonstrate the actual user action.
+
+For keyboard accessibility, record focus movement and keyboard behavior.
+
+For motion changes, provide a short screen recording or animated comparison where tooling permits.
+
+For performance changes, provide actual loading/network/performance evidence instead of pretending that a static screenshot demonstrates improvement.
+
+If a recommendation cannot be meaningfully displayed visually, explain exactly how its behavioral effect can be observed.
+
+### F. Code Changes
+
+Show:
+
+- Exact files changed
+- Relevant selectors/functions
+- A minimal isolated diff
+- Any possible regression risk
+
+### G. Verification
+
+Run relevant tests, including actual browser checks wherever available.
+
+Explicitly report:
+
+- PASSED
+- FAILED
+- BLOCKED
+- NOT TESTED
+
+Never invent a successful test.
+
+## 7. Keep Each Proposal Independent
+
+Each recommendation must have its own isolated candidate implementation.
+
+Do not silently accumulate previous experimental changes into the next comparison.
+
+Maintain:
+
+- Unchanged baseline
+- Current candidate
+- Separately preserved selected candidates
+- Optional cumulative selected-only demo
+
+The individual Before/After must always make it possible to identify what changed because of that particular recommendation.
+
+A cumulative preview may be shown additionally, but only after the individual comparison is complete.
+
+Do not merge conflicting aesthetic options.
+
+## 8. Owner Decision Protocol
+
+After presenting a single recommendation, ask me to choose:
+
+**APPROVE**
+
+I like the proposed change.
+
+Store it as a selected candidate. Do not merge it into the original repository.
+
+**REJECT**
+
+I do not like the proposed change.
+
+Record it as rejected and do not reintroduce it later under another skill name.
+
+**REVISE**
+
+I want changes to the current proposal.
+
+Improve only this proposal and present another Before/After comparison. Do not move forward.
+
+**SKIP / HOLD**
+
+Do not select or reject yet. Preserve the proposal for later review.
+
+Do not proceed to the next recommendation unless I explicitly instruct you to continue.
+
+Approval of an individual demo is not authorization for production implementation.
+
+## 9. Special Treatment of Earlier Demos
+
+Demo A and Demo B:
+
+- Preserve their existing validated behavior.
+- Treat them as selected candidates.
+- Do not redesign them again unnecessarily.
+- Keep their eventual production implementation dependent on separate final authorization.
+
+Demo C:
+
+- Explain the purpose of respecting `prefers-reduced-motion`.
+- Demonstrate the exact behavioral difference between normal and reduced-motion preferences.
+- Preserve the corrected visible success checkmark.
+- Allow me to approve, reject, or hold it separately.
+
+Demo D:
+
+- Remains rejected.
+- Do not reuse its lighter badges, reduced shadows, or modified Grade/GP styling.
+- Other fundamentally different recommendations must not be automatically rejected merely because they concern the same component.
+- However, never disguise the rejected styling as a new recommendation.
+
+## 10. Do Not Confuse Audit Recommendations With Mandatory Changes
+
+Some recommendations are objective bugs:
+
+- Broken focus management
+- Unintended page overflow
+- Missing accessible names
+
+Others may be preferences:
+
+- Less visual density
+- Different spacing
+- Different card emphasis
+- More restrained styling
+
+Treat these categories differently.
+
+For subjective improvements, prioritize faithful visual comparisons and let me make the final design choice.
+
+Do not insist that one aesthetic direction is correct simply because multiple tools recommended it.
+
+## 11. Master Review Tracker
+
+Maintain a review ledger outside the original repository.
+
+Example:
+
+| ID | Recommendation | Source Skills | Status |
+| --- | --- | --- | --- |
+| F-002/F-003/F-004 | Demo A accessibility | Multiple ECC audits | SELECTED |
+| F-001/F-005/F-008 | Demo B responsive tooltip | Browser QA / ECC | SELECTED |
+| F-006/F-007 | Demo C reduced motion | Motion skills | HOLD |
+| F-009 | Original Demo D styling | Design-direction skills | REJECTED |
+| NEW-001 | Next verified recommendation | Relevant skills | IN REVIEW |
+
+Expand the ledger to include every unique recommendation and historical audit candidate.
+
+Update the ledger only after my explicit decision.
+
+Do not write this tracker into the production repository.
+
+## 12. When All Recommendations Have Been Reviewed
+
+Only after the entire review queue is complete:
+
+1. Summarize every selected change.
+2. Summarize rejected and held changes.
+3. Highlight dependencies and conflicts.
+4. Build an optional consolidated selected-only demo in isolation.
+5. Test for conflicts between selected changes.
+6. Show the final combined Before/After.
+7. STOP.
+
+Do not update the original repository.
+
+A separate production implementation prompt and explicit final authorization will be required later.
+
+## 13. START NOW
+
+First, build the complete recommendation register from the available audit reports.
+
+Show me the total number of distinct actionable recommendations, their source skills, priorities, and current statuses.
+
+Then select **only the first unreviewed recommendation**, verify it, and create its individual Before/After demo.
+
+Present the comparison and wait for my explicit decision.
+
+Do not start recommendation number two until I instruct you to continue.

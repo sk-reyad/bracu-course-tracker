@@ -1,0 +1,503 @@
+# BRACU Course Tracker — Frontend UI Multi-Skill Audit
+
+## A. Executive Summary
+
+BRACU Course Tracker is a vanilla HTML/CSS/JavaScript academic planning tool with a distinctive prerequisite roadmap, semester planning, course management, progress reporting, authentication, administration, support, maintenance, legal, and error surfaces. This audit was performed against local source at commit `9d86db46b1134a3755a2e269252b1ee1234f2570` on 2026-11-06 (Asia/Dhaka).
+
+The application already has substantial strengths: a product-specific academic identity; strong separation between preview, authenticated, and privileged flows; explicit light/dark token families; responsive rules; semantic forms; loading/empty/error states; keyboard-aware admin controls; reduced-motion infrastructure; and unusually broad source/contract test coverage. The complete Node suite passed 365/365 tests.
+
+The audit found **9 unique issues** after deduplication: **0 P0, 2 P1, 5 P2, and 2 P3**. The highest-impact findings are:
+
+1. `F-002` — tracker dialogs open without moving or containing focus; Tab continues into the page behind the modal.
+2. `F-003` — four tracker dialog close buttons are icon-only and have no accessible name.
+3. `F-001` — hidden curriculum-stream tooltips create whole-document horizontal overflow at 360, 390, and 1280 px.
+4. `F-005` — curriculum-stream triggers render only 13 px high, creating a small-target usability concern; WCAG spacing exceptions still require assessment.
+5. `F-004` — Settings declares a tablist without tab/tabpanel roles, selection state, relationships, or arrow-key behavior.
+
+No existing Impeccable audit report was present in this checkout. Impeccable 4.3.1 instruction files were found on disk during final availability verification, although omitted from the session catalog; the engine binary was absent from the checked bundled/cache locations. Its technical framework was applied manually, with the detector unavailable. Its critique was only partially applied: the prescribed isolated assessments were not performed. The historical 12/20 score therefore cannot be accepted or rejected as a like-for-like result. Accessibility and responsive edge cases remain despite strong source tests; the blue academic language and prerequisite roadmap are clear strengths.
+
+### Coverage and limitations
+
+- Real Chrome 156 headless rendering and Chrome DevTools Protocol measurements were completed against a loopback-only local preview.
+- The required widths 360, 390, 768, 1024, 1280, and 1440 px were rendered for the tracker preview in light mode; dark mode was also rendered and computed-style verified at 390 px.
+- Auth, maintenance, legal, and error surfaces were rendered at representative mobile/desktop widths. The unauthenticated Admin route redirected to the Admin sign-in view; the authenticated Admin Panel was source/test-audited but not rendered with credentials.
+- No production accounts, student data, database writes, Supabase changes, imports, or privileged actions were used.
+- The in-app Browser plugin was unavailable. Playwright and axe-core were not installed; no dependencies were installed. Core Web Vitals, full screen-reader testing, hosted OAuth/MFA, authenticated student/admin flows, production middleware behavior, and true PDF print output remain unverified.
+- There was no committed screenshot baseline, so visual-regression status is **INCONCLUSIVE**, not PASS.
+
+## B. Baseline and Environment
+
+| Item | Evidence |
+| --- | --- |
+| Repository | `[LOCAL_PATH_REDACTED]` |
+| Branch | `main` |
+| HEAD | `9d86db46b1134a3755a2e269252b1ee1234f2570` |
+| Audit date | 2026-11-06 (Asia/Dhaka) |
+| Initial git status | Clean; no modified or untracked files |
+| Runtime | Node.js v24.16.0 |
+| Browser | Google Chrome 156.0.8078.80, headless, loopback-only preview |
+| Local preview | `node scripts/dev-server.js 4174`; `index.html?preview=1` |
+| Main test command | `node --test tests/*.test.js` |
+| Optional browser test | `node tests/degree-plan-browser.cjs`; blocked by missing `playwright` |
+| Frontend stack | Vanilla HTML/CSS/JavaScript; no bundler or root package manifest |
+| Existing report | No Impeccable/frontend audit report found in tracked Markdown |
+
+### Pages and surfaces evaluated
+
+- Rendered: tracker Roadmap and shared header/navigation at all required widths; auth/student and Admin sign-in; maintenance; privacy; terms; error; Settings modal focus/theme behavior.
+- Source and test reviewed: My Path, Add Course, Course List, Departments, Dashboard/Profile, Degree Plan, PDF report, onboarding, authenticated Admin Panel, support dialog/history, footer, dialogs, notifications, loading/empty/error states, and print rules.
+- Not interactively exercised: authenticated personal data, course/semester mutations, backup import, Admin mutations, support submission, OAuth, MFA, hosted maintenance middleware, and real PDF download.
+
+### Existing responsive breakpoints
+
+The implementation uses page-owned breakpoint families documented in `docs/DESIGN.md`: tracker 1180/900/780/700/640/460/430/380 px; auth 640/420/380; admin 900/640; Degree Plan 980/760/620/380; support 560 plus low-height landscape; admin support 720/480; UI states 640; legal 820/560; maintenance preview 900/720/430 plus height conditions; maintenance 720/640/480 plus height/landscape conditions.
+
+### Existing visual tokens
+
+The tracker defines blue-led page/surface/text/border/action/status tokens, 22/16 px card radii, page shadows, a 74 px header height, and Space Grotesk headings over Inter/system body text. Auth, Admin, Support, Legal, Maintenance, and Degree Plan intentionally own separate token families. This is a page-family system, not a universal component library.
+
+### Browser geometry results
+
+| Preview viewport | Theme | `clientWidth` | `scrollWidth` | Result |
+| --- | --- | ---: | ---: | --- |
+| 360 px | Light | 345 | 448 | FAIL — 103 px document overflow |
+| 390 px | Light | 375 | 448 | FAIL — 73 px document overflow |
+| 768 px | Light | 753 | 753 | No document overflow |
+| 1024 px | Light | 1009 | 1009 | No document overflow |
+| 1280 px | Light | 1265 | 1296 | FAIL — 31 px document overflow |
+| 1440 px | Light | 1425 | 1425 | No document overflow |
+| 390 px | Dark | 375 | 448 | Same tooltip overflow; dark tokens applied correctly |
+
+The wide roadmap is deliberately internally scrollable and is not itself counted as a defect. CDP ancestry checks isolated the page-level overflow to off-screen `.stream-category-tooltip` elements, including hidden tooltips extending to x=448 at 390 px and x=1296 at 1280 px.
+
+### Representative contrast measurements
+
+Ratios were calculated from declared solid token pairs using the WCAG relative-luminance formula. Mixed/translucent states still require rendered contrast tooling.
+
+| Pair | Ratio | AA normal text |
+| --- | ---: | --- |
+| Tracker muted `#5d6b7f` on page `#eef4fb` | 4.90:1 | Pass |
+| Tracker muted `#5d6b7f` on surface `#fbfdff` | 5.32:1 | Pass |
+| Tracker primary `#1457b7` on soft `#e5f0ff` | 5.93:1 | Pass |
+| White on tracker primary `#1457b7` | 6.83:1 | Pass |
+| Dark muted `#a8b6c9` on page `#071222` | 9.12:1 | Pass |
+| Dark muted `#a8b6c9` on surface `#0e1d30` | 8.24:1 | Pass |
+| Admin warning `#9a6500` on white | 4.96:1 | Pass |
+| Support muted `#5e7190` on `#fafdff` | 4.85:1 | Pass |
+
+## C. Skill Execution Matrix
+
+| No. | Skill / Plugin | Status | Scope | Findings | Limitations |
+| --- | --- | --- | --- | ---: | --- |
+| 01 | `impeccable:impeccable` technical audit | PARTIAL | Manual technical framework | 8 supporting | Engine/detector unavailable; no full technical score |
+| 02 | `impeccable:impeccable` critique | PARTIAL | Manual UX framework | F-009 supporting | Required isolated assessments not performed |
+| 03 | `ecc:design-system` | COMPLETED | Tokens, type, spacing, radii, shadows, themes, consistency | 2 | Audit-only; generated-token artifacts prohibited |
+| 04 | `ecc:accessibility` | COMPLETED | WCAG 2.2 AA source/render checks | 5 | No axe or screen reader |
+| 05 | `ecc:frontend-a11y` | COMPLETED | Semantics, dialogs, tabs, tooltips, feedback | 4 | Applied relevant vanilla-web guidance only |
+| 06 | `ecc:browser-qa` | PARTIAL | Chrome rendering, geometry, console/network events, themes | 4 | No in-app Browser, axe, CWV, or visual baseline |
+| 07 | `ecc:click-path-audit` | PARTIAL | Read-only navigation/theme/dialog/filter paths; source trace of mutations | 0 new | Mutation paths not executed |
+| 08 | `$webapp-testing` | SKIPPED | Requested independent Playwright audit | 0 | Skill present; Python and Node Playwright absent |
+| 09 | `$redesign-existing-projects` | SKIPPED | Requested audit-only redesign review | 0 | Skill unavailable; direction covered separately |
+| 10 | `$emil-design-eng` | COMPLETED | Source craft/interaction review | F-006, F-007 | No slow-motion feel test |
+| 11 | `ecc:frontend-design-direction` | COMPLETED | Product fit, academic identity, hierarchy, state coverage | 1 | No implementation/evidence JSON created |
+| 12 | `$frontend-design` | COMPLETED | Typography, composition, restraint | F-009 | Audit-only adaptation |
+| 13 | `design-taste-frontend` | COMPLETED | Secondary aesthetic/anti-generic review | 1 | Skill explicitly is not primary authority for dashboards |
+| 14 | `$improve-animations` | PARTIAL | Motion inventory and prioritized review | F-006, F-007 | Single-context review; no subagent category pass or plan files |
+| 15 | `$review-animations` | COMPLETED | Existing motion source review | F-006, F-007 | No runtime frame-rate/feel verification |
+| 16 | `ecc:e2e-testing` | PARTIAL | Existing suite/coverage and optional browser test | 0 new | Playwright dependency absent |
+| 17 | `$ui-styling` | NOT APPLICABLE | Conditional styling guidance | 0 | Skill read; its shadcn/Radix/Tailwind stack is absent |
+| 18 | `$ui-ux-pro-max` | SKIPPED | Conditional reference-database review | 0 | Skill read; search script and references directory confirmed absent |
+| 19 | `figma:figma-generate-library` | SKIPPED | Conditional read-only Figma comparison | 0 | No relevant Figma file/URL supplied; no file created or modified |
+| — | Browser plugin / Chrome fallback | PARTIAL | Supporting rendered evidence | 4 | In-app Browser unavailable; Chrome CDP fallback succeeded |
+
+**Assessed capability rows:** 20 (19 numbered audits plus supporting browser verification). **Completed:** 8. **Partial:** 7. **Skipped:** 4. **Not applicable:** 1. Counts describe workflow execution, not independent model opinions.
+
+Availability correction: the initial draft relied too heavily on the exposed catalog. A subsequent filesystem search recovered Impeccable, Webapp Testing, Emil, Frontend Design, both animation skills, UI Styling, and UI/UX Pro Max. The recovered instruction files were read and the corresponding sections corrected. The prescribed ordering was therefore not fully achieved: these follow-up passes occurred after the first audit sequence. This is a methodology limitation, not a claim that the missing steps ran earlier.
+
+## D. Individual Audit Reports
+
+### Audit 01 — Impeccable Technical Audit
+
+**Status: PARTIAL.** Applied the installed 4.3.1 `reference/audit.md` framework manually after recovering its path. Accessibility corroborates F-002/F-003/F-004/F-005; responsive review corroborates F-001; theming/integrity corroborates F-008; reduced motion corroborates F-006/F-007. Page-specific tokens, escaped rendering, and academic modules support coherent implementation integrity. Performance evidence is insufficient for a numeric score: the motion renderer has frame throttling/idle tests, but no trace or field metrics were collected. No overall /20 score is assigned because the required bundled detector was unavailable. The launcher was not executed because its fallback would download/cache a missing engine, outside the approved dependency-free audit. No deterministic detector output is claimed.
+
+### Audit 02 — Impeccable UX Critique
+
+⚠️ DEGRADED: single-context (isolated Assessment A/B process not performed).
+
+**Status: PARTIAL.** The recovered `reference/critique.md` requires independent isolated assessments; this follow-up shares prior audit context and cannot provide that independence. No Nielsen total or complete critique-run claim is made. Manual application supports F-009: the prerequisite map is specific to academic planning, while repeated rounded metadata surfaces compete for attention. For a keyboard user, Settings focus escapes (F-002); for a phone user, stream details have small targets and hidden tooltip overflow (F-001/F-005). Strengths are direct access to the tool, familiar academic terminology, visible status labels, and guarded preview exploration. Five main navigation choices and five Settings tabs are review prompts, not automatic cognitive-load defects. The emotional low point is losing orientation in a modal; the safe refinement is predictable focus and naming before visual simplification. No snapshot, trend, overlay injection, or detector run occurred. Questions skipped: the owner explicitly requested a report-only deliverable and a separate later improvement decision.
+
+### Audit 03 — ECC Design System
+
+**Scope:** all CSS families, documented tokens/breakpoints, rendered tracker/auth/maintenance/legal surfaces.
+
+Indicative 0–10 scores: color consistency 8; typography hierarchy 7; spacing rhythm 6; component consistency 7; responsive behavior 6; dark mode 8; animation 7; accessibility 6; information density 6; polish 7. These are audit judgments, not automated metrics.
+
+- `F-008`: `.stream-category-tooltip` references undefined `--shadow-lg`, so its shadow declaration is invalid.
+- `F-009`: the product identity is coherent, but repeated nested surfaces/pills and many one-off radii/shadows reduce hierarchy and system legibility.
+
+Strengths: semantic status colors include text labels; page-owned tokens are intentional; light/dark parity is broadly implemented; Degree Plan is scoped; print preview is intentionally isolated.
+
+### Audit 04 — ECC Accessibility
+
+**Scope:** WCAG 2.2 AA source review, CDP focus/target measurements, token contrast samples, responsive reflow.
+
+- `F-001`: whole-document horizontal overflow from hidden stream tooltips impairs reflow at 360/390/1280 px.
+- `F-002`: tracker dialogs do not move or contain keyboard focus.
+- `F-003`: tracker dialog close buttons have no accessible names.
+- `F-004`: Settings tab semantics and keyboard model are incomplete.
+- `F-005`: stream triggers are 13 px high; assess target spacing exceptions before calling this a definitive WCAG failure.
+
+Representative solid-token contrast pairs passed AA. This is not a claim of whole-site WCAG conformance.
+
+### Audit 05 — ECC Frontend Accessibility
+
+**Scope:** semantic HTML, ARIA state, dialogs, tabs, tooltips, keyboard interaction, forms, status feedback.
+
+- `F-002` and `F-003` affect all four tracker dialogs.
+- `F-004` affects the Settings tab interface.
+- `F-005` affects keyboard-visible curriculum-stream disclosures.
+
+Positive evidence: native controls are used extensively; forms generally have labels; support and admin use native `<dialog>`; admin drawer traps/restores focus; dynamic statuses use live regions; faculty copy feedback updates the button label and a toast, so the earlier source suspicion of visual-only feedback was rejected.
+
+### Audit 06 — ECC Browser QA
+
+**Status: PARTIAL.** Chrome rendered all required tracker widths in light mode and a dark mobile state. No critical console exceptions or `Network.loadingFailed` events were observed during the sampled local navigations.
+
+- `F-001`: verified geometry at 360/390/1280 px.
+- `F-002`: verified at 390 px. After opening Settings, focus remained on `#openSettingsBtn`; one Tab moved to `#openDashboardBtn`, still outside the visible modal.
+- `F-005`: computed visible stream triggers were approximately 48–49 × 13 px.
+- `F-009`: screenshots confirm strong identity but repeated card/pill density.
+
+Verdict: **INCONCLUSIVE / DO NOT TREAT AS RELEASE CERTIFICATION.** There is no visual baseline, no axe run, no CWV collection, and authenticated flows were not rendered. The verified P1 focus defects merit correction before claiming accessibility readiness.
+
+### Audit 07 — ECC Click Path Audit
+
+**Status: PARTIAL.** Read-only paths and handler sequences were traced for navigation, theme switch, Back to Top, Settings/Dashboard opening, modal close, stream “See more,” faculty copy, PDF trigger, and preview lockdown. No separate sequential-undo/race finding was reproduced.
+
+Source/tests indicate direct final-state transitions for theme, navigation, stream filtering, modal close/focus return, and preview mutation blocking. Course/semester changes, catalog mutations, backup import, Admin operations, and support submission were **NOT TESTED** interactively because they require writes or credentials. This audit does not convert unit/static assertions into rendered proof.
+
+### Audit 08 — Web Application Testing
+
+**Status: SKIPPED.** Its instruction file exists and was read. `python -c` dependency discovery returned `PYTHON_PLAYWRIGHT=None`; Node resolution and the optional repository browser script also returned `MODULE_NOT_FOUND`. The skill requires Python Playwright scripts; no package was installed and no replacement script was created. Chrome CDP measurements remain under Audit 06 and are not relabeled as a Playwright run.
+
+### Audit 09 — Existing Project Redesign Review
+
+**Status: SKIPPED.** The named skill was unavailable. Audits 11 and 13 independently cover direction and aesthetics without redesigning.
+
+### Audit 10 — Emil Design Engineering
+
+**Status: COMPLETED.** Applied the recovered Emil craft framework to the cited CSS/JS and existing screenshots. Existing 120 ms press feedback, 150 ms stream tooltip transition, and the shared strong ease-out token already fit its guidance. No modal-origin defect is asserted; centered modals are appropriate. Recommendations below are proposals only.
+
+| Before | After (recommended) | Why |
+| --- | --- | --- |
+| Unconditional smooth scroll at `js/app.js:1025` and `:1875` | Instant scrolling for reduced-motion/keyboard paths (F-006) | Repeated keyboard actions should respond immediately |
+| Copy pop keyframes at `css/style.css:3104` and `:3115` | Keep text/toast feedback; suppress movement under reduced motion (F-007) | Feedback should preserve user motion preferences |
+
+Hover feel, animation interruptibility under rapid repeated input, and physical-device gesture quality were not tested; no dropped-frame claim is made.
+
+### Audit 11 — ECC Frontend Design Direction
+
+**Design read:** an academic planning workspace for BRAC University students, with a credible blue-led technical/academic language and a distinctive prerequisite-map centerpiece.
+
+The direction is appropriate and should be refined, not replaced. The first viewport shows the real tool, not a marketing shell. Roadmap connectors, status coding, academic vocabulary, and progress surfaces establish product character. `F-009` captures the main weakness: density and repeated surfaces sometimes compete with hierarchy.
+
+### Audit 12 — Frontend Design
+
+**Status: COMPLETED.** The recovered skill was applied as an audit framework. The roadmap is the characteristic subject artifact and should remain the signature. Space Grotesk headings plus Inter body text establish a usable display/body distinction; there is no evidence justifying a font replacement. F-009 is its main observation: reserve visual emphasis for the map, academic statuses, and course identity; quiet redundant surface/badge treatments. Recommendations remain subjective and require comparison in a later approved demo. No replacement tokens, layout, assets, or code were produced.
+
+### Audit 13 — Design Taste Frontend
+
+**Status: COMPLETED within secondary scope.** The skill itself states it is not the primary authority for dashboards, data tables, or multi-step product UI. Applied selectively, it supports targeted evolution: preserve IA, anchors, copy voice, Lucide family, academic palette, and roadmap; rationalize spacing/radii; reduce nested-card/pill repetition where hierarchy does not require it. It does not support a Tailwind/React migration.
+
+### Audit 14 — Animation Opportunities
+
+**Status: PARTIAL.** Read the recovered skill and `AUDIT.md`; applied its eight-category checklist to existing motion sources. Motion is plain CSS plus canvas/pointer enhancements, with page-specific easing and reduced-motion rules. Default hover/press paths are frequent; modal/support notices are occasional. F-006 (scroll preference gap) and F-007 (copy keyframes) are the actionable findings. Existing purposeful feedback and fine-pointer gates should be preserved. Separate animation plan files and the parallel category audit were not produced; the user permits only this report and requires sequential audits. Potential future additions are a subtle non-moving save confirmation and a short optional content-state crossfade, but neither is a verified defect or authorized implementation.
+
+### Audit 15 — Animation Review
+
+**Status: COMPLETED (source review).** Read the recovered review skill and `STANDARDS.md`. Findings were checked against the actual scroll calls, copy keyframes, and reduced-motion block.
+
+| Before | After (recommended) | Why |
+| --- | --- | --- |
+| Smooth scrolling requested regardless of preference (`js/app.js:1025`, `:1875`; `js/admin-catalog.js:161`) | Preference-aware instant/auto path (F-006) | Avoid forced movement for reduced-motion users |
+| Copy scale/pop animations continue under reduced motion (`css/style.css:3104`, `:3115`) | Non-moving confirmation under reduce (F-007) | Preserve confirmation while removing movement |
+
+**Verdict: Block motion approval on the accessibility gaps above.** This is not a release or performance verdict. The 260 ms button shutter is an explicitly approved project decision, so the review does not flag its scale-from-zero fill as an accidental entrance defect. No measured jank, dropped frames, or runtime timing failure was established.
+
+### Audit 16 — ECC End-to-End Testing
+
+**Status: PARTIAL.** The skill was used to assess the checked-in test strategy. The project has one optional Playwright script rather than a reproducible Playwright project/configuration. The wildcard Node suite passed 365/365; the separate browser script did not start because `playwright` is not installed. No dependency was installed.
+
+Coverage is strong for source contracts and pure behavior but weak for rendered keyboard focus, overflow, actual accessibility trees, browser positioning, and authenticated end-to-end flows. The current suite specifically asserts Escape/focus restoration but does not catch focus entering/trapping, which explains why `F-002` coexists with a green suite.
+
+### Conditional 17 — UI Styling
+
+**Status: NOT APPLICABLE.** Its recovered instruction file was read. The core shadcn/Radix/Tailwind workflow is absent from this vanilla application; its generic accessibility/token advice adds no distinct audit beyond the completed CSS/web reviews. No framework was introduced.
+
+### Conditional 18 — UI/UX Pro Max
+
+**Status: SKIPPED.** Its recovered instruction file was read. `Test-Path` returned false for both its `scripts/search.py` and `references` directory, independently confirming the supplied inventory's incomplete-installation warning. No database search was run or findings invented.
+
+### Conditional 19 — Figma Design System Review
+
+**Status: SKIPPED.** No existing relevant Figma design, URL, or file was supplied. No Figma file was read, created, updated, or published.
+
+## Canonical Finding Register
+
+### F-001 — Hidden curriculum tooltips cause document-level horizontal scrolling
+
+- **Auditing skills/plugins:** `ecc:browser-qa`, `ecc:accessibility`, Chrome CDP
+- **Page/component:** Roadmap course cards; curriculum stream badge tooltip
+- **Severity:** P2
+- **Category:** Responsive reflow / overflow
+- **Problem:** Invisible absolutely positioned tooltips contribute to root layout width even before they are opened.
+- **Current behavior:** At 360 px, root `clientWidth=345` and `scrollWidth=448`; at 390 px, 375/448; at 1280 px, 1265/1296. Hidden `.stream-category-tooltip` rectangles extended to x=448 and x=1296.
+- **Expected behavior:** Only the deliberate roadmap scroller may overflow; the document itself must remain viewport-width, and tooltips should be edge-aware.
+- **User impact:** Horizontal page movement, clipped chrome, disorienting reflow, and poorer zoom/mobile use.
+- **Files/lines/selectors:** `js/roadmap.js:653` (`.stream-category` markup); `css/style.css:1916` (`.stream-category-tooltip`).
+- **Evidence/reproduction:** Open `index.html?preview=1`; measure `document.documentElement.scrollWidth` at 360, 390, or 1280 px before opening any tooltip.
+- **Viewport/theme:** 360/390/1280 light; 390 dark also reproduced.
+- **Recommended correction:** Contain non-open tooltips so they do not affect root overflow; add viewport-aware left/right positioning and wrapping for open tooltips. Preserve the roadmap's internal horizontal scroll.
+- **Complexity:** Medium
+- **Confidence:** High
+- **Verification:** Verified
+
+### F-002 — Tracker dialogs do not receive or contain focus
+
+- **Auditing skills/plugins:** `ecc:accessibility`, `ecc:frontend-a11y`, `ecc:browser-qa`
+- **Page/component:** Dashboard, Settings, Course, and Department dialogs
+- **Severity:** P1
+- **Category:** Keyboard / modal focus management
+- **Problem:** `openModal` reveals an `aria-modal=true` dialog but does not focus it, make the background inert, or trap Tab.
+- **Current behavior:** With `#openSettingsBtn` focused, opening Settings leaves focus on that background trigger. Pressing Tab moves to `#openDashboardBtn`, also behind the visible modal.
+- **Expected behavior:** Focus moves to a deliberate element inside the dialog, cycles within it, Escape closes it, and close restores the opener.
+- **User impact:** Keyboard and screen-reader users can interact with obscured content and may not discover the dialog.
+- **Files/lines/selectors:** `index.html:471`, `index.html:519`, `index.html:561`, `index.html:582`; `js/app.js:1839`.
+- **Evidence/reproduction:** Chrome CDP at 390 px: `inside=false` immediately after opening and after one Tab. Source shows only reveal/mount/icon refresh on open.
+- **Viewport/theme:** All; verified 390 light.
+- **Recommended correction:** Reuse the admin drawer's focusable-control/trap pattern or native `<dialog>.showModal()` with explicit initial focus, inert background, Escape, and focus restoration.
+- **Complexity:** Medium
+- **Confidence:** High
+- **Verification:** Verified
+
+### F-003 — Tracker dialog close buttons have no accessible name
+
+- **Auditing skills/plugins:** `ecc:accessibility`, `ecc:frontend-a11y`
+- **Page/component:** Dashboard, Settings, Course, Department modal headers
+- **Severity:** P1
+- **Category:** Name, role, value / icon control
+- **Problem:** Each close button contains only a Lucide placeholder and lacks text, `aria-label`, or `aria-labelledby`.
+- **Current behavior:** Assistive technology receives a generic/unnamed button rather than “Close Settings,” etc.
+- **Expected behavior:** Every icon-only close control has a stable descriptive accessible name.
+- **User impact:** Screen-reader users cannot reliably identify the close action among other buttons.
+- **Files/lines/selectors:** `index.html:480`, `index.html:528`, `index.html:570`, `index.html:591`; selector `[data-close-modal]`.
+- **Evidence/reproduction:** Source inspection; compare named admin close controls at `admin.html:485` and `admin.html:508`.
+- **Viewport/theme:** All.
+- **Recommended correction:** Add context-specific `aria-label` values and keep the icon decorative.
+- **Complexity:** Low
+- **Confidence:** High
+- **Verification:** Source-only
+
+### F-004 — Settings tablist lacks the ARIA tab interaction contract
+
+- **Auditing skills/plugins:** `ecc:frontend-a11y`, `ecc:accessibility`
+- **Page/component:** Settings tabs
+- **Severity:** P2
+- **Category:** Semantics / keyboard navigation
+- **Problem:** A container has `role=tablist`, but child buttons are plain buttons; panels are plain divs; selection and relationships are not exposed; arrow keys are not handled.
+- **Current behavior:** CDP found zero `[role=tab]` and zero `[role=tabpanel]`; all five `aria-selected` values were null. Click handling changes only `.active` classes.
+- **Expected behavior:** Tabs expose `role=tab`, roving `tabindex`, `aria-selected`, and `aria-controls`; panels expose `role=tabpanel` and `aria-labelledby`; Left/Right/Home/End work consistently.
+- **User impact:** Screen-reader users receive an incomplete widget model and keyboard users must Tab through every tab.
+- **Files/lines/selectors:** `index.html:536`; `js/app.js:2276`; `.editor-tabs`, `.tab-btn`, `.tab-panel`.
+- **Evidence/reproduction:** Source inspection plus CDP semantic count on the rendered preview.
+- **Viewport/theme:** All.
+- **Recommended correction:** Match the already implemented Admin Catalog tab pattern rather than creating another interaction model.
+- **Complexity:** Medium
+- **Confidence:** High
+- **Verification:** Verified
+
+### F-005 — Curriculum stream disclosure targets are only 13 px high
+
+- **Auditing skills/plugins:** `ecc:accessibility`, `ecc:browser-qa`
+- **Page/component:** Roadmap/course-card stream badges
+- **Severity:** P2
+- **Category:** WCAG 2.2 target size
+- **Problem:** `.stream-category-trigger` removes all padding and border, leaving only the text line as the hit target.
+- **Current behavior:** Chrome measured repeated visible triggers around 48–49 × 13 px.
+- **Expected behavior:** Target size is at least 24 × 24 CSS px or qualifies through sufficient target spacing; the containing badge may be made the target.
+- **User impact:** Touch, motor-impaired, and magnified-pointer users have difficulty opening curriculum details.
+- **Files/lines/selectors:** `js/roadmap.js:654`; `css/style.css:1902`.
+- **Evidence/reproduction:** Render the preview and inspect `.stream-category-trigger` bounding boxes.
+- **Conformance limitation:** The 13 px measurement is verified. Adjacent-target spacing and other SC 2.5.8 exceptions were not measured, so this is a usability finding and conformance candidate, not a definitive WCAG failure.
+- **Viewport/theme:** All sampled widths; both themes inherit the geometry.
+- **Recommended correction:** Increase the actual interactive box without visually inflating every badge; keep a visible focus indicator.
+- **Complexity:** Low
+- **Confidence:** High
+- **Verification:** Verified
+
+### F-006 — Programmatic smooth scrolling ignores reduced-motion preference
+
+- **Auditing skills/plugins:** `improve-animations`, `review-animations`, `emil-design-eng`; technical accessibility corroboration
+- **Page/component:** Back to Top; stream “See more”; Admin Catalog editor
+- **Severity:** P2
+- **Category:** Reduced motion
+- **Problem:** JavaScript always requests smooth scrolling while the reduced-motion CSS only changes CSS scroll behavior/transitions.
+- **Current behavior:** Calls use `{ behavior: "smooth" }` unconditionally.
+- **Expected behavior:** Under `prefers-reduced-motion: reduce`, use `instant`/`auto`; otherwise use smooth.
+- **User impact:** Users who explicitly request less motion still receive large viewport movement.
+- **Files/lines/selectors:** `js/app.js:1025`, `js/app.js:1875`, `js/admin-catalog.js:161`; compare the correct conditional pattern in `js/degree-plan-view.js:70`.
+- **Evidence/reproduction:** Enable reduced motion, activate Back to Top or stream See more, and observe the programmatic scroll request.
+- **Viewport/theme:** All.
+- **Recommended correction:** Centralize a reduced-motion-aware scroll helper and reuse it in all three paths.
+- **Complexity:** Low
+- **Confidence:** High
+- **Verification:** Source-only
+
+### F-007 — Faculty copy animations are not disabled for reduced motion
+
+- **Auditing skills/plugins:** `improve-animations`, `review-animations`, `emil-design-eng`; technical accessibility corroboration
+- **Page/component:** Faculty email copy feedback
+- **Severity:** P2
+- **Category:** Reduced motion / feedback animation
+- **Problem:** Copy feedback runs scale/pop keyframes, while the main reduced-motion block does not include these selectors or keyframes.
+- **Current behavior:** `.copied` runs 360 ms and 320 ms animations even when reduced motion is requested.
+- **Expected behavior:** Feedback remains visible/announced but transforms/keyframes are suppressed under reduced motion.
+- **User impact:** A preference intended to reduce motion is inconsistently honored.
+- **Files/lines/selectors:** `css/style.css:3095`, `css/style.css:3113`, `css/style.css:3725`; `.faculty-email-copy-btn.copied`.
+- **Evidence/reproduction:** Enable reduced motion, copy a faculty email, inspect computed animation name/duration.
+- **Viewport/theme:** All.
+- **Recommended correction:** Disable the copy keyframes within the existing reduced-motion media query while retaining label/toast feedback.
+- **Complexity:** Low
+- **Confidence:** High
+- **Verification:** Source-only
+
+### F-008 — Tooltip shadow references an undefined token
+
+- **Auditing skills/plugins:** `ecc:design-system`
+- **Page/component:** Curriculum stream tooltip
+- **Severity:** P3
+- **Category:** Token consistency / visual polish
+- **Problem:** `box-shadow: var(--shadow-lg)` references a custom property that is never declared.
+- **Current behavior:** The whole declaration becomes invalid, so the intended tooltip elevation is absent.
+- **Expected behavior:** Use a declared owning-page shadow token or define the missing semantic token in both themes.
+- **User impact:** Low functional impact; weakened separation from dense roadmap content.
+- **Files/lines/selectors:** `css/style.css:1930`; `.stream-category-tooltip`.
+- **Evidence/reproduction:** Repository-wide search finds only this use and no declaration.
+- **Viewport/theme:** All.
+- **Recommended correction:** Map to the existing `--shadow`/`--soft-shadow` rule or deliberately add a documented tooltip-elevation token.
+- **Complexity:** Low
+- **Confidence:** High
+- **Verification:** Source-only
+
+### F-009 — Repeated nested surfaces and pill treatments dilute hierarchy
+
+- **Auditing skills/plugins:** `ecc:design-system`, `ecc:frontend-design-direction`, `design-taste-frontend`
+- **Page/component:** Roadmap cards, status strips, Settings, dashboards
+- **Severity:** P3
+- **Category:** Visual hierarchy / consistency (subjective)
+- **Problem:** Many nested rounded surfaces, badges, status pills, tooltips, and independently chosen radii/shadows compete for emphasis.
+- **Current behavior:** The roadmap remains understandable, but cards-within-panels and repeated pill shapes make metadata and actions visually similar in weight.
+- **Expected behavior:** Elevation, border, radius, and pill usage communicate distinct hierarchy; structural grouping can use spacing/dividers where elevation is unnecessary.
+- **User impact:** Slower scanning in a data-dense academic workspace, especially for repeated course cards.
+- **Files/lines/selectors:** representative rules in `css/style.css:701`, `css/style.css:776`, `css/style.css:1162`, `css/style.css:1529`, `css/style.css:1902`; rendered preview screenshots.
+- **Evidence/reproduction:** Compare the 1440 px roadmap screenshot and repeated card metadata/status groups; design judgment, not an objective defect.
+- **Viewport/theme:** Most apparent at 1024–1440; present in both themes.
+- **Recommended correction:** Preserve the roadmap and blue identity; establish a documented radius/elevation rule and remove only redundant inner containers/pills after targeted prototypes.
+- **Complexity:** Medium
+- **Confidence:** Medium
+- **Verification:** Verified (subjective assessment)
+
+## E. Cross-Audit Consensus Matrix
+
+| Finding | Supporting skills | Evidence | Priority | Confidence |
+| --- | --- | --- | --- | --- |
+| `F-002` modal focus escapes | ECC Accessibility; ECC Frontend A11y; Browser QA | Source plus CDP focus/Tab sequence | P1 | High |
+| `F-003` unnamed modal close buttons | ECC Accessibility; ECC Frontend A11y | Exact HTML; comparison with named Admin controls | P1 | High |
+| `F-001` tooltip document overflow | Browser QA; ECC Accessibility | Exact root widths and tooltip bounds | P2 | High |
+| `F-005` 13 px stream targets | ECC Accessibility; Browser QA | Computed bounding boxes and CSS | P2 | High |
+| `F-004` incomplete tab contract | ECC Frontend A11y; ECC Accessibility | DOM role counts and click handler | P2 | High |
+| `F-006`/`F-007` reduced-motion gaps | Source motion review; ECC Accessibility principles | Unconditional JS/keyframes vs media query | P2 | High |
+| `F-009` density/hierarchy | ECC Design System; ECC Frontend Design Direction; Design Taste | Independent design frameworks plus screenshots | P3 | Medium |
+
+All skill reviews were performed by one assistant. They are distinct frameworks, not independent assessors. Related ECC skills share methodology. Chrome geometry/focus evidence is a separate verification channel, not a design opinion. Recovered skills corroborated existing evidence after the original sequence; their agreement is especially susceptible to anchoring.
+
+## F. Conflicting Recommendations
+
+1. **Expressive identity vs quiet operational density.** Design-direction guidance supports the distinctive roadmap, dot grid, status colors, and academic personality. Design-taste guidance warns against repeated cards/pills and decorative effects. The safer choice is targeted simplification inside repeated metadata groups, not removal of the roadmap or a generic SaaS redesign.
+2. **Internal roadmap width vs mobile reflow.** The product intentionally preserves a horizontally complex prerequisite map. Accessibility/browser guidance objects only to whole-document overflow. Keep the roadmap scroller; contain hidden tooltips and page chrome.
+3. **Page-owned tokens vs one universal system.** Current documentation intentionally allows separate Auth/Admin/Tracker families. Design-system guidance favors consolidation. The safer choice is shared semantic rules (focus, target size, elevation names) while retaining page-family palettes.
+4. **Motion polish vs reduced motion.** Interaction polish benefits from short feedback transitions, but user preference takes precedence. Retain non-motion confirmation (text, label, toast) and suppress only scrolling/transforms/keyframes when reduced motion is active.
+
+No conflict warrants an immediate redesign. More authenticated browser testing is needed before changing dashboard/Admin density or dialog contracts.
+
+## G. Prioritized Improvement Backlog
+
+| Priority | Finding | Effort | Regression risk | Affected components |
+| --- | --- | --- | --- | --- |
+| P1 | `F-002` dialog focus entry/trap/inert behavior | Medium | Medium | Four tracker dialogs; nested support dialog |
+| P1 | `F-003` accessible names for close buttons | Low | Low | Four tracker modal headers |
+| P2 | `F-001` contain/position stream tooltips | Medium | Medium | Roadmap and course-card stream badges |
+| P2 | `F-005` enlarge stream trigger target | Low | Low | Stream badges |
+| P2 | `F-004` complete Settings tab semantics/keyboard model | Medium | Medium | Settings modal and tab panels |
+| P2 | `F-006` reduced-motion-aware scrolling | Low | Low | Main tracker and Admin Catalog |
+| P2 | `F-007` suppress copy keyframes under reduced motion | Low | Low | Faculty tooltip copy feedback |
+| P3 | `F-008` repair tooltip shadow token | Low | Low | Stream tooltip |
+| P3 | `F-009` rationalize nested surfaces/pills | Medium | Medium | Repeated cards/settings/dashboard |
+
+### Best usability gains while preserving identity
+
+1. Fix dialog focus and close-button names.
+2. Contain stream tooltips and enlarge their triggers.
+3. Complete Settings tabs by reusing the Admin Catalog keyboard pattern.
+4. Close reduced-motion gaps without changing default motion.
+5. Prototype small metadata-density reductions on one course-card family before broader visual changes.
+
+## H. High-Risk Change Warnings
+
+- **Purely visual/low risk:** `F-007`, `F-008`, and carefully scoped parts of `F-009`.
+- **Interaction-contract risk:** `F-001`, `F-002`, `F-004`, `F-005`, `F-006`. Retest keyboard, touch, nested dialogs, stream filtering, mobile overflow, and focus restoration.
+- **PDF/print:** do not reuse tracker dark/surface rules inside the intentionally white report preview or change `report-pdf.js` while addressing visual tokens.
+- **Navigation:** keep anchor IDs and labels stable; tooltip “See more” currently filters and focuses Course List.
+- **Academic behavior:** do not alter prerequisite connectors, course identity, attempt state, elective/COD allocation, GPA, or Degree Plan logic to solve presentation issues.
+- **Identity/persistence/security:** no finding requires Auth, Supabase, RLS, Storage, Edge Function, middleware, or persisted-format changes. Any proposed fix that touches those boundaries has exceeded the audit scope.
+- **Mobile:** focus traps and tooltip portals/containment must work with the nested support dialog and internal roadmap scroll.
+
+## I. Recommended Demo Scope
+
+No demo was created. A later authorized demo should be phased:
+
+1. **Accessibility foundation:** modal initial focus/trap/restoration, named close buttons, complete Settings tabs. Test keyboard-only, screen-reader names, Escape, nested support dialog, and mobile.
+2. **Responsive stream disclosure:** target size, edge-aware tooltip positioning, long labels/emails, 200–400% zoom, 360/390/768/1280 widths, light/dark.
+3. **Reduced motion:** Back to Top, stream See more, Admin Catalog editor, faculty copy feedback.
+4. **Visual-density sample:** one representative roadmap/course card and one Settings section only. Compare scan speed and hierarchy without changing academic content or status colors.
+
+Keep dialog changes isolated from tooltip changes, and visual-density experiments isolated from behavior. Regression tests must cover focus containment, root `scrollWidth <= clientWidth` outside deliberate scrollers, target boxes, tab arrow keys, reduced motion, and PDF/print invariants.
+
+## J. Final Verification
+
+### Tests and checks actually run
+
+- `node --test tests/*.test.js` — **PASSED**: 365 tests, 365 passed, 0 failed/skipped/todo, duration 721.3346 ms. The documented malformed-storage warning appeared and is expected.
+- `node tests/degree-plan-browser.cjs` — **NOT RUN / prerequisite failure**: `MODULE_NOT_FOUND: playwright` before browser launch.
+- `node --check js/app.js`, `js/motion.js`, `js/degree-plan-view.js`, `js/support-widget.js` — **PASSED** (no output, final command exit 0).
+- Chrome headless screenshots at required tracker widths and representative additional pages — **COMPLETED**.
+- Chrome CDP geometry, focus, semantic-role, small-target, console/exception, network-failure, and dark-theme checks — **COMPLETED** for the documented sampled routes.
+
+### Checks not run
+
+- axe-core, full WCAG automation, screen reader, forced-colors/high-contrast, 400% zoom journey, Core Web Vitals, cross-browser Firefox/WebKit, authenticated student/Admin, hosted OAuth/MFA, production Supabase/middleware, real write workflows, and PDF visual comparison.
+- Figma comparison; Impeccable engine/detector and independent critique orchestration; Python/Node Playwright execution; UI/UX Pro Max searches. Manual recovered-skill reviews are documented separately above.
+
+### Generated artifacts
+
+- Tracked deliverable: `FRONTEND_UI_MULTISKILL_AUDIT.md` only.
+- Temporary screenshots/browser profiles/logs: outside the tracked project under `[LOCAL_PATH_REDACTED]`.
+- No mockup, patch, implementation file, Figma file, dependency, database change, deployment, commit, or push was created.
+- Both temporary static-server sessions were stopped, and the isolated Chrome DevTools browser was closed. Screenshot/profile/log artifacts remain outside the repository for review.
+
+### Git status comparison
+
+- Initial: clean.
+- Verified final: only untracked `FRONTEND_UI_MULTISKILL_AUDIT.md`; `git diff --exit-code` returned 0 for existing tracked files.
+- Original project source, tests, configuration, data, and existing documentation were not modified.
+

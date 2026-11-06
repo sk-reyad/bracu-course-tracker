@@ -1,0 +1,267 @@
+# GitHub-Based Independent Review Workflow — Mandatory Update
+
+Repository: https://github.com/sk-reyad/bracu-course-tracker
+
+## 1. Objective
+
+Replace the previous manual file-upload workflow with a GitHub-based review system.
+
+After completing EACH recommendation audit, isolated Before/After demo, revision, or verification task, publish the review report and supporting evidence to a dedicated temporary GitHub branch.
+
+The owner will then ask ChatGPT to review that specific task directly from GitHub.
+
+Do not require the owner to download or manually upload Markdown reports, screenshots, diffs, or ZIP files.
+
+## 2. Temporary Review Branch
+
+Use this branch:
+
+`temp/ui-ux-audit-review`
+
+Create it from the current verified `main` branch if it does not already exist.
+
+If it already exists, reuse it without deleting previous task evidence.
+
+Use an isolated Git worktree or separate clone outside the original working directory.
+
+Never switch or modify the owner's original working tree just to publish review artifacts.
+
+### Git Permissions
+
+You are explicitly authorized to:
+
+- Create the temporary review branch.
+- Commit review reports and supporting evidence to that branch.
+- Push those review-artifact commits to the same temporary branch.
+- Update the master review ledger in that branch.
+
+You are NOT authorized to:
+
+- Commit or push to `main`.
+- Merge any branch.
+- Open a production implementation PR.
+- Deploy the application.
+- Change production configuration.
+- Modify existing application files in the original repository.
+- Force-push or rewrite review history.
+- Delete the temporary branch without owner approval.
+
+If Git authentication, permissions, or branch protection prevents the upload, report the blocker. Do not use unsafe workarounds.
+
+## 3. Review Artifact Directory
+
+Store all reports and evidence under:
+
+`review-artifacts/`
+
+Required structure:
+
+```text
+review-artifacts/
+├── MASTER_RECOMMENDATIONS.md
+├── REVIEW_LEDGER.md
+├── TASK_001/
+│   ├── TASK_REVIEW_001.md
+│   ├── CHANGES.diff
+│   ├── BEFORE.png
+│   ├── AFTER.png
+│   ├── TEST_RESULTS.txt
+│   ├── MANIFEST.json
+│   └── evidence/
+├── TASK_002/
+│   └── ...
+└── TASK_003/
+    └── ...
+```
+
+Use the appropriate evidence files for each task.
+
+For non-visual tasks, such as recommendation extraction, use source-to-recommendation mapping and completeness checks instead of irrelevant screenshots.
+
+For complex tasks, include additional appropriately named screenshots, browser verification results, test logs, or supplementary diffs.
+
+Store large or unnecessary temporary artifacts locally rather than uploading them.
+
+## 4. Mandatory Task Report
+
+Every task must generate a detailed:
+
+`TASK_REVIEW_XXX.md`
+
+Follow the previously established verification-report requirements.
+
+The report must include:
+
+1. Original user request and exact requirements.
+2. Source skill/plugin and audit recommendation ID.
+3. Initial project state and base commit.
+4. Actions performed.
+5. Files modified in the isolated demo.
+6. Exact changes and implementation rationale.
+7. Requirement-by-requirement checklist.
+8. Before/After explanation.
+9. Relevant screenshots and functional evidence.
+10. Exact tests executed and their results.
+11. Regression analysis.
+12. Bugs, limitations, and unverified behavior.
+13. Original repository protection verification.
+14. Codex's preliminary assessment.
+15. Questions requiring independent ChatGPT review.
+
+Never claim PASS without verifiable evidence.
+
+## 5. Preserve Complete Source Evidence
+
+For every implementation task, provide a minimal source diff containing exactly the relevant changes.
+
+Record:
+
+- Base commit SHA
+- Diff target and applicable directory
+- Changed file paths
+- Added/deleted files
+- Test additions
+- Unexpected changes
+- SHA-256 checksums for evidence files where practical
+
+The diff must be independently reviewable without accessing the original Windows machine.
+
+Do not embed references that work only through localhost URLs or local Windows paths.
+
+Use repository-relative paths and GitHub-accessible evidence files.
+
+## 6. Before/After Evidence
+
+For visual recommendations:
+
+- Upload actual browser screenshots.
+- Match viewport, theme, data, and component state.
+- Label BEFORE and AFTER clearly.
+- Include desktop/mobile and light/dark comparisons when relevant.
+- Preserve original visual identity.
+
+For interaction recommendations:
+
+- Record keyboard, mouse, focus, and behavioral checks.
+- Include relevant DOM, accessibility-tree, or computed-style results.
+- Include short recordings only when necessary and reasonably sized.
+
+For performance recommendations:
+
+- Record actual timing, network, or runtime measurements.
+- Do not substitute visual screenshots for performance evidence.
+
+## 7. Privacy and Security
+
+The GitHub repository is public, so review branch files may also be publicly accessible.
+
+Before committing or pushing, check all evidence for sensitive information.
+
+Never upload:
+
+- `.env` files or secrets
+- API tokens or credentials
+- Authentication cookies
+- Real student data
+- Personal account information
+- Private browser profiles
+- Production database exports
+- Sensitive logs
+- Confidential screenshots
+- Unnecessary personal Windows paths
+
+Use synthetic academic data and sanitized evidence.
+
+If an artifact cannot safely be published, mark it withheld and explain why.
+
+Never weaken authentication, authorization, or data-access controls to produce review evidence.
+
+## 8. Review and Approval Gates
+
+After finishing ONE task:
+
+1. Run relevant verification checks.
+2. Generate the task report.
+3. Generate the evidence files.
+4. Verify that the original repository is unchanged.
+5. Commit and push only the review artifacts to `temp/ui-ux-audit-review`.
+6. Confirm the remote files are accessible.
+7. Record the branch, commit SHA, and report path.
+8. STOP.
+
+Do not proceed automatically to the next recommendation.
+
+The owner will instruct ChatGPT to inspect the task through GitHub.
+
+ChatGPT will independently review the report, diff, screenshots, and test evidence.
+
+If ChatGPT identifies mistakes, the owner may provide a correction prompt.
+
+Correct only the current isolated demo, publish the new evidence as a separate commit, and stop again.
+
+Do not treat a technical review PASS as the owner's visual approval.
+
+## 9. Preserve Existing Decisions
+
+Current owner decisions:
+
+- Demo A: SELECTED CANDIDATE
+- Demo B: SELECTED CANDIDATE
+- Demo C: HOLD
+- Demo D's previous visual styling: REJECTED
+
+Preserve these decisions in `REVIEW_LEDGER.md`.
+
+Collect every actionable recommendation from the applicable skill/plugin reports.
+
+Merge only recommendations that are exactly identical in actionable meaning, scope, and intended change.
+
+Retain recommendations with meaningful differences.
+
+Demonstrate exactly one pending recommendation at a time and wait for explicit owner instruction before continuing.
+
+No changes may be transferred into production without separate authorization.
+
+## 10. Final Response After Each Task
+
+Return:
+
+**Task ID:** TASK_XXX
+
+**Recommendation:** [Exact recommendation]
+
+**Status:** READY FOR INDEPENDENT REVIEW / NEEDS CORRECTION / BLOCKED
+
+**Review branch:** temp/ui-ux-audit-review
+
+**Review commit:** [Full SHA]
+
+**Report:** [Direct GitHub URL]
+
+**Changed files:** [Relevant demo files]
+
+**Tests:** [Exact counts and status]
+
+**Evidence:** [GitHub folder URL]
+
+**Original main branch:** [Verified status]
+
+**Known limitations:** [Summary]
+
+**Next action:** Ask ChatGPT to review TASK_XXX directly from GitHub.
+
+Do not finish with only a Windows file path.
+
+Do not begin the next task without explicit instruction.
+
+## 11. Start
+
+First, create or verify the temporary review branch using a separate Git worktree.
+
+Publish the current Master Recommendation Register and review ledger, together with their verification report.
+
+Confirm that the original `main` branch and original working directory remain unchanged.
+
+Push the review artifacts to the temporary branch.
+
+Then STOP and provide the direct GitHub report URL for independent review.

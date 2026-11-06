@@ -1,0 +1,36 @@
+TASK_001 actual verification log
+Node v24.16.0; Windows
+Initial run: 19 passed, 1 failed (test 14 privacy regex falsely matched https:/). Corrected the drive-path word boundary; personal-path stack withheld.
+Command: node --check review-artifacts/TASK_001/verify-register.test.cjs
+Exit: 0
+Command: node --test review-artifacts/TASK_001/verify-register.test.cjs
+Exit: 0
+
+✔ 01: IDs are sequential and unique (0.9744ms)
+✔ 02: every record has the required attribution, action, scope, evidence, risk and disposition (0.3884ms)
+✔ 03: every occurrence quotation exactly matches its sanitized source lines (13.6147ms)
+✔ 04: every snapshot matches its recorded SHA-256 and line count (2.4549ms)
+✔ 05: completeness mapping accounts for every line of every supplied source (0.8837ms)
+✔ 06: every retained action and raw occurrence has a bidirectional source mapping (0.4758ms)
+✔ 07: raw, duplicate, retained, provenance and owner-state counts reconcile (0.1306ms)
+✔ 08: every declared exact-duplicate group preserves four identity fields and a written proof (0.2322ms)
+✔ 09: materially different focus, implementation, input and token proposals remain separate (0.1794ms)
+✔ 10: owner decisions and unimplemented alternatives are preserved (0.1789ms)
+✔ 11: all nine findings and the corrected visible reduced-motion check are represented (0.1439ms)
+✔ 12: ten historical leads remain uncertain and are not falsely attributed to an available original report (0.2637ms)
+✔ 13: skipped and unavailable audits are disclosed rather than supplying invented findings (1.1461ms)
+✔ 14: public artifacts contain no local preview dependencies, personal absolute paths or credential patterns (8.7977ms)
+✔ 15: separate clone branch and tracked runtime remain untouched at verification (123.5529ms)
+✔ 16: original protection evidence preserves HEAD, status, pre-existing audit bytes and tracked files (0.3755ms)
+✔ 17: report contains A-M, requirement results and independent-review limitations (0.9839ms)
+✔ 18: public handoff links point to included artifacts or GitHub, not local files (19.709ms)
+✔ 19: ledger and register contain exactly the same actions and current dispositions (0.398ms)
+✔ 20: per-source action counts and all individual audit blocks are included (0.2141ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 247.5942

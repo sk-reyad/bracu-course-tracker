@@ -1,0 +1,17 @@
+{
+  "rawAtomicSourceOccurrences": 100,
+  "exactDuplicateOccurrencesRemoved": 11,
+  "retained": 89,
+  "statuses": {
+    "SELECTED": 23,
+    "REJECTED": 9,
+    "HOLD": 7,
+    "UNREVIEWED": 50,
+    "IN REVIEW": 0
+  },
+  "auditImplementationAndPrinciples": 53,
+  "auditVerificationProcess": 16,
+  "correctionRecords": 1,
+  "historicalLeads": 10,
+  "rejectedDemoTreatments": 9
+}

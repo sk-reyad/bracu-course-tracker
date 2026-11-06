@@ -1,0 +1,161 @@
+# IMPORTANT OVERRIDE — Exhaustive Recommendation Collection and Strict Sequential Review
+
+Update the previous BRACU Course Tracker Sequential Multi-Skill UI/UX Design Review workflow with the following mandatory requirements.
+
+## 1. Collect EVERY Recommendation
+
+Step 1 must collect ALL individual recommendations from EVERY available and applicable skill/plugin audit report.
+
+Do not select only one recommendation during collection.
+
+Read each individual skill report completely, including detailed findings, minor recommendations, alternative solutions, caveats, and visual improvement suggestions.
+
+Do not rely only on the executive summary, the nine consolidated finding IDs, or the prioritized backlog.
+
+Include every source-supported recommendation, regardless of:
+
+- Priority or severity
+- Estimated implementation effort
+- Number of supporting skills
+- Whether the recommendation is functional, visual, accessibility-related, performance-related, or subjective
+- Whether another recommendation addresses the same component or underlying problem
+
+Preserve the exact source skill/plugin attribution.
+
+If a skill's full individual output is unavailable, report the missing source. Do not invent its recommendations.
+
+For historical recommendations, distinguish verified issues from unverified proposals.
+
+## 2. EXTREMELY STRICT Duplicate Rule
+
+Remove or merge recommendations ONLY when they are EXACTLY identical in actionable meaning.
+
+An exact duplicate must have the same:
+
+- Target component and scope
+- Specific requested change
+- Intended outcome
+- Material implementation behavior
+
+Different wording alone does not make two recommendations unique if the requested action is genuinely identical.
+
+However, even a small meaningful difference in the proposed action, scope, behavior, visual result, or implementation approach means the recommendations MUST remain separate.
+
+Examples:
+
+- Fix modal focus trapping vs fix modal initial focus: SEPARATE.
+- Increase button target size vs increase button spacing: SEPARATE.
+- Simplify card shadows vs simplify badge borders: SEPARATE.
+- Move Degree Plan into the navbar vs add a Degree Plan shortcut to the Dashboard: SEPARATE.
+- Use a native dialog vs retain the existing modal with custom focus management: SEPARATE alternative proposals.
+- Two skills recommending the exact same focus-trapping change for the exact same modal scope: MERGE, preserving both source attributions.
+
+Do not merge recommendations merely because they share the same finding ID, affected page, objective, category, or severity.
+
+Do not merge distinct suggestions into broad categories like "Improve accessibility", "Fix responsiveness", or "Polish UI".
+
+If uncertain whether two recommendations are exact duplicates, KEEP BOTH.
+
+## 3. Build an Exhaustive Master Register
+
+Assign a unique sequential ID to every retained recommendation.
+
+For each entry, record:
+
+- ID
+- Source skill/plugin
+- Exact recommendation
+- Related finding ID
+- Affected component
+- Proposed change
+- Category and priority
+- Evidence and verification status
+- Duplicate relationship, if any
+- Existing owner decision
+- Current review status
+
+Maintain a separate exact-duplicate mapping that records which identical source recommendations were merged and why.
+
+The total number of recommendations must come from the actual reports. Do not assume that nine consolidated findings mean nine individual recommendations.
+
+Clearly report:
+
+- Total recommendations extracted before deduplication
+- Exact duplicates merged
+- Total retained recommendations
+- Recommendations already selected, rejected, or on hold
+- Total remaining to review
+
+Preserve already recorded owner decisions:
+
+Demo A: SELECTED candidate.
+Demo B: SELECTED candidate.
+Demo C: HOLD.
+Demo D's previously rejected styling: REJECTED.
+
+Previously rejected recommendations must still appear in the register with their correct status. Do not automatically propose them again.
+
+## 4. Review EVERY Retained Recommendation Individually
+
+After the COMPLETE Master Recommendation List has been created, begin the sequential review.
+
+Create a Before/After demo for exactly ONE unreviewed recommendation at a time.
+
+For each recommendation:
+
+1. Explain the exact source recommendation and which skill/plugin suggested it.
+2. Show the original implementation.
+3. Create a functional isolated demo implementing only that recommendation.
+4. Show matched Before/After screenshots.
+5. Provide an interactive demonstration where relevant.
+6. Show changed files and the minimal diff.
+7. Report relevant testing results and limitations.
+8. Ask the owner to Approve, Reject, Revise, or Hold.
+9. STOP.
+
+Do not create the next demo until the owner explicitly says NEXT or otherwise clearly authorizes continuing.
+
+If the owner requests REVISE, revise only the current demo.
+
+If the owner REJECTS a recommendation, record the decision without silently rejecting other distinct recommendations affecting the same component.
+
+If two recommendations conflict, present them as separate alternatives rather than combining them.
+
+## 5. Preserve Independent Comparisons
+
+Each new recommendation must be demonstrated against the unchanged baseline unless the owner explicitly requests a cumulative comparison.
+
+Do not silently carry over modifications from earlier demos.
+
+Keep all demonstrations in isolated workspaces outside the original repository.
+
+Do not modify, commit, push, or deploy the original project.
+
+Do not alter academic calculations, authentication, APIs, storage, Supabase, or unrelated functionality.
+
+## 6. Definition of Completion
+
+The review process is complete only when EVERY retained recommendation has an explicit recorded status:
+
+- SELECTED
+- REJECTED
+- HOLD
+- or another owner-confirmed final disposition
+
+Do not stop after high-priority recommendations.
+
+Do not skip low-priority or subjective recommendations without the owner's decision.
+
+Do not assume a recommendation is approved simply because a related recommendation was approved.
+
+After the complete review, provide the final decision register and an optional selected-only consolidated demo.
+
+Even then, DO NOT implement changes in the original repository without separate explicit authorization.
+
+## START
+
+First, produce the complete exhaustive recommendation register using the strict exact-duplicate rule.
+
+Then demonstrate only the FIRST pending recommendation.
+
+Wait for the owner's feedback before continuing.

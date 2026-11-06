@@ -1,0 +1,22 @@
+/* Demo D only: existing tokens, one roadmap exemplar and one Settings section. */
+html[data-demo-polish] #card-CSE110 {
+  box-shadow: none;
+}
+html[data-demo-polish] #card-CSE110 .card-meta-category .badge {
+  background: transparent;
+  border-color: transparent;
+}
+html[data-demo-polish] #card-CSE110 .status-strip {
+  box-shadow: 0 -1px 0 var(--border);
+}
+html[data-demo-polish] #card-CSE110 .status-pill:not(.faculty-pill) {
+  border-color: transparent;
+  background: transparent;
+}
+html[data-demo-polish] #gradeEditor .grade-scale-table-wrap {
+  box-shadow: none;
+  border-radius: var(--radius-md);
+}
+html[data-demo-polish] #gradeEditor .grade-scale-heading {
+  margin-bottom: 16px;
+}

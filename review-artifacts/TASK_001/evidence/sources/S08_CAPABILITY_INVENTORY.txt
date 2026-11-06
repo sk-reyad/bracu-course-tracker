@@ -1,0 +1,409 @@
+# Codex Frontend, UI, and UX Capability Inventory
+
+Inventory date: 2026-11-05 (Asia/Dhaka)
+
+This document lists the UI/frontend-related capabilities that are installed or exposed in the current Codex desktop session. It distinguishes four different things that are easy to confuse:
+
+- **Skill**: instruction pack selected by Codex. Invoke explicitly with `$skill-name`, or say `Use the <name> skill`.
+- **Plugin skill**: skill supplied by a plugin. Its qualified name is normally `plugin-name:skill-name`.
+- **Agent profile**: a specialized prompt bundled by a plugin. ECC contains these files, but they are not all first-class Codex subagents.
+- **Plugin command/tool**: an MCP/app operation Codex calls internally. Users normally request the outcome in natural language instead of typing the tool name.
+
+`agents/openai.yaml` inside many standalone skills is interface metadata, not an independent agent.
+
+## Recommended Default Stack
+
+Use this combination for most professional frontend work:
+
+1. **Single end-to-end design toolkit**: `impeccable:impeccable`. It can shape, build, critique, audit, refine, harden, optimize, and visually iterate on marketing or product UI.
+2. **New marketing site or landing page**: `impeccable:impeccable` + `$design-taste-frontend` or `$frontend-design`. Choose one supporting aesthetic authority, not every style skill.
+3. **Existing UI redesign**: `impeccable:impeccable` + `ecc:design-system`; use Impeccable `critique`, `audit`, `polish`, or a full redesign as appropriate.
+4. **Product UI, dashboard, or internal tool**: Impeccable in **Operate** mode + `ecc:design-system` + `$ui-styling` or the relevant framework skill.
+5. **Accessibility audit and fix**: Impeccable `audit` + `ecc:accessibility` + `ecc:frontend-a11y` + `ecc:browser-qa`.
+6. **React implementation**: `ecc:react-patterns` + `ecc:react-performance` + `ecc:react-testing`.
+7. **Motion**: Impeccable `animate`, or `$find-animation-opportunities`/`$improve-animations` for a dedicated audit and `$review-animations` for final review.
+8. **Figma handoff**: `figma:figma-design-to-code` for Figma to code; `figma:figma-generate-design` or `figma:figma-generate-library` for code/brief to Figma.
+9. **Visual verification**: Impeccable finish review + Browser plugin + `ecc:browser-qa` + `$webapp-testing` or `ecc:e2e-testing`.
+
+## Standalone Design and UX Skills
+
+These are installed in the active Codex skills directory.
+
+| Skill | Best use | Audit / design / fix | Invocation and commands | Separate agent |
+| --- | --- | --- | --- | --- |
+| `design-taste-frontend` | Anti-generic landing pages, portfolios, and redesigns; audit-first and production implementation | Audit, design, fix | `$design-taste-frontend`; no separate CLI | No |
+| `design-taste-frontend-v1` | Backward-compatible original Taste behavior | Design, fix | `$design-taste-frontend-v1`; use only when exact v1 behavior is required | No; `agents/openai.yaml` is metadata |
+| `frontend-design` | Distinctive aesthetic direction, typography, palette, layout, and subject-specific visual identity | Design, fix | `$frontend-design`; no separate CLI | No; metadata only |
+| `emil-design-eng` | UI polish, interaction details, component craft, and animation decisions | Audit, design, fix | `$emil-design-eng`; no separate CLI | No |
+| `redesign-existing-projects` | Audits an existing codebase for generic AI patterns, then applies targeted upgrades without rewriting functionality | Audit, fix | `$redesign-existing-projects`; no separate CLI | No |
+| `ui-styling` | shadcn/ui, Radix, Tailwind, responsive layouts, accessible components, themes, and dark mode | Design, fix | `$ui-styling`; no separate CLI | No; metadata only |
+| `ui-ux-pro-max` | UI/UX reference database for styles, palettes, fonts, UX, icons, charts, stacks, and GSAP presets | Research, audit, design | `$ui-ux-pro-max` | No; metadata only. **Installed package is incomplete:** its documented `scripts/search.py` and references are absent, so its database commands currently cannot run. |
+| `prototype` | Creates several genuinely different versions of one UI element behind a visual picker | Design exploration | `$prototype`; explicit invocation required | No |
+| `pick-ui-library` | Selects an opinionated library for charts, toasts, drag/drop, state, virtualization, forms, and similar tasks | Architecture | `$pick-ui-library`; explicit invocation required | No |
+| `apple-design` | Gesture-driven interfaces, springs, sheets, momentum, translucent depth, typography, and reduced motion | Audit, design, fix | `$apple-design`; no separate CLI | No |
+| `liquid-glass-design` | iOS 26 Liquid Glass patterns for SwiftUI, UIKit, and WidgetKit | Design, fix | `$liquid-glass-design`; no separate CLI | No |
+| `minimalist-ui` | Editorial, warm-monochrome, flat, restrained interface direction | Design, fix | `$minimalist-ui`; no separate CLI | No; metadata only |
+| `high-end-visual-design` | Highly art-directed agency-style web visuals and motion | Design, fix | `$high-end-visual-design`; no separate CLI | No |
+| `industrial-brutalist-ui` | Swiss-industrial or tactical data-heavy interfaces | Design, fix | `$industrial-brutalist-ui`; no separate CLI | No |
+| `gpt-taste` | AIDA layouts, editorial typography, GSAP ScrollTrigger, and high-variance marketing pages | Design, fix | `$gpt-taste`; no separate CLI | No |
+| `stitch-design-taste` | Generates `DESIGN.md` instructions for Google Stitch | Design-system handoff | `$stitch-design-taste`; Stitch access/MCP is optional and not currently exposed as a connected tool | No |
+| `brandkit` | Logo systems, brand boards, visual identity, and brand presentation imagery | Brand design | `$brandkit`; uses image generation | No |
+| `image-to-code` | Generates section-level visual references, analyzes them, then implements the frontend | Design, fix | `$image-to-code`; uses image generation plus normal repository tools | No |
+| `imagegen-frontend-web` | Generates one wide visual reference per website section | Design reference | `$imagegen-frontend-web`; image output only | No; metadata only |
+| `imagegen-frontend-mobile` | Generates mobile screen concepts and flows | Design reference | `$imagegen-frontend-mobile`; image output only | No |
+| `frontend-slides` | Animated HTML presentations and PPT-to-web slide experiences | Adjacent frontend design | `$frontend-slides`; no separate CLI | No; metadata only |
+
+## Motion and Interaction Skills
+
+| Skill | Best use | Writes code? | Invocation / command |
+| --- | --- | --- | --- |
+| `animate` | Build a purposeful UI animation or transition | Yes | `$animate` |
+| `animation-vocabulary` | Convert a vague motion description into the correct design term | No | `$animation-vocabulary` |
+| `find-animation-opportunities` | Find places where motion would improve comprehension or feedback | No, audit only | `$find-animation-opportunities` |
+| `improve-animations` | Codebase-wide motion audit with prioritized implementation plans | No, plans only | `$improve-animations` |
+| `review-animations` | Strict review of existing motion code and changed animations | No, review only | `$review-animations`; explicit invocation required |
+
+## Frontend Engineering and Test Skills
+
+| Skill | Best use | Invocation / main commands | Separate agent |
+| --- | --- | --- | --- |
+| `frontend-patterns` | Local copy of React/Next/state/performance patterns | `$frontend-patterns` | No; metadata only. Prefer current `ecc:frontend-patterns` to avoid duplicate guidance. |
+| `swiftui-patterns` | Local SwiftUI state, navigation, composition, and performance guidance | `$swiftui-patterns` | No; prefer `ecc:swiftui-patterns` when using the ECC plugin. |
+| `e2e-testing` | Local Playwright POM, CI, artifacts, and flaky-test patterns | `$e2e-testing`; normal project Playwright commands | No; prefer `ecc:e2e-testing` for current plugin guidance. |
+| `webapp-testing` | Interact with a local web app, inspect DOM/console, and capture screenshots with Playwright | `$webapp-testing`; `python scripts/with_server.py --server "npm run dev" --port 5173 -- python your_automation.py` | No; metadata only |
+
+## Impeccable Plugin 4.3.1
+
+Status: installed. The `4.3.1` plugin package and its trusted post-edit/stop hook configuration were verified locally. Plugin id: `impeccable@openai-curated-remote`. Qualified skill: `impeccable:impeccable`.
+
+Impeccable is the broadest dedicated UI design toolkit in this installation. It covers websites, landing pages, dashboards, product UI, app shells, forms, settings, onboarding, empty states, responsive behavior, accessibility, performance, typography, layout, color, motion, UX copy, edge cases, and reusable design systems.
+
+### Primary Invocation
+
+```text
+Use impeccable:impeccable to audit and improve this interface.
+```
+
+The plugin chooses one of four surface modes:
+
+- **Persuade**: landing pages, marketing, campaigns, and pricing.
+- **Operate**: dashboards, editors, settings, admin panels, and application workflows.
+- **Read**: documentation, articles, guides, help, and changelogs.
+- **Experience**: portfolios, galleries, showcases, and artifact-led experiences.
+
+### Impeccable Commands
+
+These commands are routed by the single Impeccable skill. The safest Codex syntax is natural language, for example: `Use impeccable:impeccable and run audit on the checkout page.` Standalone `$audit`, `$polish`, and similar shortcuts exist only when pinned by the Impeccable launcher.
+
+| Command | Category | What it does | Example request |
+| --- | --- | --- | --- |
+| `craft [feature]` | Build | Deprecated alias for ordinary Impeccable new work | Prefer `Use Impeccable to build...` |
+| `shape [feature]` | Build | Plans UX/UI through discovery before code | `Use Impeccable shape for the billing flow.` |
+| `init` | Build | Captures durable product context in `PRODUCT.md` | `Use Impeccable init for this project.` |
+| `document` | Build | Derives `DESIGN.md` from the shipped code | `Use Impeccable document.` |
+| `extract [target]` | Build | Consolidates reusable tokens and components | `Use Impeccable extract on src/components.` |
+| `critique [target]` | Evaluate | UX review with heuristic scoring and prioritized feedback | `Use Impeccable critique on the dashboard.` |
+| `audit [target]` | Evaluate | Technical checks for accessibility, performance, responsiveness, theming, and anti-patterns | `Use Impeccable audit on checkout.` |
+| `polish [target]` | Refine | Final alignment, spacing, consistency, and detail pass | `Use Impeccable polish before release.` |
+| `bolder [target]` | Refine | Gives bland or overly safe UI more impact and personality | `Use Impeccable bolder on the landing page.` |
+| `quieter [target]` | Refine | Calms aggressive, loud, or overstimulating UI | `Use Impeccable quieter on the dashboard.` |
+| `distill [target]` | Refine | Removes unnecessary complexity and visual noise | `Use Impeccable distill on settings.` |
+| `harden [target]` | Refine | Adds production error states, i18n, overflow, and real-data resilience | `Use Impeccable harden on this form.` |
+| `onboard [target]` | Refine | Designs first-run flows, empty states, activation, and contextual guidance | `Use Impeccable onboard for new accounts.` |
+| `animate [target]` | Enhance | Adds purposeful animation and micro-interactions | `Use Impeccable animate on the command menu.` |
+| `colorize [target]` | Enhance | Adds strategic color to dull or monochromatic UI | `Use Impeccable colorize on analytics.` |
+| `typeset [target]` | Enhance | Repairs font selection, hierarchy, size, weight, and readability | `Use Impeccable typeset on the article page.` |
+| `layout [target]` | Enhance | Fixes spacing, rhythm, alignment, composition, and hierarchy | `Use Impeccable layout on the account page.` |
+| `delight [target]` | Enhance | Adds restrained personality and memorable interaction details | `Use Impeccable delight on the success flow.` |
+| `overdrive [target]` | Enhance | Adds ambitious shaders, physics, scroll effects, and high-end visual engineering | `Use Impeccable overdrive on the campaign page.` |
+| `clarify [target]` | Fix | Improves labels, instructions, UX copy, and errors | `Use Impeccable clarify on this form.` |
+| `adapt [target]` | Fix | Adapts UI for mobile, tablet, desktop, print, or native device classes | `Use Impeccable adapt for mobile and tablet.` |
+| `optimize [target]` | Fix | Diagnoses and fixes UI loading, rendering, image, animation, and bundle performance | `Use Impeccable optimize on the dashboard.` |
+| `live` | Iterate | Starts visual browser iteration with selectable elements and generated variants | `Use Impeccable live on the running app.` |
+
+### Impeccable Control Commands
+
+- `impeccable context`: loads `PRODUCT.md`, `DESIGN.md`, surface briefs, platform guidance, and project state once per session.
+- `impeccable pin <pin|unpin> <command>`: creates or removes a standalone `$<command>` shortcut.
+- `$impeccable hooks on|off|status|ignore-rule|ignore-file|ignore-value|reset`: controls the project design-detector hook.
+- `$impeccable doctor`: reports and repairs drift among `PRODUCT.md`, `DESIGN.md`, sidecars, configuration, surface briefs, and hooks.
+- Windows launcher: `<Impeccable skill directory>\scripts\impeccable.cmd <verb>`.
+
+### Impeccable Internal Agents
+
+These are real TOML agent definitions bundled inside the skill. Impeccable delegates specialized work to them; they are not intended as independent user-facing commands.
+
+| Agent | Responsibility |
+| --- | --- |
+| `impeccable_asset_producer` | Produces clean reusable raster assets from an approved visual direction without redesigning it |
+| `impeccable_documenter` | Derives `DESIGN.md` and its sidecar from the finished implementation rather than intentions |
+| `impeccable_finish_reviewer` | Reviews screenshots, direction contract, approved comp, craft floor, and implementation; returns `recapture`, `rebuild`, `fix`, or `ship` |
+| `impeccable_manual_edit_applier` | Applies live-mode copy edits safely to source files with atomic validation |
+
+### Impeccable Automation and Files
+
+- Project context: `PRODUCT.md`.
+- Design-system record: `DESIGN.md` and sidecar.
+- Surface briefs and visual decision artifacts under `.impeccable/`.
+- Desktop/mobile screenshot review with bounded repair passes.
+- Optional post-edit design-detector hooks for common UI anti-patterns.
+- Live browser variants, manual copy editing, comp measurement, visual diffing, and finish-review gates.
+
+## ECC Plugin 2.2.3
+
+Status: installed and enabled as `ecc@ecc`.
+
+### ECC UI Skills
+
+Invoke these with the qualified skill name, for example: `Use ecc:design-system to audit this project and implement the approved fixes.`
+
+| Qualified skill | Purpose | Typical prompt/command |
+| --- | --- | --- |
+| `ecc:frontend-design-direction` | Establish product-specific UI direction for websites, dashboards, applications, and components | `Use ecc:frontend-design-direction to define and implement the visual direction.` |
+| `ecc:design-system` | Extract/audit tokens, create `design-tokens.json`, CSS variables, `DESIGN.md`, preview, and consistency score | `Use ecc:design-system to audit the current UI and fix token inconsistencies.` |
+| `ecc:accessibility` | WCAG 2.2 AA across web, iOS, and Android | `Use ecc:accessibility to audit and fix this flow.` |
+| `ecc:frontend-a11y` | React/Next semantic HTML, ARIA, labels, keyboard, focus, forms, dialogs, tabs, and tooltips | `Use ecc:frontend-a11y to fix the component accessibility issues.` |
+| `ecc:browser-qa` | Browser smoke tests, screenshots at three breakpoints, Core Web Vitals, axe, and SHIP/DO-NOT-SHIP verdict | `Use ecc:browser-qa against the preview URL and fix failures.` |
+| `ecc:click-path-audit` | Trace user actions through state changes to catch buttons/flows that end in the wrong state | `Use ecc:click-path-audit on checkout and fix inconsistent final states.` |
+| `ecc:frontend-patterns` | General React/Next/state/performance implementation patterns | `Use ecc:frontend-patterns while implementing this page.` |
+| `ecc:react-patterns` | React 18/19 hooks, RSC boundaries, Suspense, forms, fetching, state, and accessible composition | `Use ecc:react-patterns to implement/refactor these components.` |
+| `ecc:react-performance` | Waterfalls, bundles, fetching, re-renders, rendering, and JS performance | `Use ecc:react-performance to profile and fix this page.` |
+| `ecc:react-testing` | RTL, Vitest/Jest, MSW, axe, hooks, and component/E2E boundaries | `Use ecc:react-testing and add behavior-first tests.` |
+| `ecc:vue-patterns` | Vue 3, Composition API, Pinia, Vue Router, and Nuxt SSR | `Use ecc:vue-patterns to implement/review this Vue UI.` |
+| `ecc:ui-to-vue` | Convert UI screenshots/design exports to Vue 3 components | `Use ecc:ui-to-vue to reproduce these screens.` |
+| `ecc:angular-developer` | Angular components, signals, forms, DI, routing, SSR, ARIA, animation, styling, and tests | `Use ecc:angular-developer for this Angular feature.` |
+| `ecc:nuxt4-patterns` | Nuxt 4 hydration, route rules, lazy loading, SSR-safe data fetching | `Use ecc:nuxt4-patterns to diagnose this hydration issue.` |
+| `ecc:vite-patterns` | Vite config, HMR, env, proxy, SSR, library mode, and optimization | `Use ecc:vite-patterns to fix the frontend build setup.` |
+| `ecc:motion-foundations` | Motion tokens, springs, reduced motion, performance, and SSR-safe React motion | `Use ecc:motion-foundations to establish motion tokens.` |
+| `ecc:motion-patterns` | Buttons, modals, toasts, stagger, page transitions, scroll, and layout animations | `Use ecc:motion-patterns to implement this interaction.` |
+| `ecc:motion-advanced` | Drag, gestures, text/SVG motion, custom hooks, and imperative sequences | `Use ecc:motion-advanced for this gesture interaction.` |
+| `ecc:e2e-testing` | Playwright suites, page objects, CI, artifacts, and flaky-test control | `Use ecc:e2e-testing to test the critical flows.` |
+| `ecc:react-native-patterns` | Expo/React Native navigation, state, data, lists, styling, and secure storage | `Use ecc:react-native-patterns for this mobile screen.` |
+| `ecc:dart-flutter-patterns` | Flutter widgets, state, routing, networking, error handling, and tests | `Use ecc:dart-flutter-patterns to implement/review this Flutter UI.` |
+| `ecc:swiftui-patterns` | SwiftUI state, composition, navigation, and render performance | `Use ecc:swiftui-patterns for this Apple-platform UI.` |
+| `ecc:liquid-glass-design` | iOS 26 Liquid Glass implementation | `Use ecc:liquid-glass-design for this SwiftUI/UIKit surface.` |
+| `ecc:dashboard-builder` | Operator-focused Grafana/SigNoz monitoring dashboards | `Use ecc:dashboard-builder to turn these metrics into an operational dashboard.` |
+| `ecc:ui-demo` | Record polished browser UI walkthroughs with Playwright | `Use ecc:ui-demo to record the primary user flow.` |
+
+### ECC Bundled Agent Profiles
+
+These profiles are present in ECC's `agents/` directory. They are useful capability definitions, but this Codex plugin manifest does not expose each one as a separately callable Codex agent. Ask Codex to apply the named profile or use its matching skill/command.
+
+| Agent profile | Role | Practical Codex request |
+| --- | --- | --- |
+| `a11y-architect` | WCAG 2.2 architect for web and native UI | `Apply the ECC a11y-architect profile and ecc:accessibility.` |
+| `e2e-runner` | Browser journeys, screenshots, videos, traces, CI, and flaky-test handling | `Apply the ECC e2e-runner profile using ecc:e2e-testing.` |
+| `performance-optimizer` | Bundle, render, runtime, network, and memory performance | `Apply the ECC performance-optimizer profile and ecc:react-performance.` |
+| `react-build-resolver` | React/Vite/Next/webpack build and hydration failures | `Apply the ECC react-build-resolver profile and fix the build.` |
+| `react-reviewer` | Hooks, RSC, accessibility, security, and render performance review | `Apply the ECC react-reviewer profile to the current diff.` |
+| `vue-reviewer` | Vue reactivity, composables, templates, accessibility, security, and performance | `Apply the ECC vue-reviewer profile to the current diff.` |
+| `flutter-reviewer` | Flutter widget, state, performance, accessibility, and security review | `Apply the ECC flutter-reviewer profile.` |
+| `typescript-reviewer` | Generic TS correctness needed alongside React/Vue reviewers | `Apply both react-reviewer and typescript-reviewer.` |
+| `code-reviewer` | General implementation review | `Use ECC code-reviewer rules on the frontend changes.` |
+| `build-error-resolver` | Generic build/type failure resolution | `Use ecc:source-command-build-fix.` |
+
+### ECC Commands and Codex Compatibility
+
+Codex-native migrated command skills relevant to frontend work:
+
+| Codex skill | Equivalent use |
+| --- | --- |
+| `ecc:source-command-build-fix` | Detect build system and repair build/type errors incrementally |
+| `ecc:source-command-feature-dev` | Guided discovery, architecture, implementation, review, and verification |
+| `ecc:source-command-review-pr` | Multi-profile PR review |
+| `ecc:source-command-test-coverage` | Analyze and fill test coverage gaps |
+| `ecc:source-command-plan-canvas` | Open a plan/HTML artifact for visual review and approval |
+| `ecc:source-command-refactor-clean` | Remove dead code with verification |
+
+ECC also contains source command files such as `/react-build`, `/react-review`, `/react-test`, `/vue-review`, `/flutter-build`, `/flutter-review`, `/flutter-test`, `/multi-frontend`, `/code-review`, and `/quality-gate`. They are not listed as native Codex migrated command skills in the installed manifest. Use the corresponding natural-language requests and skills instead. `/multi-frontend` additionally requires the external `ccg-workflow` runtime and Claude-oriented files, so it should not be treated as ready in this Codex installation.
+
+## Figma Plugin 17.0.0
+
+Status: installed and enabled. Agent profiles: none; it exposes skills plus MCP tools.
+
+There is also an older cached Figma plugin package (`2.0.13`) from the legacy curated marketplace. The currently exposed design tools and skill set come from `17.0.0`; use those and avoid mixing instructions from the legacy cache.
+
+| Figma skill | Purpose | Main internal tools |
+| --- | --- | --- |
+| `figma:figma-design-to-code` | Implement a Figma screen/component in the repository | `get_design_context`, `get_screenshot`, `download_assets`, `get_variable_defs` |
+| `figma:figma-generate-design` | Build/update a composed product UI in Figma from code or a brief | `generate_figma_design`, `use_figma`, `search_design_system` |
+| `figma:figma-generate-library` | Create/audit tokens, variables, themes, components, and variants | `use_figma`, `get_libraries`, `search_design_system`, `get_variable_defs` |
+| `figma:figma-code-connect` | Map Figma components to production components | `get_code_connect_map`, `get_code_connect_suggestions`, `send_code_connect_mappings` |
+| `figma:figma-code-workflows` | Send local HTML/code to editable Figma layers or Code/Make | `send_code_to_figma`, `upload_assets` |
+| `figma:figma-create-new-file` | Create Figma Design, FigJam, or Slides files | `create_new_file` |
+| `figma:figma-implement-motion` | Translate Figma animation into production code | `get_motion_context`, `get_design_context` |
+| `figma:figma-use-motion` | Create/edit Figma keyframes, easing, duration, and animation styles | `use_figma`, `get_motion_context` |
+| `figma:figma-use` | General programmatic Figma reads/writes: nodes, variables, auto-layout, fills, components | `use_figma` |
+| `figma:figma-use-figjam` | FigJam-specific editing | `use_figma`, `get_figjam` |
+| `figma:figma-use-slides` | Figma Slides editing | `use_figma`, `generate_deck` |
+| `figma:figma-generate-diagram` | Flowcharts, sequence diagrams, ERDs, state diagrams, Gantt, timelines | `generate_diagram` |
+| `figma:figma-shaders` | Procedural shader fills/effects | `create_shader`, `update_shader`, `get_shader`, `list_shaders` |
+| `figma:figma-generative-plugins` | Reusable generative Figma plugins | `create_generative_plugin`, `update_generative_plugin` |
+| `figma:figma-spec` | Create/read/edit/review product specs in Figma | Figma read/write tools |
+| `figma:figma-swiftui` | Figma to SwiftUI and SwiftUI to Figma | `get_design_context`, `send_code_to_figma`, `use_figma` |
+
+Useful direct requests:
+
+```text
+Use figma:figma-design-to-code to implement this Figma URL exactly in the current project.
+Use figma:figma-generate-library to create a token-based component library from this codebase.
+Use figma:figma-generate-design to turn the current dashboard into editable Figma frames.
+```
+
+## Browser and Computer-Use Plugins
+
+### Browser
+
+Status: installed and enabled. Skill: `control-in-app-browser`.
+
+- Use for local frontend inspection, clicking, typing, screenshots, responsive checks, visual QA, and console/DOM investigation.
+- User command: `Use the Browser plugin to test [LOCAL_PREVIEW_REDACTED] at desktop and mobile sizes.`
+- Internal operations are handled through the browser runtime; there is no user-facing slash command.
+
+### Chrome
+
+Status: installed as a bundled plugin. Skill: `control-chrome`.
+
+- Uses the user's existing Chrome tabs, signed-in sessions, cookies, and extensions.
+- Use when UI validation depends on an existing Chrome login/session or the user explicitly asks for Chrome.
+- User command: `Use Chrome to test the authenticated dashboard flow.`
+- Prefer the in-app Browser for ordinary localhost testing and purpose-built connectors for semantic service operations.
+
+### Computer Use and Unified Computer Use
+
+Status: installed and enabled.
+
+- `computer-use` controls native Windows applications by UI Automation, input, and screenshots.
+- `unified-computer-use` supplies the cross-app/browser control layer.
+- Use when testing a native desktop frontend or when a design tool has no semantic connector. Prefer the Figma connector for Figma tasks and Browser for local websites.
+
+## Visualize Plugin 1.0.66
+
+Status: installed and enabled. Skill: `visualize`.
+
+- Creates in-conversation UI previews, interactive mockups, charts, simulations, maps, and data explorers.
+- It is for previewing/exploring an interface in chat, not for modifying the project repository.
+- User command: `Use visualize to create an interactive preview of these three navigation concepts.`
+- Separate agent: none. Separate CLI: none.
+
+## Sites Plugin 1.1.3
+
+Status: available in the current session. Skills: `sites:sites`, `sites:sites-remix`.
+
+- Builds, saves, publishes, and manages hosted websites, dashboards, portals, trackers, games, and internal tools.
+- Main tools: `create_site`, `save_site_version`, `deploy_site_version`, `get_deployment_status`, `get_site`, `get_site_worker_logs`, `update_environment_variables`, `add_custom_domain`.
+- User command: `Use sites:sites to build and deploy this dashboard.`
+- It is a hosted-site workflow. For an existing local repository, use normal repository skills unless the user explicitly asks to move/build it with Sites.
+
+## Canva Plugin 17.0.1
+
+Status: its tools are loaded in this session, although it was not returned by the offline `codex plugin list` result.
+
+- Best for editable visual mockups, social assets, posters, presentations, brand-template output, and image-to-design conversion.
+- Main tools: `create_design`, `generate_design`, `create_design_from_brand_template`, `image_to_design`, `perform_editing_operations`, `resize_design`, `get_design_content`, `get_design_thumbnail`, `list_brand_kits`.
+- User command: `Use Canva to create an editable visual mockup based on this UI brief.`
+- It does not audit or repair repository frontend code.
+
+## Magnific Plugin 1.1.3
+
+Status: its creative tools and skills are loaded in this session.
+
+- Useful for UI-adjacent brand systems, product imagery, campaign art, SVG generation, background removal, resizing, restyling, retouching, and visual assets used by websites.
+- Main tools: `brand_kit_create`, `brand_kit_add_rule`, `brand_kit_process_document`, `images_generate`, `images_generate_svg`, `images_to_svg`, `images_remove_background`, `images_restyle`, `images_resize`, `images_upscale`, `design_auto_layers`, `design_auto_resize`.
+- User command: `Use Magnific to create the branded visual assets for this interface.`
+- It is an asset/creative-production plugin, not a repository UI auditor. Pair it with Impeccable, Figma, or the frontend implementation skills.
+
+## Gamma Plugin 6.0.0
+
+Status: its tools are loaded in this session.
+
+- Creates polished presentations, documents, social posts, and hosted webpages from a brief or template.
+- Main tools: `generate`, `generate_from_template`, `generate_multi_page_gamma`, `edit_gamma`, `generate_image`, `import_claude_design_from_url`.
+- User command: `Use Gamma to turn this approved UI/brand brief into a hosted webpage concept.`
+- It is useful for concept presentation and lightweight hosted pages, but it does not audit or fix a local frontend repository.
+
+## Higgsfield Website Builder 2.2.1
+
+Status: website tools and skills are loaded in this session. Skill: `website-builder`.
+
+- Builds and publishes a hosted React 19 + TanStack Start website, app, or browser game on Higgsfield.
+- Main tools: `create_website`, `website_repo_access`, `sandbox_exec`, `deploy_website`, `website_status`, `publish_website`, `list_websites`.
+- User command: `Use website-builder to create and publish a Higgsfield-hosted website.`
+- It is not the right tool for auditing/fixing an existing local repository unless the user explicitly requests a Higgsfield-hosted build.
+
+## Built-in Image Generation
+
+Skill: `imagegen`.
+
+- Generates or edits images, section artwork, product imagery, backgrounds, illustrations, mockups, and visual references.
+- Most useful with `image-to-code`, `imagegen-frontend-web`, `imagegen-frontend-mobile`, or `brandkit`.
+- User command: `Use imagegen-frontend-web and imagegen to create one implementation reference per page section.`
+- It creates image assets; it does not independently implement or audit frontend code.
+
+## Supporting Frontend Delivery Plugins
+
+These are installed/available but are not primarily UI design tools:
+
+- **GitHub**: inspect PRs/diffs, review frontend changes, manage issues, and check workflow results.
+- **Vercel**: deploy previews, inspect build/runtime logs, manage projects/domains/env, and verify production deployments.
+- **Coderabbit review**: code-review support; useful after UI implementation but not a design system.
+- **HyperFrames standalone skills**: video/motion-graphics production, not application UI auditing.
+
+## Practical End-to-End Commands
+
+### Audit and fix an existing React product UI
+
+```text
+Use ecc:design-system, ecc:frontend-design-direction, ecc:frontend-a11y,
+ecc:react-patterns, ecc:react-performance, and ecc:browser-qa.
+
+Audit the current product UI, prioritize findings by user impact, implement the
+high-priority fixes using the existing stack, run component and E2E tests, and
+visually verify desktop and mobile breakpoints in Browser. Preserve existing
+business behavior and report any remaining risks.
+```
+
+### Design and build a non-generic landing page
+
+```text
+Use design-taste-frontend, frontend-design, emil-design-eng, and imagegen when
+visual assets are needed. Infer a product-specific visual direction, avoid
+generic AI landing-page patterns, implement the page in the existing framework,
+and verify it in Browser at desktop and mobile sizes.
+```
+
+### Implement a Figma design accurately
+
+```text
+Use figma:figma-design-to-code, then use the relevant framework skill and
+ecc:browser-qa. Read the Figma design context, variables, assets, screenshots,
+and motion context; implement it with the project's existing components and
+tokens; then compare the browser result against Figma at matching viewports.
+```
+
+### Accessibility audit
+
+```text
+Use ecc:accessibility, ecc:frontend-a11y, and ecc:browser-qa. Audit against WCAG
+2.2 AA, keyboard navigation, focus order, screen-reader semantics, contrast,
+target size, reduced motion, and error states. Implement fixes and verify with
+axe plus manual keyboard interaction.
+```
+
+### Motion audit and repair
+
+```text
+Use improve-animations to create the prioritized audit, animate to implement the
+approved repairs, review-animations for the final review, and Browser to verify
+the interactions and reduced-motion behavior.
+```
+
+## Known Issues and Selection Warnings
+
+1. `ui-ux-pro-max` is installed incompletely: its `SKILL.md` references a search script and reference database that are missing from the installed directory.
+2. Several local skills duplicate ECC skills (`frontend-patterns`, `e2e-testing`, `swiftui-patterns`, `liquid-glass-design`). Prefer the `ecc:` qualified versions so the source and version are unambiguous.
+3. Do not stack every visual-style skill. `minimalist-ui`, `industrial-brutalist-ui`, `high-end-visual-design`, and `gpt-taste` encode conflicting aesthetics. Choose one direction per project.
+4. Use `design-taste-frontend` primarily for marketing/portfolio/redesign work, not as the main system for dense operational product UI.
+5. ECC's Claude-style source commands and agent profiles are useful references, but only the installed skills and migrated command-skills should be treated as native Codex invocations.
+6. Impeccable is a complete umbrella workflow. When it is active, add a second style skill only for a deliberate aesthetic specialty; stacking several independent taste systems can produce contradictory rules.
+7. Two Figma packages are cached (`17.0.0` and legacy `2.0.13`). Treat `17.0.0` as the active workflow source.

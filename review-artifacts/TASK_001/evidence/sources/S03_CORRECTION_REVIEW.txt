@@ -1,0 +1,119 @@
+# Final isolated demo corrections
+
+Both corrections are applied only to the existing isolated improved demo.
+The original repository, baseline, Demo D assets/hooks and previous review ZIP
+remain unchanged. The previous ZIP is a historical package and does not contain
+these corrections.
+
+## Deliverables
+
+- [CORRECTIONS.diff](CORRECTIONS.diff): minimal runtime correction, relative to
+  the completed improved demo. Exactly two files: css/style.css and js/roadmap.js.
+- [TESTS_AND_DOCS.diff](TESTS_AND_DOCS.diff): strengthened verify-c.mjs,
+  additional preservation check and isolated documentation updates. Apply from
+  the demo workspace root, not its improved subfolder.
+- [after-evidence](after-evidence): browser results, computed styles, AX data,
+  geometry and test logs.
+- [before-evidence](before-evidence): failing strengthened check and original
+  screenshots captured before the runtime correction.
+
+The runtime diff was actually applied in a disposable copy and the result
+matched the corrected source byte-for-byte.
+
+## Task 1 — PASSED
+
+The reduced-motion copied-check rule now explicitly sets opacity:1 and
+transform:none. Existing animation suppression remains; the normal animation
+rules, color tokens, copying handler, tooltip content and reset timer are
+unchanged.
+
+verify-c.mjs now tests all four light/dark × no-preference/reduce combinations:
+
+| Mode | Check opacity after settling | Check transform | Animation |
+| --- | --- | --- | --- |
+| No preference, both themes | 1 | identity matrix | Original facultyCopyCheckPop and facultyCopyButtonPop |
+| Reduce, both themes | 1 | none | none |
+
+The test verifies the existing green check color, success label/toast, copying
+only a synthetic email through a mock clipboard boundary, and the automatic
+reset. The enhanced pre-fix test failed in both reduced-motion cases with
+opacity 0; the corrected run passed all four. See
+[before result](before-evidence/motion.json) and
+[after result](after-evidence/motion.json).
+
+| Evidence | Before | Corrected |
+| --- | --- | --- |
+| Light / reduce | [image](before-evidence/copy-light-reduce.png) | [image](after-evidence/copy-light-reduce.png) |
+| Dark / reduce | [image](before-evidence/copy-dark-reduce.png) | [image](after-evidence/copy-dark-reduce.png) |
+| Light / default | [image](before-evidence/copy-light-no-preference.png) | [image](after-evidence/copy-light-no-preference.png) |
+| Dark / default | [image](before-evidence/copy-dark-no-preference.png) | [image](after-evidence/copy-dark-no-preference.png) |
+
+Stills show visibility; computed styles and test results establish the motion
+behavior. The existing mobile faculty popup geometry was not changed.
+
+## Task 2 — PASSED
+
+The interactive stream panel now has role=group and an escaped accessible name
+matching its visible curriculum title. This is a button-controlled non-modal
+disclosure, not a dialog: opening retains focus on the trigger, Tab visits
+See more, and no modal focus model is introduced. The existing aria-expanded
+and aria-controls relationship remains in place.
+
+This follows the [WAI disclosure pattern](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/);
+the [WAI tooltip pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/)
+does not fit a panel with a focusable action. Only the role and accessible name
+were changed. No positioning, CSS, scrolling, card or connector code changed
+for this correction.
+
+verify-stream-semantics.mjs passed in both themes:
+
+- Enter and Space open; trigger expanded state and controls target are correct.
+- Tab reaches See more; Shift+Tab returns to the trigger.
+- Escape from the action closes the panel and returns focus.
+- Pointer toggle and outside-click dismissal still work.
+- Keyboard See more activation closes the panel and focuses the Course List filter.
+- Chrome's accessibility tree exposes the named group and the See more button.
+
+See [AX/keyboard evidence](after-evidence/stream-semantics.json).
+The light and dark popup bounds are identical before/after; see
+[preservation evidence](after-evidence/preservation.json).
+
+| Theme | Before | Corrected |
+| --- | --- | --- |
+| Light | [image](before-evidence/stream-light.png) | [image](after-evidence/stream-light.png) |
+| Dark | [image](before-evidence/stream-dark.png) | [image](after-evidence/stream-dark.png) |
+
+## Task 3 — PASSED within the local test scope
+
+- Full existing Node suite: 365 passed, 0 failed.
+- Additional checks: 3 passed, 0 failed.
+- Demo A: 10 modal/theme/tab groups passed, including focus containment,
+  focus return, native nested-dialog Escape and Settings navigation.
+- Demo B: all 24 viewport/theme/edge cases passed across
+  360/390/768/1024/1280/1440 CSS px, with no document overflow.
+- Demo C: all four theme/motion cases passed, including actual visibility.
+- Demo D, index.html, app.js, admin-catalog.js and all other improved source files
+  are hash-identical to their pre-correction versions.
+- The roadmap renderer differs only in the single role/name markup line; an
+  exact comparison guards all academic, card and connector code.
+- Academic engines, PDF, authentication, storage and API logic did not change.
+
+The first semantics test attempt used an incomplete synthetic Enter event and
+did not open the button. The harness now sends a complete native Enter sequence;
+no application behavior or assertion was bypassed to obtain a pass.
+
+## Limitations and safety
+
+No real screen reader, cross-browser session, real device, authenticated workflow
+or production data was used. Browser AX inspection verifies the semantic
+properties, not actual NVDA/VoiceOver announcements. Clipboard integration is
+mocked; it does not read or write personal clipboard contents.
+
+Original repository:
+[LOCAL_PATH_REDACTED]
+
+Branch main and HEAD 9d86db46b1134a3755a2e269252b1ee1234f2570 remain unchanged.
+Initial/final status contains only the pre-existing untracked
+FRONTEND_UI_MULTISKILL_AUDIT.md. The tracked diff is empty.
+No commit, push, deployment, production operation or application-data change
+was performed. No correction remains blocked within the local demo scope.

@@ -1,0 +1,137 @@
+{
+  "task": "TASK_001",
+  "base": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+  "branch": "temp/ui-ux-audit-review",
+  "scope": "Only added review-artifacts; no runtime functions/selectors changed",
+  "changedSourceFiles": [],
+  "affectedRuntimeFunctionsOrSelectors": [],
+  "diff": "Artifact-only review commit versus parent; no application diff",
+  "missingSources": [
+    "Full historical Impeccable report",
+    "Standalone full raw skill transcripts"
+  ],
+  "checksumPolicy": "All package files except this manifest are SHA-256 listed; manifest itself is included without a recursive self-hash. Review subtree uses canonical LF.",
+  "expectedZipEntries": 21,
+  "files": [
+    {
+      "path": "review-artifacts/.gitattributes",
+      "bytes": 14,
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
+      "purpose": "Artifact-only canonical LF policy"
+    },
+    {
+      "path": "review-artifacts/MASTER_RECOMMENDATIONS.md",
+      "bytes": 115045,
+      "sha256": "fdc6c82b754a5560a2560617797a86409fa35983d9525031c2a97eccdd9cbd48",
+      "purpose": "Review documentation or supporting provenance"
+    },
+    {
+      "path": "review-artifacts/REVIEW_LEDGER.md",
+      "bytes": 19093,
+      "sha256": "2f9fabad850fd66f738ba755bb444263894dfcfa46f7e7ec4ed69541f77290cf",
+      "purpose": "Review documentation or supporting provenance"
+    },
+    {
+      "path": "review-artifacts/TASK_001/TASK_REVIEW_001.md",
+      "bytes": 23324,
+      "sha256": "3ec4956026bcb0c5eda59a07fe04cfba1779d87fd5445a78314bac2ecb3db092",
+      "purpose": "Review documentation or supporting provenance"
+    },
+    {
+      "path": "review-artifacts/TASK_001/TEST_RESULTS.txt",
+      "bytes": 2407,
+      "sha256": "86b2552ccd7cf60598df92a4ab78f7c4056269f681f2183ea837ec8edf809905",
+      "purpose": "Actual verification output"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/COUNTS.json",
+      "bytes": 374,
+      "sha256": "a1b6958d8a8aea2069313d5729d318af42f72b7a43d40b09fb7a40eb5226ace0",
+      "purpose": "Review documentation or supporting provenance"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/ORIGINAL_PROTECTION.json",
+      "bytes": 902,
+      "sha256": "43b6aa0b327b1ccb38488541feebcdac3f8f80eaf49316b8fb16961622a47923",
+      "purpose": "Captured original-repository protection evidence"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/REGISTER.json",
+      "bytes": 184233,
+      "sha256": "f2da63160650e000b6d583b8a1c8f2707005d296aa4cf64fd11d2b56faebaa6f",
+      "purpose": "Source occurrences, records and duplicate proofs"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/SOURCE_COMPLETENESS.json",
+      "bytes": 510685,
+      "sha256": "a02a6cedc2cb8d15ca2bf15ab5a9faef8c80bce48036f5350c71bb41f8bc4b7d",
+      "purpose": "Line-by-line source coverage"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/SOURCE_INVENTORY.json",
+      "bytes": 4482,
+      "sha256": "35f5c7c9e3ac2ab9274e3ba92607c52cb75521c3e07b721a50e9b8581b3409ee",
+      "purpose": "Review documentation or supporting provenance"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S01_AUDIT.txt",
+      "bytes": 44476,
+      "sha256": "1b2ba133364868d3ca25f21dd96fa4fafc1106bd84d959923eefddf09694cceb",
+      "purpose": "Sanitized source snapshot"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S02_DEMO_REVIEW.txt",
+      "bytes": 9424,
+      "sha256": "1582445e983081b1752a762d9eda15785f3fa36f0f91d7a7056c9f44bb8226d2",
+      "purpose": "Sanitized source snapshot"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S03_CORRECTION_REVIEW.txt",
+      "bytes": 6108,
+      "sha256": "387e5ca649c788562798ca544da33eaee893a0eb46d8f6693427381a1f022142",
+      "purpose": "Sanitized source snapshot"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S04_OWNER_SEQUENTIAL.txt",
+      "bytes": 12295,
+      "sha256": "bc0fc17f63da3928ce6195bdeb1630980aeb16c9211fecdd92a3caeda981001d",
+      "purpose": "Sanitized source snapshot"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S05_OWNER_STRICT.txt",
+      "bytes": 6445,
+      "sha256": "97d0662c307523856c667eabad35f894b0c6e7dbb033f4d2576e417874247090",
+      "purpose": "Sanitized source snapshot"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S06_OWNER_REPORT.txt",
+      "bytes": 11062,
+      "sha256": "822f50ef4068a12aa41d6cba27c0c451094ddaa778f5c64a94564bdb48f46594",
+      "purpose": "Sanitized source snapshot"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S07_OWNER_GITHUB.txt",
+      "bytes": 8148,
+      "sha256": "b79b1aab1783382cf93fec55c26e588957daca6d640804910e70fc22462c3aba",
+      "purpose": "Sanitized source snapshot"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S08_CAPABILITY_INVENTORY.txt",
+      "bytes": 33680,
+      "sha256": "3a526e9821dba0e87ca2c484debe3d0338045a545b1fc7608fd24375995db7f2",
+      "purpose": "Sanitized source snapshot"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S09_DEMO_D_CSS.txt",
+      "bytes": 689,
+      "sha256": "6aa8674917b485989644de4292162fb4e21773350bbe16b45fd0427e9b62fe99",
+      "purpose": "Sanitized source snapshot"
+    },
+    {
+      "path": "review-artifacts/TASK_001/verify-register.test.cjs",
+      "bytes": 10234,
+      "sha256": "9a9f031bfe8b6fd33baab556d9ea3249bbedc8039f19cd3be29aedba1ba7259d",
+      "purpose": "Task-only verification code"
+    }
+  ]
+}

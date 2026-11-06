@@ -1,0 +1,421 @@
+# MANDATORY ADDITION — Per-Task Verification, Evidence and Independent ChatGPT Review
+
+## 1. Core Requirement
+
+From now on, EVERY completed task in the BRACU Course Tracker UI/UX review workflow MUST end with a detailed, evidence-backed verification report.
+
+This applies to:
+
+- Master recommendation extraction
+- Skill-by-skill recommendation analysis
+- Strict exact-duplicate verification
+- Individual Before/After demo creation
+- Demo revisions
+- Bug fixes
+- Accessibility corrections
+- Browser verification
+- Regression testing
+- Final selected-only demo consolidation
+
+A task is NOT considered ready for owner review until its verification report and supporting evidence are prepared.
+
+Do not finish with a brief "Done" or "All tests passed" response.
+
+The project owner will provide your report and evidence to ChatGPT for independent review.
+
+ChatGPT will determine whether the work is complete, incomplete, incorrect, or insufficiently verified.
+
+Your own PASS assessment is not final approval.
+
+## 2. Report File Naming
+
+Create one new report for every task.
+
+Use sequential filenames:
+
+- `TASK_REVIEW_001.md`
+- `TASK_REVIEW_002.md`
+- `TASK_REVIEW_003.md`
+
+Continue numbering for each subsequent task.
+
+Each report must have a unique task ID, clear title, creation date, and applicable recommendation ID.
+
+Store all review reports OUTSIDE the original project repository, in a dedicated review directory.
+
+Do not modify the original application's Markdown documentation.
+
+Do not overwrite previous reports or evidence.
+
+## 3. Required Report Structure
+
+Every `TASK_REVIEW_XXX.md` must contain the following sections.
+
+### A. Task Identification
+
+Record:
+
+- Task ID
+- Task title
+- Date and time
+- Original repository path
+- Original base branch and commit SHA
+- Isolated demo workspace
+- Related recommendation ID(s)
+- Source skills/plugins
+- Task status
+
+### B. Original User Instructions
+
+Clearly document:
+
+1. What the user asked you to do.
+2. What the user explicitly prohibited.
+3. Which previous owner decisions apply.
+4. What constitutes successful completion.
+5. What must remain unchanged.
+
+Do not replace the actual requirements with an overly simplified summary.
+
+Include a requirement checklist with stable IDs.
+
+### C. Initial State
+
+Describe the actual state BEFORE making changes.
+
+Include:
+
+- Relevant components/files
+- Existing behavior
+- Existing problems
+- Git status
+- Current visual/functional state
+- Applicable previous owner decisions
+
+Identify whether the issue was verified, source-inferred, or subjective.
+
+### D. Work Performed
+
+Explain exactly what was done.
+
+For each modification, include:
+
+- File path
+- Function or CSS selector
+- Relevant line range
+- Previous behavior
+- New behavior
+- Reason for the change
+- Relationship to the specific recommendation
+
+Do not describe unrelated modifications as necessary improvements.
+
+### E. Requirement-by-Requirement Verification
+
+Create a table with:
+
+| Requirement ID | Requested | Implemented | Evidence | Result |
+| --- | --- | --- | --- | --- |
+
+Every requirement must have one result:
+
+- PASS
+- FAIL
+- PARTIAL
+- NOT TESTED
+- BLOCKED
+
+A requirement cannot be marked PASS merely because code was written.
+
+Explain how it was actually verified.
+
+### F. Changed Files and Diff
+
+Include:
+
+- Complete list of modified files
+- Added files
+- Deleted files
+- Unexpected changes
+- Exact isolated demo diff location
+
+Explain the purpose of every changed source file.
+
+Generate a minimal source diff when implementation changes are involved.
+
+Separate runtime changes from tests, documentation, and demo-only tooling where practical.
+
+Explicitly identify any modification outside the requested scope.
+
+### G. Tests and Verification
+
+Record the exact commands executed.
+
+For every test:
+
+- Test name or command
+- Environment
+- Expected behavior
+- Actual result
+- Pass/fail status
+- Number of tests passed/failed
+- Test log or evidence path
+
+Include JavaScript syntax checks and relevant project tests where applicable.
+
+For frontend changes, also include actual browser verification.
+
+Never fabricate test execution.
+
+Never classify a test as PASS if it did not run.
+
+Do not weaken test assertions just to obtain a passing result.
+
+### H. Visual and Interactive Evidence
+
+For visual changes, provide:
+
+- Unchanged baseline screenshots
+- Improved demo screenshots
+- Matching viewport sizes
+- Matching light/dark themes
+- Identical content and application state
+- Hover/focus/active comparisons when relevant
+
+For functional changes, provide:
+
+- Reproduction steps
+- Keyboard/pointer interaction results
+- DOM or computed-style evidence
+- Relevant console errors
+- Actual browser verification
+
+For motion changes, provide before/after recordings or equivalent timing and computed-style evidence.
+
+For performance changes, provide measured evidence rather than a screenshot-based guess.
+
+Label each artifact clearly.
+
+### I. Regression Analysis
+
+Check whether the work accidentally affects:
+
+- Existing UI structure
+- Light/dark themes
+- Responsive layouts
+- Roadmap connectors
+- Course cards
+- Faculty interactions
+- Keyboard accessibility
+- Settings and navigation
+- Academic status rendering
+- GPA/CGPA calculations
+- PDF/print behavior
+- Authentication
+- Supabase, API, and persistence
+- Existing tests
+
+Mark each area as:
+
+- VERIFIED UNCHANGED
+- TESTED AND PASSED
+- POTENTIALLY AFFECTED
+- NOT TESTED
+- NOT APPLICABLE
+
+Do not claim an area is unchanged without source-diff or other supporting evidence.
+
+### J. Problems and Limitations
+
+Explicitly disclose:
+
+- Bugs discovered
+- Failed tests
+- Remaining issues
+- Incomplete requirements
+- Unavailable tools
+- Browser limitations
+- Unverified behavior
+- Possible regressions
+- Missing evidence
+
+Do not hide or minimize failures.
+
+If a required check could not run, record the exact blocker.
+
+### K. Original Repository Protection
+
+Record:
+
+- Original HEAD before and after
+- Original git status before and after
+- Whether tracked source changed
+- Whether any pre-existing untracked work changed
+- Whether any commit/push/deployment occurred
+- Whether any API/Supabase/production operation occurred
+
+The expected result is that the original project remains untouched.
+
+If any unexpected change occurred, flag it prominently and stop.
+
+Do not silently restore, delete, or overwrite user changes.
+
+### L. Codex Self-Assessment
+
+Provide your own assessment:
+
+- Completion percentage, with explanation
+- Requirements fully satisfied
+- Requirements not satisfied
+- Confidence level
+- Evidence gaps
+- Whether the task is ready for independent review
+
+Choose one preliminary status:
+
+- READY FOR REVIEW
+- PARTIALLY COMPLETE
+- NEEDS CORRECTION
+- BLOCKED
+
+Do not give yourself final production approval.
+
+### M. Independent Reviewer Handoff
+
+End every report with a concise handoff written for ChatGPT:
+
+1. What was requested?
+2. What was delivered?
+3. What exact files were modified?
+4. Where are the source diffs?
+5. Where are the screenshots?
+6. Where are the test logs?
+7. Which requirements passed?
+8. Which requirements failed or remain unverified?
+9. What should the reviewer examine most carefully?
+10. What is the current owner decision, if any?
+
+## 4. Special Requirements for Master Recommendation Extraction
+
+When the task involves extracting recommendations from the UI/UX audit reports, also include:
+
+- Every source report inspected
+- Exact skill/plugin attribution
+- Total recommendations extracted per source
+- All retained recommendations
+- Every exact-duplicate pair or group
+- Explanation proving why each merged duplicate is identical
+- Recommendations that were NOT merged, and why
+- Total before and after deduplication
+- Selected, rejected, held, and pending counts
+- Traceability from each source recommendation to the master register
+
+Do not claim comprehensive extraction without a source-to-register completeness check.
+
+Only merge genuinely identical actionable recommendations.
+
+If two recommendations differ meaningfully in component, action, outcome, scope, or implementation, keep both.
+
+Preserve the owner's decisions about Demos A, B, C, and D.
+
+Do not invent recommendations from unavailable or skipped audits.
+
+## 5. Portable Evidence Package
+
+At the end of each task, create:
+
+`TASK_REVIEW_XXX_PACKAGE.zip`
+
+It must contain, as applicable:
+
+- `TASK_REVIEW_XXX.md`
+- Minimal runtime diff
+- Test changes/diff
+- Relevant changed files
+- Before/After screenshots
+- Browser evidence
+- Test logs
+- Evidence manifest
+- SHA-256 checksums for included files
+
+For non-code tasks such as recommendation extraction, include the source-to-register mapping and completeness checks instead of irrelevant screenshots or runtime diffs.
+
+The package must be independently understandable without accessing the original Windows machine or localhost servers.
+
+Do not include unrelated files or entire repositories unnecessarily.
+
+Do not include passwords, secrets, private data, real student records, personal browser sessions, or environment files.
+
+Verify that the package is readable and its manifest matches the included artifacts.
+
+## 6. No Automatic Progression
+
+After completing ONE task:
+
+1. Finish the task.
+2. Run the required checks.
+3. Generate the detailed task report.
+4. Package the supporting evidence.
+5. Show the owner the report and package paths.
+6. STOP.
+
+Do not automatically start another recommendation.
+
+The owner will send the package to ChatGPT for independent review.
+
+If ChatGPT identifies a problem, the owner may supply a correction prompt.
+
+Apply only the requested correction in the isolated demo, rerun the relevant checks, and generate a new correction-review report linked to the previous task ID.
+
+If ChatGPT confirms that the task is ready, wait for the owner's visual decision or explicit NEXT instruction.
+
+Do not treat ChatGPT's technical PASS as the owner's design approval.
+
+## 7. Strict Production Protection
+
+All review artifacts, demonstration changes, and temporary tests must remain outside the original repository.
+
+Never modify the original source, academic logic, APIs, authentication, database, or production settings.
+
+Never commit, push, or deploy without a separate explicit authorization.
+
+Never apply rejected changes under another recommendation name.
+
+Preserve previous decisions:
+
+- Demo A: SELECTED CANDIDATE
+- Demo B: SELECTED CANDIDATE
+- Demo C: HOLD
+- Demo D's rejected visual styling: REJECTED
+
+## 8. Required Final Response Format
+
+At the end of EVERY task, report:
+
+**Task:** [ID and title]
+
+**Status:** [Preliminary self-assessment]
+
+**Requested:** [What was requested]
+
+**Completed:** [What was actually completed]
+
+**Requirements:** [Passed/failed/partial counts]
+
+**Tests:** [Exact results]
+
+**Changed files:** [Files modified inside the demo]
+
+**Original repository:** [Verified status]
+
+**Report:** [Absolute report path]
+
+**Review package:** [Absolute ZIP path]
+
+**Known limitations:** [Short summary]
+
+**Next action:** Independent ChatGPT review required.
+
+Then STOP.
+
+Do not proceed to the next recommendation until the owner explicitly authorizes it.

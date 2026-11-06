@@ -1,0 +1,171 @@
+# Isolated BRACU UI/UX demo — review handoff
+
+Date: 2026-11-06, Asia/Dhaka. Source commit:
+9d86db46b1134a3755a2e269252b1ee1234f2570 on main.
+
+## Open the comparisons
+
+- Baseline: [LOCAL_PREVIEW_REDACTED]
+- Improved A+B+C: [LOCAL_PREVIEW_REDACTED]
+- Optional D: [LOCAL_PREVIEW_REDACTED]
+
+For D, compare CSE110 in Roadmap and Settings → Grade Scale.
+Removing polish=1 disables D; A/B/C remain active.
+
+The server is running on loopback. Restart if necessary from this directory:
+
+```powershell
+node serve.cjs
+```
+
+Stop the process with Ctrl+C. No package installation or build is needed.
+Both copies were independently extracted from the same verified commit.
+The baseline source is unchanged. The untracked audit report in the original
+repository was read as task context; no original files were altered.
+
+## Isolation
+
+serve.cjs applies identical isolation to both copies: it serves a synthetic
+browser config in memory, blocks nonlocal connections with CSP, rejects writes,
+and disables Auth/Admin routes. No production config file was edited. CDN font,
+icon and SDK scripts can load; production database/Auth/Storage/function calls
+cannot connect. Guest support opens locally, but security challenge/submission
+is intentionally unavailable. Do not use this server for production.
+
+Only tracked source from git archive was exported; no .git history, private
+.env, browser sessions, database backups or untracked user work was copied.
+Student records are the supported synthetic read-only preview. Bundled public
+faculty reference records retain their original content. Clipboard tests use
+demo-faculty@example.invalid and a mocked clipboard boundary.
+
+## Historical claims (verification only)
+
+| Claim | Classification | Evidence |
+| --- | --- | --- |
+| PDF library loads eagerly | CONFIRMED | Baseline resource timeline loads /js/vendor/html2pdf.bundle.min.js before a download; static script in index.html |
+| Decorative WebGL resources load unnecessarily | CONFIRMED for eager transfer; necessity is a judgment | auth.html statically loads Three.js and Vanta even though auth.js skips Vanta initialization under reduced motion; Auth browser flow disabled in isolated server |
+| Admin table overflows at intermediate laptop widths | INCONCLUSIVE | Authenticated Admin not exercised; admin.css has an intentional table scroller. Document overflow cannot be inferred from the table width alone |
+| Completed-prerequisite chip text contrast | CONFIRMED in light; NOT REPRODUCED in dark | Computed 10.88px bold text: light #1f8a5b on #d8f2e5 = 3.66:1; dark #69d39c on #123d2d = 6.58:1 |
+| Missing icon fallbacks | CONFIRMED for header visible icons | Blocking Lucide leaves four i placeholders and zero rendered header SVGs; named controls still have accessible labels |
+| Degree Plan hierarchy | CONFIRMED placement; usability impact is subjective | Five main nav links omit Degree Plan; five Settings tabs include it. No usability study establishes that this placement is wrong |
+
+None of these historical items was implemented.
+
+## Demo A — accessibility foundation
+
+Modal focus enters the close control, cycles within the top modal, restores to
+the opener, and keeps background siblings inert. Existing inert states/body
+scroll styles are restored. Native nested support dialog keeps its own Escape
+behavior. Existing tracker overlay structure and mobile scrolling are retained.
+Four close buttons have specific names. Settings tabs expose roles, ownership,
+selection, roving tabindex, panel visibility and Arrow/Home/End navigation.
+Appearance changes only when keyboard focus is visible.
+
+## Demo B — stream disclosures
+
+Closed panels use display:none. Open details are temporarily moved outside
+card/scroller transforms to body, clamped to client width and viewport height,
+and restored on dismissal. Long content wraps and can scroll. Resize/page
+scroll dismisses the panel; click, Escape, outside click and keyboard traversal
+to See more work. Triggers are at least 24px high; text style remains unchanged.
+Existing --shadow replaces the undefined --shadow-lg.
+
+No document overflow hiding was added. In both themes, the six tested CSS
+widths produced these root client/scroll pairs:
+
+| Viewport | clientWidth | scrollWidth |
+| --- | ---: | ---: |
+| 360 | 345 | 345 |
+| 390 | 375 | 375 |
+| 768 | 753 | 753 |
+| 1024 | 1009 | 1009 |
+| 1280 | 1265 | 1265 |
+| 1440 | 1425 | 1425 |
+
+geometry.json contains all 24 width/theme/edge measurements, tooltip bounds,
+trigger dimensions, and computed shadow. The scrollbar explains the 15px
+difference from viewport width. The prerequisite map retains its own scroller.
+
+## Demo C — reduced motion
+
+Back to Top, stream See more and Admin Catalog editor choose instant scrolling
+under reduce and retain smooth under no-preference. Copy success retains its
+icon/check, live message, accessible label and reset; only the pop movement is
+suppressed under reduce. Admin Catalog's selection is verified with a synthetic
+DOM harness, not an authenticated browser session.
+
+## Demo D — optional visual experiment
+
+Opt-in styles affect only #card-CSE110 and #gradeEditor. CSE110 uses quieter
+category/grade/GP surfaces; faculty styling, course structure, size, status
+colors and connectors remain unchanged. Grade Scale uses existing radius and
+spacing tokens. No font, brand, academic label or data change.
+
+## Verification
+
+| Check | Result |
+| --- | --- |
+| Existing full Node suite in improved/ | PASSED: 365/365, 0 failed, final run 408.551ms |
+| checks.test.cjs | PASSED: 2/2 — Admin scrolling preferences; unchanged academic/PDF/connector modules |
+| Syntax checks: app.js, admin-catalog.js, demo-polish.js | PASSED |
+| verify-a.mjs | PASSED: 10 modal/theme/tab groups, Tab/Shift+Tab, Escape, focus return, inert background, nested dialog |
+| verify-b.mjs | PASSED: 24 width/theme/edge cases; wrapping, root width, target boxes, shadow, Escape |
+| verify-c.mjs | PASSED: both motion preferences; success/check/reset with mock clipboard |
+| interactions.mjs | PASSED: CDP pointer opening/outside close, keyboard See more, filter/focus, real dashboard and editor DOM, six widths |
+| Reflow equivalents | PASSED: 720/360 CSS px corresponding to 1440 at 200/400%; true browser zoom NOT TESTED |
+| Academic/report parity | PASSED: course/attempt counts, Degree Plan statistics, report text excluding expected origin/time metadata |
+| D dark size/faculty parity | PASSED: before/after exemplar width, height and faculty surface identical |
+| Browser print | Generated baseline-print.pdf and improved-print.pdf; visual PDF comparison NOT TESTED |
+| Actual html2pdf download | NOT TESTED; implementation/vendor/options unchanged and existing PDF tests pass |
+| Authenticated Admin/Auth/cloud paths | BLOCKED intentionally by isolated server; no credentials used |
+| Cross-browser, real phone, screen reader | NOT TESTED |
+
+The documented malformed-storage fixture warning is expected. Initial Demo A
+test failed before changes, proving the baseline defect. An initial tooltip
+geometry test exposed width-clamping problems; these were repaired and all
+cases rerun. Initial report comparison differed only by local origin; origin
+and capture time are now explicitly normalized. No existing assertion was
+weakened. Default browser console exception checks passed for sampled captures;
+the local isolation policy intentionally blocks cloud/challenge traffic.
+
+## Screenshots and artifacts
+
+| Comparison | Baseline | Improved |
+| --- | --- | --- |
+| Mobile stream details | [baseline](baseline-tooltip-390.png) | [improved](improved-tooltip-390.png) |
+| Settings Grade Scale | [baseline](baseline-settings-390.png) | [improved](improved-settings-390.png) |
+| Roadmap 1440 light | [baseline](baseline-roadmap-1440.png) | [improved](improved-roadmap-1440.png) |
+| Roadmap 390 dark | [baseline](baseline-roadmap-390-dark.png) | [improved](improved-roadmap-390-dark.png) |
+| Degree Plan 1440 | [baseline](baseline-degree-1440.png) | [improved](improved-degree-1440.png) |
+| Optional D card | [A+B+C](improved-roadmap-1440.png) | [D](optional-d-card-1440.png) |
+| Optional D Settings | [A+B+C](improved-settings-390.png) | [D](optional-d-settings-390.png) |
+
+Additional evidence: optional-d-dark-1440.png, geometry.json, motion.json,
+historical.json, extra-results.json, parity.json, finish-evidence.json,
+node-tests.log and the two browser-print PDFs. CDP scripts are retained for
+reproduction; they require isolated headless Chrome on port 9235.
+
+## Changed files inside improved/
+
+- index.html
+- js/app.js
+- js/admin-catalog.js
+- css/style.css
+- js/demo-polish.js (new, D only)
+- css/demo-polish.css (new, D only)
+- docs/DESIGN.md and docs/TESTING.md (demo-specific notes)
+
+No academic engine, roadmap renderer, PDF adapter/vendor, preview guard,
+storage/boot, support widget, SQL, Edge Function, middleware or public config
+source differs from baseline. Tests in improved/tests/ are unchanged.
+
+## Original repository safety and approval
+
+Original path: [LOCAL_PATH_REDACTED]
+Initial and final status: only ?? FRONTEND_UI_MULTISKILL_AUDIT.md.
+Tracked diff remains empty; HEAD and branch remain unchanged.
+No original user files were overwritten/deleted. No commit, push, deployment,
+production data/config change or remote write occurred.
+
+A/B/C/D can be selected independently for a subsequent implementation task.
+This demo has not been copied back into the original repository.
