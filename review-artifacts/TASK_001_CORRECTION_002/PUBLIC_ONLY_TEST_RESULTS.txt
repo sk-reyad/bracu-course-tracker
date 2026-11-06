@@ -1,0 +1,35 @@
+Public reproduction; no private file environment supplied.
+Initial public-only attempt: 19 passed, 1 failed (report linked this log before its producer created it), 2 expected private-file skips. Prepared log destination before rerun; assertions unchanged. Personal-path failure stack withheld.
+Command: node --test review-artifacts/TASK_001_CORRECTION_002/verify-fidelity.test.cjs
+Exit: 0
+
+﹣ 01: exact private archive byte-matches the owner-delivered source (1.5785ms) # SKIP
+﹣ 02: published copy differs only by seven documented private path-prefix removals (0.0828ms) # SKIP
+✔ 03: UTF-8 bytes and original CRLF remain preserved with explicit no-normalization attribute (97.1965ms)
+✔ 04: every original external reference URL is restored verbatim (5.4412ms)
+✔ 05: code-reference paths and historical lines survive sanitization without private prefixes (1.1591ms)
+✔ 06: source roles distinguish actual original, structured restatement and later instructions (0.155ms)
+✔ 07: all 28 accepted clauses remain supported one-to-one by exact original substrings (4.0053ms)
+✔ 08: all current source quotations match full lines or explicitly identified exact substrings (33.3464ms)
+✔ 09: all 106 IDs and every owner disposition match the accepted reconciliation (0.4069ms)
+✔ 10: accepted raw/deduplicated/status counts remain unchanged (0.1898ms)
+✔ 11: derivative S10 is not double-counted as an independent new audit (0.1251ms)
+✔ 12: four source-supported scope clarifications are faithful (0.1095ms)
+✔ 13: accepted alternatives and exact-only duplicate identity proofs are preserved (0.2678ms)
+✔ 14: source inventory hashes/line counts and all-source mapping reconcile (13.0582ms)
+✔ 15: both historical task directories remain byte-identical to the accepted parent (1009.085ms)
+✔ 16: original application and completed demos are unchanged (63.309ms)
+✔ 17: only intended review artifacts are staged or tracked as changes (105.4664ms)
+✔ 18: public artifacts contain no private paths, session files or credential signatures (23.1728ms)
+✔ 19: ledger matches all records and source-role corrections are stated in the master (1.7821ms)
+✔ 20: report has A-M, all 15 requirements, comparison and independent-review handoff (0.9414ms)
+✔ 21: current public handoff links resolve without local computer dependencies (25.9286ms)
+✔ 22: historical manual score and the restored workflow sentence are archived, not executed (0.168ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 2
+ℹ todo 0
+ℹ duration_ms 1502.9638

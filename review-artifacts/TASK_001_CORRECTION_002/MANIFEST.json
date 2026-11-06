@@ -1,0 +1,324 @@
+{
+  "task": "TASK_001_CORRECTION_002",
+  "base": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+  "acceptedParent": "dc745e599e0af1e973546a45465c74daea2c1604",
+  "branch": "temp/ui-ux-audit-review",
+  "scope": "Only top-level review master/ledger modifications and new correction evidence; no original/application/demo modification",
+  "changedRuntimeSourceFiles": [],
+  "affectedRuntimeFunctionsOrSelectors": [],
+  "sourceFidelity": "S12 is actual original with seven private path prefixes removed only; original CRLF preserved by scoped -text attribute. Private exact source excluded.",
+  "historicalManifests": [
+    {
+      "path": "review-artifacts/TASK_001/MANIFEST.json",
+      "appliesToCommit": "7f5cb29cf48e1aac417a4610399bf04f90e7f01b"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_001/MANIFEST.json",
+      "appliesToCommit": "dc745e599e0af1e973546a45465c74daea2c1604"
+    }
+  ],
+  "checksumPolicy": "This is the authoritative current package manifest. Every file except this manifest has SHA-256 and byte length; this manifest is included without a recursive self-hash. Historical manifests apply to their own commits/top-level master versions.",
+  "expectedZipEntries": 51,
+  "files": [
+    {
+      "path": "review-artifacts/.gitattributes",
+      "bytes": 14,
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
+      "purpose": "Unchanged review-only LF policy"
+    },
+    {
+      "path": "review-artifacts/MASTER_RECOMMENDATIONS.md",
+      "bytes": 160193,
+      "sha256": "47963a43bdf61c980c21100694d6faf022e49dd79a3ea31e09324c2de9fde98e",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/REVIEW_LEDGER.md",
+      "bytes": 16427,
+      "sha256": "81f3f5226c6f96aa8f8a1bbe2f33ae4e88af16c827656ac79c84dddd03674d1b",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/MANIFEST.json",
+      "bytes": 5553,
+      "sha256": "6adec6505c2fef1d6808a4920d0d7a3c3fa78e362409d650f7e75f82d4d2b0e4",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/TASK_REVIEW_001.md",
+      "bytes": 23324,
+      "sha256": "3ec4956026bcb0c5eda59a07fe04cfba1779d87fd5445a78314bac2ecb3db092",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/TEST_RESULTS.txt",
+      "bytes": 2407,
+      "sha256": "86b2552ccd7cf60598df92a4ab78f7c4056269f681f2183ea837ec8edf809905",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/COUNTS.json",
+      "bytes": 374,
+      "sha256": "a1b6958d8a8aea2069313d5729d318af42f72b7a43d40b09fb7a40eb5226ace0",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/ORIGINAL_PROTECTION.json",
+      "bytes": 902,
+      "sha256": "43b6aa0b327b1ccb38488541feebcdac3f8f80eaf49316b8fb16961622a47923",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/REGISTER.json",
+      "bytes": 184233,
+      "sha256": "f2da63160650e000b6d583b8a1c8f2707005d296aa4cf64fd11d2b56faebaa6f",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/SOURCE_COMPLETENESS.json",
+      "bytes": 510685,
+      "sha256": "a02a6cedc2cb8d15ca2bf15ab5a9faef8c80bce48036f5350c71bb41f8bc4b7d",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/SOURCE_INVENTORY.json",
+      "bytes": 4482,
+      "sha256": "35f5c7c9e3ac2ab9274e3ba92607c52cb75521c3e07b721a50e9b8581b3409ee",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S01_AUDIT.txt",
+      "bytes": 44476,
+      "sha256": "1b2ba133364868d3ca25f21dd96fa4fafc1106bd84d959923eefddf09694cceb",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S02_DEMO_REVIEW.txt",
+      "bytes": 9424,
+      "sha256": "1582445e983081b1752a762d9eda15785f3fa36f0f91d7a7056c9f44bb8226d2",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S03_CORRECTION_REVIEW.txt",
+      "bytes": 6108,
+      "sha256": "387e5ca649c788562798ca544da33eaee893a0eb46d8f6693427381a1f022142",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S04_OWNER_SEQUENTIAL.txt",
+      "bytes": 12295,
+      "sha256": "bc0fc17f63da3928ce6195bdeb1630980aeb16c9211fecdd92a3caeda981001d",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S05_OWNER_STRICT.txt",
+      "bytes": 6445,
+      "sha256": "97d0662c307523856c667eabad35f894b0c6e7dbb033f4d2576e417874247090",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S06_OWNER_REPORT.txt",
+      "bytes": 11062,
+      "sha256": "822f50ef4068a12aa41d6cba27c0c451094ddaa778f5c64a94564bdb48f46594",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S07_OWNER_GITHUB.txt",
+      "bytes": 8148,
+      "sha256": "b79b1aab1783382cf93fec55c26e588957daca6d640804910e70fc22462c3aba",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S08_CAPABILITY_INVENTORY.txt",
+      "bytes": 33680,
+      "sha256": "3a526e9821dba0e87ca2c484debe3d0338045a545b1fc7608fd24375995db7f2",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S09_DEMO_D_CSS.txt",
+      "bytes": 689,
+      "sha256": "6aa8674917b485989644de4292162fb4e21773350bbe16b45fd0427e9b62fe99",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001/verify-register.test.cjs",
+      "bytes": 10234,
+      "sha256": "9a9f031bfe8b6fd33baab556d9ea3249bbedc8039f19cd3be29aedba1ba7259d",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_001/MANIFEST.json",
+      "bytes": 9709,
+      "sha256": "f3ce847e0a4669d729cac3341c6dad0728d437dd925b6a8efd31f6b857ee5d6d",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_001/PRIOR_TASK_RECHECK.txt",
+      "bytes": 2157,
+      "sha256": "e716612e6faf204df853517a8903c396d0615105e7e07f4884c3c621c96f2060",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_001/TASK_REVIEW_001_CORRECTION_001.md",
+      "bytes": 24671,
+      "sha256": "885e66bb2837b51346d28abe28403d26ac4dbd4bf985aa61bc2529d74cbb95de",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_001/TEST_RESULTS.txt",
+      "bytes": 2778,
+      "sha256": "84e563037ac261f40551c40b3ffe0c72ea9d2df25d9526d1b2835eda6aa3d8ad",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_001/evidence/COUNTS.json",
+      "bytes": 477,
+      "sha256": "87c06e93b360190488a37efc900869da2af0b2b1c0a90a7ac66723cd24e42692",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_001/evidence/GIT_PROTECTION.json",
+      "bytes": 5321,
+      "sha256": "7299ecc7ad065e1c9a5d2804c987566f16d5043e2c42899e41313b360332310b",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_001/evidence/RECONCILIATION.json",
+      "bytes": 35905,
+      "sha256": "810b2d32257ec01e95f90fe22f624ccb8785bc0e61beb5bc1c3312ce43c6d50b",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_001/evidence/REGISTER.json",
+      "bytes": 241435,
+      "sha256": "3b352350d64318bafe3fd67c052dfe45718c196ded13b36f1d353a015b897685",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_001/evidence/SOURCE_COMPLETENESS.json",
+      "bytes": 566592,
+      "sha256": "1e8da204d1b77b589989a6af3ec01bbad40f7b4bf275d2588d55add83ccb6fa1",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_001/evidence/SOURCE_INVENTORY.json",
+      "bytes": 6657,
+      "sha256": "4d2fafb2ec1184187523974494d1ad06d590135933aea7012855c13814aa79b0",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt",
+      "bytes": 5734,
+      "sha256": "e14f8e2c301e0c372e265cfc41dad6060b687a964ad5d4dcbd353ea57a47f544",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_001/evidence/sources/S11_OWNER_CORRECTION.txt",
+      "bytes": 10075,
+      "sha256": "83ea56fc5d3b5197de94e858c736273efb7726d88ec365673aedda7553d6ebdb",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_001/verify-correction.test.cjs",
+      "bytes": 11026,
+      "sha256": "7ef3e6d7602a1b8f46ed4b24e6b4c568412bf0ccfcf1af7795655eef6c9ae738",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_002/PARENT_RECHECK.txt",
+      "bytes": 2223,
+      "sha256": "e013423eed0d38650c069e31ad510517caec34874e5918d1ff7127c9f79be374",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_002/PUBLIC_ONLY_TEST_RESULTS.txt",
+      "bytes": 2573,
+      "sha256": "e24624800d7187536fadf3ac8ecdfe989f0d5bafb0a9c71898103bec2aab8d8d",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_002/TASK_001_CORRECTION_002.md",
+      "bytes": 24541,
+      "sha256": "18ebed6dda3887ade0db1f793dca6f7a108b837cc5df004aa7d93832f2f6eec9",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_002/TEST_RESULTS.txt",
+      "bytes": 2530,
+      "sha256": "30f2b8d7ae38c92d39892d7f0f2f7a514077e367b6d0e901836c17fbcc0e15c4",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_002/evidence/COUNTS.json",
+      "bytes": 661,
+      "sha256": "8e7a87c188abedc9cd3c322ac476470bc6ef00a9503f4e8d61f5a91a02b69c4f",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_002/evidence/GIT_PROTECTION.json",
+      "bytes": 7673,
+      "sha256": "375fd6ec3cb20a33d28e46090702d6fea375c9dc03d2a9fb56766b8390a71bdb",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_002/evidence/RECONCILIATION.json",
+      "bytes": 36392,
+      "sha256": "390d8e49df3f2a45f2c3946a646883f03ff53f923d101338f571fda827eeee56",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_002/evidence/REGISTER.json",
+      "bytes": 261647,
+      "sha256": "b783fccef46f6eed77cc677cfa0bfa3e27ab8d040cd7928e606418c8450ccf9d",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_002/evidence/S10_VS_S12.diff",
+      "bytes": 12003,
+      "sha256": "cce1d04d4df1fa6b3265a3c6a996bf04572d5ff0103b531540763e7e0d56c0ad",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_002/evidence/SOURCE_COMPLETENESS.json",
+      "bytes": 579116,
+      "sha256": "091481c82209de61daa638bc67479dc25606d57385ca56d584f335221287ebae",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_002/evidence/SOURCE_FIDELITY.json",
+      "bytes": 8817,
+      "sha256": "c59be6d70ea5b01ec283cdc74fe37d622a4ad84d1e74748ea366251fb9f40ca2",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_002/evidence/SOURCE_INVENTORY.json",
+      "bytes": 8345,
+      "sha256": "1002c09600c8ca4c238c147bc9dabc1ad840f90615713a157b0551e14a41cade",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_002/evidence/sources/.gitattributes",
+      "bytes": 44,
+      "sha256": "c17f54ba6abe0956f9e7c5ee0ba1a1971b45b20bce9c0b2d6f4cc86616bc0f43",
+      "purpose": "Unchanged review-only LF policy"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt",
+      "bytes": 5649,
+      "sha256": "e37f1962879def61e5caf3ebe8f0d40aa35b63365bc35b21933b5598318d2bb1",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_002/evidence/sources/S13_OWNER_CORRECTION_002.txt",
+      "bytes": 3104,
+      "sha256": "3daaf7a7642a26045e9cd03fc6d618d4b1f8121930e6b858a4057fe8a817befa",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    },
+    {
+      "path": "review-artifacts/TASK_001_CORRECTION_002/verify-fidelity.test.cjs",
+      "bytes": 13111,
+      "sha256": "a3178c0e661b8c63ba566745c748bec4566013b0aa5a4ad02c5dc8f451663a5f",
+      "purpose": "Current master/ledger with source-fidelity updates"
+    }
+  ]
+}

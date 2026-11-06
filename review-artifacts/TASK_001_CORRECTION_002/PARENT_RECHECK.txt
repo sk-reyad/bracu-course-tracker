@@ -1,0 +1,30 @@
+Before current master/ledger changes: node --test review-artifacts/TASK_001_CORRECTION_001/verify-correction.test.cjs
+Exit: 0
+✔ 01: current records retain all 89 IDs and append exactly 17 stable IDs (6.7505ms)
+✔ 02: every prior status is identical and every new record is unreviewed (0.2904ms)
+✔ 03: nine generic leads are refined and the remaining owner lead is not falsely attributed (0.2638ms)
+✔ 04: original report has 28 mapped atomic actions and no double-counted embedded owner copy (0.1546ms)
+✔ 05: every recovered actionable bullet is mapped; preservation bullets are constraints (0.5078ms)
+✔ 06: navbar and credit-progress alternatives are distinct and unreviewed (0.11ms)
+✔ 07: local SVG and visible-text fallbacks are separate unreviewed choices (0.0886ms)
+✔ 08: source-specific native reuse is not collapsed into custom reuse or generic native migration (0.0779ms)
+✔ 09: exactly two new recovered duplicate occurrences preserve target/action/outcome/implementation (0.2669ms)
+✔ 10: all count transitions and current status totals reconcile (0.2037ms)
+✔ 11: every current source quotation matches archived line references and hashes (17.9656ms)
+✔ 12: line-by-line coverage and per-source occurrence counts are complete (2.1554ms)
+✔ 13: historical manual 12/20 and detector failure are preserved without claiming current confirmation (0.7851ms)
+✔ 14: repository-relative historical code paths and source provenance survive sanitization (1.1853ms)
+✔ 15: previous TASK_001 evidence and report are byte-identical to the reviewed commit (596.4774ms)
+✔ 16: original tracked/untracked state and completed-demo fingerprints are unchanged (71.9558ms)
+✔ 17: green tint, illustration, page-family constraints and C/D owner decisions remain explicit (0.184ms)
+✔ 18: every current record has metadata, matching ledger status and an unbroken public handoff (25.9656ms)
+✔ 19: correction report has A-M, source-coverage limitations and explicit requirements (1.4171ms)
+✔ 20: new public artifacts contain no private paths, loopback URLs or credential signatures (7.0842ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 833.9818

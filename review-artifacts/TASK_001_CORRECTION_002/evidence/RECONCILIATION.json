@@ -1,0 +1,640 @@
+{
+  "previousReviewCommit": "dc745e599e0af1e973546a45465c74daea2c1604",
+  "sourceRoles": {
+    "S12": "Actual original audit; public sanitized verbatim copy",
+    "S10": "Prior ChatGPT-restructured version; unchanged historical file",
+    "S11": "First correction/extraction instruction containing restatement",
+    "S13": "Current fidelity correction instruction"
+  },
+  "all28Supported": true,
+  "support": [
+    {
+      "clauseId": "IH-01",
+      "recommendation": "R-009",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 30,
+      "previousStructuredQuote": "- Reuse the admin drawer's focus-management approach OR the support form's native dialog pattern.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 15,
+        "end": 15,
+        "quote": "Reuse the admin drawer’s focus-management approach",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Custom/admin branch of explicit or"
+      },
+      "verbatimFullLine": "1. **[P1] Make student dialogs work with a keyboard.** In desktop and mobile renders, opening Settings left focus on the toolbar button behind it. Pressing **Tab** went to the background Dashboard button. Settings also declares a tab list without exposing the individual tab roles and selected state. Reuse the admin drawer’s focus-management approach or the support form’s native dialog pattern. Give close buttons accessible names and implement keyboard navigation for the tabs. [Tracker modal code](<js/app.js:1839>) · [W3C dialog pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/) · [W3C tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/)",
+      "result": "SUPPORTED",
+      "comment": "Custom/admin branch of explicit or"
+    },
+    {
+      "clauseId": "IH-02",
+      "recommendation": "R-105",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 30,
+      "previousStructuredQuote": "- Reuse the admin drawer's focus-management approach OR the support form's native dialog pattern.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 15,
+        "end": 15,
+        "quote": "or the support form’s native dialog pattern.",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Native support-pattern branch of explicit or"
+      },
+      "verbatimFullLine": "1. **[P1] Make student dialogs work with a keyboard.** In desktop and mobile renders, opening Settings left focus on the toolbar button behind it. Pressing **Tab** went to the background Dashboard button. Settings also declares a tab list without exposing the individual tab roles and selected state. Reuse the admin drawer’s focus-management approach or the support form’s native dialog pattern. Give close buttons accessible names and implement keyboard navigation for the tabs. [Tracker modal code](<js/app.js:1839>) · [W3C dialog pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/) · [W3C tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/)",
+      "result": "SUPPORTED",
+      "comment": "Native support-pattern branch of explicit or"
+    },
+    {
+      "clauseId": "IH-03",
+      "recommendation": "R-011",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 31,
+      "previousStructuredQuote": "- Give close buttons accessible names.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 15,
+        "end": 15,
+        "quote": "Give close buttons accessible names",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Naming student-dialog close actions"
+      },
+      "verbatimFullLine": "1. **[P1] Make student dialogs work with a keyboard.** In desktop and mobile renders, opening Settings left focus on the toolbar button behind it. Pressing **Tab** went to the background Dashboard button. Settings also declares a tab list without exposing the individual tab roles and selected state. Reuse the admin drawer’s focus-management approach or the support form’s native dialog pattern. Give close buttons accessible names and implement keyboard navigation for the tabs. [Tracker modal code](<js/app.js:1839>) · [W3C dialog pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/) · [W3C tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/)",
+      "result": "SUPPORTED",
+      "comment": "Naming student-dialog close actions"
+    },
+    {
+      "clauseId": "IH-04",
+      "recommendation": "R-106",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 32,
+      "previousStructuredQuote": "- Implement keyboard navigation for Settings tabs.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 15,
+        "end": 15,
+        "quote": "implement keyboard navigation for the tabs.",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Tab keyboard behavior; exact keys not enumerated"
+      },
+      "verbatimFullLine": "1. **[P1] Make student dialogs work with a keyboard.** In desktop and mobile renders, opening Settings left focus on the toolbar button behind it. Pressing **Tab** went to the background Dashboard button. Settings also declares a tab list without exposing the individual tab roles and selected state. Reuse the admin drawer’s focus-management approach or the support form’s native dialog pattern. Give close buttons accessible names and implement keyboard navigation for the tabs. [Tracker modal code](<js/app.js:1839>) · [W3C dialog pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/) · [W3C tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/)",
+      "result": "SUPPORTED",
+      "comment": "Tab keyboard behavior; exact keys not enumerated"
+    },
+    {
+      "clauseId": "IH-05",
+      "recommendation": "R-104",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 43,
+      "previousStructuredQuote": "- Fix unintended root document overflow.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 17,
+        "end": 17,
+        "quote": "**[P1] Fix mobile overflow around the roadmap, course list, and report.**",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Root viewport scope includes all three named areas"
+      },
+      "verbatimFullLine": "2. **[P1] Fix mobile overflow around the roadmap, course list, and report.** At a **360 px** viewport, the tracker document measured **441 px** wide. The roadmap can legitimately pan inside its own container, but the surrounding page should stay within the viewport. Keep the PDF preview’s print proportions inside a contained viewer, and make the mobile navigation reveal that there are more destinations. [Mobile roadmap rules](<css/style.css:2760>) · [W3C reflow guidance](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)",
+      "result": "SUPPORTED",
+      "comment": "Root viewport scope includes all three named areas"
+    },
+    {
+      "clauseId": "IH-06",
+      "recommendation": "R-101",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 44,
+      "previousStructuredQuote": "- Keep PDF preview print proportions inside a contained viewer.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 17,
+        "end": 17,
+        "quote": "Keep the PDF preview’s print proportions inside a contained viewer",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Contain viewer without changing print proportions"
+      },
+      "verbatimFullLine": "2. **[P1] Fix mobile overflow around the roadmap, course list, and report.** At a **360 px** viewport, the tracker document measured **441 px** wide. The roadmap can legitimately pan inside its own container, but the surrounding page should stay within the viewport. Keep the PDF preview’s print proportions inside a contained viewer, and make the mobile navigation reveal that there are more destinations. [Mobile roadmap rules](<css/style.css:2760>) · [W3C reflow guidance](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)",
+      "result": "SUPPORTED",
+      "comment": "Contain viewer without changing print proportions"
+    },
+    {
+      "clauseId": "IH-07",
+      "recommendation": "R-062",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 45,
+      "previousStructuredQuote": "- Make mobile navigation clearly reveal that additional destinations exist.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 17,
+        "end": 17,
+        "quote": "make the mobile navigation reveal that there are more destinations.",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Reveal additional destinations"
+      },
+      "verbatimFullLine": "2. **[P1] Fix mobile overflow around the roadmap, course list, and report.** At a **360 px** viewport, the tracker document measured **441 px** wide. The roadmap can legitimately pan inside its own container, but the surrounding page should stay within the viewport. Keep the PDF preview’s print proportions inside a contained viewer, and make the mobile navigation reveal that there are more destinations. [Mobile roadmap rules](<css/style.css:2760>) · [W3C reflow guidance](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)",
+      "result": "SUPPORTED",
+      "comment": "Reveal additional destinations"
+    },
+    {
+      "clauseId": "IH-08",
+      "recommendation": "R-058",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 55,
+      "previousStructuredQuote": "- Use darker text.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 19,
+        "end": 19,
+        "quote": "Keep the green tint, use darker text",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Darker text with retained semantic green"
+      },
+      "verbatimFullLine": "3. **[P1] Improve readability of academic status labels.** The light-mode completed-prerequisite chip rendered at about **11 px** with **3.66:1** contrast, below the **4.5:1** threshold for normal text. Keep the green tint, use darker text, and give important metadata enough size to scan comfortably. [Prerequisite chip styles](<css/style.css:1034>) · [WCAG contrast guidance](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)",
+      "result": "SUPPORTED",
+      "comment": "Darker text with retained semantic green"
+    },
+    {
+      "clauseId": "IH-09",
+      "recommendation": "R-095",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 56,
+      "previousStructuredQuote": "- Give important metadata enough size for comfortable scanning.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 19,
+        "end": 19,
+        "quote": "give important metadata enough size to scan comfortably.",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Metadata size distinct from color"
+      },
+      "verbatimFullLine": "3. **[P1] Improve readability of academic status labels.** The light-mode completed-prerequisite chip rendered at about **11 px** with **3.66:1** contrast, below the **4.5:1** threshold for normal text. Keep the green tint, use darker text, and give important metadata enough size to scan comfortably. [Prerequisite chip styles](<css/style.css:1034>) · [WCAG contrast guidance](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)",
+      "result": "SUPPORTED",
+      "comment": "Metadata size distinct from color"
+    },
+    {
+      "clauseId": "IH-10",
+      "recommendation": "R-056",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 67,
+      "previousStructuredQuote": "- Add a visible Degree Plan navigation link beside Roadmap and My Path.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 23,
+        "end": 23,
+        "quote": "Add a visible **Degree Plan** link beside Roadmap and My Path",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Navigation-entry alternative"
+      },
+      "verbatimFullLine": "- **[P2] Give Degree Plan a direct entry.** It answers one of the app’s central questions—*what do I still need to graduate?*—but it sits inside Settings alongside backups and sync. Add a visible **Degree Plan** link beside Roadmap and My Path, or link directly from a credit-progress summary. Keep the detailed roadmap.",
+      "result": "SUPPORTED",
+      "comment": "Navigation-entry alternative"
+    },
+    {
+      "clauseId": "IH-11",
+      "recommendation": "R-090",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 68,
+      "previousStructuredQuote": "- OR link directly from a credit-progress summary.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 23,
+        "end": 23,
+        "quote": "or link directly from a credit-progress summary.",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Progress-summary alternative"
+      },
+      "verbatimFullLine": "- **[P2] Give Degree Plan a direct entry.** It answers one of the app’s central questions—*what do I still need to graduate?*—but it sits inside Settings alongside backups and sync. Add a visible **Degree Plan** link beside Roadmap and My Path, or link directly from a credit-progress summary. Keep the detailed roadmap.",
+      "result": "SUPPORTED",
+      "comment": "Progress-summary alternative"
+    },
+    {
+      "clauseId": "IH-12",
+      "recommendation": "R-057",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 81,
+      "previousStructuredQuote": "- Keep Account visible.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 24,
+        "end": 24,
+        "quote": "keep account, role, status, and **View** visible",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Account member of explicit essential-column list"
+      },
+      "verbatimFullLine": "- **[P2] Make admin actions easier to reach on laptops.** At 1024 px, the account table was **1,400 px wide inside a 990 px container**. Mobile already has account cards. For intermediate widths, keep account, role, status, and **View** visible; move login metrics into the details drawer. [Admin table styles](<css/admin.css:347>)",
+      "result": "SUPPORTED",
+      "comment": "Account member of explicit essential-column list"
+    },
+    {
+      "clauseId": "IH-13",
+      "recommendation": "R-091",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 82,
+      "previousStructuredQuote": "- Keep Role visible.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 24,
+        "end": 24,
+        "quote": "keep account, role, status, and **View** visible",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Role member of explicit essential-column list"
+      },
+      "verbatimFullLine": "- **[P2] Make admin actions easier to reach on laptops.** At 1024 px, the account table was **1,400 px wide inside a 990 px container**. Mobile already has account cards. For intermediate widths, keep account, role, status, and **View** visible; move login metrics into the details drawer. [Admin table styles](<css/admin.css:347>)",
+      "result": "SUPPORTED",
+      "comment": "Role member of explicit essential-column list"
+    },
+    {
+      "clauseId": "IH-14",
+      "recommendation": "R-092",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 83,
+      "previousStructuredQuote": "- Keep Status visible.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 24,
+        "end": 24,
+        "quote": "keep account, role, status, and **View** visible",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Status member of explicit essential-column list"
+      },
+      "verbatimFullLine": "- **[P2] Make admin actions easier to reach on laptops.** At 1024 px, the account table was **1,400 px wide inside a 990 px container**. Mobile already has account cards. For intermediate widths, keep account, role, status, and **View** visible; move login metrics into the details drawer. [Admin table styles](<css/admin.css:347>)",
+      "result": "SUPPORTED",
+      "comment": "Status member of explicit essential-column list"
+    },
+    {
+      "clauseId": "IH-15",
+      "recommendation": "R-093",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 84,
+      "previousStructuredQuote": "- Keep View visible.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 24,
+        "end": 24,
+        "quote": "keep account, role, status, and **View** visible",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "View member of explicit essential-column list"
+      },
+      "verbatimFullLine": "- **[P2] Make admin actions easier to reach on laptops.** At 1024 px, the account table was **1,400 px wide inside a 990 px container**. Mobile already has account cards. For intermediate widths, keep account, role, status, and **View** visible; move login metrics into the details drawer. [Admin table styles](<css/admin.css:347>)",
+      "result": "SUPPORTED",
+      "comment": "View member of explicit essential-column list"
+    },
+    {
+      "clauseId": "IH-16",
+      "recommendation": "R-094",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 85,
+      "previousStructuredQuote": "- Move secondary login metrics into the details drawer.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 24,
+        "end": 24,
+        "quote": "move login metrics into the details drawer.",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Original does not qualify metrics as secondary"
+      },
+      "verbatimFullLine": "- **[P2] Make admin actions easier to reach on laptops.** At 1024 px, the account table was **1,400 px wide inside a 990 px container**. Mobile already has account cards. For intermediate widths, keep account, role, status, and **View** visible; move login metrics into the details drawer. [Admin table styles](<css/admin.css:347>)",
+      "result": "SUPPORTED",
+      "comment": "Original does not qualify metrics as secondary"
+    },
+    {
+      "clauseId": "IH-17",
+      "recommendation": "R-063",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 92,
+      "previousStructuredQuote": "- Semantic colors",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 25,
+        "end": 25,
+        "quote": "Start with semantic colors, focus rings, button sizes, and dialog spacing.",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Semantic colors member of explicit consistency list"
+      },
+      "verbatimFullLine": "- **[P2] Share the basics across pages.** Start with semantic colors, focus rings, button sizes, and dialog spacing. Keep admin rows compact and legal pages comfortable to read; those surfaces don’t need identical layouts.",
+      "result": "SUPPORTED",
+      "comment": "Semantic colors member of explicit consistency list"
+    },
+    {
+      "clauseId": "IH-18",
+      "recommendation": "R-098",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 93,
+      "previousStructuredQuote": "- Focus rings",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 25,
+        "end": 25,
+        "quote": "Start with semantic colors, focus rings, button sizes, and dialog spacing.",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Focus rings member of explicit consistency list"
+      },
+      "verbatimFullLine": "- **[P2] Share the basics across pages.** Start with semantic colors, focus rings, button sizes, and dialog spacing. Keep admin rows compact and legal pages comfortable to read; those surfaces don’t need identical layouts.",
+      "result": "SUPPORTED",
+      "comment": "Focus rings member of explicit consistency list"
+    },
+    {
+      "clauseId": "IH-19",
+      "recommendation": "R-099",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 94,
+      "previousStructuredQuote": "- Button sizes",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 25,
+        "end": 25,
+        "quote": "Start with semantic colors, focus rings, button sizes, and dialog spacing.",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Button sizes member of explicit consistency list"
+      },
+      "verbatimFullLine": "- **[P2] Share the basics across pages.** Start with semantic colors, focus rings, button sizes, and dialog spacing. Keep admin rows compact and legal pages comfortable to read; those surfaces don’t need identical layouts.",
+      "result": "SUPPORTED",
+      "comment": "Button sizes member of explicit consistency list"
+    },
+    {
+      "clauseId": "IH-20",
+      "recommendation": "R-100",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 95,
+      "previousStructuredQuote": "- Dialog spacing",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 25,
+        "end": 25,
+        "quote": "Start with semantic colors, focus rings, button sizes, and dialog spacing.",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Dialog spacing member of explicit consistency list"
+      },
+      "verbatimFullLine": "- **[P2] Share the basics across pages.** Start with semantic colors, focus rings, button sizes, and dialog spacing. Keep admin rows compact and legal pages comfortable to read; those surfaces don’t need identical layouts.",
+      "result": "SUPPORTED",
+      "comment": "Dialog spacing member of explicit consistency list"
+    },
+    {
+      "clauseId": "IH-21",
+      "recommendation": "R-059",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 106,
+      "previousStructuredQuote": "- Load the PDF engine when export is requested.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 26,
+        "end": 26,
+        "quote": "Load it when the student requests export",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "PDF engine has an explicit preceding antecedent"
+      },
+      "verbatimFullLine": "- **[P2] Load expensive extras when needed.** The bundled PDF engine is about **885 KiB uncompressed** and loads on tracker startup. Load it when the student requests export and show a preparing state. Likewise, sign-in can show its static background immediately and load WebGL only when appropriate. These are code-level findings; I didn’t measure production load times. [Tracker scripts](<index.html:605>) · [Sign-in scripts](<auth.html:378>)",
+      "result": "SUPPORTED",
+      "comment": "PDF engine has an explicit preceding antecedent"
+    },
+    {
+      "clauseId": "IH-22",
+      "recommendation": "R-102",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 107,
+      "previousStructuredQuote": "- Show a preparing/loading state during export preparation.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 26,
+        "end": 26,
+        "quote": "show a preparing state.",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Export preparation feedback"
+      },
+      "verbatimFullLine": "- **[P2] Load expensive extras when needed.** The bundled PDF engine is about **885 KiB uncompressed** and loads on tracker startup. Load it when the student requests export and show a preparing state. Likewise, sign-in can show its static background immediately and load WebGL only when appropriate. These are code-level findings; I didn’t measure production load times. [Tracker scripts](<index.html:605>) · [Sign-in scripts](<auth.html:378>)",
+      "result": "SUPPORTED",
+      "comment": "Export preparation feedback"
+    },
+    {
+      "clauseId": "IH-23",
+      "recommendation": "R-096",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 108,
+      "previousStructuredQuote": "- Show the sign-in static background immediately.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 26,
+        "end": 26,
+        "quote": "sign-in can show its static background immediately",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Immediate static sign-in background"
+      },
+      "verbatimFullLine": "- **[P2] Load expensive extras when needed.** The bundled PDF engine is about **885 KiB uncompressed** and loads on tracker startup. Load it when the student requests export and show a preparing state. Likewise, sign-in can show its static background immediately and load WebGL only when appropriate. These are code-level findings; I didn’t measure production load times. [Tracker scripts](<index.html:605>) · [Sign-in scripts](<auth.html:378>)",
+      "result": "SUPPORTED",
+      "comment": "Immediate static sign-in background"
+    },
+    {
+      "clauseId": "IH-24",
+      "recommendation": "R-060",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 109,
+      "previousStructuredQuote": "- Load decorative WebGL only when appropriate.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 26,
+        "end": 26,
+        "quote": "load WebGL only when appropriate.",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Conditional WebGL, no invented eligibility policy"
+      },
+      "verbatimFullLine": "- **[P2] Load expensive extras when needed.** The bundled PDF engine is about **885 KiB uncompressed** and loads on tracker startup. Load it when the student requests export and show a preparing state. Likewise, sign-in can show its static background immediately and load WebGL only when appropriate. These are code-level findings; I didn’t measure production load times. [Tracker scripts](<index.html:605>) · [Sign-in scripts](<auth.html:378>)",
+      "result": "SUPPORTED",
+      "comment": "Conditional WebGL, no invented eligibility policy"
+    },
+    {
+      "clauseId": "IH-25",
+      "recommendation": "R-061",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 120,
+      "previousStructuredQuote": "- Use local SVG icons for essential actions.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 27,
+        "end": 27,
+        "quote": "Use local SVGs",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Essential-action SVG alternative"
+      },
+      "verbatimFullLine": "- **[P2] Keep core controls recognizable when external assets fail.** With external requests blocked, several icon-only buttons appeared blank. Use local SVGs or visible fallback labels for essential actions, and give every heading an explicit font fallback. For maintenance, keep the illustration but make the heading communicate **“Scheduled maintenance”** on its own; the current `h1` is only “better.” [Maintenance heading](<maintenance.html:94>)",
+      "result": "SUPPORTED",
+      "comment": "Essential-action SVG alternative"
+    },
+    {
+      "clauseId": "IH-26",
+      "recommendation": "R-097",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 121,
+      "previousStructuredQuote": "- OR use visible fallback text labels.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 27,
+        "end": 27,
+        "quote": "or visible fallback labels for essential actions",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Essential-action visible-label alternative"
+      },
+      "verbatimFullLine": "- **[P2] Keep core controls recognizable when external assets fail.** With external requests blocked, several icon-only buttons appeared blank. Use local SVGs or visible fallback labels for essential actions, and give every heading an explicit font fallback. For maintenance, keep the illustration but make the heading communicate **“Scheduled maintenance”** on its own; the current `h1` is only “better.” [Maintenance heading](<maintenance.html:94>)",
+      "result": "SUPPORTED",
+      "comment": "Essential-action visible-label alternative"
+    },
+    {
+      "clauseId": "IH-27",
+      "recommendation": "R-103",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 122,
+      "previousStructuredQuote": "- Give headings explicit font fallbacks.",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 27,
+        "end": 27,
+        "quote": "give every heading an explicit font fallback.",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Every heading, explicit original scope"
+      },
+      "verbatimFullLine": "- **[P2] Keep core controls recognizable when external assets fail.** With external requests blocked, several icon-only buttons appeared blank. Use local SVGs or visible fallback labels for essential actions, and give every heading an explicit font fallback. For maintenance, keep the illustration but make the heading communicate **“Scheduled maintenance”** on its own; the current `h1` is only “better.” [Maintenance heading](<maintenance.html:94>)",
+      "result": "SUPPORTED",
+      "comment": "Every heading, explicit original scope"
+    },
+    {
+      "clauseId": "IH-28",
+      "recommendation": "R-064",
+      "previousStructuredSource": "S10",
+      "previousStructuredLine": 124,
+      "previousStructuredQuote": "- Make the maintenance `h1` independently communicate \"Scheduled maintenance\" instead of only saying \"better.\"",
+      "verbatimSupport": {
+        "source": "S12",
+        "start": 27,
+        "end": 27,
+        "quote": "make the heading communicate **“Scheduled maintenance”** on its own",
+        "quoteMode": "EXACT_SUBSTRING_OF_LINE",
+        "atomicMeaning": "Standalone maintenance-heading meaning"
+      },
+      "verbatimFullLine": "- **[P2] Keep core controls recognizable when external assets fail.** With external requests blocked, several icon-only buttons appeared blank. Use local SVGs or visible fallback labels for essential actions, and give every heading an explicit font fallback. For maintenance, keep the illustration but make the heading communicate **“Scheduled maintenance”** on its own; the current `h1` is only “better.” [Maintenance heading](<maintenance.html:94>)",
+      "result": "SUPPORTED",
+      "comment": "Standalone maintenance-heading meaning"
+    }
+  ],
+  "recordClarifications": [
+    {
+      "id": "R-094",
+      "previous": {
+        "action": "Move secondary login metrics into the Admin details drawer",
+        "component": "Admin login metrics and details drawer",
+        "evidence": "HISTORICAL MANUAL FINDING — Reallocation of secondary information, distinct from preserving essential columns. Requires re-verification before any proposal/demo; no current defect certification."
+      },
+      "updated": {
+        "action": "Move login metrics into the Admin details drawer",
+        "component": "Admin login metrics and details drawer",
+        "evidence": "HISTORICAL ORIGINAL S12 says move login metrics into the details drawer, without the restatement’s added secondary qualifier. No current rendering or metric classification was tested; reverify before any demo."
+      },
+      "reason": "Remove a qualifier supplied only by the structured restatement; do not restrict the original metric scope.",
+      "statusBefore": "UNREVIEWED",
+      "statusAfter": "UNREVIEWED"
+    },
+    {
+      "id": "R-103",
+      "previous": {
+        "action": "Give headings explicit font fallbacks",
+        "component": "Headings across audited surfaces"
+      },
+      "updated": {
+        "action": "Give every heading an explicit font fallback",
+        "component": "Every heading across audited surfaces"
+      },
+      "reason": "Restore the original’s explicit every-heading wording; same recommendation, no new count.",
+      "statusBefore": "UNREVIEWED",
+      "statusAfter": "UNREVIEWED"
+    },
+    {
+      "id": "R-104",
+      "previous": {
+        "component": "Tracker document/root layout",
+        "evidence": "HISTORICAL MANUAL FINDING — Historical root width 441px at 360px viewport. Broader source does not isolate the tooltip cause; not collapsed into R-001 closed-panel containment. Requires re-verification before any proposal/demo; no current defect certification."
+      },
+      "updated": {
+        "component": "Tracker root document around roadmap, Course List and report",
+        "evidence": "HISTORICAL ORIGINAL S12 explicitly names mobile overflow around roadmap, course list and report; reported 441px document at 360px viewport. Preserve deliberate roadmap panning. Cause-specific tooltip fixes remain separate; no new measurement or residual-defect certification."
+      },
+      "reason": "Restore all three named areas omitted from the restatement heading.",
+      "statusBefore": "UNREVIEWED",
+      "statusAfter": "UNREVIEWED"
+    },
+    {
+      "id": "R-065",
+      "previous": {
+        "skills": [
+          "Later owner instruction S04; broader Course List/report lead not established by S10"
+        ],
+        "evidence": "S10 is now available, but does not identify a distinct remaining Course List issue. Its concrete PDF-viewer containment action is separately retained as R-101. This broader owner lead stays UNREVIEWED and requires a reproducible issue before proposing changes.",
+        "kind": "OWNER LEAD — UNCORROBORATED"
+      },
+      "updated": {
+        "skills": [
+          "Later owner instruction S04; actual original S12 names Course List within broader overflow scope"
+        ],
+        "evidence": "Actual original S12 explicitly includes course list and report in the broad mobile-overflow recommendation, represented by R-104, with PDF-viewer containment in R-101. This broader later-owner lead remains UNREVIEWED: no separate remaining Course List cause or residual defect has been established. The earlier S10 restatement omitted the named Course List scope.",
+        "kind": "OWNER LEAD — PARTIAL ORIGINAL CONTEXT, RESIDUAL ISSUE UNVERIFIED"
+      },
+      "reason": "Correct the earlier absence-of-scope claim while avoiding a fabricated independent residual issue or count change.",
+      "statusBefore": "UNREVIEWED",
+      "statusAfter": "UNREVIEWED"
+    }
+  ],
+  "newRecords": [],
+  "removedRecords": [],
+  "statusChanges": [],
+  "acceptedCountsBefore": {
+    "previousRaw": 100,
+    "previousRetained": 89,
+    "priorGenericLeadOccurrencesReclassifiedAsContext": 9,
+    "originalRecoveredActionOccurrences": 28,
+    "newRecoveredExactDuplicateOccurrences": 2,
+    "newRecords": 17,
+    "refinedRecords": 9,
+    "rawAtomicSourceOccurrences": 119,
+    "exactDuplicateOccurrencesRemoved": 13,
+    "retained": 106,
+    "statuses": {
+      "SELECTED": 23,
+      "REJECTED": 9,
+      "HOLD": 7,
+      "UNREVIEWED": 67,
+      "IN REVIEW": 0
+    },
+    "statusChanges": 0
+  },
+  "currentCounts": {
+    "previousRaw": 100,
+    "previousRetained": 89,
+    "priorGenericLeadOccurrencesReclassifiedAsContext": 9,
+    "originalRecoveredActionOccurrences": 28,
+    "newRecoveredExactDuplicateOccurrences": 2,
+    "newRecords": 17,
+    "refinedRecords": 9,
+    "rawAtomicSourceOccurrences": 119,
+    "exactDuplicateOccurrencesRemoved": 13,
+    "retained": 106,
+    "statuses": {
+      "SELECTED": 23,
+      "REJECTED": 9,
+      "HOLD": 7,
+      "UNREVIEWED": 67,
+      "IN REVIEW": 0
+    },
+    "statusChanges": 0,
+    "verbatimSourceClausesChecked": 28,
+    "verbatimSourceClausesSupported": 28,
+    "newRecordsThisCorrection": 0,
+    "removedRecordsThisCorrection": 0,
+    "statusChangesThisCorrection": 0
+  },
+  "referenceUrlsRestored": [
+    "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+    "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/",
+    "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+    "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
+  ],
+  "workflowOnlyText": "Actual original additionally says one-at-a-time execution and rerun impeccable audit after fixes. This is conditional workflow sequencing, preserved verbatim and mapped as workflow context, not a new UI change, detector run or extra record.",
+  "remainingUnavailable": [
+    "Other skills full raw individual transcripts; S01 contains summarized framework sections only"
+  ]
+}

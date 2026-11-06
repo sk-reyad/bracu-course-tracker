@@ -1,6 +1,6 @@
 # Review ledger
 
-Current correction: TASK_001_CORRECTION_001. A/B SELECTED CANDIDATES; C HOLD (corrected check preserved); D REJECTED. 23 selected, 9 rejected, 7 held, 67 unreviewed, 0 in review. No statuses changed by source recovery. Production changes remain unauthorized.
+Current correction: TASK_001_CORRECTION_002 (source fidelity only); accepted substantive reconciliation and all owner statuses preserved. A/B SELECTED CANDIDATES; C HOLD (corrected check preserved); D REJECTED. 23 selected, 9 rejected, 7 held, 67 unreviewed, 0 in review. No statuses changed by source recovery. Production changes remain unauthorized.
 
 | ID | Recommendation | Status | Prior demonstration |
 | --- | --- | --- | --- |
@@ -97,7 +97,7 @@ Current correction: TASK_001_CORRECTION_001. A/B SELECTED CANDIDATES; C HOLD (co
 | [R-091](MASTER_RECOMMENDATIONS.md#r-091) | Keep Role visible at intermediate Admin table widths | UNREVIEWED | NO |
 | [R-092](MASTER_RECOMMENDATIONS.md#r-092) | Keep Status visible at intermediate Admin table widths | UNREVIEWED | NO |
 | [R-093](MASTER_RECOMMENDATIONS.md#r-093) | Keep View visible at intermediate Admin table widths | UNREVIEWED | NO |
-| [R-094](MASTER_RECOMMENDATIONS.md#r-094) | Move secondary login metrics into the Admin details drawer | UNREVIEWED | NO |
+| [R-094](MASTER_RECOMMENDATIONS.md#r-094) | Move login metrics into the Admin details drawer | UNREVIEWED | NO |
 | [R-095](MASTER_RECOMMENDATIONS.md#r-095) | Give important academic metadata enough size for comfortable scanning | UNREVIEWED | NO |
 | [R-096](MASTER_RECOMMENDATIONS.md#r-096) | Show the sign-in static background immediately | UNREVIEWED | NO |
 | [R-097](MASTER_RECOMMENDATIONS.md#r-097) | Use visible fallback text labels for essential actions | UNREVIEWED | NO |
@@ -106,7 +106,7 @@ Current correction: TASK_001_CORRECTION_001. A/B SELECTED CANDIDATES; C HOLD (co
 | [R-100](MASTER_RECOMMENDATIONS.md#r-100) | Improve consistency of cross-page dialog spacing while retaining page-family differences | UNREVIEWED | NO |
 | [R-101](MASTER_RECOMMENDATIONS.md#r-101) | Keep PDF preview print proportions inside a contained viewer | UNREVIEWED | NO |
 | [R-102](MASTER_RECOMMENDATIONS.md#r-102) | Show a preparing/loading state during export preparation | UNREVIEWED | NO |
-| [R-103](MASTER_RECOMMENDATIONS.md#r-103) | Give headings explicit font fallbacks | UNREVIEWED | NO |
+| [R-103](MASTER_RECOMMENDATIONS.md#r-103) | Give every heading an explicit font fallback | UNREVIEWED | NO |
 | [R-104](MASTER_RECOMMENDATIONS.md#r-104) | Fix unintended root document overflow while preserving the internal roadmap scroller | UNREVIEWED | NO |
 | [R-105](MASTER_RECOMMENDATIONS.md#r-105) | Reuse the support form native dialog pattern for student dialogs | UNREVIEWED | NO |
 | [R-106](MASTER_RECOMMENDATIONS.md#r-106) | Implement keyboard navigation for Settings tabs | UNREVIEWED | NO |
@@ -117,5 +117,8 @@ Current correction: TASK_001_CORRECTION_001. A/B SELECTED CANDIDATES; C HOLD (co
 | --- | --- | --- | --- |
 | [TASK_001](TASK_001/TASK_REVIEW_001.md) at 7f5cb29cf48e1aac417a4610399bf04f90e7f01b | Original available-source extraction; missing Impeccable source at that time | Preserved historical report/evidence | Superseded source coverage by correction below |
 | [TASK_001_CORRECTION_001](TASK_001_CORRECTION_001/TASK_REVIEW_001_CORRECTION_001.md) | Recovered original source, reconciliation and artifact-only publication | READY FOR INDEPENDENT REVIEW (preliminary) | Independent ChatGPT review; explicit owner authorization before any demo |
+| [TASK_001_CORRECTION_002](TASK_001_CORRECTION_002/TASK_001_CORRECTION_002.md) | Actual original S12 archive; S10 identified as ChatGPT restatement; 28 supports rechecked | READY FOR INDEPENDENT REVIEW (preliminary) | Independent ChatGPT review; no new demo |
 
-R-056–R-064 were refined with recovered actions; R-065 remains a broader later-owner lead, not a fabricated original finding. R-090–R-106 are new and UNREVIEWED. R-009/R-011 gained exact source corroboration and retained selected status. No demo has started.
+R-056–R-064 were refined with recovered actions; R-065 remains a broader later-owner lead; actual S12 names Course List within broad overflow scope, but no distinct remaining cause was verified. R-090–R-106 are new and UNREVIEWED. R-009/R-011 gained exact source corroboration and retained selected status. No demo has started.
+
+Source identity correction: S12 is the actual original (path-only sanitized); S10 is the preserved structured restatement; S11/S13 are later instructions. All 28 clauses supported. Count remains 106; no selection, rejection or hold changed.

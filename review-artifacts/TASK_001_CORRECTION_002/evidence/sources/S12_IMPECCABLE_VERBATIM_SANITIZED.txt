@@ -1,0 +1,31 @@
+Yes. **Keep the visual identity; improve the way the product works on smaller screens and with a keyboard.** BRACU Course Tracker already feels like an academic planner: the prerequisite map, semester cards, credit progress, and GPA summaries give it a clear purpose. The biggest gains now are making Degree Plan easier to reach, fixing mobile overflow, and making recurring controls behave consistently.
+
+**Impeccable audit: 12/20 — a solid foundation with significant usability work.** The design language passes for coherence: the blue palette, type, status labels, and surfaces feel related. The implementation is less consistent across pages.
+
+| Dimension | Score | Main finding |
+|---|---:|---|
+| Accessibility | 2/4 | Keyboard focus stays behind Settings; some small status labels have low contrast. |
+| Performance | 2/4 | The tracker loads the PDF engine on every visit, and sign-in loads decorative WebGL scripts upfront. |
+| Responsive design | 3/4 | Most sampled pages fit at 360 px; the tracker overflows, and the admin table is awkward on smaller laptops. |
+| Theming | 3/4 | Light and dark themes share an identity, but page-specific tokens make equivalent controls harder to keep consistent. |
+| Implementation integrity | 2/4 | The academic views are distinctive, but dialogs, tabs, and asset fallbacks vary across surfaces. |
+
+### Fix first: three major issues
+
+1. **[P1] Make student dialogs work with a keyboard.** In desktop and mobile renders, opening Settings left focus on the toolbar button behind it. Pressing **Tab** went to the background Dashboard button. Settings also declares a tab list without exposing the individual tab roles and selected state. Reuse the admin drawer’s focus-management approach or the support form’s native dialog pattern. Give close buttons accessible names and implement keyboard navigation for the tabs. [Tracker modal code](<js/app.js:1839>) · [W3C dialog pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/) · [W3C tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/)
+
+2. **[P1] Fix mobile overflow around the roadmap, course list, and report.** At a **360 px** viewport, the tracker document measured **441 px** wide. The roadmap can legitimately pan inside its own container, but the surrounding page should stay within the viewport. Keep the PDF preview’s print proportions inside a contained viewer, and make the mobile navigation reveal that there are more destinations. [Mobile roadmap rules](<css/style.css:2760>) · [W3C reflow guidance](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)
+
+3. **[P1] Improve readability of academic status labels.** The light-mode completed-prerequisite chip rendered at about **11 px** with **3.66:1** contrast, below the **4.5:1** threshold for normal text. Keep the green tint, use darker text, and give important metadata enough size to scan comfortably. [Prerequisite chip styles](<css/style.css:1034>) · [WCAG contrast guidance](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)
+
+### Improve next: five focused changes
+
+- **[P2] Give Degree Plan a direct entry.** It answers one of the app’s central questions—*what do I still need to graduate?*—but it sits inside Settings alongside backups and sync. Add a visible **Degree Plan** link beside Roadmap and My Path, or link directly from a credit-progress summary. Keep the detailed roadmap.
+- **[P2] Make admin actions easier to reach on laptops.** At 1024 px, the account table was **1,400 px wide inside a 990 px container**. Mobile already has account cards. For intermediate widths, keep account, role, status, and **View** visible; move login metrics into the details drawer. [Admin table styles](<css/admin.css:347>)
+- **[P2] Share the basics across pages.** Start with semantic colors, focus rings, button sizes, and dialog spacing. Keep admin rows compact and legal pages comfortable to read; those surfaces don’t need identical layouts.
+- **[P2] Load expensive extras when needed.** The bundled PDF engine is about **885 KiB uncompressed** and loads on tracker startup. Load it when the student requests export and show a preparing state. Likewise, sign-in can show its static background immediately and load WebGL only when appropriate. These are code-level findings; I didn’t measure production load times. [Tracker scripts](<index.html:605>) · [Sign-in scripts](<auth.html:378>)
+- **[P2] Keep core controls recognizable when external assets fail.** With external requests blocked, several icon-only buttons appeared blank. Use local SVGs or visible fallback labels for essential actions, and give every heading an explicit font fallback. For maintenance, keep the illustration but make the heading communicate **“Scheduled maintenance”** on its own; the current `h1` is only “better.” [Maintenance heading](<maintenance.html:94>)
+
+**My recommendation:** Start with `$impeccable harden` for dialogs and tabs, then `$impeccable adapt` for mobile overflow. Follow with `$impeccable colorize` for contrast, `$impeccable layout` for Degree Plan and admin hierarchy, and `$impeccable optimize` for loading. Finish with `$impeccable polish`. You can tackle those one at a time and rerun `$impeccable audit` after the fixes.
+
+I reviewed the repository and rendered local student preview, Degree Plan, sign-in, synthetic admin, support, maintenance, legal, and error views. The Impeccable detector couldn’t start, so the score is based on manual code and browser evidence. Live authentication, support submission, and PDF export weren’t exercised. **No project files were changed.**

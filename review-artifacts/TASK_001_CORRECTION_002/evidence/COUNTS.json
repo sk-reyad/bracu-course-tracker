@@ -1,0 +1,25 @@
+{
+  "previousRaw": 100,
+  "previousRetained": 89,
+  "priorGenericLeadOccurrencesReclassifiedAsContext": 9,
+  "originalRecoveredActionOccurrences": 28,
+  "newRecoveredExactDuplicateOccurrences": 2,
+  "newRecords": 17,
+  "refinedRecords": 9,
+  "rawAtomicSourceOccurrences": 119,
+  "exactDuplicateOccurrencesRemoved": 13,
+  "retained": 106,
+  "statuses": {
+    "SELECTED": 23,
+    "REJECTED": 9,
+    "HOLD": 7,
+    "UNREVIEWED": 67,
+    "IN REVIEW": 0
+  },
+  "statusChanges": 0,
+  "verbatimSourceClausesChecked": 28,
+  "verbatimSourceClausesSupported": 28,
+  "newRecordsThisCorrection": 0,
+  "removedRecordsThisCorrection": 0,
+  "statusChangesThisCorrection": 0
+}

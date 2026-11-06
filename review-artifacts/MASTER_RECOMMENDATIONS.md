@@ -1,12 +1,12 @@
 # Master recommendation register
 
-Current: TASK_001_CORRECTION_001 · 2026-11-06T21:34:58.100Z · base 9d86db46b1134a3755a2e269252b1ee1234f2570. [Correction report](TASK_001_CORRECTION_001/TASK_REVIEW_001_CORRECTION_001.md). [Previous immutable register](https://github.com/sk-reyad/bracu-course-tracker/blob/7f5cb29cf48e1aac417a4610399bf04f90e7f01b/review-artifacts/MASTER_RECOMMENDATIONS.md).
+Current: TASK_001_CORRECTION_002 (source fidelity only) · base 9d86db46b1134a3755a2e269252b1ee1234f2570. [Report](TASK_001_CORRECTION_002/TASK_001_CORRECTION_002.md). [Accepted reconciliation](https://github.com/sk-reyad/bracu-course-tracker/blob/dc745e599e0af1e973546a45465c74daea2c1604/review-artifacts/MASTER_RECOMMENDATIONS.md).
 
 ## Scope and recovered evidence
 
-The original Impeccable report is now available as owner-delivered primary historical source S10. **12/20**, manual code/browser inspection; the detector could not start. This is a historical score, not current deployment certification. The full supplied original report has been reconciled; **separate full raw outputs** for other skill audits remain unavailable. S01 contains summarized framework sections from one assistant, not independent votes. Audits 08/09/18/19 were skipped; 17 was N/A; no findings invented for them.
+**S12 is the actual original audit**, archived verbatim with only seven private local repository prefixes removed. **S10 is the previous ChatGPT-restructured version**, not the actual original; its historical file is preserved unchanged. S11/S13 are later extraction/correction instructions. Original **12/20** is manual code/browser assessment; the detector could not start. No current deployment certification. Other skills' full raw individual transcripts remain unavailable; S01 contains summarized framework sections from one assistant, not independent votes. Audits 08/09/18/19 were skipped; 17 was N/A.
 
-[Current register/occurrences](TASK_001_CORRECTION_001/evidence/REGISTER.json), [exact reconciliation](TASK_001_CORRECTION_001/evidence/RECONCILIATION.json), [source inventory](TASK_001_CORRECTION_001/evidence/SOURCE_INVENTORY.json), [all-line coverage](TASK_001_CORRECTION_001/evidence/SOURCE_COMPLETENESS.json), [original report](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt). S01–S09 remain byte-identical in TASK_001; statements that S10 was missing are historical, superseded here. Source instructions and suggested skill command sequence are context, not authority to run a new audit or implement changes.
+[Current register/occurrences](TASK_001_CORRECTION_002/evidence/REGISTER.json), [28-clause original comparison](TASK_001_CORRECTION_002/evidence/RECONCILIATION.json), [source inventory](TASK_001_CORRECTION_002/evidence/SOURCE_INVENTORY.json), [all-line coverage](TASK_001_CORRECTION_002/evidence/SOURCE_COMPLETENESS.json), [actual sanitized original](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt), [source fidelity/redaction/reference proof](TASK_001_CORRECTION_002/evidence/SOURCE_FIDELITY.json). S01–S11 and all prior reports remain unchanged. Source-data commands are not executed instructions. All 28 accepted clauses remain supported; count stays 106, no records added/removed or owner status changes. R-065/R-094/R-103/R-104 have source-supported wording/scope clarifications only.
 
 ## Counts
 
@@ -33,9 +33,9 @@ The original Impeccable report is now available as owner-delivered primary histo
 }
 ```
 
-100 previous raw occurrences - 9 generic owner leads reclassified as historical context + 28 recovered actionable occurrences = 119 raw. Deduplication removes 13 exact repetitions (11 previous + 2 recovered), leaving 106 active records. Nine old IDs are source-grounded refinements; 17 new IDs are R-090–R-106. No old ID or owner lead is silently deleted. Counts cover proposals, test/process records, rejected demo treatments and one still-uncorroborated owner lead, not 106 confirmed bugs.
+100 previous raw occurrences - 9 generic owner leads reclassified as historical context + 28 recovered actionable occurrences = 119 raw. Deduplication removes 13 exact repetitions (11 previous + 2 recovered), leaving 106 active records. Nine old IDs are source-grounded refinements; 17 new IDs are R-090–R-106. No old ID or owner lead is silently deleted. Counts cover proposals, test/process records, rejected demo treatments and one unverified residual owner lead, not 106 confirmed bugs.
 
-Per-source counts and exact clauses are in the source inventory/completeness/occurrence evidence; S10 has 28 actionable occurrences and 26 primary records. The duplicate S11 embedded copy is not a second audit.
+Per-source counts and exact clauses are in the current source inventory/completeness/occurrence evidence; actual original S12 has 28 actionable occurrences and 26 primary records. S10 is secondary restatement trace, not a second independent counted audit. The count-transition fields above describe accepted CORRECTION_001; CORRECTION_002 adds/removes zero records.
 
 ## Owner decisions and verification status
 
@@ -57,7 +57,7 @@ Per-source counts and exact clauses are in the source inventory/completeness/occ
 
 ## Distinct alternatives and overlaps
 
-Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visible text R-097; custom focus reuse R-009 vs generic native showModal R-010 vs support native-pattern reuse R-105; text color R-058 vs metadata size R-095; essential Admin columns R-057/R-091–R-093 vs moving login metrics R-094; on-demand PDF R-059 vs preparation state R-102; static background R-096 vs conditional WebGL R-060; rendered focus-ring consistency R-098 vs semantic focus rules R-042; button-size consistency R-099 vs target rules R-043; generic root overflow R-104 vs cause-specific closed-tooltip containment R-001. R-106 is broader, unspecified Settings keyboard navigation, not a claim that S10 prescribed the specific keys in selected R-019/R-020. Partial overlap is not an exact merge. Constraints (green tint, roadmap, page families, illustration) stay attached to actions, not counted as standalone changes.
+Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visible text R-097; custom focus reuse R-009 vs generic native showModal R-010 vs support native-pattern reuse R-105; text color R-058 vs metadata size R-095; essential Admin columns R-057/R-091–R-093 vs moving login metrics R-094; on-demand PDF R-059 vs preparation state R-102; static background R-096 vs conditional WebGL R-060; rendered focus-ring consistency R-098 vs semantic focus rules R-042; button-size consistency R-099 vs target rules R-043; generic root overflow R-104 vs cause-specific closed-tooltip containment R-001. R-106 is broader, unspecified Settings keyboard navigation, not a claim that S12 prescribed the specific keys in selected R-019/R-020. Partial overlap is not an exact merge. Constraints (green tint, roadmap, page families, illustration) stay attached to actions, not counted as standalone changes.
 
 ## Retained recommendations
 
@@ -205,8 +205,8 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 **Retain tracker overlays and reuse the admin drawer custom focus-management pattern**
 
 - **Status/owner:** SELECTED — Demo A/B SELECTED CANDIDATE; no production authorization
-- **Provenance:** S01: Other/consolidated skill framework audit (Action source); S10: Original Impeccable primary historical audit (Exact duplicate corroboration without new owner approval)
-- **Skill/source attribution:** ecc:accessibility; ecc:frontend-a11y; impeccable:impeccable — original manual audit; EXPLICIT; related finding: F-002.
+- **Provenance:** S01: Other/consolidated skill framework audit (Action source); S12: Actual original Impeccable report (sanitized verbatim archival source) (Exact duplicate corroboration; accepted prior owner status unchanged); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** ecc:accessibility; ecc:frontend-a11y; impeccable:impeccable — actual original manual audit (S12); EXPLICIT; related finding: F-002.
 - **Target:** Tracker modal implementation
 - **Proposed change:** Retain tracker overlays and reuse the admin drawer custom focus-management pattern
 - **Category / priority:** Implementation alternative / P1
@@ -216,7 +216,8 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Demonstrated:** Demo A
 - **Duplicate relationship:** 2 exact atomic source occurrences; proof above
 - **Exact source:** [S01 L278](TASK_001_CORRECTION_001/../TASK_001/evidence/sources/S01_AUDIT.txt#L278) — - **Recommended correction:** Reuse the admin drawer's focusable-control/trap pattern or native `<dialog>.showModal()` with explicit initial focus, inert background, Escape, and focus restoration.
-- **Exact source:** [S10 L30](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L30) — - Reuse the admin drawer's focus-management approach OR the support form's native dialog pattern.
+- **Exact source:** [S12 L15](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L15) — Reuse the admin drawer’s focus-management approach (Custom/admin branch of explicit or)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-010
 
@@ -240,8 +241,8 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 **Give each tracker close button a context-specific accessible name**
 
 - **Status/owner:** SELECTED — Demo A/B SELECTED CANDIDATE; no production authorization
-- **Provenance:** S01: Other/consolidated skill framework audit (Action source); S10: Original Impeccable primary historical audit (Exact duplicate corroboration without new owner approval)
-- **Skill/source attribution:** ecc:accessibility; ecc:frontend-a11y; impeccable:impeccable — original manual audit; EXPLICIT; related finding: F-003.
+- **Provenance:** S01: Other/consolidated skill framework audit (Action source); S12: Actual original Impeccable report (sanitized verbatim archival source) (Exact duplicate corroboration; accepted prior owner status unchanged); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** ecc:accessibility; ecc:frontend-a11y; impeccable:impeccable — actual original manual audit (S12); EXPLICIT; related finding: F-003.
 - **Target:** Four [data-close-modal] header buttons
 - **Proposed change:** Give each tracker close button a context-specific accessible name
 - **Category / priority:** Accessibility / P1
@@ -251,7 +252,8 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Demonstrated:** Demo A
 - **Duplicate relationship:** 2 exact atomic source occurrences; proof above
 - **Exact source:** [S01 L296](TASK_001_CORRECTION_001/../TASK_001/evidence/sources/S01_AUDIT.txt#L296) — - **Recommended correction:** Add context-specific `aria-label` values and keep the icon decorative.
-- **Exact source:** [S10 L31](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L31) — - Give close buttons accessible names.
+- **Exact source:** [S12 L15](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L15) — Give close buttons accessible names (Naming student-dialog close actions)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-012
 
@@ -1012,8 +1014,8 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 **Add a visible Degree Plan navigation link beside Roadmap and My Path**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Tracker main navigation
 - **Proposed change:** Add a visible Degree Plan navigation link beside Roadmap and My Path
 - **Category / priority:** Discoverability alternative / P2
@@ -1022,16 +1024,17 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium: navigation/focus must preserve existing destinations
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L67](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L67) — - Add a visible Degree Plan navigation link beside Roadmap and My Path.
+- **Exact source:** [S12 L23](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L23) — Add a visible **Degree Plan** link beside Roadmap and My Path (Navigation-entry alternative)
 - **Earlier owner-lead context:** - Degree Plan discoverability (provenance bridge, not an exact duplicate).
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-057
 
 **Keep Account visible at intermediate Admin table widths**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Admin account-table Account column
 - **Proposed change:** Keep Account visible at intermediate Admin table widths
 - **Category / priority:** Responsive Admin hierarchy / P2
@@ -1040,16 +1043,17 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium: safe synthetic/authenticated read-only verification needed
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L81](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L81) — - Keep Account visible.
+- **Exact source:** [S12 L24](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L24) — keep account, role, status, and **View** visible (Account member of explicit essential-column list)
 - **Earlier owner-lead context:** - Intermediate-width Admin table usability (provenance bridge, not an exact duplicate).
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-058
 
 **Use darker text on the light completed-prerequisite chip while preserving its green tint**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Light completed-prerequisite status chip
 - **Proposed change:** Use darker text on the light completed-prerequisite chip while preserving its green tint
 - **Category / priority:** Contrast / P1
@@ -1058,16 +1062,17 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Low/medium: verify rendered light/dark contrast and status identity
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L55](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L55) — - Use darker text.
+- **Exact source:** [S12 L19](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L19) — Keep the green tint, use darker text (Darker text with retained semantic green)
 - **Earlier owner-lead context:** - Academic status label readability/contrast (provenance bridge, not an exact duplicate).
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-059
 
 **Load the PDF engine when export is requested**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Tracker PDF vendor loading
 - **Proposed change:** Load the PDF engine when export is requested
 - **Category / priority:** On-demand loading / P2
@@ -1076,16 +1081,17 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium/high: export readiness/error paths/PDF output must remain
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L106](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L106) — - Load the PDF engine when export is requested.
+- **Exact source:** [S12 L26](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L26) — Load it when the student requests export (PDF engine has an explicit preceding antecedent)
 - **Earlier owner-lead context:** - Lazy loading of the PDF engine (provenance bridge, not an exact duplicate).
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-060
 
 **Load decorative WebGL only when appropriate**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Sign-in decorative WebGL resources
 - **Proposed change:** Load decorative WebGL only when appropriate
 - **Category / priority:** Conditional loading / P2
@@ -1094,16 +1100,17 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium/high: authentication must not depend on decoration
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L109](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L109) — - Load decorative WebGL only when appropriate.
+- **Exact source:** [S12 L26](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L26) — load WebGL only when appropriate. (Conditional WebGL, no invented eligibility policy)
 - **Earlier owner-lead context:** - Deferred or conditional decorative WebGL loading (provenance bridge, not an exact duplicate).
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-061
 
 **Use local SVG icons for essential actions**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Essential action icons across surfaces
 - **Proposed change:** Use local SVG icons for essential actions
 - **Category / priority:** Asset-fallback alternative / P2
@@ -1112,16 +1119,17 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium: icon identity/accessibility/asset delivery
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L120](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L120) — - Use local SVG icons for essential actions.
+- **Exact source:** [S12 L27](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L27) — Use local SVGs (Essential-action SVG alternative)
 - **Earlier owner-lead context:** - External icon fallback resilience (provenance bridge, not an exact duplicate).
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-062
 
 **Make mobile navigation clearly reveal that additional destinations exist**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Tracker mobile navigation
 - **Proposed change:** Make mobile navigation clearly reveal that additional destinations exist
 - **Category / priority:** Navigation clarity / P1
@@ -1130,16 +1138,17 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium: scope a faithful prototype only after re-verification
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L45](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L45) — - Make mobile navigation clearly reveal that additional destinations exist.
+- **Exact source:** [S12 L17](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L17) — make the mobile navigation reveal that there are more destinations. (Reveal additional destinations)
 - **Earlier owner-lead context:** - Mobile navigation clarity (provenance bridge, not an exact duplicate).
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-063
 
 **Improve consistency of cross-page semantic colors while retaining page-family differences**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Cross-page semantic colors
 - **Proposed change:** Improve consistency of cross-page semantic colors while retaining page-family differences
 - **Category / priority:** Design consistency / P2
@@ -1148,16 +1157,17 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium: preserve compact Admin rows and readable legal surfaces
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L92](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L92) — - Semantic colors
+- **Exact source:** [S12 L25](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L25) — Start with semantic colors, focus rings, button sizes, and dialog spacing. (Semantic colors member of explicit consistency list)
 - **Earlier owner-lead context:** - Shared semantic design-token consistency (provenance bridge, not an exact duplicate).
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-064
 
 **Make the maintenance h1 independently communicate Scheduled maintenance**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Maintenance h1
 - **Proposed change:** Make the maintenance h1 independently communicate Scheduled maintenance
 - **Category / priority:** Content clarity / P2
@@ -1166,8 +1176,9 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Low: preserve illustration/branding and readable heading structure
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L124](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L124) — - Make the maintenance `h1` independently communicate "Scheduled maintenance" instead of only saying "better."
+- **Exact source:** [S12 L27](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L27) — make the heading communicate **“Scheduled maintenance”** on its own (Standalone maintenance-heading meaning)
 - **Earlier owner-lead context:** - Maintenance-page heading clarity (provenance bridge, not an exact duplicate).
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-065
 
@@ -1175,11 +1186,11 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 
 - **Status/owner:** UNREVIEWED — None; distinct alternative/lead awaits owner
 - **Provenance:** S04: Later owner instruction/correction evidence (Action source)
-- **Skill/source attribution:** Later owner instruction S04; broader Course List/report lead not established by S10; OWNER LEAD — UNCORROBORATED; related finding: HISTORICAL.
+- **Skill/source attribution:** Later owner instruction S04; actual original S12 names Course List within broader overflow scope; OWNER LEAD — PARTIAL ORIGINAL CONTEXT, RESIDUAL ISSUE UNVERIFIED; related finding: HISTORICAL.
 - **Target:** Course List and report layouts
 - **Proposed change:** Review remaining Course List/report responsive behavior where independently reproducible
 - **Category / priority:** Historical lead / UNRANKED
-- **Evidence and confirmation:** S10 is now available, but does not identify a distinct remaining Course List issue. Its concrete PDF-viewer containment action is separately retained as R-101. This broader owner lead stays UNREVIEWED and requires a reproducible issue before proposing changes.
+- **Evidence and confirmation:** Actual original S12 explicitly includes course list and report in the broad mobile-overflow recommendation, represented by R-104, with PDF-viewer containment in R-101. This broader later-owner lead remains UNREVIEWED: no separate remaining Course List cause or residual defect has been established. The earlier S10 restatement omitted the named Course List scope.
 - **Expected benefit:** Keep course and report information reachable
 - **Regression risk:** Medium/high: report and PDF content invariants
 - **Demonstrated:** NO
@@ -1601,8 +1612,8 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 **Link directly to Degree Plan from a credit-progress summary**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Credit-progress summary
 - **Proposed change:** Link directly to Degree Plan from a credit-progress summary
 - **Category / priority:** Discoverability alternative / P2
@@ -1611,15 +1622,16 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium: independent alternative to R-056
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L68](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L68) — - OR link directly from a credit-progress summary.
+- **Exact source:** [S12 L23](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L23) — or link directly from a credit-progress summary. (Progress-summary alternative)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-091
 
 **Keep Role visible at intermediate Admin table widths**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Admin account-table Role column
 - **Proposed change:** Keep Role visible at intermediate Admin table widths
 - **Category / priority:** Responsive Admin hierarchy / P2
@@ -1628,15 +1640,16 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium: preserve compact rows and existing account actions
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L82](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L82) — - Keep Role visible.
+- **Exact source:** [S12 L24](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L24) — keep account, role, status, and **View** visible (Role member of explicit essential-column list)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-092
 
 **Keep Status visible at intermediate Admin table widths**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Admin account-table Status column
 - **Proposed change:** Keep Status visible at intermediate Admin table widths
 - **Category / priority:** Responsive Admin hierarchy / P2
@@ -1645,15 +1658,16 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium: preserve compact rows and existing account actions
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L83](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L83) — - Keep Status visible.
+- **Exact source:** [S12 L24](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L24) — keep account, role, status, and **View** visible (Status member of explicit essential-column list)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-093
 
 **Keep View visible at intermediate Admin table widths**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Admin account-table View column
 - **Proposed change:** Keep View visible at intermediate Admin table widths
 - **Category / priority:** Responsive Admin hierarchy / P2
@@ -1662,32 +1676,34 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium: preserve compact rows and existing account actions
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L84](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L84) — - Keep View visible.
+- **Exact source:** [S12 L24](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L24) — keep account, role, status, and **View** visible (View member of explicit essential-column list)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-094
 
-**Move secondary login metrics into the Admin details drawer**
+**Move login metrics into the Admin details drawer**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Admin login metrics and details drawer
-- **Proposed change:** Move secondary login metrics into the Admin details drawer
+- **Proposed change:** Move login metrics into the Admin details drawer
 - **Category / priority:** Admin information hierarchy / P2
-- **Evidence and confirmation:** HISTORICAL MANUAL FINDING — Reallocation of secondary information, distinct from preserving essential columns. Requires re-verification before any proposal/demo; no current defect certification.
+- **Evidence and confirmation:** HISTORICAL ORIGINAL S12 says move login metrics into the details drawer, without the restatement’s added secondary qualifier. No current rendering or metric classification was tested; reverify before any demo.
 - **Expected benefit:** Reduce intermediate table pressure
 - **Regression risk:** Medium: preserve metric access, labels and permissions
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L85](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L85) — - Move secondary login metrics into the details drawer.
+- **Exact source:** [S12 L24](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L24) — move login metrics into the details drawer. (Original does not qualify metrics as secondary)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-095
 
 **Give important academic metadata enough size for comfortable scanning**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Important academic metadata
 - **Proposed change:** Give important academic metadata enough size for comfortable scanning
 - **Category / priority:** Readability / P1
@@ -1696,15 +1712,16 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium: preserve responsive geometry and status meaning
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L56](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L56) — - Give important metadata enough size for comfortable scanning.
+- **Exact source:** [S12 L19](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L19) — give important metadata enough size to scan comfortably. (Metadata size distinct from color)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-096
 
 **Show the sign-in static background immediately**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Sign-in static background
 - **Proposed change:** Show the sign-in static background immediately
 - **Category / priority:** Loading presentation / P2
@@ -1713,15 +1730,16 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium: do not change authentication logic
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L108](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L108) — - Show the sign-in static background immediately.
+- **Exact source:** [S12 L26](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L26) — sign-in can show its static background immediately (Immediate static sign-in background)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-097
 
 **Use visible fallback text labels for essential actions**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Essential action labels across surfaces
 - **Proposed change:** Use visible fallback text labels for essential actions
 - **Category / priority:** Asset-fallback alternative / P2
@@ -1730,15 +1748,16 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium: label geometry and accessible-name parity
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L121](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L121) — - OR use visible fallback text labels.
+- **Exact source:** [S12 L27](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L27) — or visible fallback labels for essential actions (Essential-action visible-label alternative)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-098
 
 **Improve consistency of cross-page focus rings while retaining page-family differences**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Cross-page rendered focus rings
 - **Proposed change:** Improve consistency of cross-page focus rings while retaining page-family differences
 - **Category / priority:** Design consistency / P2
@@ -1747,15 +1766,16 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium: contrast/focus states in both themes
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L93](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L93) — - Focus rings
+- **Exact source:** [S12 L25](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L25) — Start with semantic colors, focus rings, button sizes, and dialog spacing. (Focus rings member of explicit consistency list)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-099
 
 **Improve consistency of cross-page button sizes while retaining page-family differences**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Cross-page button sizes
 - **Proposed change:** Improve consistency of cross-page button sizes while retaining page-family differences
 - **Category / priority:** Design consistency / P2
@@ -1764,15 +1784,16 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium: preserve dense Admin layout
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L94](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L94) — - Button sizes
+- **Exact source:** [S12 L25](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L25) — Start with semantic colors, focus rings, button sizes, and dialog spacing. (Button sizes member of explicit consistency list)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-100
 
 **Improve consistency of cross-page dialog spacing while retaining page-family differences**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Cross-page dialog spacing
 - **Proposed change:** Improve consistency of cross-page dialog spacing while retaining page-family differences
 - **Category / priority:** Design consistency / P2
@@ -1781,15 +1802,16 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium: compact/low-height scrolling and focus geometry
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L95](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L95) — - Dialog spacing
+- **Exact source:** [S12 L25](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L25) — Start with semantic colors, focus rings, button sizes, and dialog spacing. (Dialog spacing member of explicit consistency list)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-101
 
 **Keep PDF preview print proportions inside a contained viewer**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Tracker PDF preview viewer
 - **Proposed change:** Keep PDF preview print proportions inside a contained viewer
 - **Category / priority:** Responsive containment / P1
@@ -1798,15 +1820,16 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium/high: preserve intentional print layout and report data
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L44](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L44) — - Keep PDF preview print proportions inside a contained viewer.
+- **Exact source:** [S12 L17](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L17) — Keep the PDF preview’s print proportions inside a contained viewer (Contain viewer without changing print proportions)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-102
 
 **Show a preparing/loading state during export preparation**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** PDF export preparation feedback
 - **Proposed change:** Show a preparing/loading state during export preparation
 - **Category / priority:** Loading feedback / P2
@@ -1815,49 +1838,52 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium: preserve busy/reset/error states without changing PDF logic
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L107](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L107) — - Show a preparing/loading state during export preparation.
+- **Exact source:** [S12 L26](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L26) — show a preparing state. (Export preparation feedback)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-103
 
-**Give headings explicit font fallbacks**
+**Give every heading an explicit font fallback**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
-- **Target:** Headings across audited surfaces
-- **Proposed change:** Give headings explicit font fallbacks
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Target:** Every heading across audited surfaces
+- **Proposed change:** Give every heading an explicit font fallback
 - **Category / priority:** Asset fallback / P2
 - **Evidence and confirmation:** HISTORICAL MANUAL FINDING — No replacement font family or exact fallback stack was prescribed. Requires re-verification before any proposal/demo; no current defect certification.
 - **Expected benefit:** Keep headings readable if remote fonts fail
 - **Regression risk:** Low/medium: preserve typography and layout
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L122](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L122) — - Give headings explicit font fallbacks.
+- **Exact source:** [S12 L27](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L27) — give every heading an explicit font fallback. (Every heading, explicit original scope)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-104
 
 **Fix unintended root document overflow while preserving the internal roadmap scroller**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
-- **Target:** Tracker document/root layout
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Target:** Tracker root document around roadmap, Course List and report
 - **Proposed change:** Fix unintended root document overflow while preserving the internal roadmap scroller
 - **Category / priority:** Responsive overflow / P1
-- **Evidence and confirmation:** HISTORICAL MANUAL FINDING — Historical root width 441px at 360px viewport. Broader source does not isolate the tooltip cause; not collapsed into R-001 closed-panel containment. Requires re-verification before any proposal/demo; no current defect certification.
+- **Evidence and confirmation:** HISTORICAL ORIGINAL S12 explicitly names mobile overflow around roadmap, course list and report; reported 441px document at 360px viewport. Preserve deliberate roadmap panning. Cause-specific tooltip fixes remain separate; no new measurement or residual-defect certification.
 - **Expected benefit:** Keep surrounding page within viewport
 - **Regression risk:** Medium: do not suppress legitimate roadmap scrolling or mask overflow
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L43](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L43) — - Fix unintended root document overflow.
+- **Exact source:** [S12 L17](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L17) — **[P1] Fix mobile overflow around the roadmap, course list, and report.** (Root viewport scope includes all three named areas)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-105
 
 **Reuse the support form native dialog pattern for student dialogs**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Student dialogs using existing support native-dialog pattern
 - **Proposed change:** Reuse the support form native dialog pattern for student dialogs
 - **Category / priority:** Implementation alternative / P1
@@ -1866,15 +1892,16 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium/high: modality, top layer and nested support behavior
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L30](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L30) — - Reuse the admin drawer's focus-management approach OR the support form's native dialog pattern.
+- **Exact source:** [S12 L15](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L15) — or the support form’s native dialog pattern. (Native support-pattern branch of explicit or)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.
 
 ### R-106
 
 **Implement keyboard navigation for Settings tabs**
 
 - **Status/owner:** UNREVIEWED — UNREVIEWED; recovered source does not confer owner selection
-- **Provenance:** S10: Original Impeccable primary historical audit (Action source)
-- **Skill/source attribution:** impeccable:impeccable — original manual audit; RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
+- **Provenance:** S12: Actual original Impeccable report (sanitized verbatim archival source) (Action source); S10: Earlier ChatGPT-restructured version, not actual original (Secondary historical extraction trace; not counted twice)
+- **Skill/source attribution:** impeccable:impeccable — actual original manual audit (S12); RECOVERED ORIGINAL ACTION; related finding: Recovered original Impeccable (section in exact source).
 - **Target:** Settings tabs; exact key model unspecified by original
 - **Proposed change:** Implement keyboard navigation for Settings tabs
 - **Category / priority:** Keyboard interaction scope / P1
@@ -1883,4 +1910,5 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Regression risk:** Medium: scope exact key model from verified owning pattern before any demo
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
-- **Exact source:** [S10 L32](TASK_001_CORRECTION_001/evidence/sources/S10_ORIGINAL_IMPECCABLE.txt#L32) — - Implement keyboard navigation for Settings tabs.
+- **Exact source:** [S12 L15](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt#L15) — implement keyboard navigation for the tabs. (Tab keyboard behavior; exact keys not enumerated)
+- **Earlier extraction trace:** S10 is the unchanged ChatGPT-restructured version; previous quotes and actual-original support are paired in TASK_001_CORRECTION_002/evidence/RECONCILIATION.json.

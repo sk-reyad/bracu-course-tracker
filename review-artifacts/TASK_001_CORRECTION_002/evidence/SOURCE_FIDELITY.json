@@ -1,0 +1,213 @@
+{
+  "actualOriginalSource": "S12",
+  "previousRestatementSource": "S10",
+  "instructionSources": [
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S11",
+    "S13"
+  ],
+  "inputBytes": 6132,
+  "inputSha256": "2cd2bdb1a91c9f9a64b9ab0fc81c2377f6b59393923cf1358ec65f384b7b7b04",
+  "privateArchive": {
+    "outsideRepository": true,
+    "filename": "S12_IMPECCABLE_ORIGINAL_EXACT.txt",
+    "bytes": 6132,
+    "sha256": "2cd2bdb1a91c9f9a64b9ab0fc81c2377f6b59393923cf1358ec65f384b7b7b04",
+    "byteEqualityVerified": true,
+    "excludedFromPublicRepositoryAndPackage": true
+  },
+  "publicArchive": {
+    "file": "evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt",
+    "bytes": 5649,
+    "sha256": "e37f1962879def61e5caf3ebe8f0d40aa35b63365bc35b21933b5598318d2bb1",
+    "crlfCount": 30,
+    "lfCount": 30,
+    "normalization": "NONE: UTF-8 bytes, original CRLF, Markdown/table spacing, headings, wording and URLs preserved; only seven documented local path prefixes removed"
+  },
+  "redactions": [
+    {
+      "id": "PATH-1",
+      "originalCharacterStart": 1897,
+      "originalByteStart": 1903,
+      "removedCharacters": 69,
+      "removedBytes": 69,
+      "removedTextSha256": "4366375e2fa97edf4f4dd4af35627fe713fac624af0d896984d75a8fef7d60d0",
+      "replacement": "",
+      "type": "Personal absolute local repository prefix inside code-reference link",
+      "preservedReference": {
+        "label": "Tracker modal code",
+        "repoRelativePath": "js/app.js",
+        "historicalLine": 1839,
+        "sanitizedSourceTarget": "js/app.js:1839",
+        "baseCommitReference": "https://github.com/sk-reyad/bracu-course-tracker/blob/9d86db46b1134a3755a2e269252b1ee1234f2570/js/app.js#L1839"
+      }
+    },
+    {
+      "id": "PATH-2",
+      "originalCharacterStart": 2565,
+      "originalByteStart": 2575,
+      "removedCharacters": 69,
+      "removedBytes": 69,
+      "removedTextSha256": "4366375e2fa97edf4f4dd4af35627fe713fac624af0d896984d75a8fef7d60d0",
+      "replacement": "",
+      "type": "Personal absolute local repository prefix inside code-reference link",
+      "preservedReference": {
+        "label": "Mobile roadmap rules",
+        "repoRelativePath": "css/style.css",
+        "historicalLine": 2760,
+        "sanitizedSourceTarget": "css/style.css:2760",
+        "baseCommitReference": "https://github.com/sk-reyad/bracu-course-tracker/blob/9d86db46b1134a3755a2e269252b1ee1234f2570/css/style.css#L2760"
+      }
+    },
+    {
+      "id": "PATH-3",
+      "originalCharacterStart": 3069,
+      "originalByteStart": 3080,
+      "removedCharacters": 69,
+      "removedBytes": 69,
+      "removedTextSha256": "4366375e2fa97edf4f4dd4af35627fe713fac624af0d896984d75a8fef7d60d0",
+      "replacement": "",
+      "type": "Personal absolute local repository prefix inside code-reference link",
+      "preservedReference": {
+        "label": "Prerequisite chip styles",
+        "repoRelativePath": "css/style.css",
+        "historicalLine": 1034,
+        "sanitizedSourceTarget": "css/style.css:1034",
+        "baseCommitReference": "https://github.com/sk-reyad/bracu-course-tracker/blob/9d86db46b1134a3755a2e269252b1ee1234f2570/css/style.css#L1034"
+      }
+    },
+    {
+      "id": "PATH-4",
+      "originalCharacterStart": 3932,
+      "originalByteStart": 3950,
+      "removedCharacters": 69,
+      "removedBytes": 69,
+      "removedTextSha256": "4366375e2fa97edf4f4dd4af35627fe713fac624af0d896984d75a8fef7d60d0",
+      "replacement": "",
+      "type": "Personal absolute local repository prefix inside code-reference link",
+      "preservedReference": {
+        "label": "Admin table styles",
+        "repoRelativePath": "css/admin.css",
+        "historicalLine": 347,
+        "sanitizedSourceTarget": "css/admin.css:347",
+        "baseCommitReference": "https://github.com/sk-reyad/bracu-course-tracker/blob/9d86db46b1134a3755a2e269252b1ee1234f2570/css/admin.css#L347"
+      }
+    },
+    {
+      "id": "PATH-5",
+      "originalCharacterStart": 4637,
+      "originalByteStart": 4659,
+      "removedCharacters": 69,
+      "removedBytes": 69,
+      "removedTextSha256": "4366375e2fa97edf4f4dd4af35627fe713fac624af0d896984d75a8fef7d60d0",
+      "replacement": "",
+      "type": "Personal absolute local repository prefix inside code-reference link",
+      "preservedReference": {
+        "label": "Tracker scripts",
+        "repoRelativePath": "index.html",
+        "historicalLine": 605,
+        "sanitizedSourceTarget": "index.html:605",
+        "baseCommitReference": "https://github.com/sk-reyad/bracu-course-tracker/blob/9d86db46b1134a3755a2e269252b1ee1234f2570/index.html#L605"
+      }
+    },
+    {
+      "id": "PATH-6",
+      "originalCharacterStart": 4744,
+      "originalByteStart": 4767,
+      "removedCharacters": 69,
+      "removedBytes": 69,
+      "removedTextSha256": "4366375e2fa97edf4f4dd4af35627fe713fac624af0d896984d75a8fef7d60d0",
+      "replacement": "",
+      "type": "Personal absolute local repository prefix inside code-reference link",
+      "preservedReference": {
+        "label": "Sign-in scripts",
+        "repoRelativePath": "auth.html",
+        "historicalLine": 378,
+        "sanitizedSourceTarget": "auth.html:378",
+        "baseCommitReference": "https://github.com/sk-reyad/bracu-course-tracker/blob/9d86db46b1134a3755a2e269252b1ee1234f2570/auth.html#L378"
+      }
+    },
+    {
+      "id": "PATH-7",
+      "originalCharacterStart": 5259,
+      "originalByteStart": 5290,
+      "removedCharacters": 69,
+      "removedBytes": 69,
+      "removedTextSha256": "4366375e2fa97edf4f4dd4af35627fe713fac624af0d896984d75a8fef7d60d0",
+      "replacement": "",
+      "type": "Personal absolute local repository prefix inside code-reference link",
+      "preservedReference": {
+        "label": "Maintenance heading",
+        "repoRelativePath": "maintenance.html",
+        "historicalLine": 94,
+        "sanitizedSourceTarget": "maintenance.html:94",
+        "baseCommitReference": "https://github.com/sk-reyad/bracu-course-tracker/blob/9d86db46b1134a3755a2e269252b1ee1234f2570/maintenance.html#L94"
+      }
+    }
+  ],
+  "externalUrls": [
+    "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+    "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/",
+    "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+    "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
+  ],
+  "localReferences": [
+    {
+      "label": "Tracker modal code",
+      "repoRelativePath": "js/app.js",
+      "historicalLine": 1839,
+      "sanitizedSourceTarget": "js/app.js:1839",
+      "baseCommitReference": "https://github.com/sk-reyad/bracu-course-tracker/blob/9d86db46b1134a3755a2e269252b1ee1234f2570/js/app.js#L1839"
+    },
+    {
+      "label": "Mobile roadmap rules",
+      "repoRelativePath": "css/style.css",
+      "historicalLine": 2760,
+      "sanitizedSourceTarget": "css/style.css:2760",
+      "baseCommitReference": "https://github.com/sk-reyad/bracu-course-tracker/blob/9d86db46b1134a3755a2e269252b1ee1234f2570/css/style.css#L2760"
+    },
+    {
+      "label": "Prerequisite chip styles",
+      "repoRelativePath": "css/style.css",
+      "historicalLine": 1034,
+      "sanitizedSourceTarget": "css/style.css:1034",
+      "baseCommitReference": "https://github.com/sk-reyad/bracu-course-tracker/blob/9d86db46b1134a3755a2e269252b1ee1234f2570/css/style.css#L1034"
+    },
+    {
+      "label": "Admin table styles",
+      "repoRelativePath": "css/admin.css",
+      "historicalLine": 347,
+      "sanitizedSourceTarget": "css/admin.css:347",
+      "baseCommitReference": "https://github.com/sk-reyad/bracu-course-tracker/blob/9d86db46b1134a3755a2e269252b1ee1234f2570/css/admin.css#L347"
+    },
+    {
+      "label": "Tracker scripts",
+      "repoRelativePath": "index.html",
+      "historicalLine": 605,
+      "sanitizedSourceTarget": "index.html:605",
+      "baseCommitReference": "https://github.com/sk-reyad/bracu-course-tracker/blob/9d86db46b1134a3755a2e269252b1ee1234f2570/index.html#L605"
+    },
+    {
+      "label": "Sign-in scripts",
+      "repoRelativePath": "auth.html",
+      "historicalLine": 378,
+      "sanitizedSourceTarget": "auth.html:378",
+      "baseCommitReference": "https://github.com/sk-reyad/bracu-course-tracker/blob/9d86db46b1134a3755a2e269252b1ee1234f2570/auth.html#L378"
+    },
+    {
+      "label": "Maintenance heading",
+      "repoRelativePath": "maintenance.html",
+      "historicalLine": 94,
+      "sanitizedSourceTarget": "maintenance.html:94",
+      "baseCommitReference": "https://github.com/sk-reyad/bracu-course-tracker/blob/9d86db46b1134a3755a2e269252b1ee1234f2570/maintenance.html#L94"
+    }
+  ],
+  "reconstruction": {
+    "verifiedByteForByte": true,
+    "algorithm": "Reinsert the seven privately retained prefixes at documented positions to reconstruct the exact input; private prefix content is not published"
+  },
+  "sourceDataOnly": true
+}
