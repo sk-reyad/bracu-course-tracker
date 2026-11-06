@@ -1,0 +1,238 @@
+# TASK_001 — Incorporate the Recovered Original Impeccable Audit
+
+Repository: `sk-reyad/bracu-course-tracker`
+
+Review branch: `temp/ui-ux-audit-review`
+
+Previous reviewed commit: `7f5cb29cf48e1aac417a4610399bf04f90e7f01b`
+
+## Objective
+
+The project owner has now recovered the original Impeccable audit report, which was previously missing from TASK_001.
+
+Use the complete original report provided below to correct and expand the existing Master Recommendation Register.
+
+This is a documentation and evidence-correction task only.
+
+Do not create a new UI demo yet.
+
+## Requirements
+
+1. Preserve the original Impeccable report as a separately identified primary historical source.
+2. Sanitize local personal paths before publishing its text to the public review branch. Preserve corresponding repository-relative paths and line references.
+3. Compare every actionable recommendation in this report against the existing 89-record register.
+4. Split recommendations when their specific action, scope, implementation, or visual result meaningfully differs.
+5. Merge only exact actionable duplicates.
+6. Do not automatically count every sentence or supporting observation as a new recommendation.
+7. Preserve the distinct choices offered by the original audit, especially Degree Plan navbar link versus credit-progress shortcut, and local SVG versus visible text fallback.
+8. Maintain provenance for every recommendation. Mark whether it came from the original Impeccable audit, another skill audit, or a later owner instruction.
+9. Preserve the existing owner decisions: Demo A and B SELECTED CANDIDATES, Demo C HOLD, Demo D REJECTED.
+10. Do not mark recommendations as selected merely because they appear in the recovered report.
+11. Preserve the original audit score of 12/20 and the fact that the Impeccable detector could not start; findings were based on manual code/browser inspection.
+12. Distinguish findings requiring re-verification from currently confirmed defects.
+13. Recalculate recommendation counts and update all source-to-register mappings.
+14. Preserve the previous TASK_001 report and evidence. Add a new correction report rather than overwriting historical records.
+15. Run the relevant validation tests and verify the publication.
+16. Publish only updated review artifacts to `temp/ui-ux-audit-review`.
+
+Keep the original `main` branch, original working directory, production files, application logic, and completed demos unchanged.
+
+Do not commit, merge, push, or deploy production changes.
+
+## Original Impeccable Audit — Recovered Source
+
+### Overall Assessment
+
+**Keep the visual identity; improve the way the product works on smaller screens and with a keyboard.**
+
+BRACU Course Tracker already feels like an academic planner: the prerequisite map, semester cards, credit progress, and GPA summaries give it a clear purpose. The biggest gains now are making Degree Plan easier to reach, fixing mobile overflow, and making recurring controls behave consistently.
+
+**Impeccable audit: 12/20 — a solid foundation with significant usability work.**
+
+The design language passes for coherence: the blue palette, type, status labels, and surfaces feel related. The implementation is less consistent across pages.
+
+| Dimension | Score | Main finding |
+| --- | --- | --- |
+| Accessibility | 2/4 | Keyboard focus stays behind Settings; some small status labels have low contrast. |
+| Performance | 2/4 | The tracker loads the PDF engine on every visit, and sign-in loads decorative WebGL scripts upfront. |
+| Responsive design | 3/4 | Most sampled pages fit at 360 px; the tracker overflows, and the admin table is awkward on smaller laptops. |
+| Theming | 3/4 | Light and dark themes share an identity, but page-specific tokens make equivalent controls harder to keep consistent. |
+| Implementation integrity | 2/4 | The academic views are distinctive, but dialogs, tabs, and asset fallbacks vary across surfaces. |
+
+### Fix First — Three Major Issues
+
+**P1 — Student dialogs and keyboard access**
+
+In desktop and mobile renders, opening Settings left focus on the toolbar button behind it. Pressing Tab went to the background Dashboard button.
+
+Settings declares a tab list without individual tab roles and selected state.
+
+Recommended actions:
+- Reuse the admin drawer's focus-management approach OR the support form's native dialog pattern.
+- Give close buttons accessible names.
+- Implement keyboard navigation for Settings tabs.
+
+Relevant code: `js/app.js`, historical line 1839.
+
+**P1 — Mobile overflow**
+
+At a 360px viewport, the tracker document measured 441px wide.
+
+The roadmap may legitimately pan inside its own container, but the surrounding page must remain within the viewport.
+
+Recommended actions:
+- Fix unintended root document overflow.
+- Keep PDF preview print proportions inside a contained viewer.
+- Make mobile navigation clearly reveal that additional destinations exist.
+
+Relevant code: `css/style.css`, historical line 2760.
+
+**P1 — Academic status readability**
+
+The light-mode completed-prerequisite chip had approximately 11px text with 3.66:1 contrast, below the normal-text 4.5:1 threshold.
+
+Recommended actions:
+- Preserve the green tint.
+- Use darker text.
+- Give important metadata enough size for comfortable scanning.
+
+Relevant code: `css/style.css`, historical line 1034.
+
+### Improve Next — Five Focused Areas
+
+**P2 — Degree Plan discoverability**
+
+Degree Plan helps users answer what remains to graduate but is located inside Settings.
+
+The report proposes two alternatives:
+- Add a visible Degree Plan navigation link beside Roadmap and My Path.
+- OR link directly from a credit-progress summary.
+
+Preserve the detailed roadmap.
+
+Treat these as distinct alternatives, not a single predetermined change.
+
+**P2 — Admin usability on smaller laptops**
+
+At 1024px, the account table measured 1400px within a 990px container.
+
+Mobile already has account cards.
+
+For intermediate widths:
+- Keep Account visible.
+- Keep Role visible.
+- Keep Status visible.
+- Keep View visible.
+- Move secondary login metrics into the details drawer.
+
+Relevant code: `css/admin.css`, historical line 347.
+
+**P2 — Shared cross-page design basics**
+
+Improve consistency of:
+- Semantic colors
+- Focus rings
+- Button sizes
+- Dialog spacing
+
+Preserve differences appropriate to each page family. Admin rows should remain compact; legal pages should remain comfortable to read.
+
+Do not force all pages into identical layouts.
+
+**P2 — On-demand loading of expensive extras**
+
+The bundled PDF engine was approximately 885 KiB uncompressed and loaded on tracker startup.
+
+Proposals:
+- Load the PDF engine when export is requested.
+- Show a preparing/loading state during export preparation.
+- Show the sign-in static background immediately.
+- Load decorative WebGL only when appropriate.
+
+These were code-level findings. Production load times were not measured.
+
+Relevant code: `index.html`, historical line 605, and `auth.html`, historical line 378.
+
+**P2 — External asset fallback**
+
+When external requests were blocked, several icon-only buttons appeared blank.
+
+Proposals:
+- Use local SVG icons for essential actions.
+- OR use visible fallback text labels.
+- Give headings explicit font fallbacks.
+- Preserve the maintenance illustration.
+- Make the maintenance `h1` independently communicate "Scheduled maintenance" instead of only saying "better."
+
+Relevant code: `maintenance.html`, historical line 94.
+
+### Original Suggested Sequence
+
+1. `$impeccable harden` — Dialogs and tabs.
+2. `$impeccable adapt` — Mobile overflow.
+3. `$impeccable colorize` — Contrast.
+4. `$impeccable layout` — Degree Plan and Admin hierarchy.
+5. `$impeccable optimize` — Loading.
+6. `$impeccable polish` — Final presentation.
+
+These were suggestions, not executed independent audit results.
+
+### Original Audit Limitations
+
+The original reviewer inspected the repository and rendered local student preview, Degree Plan, sign-in, synthetic Admin, support, maintenance, legal, and error views.
+
+The Impeccable detector could not start.
+
+The 12/20 score came from manual code and browser evidence.
+
+Live authentication, support submission, and PDF export were not exercised.
+
+No project files were changed.
+
+## Specific Reconciliation Instructions
+
+Carefully revisit current entries R-056 through R-065.
+
+They were previously generic owner-reported historical leads because the full original source was unavailable.
+
+Now replace generic descriptions with source-grounded, actionable recommendations where justified.
+
+Also reconcile overlapping recommendations with the existing A/B/C entries without losing their owner-approved statuses.
+
+Do not automatically split one proposal into multiple records unless those records represent genuinely distinct actionable changes.
+
+Preserve mutually exclusive alternatives as separately reviewable choices.
+
+Do not fabricate implementation details not contained in the original report.
+
+Do not claim the other skills' raw individual transcripts have been recovered. They remain missing unless independently located.
+
+## Required Deliverables
+
+Publish on the temporary review branch:
+
+- Updated `MASTER_RECOMMENDATIONS.md`
+- Updated `REVIEW_LEDGER.md`
+- Updated source inventory and source-to-register mapping
+- Sanitized archived original Impeccable report
+- Updated occurrence, deduplication, and count evidence
+- New correction report linked to TASK_001
+- Test and Git protection evidence
+
+The correction report must state:
+
+- Which existing entries were updated
+- Which new entries were created
+- Which entries were merged
+- Whether any statuses changed, with justification
+- Whether previously missing original-source coverage is now complete
+- Which raw skill outputs still remain unavailable
+- What checks passed, failed, or remain unverified
+
+Verify that the GitHub commit changes only `review-artifacts/`.
+
+Finally provide the new full commit SHA and direct GitHub report URL.
+
+STOP.
+
+Do not start the next recommendation or any Before/After demo until the owner explicitly authorizes it.

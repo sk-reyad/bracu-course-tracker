@@ -1,0 +1,30 @@
+Command before current master/ledger were changed: node --test review-artifacts/TASK_001/verify-register.test.cjs
+Exit: 0
+✔ 01: IDs are sequential and unique (0.9362ms)
+✔ 02: every record has the required attribution, action, scope, evidence, risk and disposition (0.3344ms)
+✔ 03: every occurrence quotation exactly matches its sanitized source lines (12.8542ms)
+✔ 04: every snapshot matches its recorded SHA-256 and line count (2.3121ms)
+✔ 05: completeness mapping accounts for every line of every supplied source (0.7855ms)
+✔ 06: every retained action and raw occurrence has a bidirectional source mapping (0.4265ms)
+✔ 07: raw, duplicate, retained, provenance and owner-state counts reconcile (0.1278ms)
+✔ 08: every declared exact-duplicate group preserves four identity fields and a written proof (0.21ms)
+✔ 09: materially different focus, implementation, input and token proposals remain separate (0.1709ms)
+✔ 10: owner decisions and unimplemented alternatives are preserved (0.1725ms)
+✔ 11: all nine findings and the corrected visible reduced-motion check are represented (0.1144ms)
+✔ 12: ten historical leads remain uncertain and are not falsely attributed to an available original report (0.2459ms)
+✔ 13: skipped and unavailable audits are disclosed rather than supplying invented findings (0.5322ms)
+✔ 14: public artifacts contain no local preview dependencies, personal absolute paths or credential patterns (7.9111ms)
+✔ 15: separate clone branch and tracked runtime remain untouched at verification (132.5091ms)
+✔ 16: original protection evidence preserves HEAD, status, pre-existing audit bytes and tracked files (0.3829ms)
+✔ 17: report contains A-M, requirement results and independent-review limitations (0.4526ms)
+✔ 18: public handoff links point to included artifacts or GitHub, not local files (17.9823ms)
+✔ 19: ledger and register contain exactly the same actions and current dispositions (0.3775ms)
+✔ 20: per-source action counts and all individual audit blocks are included (0.19ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 244.8966

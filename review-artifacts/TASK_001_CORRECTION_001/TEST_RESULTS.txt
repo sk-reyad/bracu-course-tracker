@@ -1,0 +1,37 @@
+TASK_001_CORRECTION_001 actual verification log
+Node v24.16.0; Windows
+Initial correction run: 18 passed, 2 failed. Test 15 hit git show Windows path-length ambiguity; switched to equivalent git cat-file blob with unchanged byte-hash assertions. Test 18 caught stale R-106 wording in ledger; corrected ledger to match source-grounded action. Personal-path failure stacks withheld.
+Prior-state suite separately passed 20/20 before master/ledger changes; see PRIOR_TASK_RECHECK.txt.
+Command: node --check review-artifacts/TASK_001_CORRECTION_001/verify-correction.test.cjs
+Exit: 0
+Command: node --test review-artifacts/TASK_001_CORRECTION_001/verify-correction.test.cjs
+Exit: 0
+
+✔ 01: current records retain all 89 IDs and append exactly 17 stable IDs (1.0045ms)
+✔ 02: every prior status is identical and every new record is unreviewed (0.2425ms)
+✔ 03: nine generic leads are refined and the remaining owner lead is not falsely attributed (0.2325ms)
+✔ 04: original report has 28 mapped atomic actions and no double-counted embedded owner copy (0.1241ms)
+✔ 05: every recovered actionable bullet is mapped; preservation bullets are constraints (0.3884ms)
+✔ 06: navbar and credit-progress alternatives are distinct and unreviewed (0.1306ms)
+✔ 07: local SVG and visible-text fallbacks are separate unreviewed choices (0.0897ms)
+✔ 08: source-specific native reuse is not collapsed into custom reuse or generic native migration (0.0824ms)
+✔ 09: exactly two new recovered duplicate occurrences preserve target/action/outcome/implementation (0.2605ms)
+✔ 10: all count transitions and current status totals reconcile (0.1894ms)
+✔ 11: every current source quotation matches archived line references and hashes (17.2333ms)
+✔ 12: line-by-line coverage and per-source occurrence counts are complete (0.9184ms)
+✔ 13: historical manual 12/20 and detector failure are preserved without claiming current confirmation (0.4428ms)
+✔ 14: repository-relative historical code paths and source provenance survive sanitization (0.9929ms)
+✔ 15: previous TASK_001 evidence and report are byte-identical to the reviewed commit (548.6217ms)
+✔ 16: original tracked/untracked state and completed-demo fingerprints are unchanged (64.7832ms)
+✔ 17: green tint, illustration, page-family constraints and C/D owner decisions remain explicit (0.1828ms)
+✔ 18: every current record has metadata, matching ledger status and an unbroken public handoff (23.5798ms)
+✔ 19: correction report has A-M, source-coverage limitations and explicit requirements (0.8505ms)
+✔ 20: new public artifacts contain no private paths, loopback URLs or credential signatures (10.4895ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 743.7059

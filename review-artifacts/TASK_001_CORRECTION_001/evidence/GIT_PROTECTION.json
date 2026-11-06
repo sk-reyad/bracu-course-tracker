@@ -1,0 +1,141 @@
+{
+  "base": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+  "previousReviewCommit": "7f5cb29cf48e1aac417a4610399bf04f90e7f01b",
+  "originalBefore": {
+    "branch": "main",
+    "head": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+    "status": "?? FRONTEND_UI_MULTISKILL_AUDIT.md",
+    "trackedDiff": "",
+    "stagedDiff": "",
+    "auditSha256": "9ad3924539bea8181d9337b6e8e970a116bf28b9109c7cdb589f9a1536ca54d9"
+  },
+  "originalAfter": {
+    "branch": "main",
+    "head": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+    "status": "?? FRONTEND_UI_MULTISKILL_AUDIT.md",
+    "trackedDiff": "",
+    "stagedDiff": "",
+    "auditSha256": "9ad3924539bea8181d9337b6e8e970a116bf28b9109c7cdb589f9a1536ca54d9"
+  },
+  "priorTaskFiles": [
+    {
+      "path": "review-artifacts/TASK_001/evidence/COUNTS.json",
+      "sha256": "a1b6958d8a8aea2069313d5729d318af42f72b7a43d40b09fb7a40eb5226ace0"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/ORIGINAL_PROTECTION.json",
+      "sha256": "43b6aa0b327b1ccb38488541feebcdac3f8f80eaf49316b8fb16961622a47923"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/REGISTER.json",
+      "sha256": "f2da63160650e000b6d583b8a1c8f2707005d296aa4cf64fd11d2b56faebaa6f"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S01_AUDIT.txt",
+      "sha256": "1b2ba133364868d3ca25f21dd96fa4fafc1106bd84d959923eefddf09694cceb"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S02_DEMO_REVIEW.txt",
+      "sha256": "1582445e983081b1752a762d9eda15785f3fa36f0f91d7a7056c9f44bb8226d2"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S03_CORRECTION_REVIEW.txt",
+      "sha256": "387e5ca649c788562798ca544da33eaee893a0eb46d8f6693427381a1f022142"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S04_OWNER_SEQUENTIAL.txt",
+      "sha256": "bc0fc17f63da3928ce6195bdeb1630980aeb16c9211fecdd92a3caeda981001d"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S05_OWNER_STRICT.txt",
+      "sha256": "97d0662c307523856c667eabad35f894b0c6e7dbb033f4d2576e417874247090"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S06_OWNER_REPORT.txt",
+      "sha256": "822f50ef4068a12aa41d6cba27c0c451094ddaa778f5c64a94564bdb48f46594"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S07_OWNER_GITHUB.txt",
+      "sha256": "b79b1aab1783382cf93fec55c26e588957daca6d640804910e70fc22462c3aba"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S08_CAPABILITY_INVENTORY.txt",
+      "sha256": "3a526e9821dba0e87ca2c484debe3d0338045a545b1fc7608fd24375995db7f2"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/sources/S09_DEMO_D_CSS.txt",
+      "sha256": "6aa8674917b485989644de4292162fb4e21773350bbe16b45fd0427e9b62fe99"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/SOURCE_COMPLETENESS.json",
+      "sha256": "a02a6cedc2cb8d15ca2bf15ab5a9faef8c80bce48036f5350c71bb41f8bc4b7d"
+    },
+    {
+      "path": "review-artifacts/TASK_001/evidence/SOURCE_INVENTORY.json",
+      "sha256": "35f5c7c9e3ac2ab9274e3ba92607c52cb75521c3e07b721a50e9b8581b3409ee"
+    },
+    {
+      "path": "review-artifacts/TASK_001/MANIFEST.json",
+      "sha256": "6adec6505c2fef1d6808a4920d0d7a3c3fa78e362409d650f7e75f82d4d2b0e4"
+    },
+    {
+      "path": "review-artifacts/TASK_001/TASK_REVIEW_001.md",
+      "sha256": "3ec4956026bcb0c5eda59a07fe04cfba1779d87fd5445a78314bac2ecb3db092"
+    },
+    {
+      "path": "review-artifacts/TASK_001/TEST_RESULTS.txt",
+      "sha256": "86b2552ccd7cf60598df92a4ab78f7c4056269f681f2183ea837ec8edf809905"
+    },
+    {
+      "path": "review-artifacts/TASK_001/verify-register.test.cjs",
+      "sha256": "9a9f031bfe8b6fd33baab556d9ea3249bbedc8039f19cd3be29aedba1ba7259d"
+    }
+  ],
+  "demosBefore": [
+    {
+      "workspace": "baseline",
+      "files": 182,
+      "aggregateSha256": "ca7dabcd745d96083c533100d3009bbe7ba968a7a1269cdfff2b6ca25230381b",
+      "demoDAssets": []
+    },
+    {
+      "workspace": "improved",
+      "files": 184,
+      "aggregateSha256": "8ee61184f23858e6a35d2bf909356abc22324ff9a3ff4c656b4adfdedb356868",
+      "demoDAssets": [
+        {
+          "path": "css/demo-polish.css",
+          "sha256": "6aa8674917b485989644de4292162fb4e21773350bbe16b45fd0427e9b62fe99"
+        },
+        {
+          "path": "js/demo-polish.js",
+          "sha256": "bf0954263de8b130a610a3d3a90d27a8efa638cde6ecd42cd83fda24c3bcd79a"
+        }
+      ]
+    }
+  ],
+  "demosAfter": [
+    {
+      "workspace": "baseline",
+      "files": 182,
+      "aggregateSha256": "ca7dabcd745d96083c533100d3009bbe7ba968a7a1269cdfff2b6ca25230381b",
+      "demoDAssets": []
+    },
+    {
+      "workspace": "improved",
+      "files": 184,
+      "aggregateSha256": "8ee61184f23858e6a35d2bf909356abc22324ff9a3ff4c656b4adfdedb356868",
+      "demoDAssets": [
+        {
+          "path": "css/demo-polish.css",
+          "sha256": "6aa8674917b485989644de4292162fb4e21773350bbe16b45fd0427e9b62fe99"
+        },
+        {
+          "path": "js/demo-polish.js",
+          "sha256": "bf0954263de8b130a610a3d3a90d27a8efa638cde6ecd42cd83fda24c3bcd79a"
+        }
+      ]
+    }
+  ],
+  "scope": "Only master/ledger updates and new TASK_001_CORRECTION_001 artifacts; previous TASK_001 directory immutable; no original or demo changes"
+}

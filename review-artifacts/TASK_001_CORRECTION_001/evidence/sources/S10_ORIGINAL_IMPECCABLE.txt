@@ -1,0 +1,150 @@
+## Original Impeccable Audit — Recovered Source
+
+### Overall Assessment
+
+**Keep the visual identity; improve the way the product works on smaller screens and with a keyboard.**
+
+BRACU Course Tracker already feels like an academic planner: the prerequisite map, semester cards, credit progress, and GPA summaries give it a clear purpose. The biggest gains now are making Degree Plan easier to reach, fixing mobile overflow, and making recurring controls behave consistently.
+
+**Impeccable audit: 12/20 — a solid foundation with significant usability work.**
+
+The design language passes for coherence: the blue palette, type, status labels, and surfaces feel related. The implementation is less consistent across pages.
+
+| Dimension | Score | Main finding |
+| --- | --- | --- |
+| Accessibility | 2/4 | Keyboard focus stays behind Settings; some small status labels have low contrast. |
+| Performance | 2/4 | The tracker loads the PDF engine on every visit, and sign-in loads decorative WebGL scripts upfront. |
+| Responsive design | 3/4 | Most sampled pages fit at 360 px; the tracker overflows, and the admin table is awkward on smaller laptops. |
+| Theming | 3/4 | Light and dark themes share an identity, but page-specific tokens make equivalent controls harder to keep consistent. |
+| Implementation integrity | 2/4 | The academic views are distinctive, but dialogs, tabs, and asset fallbacks vary across surfaces. |
+
+### Fix First — Three Major Issues
+
+**P1 — Student dialogs and keyboard access**
+
+In desktop and mobile renders, opening Settings left focus on the toolbar button behind it. Pressing Tab went to the background Dashboard button.
+
+Settings declares a tab list without individual tab roles and selected state.
+
+Recommended actions:
+- Reuse the admin drawer's focus-management approach OR the support form's native dialog pattern.
+- Give close buttons accessible names.
+- Implement keyboard navigation for Settings tabs.
+
+Relevant code: `js/app.js`, historical line 1839.
+
+**P1 — Mobile overflow**
+
+At a 360px viewport, the tracker document measured 441px wide.
+
+The roadmap may legitimately pan inside its own container, but the surrounding page must remain within the viewport.
+
+Recommended actions:
+- Fix unintended root document overflow.
+- Keep PDF preview print proportions inside a contained viewer.
+- Make mobile navigation clearly reveal that additional destinations exist.
+
+Relevant code: `css/style.css`, historical line 2760.
+
+**P1 — Academic status readability**
+
+The light-mode completed-prerequisite chip had approximately 11px text with 3.66:1 contrast, below the normal-text 4.5:1 threshold.
+
+Recommended actions:
+- Preserve the green tint.
+- Use darker text.
+- Give important metadata enough size for comfortable scanning.
+
+Relevant code: `css/style.css`, historical line 1034.
+
+### Improve Next — Five Focused Areas
+
+**P2 — Degree Plan discoverability**
+
+Degree Plan helps users answer what remains to graduate but is located inside Settings.
+
+The report proposes two alternatives:
+- Add a visible Degree Plan navigation link beside Roadmap and My Path.
+- OR link directly from a credit-progress summary.
+
+Preserve the detailed roadmap.
+
+Treat these as distinct alternatives, not a single predetermined change.
+
+**P2 — Admin usability on smaller laptops**
+
+At 1024px, the account table measured 1400px within a 990px container.
+
+Mobile already has account cards.
+
+For intermediate widths:
+- Keep Account visible.
+- Keep Role visible.
+- Keep Status visible.
+- Keep View visible.
+- Move secondary login metrics into the details drawer.
+
+Relevant code: `css/admin.css`, historical line 347.
+
+**P2 — Shared cross-page design basics**
+
+Improve consistency of:
+- Semantic colors
+- Focus rings
+- Button sizes
+- Dialog spacing
+
+Preserve differences appropriate to each page family. Admin rows should remain compact; legal pages should remain comfortable to read.
+
+Do not force all pages into identical layouts.
+
+**P2 — On-demand loading of expensive extras**
+
+The bundled PDF engine was approximately 885 KiB uncompressed and loaded on tracker startup.
+
+Proposals:
+- Load the PDF engine when export is requested.
+- Show a preparing/loading state during export preparation.
+- Show the sign-in static background immediately.
+- Load decorative WebGL only when appropriate.
+
+These were code-level findings. Production load times were not measured.
+
+Relevant code: `index.html`, historical line 605, and `auth.html`, historical line 378.
+
+**P2 — External asset fallback**
+
+When external requests were blocked, several icon-only buttons appeared blank.
+
+Proposals:
+- Use local SVG icons for essential actions.
+- OR use visible fallback text labels.
+- Give headings explicit font fallbacks.
+- Preserve the maintenance illustration.
+- Make the maintenance `h1` independently communicate "Scheduled maintenance" instead of only saying "better."
+
+Relevant code: `maintenance.html`, historical line 94.
+
+### Original Suggested Sequence
+
+1. `$impeccable harden` — Dialogs and tabs.
+2. `$impeccable adapt` — Mobile overflow.
+3. `$impeccable colorize` — Contrast.
+4. `$impeccable layout` — Degree Plan and Admin hierarchy.
+5. `$impeccable optimize` — Loading.
+6. `$impeccable polish` — Final presentation.
+
+These were suggestions, not executed independent audit results.
+
+### Original Audit Limitations
+
+The original reviewer inspected the repository and rendered local student preview, Degree Plan, sign-in, synthetic Admin, support, maintenance, legal, and error views.
+
+The Impeccable detector could not start.
+
+The 12/20 score came from manual code and browser evidence.
+
+Live authentication, support submission, and PDF export were not exercised.
+
+No project files were changed.
+

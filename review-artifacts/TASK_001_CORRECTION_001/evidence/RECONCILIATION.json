@@ -1,0 +1,1001 @@
+{
+  "previousReviewCommit": "7f5cb29cf48e1aac417a4610399bf04f90e7f01b",
+  "counts": {
+    "previousRaw": 100,
+    "previousRetained": 89,
+    "priorGenericLeadOccurrencesReclassifiedAsContext": 9,
+    "originalRecoveredActionOccurrences": 28,
+    "newRecoveredExactDuplicateOccurrences": 2,
+    "newRecords": 17,
+    "refinedRecords": 9,
+    "rawAtomicSourceOccurrences": 119,
+    "exactDuplicateOccurrencesRemoved": 13,
+    "retained": 106,
+    "statuses": {
+      "SELECTED": 23,
+      "REJECTED": 9,
+      "HOLD": 7,
+      "UNREVIEWED": 67,
+      "IN REVIEW": 0
+    },
+    "statusChanges": 0
+  },
+  "changes": [
+    {
+      "id": "R-056",
+      "operation": "REFINED",
+      "beforeAction": "Review Degree Plan discoverability",
+      "afterAction": "Add a visible Degree Plan navigation link beside Roadmap and My Path",
+      "beforeStatus": "UNREVIEWED",
+      "afterStatus": "UNREVIEWED",
+      "reason": "Source-grounded refinement of previously generic historical lead"
+    },
+    {
+      "id": "R-057",
+      "operation": "REFINED",
+      "beforeAction": "Review intermediate-width Admin table usability",
+      "afterAction": "Keep Account visible at intermediate Admin table widths",
+      "beforeStatus": "UNREVIEWED",
+      "afterStatus": "UNREVIEWED",
+      "reason": "Source-grounded refinement of previously generic historical lead"
+    },
+    {
+      "id": "R-058",
+      "operation": "REFINED",
+      "beforeAction": "Review academic status label readability and contrast",
+      "afterAction": "Use darker text on the light completed-prerequisite chip while preserving its green tint",
+      "beforeStatus": "UNREVIEWED",
+      "afterStatus": "UNREVIEWED",
+      "reason": "Source-grounded refinement of previously generic historical lead"
+    },
+    {
+      "id": "R-059",
+      "operation": "REFINED",
+      "beforeAction": "Consider lazy loading the PDF engine",
+      "afterAction": "Load the PDF engine when export is requested",
+      "beforeStatus": "UNREVIEWED",
+      "afterStatus": "UNREVIEWED",
+      "reason": "Source-grounded refinement of previously generic historical lead"
+    },
+    {
+      "id": "R-060",
+      "operation": "REFINED",
+      "beforeAction": "Consider deferred or conditional decorative WebGL loading",
+      "afterAction": "Load decorative WebGL only when appropriate",
+      "beforeStatus": "UNREVIEWED",
+      "afterStatus": "UNREVIEWED",
+      "reason": "Source-grounded refinement of previously generic historical lead"
+    },
+    {
+      "id": "R-061",
+      "operation": "REFINED",
+      "beforeAction": "Review resilience when external icons fail to load",
+      "afterAction": "Use local SVG icons for essential actions",
+      "beforeStatus": "UNREVIEWED",
+      "afterStatus": "UNREVIEWED",
+      "reason": "Source-grounded refinement of previously generic historical lead"
+    },
+    {
+      "id": "R-062",
+      "operation": "REFINED",
+      "beforeAction": "Review mobile navigation clarity",
+      "afterAction": "Make mobile navigation clearly reveal that additional destinations exist",
+      "beforeStatus": "UNREVIEWED",
+      "afterStatus": "UNREVIEWED",
+      "reason": "Source-grounded refinement of previously generic historical lead"
+    },
+    {
+      "id": "R-063",
+      "operation": "REFINED",
+      "beforeAction": "Review shared semantic design-token consistency",
+      "afterAction": "Improve consistency of cross-page semantic colors while retaining page-family differences",
+      "beforeStatus": "UNREVIEWED",
+      "afterStatus": "UNREVIEWED",
+      "reason": "Source-grounded refinement of previously generic historical lead"
+    },
+    {
+      "id": "R-064",
+      "operation": "REFINED",
+      "beforeAction": "Review maintenance-page heading clarity",
+      "afterAction": "Make the maintenance h1 independently communicate Scheduled maintenance",
+      "beforeStatus": "UNREVIEWED",
+      "afterStatus": "UNREVIEWED",
+      "reason": "Source-grounded refinement of previously generic historical lead"
+    },
+    {
+      "id": "R-065",
+      "operation": "PROVENANCE_CLARIFIED",
+      "beforeAction": "Review remaining Course List/report responsive behavior where independently reproducible",
+      "afterAction": "Review remaining Course List/report responsive behavior where independently reproducible",
+      "beforeStatus": "UNREVIEWED",
+      "afterStatus": "UNREVIEWED",
+      "reason": "Recovered source does not substantiate all of this broader owner lead; do not invent Course List findings or discard the owner lead"
+    },
+    {
+      "id": "R-090",
+      "operation": "ADDED",
+      "afterAction": "Link directly to Degree Plan from a credit-progress summary",
+      "beforeStatus": null,
+      "afterStatus": "UNREVIEWED",
+      "reason": "Genuinely distinct recovered action, target, scope or visual/implementation alternative"
+    },
+    {
+      "id": "R-091",
+      "operation": "ADDED",
+      "afterAction": "Keep Role visible at intermediate Admin table widths",
+      "beforeStatus": null,
+      "afterStatus": "UNREVIEWED",
+      "reason": "Genuinely distinct recovered action, target, scope or visual/implementation alternative"
+    },
+    {
+      "id": "R-092",
+      "operation": "ADDED",
+      "afterAction": "Keep Status visible at intermediate Admin table widths",
+      "beforeStatus": null,
+      "afterStatus": "UNREVIEWED",
+      "reason": "Genuinely distinct recovered action, target, scope or visual/implementation alternative"
+    },
+    {
+      "id": "R-093",
+      "operation": "ADDED",
+      "afterAction": "Keep View visible at intermediate Admin table widths",
+      "beforeStatus": null,
+      "afterStatus": "UNREVIEWED",
+      "reason": "Genuinely distinct recovered action, target, scope or visual/implementation alternative"
+    },
+    {
+      "id": "R-094",
+      "operation": "ADDED",
+      "afterAction": "Move secondary login metrics into the Admin details drawer",
+      "beforeStatus": null,
+      "afterStatus": "UNREVIEWED",
+      "reason": "Genuinely distinct recovered action, target, scope or visual/implementation alternative"
+    },
+    {
+      "id": "R-095",
+      "operation": "ADDED",
+      "afterAction": "Give important academic metadata enough size for comfortable scanning",
+      "beforeStatus": null,
+      "afterStatus": "UNREVIEWED",
+      "reason": "Genuinely distinct recovered action, target, scope or visual/implementation alternative"
+    },
+    {
+      "id": "R-096",
+      "operation": "ADDED",
+      "afterAction": "Show the sign-in static background immediately",
+      "beforeStatus": null,
+      "afterStatus": "UNREVIEWED",
+      "reason": "Genuinely distinct recovered action, target, scope or visual/implementation alternative"
+    },
+    {
+      "id": "R-097",
+      "operation": "ADDED",
+      "afterAction": "Use visible fallback text labels for essential actions",
+      "beforeStatus": null,
+      "afterStatus": "UNREVIEWED",
+      "reason": "Genuinely distinct recovered action, target, scope or visual/implementation alternative"
+    },
+    {
+      "id": "R-098",
+      "operation": "ADDED",
+      "afterAction": "Improve consistency of cross-page focus rings while retaining page-family differences",
+      "beforeStatus": null,
+      "afterStatus": "UNREVIEWED",
+      "reason": "Genuinely distinct recovered action, target, scope or visual/implementation alternative"
+    },
+    {
+      "id": "R-099",
+      "operation": "ADDED",
+      "afterAction": "Improve consistency of cross-page button sizes while retaining page-family differences",
+      "beforeStatus": null,
+      "afterStatus": "UNREVIEWED",
+      "reason": "Genuinely distinct recovered action, target, scope or visual/implementation alternative"
+    },
+    {
+      "id": "R-100",
+      "operation": "ADDED",
+      "afterAction": "Improve consistency of cross-page dialog spacing while retaining page-family differences",
+      "beforeStatus": null,
+      "afterStatus": "UNREVIEWED",
+      "reason": "Genuinely distinct recovered action, target, scope or visual/implementation alternative"
+    },
+    {
+      "id": "R-101",
+      "operation": "ADDED",
+      "afterAction": "Keep PDF preview print proportions inside a contained viewer",
+      "beforeStatus": null,
+      "afterStatus": "UNREVIEWED",
+      "reason": "Genuinely distinct recovered action, target, scope or visual/implementation alternative"
+    },
+    {
+      "id": "R-102",
+      "operation": "ADDED",
+      "afterAction": "Show a preparing/loading state during export preparation",
+      "beforeStatus": null,
+      "afterStatus": "UNREVIEWED",
+      "reason": "Genuinely distinct recovered action, target, scope or visual/implementation alternative"
+    },
+    {
+      "id": "R-103",
+      "operation": "ADDED",
+      "afterAction": "Give headings explicit font fallbacks",
+      "beforeStatus": null,
+      "afterStatus": "UNREVIEWED",
+      "reason": "Genuinely distinct recovered action, target, scope or visual/implementation alternative"
+    },
+    {
+      "id": "R-104",
+      "operation": "ADDED",
+      "afterAction": "Fix unintended root document overflow while preserving the internal roadmap scroller",
+      "beforeStatus": null,
+      "afterStatus": "UNREVIEWED",
+      "reason": "Genuinely distinct recovered action, target, scope or visual/implementation alternative"
+    },
+    {
+      "id": "R-105",
+      "operation": "ADDED",
+      "afterAction": "Reuse the support form native dialog pattern for student dialogs",
+      "beforeStatus": null,
+      "afterStatus": "UNREVIEWED",
+      "reason": "Genuinely distinct recovered action, target, scope or visual/implementation alternative"
+    },
+    {
+      "id": "R-106",
+      "operation": "ADDED",
+      "afterAction": "Implement keyboard navigation for Settings tabs",
+      "beforeStatus": null,
+      "afterStatus": "UNREVIEWED",
+      "reason": "Genuinely distinct recovered action, target, scope or visual/implementation alternative"
+    },
+    {
+      "id": "R-009",
+      "operation": "EXACT_SOURCE_DUPLICATE",
+      "beforeAction": "Retain tracker overlays and reuse the admin drawer custom focus-management pattern",
+      "afterAction": "Retain tracker overlays and reuse the admin drawer custom focus-management pattern",
+      "beforeStatus": "SELECTED",
+      "afterStatus": "SELECTED",
+      "reason": "The admin-drawer/custom-focus branch specifies the same student/tracker modal scope, admin-focus reuse action, predictable modal focus outcome and custom existing-overlay implementation as R-009. The OR native-support branch is separately retained as R-105. No A status expansion."
+    },
+    {
+      "id": "R-011",
+      "operation": "EXACT_SOURCE_DUPLICATE",
+      "beforeAction": "Give each tracker close button a context-specific accessible name",
+      "afterAction": "Give each tracker close button a context-specific accessible name",
+      "beforeStatus": "SELECTED",
+      "afterStatus": "SELECTED",
+      "reason": "Same student-dialog close controls, same action of supplying accessible names, same assistive-technology identification outcome and same markup-naming behavior as R-011. No different label wording or control scope is prescribed. Existing contextual labels remain; source recovery alone does not select anything new."
+    }
+  ],
+  "contextBridges": [
+    {
+      "priorId": "R-056",
+      "priorAction": "Review Degree Plan discoverability",
+      "contextRefs": [
+        {
+          "source": "S04",
+          "start": 90,
+          "end": 90,
+          "quote": "- Degree Plan discoverability"
+        }
+      ],
+      "targets": [
+        "R-056",
+        "R-090"
+      ],
+      "reason": "Replace a generic owner-reported historical placeholder with a concrete recovered-source action; preserve ID/status, do not treat broad context as an exact duplicate."
+    },
+    {
+      "priorId": "R-057",
+      "priorAction": "Review intermediate-width Admin table usability",
+      "contextRefs": [
+        {
+          "source": "S04",
+          "start": 91,
+          "end": 91,
+          "quote": "- Intermediate-width Admin table usability"
+        }
+      ],
+      "targets": [
+        "R-057",
+        "R-091",
+        "R-092",
+        "R-093",
+        "R-094"
+      ],
+      "reason": "Replace a generic owner-reported historical placeholder with a concrete recovered-source action; preserve ID/status, do not treat broad context as an exact duplicate."
+    },
+    {
+      "priorId": "R-058",
+      "priorAction": "Review academic status label readability and contrast",
+      "contextRefs": [
+        {
+          "source": "S04",
+          "start": 92,
+          "end": 92,
+          "quote": "- Academic status label readability/contrast"
+        }
+      ],
+      "targets": [
+        "R-058",
+        "R-095"
+      ],
+      "reason": "Replace a generic owner-reported historical placeholder with a concrete recovered-source action; preserve ID/status, do not treat broad context as an exact duplicate."
+    },
+    {
+      "priorId": "R-059",
+      "priorAction": "Consider lazy loading the PDF engine",
+      "contextRefs": [
+        {
+          "source": "S04",
+          "start": 93,
+          "end": 93,
+          "quote": "- Lazy loading of the PDF engine"
+        }
+      ],
+      "targets": [
+        "R-059",
+        "R-102"
+      ],
+      "reason": "Replace a generic owner-reported historical placeholder with a concrete recovered-source action; preserve ID/status, do not treat broad context as an exact duplicate."
+    },
+    {
+      "priorId": "R-060",
+      "priorAction": "Consider deferred or conditional decorative WebGL loading",
+      "contextRefs": [
+        {
+          "source": "S04",
+          "start": 94,
+          "end": 94,
+          "quote": "- Deferred or conditional decorative WebGL loading"
+        }
+      ],
+      "targets": [
+        "R-060",
+        "R-096"
+      ],
+      "reason": "Replace a generic owner-reported historical placeholder with a concrete recovered-source action; preserve ID/status, do not treat broad context as an exact duplicate."
+    },
+    {
+      "priorId": "R-061",
+      "priorAction": "Review resilience when external icons fail to load",
+      "contextRefs": [
+        {
+          "source": "S04",
+          "start": 95,
+          "end": 95,
+          "quote": "- External icon fallback resilience"
+        }
+      ],
+      "targets": [
+        "R-061",
+        "R-097",
+        "R-103"
+      ],
+      "reason": "Replace a generic owner-reported historical placeholder with a concrete recovered-source action; preserve ID/status, do not treat broad context as an exact duplicate."
+    },
+    {
+      "priorId": "R-062",
+      "priorAction": "Review mobile navigation clarity",
+      "contextRefs": [
+        {
+          "source": "S04",
+          "start": 96,
+          "end": 96,
+          "quote": "- Mobile navigation clarity"
+        }
+      ],
+      "targets": [
+        "R-062"
+      ],
+      "reason": "Replace a generic owner-reported historical placeholder with a concrete recovered-source action; preserve ID/status, do not treat broad context as an exact duplicate."
+    },
+    {
+      "priorId": "R-063",
+      "priorAction": "Review shared semantic design-token consistency",
+      "contextRefs": [
+        {
+          "source": "S04",
+          "start": 97,
+          "end": 97,
+          "quote": "- Shared semantic design-token consistency"
+        }
+      ],
+      "targets": [
+        "R-063",
+        "R-098",
+        "R-099",
+        "R-100"
+      ],
+      "reason": "Replace a generic owner-reported historical placeholder with a concrete recovered-source action; preserve ID/status, do not treat broad context as an exact duplicate."
+    },
+    {
+      "priorId": "R-064",
+      "priorAction": "Review maintenance-page heading clarity",
+      "contextRefs": [
+        {
+          "source": "S04",
+          "start": 98,
+          "end": 98,
+          "quote": "- Maintenance-page heading clarity"
+        }
+      ],
+      "targets": [
+        "R-064"
+      ],
+      "reason": "Replace a generic owner-reported historical placeholder with a concrete recovered-source action; preserve ID/status, do not treat broad context as an exact duplicate."
+    }
+  ],
+  "recoveredActions": [
+    {
+      "id": "IH-01",
+      "recommendation": "R-009",
+      "source": "S10",
+      "start": 30,
+      "end": 30,
+      "quote": "- Reuse the admin drawer's focus-management approach OR the support form's native dialog pattern.",
+      "identity": {
+        "component": "Tracker modal implementation",
+        "action": "Retain tracker overlays and reuse the admin drawer custom focus-management pattern",
+        "outcome": "Reuse working local interaction model",
+        "implementation": "Retain tracker overlays and reuse the admin drawer custom focus-management pattern"
+      },
+      "classification": "EXACT_SOURCE_DUPLICATE",
+      "sourceMeaning": "Admin custom-focus OR branch",
+      "sourceOccurrence": "O-013"
+    },
+    {
+      "id": "IH-02",
+      "recommendation": "R-105",
+      "source": "S10",
+      "start": 30,
+      "end": 30,
+      "quote": "- Reuse the admin drawer's focus-management approach OR the support form's native dialog pattern.",
+      "identity": {
+        "component": "Student dialogs using existing support native-dialog pattern",
+        "action": "Reuse the support form native dialog pattern for student dialogs",
+        "outcome": "Reuse an established local native-dialog contract",
+        "implementation": "Reuse the support form native dialog pattern for student dialogs"
+      },
+      "classification": "ADDED",
+      "sourceMeaning": "Support native-dialog OR branch",
+      "sourceOccurrence": "O-118"
+    },
+    {
+      "id": "IH-03",
+      "recommendation": "R-011",
+      "source": "S10",
+      "start": 31,
+      "end": 31,
+      "quote": "- Give close buttons accessible names.",
+      "identity": {
+        "component": "Four [data-close-modal] header buttons",
+        "action": "Give each tracker close button a context-specific accessible name",
+        "outcome": "Identify close actions to assistive technology",
+        "implementation": "Give each tracker close button a context-specific accessible name"
+      },
+      "classification": "EXACT_SOURCE_DUPLICATE",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-016"
+    },
+    {
+      "id": "IH-04",
+      "recommendation": "R-106",
+      "source": "S10",
+      "start": 32,
+      "end": 32,
+      "quote": "- Implement keyboard navigation for Settings tabs.",
+      "identity": {
+        "component": "Settings tabs; exact key model unspecified by original",
+        "action": "Implement keyboard navigation for Settings tabs",
+        "outcome": "Make the tab interface usable from the keyboard",
+        "implementation": "Implement keyboard navigation for Settings tabs"
+      },
+      "classification": "ADDED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-119"
+    },
+    {
+      "id": "IH-05",
+      "recommendation": "R-104",
+      "source": "S10",
+      "start": 43,
+      "end": 43,
+      "quote": "- Fix unintended root document overflow.",
+      "identity": {
+        "component": "Tracker document/root layout",
+        "action": "Fix unintended root document overflow while preserving the internal roadmap scroller",
+        "outcome": "Keep surrounding page within viewport",
+        "implementation": "Fix unintended root document overflow while preserving the internal roadmap scroller"
+      },
+      "classification": "ADDED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-117"
+    },
+    {
+      "id": "IH-06",
+      "recommendation": "R-101",
+      "source": "S10",
+      "start": 44,
+      "end": 44,
+      "quote": "- Keep PDF preview print proportions inside a contained viewer.",
+      "identity": {
+        "component": "Tracker PDF preview viewer",
+        "action": "Keep PDF preview print proportions inside a contained viewer",
+        "outcome": "Fit page chrome while preserving print proportions",
+        "implementation": "Keep PDF preview print proportions inside a contained viewer"
+      },
+      "classification": "ADDED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-114"
+    },
+    {
+      "id": "IH-07",
+      "recommendation": "R-062",
+      "source": "S10",
+      "start": 45,
+      "end": 45,
+      "quote": "- Make mobile navigation clearly reveal that additional destinations exist.",
+      "identity": {
+        "component": "Tracker mobile navigation",
+        "action": "Make mobile navigation clearly reveal that additional destinations exist",
+        "outcome": "Expose additional destinations",
+        "implementation": "Make mobile navigation clearly reveal that additional destinations exist"
+      },
+      "classification": "REFINED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-073"
+    },
+    {
+      "id": "IH-08",
+      "recommendation": "R-058",
+      "source": "S10",
+      "start": 55,
+      "end": 55,
+      "quote": "- Use darker text.",
+      "identity": {
+        "component": "Light completed-prerequisite status chip",
+        "action": "Use darker text on the light completed-prerequisite chip while preserving its green tint",
+        "outcome": "Improve status readability while keeping semantic color",
+        "implementation": "Use darker text on the light completed-prerequisite chip while preserving its green tint"
+      },
+      "classification": "REFINED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-069"
+    },
+    {
+      "id": "IH-09",
+      "recommendation": "R-095",
+      "source": "S10",
+      "start": 56,
+      "end": 56,
+      "quote": "- Give important metadata enough size for comfortable scanning.",
+      "identity": {
+        "component": "Important academic metadata",
+        "action": "Give important academic metadata enough size for comfortable scanning",
+        "outcome": "Improve repeated metadata scanning",
+        "implementation": "Give important academic metadata enough size for comfortable scanning"
+      },
+      "classification": "ADDED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-108"
+    },
+    {
+      "id": "IH-10",
+      "recommendation": "R-056",
+      "source": "S10",
+      "start": 67,
+      "end": 67,
+      "quote": "- Add a visible Degree Plan navigation link beside Roadmap and My Path.",
+      "identity": {
+        "component": "Tracker main navigation",
+        "action": "Add a visible Degree Plan navigation link beside Roadmap and My Path",
+        "outcome": "Make Degree Plan directly discoverable",
+        "implementation": "Add a visible Degree Plan navigation link beside Roadmap and My Path"
+      },
+      "classification": "REFINED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-067"
+    },
+    {
+      "id": "IH-11",
+      "recommendation": "R-090",
+      "source": "S10",
+      "start": 68,
+      "end": 68,
+      "quote": "- OR link directly from a credit-progress summary.",
+      "identity": {
+        "component": "Credit-progress summary",
+        "action": "Link directly to Degree Plan from a credit-progress summary",
+        "outcome": "Reach graduation requirements from relevant progress context",
+        "implementation": "Link directly to Degree Plan from a credit-progress summary"
+      },
+      "classification": "ADDED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-103"
+    },
+    {
+      "id": "IH-12",
+      "recommendation": "R-057",
+      "source": "S10",
+      "start": 81,
+      "end": 81,
+      "quote": "- Keep Account visible.",
+      "identity": {
+        "component": "Admin account-table Account column",
+        "action": "Keep Account visible at intermediate Admin table widths",
+        "outcome": "Keep account identity reachable",
+        "implementation": "Keep Account visible at intermediate Admin table widths"
+      },
+      "classification": "REFINED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-068"
+    },
+    {
+      "id": "IH-13",
+      "recommendation": "R-091",
+      "source": "S10",
+      "start": 82,
+      "end": 82,
+      "quote": "- Keep Role visible.",
+      "identity": {
+        "component": "Admin account-table Role column",
+        "action": "Keep Role visible at intermediate Admin table widths",
+        "outcome": "Keep role reachable",
+        "implementation": "Keep Role visible at intermediate Admin table widths"
+      },
+      "classification": "ADDED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-104"
+    },
+    {
+      "id": "IH-14",
+      "recommendation": "R-092",
+      "source": "S10",
+      "start": 83,
+      "end": 83,
+      "quote": "- Keep Status visible.",
+      "identity": {
+        "component": "Admin account-table Status column",
+        "action": "Keep Status visible at intermediate Admin table widths",
+        "outcome": "Keep status reachable",
+        "implementation": "Keep Status visible at intermediate Admin table widths"
+      },
+      "classification": "ADDED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-105"
+    },
+    {
+      "id": "IH-15",
+      "recommendation": "R-093",
+      "source": "S10",
+      "start": 84,
+      "end": 84,
+      "quote": "- Keep View visible.",
+      "identity": {
+        "component": "Admin account-table View column",
+        "action": "Keep View visible at intermediate Admin table widths",
+        "outcome": "Keep view reachable",
+        "implementation": "Keep View visible at intermediate Admin table widths"
+      },
+      "classification": "ADDED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-106"
+    },
+    {
+      "id": "IH-16",
+      "recommendation": "R-094",
+      "source": "S10",
+      "start": 85,
+      "end": 85,
+      "quote": "- Move secondary login metrics into the details drawer.",
+      "identity": {
+        "component": "Admin login metrics and details drawer",
+        "action": "Move secondary login metrics into the Admin details drawer",
+        "outcome": "Reduce intermediate table pressure",
+        "implementation": "Move secondary login metrics into the Admin details drawer"
+      },
+      "classification": "ADDED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-107"
+    },
+    {
+      "id": "IH-17",
+      "recommendation": "R-063",
+      "source": "S10",
+      "start": 92,
+      "end": 92,
+      "quote": "- Semantic colors",
+      "identity": {
+        "component": "Cross-page semantic colors",
+        "action": "Improve consistency of cross-page semantic colors while retaining page-family differences",
+        "outcome": "Make equivalent meanings visually consistent",
+        "implementation": "Improve consistency of cross-page semantic colors while retaining page-family differences"
+      },
+      "classification": "REFINED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-074"
+    },
+    {
+      "id": "IH-18",
+      "recommendation": "R-098",
+      "source": "S10",
+      "start": 93,
+      "end": 93,
+      "quote": "- Focus rings",
+      "identity": {
+        "component": "Cross-page rendered focus rings",
+        "action": "Improve consistency of cross-page focus rings while retaining page-family differences",
+        "outcome": "Make keyboard focus consistently visible",
+        "implementation": "Improve consistency of cross-page focus rings while retaining page-family differences"
+      },
+      "classification": "ADDED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-111"
+    },
+    {
+      "id": "IH-19",
+      "recommendation": "R-099",
+      "source": "S10",
+      "start": 94,
+      "end": 94,
+      "quote": "- Button sizes",
+      "identity": {
+        "component": "Cross-page button sizes",
+        "action": "Improve consistency of cross-page button sizes while retaining page-family differences",
+        "outcome": "Make equivalent controls more predictable",
+        "implementation": "Improve consistency of cross-page button sizes while retaining page-family differences"
+      },
+      "classification": "ADDED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-112"
+    },
+    {
+      "id": "IH-20",
+      "recommendation": "R-100",
+      "source": "S10",
+      "start": 95,
+      "end": 95,
+      "quote": "- Dialog spacing",
+      "identity": {
+        "component": "Cross-page dialog spacing",
+        "action": "Improve consistency of cross-page dialog spacing while retaining page-family differences",
+        "outcome": "Make dialog composition more predictable",
+        "implementation": "Improve consistency of cross-page dialog spacing while retaining page-family differences"
+      },
+      "classification": "ADDED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-113"
+    },
+    {
+      "id": "IH-21",
+      "recommendation": "R-059",
+      "source": "S10",
+      "start": 106,
+      "end": 106,
+      "quote": "- Load the PDF engine when export is requested.",
+      "identity": {
+        "component": "Tracker PDF vendor loading",
+        "action": "Load the PDF engine when export is requested",
+        "outcome": "Avoid startup loading for unused export",
+        "implementation": "Load the PDF engine when export is requested"
+      },
+      "classification": "REFINED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-070"
+    },
+    {
+      "id": "IH-22",
+      "recommendation": "R-102",
+      "source": "S10",
+      "start": 107,
+      "end": 107,
+      "quote": "- Show a preparing/loading state during export preparation.",
+      "identity": {
+        "component": "PDF export preparation feedback",
+        "action": "Show a preparing/loading state during export preparation",
+        "outcome": "Explain export preparation progress",
+        "implementation": "Show a preparing/loading state during export preparation"
+      },
+      "classification": "ADDED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-115"
+    },
+    {
+      "id": "IH-23",
+      "recommendation": "R-096",
+      "source": "S10",
+      "start": 108,
+      "end": 108,
+      "quote": "- Show the sign-in static background immediately.",
+      "identity": {
+        "component": "Sign-in static background",
+        "action": "Show the sign-in static background immediately",
+        "outcome": "Provide usable sign-in presentation before decoration",
+        "implementation": "Show the sign-in static background immediately"
+      },
+      "classification": "ADDED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-109"
+    },
+    {
+      "id": "IH-24",
+      "recommendation": "R-060",
+      "source": "S10",
+      "start": 109,
+      "end": 109,
+      "quote": "- Load decorative WebGL only when appropriate.",
+      "identity": {
+        "component": "Sign-in decorative WebGL resources",
+        "action": "Load decorative WebGL only when appropriate",
+        "outcome": "Avoid unnecessary decorative transfer",
+        "implementation": "Load decorative WebGL only when appropriate"
+      },
+      "classification": "REFINED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-071"
+    },
+    {
+      "id": "IH-25",
+      "recommendation": "R-061",
+      "source": "S10",
+      "start": 120,
+      "end": 120,
+      "quote": "- Use local SVG icons for essential actions.",
+      "identity": {
+        "component": "Essential action icons across surfaces",
+        "action": "Use local SVG icons for essential actions",
+        "outcome": "Preserve visible action identification when CDN icons fail",
+        "implementation": "Use local SVG icons for essential actions"
+      },
+      "classification": "REFINED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-072"
+    },
+    {
+      "id": "IH-26",
+      "recommendation": "R-097",
+      "source": "S10",
+      "start": 121,
+      "end": 121,
+      "quote": "- OR use visible fallback text labels.",
+      "identity": {
+        "component": "Essential action labels across surfaces",
+        "action": "Use visible fallback text labels for essential actions",
+        "outcome": "Preserve visible action identification when external icons fail",
+        "implementation": "Use visible fallback text labels for essential actions"
+      },
+      "classification": "ADDED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-110"
+    },
+    {
+      "id": "IH-27",
+      "recommendation": "R-103",
+      "source": "S10",
+      "start": 122,
+      "end": 122,
+      "quote": "- Give headings explicit font fallbacks.",
+      "identity": {
+        "component": "Headings across audited surfaces",
+        "action": "Give headings explicit font fallbacks",
+        "outcome": "Keep headings readable if remote fonts fail",
+        "implementation": "Give headings explicit font fallbacks"
+      },
+      "classification": "ADDED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-116"
+    },
+    {
+      "id": "IH-28",
+      "recommendation": "R-064",
+      "source": "S10",
+      "start": 124,
+      "end": 124,
+      "quote": "- Make the maintenance `h1` independently communicate \"Scheduled maintenance\" instead of only saying \"better.\"",
+      "identity": {
+        "component": "Maintenance h1",
+        "action": "Make the maintenance h1 independently communicate Scheduled maintenance",
+        "outcome": "State the page purpose independently",
+        "implementation": "Make the maintenance h1 independently communicate Scheduled maintenance"
+      },
+      "classification": "REFINED",
+      "sourceMeaning": "Exact quoted actionable bullet",
+      "sourceOccurrence": "O-075"
+    }
+  ],
+  "unchangedPriorIds": [
+    "R-001",
+    "R-002",
+    "R-003",
+    "R-004",
+    "R-005",
+    "R-006",
+    "R-007",
+    "R-008",
+    "R-010",
+    "R-012",
+    "R-013",
+    "R-014",
+    "R-015",
+    "R-016",
+    "R-017",
+    "R-018",
+    "R-019",
+    "R-020",
+    "R-021",
+    "R-022",
+    "R-023",
+    "R-024",
+    "R-025",
+    "R-026",
+    "R-027",
+    "R-028",
+    "R-029",
+    "R-030",
+    "R-031",
+    "R-032",
+    "R-033",
+    "R-034",
+    "R-035",
+    "R-036",
+    "R-037",
+    "R-038",
+    "R-039",
+    "R-040",
+    "R-041",
+    "R-042",
+    "R-043",
+    "R-044",
+    "R-045",
+    "R-046",
+    "R-047",
+    "R-048",
+    "R-049",
+    "R-050",
+    "R-051",
+    "R-052",
+    "R-053",
+    "R-054",
+    "R-055",
+    "R-066",
+    "R-067",
+    "R-068",
+    "R-069",
+    "R-070",
+    "R-071",
+    "R-072",
+    "R-073",
+    "R-074",
+    "R-075",
+    "R-076",
+    "R-077",
+    "R-078",
+    "R-079",
+    "R-080",
+    "R-081",
+    "R-082",
+    "R-083",
+    "R-084",
+    "R-085",
+    "R-086",
+    "R-087",
+    "R-088",
+    "R-089"
+  ],
+  "statusChanges": [],
+  "score": {
+    "score": "12/20",
+    "dimensions": {
+      "Accessibility": "2/4",
+      "Performance": "2/4",
+      "Responsive design": "3/4",
+      "Theming": "3/4",
+      "Implementation integrity": "2/4"
+    },
+    "basis": "Original manual code/browser assessment as delivered by owner; detector could not start; not a current re-score"
+  },
+  "remainingUnavailable": [
+    "Other skills full raw individual transcripts; S01 only has summarized framework sections"
+  ],
+  "sourceCoverage": "Complete for the entire owner-delivered original report, not authenticated against an external original file"
+}
