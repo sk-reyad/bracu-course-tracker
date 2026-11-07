@@ -1,0 +1,5 @@
+Application suites: original 365/365; selected Demo B 365/365; R-023 365/365.
+Browser: 24 complete viewport/theme/variant interaction cases; 8 supplemental cases; 48 matched screenshots.
+Failures in final application/browser assertions: 0.
+Known preview diagnostic: local maintenance endpoint 403, detailed in report.
+Patch replay, source reconstruction and protected-workspace comparisons: PASS.

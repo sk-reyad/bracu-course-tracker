@@ -1,0 +1,39 @@
+{
+  "baseCommit": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+  "reviewStartCommit": "f989932461813fe5674fea5c13b1f32518a477d8",
+  "originalMainHead": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+  "originalTrackedAndStagedDiffEmpty": true,
+  "originalUntrackedAuditPreserved": true,
+  "completedWorkspaces": [
+    {
+      "workspace": "bracu-ui-demo-9d86db46",
+      "filesCompared": 402,
+      "allUnchanged": true,
+      "inventorySha256": "47215cff4130d97cb4cbb64915f3eb0cd44d1e4f0bd9b5a48910e2d7d975b447"
+    },
+    {
+      "workspace": "bracu-final-corrections",
+      "filesCompared": 52,
+      "allUnchanged": true,
+      "inventorySha256": "2bcbadbab2fbb555a87e7f4efae91b88a5d5f2a5b0a71bbcb002af61cd2fea73"
+    },
+    {
+      "workspace": "bracu-task002-r010",
+      "filesCompared": 2292,
+      "allUnchanged": true,
+      "inventorySha256": "98f4da5491628dd65f72f4d1f9d3233f63b2fb5f7914e93bef76a22e2466d1d3"
+    }
+  ],
+  "onlyIsolatedDifferencesFromBaseline": [
+    "css/style.css",
+    "js/app.js",
+    "js/roadmap.js",
+    "tests/main-integration.test.js"
+  ],
+  "selectedBAppIdenticalToR023": true,
+  "selectedBRoadmapMatchesCompletedDemoNormalizedLF": true,
+  "previousReviewArtifactsUnchanged": true,
+  "masterLedgerRegisterAndCountsUnchanged": true,
+  "patchReplayMatchesSnapshots": true,
+  "rebuildMatchesSnapshots": true
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "theme": "light",
+    "width": 360,
+    "selectedHits": 1250,
+    "candidateHits": 1555,
+    "samples": 1690,
+    "increasePercent": 24.4
+  },
+  {
+    "theme": "light",
+    "width": 1440,
+    "selectedHits": 1250,
+    "candidateHits": 1559,
+    "samples": 1690,
+    "increasePercent": 24.72000000000001
+  },
+  {
+    "theme": "dark",
+    "width": 360,
+    "selectedHits": 1250,
+    "candidateHits": 1555,
+    "samples": 1690,
+    "increasePercent": 24.4
+  },
+  {
+    "theme": "dark",
+    "width": 1440,
+    "selectedHits": 1250,
+    "candidateHits": 1559,
+    "samples": 1690,
+    "increasePercent": 24.72000000000001
+  }
+]

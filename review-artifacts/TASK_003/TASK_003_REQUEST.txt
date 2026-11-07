@@ -1,0 +1,269 @@
+# TASK_003 — R-023 Stream Badge Interactive Target
+
+Repository: `sk-reyad/bracu-course-tracker`
+
+Review branch: `temp/ui-ux-audit-review`
+
+Verified starting commit: `f989932461813fe5674fea5c13b1f32518a477d8`
+
+Original application baseline: `9d86db46b1134a3755a2e269252b1ee1234f2570`
+
+## 1. Objective
+
+Begin the next sequential recommendation review.
+
+**R-023 — Make the containing stream badge the interactive target.**
+
+Finding: F-005
+
+Priority: P2
+
+Sources:
+- ecc:accessibility
+- ecc:browser-qa
+
+Status: UNREVIEWED
+
+This is an alternative to the already selected R-022 implementation in Demo B.
+
+Build and demonstrate R-023 only.
+
+Do not implement R-024 or any subsequent recommendation.
+
+## 2. Read and Preserve Existing Work
+
+Before editing, inspect:
+
+- Current Master Recommendation Register
+- Current Review Ledger
+- Original audit finding F-005
+- R-022 and R-023 source references
+- Previous Demo B source code and verification evidence
+- Original `js/roadmap.js`
+- Original stream badge CSS in `css/style.css`
+- Existing stream disclosure handlers in `js/app.js`
+- Related tests and repository instructions
+
+Understand how stream badges are generated, how tooltip disclosure works, and how Demo B already improves the target dimensions.
+
+Preserve Demo B as a SELECTED CANDIDATE.
+
+Do not overwrite or alter completed demo workspaces.
+
+## 3. Three-Way Comparison
+
+Provide three independently reviewable versions:
+
+**BEFORE — Original Baseline**
+
+The untouched original stream badge implementation.
+
+**OPTION A — Previously Selected Demo B**
+
+The existing improved trigger with at least 24 × 24 CSS px target size.
+
+Preserve its tooltip containment, positioning, scrolling, dismissal, keyboard and responsive behavior.
+
+**OPTION B — R-023 Alternative**
+
+Make the entire visible stream badge the interactive target while preserving its existing visual identity.
+
+The comparison must determine whether Option B offers a meaningful usability or accessibility improvement over Demo B.
+
+Do not artificially invent visual differences.
+
+If the actual clickable region and usability remain effectively equivalent, state that clearly.
+
+## 4. Implementation Requirements
+
+Inspect the current structure, where a stream badge contains a disclosure trigger and a tooltip with a separate "See more" button.
+
+Implement the alternative using valid, accessible HTML.
+
+Do not create:
+
+- Nested interactive buttons
+- A clickable span without appropriate keyboard semantics
+- Duplicate keyboard focus targets
+- Conflicting parent/child click handlers
+- Invalid interactive nesting
+- Multiple disclosure activations from a single pointer event
+
+Ensure:
+
+1. The intended full visible badge surface is clickable.
+2. The actual hit area is measured, not inferred from appearance.
+3. Keyboard users can activate the disclosure through Enter and Space.
+4. A visible focus indicator remains.
+5. aria-expanded accurately reflects disclosure state.
+6. Opening one stream tooltip and closing another works correctly.
+7. Escape and outside-click dismissal remain correct.
+8. The "See more" button remains independently accessible and functional.
+9. Its Course List navigation/filter behavior remains unchanged.
+10. No clipping, accidental stacking, or horizontal page overflow is introduced.
+11. Hover, focus and click interaction remain consistent.
+12. Badge colors, typography and academic status styles remain unchanged.
+13. The existing selected Demo B tooltip improvements remain intact.
+
+Pay special attention to the relationship between the badge's interactive surface and the tooltip's separately interactive controls.
+
+Prefer a small, semantically correct implementation over complex event-handler workarounds.
+
+## 5. Strict Scope
+
+Limit the candidate to R-023 and the exact related stream badge interaction files.
+
+Do not change:
+
+- API or Supabase logic
+- Authentication
+- Academic calculations
+- Course data
+- GPA/CGPA logic
+- PDF export
+- Persistence
+- General site navigation
+- Other badges unrelated to stream disclosures
+- Demo A, C or D
+- Selected Demo B
+- Rejected Native B
+- Deployment configuration
+
+Do not modify original repository files.
+
+Develop Option B only in a fresh isolated review workspace.
+
+## 6. Visual Evidence
+
+Capture actual browser screenshots for Original, selected Demo B and R-023.
+
+Use matched state, viewport, theme and test data.
+
+At minimum include:
+
+- Desktop light/dark
+- Mobile light/dark
+- Closed stream badge
+- Opened stream disclosure
+- Keyboard focus state
+- "See more" interaction state where relevant
+
+Show the same example stream and course card in all three versions.
+
+Provide a side-by-side comparison gallery.
+
+Do not generate artificial mockups or claim visual improvement when the only change is interaction geometry.
+
+## 7. Required Interaction Testing
+
+Test both selected Demo B and R-023 using real browser input.
+
+Verify:
+
+- Clicking the badge center
+- Clicking its left/right/top/bottom visible areas
+- Clicking badge padding or empty space
+- Enter activation
+- Space activation
+- Tab and Shift+Tab focus behavior
+- Focus-visible indication
+- Escape dismissal
+- Outside-click dismissal
+- Multiple adjacent stream badges
+- Tooltip positioning near viewport edges
+- Keyboard access to "See more"
+- Correct Course List destination/filter
+- Document overflow dimensions
+
+Test responsive layouts including 360px, 390px, 768px, 1024px and desktop widths where practical, under light and dark themes.
+
+Record actual target rectangles and clickable hit-area measurements for Option A and Option B.
+
+Compare whether R-023 provides a demonstrable advantage beyond the already selected 24px Demo B target.
+
+The original audit did not verify every WCAG SC 2.5.8 spacing exception.
+
+Do not declare a conformance failure or pass solely from target height. R-024 remains a separate unreviewed verification recommendation.
+
+Run relevant application and regression tests.
+
+Record browser console errors and actual failures.
+
+Do not claim to have tested unavailable browsers, real devices or cloud workflows.
+
+## 8. Mandatory Review Artifacts
+
+Create:
+
+`review-artifacts/TASK_003/`
+
+Include:
+
+- `TASK_REVIEW_003.md`
+- Before / Demo B / R-023 gallery
+- Actual browser screenshots
+- Minimal changes diff
+- Candidate source snapshot
+- Keyboard and pointer interaction evidence
+- Target-size and hit-area measurements
+- Responsive and overflow evidence
+- Test logs
+- Git/repository protection evidence
+- Manifest and checksums
+- Reproducible local preview instructions
+
+The report must cover:
+
+1. Original recommendation and exact source.
+2. Existing Demo B behavior.
+3. R-023 implementation details.
+4. Exact changed files and functions.
+5. Semantic and keyboard correctness.
+6. Pointer hit-area comparison.
+7. Visual consistency.
+8. Tooltip and "See more" regression results.
+9. Test commands and outputs.
+10. Technical risks and limitations.
+11. Whether Option B genuinely improves usability compared with Demo B.
+12. Recommendation for owner evaluation, without choosing for the owner.
+
+All evidence must be accessible from GitHub without depending on the local Windows preview server.
+
+## 9. Publication Rules
+
+Publish review artifacts only to:
+
+`temp/ui-ux-audit-review`
+
+Preserve the original `main` branch, local working tree and all completed demos.
+
+Use a normal review-artifact commit.
+
+Verify that no application file outside the isolated demo was modified.
+
+Do not update R-023 to SELECTED, REJECTED or HOLD.
+
+Do not alter the current recommendation status counts.
+
+The owner has not made a design decision yet.
+
+## 10. Final Handoff and STOP
+
+Provide:
+
+- Full review commit SHA
+- TASK_REVIEW_003.md GitHub URL
+- Three-way gallery URL
+- Local interactive preview instructions
+- Exact test results
+- Any technical limitations
+
+STOP after publishing.
+
+Do not start R-024 or any other recommendation.
+
+Wait for ChatGPT's independent technical review and the owner's explicit decision.
+
+Do not merge, deploy or update production.
+
+**START TASK_003 NOW — R-023 ONLY.**

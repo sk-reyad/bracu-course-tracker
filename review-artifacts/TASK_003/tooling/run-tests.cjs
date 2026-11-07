@@ -1,0 +1,4 @@
+const fs=require('node:fs'),p=require('node:path'),cp=require('node:child_process');
+const results=[];
+for(const v of ['original','demo-b','r023']){const cwd=p.join(__dirname,v),files=fs.readdirSync(p.join(cwd,'tests')).filter(n=>n.endsWith('.test.js')).map(n=>'tests/'+n);const r=cp.spawnSync(process.execPath,['--test',...files],{cwd,encoding:'utf8'});const output=(r.stdout+'\n'+r.stderr).replaceAll(cwd,'<isolated-'+v+'>');fs.writeFileSync(p.join(__dirname,'evidence',v+'-tests.txt'),output);results.push({variant:v,exitCode:r.status,summary:output.split('\n').filter(l=>/^(ℹ |# (tests|pass|fail|skipped))/.test(l))});}
+fs.writeFileSync(p.join(__dirname,'evidence/test-results.json'),JSON.stringify(results,null,2));console.log(JSON.stringify(results,null,2));if(results.some(r=>r.exitCode))process.exitCode=1;

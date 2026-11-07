@@ -1,0 +1,32 @@
+diff --git a/js/roadmap.js b/js/roadmap.js
+--- a/js/roadmap.js
++++ b/js/roadmap.js
+@@ -650,8 +650,8 @@ function renderCategoryBadge(state, categoryId) {
+     return `<span class="badge category-badge">${escapeHtml(categoryLabel(state, categoryId))}</span>`;
+   }
+   const compactLabel = `Stream-${fieldId.split("-")[1]}`;
+-  return `<span class="badge category-badge stream-category">
+-    <button class="stream-category-trigger" type="button" aria-expanded="false" data-curriculum-field="${escapeHtml(fieldId)}">${escapeHtml(compactLabel)}</button>
++  return `<span class="stream-category">
++    <button class="badge category-badge stream-category-trigger" type="button" aria-expanded="false" data-curriculum-field="${escapeHtml(fieldId)}">${escapeHtml(compactLabel)}</button>
+     <span class="stream-category-tooltip" role="group" aria-label="${escapeHtml(field.label)}">
+       <strong>${escapeHtml(field.label)}</strong>
+       <button class="stream-see-more" type="button" data-stream-see-more data-curriculum-field="${escapeHtml(fieldId)}">See more</button>
+diff --git a/css/style.css b/css/style.css
+--- a/css/style.css
++++ b/css/style.css
+@@ -3821,3 +3821,14 @@ body.report-print-mode .back-to-top {
+ }
+ 
+ .stream-category { padding-block: 0; }
++
++/* R-023: the native button owns the complete visible badge surface. */
++.stream-category > .stream-category-trigger.badge {
++  min-height: 26px;
++  padding: 0 7px;
++  border: 1px solid var(--border);
++  color: var(--muted);
++  background: var(--surface-soft);
++  font-size: 0.68rem;
++  line-height: 1.2;
++}

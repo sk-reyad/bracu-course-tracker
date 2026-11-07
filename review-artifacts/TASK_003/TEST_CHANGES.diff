@@ -1,0 +1,14 @@
+diff --git a/tests/main-integration.test.js b/tests/main-integration.test.js
+--- a/tests/main-integration.test.js
++++ b/tests/main-integration.test.js
+@@ -56,8 +56,8 @@ test('Course List exposes every approved curriculum field and applies the shared
+ 
+ test('stream badges disclose full names and See more opens the matching Course List filter', () => {
+   assert.match(roadmap, /function renderCategoryBadge\(/);
+-  assert.match(roadmap, /class="badge category-badge stream-category"/);
+-  assert.match(roadmap, /<button class="stream-category-trigger" type="button"/);
++  assert.match(roadmap, /class="stream-category"/);
++  assert.match(roadmap, /<button class="badge category-badge stream-category-trigger" type="button"/);
+   assert.match(roadmap, /data-curriculum-field=/);
+   assert.match(roadmap, />See more<\/button>/);
+   assert.match(app, /function openCurriculumField\(fieldId\)/);
