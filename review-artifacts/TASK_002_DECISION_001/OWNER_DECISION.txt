@@ -1,0 +1,165 @@
+# TASK_002 — Record Owner Decision: R-010 REJECTED
+
+Repository: `sk-reyad/bracu-course-tracker`
+
+Review branch: `temp/ui-ux-audit-review`
+
+Latest verified review commit: `4f18b2c39ec089decc05a24e258da4d6d48698f3`
+
+## 1. Official Owner Decision
+
+The owner has explicitly decided:
+
+**R-010 — REJECTED**
+
+**Demo A — KEEP AS SELECTED CANDIDATE**
+
+Recommendation R-010 proposed replacing the existing custom tracker modal architecture with native HTML `<dialog>` and `showModal()`.
+
+After reviewing the implementation, evidence, and comparison with Demo A, the owner has rejected this alternative.
+
+The selected Demo A implementation remains the preferred candidate for modal accessibility improvements.
+
+This is a final owner decision for R-010, not a request for another implementation or demonstration.
+
+## 2. Required Documentation Updates
+
+Update the following files on the temporary review branch:
+
+- `review-artifacts/MASTER_RECOMMENDATIONS.md`
+- `review-artifacts/REVIEW_LEDGER.md`
+
+Locate recommendation `R-010` and change its status from `UNREVIEWED` to `REJECTED`.
+
+Record the decision reason:
+
+"Owner rejected the native-dialog implementation alternative after comparing it with the previously selected Demo A. The existing custom-modal accessibility improvements in Demo A remain the preferred candidate. No distinct visual or tested usability advantage justified replacing the selected implementation."
+
+Clearly distinguish this decision from Demo D's earlier rejected visual styling changes.
+
+Do not mark the entire modal accessibility finding F-002 as rejected.
+
+Other recommendations related to F-002 remain unchanged.
+
+## 3. Preserve Existing Owner Decisions
+
+Keep all previously recorded decisions intact:
+
+- Demo A: SELECTED CANDIDATE
+- Demo B: SELECTED CANDIDATE
+- Demo C: HOLD
+- Demo D: REJECTED
+- R-010: REJECTED
+
+Do not change any other recommendation's status, action, priority, source attribution, or identity.
+
+Do not delete R-010 from the Master Recommendation Register.
+
+Keep its original audit references, technical evidence, comparative screenshots, and implementation history available for future reference.
+
+## 4. Update Current Counts and Evidence
+
+Before editing, read the current Master Register, Review Ledger, and latest authoritative machine-readable register/count files.
+
+Update the current authoritative counts consistently.
+
+If the current baseline is still 106 records with 23 SELECTED, 9 REJECTED, 7 HOLD and 67 UNREVIEWED, the expected resulting distribution is:
+
+- Total retained recommendations: 106
+- SELECTED: 23
+- REJECTED: 10
+- HOLD: 7
+- UNREVIEWED: 66
+- IN REVIEW: 0
+
+Only R-010 may change status.
+
+Historical immutable reports, manifests, and evidence from previous commits must remain untouched.
+
+If the review branch has advanced unexpectedly, inspect and reconcile the current state rather than overwriting newer changes.
+
+## 5. Mandatory Decision Report
+
+Create a new directory:
+
+`review-artifacts/TASK_002_DECISION_001/`
+
+Include:
+
+- `DECISION_REPORT.md`
+- Updated authoritative register and counts snapshot
+- Verification results
+- Git protection evidence
+- Artifact manifest with checksums
+
+The report must state:
+
+1. Exact owner decision and reason.
+2. Previous and updated R-010 status.
+3. Confirmation that Demo A remains SELECTED.
+4. Changes to recommendation counts.
+5. Exact documentation files modified.
+6. Verification that all other 105 recommendation statuses remained unchanged.
+7. Verification that no application files or completed demos were modified.
+8. Exact tests executed and their results.
+9. Existing limitations, if any.
+10. GitHub commit SHA and independent-review handoff.
+
+## 6. Strict Repository Protection
+
+Only documentation and review evidence may change.
+
+Do NOT:
+
+- Modify `main`.
+- Modify production HTML, CSS or JavaScript.
+- Modify Demo A, B, C or D.
+- Modify the rejected Native B candidate.
+- Delete previous TASK_002 screenshots or evidence.
+- Merge or deploy anything.
+- Change API, Supabase, Auth, academic calculations, persistence or PDF behavior.
+- Start another recommendation.
+
+Preserve the original working directory and all previous review artifacts.
+
+## 7. Verification and Publication
+
+Before publishing:
+
+- Confirm R-010 is REJECTED in every current authoritative decision record.
+- Confirm Demo A remains SELECTED CANDIDATE.
+- Compare all other recommendation statuses against the previous snapshot.
+- Confirm the counts reconcile.
+- Verify that only `review-artifacts/` files changed.
+- Verify original `main` remains unchanged.
+
+Commit and push the documentation-only decision update to:
+
+`temp/ui-ux-audit-review`
+
+Use a meaningful commit message, such as:
+
+`docs(review): record R-010 rejection and retain Demo A`
+
+After pushing, provide:
+
+- Full review commit SHA
+- Direct GitHub decision report URL
+- Updated Master Recommendation Register URL
+- Changed-file summary
+- Verification results
+- Confirmation that original repository and completed demos remain unchanged
+
+## 8. Mandatory Stop
+
+STOP immediately after publishing the decision record.
+
+Do not implement R-010.
+
+Do not begin R-023 or any other recommendation.
+
+Do not automatically proceed because the previous review passed.
+
+Wait for the owner's explicit `NEXT` instruction.
+
+**Execute only this documentation-only decision update.**

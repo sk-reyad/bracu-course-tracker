@@ -1,0 +1,75 @@
+{
+  "base": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+  "parent": "4f18b2c39ec089decc05a24e258da4d6d48698f3",
+  "originalBefore": {
+    "branch": "main",
+    "head": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+    "status": "?? FRONTEND_UI_MULTISKILL_AUDIT.md",
+    "trackedDiff": "",
+    "stagedDiff": "",
+    "auditSha256": "9ad3924539bea8181d9337b6e8e970a116bf28b9109c7cdb589f9a1536ca54d9"
+  },
+  "originalAfter": {
+    "branch": "main",
+    "head": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+    "status": "?? FRONTEND_UI_MULTISKILL_AUDIT.md",
+    "trackedDiff": "",
+    "stagedDiff": "",
+    "auditSha256": "9ad3924539bea8181d9337b6e8e970a116bf28b9109c7cdb589f9a1536ca54d9"
+  },
+  "workspacesBefore": [
+    {
+      "workspace": "bracu-ui-demo-9d86db46/baseline",
+      "files": 182,
+      "aggregateSha256": "ca7dabcd745d96083c533100d3009bbe7ba968a7a1269cdfff2b6ca25230381b"
+    },
+    {
+      "workspace": "bracu-ui-demo-9d86db46/improved",
+      "files": 184,
+      "aggregateSha256": "8ee61184f23858e6a35d2bf909356abc22324ff9a3ff4c656b4adfdedb356868"
+    },
+    {
+      "workspace": "bracu-task002-r010/original",
+      "files": 182,
+      "aggregateSha256": "ca7dabcd745d96083c533100d3009bbe7ba968a7a1269cdfff2b6ca25230381b"
+    },
+    {
+      "workspace": "bracu-task002-r010/option-a",
+      "files": 182,
+      "aggregateSha256": "f9dc3afada8949a9404183d97d3357da005b2bb120c1a027f41127074aaff90a"
+    },
+    {
+      "workspace": "bracu-task002-r010/native",
+      "files": 182,
+      "aggregateSha256": "c25e4e893e189597deaf96ae04fca1f4ee455430113bcc4fa7f0bd9ebd189dd3"
+    }
+  ],
+  "workspacesAfter": [
+    {
+      "workspace": "bracu-ui-demo-9d86db46/baseline",
+      "files": 182,
+      "aggregateSha256": "ca7dabcd745d96083c533100d3009bbe7ba968a7a1269cdfff2b6ca25230381b"
+    },
+    {
+      "workspace": "bracu-ui-demo-9d86db46/improved",
+      "files": 184,
+      "aggregateSha256": "8ee61184f23858e6a35d2bf909356abc22324ff9a3ff4c656b4adfdedb356868"
+    },
+    {
+      "workspace": "bracu-task002-r010/original",
+      "files": 182,
+      "aggregateSha256": "ca7dabcd745d96083c533100d3009bbe7ba968a7a1269cdfff2b6ca25230381b"
+    },
+    {
+      "workspace": "bracu-task002-r010/option-a",
+      "files": 182,
+      "aggregateSha256": "f9dc3afada8949a9404183d97d3357da005b2bb120c1a027f41127074aaff90a"
+    },
+    {
+      "workspace": "bracu-task002-r010/native",
+      "files": 182,
+      "aggregateSha256": "c25e4e893e189597deaf96ae04fca1f4ee455430113bcc4fa7f0bd9ebd189dd3"
+    }
+  ],
+  "scope": "Only current master/ledger and new decision evidence; historical snapshots, all candidate workspaces and main untouched"
+}

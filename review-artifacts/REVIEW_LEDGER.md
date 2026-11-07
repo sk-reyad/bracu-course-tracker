@@ -1,6 +1,6 @@
 # Review ledger
 
-Current correction: TASK_001_CORRECTION_002 (source fidelity only); accepted substantive reconciliation and all owner statuses preserved. A/B SELECTED CANDIDATES; C HOLD (corrected check preserved); D REJECTED. 23 selected, 9 rejected, 7 held, 67 unreviewed, 0 in review. No statuses changed by source recovery. Production changes remain unauthorized.
+Current decision: TASK_002_DECISION_001. R-010 REJECTED; Demo A remains the preferred SELECTED CANDIDATE. Demo B SELECTED CANDIDATE; Demo C HOLD; Demo D rejected visual styling preserved. 23 selected, 10 rejected, 7 held, 66 unreviewed, 0 in review. Only R-010 changed status. No production authorization.
 
 | ID | Recommendation | Status | Prior demonstration |
 | --- | --- | --- | --- |
@@ -13,7 +13,7 @@ Current correction: TASK_001_CORRECTION_002 (source fidelity only); accepted sub
 | [R-007](MASTER_RECOMMENDATIONS.md#r-007) | Support Escape dismissal for the active tracker modal | SELECTED | Demo A; existing behavior preserved |
 | [R-008](MASTER_RECOMMENDATIONS.md#r-008) | Restore focus to the opener on tracker-modal dismissal | SELECTED | Demo A |
 | [R-009](MASTER_RECOMMENDATIONS.md#r-009) | Retain tracker overlays and reuse the admin drawer custom focus-management pattern | SELECTED | Demo A |
-| [R-010](MASTER_RECOMMENDATIONS.md#r-010) | Use native dialog.showModal instead of custom tracker overlays | UNREVIEWED | NO |
+| [R-010](MASTER_RECOMMENDATIONS.md#r-010) | Use native dialog.showModal instead of custom tracker overlays | REJECTED | NO |
 | [R-011](MASTER_RECOMMENDATIONS.md#r-011) | Give each tracker close button a context-specific accessible name | SELECTED | Demo A |
 | [R-012](MASTER_RECOMMENDATIONS.md#r-012) | Keep close-button icons decorative alongside their accessible names | SELECTED | Demo A |
 | [R-013](MASTER_RECOMMENDATIONS.md#r-013) | Expose role=tab on each Settings tab button | SELECTED | Demo A |
@@ -119,6 +119,14 @@ Current correction: TASK_001_CORRECTION_002 (source fidelity only); accepted sub
 | [TASK_001_CORRECTION_001](TASK_001_CORRECTION_001/TASK_REVIEW_001_CORRECTION_001.md) | Recovered original source, reconciliation and artifact-only publication | READY FOR INDEPENDENT REVIEW (preliminary) | Independent ChatGPT review; explicit owner authorization before any demo |
 | [TASK_001_CORRECTION_002](TASK_001_CORRECTION_002/TASK_001_CORRECTION_002.md) | Actual original S12 archive; S10 identified as ChatGPT restatement; 28 supports rechecked | READY FOR INDEPENDENT REVIEW (preliminary) | Independent ChatGPT review; no new demo |
 
+| [TASK_002_DECISION_001](TASK_002_DECISION_001/DECISION_REPORT.md) | R-010 rejected; keep selected Demo A | FINAL OWNER DECISION RECORDED | Wait for explicit NEXT |
+
 R-056–R-064 were refined with recovered actions; R-065 remains a broader later-owner lead; actual S12 names Course List within broad overflow scope, but no distinct remaining cause was verified. R-090–R-106 are new and UNREVIEWED. R-009/R-011 gained exact source corroboration and retained selected status. No demo has started.
 
-Source identity correction: S12 is the actual original (path-only sanitized); S10 is the preserved structured restatement; S11/S13 are later instructions. All 28 clauses supported. Count remains 106; no selection, rejection or hold changed.
+Historical source identity correction (TASK_001_CORRECTION_002): S12 is the actual original (path-only sanitized); S10 is the preserved structured restatement; S11/S13 are later instructions. All 28 clauses supported. Count remains 106; no selection, rejection or hold changed.
+
+## Final owner decision — R-010
+
+Owner rejected the native-dialog implementation alternative after comparing it with the previously selected Demo A. The existing custom-modal accessibility improvements in Demo A remain the preferred candidate. No distinct visual or tested usability advantage justified replacing the selected implementation.
+
+This architecture decision is distinct from the nine earlier Demo D visual-treatment rejections. F-002 and all related recommendations except R-010 retain their existing statuses. [Current authoritative register](TASK_002_DECISION_001/REGISTER.json) · [current counts](TASK_002_DECISION_001/COUNTS.json). Previous TASK_002 comparison/focus evidence remains available; neither selected A nor rejected Native B source is modified. Wait for explicit NEXT; no next recommendation started.

@@ -1,0 +1,23 @@
+Node v24.16.0; Windows
+node --check review-artifacts/TASK_002_DECISION_001/verify-decision.test.cjs: PASS
+node --test review-artifacts/TASK_002_DECISION_001/verify-decision.test.cjs
+Exit: 0
+
+✔ 1: all 106 IDs retained and exactly one status changed (2.2917ms)
+✔ 2: the other 105 records are deeply unchanged (0.9995ms)
+✔ 3: R-010 changes only status and explicit decision metadata (0.2993ms)
+✔ 4: counts reconcile and every current authority agrees (0.2308ms)
+✔ 5: current Markdown R-010 records show rejection and exact reason (1.1405ms)
+✔ 6: selected A/B, held C, rejected D and other F-002 records preserved (0.1734ms)
+✔ 7: audit references and prior technical artifacts remain accessible and unchanged (55.7284ms)
+✔ 8: original and all five completed/selected/rejected workspace hashes match (0.1103ms)
+✔ 9: report has required decision/protection/stop and independent handoff (1.0035ms)
+✔ 10: master and ledger match every current record and point to latest snapshots (0.4175ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 167.2815

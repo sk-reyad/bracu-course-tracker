@@ -1,0 +1,55 @@
+{
+  "task": "TASK_002_DECISION_001",
+  "parent": "4f18b2c39ec089decc05a24e258da4d6d48698f3",
+  "base": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+  "scope": "Only R-010 disposition/current counts and new decision evidence; no application or candidate changes",
+  "expectedPackageFiles": 10,
+  "checksumPolicy": "All package files except this manifest are SHA-256 listed; manifest included without recursive self-hash",
+  "files": [
+    {
+      "path": "review-artifacts/MASTER_RECOMMENDATIONS.md",
+      "bytes": 160896,
+      "sha256": "3b74cddb0344a3b6c8d70870e4c82aae2c3e810e00c2cf7933b7f6f77c55e3ae"
+    },
+    {
+      "path": "review-artifacts/REVIEW_LEDGER.md",
+      "bytes": 17415,
+      "sha256": "c2c2de57dbe49b0108ddaf1a64f0fc5630f4fb88de1cc1e6b367780e054af288"
+    },
+    {
+      "path": "review-artifacts/TASK_002_DECISION_001/COUNTS.json",
+      "bytes": 296,
+      "sha256": "80227633d5c78590a4ecc1b8972dd4958145b2d026d02f16edd36f3b88b0d655"
+    },
+    {
+      "path": "review-artifacts/TASK_002_DECISION_001/DECISION_REPORT.md",
+      "bytes": 5765,
+      "sha256": "e54a89be302cea1f6597dc5aee6c1326f3fc9bcb0fc0a1ddf32cb9f27f1eef25"
+    },
+    {
+      "path": "review-artifacts/TASK_002_DECISION_001/GIT_PROTECTION.json",
+      "bytes": 2639,
+      "sha256": "b96d4bfb8f2daf9e66e7c4d028854851cc9693dabe85222fdcb005bc0bb605c3"
+    },
+    {
+      "path": "review-artifacts/TASK_002_DECISION_001/OWNER_DECISION.txt",
+      "bytes": 5311,
+      "sha256": "0faf85e0ae2b8da7cb445416cd08cf098861eb8eca2b11ec23c453c83f1e13c1"
+    },
+    {
+      "path": "review-artifacts/TASK_002_DECISION_001/REGISTER.json",
+      "bytes": 263542,
+      "sha256": "cfa873e06f122e257cb22b780e16744b903a96bbbb6fffdb2453e11d3170fa3d"
+    },
+    {
+      "path": "review-artifacts/TASK_002_DECISION_001/VERIFICATION_RESULTS.txt",
+      "bytes": 1118,
+      "sha256": "ab73f182c6c97c24a9ac7105af597147cbffe4f36dab25f996e9154151382ea3"
+    },
+    {
+      "path": "review-artifacts/TASK_002_DECISION_001/verify-decision.test.cjs",
+      "bytes": 5510,
+      "sha256": "5f44ef91e9f5a9194a7c7276eba52195ee521d0d7fc08da4a4ea536f81844acb"
+    }
+  ]
+}

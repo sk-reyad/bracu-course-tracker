@@ -1,45 +1,40 @@
 # Master recommendation register
 
-Current: TASK_001_CORRECTION_002 (source fidelity only) · base 9d86db46b1134a3755a2e269252b1ee1234f2570. [Report](TASK_001_CORRECTION_002/TASK_001_CORRECTION_002.md). [Accepted reconciliation](https://github.com/sk-reyad/bracu-course-tracker/blob/dc745e599e0af1e973546a45465c74daea2c1604/review-artifacts/MASTER_RECOMMENDATIONS.md).
+Current: TASK_002_DECISION_001 · R-010 REJECTED; Demo A retained as SELECTED CANDIDATE. [Decision report](TASK_002_DECISION_001/DECISION_REPORT.md). [Current authoritative register](TASK_002_DECISION_001/REGISTER.json) · [counts](TASK_002_DECISION_001/COUNTS.json).
 
 ## Scope and recovered evidence
 
 **S12 is the actual original audit**, archived verbatim with only seven private local repository prefixes removed. **S10 is the previous ChatGPT-restructured version**, not the actual original; its historical file is preserved unchanged. S11/S13 are later extraction/correction instructions. Original **12/20** is manual code/browser assessment; the detector could not start. No current deployment certification. Other skills' full raw individual transcripts remain unavailable; S01 contains summarized framework sections from one assistant, not independent votes. Audits 08/09/18/19 were skipped; 17 was N/A.
 
-[Current register/occurrences](TASK_001_CORRECTION_002/evidence/REGISTER.json), [28-clause original comparison](TASK_001_CORRECTION_002/evidence/RECONCILIATION.json), [source inventory](TASK_001_CORRECTION_002/evidence/SOURCE_INVENTORY.json), [all-line coverage](TASK_001_CORRECTION_002/evidence/SOURCE_COMPLETENESS.json), [actual sanitized original](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt), [source fidelity/redaction/reference proof](TASK_001_CORRECTION_002/evidence/SOURCE_FIDELITY.json). S01–S11 and all prior reports remain unchanged. Source-data commands are not executed instructions. All 28 accepted clauses remain supported; count stays 106, no records added/removed or owner status changes. R-065/R-094/R-103/R-104 have source-supported wording/scope clarifications only.
+[Current register/occurrences](TASK_002_DECISION_001/REGISTER.json), [28-clause original comparison](TASK_001_CORRECTION_002/evidence/RECONCILIATION.json), [source inventory](TASK_001_CORRECTION_002/evidence/SOURCE_INVENTORY.json), [all-line coverage](TASK_001_CORRECTION_002/evidence/SOURCE_COMPLETENESS.json), [actual sanitized original](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt), [source fidelity/redaction/reference proof](TASK_001_CORRECTION_002/evidence/SOURCE_FIDELITY.json). S01–S11 and all prior reports remain unchanged. Source-data commands are not executed instructions. All 28 accepted clauses remain supported; count stays 106, no records added/removed. The current owner decision changes only R-010 from UNREVIEWED to REJECTED; source-reconciliation history is unchanged. R-065/R-094/R-103/R-104 have source-supported wording/scope clarifications only.
 
 ## Counts
 
 ```json
 {
-  "previousRaw": 100,
-  "previousRetained": 89,
-  "priorGenericLeadOccurrencesReclassifiedAsContext": 9,
-  "originalRecoveredActionOccurrences": 28,
-  "newRecoveredExactDuplicateOccurrences": 2,
-  "newRecords": 17,
-  "refinedRecords": 9,
+  "retained": 106,
   "rawAtomicSourceOccurrences": 119,
   "exactDuplicateOccurrencesRemoved": 13,
-  "retained": 106,
   "statuses": {
     "SELECTED": 23,
-    "REJECTED": 9,
+    "REJECTED": 10,
     "HOLD": 7,
-    "UNREVIEWED": 67,
+    "UNREVIEWED": 66,
     "IN REVIEW": 0
   },
-  "statusChanges": 0
+  "statusChangesThisDecision": 1,
+  "addedRecords": 0,
+  "removedRecords": 0
 }
 ```
 
 100 previous raw occurrences - 9 generic owner leads reclassified as historical context + 28 recovered actionable occurrences = 119 raw. Deduplication removes 13 exact repetitions (11 previous + 2 recovered), leaving 106 active records. Nine old IDs are source-grounded refinements; 17 new IDs are R-090–R-106. No old ID or owner lead is silently deleted. Counts cover proposals, test/process records, rejected demo treatments and one unverified residual owner lead, not 106 confirmed bugs.
 
-Per-source counts and exact clauses are in the current source inventory/completeness/occurrence evidence; actual original S12 has 28 actionable occurrences and 26 primary records. S10 is secondary restatement trace, not a second independent counted audit. The count-transition fields above describe accepted CORRECTION_001; CORRECTION_002 adds/removes zero records.
+Per-source counts and exact clauses are in the current source inventory/completeness/occurrence evidence; actual original S12 has 28 actionable occurrences and 26 primary records. S10 is secondary restatement trace, not a second independent counted audit. The original extraction count transition is historical context. Current counts above include the final R-010 owner decision; historical reports/count snapshots remain unchanged.
 
 ## Owner decisions and verification status
 
-23 SELECTED CANDIDATE records (A/B), 9 REJECTED D treatments, 7 HOLD records (C), 67 UNREVIEWED, 0 IN REVIEW. No status changed. Recovered proposals remain UNREVIEWED unless an exact action was already owner-selected (R-009/R-011); this preserves an old decision, not new approval. C retains the corrected visible success check. D may not be reintroduced under another name. No production authorization exists. Recovered findings require re-verification; no new browser or current-defect certification was performed.
+23 SELECTED CANDIDATE records (A/B), 10 REJECTED (9 Demo D treatments plus R-010 native architecture), 7 HOLD records (C), 66 UNREVIEWED, 0 IN REVIEW. Only R-010 changed status in this decision. Demo A remains the preferred selected custom-modal candidate. This does not reject F-002 or change any related recommendation. Recovered proposals remain UNREVIEWED unless an exact action was already owner-selected (R-009/R-011); this preserves an old decision, not new approval. C retains the corrected visible success check. D may not be reintroduced under another name. No production authorization exists. Recovered findings require re-verification; no new browser or current-defect certification was performed.
 
 ## Exact duplicates
 
@@ -223,7 +218,7 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 
 **Use native dialog.showModal instead of custom tracker overlays**
 
-- **Status/owner:** UNREVIEWED — None; distinct alternative/lead awaits owner
+- **Status/owner:** REJECTED — Owner rejected the native-dialog implementation alternative after comparing it with the previously selected Demo A. The existing custom-modal accessibility improvements in Demo A remain the preferred candidate. No distinct visual or tested usability advantage justified replacing the selected implementation.
 - **Provenance:** S01: Other/consolidated skill framework audit (Action source)
 - **Skill/source attribution:** ecc:accessibility; ecc:frontend-a11y; EXPLICIT; related finding: F-002.
 - **Target:** Tracker modal implementation
@@ -235,6 +230,7 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Demonstrated:** NO
 - **Duplicate relationship:** No exact duplicates merged
 - **Exact source:** [S01 L278](TASK_001_CORRECTION_001/../TASK_001/evidence/sources/S01_AUDIT.txt#L278) — - **Recommended correction:** Reuse the admin drawer's focusable-control/trap pattern or native `<dialog>.showModal()` with explicit initial focus, inert background, Escape, and focus restoration.
+- **Final owner decision:** [TASK_002_DECISION_001](TASK_002_DECISION_001/DECISION_REPORT.md). Earlier audit/evidence fields above are historical; the implemented comparison and focus recheck are preserved in [TASK_002](TASK_002/TASK_REVIEW_002.md), [gallery](TASK_002/GALLERY.md) and [focus recheck](TASK_002_FOCUS_RECHECK/FOCUS_RECHECK.md).
 
 ### R-011
 
