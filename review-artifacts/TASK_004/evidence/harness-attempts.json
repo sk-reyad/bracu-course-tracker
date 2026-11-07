@@ -1,0 +1,16 @@
+{
+  "command": "node measure.mjs",
+  "initialAttempt": {
+    "failures": [
+      {
+        "message": "{\"exceptionId\":1,\"text\":\"Uncaught\",\"lineNumber\":0,\"columnNumber\":169,\"scriptId\":\"42\",\"stackTrace\":{\"callFrames\":[{\"functionName\":\"\",\"scriptId\":\"42\",\"url\":\"\",\"lineNumber\":0,\"columnNumber\":169}]},\"exception\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"TypeError\",\"description\":\"TypeError: Cannot read properties of undefined (reading 'scrollIntoView')\\n    at <anonymous>:1:170\",\"objectId\":\"-8765972965302852885.2.2\"}}",
+        "stack": "Error: {\"exceptionId\":1,\"text\":\"Uncaught\",\"lineNumber\":0,\"columnNumber\":169,\"scriptId\":\"42\",\"stackTrace\":{\"callFrames\":[{\"functionName\":\"\",\"scriptId\":\"42\",\"url\":\"\",\"lineNumber\":0,\"columnNumber\":169}]},\"exception\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"TypeError\",\"description\":\"TypeError: Cannot read properties of undefined (reading 'scrollIntoView')\\n    at <anonymous>:1:170\",\"objectId\":\"-8765972965302852885.2.2\"}}\n    at evaluate (file:///<isolated-review-workspace>/cdp.mjs:9:154)\n    at async select (file:///<isolated-review-workspace>/measure.mjs:12:39)\n    at async file:///<isolated-review-workspace>/measure.mjs:23:58"
+      }
+    ],
+    "cause": "Harness assumed a roadmap stream trigger existed. The accepted fixture has none. Corrected to record NOT TESTED instead of indexing an absent element.",
+    "applicationSourceChanged": false
+  },
+  "finalMatrixFailures": [],
+  "finalEdgeFailures": [],
+  "overlapRecheck": "A centered-square miss is not evidence that every square fails; 4848 candidate placements searched for each original upper-mobile See more case, no verified square found. Outcome remains INCONCLUSIVE."
+}

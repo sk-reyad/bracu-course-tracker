@@ -1,0 +1,368 @@
+# TASK_004 — R-024 WCAG 2.2 Target Size & Spacing Assessment
+
+Repository: `sk-reyad/bracu-course-tracker`
+
+Review branch: `temp/ui-ux-audit-review`
+
+Verified starting commit: `3d3eea502b9bee612151fa3fbf75be878cd04d46`
+
+Original application baseline: `9d86db46b1134a3755a2e269252b1ee1234f2570`
+
+## 1. Objective
+
+Review recommendation:
+
+**R-024 — Assess sufficient spacing and SC 2.5.8 exceptions before declaring target-size nonconformance.**
+
+Finding: F-005
+
+Priority: P2
+
+Source: `ecc:accessibility`
+
+Status: UNREVIEWED
+
+This is an ACCESSIBILITY VERIFICATION task, not a visual improvement or implementation task.
+
+Determine whether the original stream badge targets and previously selected alternatives satisfy the relevant requirements of WCAG 2.2 Success Criterion 2.5.8, using actual rendered target geometry and spacing evidence.
+
+Do not automatically classify the original implementation as nonconforming because its trigger height is approximately 13px.
+
+Do not automatically classify a selected implementation as conforming from its CSS height alone.
+
+Do not modify application behavior or styling.
+
+## 2. Read Existing Sources
+
+Read the following before testing:
+
+- Current authoritative Master Recommendation Register
+- Current Review Ledger
+- Exact R-024 source citation in S01
+- Audit finding F-005, including its conformance limitation
+- R-022 and R-023 selected requirements
+- TASK_003 review report
+- TASK_003 browser and hit-area evidence
+- TASK_003 selected implementation source snapshots
+- Original `js/roadmap.js`, `css/style.css`, `js/app.js`
+- Existing preview and reconstruction instructions
+
+Use the actual accepted source and preserve the original finding's terminology.
+
+Do not reinterpret a usability observation as a certified WCAG failure.
+
+## 3. Reference the Official Standard
+
+Use the official W3C WCAG 2.2 Success Criterion 2.5.8.
+
+Normative specification:
+
+https://www.w3.org/TR/WCAG22/#target-size-minimum
+
+Understanding document:
+
+https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum
+
+Verify and explain:
+
+- Minimum pointer target size of 24 × 24 CSS pixels
+- The spacing exception using 24 CSS pixel diameter circles
+- Equivalent control exception
+- Inline exception
+- User-agent-control exception
+- Essential exception
+- Rounded-corner and usable target geometry considerations
+- Difference between target dimensions and the visual appearance of the control
+
+Use the normative WCAG requirement as the authority and Understanding guidance to interpret it.
+
+Do not invent exceptions.
+
+Do not treat a badge embedded in a row as automatically qualifying for the Inline exception.
+
+Do not assume an equivalent control exists without proving that it performs the same function and satisfies the requirement.
+
+Do not use page zoom or screen resolution as a substitute for CSS-pixel measurements.
+
+## 4. Compare Three Versions
+
+Build read-only, isolated test environments for:
+
+**Version O — Original Baseline**
+
+The untouched original stream badge implementation.
+
+**Version A — Selected Demo B**
+
+The previously selected implementation with a minimum 24px inner trigger, retaining the demonstrated tooltip and keyboard improvements.
+
+**Version B — Selected R-023**
+
+The preferred full-badge interactive target implementation, while retaining the other selected Demo B improvements.
+
+Reconstruct from accepted snapshots and pinned commits.
+
+Do not edit existing completed workspaces.
+
+The purpose is to compare evidence, not to create another alternative.
+
+## 5. Target Geometry Audit
+
+Inspect actual rendered interactive targets, not just declared CSS rules.
+
+For each version, collect:
+
+1. Target element and semantic role.
+2. Actual rendered bounding rectangle.
+3. Width and height in CSS pixels.
+4. Clickable hit-test results within the relevant visible surface.
+5. Border, padding and rounded-corner behavior.
+6. Whether the target itself contains a usable 24 × 24 CSS px square.
+7. Whether it satisfies the minimum target-size requirement directly.
+8. If undersized, whether a documented exception applies.
+9. Adjacent target identity and proximity.
+10. Any clipping, transformed bounds or overlapping pointer targets.
+
+Include the actual stream badge trigger and nearby actionable controls.
+
+Examine the disclosure's "See more" button when visible, along with relevant neighboring course-card controls.
+
+Do not count noninteractive labels as pointer targets.
+
+Distinguish closed and opened disclosure states.
+
+Document excluded elements and why they were excluded.
+
+## 6. Spacing Exception Verification
+
+For undersized targets, perform the spacing assessment described by SC 2.5.8.
+
+Construct the 24 CSS pixel diameter circles centered on the target bounding boxes.
+
+Check whether those circles intersect:
+
+- Other actual targets
+- Other 24px circles for undersized targets
+
+Correctly distinguish the target rectangle from its hypothetical spacing circle.
+
+Include nearby buttons and links when relevant.
+
+Test arrangements where multiple stream badges or other controls appear close together.
+
+If two targets are sufficiently separated, document the actual clearance.
+
+If spacing fails, document the specific neighboring target and intersection.
+
+Do not simply assume that an undersized target fails.
+
+Do not confuse a generic center-to-center distance check with the normative spacing rule.
+
+When CSS shapes or overlapping elements make the outcome ambiguous, identify the limitation and use additional hit-testing evidence.
+
+## 7. Responsive and State Coverage
+
+Test at minimum these viewport widths, where the content and layout are applicable:
+
+- 360px
+- 390px
+- 768px
+- 1024px
+- 1280px
+- 1440px
+
+Test both light and dark themes.
+
+Include:
+
+- Course List stream badges
+- Roadmap stream badges where present
+- Closed disclosure
+- Open disclosure
+- Adjacent controls
+- Keyboard focus state where useful for explaining interactive boundaries
+
+Include representative edge cases:
+
+- Smallest relevant target
+- Closest target pairs
+- Dense card or badge arrangements
+- Long text or constrained layouts
+- Viewport edges
+- Rounded corners and overlapping elements
+
+Avoid duplicating meaningless cases merely to increase the test count.
+
+## 8. Explain Findings Separately
+
+For each version, classify the tested target or relevant target arrangement as one of:
+
+- PASS — Direct minimum target size
+- PASS — Spacing exception
+- PASS — Another specifically proven SC 2.5.8 exception
+- FAIL — Specific unmet requirement demonstrated
+- INCONCLUSIVE — Insufficient evidence
+- NOT TESTED — Outside the verified scope
+
+Cite the applicable rule and exact supporting measurement.
+
+Avoid an unsupported blanket statement that the entire website is WCAG 2.2 compliant or noncompliant.
+
+Distinguish:
+
+A. Original audit's historical finding
+
+B. New browser measurements
+
+C. W3C normative requirements
+
+D. Reasoned technical conclusions
+
+E. Remaining unverified cases
+
+Explain whether the original 13px trigger was a confirmed conformance failure or only a demonstrated usability concern.
+
+## 9. No Implementation Changes
+
+This task must not change any source behavior.
+
+Do not modify:
+
+- Stream badge markup
+- CSS
+- Tooltip behavior
+- Keyboard handlers
+- API
+- Authentication
+- Supabase
+- Academic calculation logic
+- Persistence
+- PDF export
+- Deployment
+- Completed demos
+- Production files
+
+If testing discovers a new genuine issue, record it with exact evidence and recommend a separately authorized follow-up.
+
+Do not automatically repair it.
+
+R-022 and R-023 remain SELECTED CANDIDATES.
+
+## 10. Required Evidence
+
+Create:
+
+`review-artifacts/TASK_004/`
+
+Include:
+
+- `TASK_REVIEW_004.md`
+- `WCAG_2_5_8_ASSESSMENT.md`
+- Machine-readable target measurements
+- Spacing-circle and intersection calculations
+- Evidence for the closest target pairs
+- Browser hit-testing results
+- Comparison of Original, Demo B and R-023
+- Relevant actual screenshots
+- Optional clearly labeled measurement overlays
+- Browser and test logs
+- Test scripts or reproducible assessment tooling
+- Git protection evidence
+- Artifact manifest and checksums
+- Preview or reproduction instructions
+
+The measurement overlays must accurately represent the tested geometry and be distinguishable from unmodified screenshots.
+
+Every PASS or FAIL classification must have traceable evidence.
+
+Record the browser name/version and exact commands executed.
+
+Report failed or blocked checks transparently.
+
+## 11. Mandatory Report Content
+
+The report must answer:
+
+1. What exactly did the original audit establish?
+2. What did the original audit leave unverified?
+3. What does SC 2.5.8 require?
+4. Which original targets are actually undersized?
+5. Do any original targets satisfy the spacing exception?
+6. Do any original targets fail, and what precise evidence proves it?
+7. Does selected Demo B satisfy the criterion for its tested targets?
+8. Does selected R-023 satisfy it for its tested targets?
+9. Does rounded-corner geometry materially affect the assessment?
+10. Do neighboring buttons, links or disclosure controls affect the outcome?
+11. Is the selected full-badge implementation still appropriate?
+12. What limitations or new risks remain?
+13. Which findings, if any, need an owner-approved follow-up?
+14. Were original source, demos, decisions and main protected?
+
+Do not recommend an additional UI redesign merely because this is the next task.
+
+## 12. Repository and Decision Protection
+
+Publish only new review artifacts under:
+
+`review-artifacts/TASK_004/`
+
+Use branch:
+
+`temp/ui-ux-audit-review`
+
+Preserve the original main branch and original application working tree.
+
+Do not modify historical reports, completed candidates, existing decisions or authoritative status records.
+
+Expected unchanged counts:
+
+- Total: 106
+- SELECTED: 24
+- REJECTED: 10
+- HOLD: 7
+- UNREVIEWED: 65
+- IN REVIEW: 0
+
+R-024 must remain UNREVIEWED until the owner makes a separate decision.
+
+Do not mark R-024 SELECTED, REJECTED or HOLD based solely on technical testing.
+
+## 13. Verification and Handoff
+
+Run the relevant read-only browser and source verification checks.
+
+Confirm that:
+
+- All evidence is reproducible
+- Findings use the correct WCAG criteria
+- No application files changed
+- Original main remains protected
+- Previous selections remain unchanged
+- All recommendation counts remain unchanged
+- Prior evidence is preserved
+- Only TASK_004 artifacts are published
+
+Commit and push normally to the temporary review branch.
+
+Provide:
+
+- Full review commit SHA
+- Direct TASK_REVIEW_004.md GitHub URL
+- WCAG assessment report URL
+- Evidence directory URL
+- Test results
+- Limitations
+
+## 14. Mandatory STOP
+
+STOP after publication.
+
+Do not change R-024's status.
+
+Do not start R-025 or any other recommendation.
+
+Do not merge, deploy or implement anything in production.
+
+Wait for independent ChatGPT technical review and the owner's explicit decision.
+
+**START TASK_004 NOW — ASSESS R-024 ONLY.**

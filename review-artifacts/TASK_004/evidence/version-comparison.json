@@ -1,0 +1,46 @@
+{
+  "O": {
+    "observations": 102,
+    "classifications": {
+      "PASS — Spacing exception": 68,
+      "PASS — Direct minimum target size": 32,
+      "INCONCLUSIVE — Insufficient evidence": 2
+    },
+    "triggerWidthRange": [
+      47.828125,
+      48.578125
+    ],
+    "triggerHeightRange": [
+      13.046875,
+      13.046875
+    ]
+  },
+  "A": {
+    "observations": 102,
+    "classifications": {
+      "PASS — Direct minimum target size": 102
+    },
+    "triggerWidthRange": [
+      47.828125,
+      48.578125
+    ],
+    "triggerHeightRange": [
+      24,
+      24
+    ]
+  },
+  "B": {
+    "observations": 102,
+    "classifications": {
+      "PASS — Direct minimum target size": 102
+    },
+    "triggerWidthRange": [
+      63.828125,
+      64.578125
+    ],
+    "triggerHeightRange": [
+      26,
+      26
+    ]
+  }
+}

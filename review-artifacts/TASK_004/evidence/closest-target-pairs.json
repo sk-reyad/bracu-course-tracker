@@ -1,0 +1,5986 @@
+[
+  {
+    "observation": "O-360-light/course/0/open/stream",
+    "file": "evidence/cases/O-360-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 147.84375,
+        "y": 484.359375,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 147.84375,
+        "y": 484.359375,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 172.1328125,
+      "y": 490.8828125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-108",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 151.84375,
+        "y": 429.359375,
+        "width": 158.234375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 172.1328125,
+        "y": 461.359375
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-light/course/10/open/stream",
+    "file": "evidence/cases/O-360-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-2",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "CSE101",
+      "action": null,
+      "field": "stream-2",
+      "rect": {
+        "x": 148.21875,
+        "y": 484.390625,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 148.21875,
+        "y": 484.390625,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 172.1328125,
+      "y": 490.9140625,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-154",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 152.21875,
+        "y": 429.390625,
+        "width": 225.15625,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 172.1328125,
+        "y": 461.390625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-light/course/8/open/stream",
+    "file": "evidence/cases/O-360-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 148.84375,
+        "y": 484.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 148.84375,
+        "y": 484.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 172.8515625,
+      "y": 490.8359375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-144",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 152.84375,
+        "y": 429.3125,
+        "width": 258,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 172.8515625,
+        "y": 461.3125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-light/course/23/open/stream",
+    "file": "evidence/cases/O-360-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "CST314",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 148.84375,
+        "y": 483.484375,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 148.84375,
+        "y": 483.484375,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 172.8515625,
+      "y": 490.0078125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-312",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 152.84375,
+        "y": 428.484375,
+        "width": 258,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 172.8515625,
+        "y": 460.484375
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-light/course/61/open/stream",
+    "file": "evidence/cases/O-360-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-2",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "STA101",
+      "action": null,
+      "field": "stream-2",
+      "rect": {
+        "x": 148.515625,
+        "y": 484.4375,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 148.515625,
+        "y": 484.4375,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 172.4296875,
+      "y": 490.9609375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-492",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 152.515625,
+        "y": 429.4375,
+        "width": 225.15625,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 172.4296875,
+        "y": 461.4375
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-390-light/course/0/open/stream",
+    "file": "evidence/cases/O-390-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 162.84375,
+        "y": 483.625,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 162.84375,
+        "y": 483.625,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 187.1328125,
+      "y": 490.1484375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-108",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 166.84375,
+        "y": 428.625,
+        "width": 158.234375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 187.1328125,
+        "y": 460.625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-768-light/course/0/open/stream",
+    "file": "evidence/cases/O-768-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 174.84375,
+        "y": 491.3125,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 753,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 174.84375,
+        "y": 491.3125,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 199.1328125,
+      "y": 497.8359375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-108",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 178.84375,
+        "y": 436.3125,
+        "width": 158.234375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 199.1328125,
+        "y": 468.3125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1024-light/course/0/open/stream",
+    "file": "evidence/cases/O-1024-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 188.84375,
+        "y": 491.140625,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1009,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 188.84375,
+        "y": 491.140625,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 213.1328125,
+      "y": 497.6640625,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-108",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 192.84375,
+        "y": 436.140625,
+        "width": 158.234375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 213.1328125,
+        "y": 468.140625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1280-light/course/0/open/stream",
+    "file": "evidence/cases/O-1280-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 188.84375,
+        "y": 484.421875,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1265,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 188.84375,
+        "y": 484.421875,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 213.1328125,
+      "y": 490.9453125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-108",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 192.84375,
+        "y": 429.421875,
+        "width": 158.234375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 213.1328125,
+        "y": 461.421875
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-light/course/0/open/stream",
+    "file": "evidence/cases/O-1440-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 188.84375,
+        "y": 491.796875,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 188.84375,
+        "y": 491.796875,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 213.1328125,
+      "y": 498.3203125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-108",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 192.84375,
+        "y": 436.796875,
+        "width": 158.234375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 213.1328125,
+        "y": 468.796875
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-light/course/10/open/stream",
+    "file": "evidence/cases/O-1440-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-2",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "CSE101",
+      "action": null,
+      "field": "stream-2",
+      "rect": {
+        "x": 627.875,
+        "y": 491.296875,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 627.875,
+        "y": 491.296875,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 651.7890625,
+      "y": 497.8203125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-154",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 631.875,
+        "y": 436.296875,
+        "width": 225.15625,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 651.7890625,
+        "y": 468.296875
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-light/course/8/open/stream",
+    "file": "evidence/cases/O-1440-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 640.5,
+        "y": 491.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 640.5,
+        "y": 491.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 664.5078125,
+      "y": 498.0859375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-144",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 644.5,
+        "y": 436.5625,
+        "width": 295.609375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 664.5078125,
+        "y": 468.5625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-light/course/61/open/stream",
+    "file": "evidence/cases/O-1440-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-2",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "STA101",
+      "action": null,
+      "field": "stream-2",
+      "rect": {
+        "x": 1081.84375,
+        "y": 491.171875,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 1081.84375,
+        "y": 491.171875,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 1105.7578125,
+      "y": 497.6953125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-492",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 1085.84375,
+        "y": 436.171875,
+        "width": 225.15625,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 1105.7578125,
+        "y": 468.171875
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-dark/course/0/open/stream",
+    "file": "evidence/cases/O-360-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 147.84375,
+        "y": 484.359375,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 147.84375,
+        "y": 484.359375,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 172.1328125,
+      "y": 490.8828125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-108",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 151.84375,
+        "y": 429.359375,
+        "width": 158.234375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 172.1328125,
+        "y": 461.359375
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-dark/course/10/open/stream",
+    "file": "evidence/cases/O-360-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-2",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "CSE101",
+      "action": null,
+      "field": "stream-2",
+      "rect": {
+        "x": 148.21875,
+        "y": 484.390625,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 148.21875,
+        "y": 484.390625,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 172.1328125,
+      "y": 490.9140625,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-154",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 152.21875,
+        "y": 429.390625,
+        "width": 225.15625,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 172.1328125,
+        "y": 461.390625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-dark/course/8/open/stream",
+    "file": "evidence/cases/O-360-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 148.84375,
+        "y": 484.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 148.84375,
+        "y": 484.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 172.8515625,
+      "y": 490.8359375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-144",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 152.84375,
+        "y": 429.3125,
+        "width": 258,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 172.8515625,
+        "y": 461.3125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-dark/course/23/open/stream",
+    "file": "evidence/cases/O-360-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "CST314",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 148.84375,
+        "y": 483.484375,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 148.84375,
+        "y": 483.484375,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 172.8515625,
+      "y": 490.0078125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-312",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 152.84375,
+        "y": 428.484375,
+        "width": 258,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 172.8515625,
+        "y": 460.484375
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-dark/course/61/open/stream",
+    "file": "evidence/cases/O-360-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-2",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "STA101",
+      "action": null,
+      "field": "stream-2",
+      "rect": {
+        "x": 148.515625,
+        "y": 484.4375,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 148.515625,
+        "y": 484.4375,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 172.4296875,
+      "y": 490.9609375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-492",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 152.515625,
+        "y": 429.4375,
+        "width": 225.15625,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 172.4296875,
+        "y": 461.4375
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-390-dark/course/0/open/stream",
+    "file": "evidence/cases/O-390-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 162.84375,
+        "y": 483.625,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 162.84375,
+        "y": 483.625,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 187.1328125,
+      "y": 490.1484375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-108",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 166.84375,
+        "y": 428.625,
+        "width": 158.234375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 187.1328125,
+        "y": 460.625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-768-dark/course/0/open/stream",
+    "file": "evidence/cases/O-768-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 174.84375,
+        "y": 491.3125,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 753,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 174.84375,
+        "y": 491.3125,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 199.1328125,
+      "y": 497.8359375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-108",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 178.84375,
+        "y": 436.3125,
+        "width": 158.234375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 199.1328125,
+        "y": 468.3125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1024-dark/course/0/open/stream",
+    "file": "evidence/cases/O-1024-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 188.84375,
+        "y": 491.140625,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1009,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 188.84375,
+        "y": 491.140625,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 213.1328125,
+      "y": 497.6640625,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-108",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 192.84375,
+        "y": 436.140625,
+        "width": 158.234375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 213.1328125,
+        "y": 468.140625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1280-dark/course/0/open/stream",
+    "file": "evidence/cases/O-1280-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 188.84375,
+        "y": 484.421875,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1265,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 188.84375,
+        "y": 484.421875,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 213.1328125,
+      "y": 490.9453125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-108",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 192.84375,
+        "y": 429.421875,
+        "width": 158.234375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 213.1328125,
+        "y": 461.421875
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-dark/course/0/open/stream",
+    "file": "evidence/cases/O-1440-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 188.84375,
+        "y": 491.796875,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 188.84375,
+        "y": 491.796875,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 213.1328125,
+      "y": 498.3203125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-108",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 192.84375,
+        "y": 436.796875,
+        "width": 158.234375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 213.1328125,
+        "y": 468.796875
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-dark/course/10/open/stream",
+    "file": "evidence/cases/O-1440-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-2",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "CSE101",
+      "action": null,
+      "field": "stream-2",
+      "rect": {
+        "x": 627.875,
+        "y": 491.296875,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 627.875,
+        "y": 491.296875,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 651.7890625,
+      "y": 497.8203125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-154",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 631.875,
+        "y": 436.296875,
+        "width": 225.15625,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 651.7890625,
+        "y": 468.296875
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-dark/course/8/open/stream",
+    "file": "evidence/cases/O-1440-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 640.5,
+        "y": 491.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 640.5,
+        "y": 491.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 664.5078125,
+      "y": 498.0859375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-144",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 644.5,
+        "y": 436.5625,
+        "width": 295.609375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 664.5078125,
+        "y": 468.5625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-dark/course/61/open/stream",
+    "file": "evidence/cases/O-1440-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-2",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "STA101",
+      "action": null,
+      "field": "stream-2",
+      "rect": {
+        "x": 1081.84375,
+        "y": 491.171875,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 1081.84375,
+        "y": 491.171875,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 1105.7578125,
+      "y": 497.6953125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-492",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 1085.84375,
+        "y": 436.171875,
+        "width": 225.15625,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 1105.7578125,
+        "y": 468.171875
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-light-upper/open/stream",
+    "file": "evidence/edge-measurements.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 174.84375,
+        "y": 218.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 174.84375,
+        "y": 218.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 198.8515625,
+      "y": 224.8359375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-144",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 178.84375,
+        "y": 163.3125,
+        "width": 258,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 198.8515625,
+        "y": 195.3125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-light-lower/open/stream",
+    "file": "evidence/edge-measurements.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 174.84375,
+        "y": 920.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 174.84375,
+        "y": 920.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 198.8515625,
+      "y": 926.8359375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-144",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 178.84375,
+        "y": 865.3125,
+        "width": 258,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 198.8515625,
+        "y": 897.3125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-light-upper/open/stream",
+    "file": "evidence/edge-measurements.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 640.5,
+        "y": 217.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 640.5,
+        "y": 217.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 664.5078125,
+      "y": 224.0859375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-144",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 644.5,
+        "y": 162.5625,
+        "width": 295.609375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 664.5078125,
+        "y": 194.5625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-light-lower/open/stream",
+    "file": "evidence/edge-measurements.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 640.5,
+        "y": 919.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 640.5,
+        "y": 919.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 664.5078125,
+      "y": 926.0859375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-144",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 644.5,
+        "y": 864.5625,
+        "width": 295.609375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 664.5078125,
+        "y": 896.5625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-dark-upper/open/stream",
+    "file": "evidence/edge-measurements.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 174.84375,
+        "y": 218.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 174.84375,
+        "y": 218.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 198.8515625,
+      "y": 224.8359375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-144",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 178.84375,
+        "y": 163.3125,
+        "width": 258,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 198.8515625,
+        "y": 195.3125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-dark-lower/open/stream",
+    "file": "evidence/edge-measurements.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 174.84375,
+        "y": 920.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 174.84375,
+        "y": 920.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 198.8515625,
+      "y": 926.8359375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-144",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 178.84375,
+        "y": 865.3125,
+        "width": 258,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 198.8515625,
+        "y": 897.3125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-dark-upper/open/stream",
+    "file": "evidence/edge-measurements.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 640.5,
+        "y": 217.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 640.5,
+        "y": 217.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 664.5078125,
+      "y": 224.0859375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-144",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 644.5,
+        "y": 162.5625,
+        "width": 295.609375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 664.5078125,
+        "y": 194.5625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-dark-lower/open/stream",
+    "file": "evidence/edge-measurements.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger tooltip-open",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 640.5,
+        "y": 919.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 640.5,
+        "y": 919.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [
+        {
+          "tag": "ARTICLE",
+          "classes": "list-course-card",
+          "transform": "matrix(1, 0, 0, 1, 0, -2)"
+        }
+      ],
+      "pointerEvents": "auto",
+      "expanded": "true"
+    },
+    "circle": {
+      "x": 664.5078125,
+      "y": 926.0859375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-144",
+      "neighborName": "See more",
+      "neighborRect": {
+        "x": 644.5,
+        "y": 864.5625,
+        "width": 295.609375,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 17.5234375,
+      "nearestPoint": {
+        "x": 664.5078125,
+        "y": 896.5625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-light-upper/closed/stream",
+    "file": "evidence/edge-measurements.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 174.84375,
+        "y": 220.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 174.84375,
+        "y": 220.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 198.8515625,
+      "y": 226.8359375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-4",
+      "neighborName": "Courses",
+      "neighborRect": {
+        "x": 185.578125,
+        "y": 121,
+        "width": 75.078125,
+        "height": 36
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 57.8359375,
+      "nearestPoint": {
+        "x": 198.8515625,
+        "y": 157
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-dark-upper/closed/stream",
+    "file": "evidence/edge-measurements.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 174.84375,
+        "y": 220.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 174.84375,
+        "y": 220.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 198.8515625,
+      "y": 226.8359375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-4",
+      "neighborName": "Courses",
+      "neighborRect": {
+        "x": 185.578125,
+        "y": 121,
+        "width": 75.078125,
+        "height": 36
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 57.8359375,
+      "nearestPoint": {
+        "x": 198.8515625,
+        "y": 157
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-light/course/23/closed/stream",
+    "file": "evidence/cases/O-360-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "CST314",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 148.84375,
+        "y": 485.484375,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 148.84375,
+        "y": 485.484375,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 172.8515625,
+      "y": 492.0078125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-314",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 71.390625,
+        "y": 568.578125,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 64.78067208904409,
+      "nearestPoint": {
+        "x": 167.171875,
+        "y": 568.578125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-light/course/8/closed/stream",
+    "file": "evidence/cases/O-1440-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 640.5,
+        "y": 493.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 640.5,
+        "y": 493.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 664.5078125,
+      "y": 500.0859375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-146",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 563.046875,
+        "y": 576.65625,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 64.78067208904409,
+      "nearestPoint": {
+        "x": 658.828125,
+        "y": 576.65625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-dark/course/23/closed/stream",
+    "file": "evidence/cases/O-360-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "CST314",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 148.84375,
+        "y": 485.484375,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 148.84375,
+        "y": 485.484375,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 172.8515625,
+      "y": 492.0078125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-314",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 71.390625,
+        "y": 568.578125,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 64.78067208904409,
+      "nearestPoint": {
+        "x": 167.171875,
+        "y": 568.578125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-dark/course/8/closed/stream",
+    "file": "evidence/cases/O-1440-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 640.5,
+        "y": 493.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 640.5,
+        "y": 493.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 664.5078125,
+      "y": 500.0859375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-146",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 563.046875,
+        "y": 576.65625,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 64.78067208904409,
+      "nearestPoint": {
+        "x": 658.828125,
+        "y": 576.65625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-light-upper/closed/stream",
+    "file": "evidence/edge-measurements.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 640.5,
+        "y": 219.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 640.5,
+        "y": 219.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 664.5078125,
+      "y": 226.0859375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-146",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 563.046875,
+        "y": 302.65625,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 64.78067208904409,
+      "nearestPoint": {
+        "x": 658.828125,
+        "y": 302.65625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-dark-upper/closed/stream",
+    "file": "evidence/edge-measurements.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 640.5,
+        "y": 219.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 640.5,
+        "y": 219.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 664.5078125,
+      "y": 226.0859375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-146",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 563.046875,
+        "y": 302.65625,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 64.78067208904409,
+      "nearestPoint": {
+        "x": 658.828125,
+        "y": 302.65625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-768-light/course/0/closed/stream",
+    "file": "evidence/cases/O-768-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 174.84375,
+        "y": 493.3125,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 753,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 174.84375,
+        "y": 493.3125,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 199.1328125,
+      "y": 499.8359375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-110",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 97.390625,
+        "y": 576.40625,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 64.801989116341,
+      "nearestPoint": {
+        "x": 193.171875,
+        "y": 576.40625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-768-dark/course/0/closed/stream",
+    "file": "evidence/cases/O-768-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 174.84375,
+        "y": 493.3125,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 753,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 174.84375,
+        "y": 493.3125,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 199.1328125,
+      "y": 499.8359375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-110",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 97.390625,
+        "y": 576.40625,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 64.801989116341,
+      "nearestPoint": {
+        "x": 193.171875,
+        "y": 576.40625
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-light-lower/closed/stream",
+    "file": "evidence/edge-measurements.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 174.84375,
+        "y": 922.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 174.84375,
+        "y": 922.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 198.8515625,
+      "y": 928.8359375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-521",
+      "neighborName": "Back to top",
+      "neighborRect": {
+        "x": 287,
+        "y": 927,
+        "width": 44,
+        "height": 44
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 76.1484375,
+      "nearestPoint": {
+        "x": 287,
+        "y": 928.8359375
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-dark-lower/closed/stream",
+    "file": "evidence/edge-measurements.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 174.84375,
+        "y": 922.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 174.84375,
+        "y": 922.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 198.8515625,
+      "y": 928.8359375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-521",
+      "neighborName": "Back to top",
+      "neighborRect": {
+        "x": 287,
+        "y": 927,
+        "width": 44,
+        "height": 44
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 76.1484375,
+      "nearestPoint": {
+        "x": 287,
+        "y": 928.8359375
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-light/course/10/closed/stream",
+    "file": "evidence/cases/O-1440-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-2",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "CSE101",
+      "action": null,
+      "field": "stream-2",
+      "rect": {
+        "x": 627.875,
+        "y": 493.296875,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 627.875,
+        "y": 493.296875,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 651.7890625,
+      "y": 499.8203125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-156",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 563.046875,
+        "y": 589.203125,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 77.3828125,
+      "nearestPoint": {
+        "x": 651.7890625,
+        "y": 589.203125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-light/course/61/closed/stream",
+    "file": "evidence/cases/O-1440-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-2",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "STA101",
+      "action": null,
+      "field": "stream-2",
+      "rect": {
+        "x": 1081.84375,
+        "y": 493.171875,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 1081.84375,
+        "y": 493.171875,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 1105.7578125,
+      "y": 499.6953125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-494",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 1014.71875,
+        "y": 589.078125,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 77.3828125,
+      "nearestPoint": {
+        "x": 1105.7578125,
+        "y": 589.078125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-dark/course/10/closed/stream",
+    "file": "evidence/cases/O-1440-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-2",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "CSE101",
+      "action": null,
+      "field": "stream-2",
+      "rect": {
+        "x": 627.875,
+        "y": 493.296875,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 627.875,
+        "y": 493.296875,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 651.7890625,
+      "y": 499.8203125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-156",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 563.046875,
+        "y": 589.203125,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 77.3828125,
+      "nearestPoint": {
+        "x": 651.7890625,
+        "y": 589.203125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-dark/course/61/closed/stream",
+    "file": "evidence/cases/O-1440-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-2",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "STA101",
+      "action": null,
+      "field": "stream-2",
+      "rect": {
+        "x": 1081.84375,
+        "y": 493.171875,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 1081.84375,
+        "y": 493.171875,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 1105.7578125,
+      "y": 499.6953125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-494",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 1014.71875,
+        "y": 589.078125,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 77.3828125,
+      "nearestPoint": {
+        "x": 1105.7578125,
+        "y": 589.078125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-light/course/8/closed/stream",
+    "file": "evidence/cases/O-360-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 148.84375,
+        "y": 486.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 148.84375,
+        "y": 486.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 172.8515625,
+      "y": 492.8359375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-146",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 71.390625,
+        "y": 582.21875,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 77.56308402744858,
+      "nearestPoint": {
+        "x": 167.171875,
+        "y": 582.21875
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-dark/course/8/closed/stream",
+    "file": "evidence/cases/O-360-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 148.84375,
+        "y": 486.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 148.84375,
+        "y": 486.3125,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 172.8515625,
+      "y": 492.8359375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-146",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 71.390625,
+        "y": 582.21875,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 77.56308402744858,
+      "nearestPoint": {
+        "x": 167.171875,
+        "y": 582.21875
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1024-light/course/0/closed/stream",
+    "file": "evidence/cases/O-1024-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 188.84375,
+        "y": 493.140625,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1009,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 188.84375,
+        "y": 493.140625,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 213.1328125,
+      "y": 499.6640625,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-110",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 111.390625,
+        "y": 589.046875,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 77.58135936839238,
+      "nearestPoint": {
+        "x": 207.171875,
+        "y": 589.046875
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1280-light/course/0/closed/stream",
+    "file": "evidence/cases/O-1280-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 188.84375,
+        "y": 486.421875,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1265,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 188.84375,
+        "y": 486.421875,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 213.1328125,
+      "y": 492.9453125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-110",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 111.390625,
+        "y": 582.328125,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 77.58135936839238,
+      "nearestPoint": {
+        "x": 207.171875,
+        "y": 582.328125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-light/course/0/closed/stream",
+    "file": "evidence/cases/O-1440-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 188.84375,
+        "y": 493.796875,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 188.84375,
+        "y": 493.796875,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 213.1328125,
+      "y": 500.3203125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-110",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 111.390625,
+        "y": 589.703125,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 77.58135936839238,
+      "nearestPoint": {
+        "x": 207.171875,
+        "y": 589.703125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1024-dark/course/0/closed/stream",
+    "file": "evidence/cases/O-1024-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 188.84375,
+        "y": 493.140625,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1009,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 188.84375,
+        "y": 493.140625,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 213.1328125,
+      "y": 499.6640625,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-110",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 111.390625,
+        "y": 589.046875,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 77.58135936839238,
+      "nearestPoint": {
+        "x": 207.171875,
+        "y": 589.046875
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1280-dark/course/0/closed/stream",
+    "file": "evidence/cases/O-1280-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 188.84375,
+        "y": 486.421875,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1265,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 188.84375,
+        "y": 486.421875,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 213.1328125,
+      "y": 492.9453125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-110",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 111.390625,
+        "y": 582.328125,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 77.58135936839238,
+      "nearestPoint": {
+        "x": 207.171875,
+        "y": 582.328125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-dark/course/0/closed/stream",
+    "file": "evidence/cases/O-1440-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 188.84375,
+        "y": 493.796875,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 188.84375,
+        "y": 493.796875,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 213.1328125,
+      "y": 500.3203125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-110",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 111.390625,
+        "y": 589.703125,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 77.58135936839238,
+      "nearestPoint": {
+        "x": 207.171875,
+        "y": 589.703125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-light/course/10/closed/stream",
+    "file": "evidence/cases/O-360-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-2",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "CSE101",
+      "action": null,
+      "field": "stream-2",
+      "rect": {
+        "x": 148.21875,
+        "y": 486.390625,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 148.21875,
+        "y": 486.390625,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 172.1328125,
+      "y": 492.9140625,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-156",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 83.390625,
+        "y": 595.125,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 90.2109375,
+      "nearestPoint": {
+        "x": 172.1328125,
+        "y": 595.125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-dark/course/10/closed/stream",
+    "file": "evidence/cases/O-360-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-2",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "CSE101",
+      "action": null,
+      "field": "stream-2",
+      "rect": {
+        "x": 148.21875,
+        "y": 486.390625,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 148.21875,
+        "y": 486.390625,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 172.1328125,
+      "y": 492.9140625,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-156",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 83.390625,
+        "y": 595.125,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 90.2109375,
+      "nearestPoint": {
+        "x": 172.1328125,
+        "y": 595.125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-light/course/0/closed/stream",
+    "file": "evidence/cases/O-360-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 147.84375,
+        "y": 486.359375,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 147.84375,
+        "y": 486.359375,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 172.1328125,
+      "y": 492.8828125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-110",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 70.390625,
+        "y": 595.09375,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 90.3846107601519,
+      "nearestPoint": {
+        "x": 166.171875,
+        "y": 595.09375
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-390-light/course/0/closed/stream",
+    "file": "evidence/cases/O-390-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 162.84375,
+        "y": 485.625,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 162.84375,
+        "y": 485.625,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 187.1328125,
+      "y": 492.1484375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-110",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 85.390625,
+        "y": 594.359375,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 90.3846107601519,
+      "nearestPoint": {
+        "x": 181.171875,
+        "y": 594.359375
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-dark/course/0/closed/stream",
+    "file": "evidence/cases/O-360-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 147.84375,
+        "y": 486.359375,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 147.84375,
+        "y": 486.359375,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 172.1328125,
+      "y": 492.8828125,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-110",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 70.390625,
+        "y": 595.09375,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 90.3846107601519,
+      "nearestPoint": {
+        "x": 166.171875,
+        "y": 595.09375
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-390-dark/course/0/closed/stream",
+    "file": "evidence/cases/O-390-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-4",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "ANT101",
+      "action": null,
+      "field": "stream-4",
+      "rect": {
+        "x": 162.84375,
+        "y": 485.625,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 162.84375,
+        "y": 485.625,
+        "width": 48.578125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 187.1328125,
+      "y": 492.1484375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-110",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 85.390625,
+        "y": 594.359375,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 90.3846107601519,
+      "nearestPoint": {
+        "x": 181.171875,
+        "y": 594.359375
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-light/course/61/closed/stream",
+    "file": "evidence/cases/O-360-light.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-2",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "STA101",
+      "action": null,
+      "field": "stream-2",
+      "rect": {
+        "x": 148.515625,
+        "y": 486.4375,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 148.515625,
+        "y": 486.4375,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 172.4296875,
+      "y": 492.9609375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-494",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 81.390625,
+        "y": 608,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 103.0390625,
+      "nearestPoint": {
+        "x": 172.4296875,
+        "y": 608
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-360-dark/course/61/closed/stream",
+    "file": "evidence/cases/O-360-dark.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-2",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "STA101",
+      "action": null,
+      "field": "stream-2",
+      "rect": {
+        "x": 148.515625,
+        "y": 486.4375,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 345,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 148.515625,
+        "y": 486.4375,
+        "width": 47.828125,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 172.4296875,
+      "y": 492.9609375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-494",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 81.390625,
+        "y": 608,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 103.0390625,
+      "nearestPoint": {
+        "x": 172.4296875,
+        "y": 608
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-light-lower/closed/stream",
+    "file": "evidence/edge-measurements.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 640.5,
+        "y": 921.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 640.5,
+        "y": 921.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(93, 107, 127)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(93, 107, 127)",
+      "outline": "rgb(93, 107, 127) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 664.5078125,
+      "y": 928.0859375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-134",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 563.046875,
+        "y": 769.953125,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 114.26062426290238,
+      "nearestPoint": {
+        "x": 658.828125,
+        "y": 801.953125
+      },
+      "circleToCircle": null
+    }
+  },
+  {
+    "observation": "O-1440-dark-lower/closed/stream",
+    "file": "evidence/edge-measurements.json",
+    "classification": "PASS — Spacing exception",
+    "target": {
+      "tag": "BUTTON",
+      "role": "button",
+      "name": "Stream-5",
+      "classes": "stream-category-trigger",
+      "idAttribute": null,
+      "course": "BUS334",
+      "action": null,
+      "field": "stream-5",
+      "rect": {
+        "x": 640.5,
+        "y": 921.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1000
+      },
+      "effectiveRect": {
+        "x": 640.5,
+        "y": 921.5625,
+        "width": 48.015625,
+        "height": 13.046875
+      },
+      "radius": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "border": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "padding": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "color": "rgb(168, 182, 201)",
+      "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "background": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(168, 182, 201)",
+      "outline": "rgb(168, 182, 201) none 3px",
+      "boxShadow": "none",
+      "axisAligned": true,
+      "complexShape": false,
+      "transformedAncestors": [],
+      "pointerEvents": "auto",
+      "expanded": "false"
+    },
+    "circle": {
+      "x": 664.5078125,
+      "y": 928.0859375,
+      "radius": 12
+    },
+    "pair": {
+      "neighborId": "target-134",
+      "neighborName": "Remove",
+      "neighborRect": {
+        "x": 563.046875,
+        "y": 769.953125,
+        "width": 95.78125,
+        "height": 32
+      },
+      "neighborUndersized": false,
+      "neighborCircle": null,
+      "circleToTarget": 114.26062426290238,
+      "nearestPoint": {
+        "x": 658.828125,
+        "y": 801.953125
+      },
+      "circleToCircle": null
+    }
+  }
+]

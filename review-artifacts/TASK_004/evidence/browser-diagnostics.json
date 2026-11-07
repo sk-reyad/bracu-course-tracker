@@ -1,0 +1,808 @@
+[
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794070926954.693,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.215"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794070935266.893,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.322"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794070940178.959,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.429"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794070943132.89,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.536"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794070946068.273,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.643"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794070948993.239,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.750"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794070956882.532,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.858"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794070965187.815,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.966"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794070968907.726,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.1074"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794070971935.296,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.1182"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794070974898.169,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.1290"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794070977849.262,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.1398"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "timestamp": 1794070986217.112,
+        "url": "http://127.0.0.1:4301/favicon.ico",
+        "networkRequestId": "99684.1505"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794070986217.624,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.1506"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794070994792.06,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.1613"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071000022.332,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.1720"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071003190.156,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.1827"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071006236.062,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.1934"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071009328.555,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.2041"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071017295.499,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.2149"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071025672.128,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.2257"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071029344.671,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.2365"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071032403.676,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.2473"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071035489.787,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.2581"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071038568.1,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.2689"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "timestamp": 1794071046656.464,
+        "url": "http://127.0.0.1:4302/favicon.ico",
+        "networkRequestId": "99684.2796"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071046656.702,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.2797"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071054951.82,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.2904"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071060111.424,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.3011"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071063232.118,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.3118"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071066380.406,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.3225"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071069473.801,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.3332"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071077490.01,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.3440"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071085858.247,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.3548"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071089704.817,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.3656"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071092882.149,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.3764"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071096049.47,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.3872"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071099207.947,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.3980"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071948153.841,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.5592"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071948153.841,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.5592"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071952184.292,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.5699"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071952184.292,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.5699"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071956215.113,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.5807"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071956215.113,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.5807"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071960227.526,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.5915"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071960227.526,
+        "url": "http://127.0.0.1:4300/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.5915"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071964301.4,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.6022"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071964301.4,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.6022"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071968275.185,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.6129"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071968275.185,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.6129"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071972310.642,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.6237"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071972310.642,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.6237"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071976228.678,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.6345"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071976228.678,
+        "url": "http://127.0.0.1:4301/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.6345"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071980345.193,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.6452"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071980345.193,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.6452"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071984368.758,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.6559"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071984368.758,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.6559"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071988495.702,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.6667"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071988495.702,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.6667"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071992288.301,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.6775"
+      }
+    }
+  },
+  {
+    "method": "Log.entryAdded",
+    "params": {
+      "entry": {
+        "source": "network",
+        "level": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "timestamp": 1794071992288.301,
+        "url": "http://127.0.0.1:4302/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global",
+        "networkRequestId": "99684.6775"
+      }
+    }
+  }
+]

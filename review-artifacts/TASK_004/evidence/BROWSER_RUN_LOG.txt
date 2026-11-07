@@ -1,0 +1,71 @@
+TASK_004 structured browser run log — derived from saved case checkpoints; not a raw terminal stdout capture.
+
+$ node measure.mjs
+MEASURED O-360-light course:62 triggers/5 representatives, roadmap:0 triggers/0 representatives
+MEASURED O-390-light course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED O-768-light course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED O-1024-light course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED O-1280-light course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED O-1440-light course:62 triggers/4 representatives, roadmap:0 triggers/0 representatives
+MEASURED O-360-dark course:62 triggers/5 representatives, roadmap:0 triggers/0 representatives
+MEASURED O-390-dark course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED O-768-dark course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED O-1024-dark course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED O-1280-dark course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED O-1440-dark course:62 triggers/4 representatives, roadmap:0 triggers/0 representatives
+MEASURED A-360-light course:62 triggers/5 representatives, roadmap:0 triggers/0 representatives
+MEASURED A-390-light course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED A-768-light course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED A-1024-light course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED A-1280-light course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED A-1440-light course:62 triggers/4 representatives, roadmap:0 triggers/0 representatives
+MEASURED A-360-dark course:62 triggers/5 representatives, roadmap:0 triggers/0 representatives
+MEASURED A-390-dark course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED A-768-dark course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED A-1024-dark course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED A-1280-dark course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED A-1440-dark course:62 triggers/4 representatives, roadmap:0 triggers/0 representatives
+MEASURED B-360-light course:62 triggers/5 representatives, roadmap:0 triggers/0 representatives
+MEASURED B-390-light course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED B-768-light course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED B-1024-light course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED B-1280-light course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED B-1440-light course:62 triggers/4 representatives, roadmap:0 triggers/0 representatives
+MEASURED B-360-dark course:62 triggers/5 representatives, roadmap:0 triggers/0 representatives
+MEASURED B-390-dark course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED B-768-dark course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED B-1024-dark course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED B-1280-dark course:62 triggers/1 representatives, roadmap:0 triggers/0 representatives
+MEASURED B-1440-dark course:62 triggers/4 representatives, roadmap:0 triggers/0 representatives
+Final matrix failures: 0
+
+$ node edges.mjs
+MEASURED edge O-360-light-upper PASS — Spacing exception / PASS — Spacing exception / INCONCLUSIVE — Insufficient evidence
+MEASURED edge O-360-light-lower PASS — Spacing exception / PASS — Spacing exception / PASS — Direct minimum target size
+MEASURED edge O-1440-light-upper PASS — Spacing exception / PASS — Spacing exception / PASS — Direct minimum target size
+MEASURED edge O-1440-light-lower PASS — Spacing exception / PASS — Spacing exception / PASS — Direct minimum target size
+MEASURED edge O-360-dark-upper PASS — Spacing exception / PASS — Spacing exception / INCONCLUSIVE — Insufficient evidence
+MEASURED edge O-360-dark-lower PASS — Spacing exception / PASS — Spacing exception / PASS — Direct minimum target size
+MEASURED edge O-1440-dark-upper PASS — Spacing exception / PASS — Spacing exception / PASS — Direct minimum target size
+MEASURED edge O-1440-dark-lower PASS — Spacing exception / PASS — Spacing exception / PASS — Direct minimum target size
+MEASURED edge A-360-light-upper PASS — Direct minimum target size / PASS — Direct minimum target size / PASS — Direct minimum target size
+MEASURED edge A-360-light-lower PASS — Direct minimum target size / PASS — Direct minimum target size / PASS — Direct minimum target size
+MEASURED edge A-1440-light-upper PASS — Direct minimum target size / PASS — Direct minimum target size / PASS — Direct minimum target size
+MEASURED edge A-1440-light-lower PASS — Direct minimum target size / PASS — Direct minimum target size / PASS — Direct minimum target size
+MEASURED edge A-360-dark-upper PASS — Direct minimum target size / PASS — Direct minimum target size / PASS — Direct minimum target size
+MEASURED edge A-360-dark-lower PASS — Direct minimum target size / PASS — Direct minimum target size / PASS — Direct minimum target size
+MEASURED edge A-1440-dark-upper PASS — Direct minimum target size / PASS — Direct minimum target size / PASS — Direct minimum target size
+MEASURED edge A-1440-dark-lower PASS — Direct minimum target size / PASS — Direct minimum target size / PASS — Direct minimum target size
+MEASURED edge B-360-light-upper PASS — Direct minimum target size / PASS — Direct minimum target size / PASS — Direct minimum target size
+MEASURED edge B-360-light-lower PASS — Direct minimum target size / PASS — Direct minimum target size / PASS — Direct minimum target size
+MEASURED edge B-1440-light-upper PASS — Direct minimum target size / PASS — Direct minimum target size / PASS — Direct minimum target size
+MEASURED edge B-1440-light-lower PASS — Direct minimum target size / PASS — Direct minimum target size / PASS — Direct minimum target size
+MEASURED edge B-360-dark-upper PASS — Direct minimum target size / PASS — Direct minimum target size / PASS — Direct minimum target size
+MEASURED edge B-360-dark-lower PASS — Direct minimum target size / PASS — Direct minimum target size / PASS — Direct minimum target size
+MEASURED edge B-1440-dark-upper PASS — Direct minimum target size / PASS — Direct minimum target size / PASS — Direct minimum target size
+MEASURED edge B-1440-dark-lower PASS — Direct minimum target size / PASS — Direct minimum target size / PASS — Direct minimum target size
+Final edge script failures: 0
+
+$ node overlap-recheck.mjs
+O-360-light-upper INCONCLUSIVE — Insufficient evidence; searched 4848 placements
+O-360-dark-upper INCONCLUSIVE — Insufficient evidence; searched 4848 placements

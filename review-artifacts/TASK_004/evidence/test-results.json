@@ -1,0 +1,44 @@
+[
+  {
+    "variant": "original",
+    "exitCode": 0,
+    "summary": [
+      "ℹ tests 365",
+      "ℹ suites 0",
+      "ℹ pass 365",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0",
+      "ℹ duration_ms 480.9214"
+    ]
+  },
+  {
+    "variant": "demo-b",
+    "exitCode": 0,
+    "summary": [
+      "ℹ tests 365",
+      "ℹ suites 0",
+      "ℹ pass 365",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0",
+      "ℹ duration_ms 437.3977"
+    ]
+  },
+  {
+    "variant": "r023",
+    "exitCode": 0,
+    "summary": [
+      "ℹ tests 365",
+      "ℹ suites 0",
+      "ℹ pass 365",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0",
+      "ℹ duration_ms 445.2044"
+    ]
+  }
+]

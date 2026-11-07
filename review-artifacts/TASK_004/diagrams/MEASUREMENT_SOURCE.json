@@ -1,0 +1,91 @@
+{
+  "observation": "O-360-light/course/0/open/stream",
+  "file": "evidence/cases/O-360-light.json",
+  "classification": "PASS — Spacing exception",
+  "target": {
+    "tag": "BUTTON",
+    "role": "button",
+    "name": "Stream-4",
+    "classes": "stream-category-trigger tooltip-open",
+    "idAttribute": null,
+    "course": "ANT101",
+    "action": null,
+    "field": "stream-4",
+    "rect": {
+      "x": 147.84375,
+      "y": 484.359375,
+      "width": 48.578125,
+      "height": 13.046875
+    },
+    "clip": {
+      "x": 0,
+      "y": 0,
+      "width": 345,
+      "height": 1000
+    },
+    "effectiveRect": {
+      "x": 147.84375,
+      "y": 484.359375,
+      "width": 48.578125,
+      "height": 13.046875
+    },
+    "radius": [
+      "0px",
+      "0px",
+      "0px",
+      "0px"
+    ],
+    "border": [
+      "0px",
+      "0px",
+      "0px",
+      "0px"
+    ],
+    "padding": [
+      "0px",
+      "0px",
+      "0px",
+      "0px"
+    ],
+    "color": "rgb(93, 107, 127)",
+    "font": "10.88px / 13.056px Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+    "background": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(93, 107, 127)",
+    "outline": "rgb(93, 107, 127) none 3px",
+    "boxShadow": "none",
+    "axisAligned": true,
+    "complexShape": false,
+    "transformedAncestors": [
+      {
+        "tag": "ARTICLE",
+        "classes": "list-course-card",
+        "transform": "matrix(1, 0, 0, 1, 0, -2)"
+      }
+    ],
+    "pointerEvents": "auto",
+    "expanded": "true"
+  },
+  "circle": {
+    "x": 172.1328125,
+    "y": 490.8828125,
+    "radius": 12
+  },
+  "pair": {
+    "neighborId": "target-108",
+    "neighborName": "See more",
+    "neighborRect": {
+      "x": 151.84375,
+      "y": 429.359375,
+      "width": 158.234375,
+      "height": 32
+    },
+    "neighborUndersized": false,
+    "neighborCircle": null,
+    "circleToTarget": 17.5234375,
+    "nearestPoint": {
+      "x": 172.1328125,
+      "y": 461.359375
+    },
+    "circleToCircle": null
+  }
+}

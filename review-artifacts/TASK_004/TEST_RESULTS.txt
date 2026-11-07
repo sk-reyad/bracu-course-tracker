@@ -1,0 +1,93 @@
+TASK_004 actual final focused verification
+
+$ node --check review-artifacts/TASK_004/tooling/cdp.mjs
+exit 0
+$ node --check review-artifacts/TASK_004/tooling/dom-probe.mjs
+exit 0
+$ node --check review-artifacts/TASK_004/tooling/edges.mjs
+exit 0
+$ node --check review-artifacts/TASK_004/tooling/geometry.mjs
+exit 0
+$ node --check review-artifacts/TASK_004/tooling/geometry.test.mjs
+exit 0
+$ node --check review-artifacts/TASK_004/tooling/measure.mjs
+exit 0
+$ node --check review-artifacts/TASK_004/tooling/overlap-recheck.mjs
+exit 0
+$ node --check review-artifacts/TASK_004/tooling/rebuild-assessment.cjs
+exit 0
+$ node --check review-artifacts/TASK_004/tooling/run-tests.cjs
+exit 0
+$ node --check review-artifacts/TASK_004/tooling/serve.cjs
+exit 0
+$ node --check review-artifacts/TASK_004/tooling/verify-evidence.test.mjs
+exit 0
+
+$ node --test review-artifacts/TASK_004/tooling/geometry.test.mjs review-artifacts/TASK_004/tooling/verify-evidence.test.mjs
+✔ rectangular 24px square directly contains the minimum square (1.9527ms)
+✔ 13px line-height rectangle cannot contain a 24px square (0.2244ms)
+✔ 24px diameter circle has adequate bounding dimensions but cannot fit the square (0.1353ms)
+✔ wide 64.6x26px full-badge capsule can fit a solid 24px square (0.1111ms)
+✔ rounded caps of narrow pill can invalidate a height-only check (2.3341ms)
+✔ radius normalization follows CSS edge sums, retaining nonzero mixed corners (2.6056ms)
+✔ circle-to-target uses nearest target edge, not center-to-center alone (0.1539ms)
+✔ positive clearance demonstrates separated circle and peer target (0.0947ms)
+✔ diagonal nearest point uses Euclidean circle-to-rectangle distance (0.0907ms)
+✔ undersized peers require separate circle-to-circle comparison (0.1275ms)
+✔ isolated undersized target qualifies through spacing, not direct size (0.2212ms)
+✔ rectangle intersection alone does not create an unsupported FAIL (0.2476ms)
+✔ clipped or obscured 24px target cannot get a direct PASS from CSS size alone (0.1432ms)
+✔ unknown mask or nontranslation transform remains inconclusive (0.6364ms)
+✔ 01: exactly requested six widths, both themes, three pinned versions (0.7724ms)
+✔ 02: fixture inventory and absent roadmap coverage are explicit (80.7826ms)
+✔ 03: 306 actual observation IDs resolve to full target/peer/hit evidence (1.4069ms)
+✔ 04: every classification recomputes from actual shape, hit and neighbor data (46.7907ms)
+✔ 05: scoped totals reconcile without hiding inconclusive results (0.3453ms)
+✔ 06: original stream observations are undersized yet have positive circle clearances (0.4174ms)
+✔ 07: selected A/B results use contained square and zero actual square misses (0.2534ms)
+✔ 08: all 24 edge arrangements and the two original overlap limitations remain traceable (2.5204ms)
+✔ 09: closest measured pair has exact positive circle-to-target clearance (3.8181ms)
+✔ 10: browser diagnostics disclose precise local 403/404 endpoints and no runtime exception (3.4634ms)
+✔ 11: all three actual application suites passed without skipped tests (0.8306ms)
+✔ 12: current authority, decisions and counts remain byte-identical (9.2494ms)
+✔ 13: source and protected workspace content/inventories remain unchanged (0.1216ms)
+✔ 14: only new TASK_004 review artifacts differ from the protected parent (169.8785ms)
+✔ 15: screenshots and report links are real and scoped statements retain limitations (79.6216ms)
+✔ 16: stronger spacing bound also covers uncertainty in every peer circle center (0.4471ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 671.2046
+exit 0
+
+$ git diff --check
+exit 0
+
+Application commands actually run in the fresh isolated workspace:
+$ node run-tests.cjs
+original: 365 tests, 365 passed, 0 failed, 0 skipped
+selected Demo B: 365 tests, 365 passed, 0 failed, 0 skipped
+selected R-023: 365 tests, 365 passed, 0 failed, 0 skipped
+Full stdout/stderr is preserved in evidence/*-tests.txt; command expands tests/*.test.js portably.
+
+Browser commands actually run:
+$ node measure.mjs
+36 page cases; 234 target/state observations; no final script failure.
+$ node edges.mjs
+24 additional arrangements; 72 observations; no final script failure. Repeated to capture per-case diagnostics and bounded hit examples.
+$ node overlap-recheck.mjs
+Two original upper-mobile cases; 4848 candidate squares searched in each; no verified square found; both INCONCLUSIVE.
+Structured checkpoint log: evidence/BROWSER_RUN_LOG.txt.
+
+Failures/limitations preserved:
+1. Initial browser harness assumed an existing roadmap stream trigger and raised TypeError reading scrollIntoView. Fixture inspection found zero such targets; it now records NOT TESTED. No application edit. See evidence/harness-attempts.json.
+2. Initial raw-byte source guard rejected .agents/skills/course-catalog/SKILL.md: Git blob 2010 bytes (LF), archive export 2038 bytes (28 CRLFs); normalized content equal. Final check permits CRLF-to-LF differences only, checks binary bytes exactly and keeps equal raw before/after hashes.
+3. Git show revision:path hit a Windows filename-length limit for a historical long docs path. Blob object IDs avoided path parsing; no Git setting or source file changed. Final protection: 182 baseline content files, 7 byte-exact accepted overlay files; all source/workspace fingerprints unchanged.
+4. Initial combined consistency run: 29 tests, 28 passed, 1 failed. The failed assertion was assert(e.params.entry.url.includes('/rest/v1/site_settings?')). Raw logs also contained missing local /favicon.ico 404 responses. The final test explicitly checks only those precise local 404 and maintenance 403 paths; it still rejects every other diagnostic. No runtime error was hidden or application repaired.
+5. Remaining substantive gap: original 360px upper-edge See more partial header overlap, both themes, INCONCLUSIVE. Roadmap stream targets absent in accepted fixture (NOT TESTED). No real devices/other browser engines/whole-site certification.
+
+Artifact-export formatting: the first staged git diff --cached --check flagged one extra terminal blank line in each application log. Exported log line endings and terminal whitespace were normalized; all test output/diagnostics remain. Raw captured logs remain unchanged in the isolated workspace.

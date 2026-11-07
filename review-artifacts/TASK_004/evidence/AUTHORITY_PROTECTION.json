@@ -1,0 +1,24 @@
+{
+  "authoritativeRegister": "review-artifacts/TASK_003_DECISION_001/REGISTER.json",
+  "registerSha256": "5b745a8b14b677a600521563f7d65e1d54564eaa05ac9bd4b78e79200c77151c",
+  "counts": {
+    "retained": 106,
+    "rawAtomicSourceOccurrences": 119,
+    "exactDuplicateOccurrencesRemoved": 13,
+    "statuses": {
+      "SELECTED": 24,
+      "REJECTED": 10,
+      "HOLD": 7,
+      "UNREVIEWED": 65,
+      "IN REVIEW": 0
+    },
+    "statusChangesThisDecision": 1,
+    "addedRecords": 0,
+    "removedRecords": 0
+  },
+  "R022": "SELECTED",
+  "R023": "SELECTED",
+  "R024": "UNREVIEWED",
+  "masterSha256": "cd4475291cede897b5099cc6382a7d68b9fd195a45406c65fa68a569cedd476f",
+  "ledgerSha256": "62683fcf02ff0c3a389a5966c91d9713c10bd1b14016dc00a93e3cb2e667d557"
+}

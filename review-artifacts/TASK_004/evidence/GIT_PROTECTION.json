@@ -1,0 +1,1222 @@
+{
+  "base": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+  "parent": "3d3eea502b9bee612151fa3fbf75be878cd04d46",
+  "sourceCommit": "426a1cebac9a617d7ef5ce27eeb2782aed2c70ee",
+  "originalProtectedCheckpoint": {
+    "head": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+    "branch": "main",
+    "status": "?? FRONTEND_UI_MULTISKILL_AUDIT.md",
+    "trackedDiff": "",
+    "stagedDiff": "",
+    "auditSha256": "9ad3924539bea8181d9337b6e8e970a116bf28b9109c7cdb589f9a1536ca54d9"
+  },
+  "originalCurrent": {
+    "head": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+    "branch": "main",
+    "status": "?? FRONTEND_UI_MULTISKILL_AUDIT.md",
+    "trackedDiff": "",
+    "stagedDiff": "",
+    "auditSha256": "9ad3924539bea8181d9337b6e8e970a116bf28b9109c7cdb589f9a1536ca54d9"
+  },
+  "initialTaskHeadAndStatusConfirmed": true,
+  "workspacesBefore": [
+    {
+      "workspace": "bracu-ui-demo-9d86db46",
+      "files": 402,
+      "aggregateSha256": "111a3d4443a859f835f74db964219afe704a25eb3296e4f7fd5a50d167d1f983"
+    },
+    {
+      "workspace": "bracu-final-corrections",
+      "files": 52,
+      "aggregateSha256": "df783f1505b9b268c0f3b290f17548e9752ab72db07df8c5095c221ac90f5eb0"
+    },
+    {
+      "workspace": "bracu-task002-r010",
+      "files": 2292,
+      "aggregateSha256": "4940cba0c4aa6fb3ba6f0bc1b65b224807420d60a7a520aba2a7e77933b56602"
+    },
+    {
+      "workspace": "bracu-task003-r023",
+      "files": 624,
+      "aggregateSha256": "6a2fd447da46cad3419d3fbc7a695b46f77bc57ff81e6203e22a5596fd37319e"
+    }
+  ],
+  "workspacesAfter": [
+    {
+      "workspace": "bracu-ui-demo-9d86db46",
+      "files": 402,
+      "aggregateSha256": "111a3d4443a859f835f74db964219afe704a25eb3296e4f7fd5a50d167d1f983"
+    },
+    {
+      "workspace": "bracu-final-corrections",
+      "files": 52,
+      "aggregateSha256": "df783f1505b9b268c0f3b290f17548e9752ab72db07df8c5095c221ac90f5eb0"
+    },
+    {
+      "workspace": "bracu-task002-r010",
+      "files": 2292,
+      "aggregateSha256": "4940cba0c4aa6fb3ba6f0bc1b65b224807420d60a7a520aba2a7e77933b56602"
+    },
+    {
+      "workspace": "bracu-task003-r023",
+      "files": 624,
+      "aggregateSha256": "6a2fd447da46cad3419d3fbc7a695b46f77bc57ff81e6203e22a5596fd37319e"
+    }
+  ],
+  "sourceCopiesBefore": {
+    "original": {
+      "files": 182,
+      "aggregateSha256": "ca7dabcd745d96083c533100d3009bbe7ba968a7a1269cdfff2b6ca25230381b"
+    },
+    "demo-b": {
+      "files": 182,
+      "aggregateSha256": "f84c24515366685daadb8f0091766b233561790cb57d9bedd6eb7372d2e0308b"
+    },
+    "r023": {
+      "files": 182,
+      "aggregateSha256": "957bb00a1068e0e36cc97a34e211714133ffd528f1a487d50baf8596607b7089"
+    }
+  },
+  "sourceCopiesAfter": {
+    "original": {
+      "files": 182,
+      "aggregateSha256": "ca7dabcd745d96083c533100d3009bbe7ba968a7a1269cdfff2b6ca25230381b"
+    },
+    "demo-b": {
+      "files": 182,
+      "aggregateSha256": "f84c24515366685daadb8f0091766b233561790cb57d9bedd6eb7372d2e0308b"
+    },
+    "r023": {
+      "files": 182,
+      "aggregateSha256": "957bb00a1068e0e36cc97a34e211714133ffd528f1a487d50baf8596607b7089"
+    }
+  },
+  "baselineGitContentCompared": 182,
+  "baselineComparisonPolicy": "Binary files byte-exact; text differences permitted only for CRLF-to-LF normalization. Raw before/after workspace hashes must remain identical.",
+  "lineEndingOnlyFiles": [
+    {
+      "path": ".agents/skills/course-catalog/SKILL.md",
+      "gitBlobSha256": "6257a601a27575b06592227e49a9cbdc1129c5fee4ef088f2cae30ea33d66fc0",
+      "exportedSha256": "7bba1a78837e13c7a99977255df09658ed742bfae34609fa62f9c353012d66b9",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": ".agents/skills/database-migration/SKILL.md",
+      "gitBlobSha256": "66796992bd09e8084fd56a6c5da68763eaacaa968894d76d6683d87c1dc1f927",
+      "exportedSha256": "a6e14c323e1d051cabbf9a185658d599928b126589cb3b89d0a527a16eb4adf4",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": ".agents/skills/release-check/SKILL.md",
+      "gitBlobSha256": "94d7a415028f970dfb92c3370eff5722d19ab71a064eda21d9c237c98614aae4",
+      "exportedSha256": "67e9135cc4912bb76897158181ec3f77cbe20823b440d4758f901eacee41c6c3",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": ".agents/skills/security-review/SKILL.md",
+      "gitBlobSha256": "e12d7f990afa065066c7f6b075b12cf91e1e05c5a9ce9c97881adaed6a4392da",
+      "exportedSha256": "bcd1ca88730c745d410c3f478f5bf881ce88fbafce37bd7b5ece8f0f136c5248",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": ".gitignore",
+      "gitBlobSha256": "106815df468dc314aef53d4de284d754f05064291b6f5f06f12b532556c8c596",
+      "exportedSha256": "4b7553b834d8be30085e8d4b7569bdb96c51afaf2e100e5046a49cfb048cd7d4",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": ".vercelignore",
+      "gitBlobSha256": "c5d9ffc59f2523fb1495086ae98ce078216299ac6b08017d8219bb8f20febcc2",
+      "exportedSha256": "a56adcc8f8c7010d96b381780c0bc26eb8f2bd0125a8f2108894a63289ef66db",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "AGENTS.md",
+      "gitBlobSha256": "a9fe28dcd119d10a312950ffc41738f1a90c0af5c8f0d7b5f1a94b29e28e6efe",
+      "exportedSha256": "f944f9bfe6c2a477b8f19582a86ebb1946c981577d5e817e32d088cafde16e69",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "README.md",
+      "gitBlobSha256": "22b3791898c65d53e68e15b5859df3184d9ca8026c19904b65f565b30083945d",
+      "exportedSha256": "a808587a8618deff0ac82b983defb81b290b8069fb3a36d9fcc7040be85e8028",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "admin.html",
+      "gitBlobSha256": "e008404a938147f3791fb758ccaaaadf2ff04cb1689f6ad066a1fb766a29f69c",
+      "exportedSha256": "ae7cc7df49782da2bfbadf5bf24b01f9e3a417755197ceb66138b1b679d252be",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "auth.html",
+      "gitBlobSha256": "016dce7b298c703543a23cbe0505cf18ce822cffd618eb801ace6f1bda8108b2",
+      "exportedSha256": "cd192c7d8e694b60852b092bc278e0f8d8961361025aa6d3fd66718e1379f7f1",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "css/admin-support.css",
+      "gitBlobSha256": "0879de36251eaf3f01bc5cd0b9f967f5686ab5490dd16cdb083cb830a695126e",
+      "exportedSha256": "b706424d8db3a068679342eaa7585e6d6bb3fb110f398452bcbc9f65f0fb795b",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "css/admin.css",
+      "gitBlobSha256": "f0ab579fe2169bff051d6af78c4a1fe55458a5ed126e482111091f9a24e44c4c",
+      "exportedSha256": "487436b4112c1708679264d4e2180c643a64568c4bc83c995d5976063d47e79a",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "css/auth.css",
+      "gitBlobSha256": "8f0303137f123e0ce0920b04428d7a3bbcce0512c2d4b815d9133ade5ea33db2",
+      "exportedSha256": "a4349791b0776a3e58f2b6b6820a019dcda85b71943b9bb322d6afcebea4a311",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "css/degree-plan.css",
+      "gitBlobSha256": "7fa23c7038a6072064669eeddf1eaf0048f3842d8d7b75040bfb8855b69579de",
+      "exportedSha256": "7db6ae8e8bad8f055c13e3f841a1e92314bad9632ea9d03a5571772802611754",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "css/legal.css",
+      "gitBlobSha256": "5b29c2f2e63f00484e2f86702624db4d771e163a822b2f6871fbb5a58a2b0180",
+      "exportedSha256": "277adc1d9707cf5166b70474afb98e2f3ac898c45b47fe1a267384c220cd0cce",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "css/maintenance-preview.css",
+      "gitBlobSha256": "8804d4852d106e6fe50b50b2dfa3c5bc1c3b2be8315965a6ee276b3d997748b2",
+      "exportedSha256": "130392c0b787fa32951112ffce11245a70bbc91ff9aa96127e75380dd13d3318",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "css/maintenance.css",
+      "gitBlobSha256": "42c9f9dccb752efbb1fac71a7b914096d7bae9c88f27128372029614e04f6acc",
+      "exportedSha256": "14cc296503b1e10985962e8f7ca7e8e8abd850b6df4bbd1a2add1503b9b71576",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "css/style.css",
+      "gitBlobSha256": "e17486833453f0feae0f717d72ddb80c156c9865c15e0fb9078cbaa4bd133667",
+      "exportedSha256": "7f8db11e5be02de1e196fa657200738b589b0055f089d21877a60b3fcbed1778",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "css/support.css",
+      "gitBlobSha256": "84b330cfb2680532b29bc18c6d7b4460c4a8e7e4755a79060c2630722f79c1ed",
+      "exportedSha256": "27eea07252658ae7d05c30d268d040e81466a7d85e45c9806c59b72b595e67a5",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "css/ui-states.css",
+      "gitBlobSha256": "49c01c556e3023b235b23293b15a0f877f771b5a0c1609c1295ada6bfdd1cb71",
+      "exportedSha256": "49c22e09ab8eb331a884e79290b7fe9c9b5241d7a276a97099b0d568f95b40f4",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "gitBlobSha256": "0a381256c8a7cb7645cb78ae3cc305dd82d5ad701f9c00ba06264259e727cb82",
+      "exportedSha256": "8467aca27405f265ac79fece22c291fcbdb68e122943c6d8d6d89532b6453c7d",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/DATA_MODEL.md",
+      "gitBlobSha256": "b34fca1a93bbe4d2b9ae81a670204b157bee054f6e2c41f7de8ee709ead37c7e",
+      "exportedSha256": "bbc75ca23924739b5a321d81e5f74eb4cca51df466b3bcc702cba62cb6fadd11",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/DECISIONS.md",
+      "gitBlobSha256": "7e81765f2392ad1139f69e019740030d38841bba0d301ea5f8618f279c1d6207",
+      "exportedSha256": "5bb08200eeec2b55f9b398a8012581c1188a3f76f0df577896cf83b8f50b45cf",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "gitBlobSha256": "2041b343f026d2e3951333ef94d68d4f27a1f119397004c6725fd8ac1ce85fe5",
+      "exportedSha256": "e9c0207a5b40fabe42b7f37203cbdf8867f49e403150c714b1e46a317191ebfd",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/DESIGN.md",
+      "gitBlobSha256": "abdd30c99bf2aad01beb426784a9201a8747811688284f16abd08021118c4877",
+      "exportedSha256": "0477d913ef72b8ab5822427a57d0ca7fc0d57e2604c53f1f5de268387523615a",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/KNOWN_ISSUES.md",
+      "gitBlobSha256": "e25dfdd77105d93f554965c10ccb439898cd67aa1284d57389c49d056d620835",
+      "exportedSha256": "4f0efa2ba9a7e72f7b8103894f6467a4601c9c0456747a4d09af9a0bfe8042ca",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/MEMORY.md",
+      "gitBlobSha256": "4e563d188ba990b46a1009935def3f653cd27323e5c1e25ea2c0e23fc785679b",
+      "exportedSha256": "2f2d38b7f44bc46b165ceebd35ea4f7336d927fc59773df9abf813f4856a819d",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/PROJECT.md",
+      "gitBlobSha256": "796de2bfc05aa3ede6e89624479946bd95ecd88f6185ab2da5f3194c91a7395b",
+      "exportedSha256": "f06e212a61042c10c7284ff3b985f5b75211ccbd8c5736b6590054254bf1e333",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/SECURITY.md",
+      "gitBlobSha256": "14b42abd0ba20badd25e682335dc677e60855fd0d350b0c204e1449da0314085",
+      "exportedSha256": "1e27a5f89d93a881eb5dcc737c20660654eb1f5d96ee2a52976004b41f695412",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/SETUP.md",
+      "gitBlobSha256": "a3c19bfad875f1f68ebdd158516b5ecba173a0aa7ccec6174ed8b46d6a74e5f5",
+      "exportedSha256": "54741ebe36128a9b053c7d37787d43ce53c094a7684e5a756df03661ad34a563",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/TESTING.md",
+      "gitBlobSha256": "ecd2db2f5054db9d69e4214a803fcd5e6c51dc9efa6aeeb5ce92f9de3f3682a5",
+      "exportedSha256": "c10e5f586012e70e990edd4b6d44e1c020c36d82101eaefc1692ad12188ff3b5",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-07-responsive-footer-links.md",
+      "gitBlobSha256": "0e0168ac9664c73475b3d711460331b686ee263263aba67a96ec0294159025d3",
+      "exportedSha256": "ddf3a40ab06827b660c946d24392f47b64d1593c4612fd76f838dc2b17eba81d",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-08-inner-glow-adaptive-spotlight-modal-dot-grid.md",
+      "gitBlobSha256": "6ccab27cfa694343245b5177b30855cc45be56d24181be8c9c8e2f3324cca98e",
+      "exportedSha256": "d705df1ddcd5bdc2e1b87bbdbba225ec34b958e4616fc116cfa9c9c06bf0caf1",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-08-modern-hover-dot-grid.md",
+      "gitBlobSha256": "95a2ff07664b6a79cf7f5a76b1a9191b3580e18b76d0818e185e653993fc0517",
+      "exportedSha256": "ec5390180f737b66c4cd2f3751e8bc2980cc3b5438456bcf50d5e953c450176d",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-09-shutter-button-hover.md",
+      "gitBlobSha256": "ee435163094965a6ed22b0fe9201c121c4b5df2638f6c1bcb9fe9dccacf4b769",
+      "exportedSha256": "16526060158655e63fb7f78c10f08e43291eb3f1c40db221da67cf5a3535a8c7",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-09-zero-scale-shutter.md",
+      "gitBlobSha256": "b8193dedd63d7d2ee884b5ba489067b60ce8dae7e7ccc084f50fae23f77c1b94",
+      "exportedSha256": "ec3ea38c9d706e92685f7a4fc4e52dcd0862ef7c139645ca0dd5c52e8651e8c7",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-12-auth-admin-access.md",
+      "gitBlobSha256": "ac05902603676b5970507491565edc4e95365b462062907196858d257dff1e83",
+      "exportedSha256": "a501963940fa85197cd2aa42a9ba8dd447400a6a312ac51e8f23b4caff44ab81",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-12-canonical-student-profile-avatar.md",
+      "gitBlobSha256": "1dca1acfe0d64b1219adebc4eaf722ca1de11066c8110af889756b02ada7ba10",
+      "exportedSha256": "082ad8a2617b3a07383fe50780a07efb7822c7860c71bc8a469ce8ea9d8908d1",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-12-onboarding-avatar-layout-refinement.md",
+      "gitBlobSha256": "2148bde25eb05581dec4d223050c7d84e863dd12b8cbd316c3cd7b300004aa0f",
+      "exportedSha256": "30d2489ecb05820aa3b0fed37381ec250829b5456487d5289148db7e3e909594",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-12-photo-dropzone-unified-oauth.md",
+      "gitBlobSha256": "02fc104a90805bd83cf9782d74f61e32a2b8a712b1a0d23bcedbc157667e8198",
+      "exportedSha256": "491ccc20c051fc8f50a7e76adcf6704d18ade36e80678df086d34a687c485d4a",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-13-admin-auth-login-metrics.md",
+      "gitBlobSha256": "c99bbc3f102ff2d11d4f907455150af506677be88df0cb076ea432743385bc57",
+      "exportedSha256": "092fd9f4027f9f9d309178cb14fcde64b17d80cb27749a262abef6ce47b3e042",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-13-admin-permissions-identity-management.md",
+      "gitBlobSha256": "d8e53f7892118827c684cecb1b337df7fb32c791f04453275f402bc011b98812",
+      "exportedSha256": "38f629ec2e90e88fe6c198ac9827f30d9f87f22828da6fd5c3e95a096d6b2295",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-21-dynamic-error-skeleton-states.md",
+      "gitBlobSha256": "4ac0adcefad35f80786b3f6acfb78a3f67f5cd9e9607bdc9d802f5233524f8af",
+      "exportedSha256": "9bf72ef08f9950804ddc963bdc053725c020bb7730c62b1dfd6d1a6772bb453e",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-26-global-catalog-settings.md",
+      "gitBlobSha256": "3bfbfe24d040d3e11be2e152c9fe1946a7828b8ecc28b7f817f4bbe9d3ff4518",
+      "exportedSha256": "30c0b8e7bd4a3c9329a51ad1eeb850a8bab6f2b3592207def48695e2b498dd33",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-28-complete-course-catalog.md",
+      "gitBlobSha256": "961c869647458771fa6f10dff316f313e3245b84c5b3bf6c89a31dfc17aa0288",
+      "exportedSha256": "0d82c9741a40a6df3082d0ff0a4833b1c6044bb6ad29dddf4379bced1fdf02a6",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-28-vercel-maintenance-google-id-token.md",
+      "gitBlobSha256": "e69e0046caf97bf967fa154a0c918fb1fd8c81697528a65a8b0f62c47e916966",
+      "exportedSha256": "142cbf86ec1f769a716b6485f72afeb1d3f3a5c6cf588399e7ee3a1923b0e489",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-28-versioned-database-first-tracker-sync.md",
+      "gitBlobSha256": "39c3b17d65b2f802e65692b0a6e8c081e368b0dad8c27058679913377929371d",
+      "exportedSha256": "48ed19479461474cec4ecabb640fe9901cf86208b0d6622b95bd7672dea0e8fa",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-29-catalog-consolidation-streams-dashboard.md",
+      "gitBlobSha256": "5c4e4e3b9662635382f3580b4234a394fd0f6acb6dee0d1e2adfe734d4059444",
+      "exportedSha256": "2e686c7280556f47d1b5b7947c724a32a50315162462825b654023ec52ec5f1a",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-16-degree-plan-integration.md",
+      "gitBlobSha256": "64bd72d0fa733a70dfe009a4897cb6ed6d798dea7ab8c0a2f2fb38217816ffb0",
+      "exportedSha256": "231079fa375cd723e546911a5cfe1530885bb93f6644783e9271be63c8e7f67d",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/reports/2026-08-13-admin-permissions-identity-management-verification.md",
+      "gitBlobSha256": "c4c35b07628316f571b2860a0019458d190cb1288c9b64a7beb7dd63bfd09f9d",
+      "exportedSha256": "2d1c1f961aca09a42f4625227d157eaff42e785752bce702578d2512756e9328",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/reports/2026-08-28-complete-course-catalog-verification.md",
+      "gitBlobSha256": "024e18457f480fd3fcc56945f51b86222921d25ed3842c53c810ee447ab770fb",
+      "exportedSha256": "a977ca44dbd4cf6d506ba1abdfb2301860e6ebe75c4458d91b299b6fd2201067",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-07-footer-responsive-links-design.md",
+      "gitBlobSha256": "4fb640e5046f2d9bb59991731f41fc0376e01aaae28cd7221c06ac0882b82feb",
+      "exportedSha256": "e431c997a03e9f8e08ce0b856576ed94c64e1b8c19bd2dd4c1fe3531d0b8e37a",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-08-inner-glow-adaptive-spotlight-modal-dot-grid-design.md",
+      "gitBlobSha256": "f26538261cadf2d52e63bf47ccaa54bcef5dd3b218d5e6368ca77d27cc7859c6",
+      "exportedSha256": "896c76d7081393e683a1ae1303eb55f626046795f4890d88e516db7ef5245111",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-08-modern-hover-dot-grid-design.md",
+      "gitBlobSha256": "3767e464951b7c1e476aa2862f39d23dd16092a384f4f3a2133fdbf79584bcb4",
+      "exportedSha256": "f0ba765df1e64062b18114d3e55d68006acfbb0bfffc06667e1e32ff96afdb75",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-09-shutter-button-hover-design.md",
+      "gitBlobSha256": "305e7dfd6cde36f9c466e7c02b3c1264377f4b65ceccef584a27efc4ff5f1967",
+      "exportedSha256": "135e3afbba956bb5937f034b3fa38fd2ac8d6f5ddcdcf03b3f26ce7286c0eb6c",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-09-zero-scale-shutter-design.md",
+      "gitBlobSha256": "ed650a5d354d95b80233da7d5da2c4b2b93042c75bd6030d57bbc5e3d87246bf",
+      "exportedSha256": "333b3751601754965f3a59aa188f7e5f15da1f60dc8b63e9e3daed657eb26381",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-12-auth-admin-access-design.md",
+      "gitBlobSha256": "7f2368490d0f453cc8542b4b042e65c0a5563a5dac5e5a6e98c9ea403a79f529",
+      "exportedSha256": "b5d2683db92e096a46900a44c0e16c40cb8ee608bce3ba3d212fecc43a38f476",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-12-canonical-student-profile-avatar-design.md",
+      "gitBlobSha256": "7f031b413be56d689a9006b2e77d0249f15baa308083c0c2b059b3091524aa7d",
+      "exportedSha256": "0efd422a27a6db185146fbe5e540336f2e96c0b257732e9f37ba341e15fd8db7",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-12-onboarding-avatar-layout-refinement-design.md",
+      "gitBlobSha256": "b88038c36415c10043947077e85678de6774ac7c7df63f64f302aa737ef82521",
+      "exportedSha256": "48d4fcbac3b5a2fddb87b2e810bd3b28b1ec0f3dc9781aca0305f4e3d11520b2",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-12-photo-dropzone-unified-oauth-design.md",
+      "gitBlobSha256": "ee5b412d265a42eb1d04a42c9a41c6087d3c43c2e2c64a42caf07a182231c53b",
+      "exportedSha256": "51966f6e5344cefd3f0b958521d3239c0a70a4739dd55ed5cba9b35223204028",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-13-admin-auth-login-metrics-design.md",
+      "gitBlobSha256": "2821fa7bce578650bde878abe047865fd3f487eb61f692ab6d00e6caea626531",
+      "exportedSha256": "59fe5431b1277f22d9aeabb3f034505f33af16dc19c8631fd714d8104f4bd73e",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-13-admin-permissions-identity-management-design.md",
+      "gitBlobSha256": "f241a7a0d3034b098a901534b5056b66887a9244cbd2a4d23fba2bd25fa4a493",
+      "exportedSha256": "eb5c43425f28559b3c8a4ca9ccd3b08101701accb95d360c9151f36d85801444",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-14-admin-account-list-performance-design.md",
+      "gitBlobSha256": "cc0e2b92f79fb2074fac6f219f906b9d00a6747fd59622f3bf52c62d9201148c",
+      "exportedSha256": "28c5157b31de58dd03f3f3c76ddb0e854a5d11d70aaf17c3368ddb1082030d26",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-21-dynamic-error-skeleton-states-design.md",
+      "gitBlobSha256": "27707b10472f8746f2477952591841e06b24e6edf67b49377901b6640435d871",
+      "exportedSha256": "b4d0bd71dee81e3edfa462bf14325273ddf32bd1a63e4796835656b501307aeb",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-26-global-catalog-settings-design.md",
+      "gitBlobSha256": "36f26d7cf2c293bcddc86d413c1dae5568d82a4f6c981e1c194826d61701c2de",
+      "exportedSha256": "efab62ea09d664d89ee4fac52cc81633b44a585b43d773189e6515c2df564e2c",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-28-complete-course-catalog-design.md",
+      "gitBlobSha256": "ac4020ddc9007cc3771ae1b9203b46f0e8efb6174e0a45c957a4872b32fa2098",
+      "exportedSha256": "87b5127f3a0a41a5a9a087759e93162ae11dc8bed94f116c00b6146d9abcd52d",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-28-vercel-maintenance-google-id-token-design.md",
+      "gitBlobSha256": "9f1587e722b6083fb3306a73d2618d9563841553744208d12ac00acfb9858ca2",
+      "exportedSha256": "02bfa173eec4a88fb869637cd5abef717182ea4ead6328b1d37ea4f2445d5f86",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-28-versioned-database-first-tracker-sync-design.md",
+      "gitBlobSha256": "f27ea2c79e6fa27c1e6bf97b938a8e449aa12d116f1014a72e33ceb722c23ef9",
+      "exportedSha256": "2c29ec72dfc1298623ed9a9b8fbeb7043fe11789443a2cf16ea7496021a5b4bf",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-29-catalog-consolidation-streams-dashboard-design.md",
+      "gitBlobSha256": "71ebc760e37349f5faa12f3339c0f6c31e61ff4cfee1f820081d9770e61a1ecb",
+      "exportedSha256": "29fbd1923b6ce2a63ccd332ab57bace33c6fb1af4ac15d49468b98f12aa16b42",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "error.html",
+      "gitBlobSha256": "0cda63dbd706e47af4e934b10e7c0aa9226b4f6b699fcf5ddac226051cbf3571",
+      "exportedSha256": "bc3f1b61907f69baeb83fee0ca12a5b0a622502bb72119482747eb00ed0f3a06",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "index.html",
+      "gitBlobSha256": "14064d716c67ee9390f83536cedb7cbf18a89f0ea30b1d7d9dcf57803e219d3b",
+      "exportedSha256": "163042853ec746ebb7b0d6d4d4870e86c7efafe480f12b8bf02dcea4dcf0be7e",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/AGENTS.md",
+      "gitBlobSha256": "af742483214757e679d0224c6924931cb38c379bd6202715fb6729fc1f309e65",
+      "exportedSha256": "c9361e8133dd6ff8f2087f8fdae960889819c871798e320c2e0d21fa10da5346",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/access.js",
+      "gitBlobSha256": "40832dd50e383d0dc370ff222a13b3100c5061f5fbee6b9cc614b68b4aac2acf",
+      "exportedSha256": "855dfd3be04f0a92a66ab8d3c5e572a3bb6d1a8c5d74b362f6ac3bc24bf049bb",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/admin-catalog.js",
+      "gitBlobSha256": "1b9e3b38b5c52c4b02ba593d674639fbd0a613a9e536c4d504717544e53f6c9f",
+      "exportedSha256": "34b6655fedea68fd328f34b77239ef4b7c16a58f310a463b28af2ce85072cd3e",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/admin-permissions.js",
+      "gitBlobSha256": "66292106f09082117c5a594209982774f20165f5cc011defa1aada7072f59a8d",
+      "exportedSha256": "76cb1e17b580e957679224daed5aa0704a9e9672a35346cf8654fba60c3f6b79",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/admin-support.js",
+      "gitBlobSha256": "9e39b66a35d77415b3ca381bbd53d2ae7590ca5101b979b111ed9e584a4e53e8",
+      "exportedSha256": "91543f4654801c44b5aedadf50cb8ad2720c124c2529696bdf9b567abcdf8868",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/admin.js",
+      "gitBlobSha256": "8652f952b970073580a979fef112b2cdf68dfc4cfe4aa7cc0c3ab2f101a26639",
+      "exportedSha256": "1dc5ee19030895f6cf5e12f7af13bcedc204f63af0d2c2cbbbeeeb33e268ac9f",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/app-boot.js",
+      "gitBlobSha256": "6aebab32ef74a06134ab9d0112870e335c2ee8568a6d7541742a529162dca85c",
+      "exportedSha256": "173b9b4c9e1521ee00515dd312bc9294f6508d59d866987d932ca60e289325aa",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/app.js",
+      "gitBlobSha256": "8e82674d353d7e869a6bc6fba10ad39eade26bd74ca1f0b358e36c324babb12f",
+      "exportedSha256": "2c022bce283f66f496eb463a12b36f0d9bbad28984b40681b50fbcb7428fa243",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/auth-core.js",
+      "gitBlobSha256": "d67423f5f1ebce60e73ac82dcb9681b53981cba83a3e67a5b8ea4ca531a504ef",
+      "exportedSha256": "1caf647015d74a5824a289df2bfafcbff224c04d8fea19242347f3e826df172d",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/auth.js",
+      "gitBlobSha256": "b97ca505a0ab8f8f897f3b7365c8a5c4a9be6bd2e48ac1907a01ec599ad99d2c",
+      "exportedSha256": "98ac96194376f4e3e69eaa453d43f39db00a0a5966bb0db56be1e0cebf80f46f",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/catalog.js",
+      "gitBlobSha256": "fc60ca39c8e28d0e8d7806d4ec0af0e0e0c1ebc5e95f527537d7dbd8a4d50bb5",
+      "exportedSha256": "c30b4b715647205220ffb01fb19b15386577c5a352737963204fe66c46825405",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/config.js",
+      "gitBlobSha256": "734fc3debdb39e7cb809cebf75c276c930828b4d5326f7740b7e946e56d9b7df",
+      "exportedSha256": "4efe5550ab83f139108ccd1e36763195e49085f1c00619d4bd340ea0dca98694",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/degree-plan-data.js",
+      "gitBlobSha256": "1c4c471ba216842cde0c944420bc52e7b9e5ecf4b01ae5478d10d962d41d3932",
+      "exportedSha256": "65325b6099676b00e385500c38f3a0d945472d1edc33aa4a6a369c25597e7540",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/degree-plan-view.js",
+      "gitBlobSha256": "9d6227cdd1f5a0c2a86bce554e5afaf1d034f1059514ac3b72d49ffe8bd6dfac",
+      "exportedSha256": "b513104aa02b3759d270a42b041b0b4c8e504812c5d3befa8eb486398816eb03",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/degree-plan.js",
+      "gitBlobSha256": "bd955607fd2b970fb806f8b828290046b9aec4d8819c453778041b924c157211",
+      "exportedSha256": "107347e02808c02141be2bd632b115f35192e57cbf0b99e46f98028fa401fda7",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/gpa.js",
+      "gitBlobSha256": "4259e138e8b89aea67e55041421da47eccb5e2781691806fa81f84b519354156",
+      "exportedSha256": "dc2367c7f4e06921f0a61948e8efa21070fa49d8d2c0d049da4a5bb0c9d74ca9",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/maintenance-guard.js",
+      "gitBlobSha256": "dede37746affb71749e8eb0cb4cff4da730bfe6d64c0ddea5954afd454c17a5a",
+      "exportedSha256": "d711b6c87c6d746221f4916df1ec46dd40d0f9174b0dd67f5b0be75589fab8cc",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/maintenance-preview.js",
+      "gitBlobSha256": "92e15bc8f56988d03b0e23dffb91d1c42796d4ce1d6d8a8a4e86b494157871b0",
+      "exportedSha256": "ac299694f56c9c364f280811bf52c6778677d7837c7e33aa3b4983cb10e61cb7",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/motion.js",
+      "gitBlobSha256": "e1bba1bb76b4565536dd61a5e6ca5a56b7694306d611c0dc2abd5d310fb630d0",
+      "exportedSha256": "159d2a043a8b812881f6cc4e2a86f6319feb1103fb0859700de3d3bf990bdaa1",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/prerequisites.js",
+      "gitBlobSha256": "8ce7bb2bf40739ba75ef911f7968aca3177a1a6d658e7b62f0454dafa808559f",
+      "exportedSha256": "49e48c3b9b67dc5b60a8aa054bed2fc662f9f48e360d3426e347a08a7d35c819",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/preview.js",
+      "gitBlobSha256": "297ed058ab0ce476586b004f9757705437bc4fbe9b384d8978b1b45bd536c458",
+      "exportedSha256": "1a049082d21c6a9be6bed8f6e3988f36b63fe9893d8b171a6e10f97aa40bdaa4",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/profile.js",
+      "gitBlobSha256": "5810dd977c36143293aa6ce9c5cdbea0e6845257ba56eca98a8230d50f21ba36",
+      "exportedSha256": "35658c0b273eeb168b10220ef9b0ba9228b7d0b3c02de7b480637e476b6c23c9",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/report-pdf.js",
+      "gitBlobSha256": "d28fef4d500762d48f368d644c6c63ab54cf5dd3ef5dd601b294847c05627be2",
+      "exportedSha256": "fa6a8609f5c2a5c335bdd4ace3b1ebc547784d70f821f44f8cff7fe24fd2cffb",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/roadmap.js",
+      "gitBlobSha256": "8b77e4a716dcfbb6911acaa260fe04c309f1771db778ee7ff153aa3a7d2206d6",
+      "exportedSha256": "2ff6bc59a98bd1be0ef066e6405ee1df98c73d3535d7a3219ffd36e4fedc0c23",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/storage.js",
+      "gitBlobSha256": "b2285cea53f25231e5a79de1ed6cb17414f6d3366ab2b4c7c4c64d9465cf82ef",
+      "exportedSha256": "c98f4eb92d8d79960b782eb68a4158037f98b6eace94c9a576453e13b6d78e13",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/supabase-client.js",
+      "gitBlobSha256": "ff3a7d9d8a446c666ed1665d8884813b4b61a799bd242b2c0655ff16274c45fd",
+      "exportedSha256": "7b402b374af51fcb72d903b80f9ddf169e78bd8a378094d9360b26a5c2db1126",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/support-core.js",
+      "gitBlobSha256": "2ae0c097c93071dddacb85b31c97b27a524efaf8d3acaf5f16b13193b32c5fae",
+      "exportedSha256": "c9b4a2c35eb194aba7e79bd78f810e512f30ac74bc620e20fcd5ecd8853f35d8",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/support-widget.js",
+      "gitBlobSha256": "0128536764d247960afd9aac8c72581e1a3e913953c6246a9c40861cbef5e622",
+      "exportedSha256": "112ad25bdfd5cd2d1fbac9d2a38a548a4a0ae5b77aeda1dbe2df48b00b71e8e7",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/ui-states.js",
+      "gitBlobSha256": "5633dcb8c359d7d4a27d884b3c7fe18d1d1ad5850b31d9f1ba636137f8f626ff",
+      "exportedSha256": "babfba104c4e0ddb7bf89b658dc62758b1fd076b168e1dfa1595954862738926",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "js/vendor/html2pdf.bundle.min.js",
+      "gitBlobSha256": "85e6ee9ce246e3ae4424313f7e46a5ed860a28d757811de8dc9c43f306049d65",
+      "exportedSha256": "917be8b20da93f22db22d1d887efff1ef5a11ee2e72c61bf0e4d96ea0149cf2e",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "maintenance.html",
+      "gitBlobSha256": "3a5fd4740486a1b36eed3dfd724f65fd6ab9637ac526e1a3c6c046237cc5b536",
+      "exportedSha256": "68be1ab773a376e28e87d05c7315069db85a8ad266823826e157ec0862433dd3",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "middleware.ts",
+      "gitBlobSha256": "6da0dfc1801ef45e5f79752fee9705f5091b9d0ad44a2f9f4925c115aaaf9aa1",
+      "exportedSha256": "fd85d74e0a73f66fffaf74a4f0e3023508cd54ca6aae6caaea9f367f80626623",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "privacy.html",
+      "gitBlobSha256": "c58411cafe4884b6d71be03b9ea108e76b1ceb1c899657346b53247319a7a5a6",
+      "exportedSha256": "2a328f68b1e31694de8661a0929d2b9a25eb989cbfce477c9e85eeb821c25383",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "scripts/catalog-import.mjs",
+      "gitBlobSha256": "4dba3b4e83e80122348100cec3a4732e7065757b4afe8ae7670435d5dc833a27",
+      "exportedSha256": "110cfb1647ab217142c1abbe7f2d8a75f91f8c26dfc39677cace2e45a371d0d0",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "scripts/catalog-source-config.mjs",
+      "gitBlobSha256": "ef354b9464aec10cbc44a86be235a1f9ede6e7653a2b3af00eee7f2bd1f1fd50",
+      "exportedSha256": "6b974b22234e69933d33c2fd2614ba50948fead54bfd94c66cd011622aa2553f",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "scripts/catalog-workbook-reader.mjs",
+      "gitBlobSha256": "a7a6fa153b40fad29c752e708081eaf0e28c53fe1b0c6883f587c8aa7789fa6d",
+      "exportedSha256": "5a5e954a52fede3663c512c4be5deaaf02fbf482576cebb4560aed55d705af3a",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "scripts/dev-server.js",
+      "gitBlobSha256": "1f7f0b0a6f33bae8a4a41951e3a7b24dc844c5a0167d4e8e183f0cfdcc2bb763",
+      "exportedSha256": "2d9dce081babeb9be5b8719b311b2f1c15a2e3a1bc82b66244a176cd3abffa71",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "shared/password-policy.js",
+      "gitBlobSha256": "ed0781547050dc5e14e4048c836f48099ca12192b17cc00067f3f24108431a6a",
+      "exportedSha256": "80a2847672cc30b870c212fb9748dda50ede5beff73055526b38039e707ab557",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/AGENTS.md",
+      "gitBlobSha256": "e9f74e1abe762bf7f7dd0d34dcf709b025db7c9433826993cbf33796f57828a8",
+      "exportedSha256": "3eb5d39337dbeef0a31f84d2ef4ce4fd0c94ef14b8d9bd08cbe7fec7382b5e9a",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/config.toml",
+      "gitBlobSha256": "2890fe1b2c5eb7a1b47baa4ea1a2c2a2a261e94c2e2bdf07899547d161ac3ad7",
+      "exportedSha256": "fab9acee7e6a9d04b5ac4c418ac9d0c1c3d748ce8b316d6867ff39b114bcc064",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/functions/_shared/jwt-assurance.mjs",
+      "gitBlobSha256": "5e34c405f638e9fb9968009cd43c72ec7960fa2ef8d7b89a7fa30917343ba9ad",
+      "exportedSha256": "559b8d6c38cf17432d2a6fe798002bdc90fb005256d053d47c4f7818bb5232b9",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/functions/_shared/public-error.mjs",
+      "gitBlobSha256": "fcfd8d00a3a0d20df8d4e9da649ada4e8082db7b7b6daec0c13dd692002f11e3",
+      "exportedSha256": "99ec1949fa43ed2051672e9d9ed7728b909dff0e7fb9c835b0987faa2e7b324e",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/functions/admin-access/account-actions.mjs",
+      "gitBlobSha256": "3faf24c983b2d8829b8447d79a1d34c9be14ef6d19ee5675e35a4a2b5e5f5cea",
+      "exportedSha256": "4873b546eb8e4c88e91f078b976250edea5686ef89b73f36dc208884c5258c97",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/functions/admin-access/account-list.mjs",
+      "gitBlobSha256": "cb57d230d528454267cf9a3ebe1e7b5473865ad131b4472ab6341d9e87580d7d",
+      "exportedSha256": "bd35a6163ef6d73f111490110ad3042f9a5bddc7233394344d42b8ba043e1a9d",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/functions/admin-access/account-policy.mjs",
+      "gitBlobSha256": "7fd11c21dae7b0eeabfbfcd1175955fe544fb486f293c722c2e1632f3d9e3d8b",
+      "exportedSha256": "a75d43e11ac3a6322808e5b8e555f7c7499968720b24cac96e6b660871c42277",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/functions/admin-access/admin-rate-limit.mjs",
+      "gitBlobSha256": "09d90db34630be4c5b4a58f93321f95f97f41d0e213f90b58de3dcb0daf4e7ae",
+      "exportedSha256": "9548ccd59fcab47e1c1c8bf4f2c65f07747294b2c1f0d644b5c0647abe9bf961",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/functions/admin-access/catalog-actions.mjs",
+      "gitBlobSha256": "dd08c59882b2bfbc1f66a6a0a97a9f3769dd4407386011572a93ed00ffd3a661",
+      "exportedSha256": "f88ef79b370f592bd3133f31788e1b2dfcbb661085dc21b6fdea0960da936273",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/functions/admin-access/deno.json",
+      "gitBlobSha256": "24941ed24ce6961815107fd4773af1663a287791bb96bf90a8d977235df595ab",
+      "exportedSha256": "c4a7d8780ec8ff2cb1d52f1900edb51dd83981be2606a6e95cdbd26c00f79cd0",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/functions/admin-access/http-response.mjs",
+      "gitBlobSha256": "e22fc7f6304f830287fc7c14c0c61edc9ba790ecf1de5d4886188bf03fe73ae6",
+      "exportedSha256": "99ea2c4bde649d73f2c0c57a06547d1f8c09c0edee5ea7239da2953d4d65da6f",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/functions/admin-access/index.ts",
+      "gitBlobSha256": "ef5d7503bddbee69d508c05f4d050d9747df983071371c827c61096bf5c066e5",
+      "exportedSha256": "52a43b3acc6656175b99e17a9cc5442252d33f9e284639915fa22a4763628e43",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/functions/admin-access/password-policy.js",
+      "gitBlobSha256": "ed0781547050dc5e14e4048c836f48099ca12192b17cc00067f3f24108431a6a",
+      "exportedSha256": "80a2847672cc30b870c212fb9748dda50ede5beff73055526b38039e707ab557",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/functions/support-desk/deno.json",
+      "gitBlobSha256": "24941ed24ce6961815107fd4773af1663a287791bb96bf90a8d977235df595ab",
+      "exportedSha256": "c4a7d8780ec8ff2cb1d52f1900edb51dd83981be2606a6e95cdbd26c00f79cd0",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/functions/support-desk/index.ts",
+      "gitBlobSha256": "c170b6fd1a8e4d8b71b2d506a05401e4a278104563c4f0bec884d5c29a34f8a7",
+      "exportedSha256": "686a76137439d0f18ae61075501813a4040a51f4546819895b0f036e5e28265b",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608120001_auth_profiles_rbac.sql",
+      "gitBlobSha256": "cc670ee13e1f8e3a91e3e1715c4d37da2177640838ebd921783f9299ddc88a92",
+      "exportedSha256": "6bc67b2bce82645ef65d8fa434f182bcdf7b6a97dc811035399bda90fb114601",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608120002_tracker_storage_rls.sql",
+      "gitBlobSha256": "3e1b531b46734a382cdf22c890eb2581eb1a7a251c5fb696dc17001c3d056b51",
+      "exportedSha256": "078b7ec750c04c5902bc5870e5b9163d587755ea7151cd78e0006e161306a329",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608120003_authenticated_table_grants.sql",
+      "gitBlobSha256": "dd933923dee0818f373ac7030ca84aebe30a2bc26db1bd57fb370bdfe556c91c",
+      "exportedSha256": "5fcd0a194950bfbcebee0fd5b0188099f39e7ed5a7d62a2d0a077ea253b6dd9a",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608120004_canonical_student_profile_avatar.sql",
+      "gitBlobSha256": "b0063c2f633d0f0f3a72aea9d87077d042d0706e34e4c32ba68f665a712a9d85",
+      "exportedSha256": "514808d1c79dfc7fb841324c9c455644c134bfec052ff39cb7d7b70959fe83a8",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608130005_admin_profile_relationships.sql",
+      "gitBlobSha256": "e5539a82a52b03a9dff09322762a4e68c751663f46c44f4dc230c1e68bfb4c9b",
+      "exportedSha256": "40416a05c0a134f9a1b1cf52fc7047ab3e29498d766b1f54a06ee9cc70b6e8ba",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608130006_admin_service_role_grants.sql",
+      "gitBlobSha256": "19ac1bb0aa3df5b0dc202b687c9fd8a3a58326cc9d1009a280d8a09f247d1e89",
+      "exportedSha256": "e341ac7321f8d39898a323862bd1597959e650e733dc6de24ba94cd9b3de6e86",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608130007_login_session_metrics.sql",
+      "gitBlobSha256": "771537e8770f212bd613bb1e1a8ddc0fef47f7091fc0d5cbaff2c68bef4431e5",
+      "exportedSha256": "1c30ece3d8c501217a8db635a1054f62751041c7c8b809018c9d1e6e5a335acd",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608130008_admin_permissions_identity_management.sql",
+      "gitBlobSha256": "3640f3b1766d6072eb6709031eae94eba2d6d6e6bbd547b2623d4da7d06613e7",
+      "exportedSha256": "3608b2c430465c40c78b709675b4c13c52af7a0f597cff07d7ddc79ed408274b",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608140009_admin_access_security_hardening.sql",
+      "gitBlobSha256": "82e135c09e653453fb1902c1adfdbc7512833e548a39db789a86bd69bee73043",
+      "exportedSha256": "59aba83455212f783210a720a7e365cdfb25ce066e9a79f598a1c8405fffcc1e",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608140010_admin_account_list_performance.sql",
+      "gitBlobSha256": "0abd1e6d0d6f59cdc171536aa1ca9df5dfac7161834b60fad65e11518f28963d",
+      "exportedSha256": "ddfba31f0f1e039d87d70a76f8e0410b2290b9f3b59b322b220f2218644b43bc",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608210011_maintenance_support_desk.sql",
+      "gitBlobSha256": "bb39c37853b34aff1aa05a59e07a663bf5dee3793eac10e97a0bc10d83a8b6c6",
+      "exportedSha256": "98d3e8d721cf5bea52dce62b57932df8e3793e4a7acaae18f9b5054e70924705",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608250012_security_hardening.sql",
+      "gitBlobSha256": "3cfa8bf96a01c0bab9f093d428ae3464671d198c40fffc2990a12044773488b8",
+      "exportedSha256": "92c395f61d59e94f05809f018957aea9e71ef20fada7a8b22d23dee4757d8761",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608250013_admin_action_rate_limits.sql",
+      "gitBlobSha256": "412962f290c43b52eb9d9cfac2c9db9fcf7a6d8748c6f089883d7d009f6fa311",
+      "exportedSha256": "c835f998bbdb289761fa295c6fc6c007b257cf8d104894cccdd29c968e5916bd",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608250014_internal_function_execute_lockdown.sql",
+      "gitBlobSha256": "f659e78159b30928fbaac79f7867566f978012878e792d4b80bada8c794cb32c",
+      "exportedSha256": "35321610c6b10dea4114a9b764916bc6e15b2cff3fd885a4a3a804fe7f8910af",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608250015_admin_aal2_rls.sql",
+      "gitBlobSha256": "c10214754dad2e0cd682e268a932b4fc95611381772f96ec86ec4e2393b9a0ff",
+      "exportedSha256": "fdb7e1a196e05f3b810f80ccf542e94ebc4812e658b779952616b54ebdc7c5c7",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608250016_access_token_role_claim_fix.sql",
+      "gitBlobSha256": "891d29ba5d1c485c4bce55aa9a71f22d1a9b7c99e3160df0a5dadf083153d044",
+      "exportedSha256": "a4d059b6d7a580d283da9fc08952805cac8763b54f3743aa18dd48783a2c3e10",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608260017_user_facing_copy_corrections.sql",
+      "gitBlobSha256": "e9e73a8e359e06e5f4c839742d9c0f5a2752dfbe67a51677984449f8184d3cfc",
+      "exportedSha256": "82f06e5dc693ccc005a09c7db7259c679736706e3728cfe5c079d15c0d77ff6f",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608260018_global_catalog.sql",
+      "gitBlobSha256": "0573e790212a2af2c90d591b32937865f62d5c6324af9a590a2795859c226aa3",
+      "exportedSha256": "ee623aa2a6910a682fee62668991d1049af9ea81bb5372873638673d06adea20",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608270019_seed_default_global_catalog.sql",
+      "gitBlobSha256": "b1fba5427e1a9adeaed68965fefe805b90a65cd5aae48e666ea102257d16ba27",
+      "exportedSha256": "3ba2d8c125529b7a4c941b16454d451264a15a730c1622d1607e191bca45ddf8",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608280020_catalog_course_visibility.sql",
+      "gitBlobSha256": "37505d43412b26fa523ea4762b42ee5278bf55db9bfd43fbcfeaa34822fd31a1",
+      "exportedSha256": "74f7dd709bae6869c6d4ebe947e74d7cf11dbda1e053578a528f504ad819f955",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608280021_seed_complete_course_catalog.sql",
+      "gitBlobSha256": "4efb4321277fd9a40df7c64972a3da323aeb4900dd5f52aec1059d0b530d1525",
+      "exportedSha256": "900b4c075cfff4312ef227544fdb15087fa36116940d7a12170437aa39aeabd1",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608280022_versioned_tracker_storage.sql",
+      "gitBlobSha256": "68ffc5f591da9814c10a1c4b99f3bf5f50be7899fedcbad21f745caeda5364e9",
+      "exportedSha256": "17aef27c69f99f4e55ee8035c363ff15a69a011bdaa17692c888db1ef1e9f22b",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608290023_catalog_visibility_read_grant.sql",
+      "gitBlobSha256": "a976c4f8688ad1a68b196fb522a18775d912ebb57c1f84c980ae8158c312f0d8",
+      "exportedSha256": "f64c140964828ace3f7266302a4d1e7befa15f2ce52db1077571b47e1e9451db",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608290024_catalog_alternative_visibility.sql",
+      "gitBlobSha256": "4cad053ee2e6ad491c9727a7f8af77c3de7e83518296a5971a044f5821bc9fd6",
+      "exportedSha256": "1e0fffc0489eb8ebdb0b66b25ea002f05e328eaab8121d725459b5c481f132c2",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202608290025_canonical_catalog_consolidation.sql",
+      "gitBlobSha256": "500199e0f1298ee0cdb7d2eff962638dc837a353194e7b4b21e97e0c7d65e1a9",
+      "exportedSha256": "571f493ad20df6cf663345f3005c276891d9510b20a2575357dd1851f67820cb",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202609190026_revoke_client_truncate.sql",
+      "gitBlobSha256": "d65b901b53361428fdef0ca2fc963b61e8189e23e3defae616e4249338b055c2",
+      "exportedSha256": "c8aee6389a20017d2fd4574b8b37e06a2201daac49ae559fd4b9824bd1dfec4c",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/migrations/202609190027_restrict_postgres_default_truncate.sql",
+      "gitBlobSha256": "8dbe116bc4b3b9fa79af00daf1908d76d9cdedec268c4ce09e2efcb18ff800ea",
+      "exportedSha256": "ba50c144655f6734eb54a4e2ca9dc4897fcbe73f3af77bd1554197e2c9f396cb",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "supabase/seeds/faculty_additions_20261103.sql",
+      "gitBlobSha256": "70efd7ba96d937061eed2f7fbf7ef4e843366c8b07a0c4eea47fe8c4b6a4f2db",
+      "exportedSha256": "e10fc1b76af63c25af675e5acd05a3df64e2b2f71915716ad6e284c5d9b6b438",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "terms.html",
+      "gitBlobSha256": "9ccbf765446474b704c52116f330b970053bf4df62e7aafb1151313eda80fc06",
+      "exportedSha256": "2cd8257025786888a342b1499388881687a7a86b287c0ec2f418ce30eb0cf44e",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/AGENTS.md",
+      "gitBlobSha256": "d6825c7d6e3554184178e3f2b3401791e22e04be2c42c1ac619ba5685e99d258",
+      "exportedSha256": "d51105483360516f37145c2b3c21bf63316d23e1f59ba0ba680ca772e8b08dd4",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/access.test.js",
+      "gitBlobSha256": "4b9e17e7f3e5004b7b4d9a762c97bbc666f978182ab8d7542fcf9b752df423b6",
+      "exportedSha256": "9e36bcc8d2b0860d8638a31ef36e3798fb1d6c17115dac1e26c96f35d723818d",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/admin-performance.test.js",
+      "gitBlobSha256": "ca5de4f503ebd4c2594d98fd1590f1ef5ebafbe6417817fbb9defb2c54b749d0",
+      "exportedSha256": "4501ab6ca0cb3654864fb42cf2d144039943484174469423984184b8bd100015",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/admin.test.js",
+      "gitBlobSha256": "bf79026622a1f381b1ad6592ec6144722861fe820ae40493a512b48c324c611d",
+      "exportedSha256": "13895ca48d02d858c2e9c959e336cc744715c2e80346d5a2587dfe3677637b96",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/auth.test.js",
+      "gitBlobSha256": "46d1890f53a8a03c626f197e8b9dd1b3d6407f49154890deee215a5a8f570697",
+      "exportedSha256": "95668830a44a3f53ca2b705fc6b8a61a5eaf834fd7fd33fb79812373a22f97fc",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/catalog-import.test.js",
+      "gitBlobSha256": "ea0b22ce3c3045b8b39909736db3d66be181f33ebd604b86da581d8d38ef2ee3",
+      "exportedSha256": "fb891f14f190824704f7f317f006854f457656eabae865e0e775ae654d90be04",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/catalog.test.js",
+      "gitBlobSha256": "612e782d0d03566ed6c82dc7ce0e50f1d3b91b1f44a57551cf867da9caf8b054",
+      "exportedSha256": "d1e9b5120e720943aeb60e00cd97433cdcf6bd670e112e3634f6be5e69503cde",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/copy-quality.test.js",
+      "gitBlobSha256": "1102b442bbd147e94e4ec241a80a5e5525c1ad051b748b4b070911a49c7a05a2",
+      "exportedSha256": "55963a3055384c37011e02472bb548d4e5dea3c7d5a2341720188a21fea450af",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/degree-plan-browser.cjs",
+      "gitBlobSha256": "de950c89aed1a9d77e63595cd0ac4991dcc5d8ffb62d074669df3513716eb26a",
+      "exportedSha256": "9c233bf44011c16ded5f32292f5a8c4765b7faba44d40cb50de7efdf7c8863f3",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/degree-plan.test.js",
+      "gitBlobSha256": "8ac8fc6e9c711d1922a7bfb5ff67c03cbb2b64ee15fc79f1ede0ef0d8225ec2b",
+      "exportedSha256": "1b38602923f94584c0a96a04ee79e56b83395ab198e3a5ec5b35c19c282ba764",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/deployment-hygiene.test.js",
+      "gitBlobSha256": "1bc9e49a275180db54ff944c74ed0324f5fca6d16a273b8aced943d31175718a",
+      "exportedSha256": "6d7efc595aa9be6432d131c47dedfc215cd23e7cc5ece4b9980720e164abed71",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/faculty-data.test.js",
+      "gitBlobSha256": "88026942193dc7c519e91ba2ef666f6a222a3bfcd49eebfa901a2725f4865cd1",
+      "exportedSha256": "0d243f551d4d8bd488d512676340c70daf36327292cb30b74f5b8ac6b1cda09b",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/footer.test.js",
+      "gitBlobSha256": "4e5ecb8f5e9e21394ce9da3d43967f7ec1e2aad14e759ba224b28d1cd469b60f",
+      "exportedSha256": "b7e797d9ec6dcc247eea29e6ad8614f0fc48534111f58f64fe66796a0cc72e00",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/interaction-layer.test.js",
+      "gitBlobSha256": "0b085e4af702f896e2b82eb9c7de1974836e105a3b8041c402bcdbb747ccc6ff",
+      "exportedSha256": "35810b97728d492c0209e7d6f5f77a4c6424f3a84739f136ac7be9224dea9198",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/legal-pages.test.js",
+      "gitBlobSha256": "4229beabd452a5e9827607f2b52b1c002a3177e93d2305d88f35456ed2298a5c",
+      "exportedSha256": "0be5d5eac3ac947b861791e2e30bfeefe5f21d23069d1941128581f571356855",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/main-integration.test.js",
+      "gitBlobSha256": "3faa4fd6d4d205fd478a62129cc0cc936ef0787b52a84188886980e61156d820",
+      "exportedSha256": "e185861336300c452f3bce7cc039a4dec28f7549f85713511ed5d62d26c9736c",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/maintenance-support.test.js",
+      "gitBlobSha256": "0a6e6d5a289df3c3ff2a3f28d573a57f4ac5002271a9b038b8fc3a42c90f1d1a",
+      "exportedSha256": "85283993aaf5efabc22f53fb05e93af4bb471097a32e2f5c757f3dd97cd14df7",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/motion.test.js",
+      "gitBlobSha256": "7e61a1594d3f5f0c22e2cb6a986cf561cb9744f8fd52cfa4e345570c3eda0c3a",
+      "exportedSha256": "393dc6b67992873954bbf06b66c5a9c7c315e5d0f9d0f07b9122820da9a9a841",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/password-policy.test.js",
+      "gitBlobSha256": "2bc4f20c1aeb64683cb7f8bed252d8db7e65cd8dd03a7f58040c107dfb355bd3",
+      "exportedSha256": "0036f01af4fb054f6ebd085c04617c01b8afae60af39fd946ab3ad9704f0e919",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/prerequisites.test.js",
+      "gitBlobSha256": "dbec579d21175c210e203088aaab9bc69a18174cfa321d667cae650f1efd9ade",
+      "exportedSha256": "3cfef09b851f113d65bf8f77231ca78b55773bae59b09375a38e4555140bbe21",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/profile.test.js",
+      "gitBlobSha256": "0d1a374d21005072cd62ffe4374a46e7e20e587df8d024bfa2609d35e6f7d143",
+      "exportedSha256": "ab36481b1490a4ed2e0b2b41e13214328b53ad096bdab512496d8959128105bf",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/report-pdf.test.js",
+      "gitBlobSha256": "14744fc4244d485cf5334fc4b808c0f9d467ecceded1edac79a814aee77ce012",
+      "exportedSha256": "81a6c90e1650788dd1b148631f373d6a3d0dba44895a3d12c9791accd2513fa2",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/security.test.js",
+      "gitBlobSha256": "1907f81f64ff814d142b095ea4c471fc8b451e9d58fd7fddd1363f08a560d235",
+      "exportedSha256": "9c16e0fcc9f477ab82ef569a601765acc65f45912998a46a406e01f4ab14298a",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/support-core.test.js",
+      "gitBlobSha256": "888089747e940b6078d59f8cd08644f67f7782fb6e5d84d4a191a2344b7f02c7",
+      "exportedSha256": "8b9acde41baa0f617c1e8cfc71e6589fda8e84998cd1bb7e649fae3f7e46e256",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/support-mfa.test.js",
+      "gitBlobSha256": "75ce5925eb91528d5fc6d41b7c174825d0819df31867068a6729388190ba68e0",
+      "exportedSha256": "df84efc58e13ecf3e0c9be0a34878d7740fc50895b089e52b9a2a6978d8c2490",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "tests/ui-states.test.js",
+      "gitBlobSha256": "ed7d053159b5e1a809df5d7cc6e15a000b2b654cb86724ca3eb9cf35c525b32f",
+      "exportedSha256": "949c3c8d868abcdae53e66e65d57312c68be052bcfc64efac8997ac4c0b68930",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    },
+    {
+      "path": "vercel.json",
+      "gitBlobSha256": "43c31fa06abd3d18f65da7a51ea03b9bd315269ecb5516eea07c1a6d82a1b4fc",
+      "exportedSha256": "d7e7da0704371059bbc216e262b691defc570c954dc2864b8cfe3e267cf73ae2",
+      "comparison": "Equal after CRLF-to-LF normalization only"
+    }
+  ],
+  "acceptedSnapshotFiles": [
+    {
+      "variant": "demo-b",
+      "path": "css/style.css",
+      "sha256": "93fe73008b4bd19c841e4a63d2f5a2e455e6a3ee8e44d9921f507fb8ffb34479"
+    },
+    {
+      "variant": "demo-b",
+      "path": "js/app.js",
+      "sha256": "cde58b4a7b6a3dfc1fbfd6b8ec04286c2d48f61969ec97382a132c328d34f001"
+    },
+    {
+      "variant": "demo-b",
+      "path": "js/roadmap.js",
+      "sha256": "bdd0d3cbd203cf0e1ff2d2a940246a38ea0b7fb67cc5ec5a8f4799652ee4361b"
+    },
+    {
+      "variant": "r023",
+      "path": "css/style.css",
+      "sha256": "21fd9292ce9bd6a68ab4d9fc2c6e4003f22b4688bf695c82edf605d8518d579a"
+    },
+    {
+      "variant": "r023",
+      "path": "js/app.js",
+      "sha256": "cde58b4a7b6a3dfc1fbfd6b8ec04286c2d48f61969ec97382a132c328d34f001"
+    },
+    {
+      "variant": "r023",
+      "path": "js/roadmap.js",
+      "sha256": "6e3ded46bd6edfefd6f02f57fd66df43d5122a18d47ae734fbd8a4bf6d04db9e"
+    },
+    {
+      "variant": "r023",
+      "path": "tests/main-integration.test.js",
+      "sha256": "bc9f92f8ead2f37ca0710453d342f4c0d11b07cf6cce376f35007bf68972c856"
+    }
+  ],
+  "reproductionSourceCopiesMatch": true,
+  "historicalArtifactsCurrentAuthorityAndRuntimeUnchanged": true,
+  "onlyAllowedChangePrefix": "review-artifacts/TASK_004/",
+  "remoteBefore": {
+    "main": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+    "review": "3d3eea502b9bee612151fa3fbf75be878cd04d46"
+  }
+}

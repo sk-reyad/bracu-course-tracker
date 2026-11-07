@@ -1,0 +1,58 @@
+{
+  "syntaxChecks": [
+    {
+      "file": "cdp.mjs",
+      "exitCode": 0
+    },
+    {
+      "file": "dom-probe.mjs",
+      "exitCode": 0
+    },
+    {
+      "file": "edges.mjs",
+      "exitCode": 0
+    },
+    {
+      "file": "geometry.mjs",
+      "exitCode": 0
+    },
+    {
+      "file": "geometry.test.mjs",
+      "exitCode": 0
+    },
+    {
+      "file": "measure.mjs",
+      "exitCode": 0
+    },
+    {
+      "file": "overlap-recheck.mjs",
+      "exitCode": 0
+    },
+    {
+      "file": "rebuild-assessment.cjs",
+      "exitCode": 0
+    },
+    {
+      "file": "run-tests.cjs",
+      "exitCode": 0
+    },
+    {
+      "file": "serve.cjs",
+      "exitCode": 0
+    },
+    {
+      "file": "verify-evidence.test.mjs",
+      "exitCode": 0
+    }
+  ],
+  "focused": {
+    "tests": 30,
+    "passed": 30,
+    "failed": 0,
+    "skipped": 0,
+    "exitCode": 0
+  },
+  "applicationSuites": 3,
+  "testsPassedPerSuite": 365,
+  "gitDiffCheck": 0
+}
