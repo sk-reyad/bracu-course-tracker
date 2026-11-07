@@ -1,0 +1,118 @@
+[
+  {
+    "version": "before",
+    "lifecycle": [
+      {
+        "y": 0,
+        "threshold": 360,
+        "visible": false,
+        "visibility": "hidden"
+      },
+      {
+        "y": 359,
+        "threshold": 360,
+        "visible": false,
+        "visibility": "hidden"
+      },
+      {
+        "y": 360,
+        "threshold": 360,
+        "visible": false,
+        "visibility": "hidden"
+      },
+      {
+        "y": 361,
+        "threshold": 360,
+        "visible": true,
+        "visibility": "visible"
+      },
+      {
+        "y": 700,
+        "threshold": 360,
+        "visible": true,
+        "visibility": "visible"
+      },
+      {
+        "y": 360,
+        "threshold": 360,
+        "visible": false,
+        "visibility": "hidden"
+      },
+      {
+        "y": 0,
+        "threshold": 360,
+        "visible": false,
+        "visibility": "hidden"
+      }
+    ],
+    "dashboard": {
+      "open": true,
+      "calls": [],
+      "clicks": [
+        {
+          "button": "openDashboardBtn",
+          "trusted": true
+        }
+      ]
+    },
+    "errors": []
+  },
+  {
+    "version": "after",
+    "lifecycle": [
+      {
+        "y": 0,
+        "threshold": 360,
+        "visible": false,
+        "visibility": "hidden"
+      },
+      {
+        "y": 359,
+        "threshold": 360,
+        "visible": false,
+        "visibility": "hidden"
+      },
+      {
+        "y": 360,
+        "threshold": 360,
+        "visible": false,
+        "visibility": "hidden"
+      },
+      {
+        "y": 361,
+        "threshold": 360,
+        "visible": true,
+        "visibility": "visible"
+      },
+      {
+        "y": 700,
+        "threshold": 360,
+        "visible": true,
+        "visibility": "visible"
+      },
+      {
+        "y": 360,
+        "threshold": 360,
+        "visible": false,
+        "visibility": "hidden"
+      },
+      {
+        "y": 0,
+        "threshold": 360,
+        "visible": false,
+        "visibility": "hidden"
+      }
+    ],
+    "dashboard": {
+      "open": true,
+      "calls": [],
+      "clicks": [
+        {
+          "button": "openDashboardBtn",
+          "trusted": true
+        }
+      ]
+    },
+    "errors": []
+  }
+]

@@ -1,0 +1,18 @@
+diff --git a/js/app.js b/js/app.js
+index 4ec8fcd..d38ae9c 100644
+--- a/js/app.js
++++ b/js/app.js
+@@ -1872,9 +1872,10 @@ function downloadPdfReport() {
+ 
+ function bindEvents() {
+   $("#themeToggle").addEventListener("click", toggleTheme);
+-  $("#backToTopBtn")?.addEventListener("click", () =>
+-    window.scrollTo({ top: 0, behavior: "smooth" }),
+-  );
++  $("#backToTopBtn")?.addEventListener("click", (event) => {
++    const nonPointerActivation = event.isTrusted && event.detail === 0 && !event.pointerType;
++    window.scrollTo({ top: 0, behavior: nonPointerActivation ? "instant" : "smooth" });
++  });
+   window.addEventListener("scroll", scheduleSiteChromeUpdate, {
+     passive: true,
+   });

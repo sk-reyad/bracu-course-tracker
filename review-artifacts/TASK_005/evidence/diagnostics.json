@@ -1,0 +1,17 @@
+[
+  {
+    "context": "",
+    "kind": "error",
+    "message": "Failed to load resource: the server responded with a status of 403 (Forbidden) http://127.0.0.1:4311/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global"
+  },
+  {
+    "context": "before-360-light-no-preference-pointer",
+    "kind": "error",
+    "message": "Failed to load resource: the server responded with a status of 403 (Forbidden) http://127.0.0.1:4310/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global"
+  },
+  {
+    "context": "after-360-light-no-preference-pointer",
+    "kind": "error",
+    "message": "Failed to load resource: the server responded with a status of 403 (Forbidden) http://127.0.0.1:4311/rest/v1/site_settings?select=maintenance_enabled%2Cmaintenance_message&id=eq.global"
+  }
+]

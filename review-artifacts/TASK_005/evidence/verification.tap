@@ -1,0 +1,772 @@
+TAP version 13
+# Subtest: full primary matrix has exactly 120 distinct configurations
+ok 1 - full primary matrix has exactly 120 distinct configurations
+  ---
+  duration_ms: 1.5649
+  type: 'test'
+  ...
+# Subtest: after-1024-light-no-preference-pointer native activation, request, positions, visibility and focus
+ok 2 - after-1024-light-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.2399
+  type: 'test'
+  ...
+# Subtest: after-1024-light-no-preference-Enter native activation, request, positions, visibility and focus
+ok 3 - after-1024-light-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0881
+  type: 'test'
+  ...
+# Subtest: after-1024-light-no-preference-Space native activation, request, positions, visibility and focus
+ok 4 - after-1024-light-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0812
+  type: 'test'
+  ...
+# Subtest: after-1024-light-reduce-pointer native activation, request, positions, visibility and focus
+ok 5 - after-1024-light-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.075
+  type: 'test'
+  ...
+# Subtest: after-1024-light-reduce-Enter native activation, request, positions, visibility and focus
+ok 6 - after-1024-light-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.069
+  type: 'test'
+  ...
+# Subtest: after-1024-light-reduce-Space native activation, request, positions, visibility and focus
+ok 7 - after-1024-light-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0689
+  type: 'test'
+  ...
+# Subtest: after-1024-dark-no-preference-pointer native activation, request, positions, visibility and focus
+ok 8 - after-1024-dark-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0586
+  type: 'test'
+  ...
+# Subtest: after-1024-dark-no-preference-Enter native activation, request, positions, visibility and focus
+ok 9 - after-1024-dark-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0756
+  type: 'test'
+  ...
+# Subtest: after-1024-dark-no-preference-Space native activation, request, positions, visibility and focus
+ok 10 - after-1024-dark-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.1251
+  type: 'test'
+  ...
+# Subtest: after-1024-dark-reduce-pointer native activation, request, positions, visibility and focus
+ok 11 - after-1024-dark-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0599
+  type: 'test'
+  ...
+# Subtest: after-1024-dark-reduce-Enter native activation, request, positions, visibility and focus
+ok 12 - after-1024-dark-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0623
+  type: 'test'
+  ...
+# Subtest: after-1024-dark-reduce-Space native activation, request, positions, visibility and focus
+ok 13 - after-1024-dark-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0542
+  type: 'test'
+  ...
+# Subtest: after-1440-light-no-preference-pointer native activation, request, positions, visibility and focus
+ok 14 - after-1440-light-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0379
+  type: 'test'
+  ...
+# Subtest: after-1440-light-no-preference-Enter native activation, request, positions, visibility and focus
+ok 15 - after-1440-light-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.8034
+  type: 'test'
+  ...
+# Subtest: after-1440-light-no-preference-Space native activation, request, positions, visibility and focus
+ok 16 - after-1440-light-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0716
+  type: 'test'
+  ...
+# Subtest: after-1440-light-reduce-pointer native activation, request, positions, visibility and focus
+ok 17 - after-1440-light-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.04
+  type: 'test'
+  ...
+# Subtest: after-1440-light-reduce-Enter native activation, request, positions, visibility and focus
+ok 18 - after-1440-light-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0371
+  type: 'test'
+  ...
+# Subtest: after-1440-light-reduce-Space native activation, request, positions, visibility and focus
+ok 19 - after-1440-light-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0416
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-no-preference-pointer native activation, request, positions, visibility and focus
+ok 20 - after-1440-dark-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.026
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-no-preference-Enter native activation, request, positions, visibility and focus
+ok 21 - after-1440-dark-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.025
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-no-preference-Space native activation, request, positions, visibility and focus
+ok 22 - after-1440-dark-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0258
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-reduce-pointer native activation, request, positions, visibility and focus
+ok 23 - after-1440-dark-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0299
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-reduce-Enter native activation, request, positions, visibility and focus
+ok 24 - after-1440-dark-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0324
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-reduce-Space native activation, request, positions, visibility and focus
+ok 25 - after-1440-dark-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0255
+  type: 'test'
+  ...
+# Subtest: after-360-light-no-preference-pointer native activation, request, positions, visibility and focus
+ok 26 - after-360-light-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0253
+  type: 'test'
+  ...
+# Subtest: after-360-light-no-preference-Enter native activation, request, positions, visibility and focus
+ok 27 - after-360-light-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.1031
+  type: 'test'
+  ...
+# Subtest: after-360-light-no-preference-Space native activation, request, positions, visibility and focus
+ok 28 - after-360-light-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.1473
+  type: 'test'
+  ...
+# Subtest: after-360-light-reduce-pointer native activation, request, positions, visibility and focus
+ok 29 - after-360-light-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0348
+  type: 'test'
+  ...
+# Subtest: after-360-light-reduce-Enter native activation, request, positions, visibility and focus
+ok 30 - after-360-light-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0261
+  type: 'test'
+  ...
+# Subtest: after-360-light-reduce-Space native activation, request, positions, visibility and focus
+ok 31 - after-360-light-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0348
+  type: 'test'
+  ...
+# Subtest: after-360-dark-no-preference-pointer native activation, request, positions, visibility and focus
+ok 32 - after-360-dark-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0356
+  type: 'test'
+  ...
+# Subtest: after-360-dark-no-preference-Enter native activation, request, positions, visibility and focus
+ok 33 - after-360-dark-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0216
+  type: 'test'
+  ...
+# Subtest: after-360-dark-no-preference-Space native activation, request, positions, visibility and focus
+ok 34 - after-360-dark-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0225
+  type: 'test'
+  ...
+# Subtest: after-360-dark-reduce-pointer native activation, request, positions, visibility and focus
+ok 35 - after-360-dark-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.017
+  type: 'test'
+  ...
+# Subtest: after-360-dark-reduce-Enter native activation, request, positions, visibility and focus
+ok 36 - after-360-dark-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0235
+  type: 'test'
+  ...
+# Subtest: after-360-dark-reduce-Space native activation, request, positions, visibility and focus
+ok 37 - after-360-dark-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0229
+  type: 'test'
+  ...
+# Subtest: after-390-light-no-preference-pointer native activation, request, positions, visibility and focus
+ok 38 - after-390-light-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0183
+  type: 'test'
+  ...
+# Subtest: after-390-light-no-preference-Enter native activation, request, positions, visibility and focus
+ok 39 - after-390-light-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0183
+  type: 'test'
+  ...
+# Subtest: after-390-light-no-preference-Space native activation, request, positions, visibility and focus
+ok 40 - after-390-light-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0172
+  type: 'test'
+  ...
+# Subtest: after-390-light-reduce-pointer native activation, request, positions, visibility and focus
+ok 41 - after-390-light-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0168
+  type: 'test'
+  ...
+# Subtest: after-390-light-reduce-Enter native activation, request, positions, visibility and focus
+ok 42 - after-390-light-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0173
+  type: 'test'
+  ...
+# Subtest: after-390-light-reduce-Space native activation, request, positions, visibility and focus
+ok 43 - after-390-light-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0172
+  type: 'test'
+  ...
+# Subtest: after-390-dark-no-preference-pointer native activation, request, positions, visibility and focus
+ok 44 - after-390-dark-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0437
+  type: 'test'
+  ...
+# Subtest: after-390-dark-no-preference-Enter native activation, request, positions, visibility and focus
+ok 45 - after-390-dark-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.02
+  type: 'test'
+  ...
+# Subtest: after-390-dark-no-preference-Space native activation, request, positions, visibility and focus
+ok 46 - after-390-dark-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0187
+  type: 'test'
+  ...
+# Subtest: after-390-dark-reduce-pointer native activation, request, positions, visibility and focus
+ok 47 - after-390-dark-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0163
+  type: 'test'
+  ...
+# Subtest: after-390-dark-reduce-Enter native activation, request, positions, visibility and focus
+ok 48 - after-390-dark-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0174
+  type: 'test'
+  ...
+# Subtest: after-390-dark-reduce-Space native activation, request, positions, visibility and focus
+ok 49 - after-390-dark-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0173
+  type: 'test'
+  ...
+# Subtest: after-768-light-no-preference-pointer native activation, request, positions, visibility and focus
+ok 50 - after-768-light-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0168
+  type: 'test'
+  ...
+# Subtest: after-768-light-no-preference-Enter native activation, request, positions, visibility and focus
+ok 51 - after-768-light-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0174
+  type: 'test'
+  ...
+# Subtest: after-768-light-no-preference-Space native activation, request, positions, visibility and focus
+ok 52 - after-768-light-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0168
+  type: 'test'
+  ...
+# Subtest: after-768-light-reduce-pointer native activation, request, positions, visibility and focus
+ok 53 - after-768-light-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0165
+  type: 'test'
+  ...
+# Subtest: after-768-light-reduce-Enter native activation, request, positions, visibility and focus
+ok 54 - after-768-light-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0173
+  type: 'test'
+  ...
+# Subtest: after-768-light-reduce-Space native activation, request, positions, visibility and focus
+ok 55 - after-768-light-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0176
+  type: 'test'
+  ...
+# Subtest: after-768-dark-no-preference-pointer native activation, request, positions, visibility and focus
+ok 56 - after-768-dark-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0171
+  type: 'test'
+  ...
+# Subtest: after-768-dark-no-preference-Enter native activation, request, positions, visibility and focus
+ok 57 - after-768-dark-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0318
+  type: 'test'
+  ...
+# Subtest: after-768-dark-no-preference-Space native activation, request, positions, visibility and focus
+ok 58 - after-768-dark-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0183
+  type: 'test'
+  ...
+# Subtest: after-768-dark-reduce-pointer native activation, request, positions, visibility and focus
+ok 59 - after-768-dark-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0186
+  type: 'test'
+  ...
+# Subtest: after-768-dark-reduce-Enter native activation, request, positions, visibility and focus
+ok 60 - after-768-dark-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0169
+  type: 'test'
+  ...
+# Subtest: after-768-dark-reduce-Space native activation, request, positions, visibility and focus
+ok 61 - after-768-dark-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0172
+  type: 'test'
+  ...
+# Subtest: before-1024-light-no-preference-pointer native activation, request, positions, visibility and focus
+ok 62 - before-1024-light-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0161
+  type: 'test'
+  ...
+# Subtest: before-1024-light-no-preference-Enter native activation, request, positions, visibility and focus
+ok 63 - before-1024-light-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0163
+  type: 'test'
+  ...
+# Subtest: before-1024-light-no-preference-Space native activation, request, positions, visibility and focus
+ok 64 - before-1024-light-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0492
+  type: 'test'
+  ...
+# Subtest: before-1024-light-reduce-pointer native activation, request, positions, visibility and focus
+ok 65 - before-1024-light-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0173
+  type: 'test'
+  ...
+# Subtest: before-1024-light-reduce-Enter native activation, request, positions, visibility and focus
+ok 66 - before-1024-light-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0205
+  type: 'test'
+  ...
+# Subtest: before-1024-light-reduce-Space native activation, request, positions, visibility and focus
+ok 67 - before-1024-light-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0169
+  type: 'test'
+  ...
+# Subtest: before-1024-dark-no-preference-pointer native activation, request, positions, visibility and focus
+ok 68 - before-1024-dark-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0185
+  type: 'test'
+  ...
+# Subtest: before-1024-dark-no-preference-Enter native activation, request, positions, visibility and focus
+ok 69 - before-1024-dark-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0377
+  type: 'test'
+  ...
+# Subtest: before-1024-dark-no-preference-Space native activation, request, positions, visibility and focus
+ok 70 - before-1024-dark-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0187
+  type: 'test'
+  ...
+# Subtest: before-1024-dark-reduce-pointer native activation, request, positions, visibility and focus
+ok 71 - before-1024-dark-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0181
+  type: 'test'
+  ...
+# Subtest: before-1024-dark-reduce-Enter native activation, request, positions, visibility and focus
+ok 72 - before-1024-dark-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0188
+  type: 'test'
+  ...
+# Subtest: before-1024-dark-reduce-Space native activation, request, positions, visibility and focus
+ok 73 - before-1024-dark-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0358
+  type: 'test'
+  ...
+# Subtest: before-1440-light-no-preference-pointer native activation, request, positions, visibility and focus
+ok 74 - before-1440-light-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0193
+  type: 'test'
+  ...
+# Subtest: before-1440-light-no-preference-Enter native activation, request, positions, visibility and focus
+ok 75 - before-1440-light-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0197
+  type: 'test'
+  ...
+# Subtest: before-1440-light-no-preference-Space native activation, request, positions, visibility and focus
+ok 76 - before-1440-light-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0206
+  type: 'test'
+  ...
+# Subtest: before-1440-light-reduce-pointer native activation, request, positions, visibility and focus
+ok 77 - before-1440-light-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0158
+  type: 'test'
+  ...
+# Subtest: before-1440-light-reduce-Enter native activation, request, positions, visibility and focus
+ok 78 - before-1440-light-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0162
+  type: 'test'
+  ...
+# Subtest: before-1440-light-reduce-Space native activation, request, positions, visibility and focus
+ok 79 - before-1440-light-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0159
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-no-preference-pointer native activation, request, positions, visibility and focus
+ok 80 - before-1440-dark-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0157
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-no-preference-Enter native activation, request, positions, visibility and focus
+ok 81 - before-1440-dark-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0243
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-no-preference-Space native activation, request, positions, visibility and focus
+ok 82 - before-1440-dark-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0165
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-reduce-pointer native activation, request, positions, visibility and focus
+ok 83 - before-1440-dark-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.016
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-reduce-Enter native activation, request, positions, visibility and focus
+ok 84 - before-1440-dark-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.016
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-reduce-Space native activation, request, positions, visibility and focus
+ok 85 - before-1440-dark-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0159
+  type: 'test'
+  ...
+# Subtest: before-360-light-no-preference-pointer native activation, request, positions, visibility and focus
+ok 86 - before-360-light-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0238
+  type: 'test'
+  ...
+# Subtest: before-360-light-no-preference-Enter native activation, request, positions, visibility and focus
+ok 87 - before-360-light-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0162
+  type: 'test'
+  ...
+# Subtest: before-360-light-no-preference-Space native activation, request, positions, visibility and focus
+ok 88 - before-360-light-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0162
+  type: 'test'
+  ...
+# Subtest: before-360-light-reduce-pointer native activation, request, positions, visibility and focus
+ok 89 - before-360-light-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0162
+  type: 'test'
+  ...
+# Subtest: before-360-light-reduce-Enter native activation, request, positions, visibility and focus
+ok 90 - before-360-light-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0248
+  type: 'test'
+  ...
+# Subtest: before-360-light-reduce-Space native activation, request, positions, visibility and focus
+ok 91 - before-360-light-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0172
+  type: 'test'
+  ...
+# Subtest: before-360-dark-no-preference-pointer native activation, request, positions, visibility and focus
+ok 92 - before-360-dark-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0159
+  type: 'test'
+  ...
+# Subtest: before-360-dark-no-preference-Enter native activation, request, positions, visibility and focus
+ok 93 - before-360-dark-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0221
+  type: 'test'
+  ...
+# Subtest: before-360-dark-no-preference-Space native activation, request, positions, visibility and focus
+ok 94 - before-360-dark-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0166
+  type: 'test'
+  ...
+# Subtest: before-360-dark-reduce-pointer native activation, request, positions, visibility and focus
+ok 95 - before-360-dark-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0163
+  type: 'test'
+  ...
+# Subtest: before-360-dark-reduce-Enter native activation, request, positions, visibility and focus
+ok 96 - before-360-dark-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0161
+  type: 'test'
+  ...
+# Subtest: before-360-dark-reduce-Space native activation, request, positions, visibility and focus
+ok 97 - before-360-dark-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0207
+  type: 'test'
+  ...
+# Subtest: before-390-light-no-preference-pointer native activation, request, positions, visibility and focus
+ok 98 - before-390-light-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.028
+  type: 'test'
+  ...
+# Subtest: before-390-light-no-preference-Enter native activation, request, positions, visibility and focus
+ok 99 - before-390-light-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0312
+  type: 'test'
+  ...
+# Subtest: before-390-light-no-preference-Space native activation, request, positions, visibility and focus
+ok 100 - before-390-light-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0293
+  type: 'test'
+  ...
+# Subtest: before-390-light-reduce-pointer native activation, request, positions, visibility and focus
+ok 101 - before-390-light-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0224
+  type: 'test'
+  ...
+# Subtest: before-390-light-reduce-Enter native activation, request, positions, visibility and focus
+ok 102 - before-390-light-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0185
+  type: 'test'
+  ...
+# Subtest: before-390-light-reduce-Space native activation, request, positions, visibility and focus
+ok 103 - before-390-light-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0186
+  type: 'test'
+  ...
+# Subtest: before-390-dark-no-preference-pointer native activation, request, positions, visibility and focus
+ok 104 - before-390-dark-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0338
+  type: 'test'
+  ...
+# Subtest: before-390-dark-no-preference-Enter native activation, request, positions, visibility and focus
+ok 105 - before-390-dark-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.036
+  type: 'test'
+  ...
+# Subtest: before-390-dark-no-preference-Space native activation, request, positions, visibility and focus
+ok 106 - before-390-dark-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0214
+  type: 'test'
+  ...
+# Subtest: before-390-dark-reduce-pointer native activation, request, positions, visibility and focus
+ok 107 - before-390-dark-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0348
+  type: 'test'
+  ...
+# Subtest: before-390-dark-reduce-Enter native activation, request, positions, visibility and focus
+ok 108 - before-390-dark-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.02
+  type: 'test'
+  ...
+# Subtest: before-390-dark-reduce-Space native activation, request, positions, visibility and focus
+ok 109 - before-390-dark-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0225
+  type: 'test'
+  ...
+# Subtest: before-768-light-no-preference-pointer native activation, request, positions, visibility and focus
+ok 110 - before-768-light-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0308
+  type: 'test'
+  ...
+# Subtest: before-768-light-no-preference-Enter native activation, request, positions, visibility and focus
+ok 111 - before-768-light-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0383
+  type: 'test'
+  ...
+# Subtest: before-768-light-no-preference-Space native activation, request, positions, visibility and focus
+ok 112 - before-768-light-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0186
+  type: 'test'
+  ...
+# Subtest: before-768-light-reduce-pointer native activation, request, positions, visibility and focus
+ok 113 - before-768-light-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0231
+  type: 'test'
+  ...
+# Subtest: before-768-light-reduce-Enter native activation, request, positions, visibility and focus
+ok 114 - before-768-light-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0217
+  type: 'test'
+  ...
+# Subtest: before-768-light-reduce-Space native activation, request, positions, visibility and focus
+ok 115 - before-768-light-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0393
+  type: 'test'
+  ...
+# Subtest: before-768-dark-no-preference-pointer native activation, request, positions, visibility and focus
+ok 116 - before-768-dark-no-preference-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0259
+  type: 'test'
+  ...
+# Subtest: before-768-dark-no-preference-Enter native activation, request, positions, visibility and focus
+ok 117 - before-768-dark-no-preference-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0248
+  type: 'test'
+  ...
+# Subtest: before-768-dark-no-preference-Space native activation, request, positions, visibility and focus
+ok 118 - before-768-dark-no-preference-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0192
+  type: 'test'
+  ...
+# Subtest: before-768-dark-reduce-pointer native activation, request, positions, visibility and focus
+ok 119 - before-768-dark-reduce-pointer native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0206
+  type: 'test'
+  ...
+# Subtest: before-768-dark-reduce-Enter native activation, request, positions, visibility and focus
+ok 120 - before-768-dark-reduce-Enter native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0287
+  type: 'test'
+  ...
+# Subtest: before-768-dark-reduce-Space native activation, request, positions, visibility and focus
+ok 121 - before-768-dark-reduce-Space native activation, request, positions, visibility and focus
+  ---
+  duration_ms: 0.0181
+  type: 'test'
+  ...
+# Subtest: rapid three-Enter bursts dispatch one request per native button click without extra actions
+ok 122 - rapid three-Enter bursts dispatch one request per native button click without extra actions
+  ---
+  duration_ms: 0.1788
+  type: 'test'
+  ...
+# Subtest: programmatic click retains historical smooth behavior under both preferences
+ok 123 - programmatic click retains historical smooth behavior under both preferences
+  ---
+  duration_ms: 0.07
+  type: 'test'
+  ...
+# Subtest: geometry, computed keyboard focus style and document overflow match paired originals
+ok 124 - geometry, computed keyboard focus style and document overflow match paired originals
+  ---
+  duration_ms: 0.6227
+  type: 'test'
+  ...
+# Subtest: visibility boundaries and independent Dashboard click match across versions
+ok 125 - visibility boundaries and independent Dashboard click match across versions
+  ---
+  duration_ms: 0.959
+  type: 'test'
+  ...
+# Subtest: diagnostics contain only recognized loopback responses
+ok 126 - diagnostics contain only recognized loopback responses
+  ---
+  duration_ms: 0.7889
+  type: 'test'
+  ...
+# Subtest: evidence contains both source screencasts and all sixteen stills
+ok 127 - evidence contains both source screencasts and all sixteen stills
+  ---
+  duration_ms: 4.6973
+  type: 'test'
+  ...
+1..127
+# tests 127
+# suites 0
+# pass 127
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 108.7344

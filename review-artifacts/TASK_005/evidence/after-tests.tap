@@ -1,0 +1,2213 @@
+TAP version 13
+# Could not parse tracker data at bracuCsCourseTracker.sync.v1:broken. SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)
+#     at JSON.parse (<anonymous>)
+#     at parseStored (<after>\\js\\storage.js:495:23)
+#     at Object.getSyncMeta (<after>\\js\\storage.js:164:24)
+#     at TestContext.<anonymous> (<after>\\tests\\access.test.js:282:28)
+#     at Test.runInAsyncScope (node:async_hooks:227:14)
+#     at Test.run (node:internal/test_runner/test:1306:25)
+#     at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+#     at Test.postRun (node:internal/test_runner/test:1447:19)
+#     at Test.run (node:internal/test_runner/test:1372:12)
+#     at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+# Subtest: shared client validates public config and creates only one browser client
+ok 1 - shared client validates public config and creates only one browser client
+  ---
+  duration_ms: 1.2722
+  type: 'test'
+  ...
+# Subtest: shared client exposes the active authenticator assurance level
+ok 2 - shared client exposes the active authenticator assurance level
+  ---
+  duration_ms: 1.4631
+  type: 'test'
+  ...
+# Subtest: preview access bypasses Supabase completely
+ok 3 - preview access bypasses Supabase completely
+  ---
+  duration_ms: 0.4591
+  type: 'test'
+  ...
+# Subtest: missing main session redirects to authentication
+ok 4 - missing main session redirects to authentication
+  ---
+  duration_ms: 0.27
+  type: 'test'
+  ...
+# Subtest: active onboarded student enters the main tracker
+ok 5 - active onboarded student enters the main tracker
+  ---
+  duration_ms: 0.3589
+  type: 'test'
+  ...
+# Subtest: pending student returns to onboarding
+ok 6 - pending student returns to onboarding
+  ---
+  duration_ms: 0.1777
+  type: 'test'
+  ...
+# Subtest: suspended account is signed out before redirect
+ok 7 - suspended account is signed out before redirect
+  ---
+  duration_ms: 0.2041
+  type: 'test'
+  ...
+# Subtest: student cannot enter admin panel and admin permissions are enforced
+ok 8 - student cannot enter admin panel and admin permissions are enforced
+  ---
+  duration_ms: 0.3661
+  type: 'test'
+  ...
+# Subtest: admin panel redirects an AAL1 administrator to MFA verification
+ok 9 - admin panel redirects an AAL1 administrator to MFA verification
+  ---
+  duration_ms: 0.4403
+  type: 'test'
+  ...
+# Subtest: tracker storage uses a user-scoped v2 key and fresh accounts receive no previous owner history
+ok 10 - tracker storage uses a user-scoped v2 key and fresh accounts receive no previous owner history
+  ---
+  duration_ms: 5.6138
+  type: 'test'
+  ...
+# Subtest: legacy v1 data migrates only for the same email and never deletes the legacy copy
+ok 11 - legacy v1 data migrates only for the same email and never deletes the legacy copy
+  ---
+  duration_ms: 1.7787
+  type: 'test'
+  ...
+# Subtest: database state is canonical even when a non-pending local copy is newer
+ok 12 - database state is canonical even when a non-pending local copy is newer
+  ---
+  duration_ms: 0.6243
+  type: 'test'
+  ...
+# Subtest: a one-time legacy local recovery can repair blank pre-versioned cloud data
+ok 13 - a one-time legacy local recovery can repair blank pre-versioned cloud data
+  ---
+  duration_ms: 0.5211
+  type: 'test'
+  ...
+# Subtest: sync metadata is user scoped, survives reload, and clears only after a confirmed revision
+ok 14 - sync metadata is user scoped, survives reload, and clears only after a confirmed revision
+  ---
+  duration_ms: 1.2704
+  type: 'test'
+  ...
+# Subtest: compatible pending local data is retried while a revision mismatch is preserved as a conflict
+ok 15 - compatible pending local data is retried while a revision mismatch is preserved as a conflict
+  ---
+  duration_ms: 0.6637
+  type: 'test'
+  ...
+# Subtest: faculty catalog migration adds verified defaults once without overwriting user faculty records
+ok 16 - faculty catalog migration adds verified defaults once without overwriting user faculty records
+  ---
+  duration_ms: 0.5679
+  type: 'test'
+  ...
+# Subtest: faculty catalog migration persists its version for an existing local user
+ok 17 - faculty catalog migration persists its version for an existing local user
+  ---
+  duration_ms: 0.3906
+  type: 'test'
+  ...
+# Subtest: catalog data migration consolidates departments without changing academic history
+ok 18 - catalog data migration consolidates departments without changing academic history
+  ---
+  duration_ms: 0.7014
+  type: 'test'
+  ...
+# Subtest: authenticated load persists and syncs a catalog data version upgrade
+ok 19 - authenticated load persists and syncs a catalog data version upgrade
+  ---
+  duration_ms: 0.367
+  type: 'test'
+  ...
+# Subtest: state migration restores the canonical BRACU grade scale instead of accepting backup edits
+ok 20 - state migration restores the canonical BRACU grade scale instead of accepting backup edits
+  ---
+  duration_ms: 0.2901
+  type: 'test'
+  ...
+# Subtest: faculty edit transitions validate saves and leave source data unchanged on cancel or rejection
+ok 21 - faculty edit transitions validate saves and leave source data unchanged on cancel or rejection
+  ---
+  duration_ms: 0.5952
+  type: 'test'
+  ...
+# Subtest: preview state is generic, read-only, and does not use Supabase
+ok 22 - preview state is generic, read-only, and does not use Supabase
+  ---
+  duration_ms: 0.2404
+  type: 'test'
+  ...
+# Subtest: main boot waits for access, bypasses cloud in preview, and debounces one revisioned RPC save
+ok 23 - main boot waits for access, bypasses cloud in preview, and debounces one revisioned RPC save
+  ---
+  duration_ms: 1.1606
+  type: 'test'
+  ...
+# Subtest: boot migrates legacy local history against the current cloud revision through the RPC
+ok 24 - boot migrates legacy local history against the current cloud revision through the RPC
+  ---
+  duration_ms: 0.3684
+  type: 'test'
+  ...
+# Subtest: account list cache deduplicates requests and serves a fresh page without another load
+ok 25 - account list cache deduplicates requests and serves a fresh page without another load
+  ---
+  duration_ms: 1.8928
+  type: 'test'
+  ...
+# Subtest: account list cache exposes stale data, refreshes once, bounds entries, and invalidates
+ok 26 - account list cache exposes stale data, refreshes once, bounds entries, and invalidates
+  ---
+  duration_ms: 0.4846
+  type: 'test'
+  ...
+# Subtest: account list RPC performs one paginated database call and preserves the browser response shape
+ok 27 - account list RPC performs one paginated database call and preserves the browser response shape
+  ---
+  duration_ms: 5.9662
+  type: 'test'
+  ...
+# Subtest: migration 010 adds the service-only paginated RPC and scale indexes
+ok 28 - migration 010 adds the service-only paginated RPC and scale indexes
+  ---
+  duration_ms: 1.7087
+  type: 'test'
+  ...
+# Subtest: profile access and account status cards use the approved breathing room
+ok 29 - profile access and account status cards use the approved breathing room
+  ---
+  duration_ms: 3.1158
+  type: 'test'
+  ...
+# Subtest: permission controls keep action spacing, fieldset padding, and one accessible focus ring
+ok 30 - permission controls keep action spacing, fieldset padding, and one accessible focus ring
+  ---
+  duration_ms: 2.2365
+  type: 'test'
+  ...
+# Subtest: administrator creation rejects weak passwords before creating an Auth user
+ok 31 - administrator creation rejects weak passwords before creating an Auth user
+  ---
+  duration_ms: 15.6768
+  type: 'test'
+  ...
+# Subtest: unfiltered account listing requires administrator-list access
+ok 32 - unfiltered account listing requires administrator-list access
+  ---
+  duration_ms: 2.3879
+  type: 'test'
+  ...
+# Subtest: administrator profile summaries require administrator-list access
+ok 33 - administrator profile summaries require administrator-list access
+  ---
+  duration_ms: 2.993
+  type: 'test'
+  ...
+# Subtest: privileged administrator mutations use action-specific server-side rate limits
+ok 34 - privileged administrator mutations use action-specific server-side rate limits
+  ---
+  duration_ms: 3.8092
+  type: 'test'
+  ...
+# Subtest: catalog mutations normalize allowed fields and write only the selected catalog record
+ok 35 - catalog mutations normalize allowed fields and write only the selected catalog record
+  ---
+  duration_ms: 3.9597
+  type: 'test'
+  ...
+# Subtest: catalog listing selects and returns public fields only
+ok 36 - catalog listing selects and returns public fields only
+  ---
+  duration_ms: 3.8268
+  type: 'test'
+  ...
+# Subtest: regular Admin with catalog.manage can mutate the catalog through the atomic RPC
+ok 37 - regular Admin with catalog.manage can mutate the catalog through the atomic RPC
+  ---
+  duration_ms: 3.1911
+  type: 'test'
+  ...
+# Subtest: course validation allows unknown credits but rejects unsafe credits, visibility, and self prerequisites
+ok 38 - course validation allows unknown credits but rejects unsafe credits, visibility, and self prerequisites
+  ---
+  duration_ms: 8.0363
+  type: 'test'
+  ...
+# Subtest: catalog mutations reject an ungranted Admin and unsafe identifiers before database access
+ok 39 - catalog mutations reject an ungranted Admin and unsafe identifiers before database access
+  ---
+  duration_ms: 3.4161
+  type: 'test'
+  ...
+# Subtest: catalog delete delegates dependency enforcement to the atomic RPC
+ok 40 - catalog delete delegates dependency enforcement to the atomic RPC
+  ---
+  duration_ms: 3.3188
+  type: 'test'
+  ...
+# Subtest: failed catalog mutation audit context contains only normalized kind and key
+ok 41 - failed catalog mutation audit context contains only normalized kind and key
+  ---
+  duration_ms: 3.5093
+  type: 'test'
+  ...
+# Subtest: admin rate-limit migration is atomic and service-role only
+ok 42 - admin rate-limit migration is atomic and service-role only
+  ---
+  duration_ms: 2.9053
+  type: 'test'
+  ...
+# Subtest: admin Edge Function enforces the limiter before every privileged mutation and returns 429
+ok 43 - admin Edge Function enforces the limiter before every privileged mutation and returns 429
+  ---
+  duration_ms: 2.5961
+  type: 'test'
+  ...
+# Subtest: student identity updates synchronize Auth and profile values
+ok 44 - student identity updates synchronize Auth and profile values
+  ---
+  duration_ms: 5.4397
+  type: 'test'
+  ...
+# Subtest: normal Admin identity updates require the relevant permission and a Student target
+ok 45 - normal Admin identity updates require the relevant permission and a Student target
+  ---
+  duration_ms: 5.5521
+  type: 'test'
+  ...
+# Subtest: permission-bearing Student actor cannot update another Student identity
+ok 46 - permission-bearing Student actor cannot update another Student identity
+  ---
+  duration_ms: 7.1018
+  type: 'test'
+  ...
+# Subtest: permission-bearing Student actor is rejected by the central privileged-action guard
+ok 47 - permission-bearing Student actor is rejected by the central privileged-action guard
+  ---
+  duration_ms: 4.2565
+  type: 'test'
+  ...
+# Subtest: Student target cannot receive privileged permissions through account access
+ok 48 - Student target cannot receive privileged permissions through account access
+  ---
+  duration_ms: 4.4837
+  type: 'test'
+  ...
+# Subtest: Student identity update rejects non-BRACU email before mutation
+ok 49 - Student identity update rejects non-BRACU email before mutation
+  ---
+  duration_ms: 4.7746
+  type: 'test'
+  ...
+# Subtest: failed profile identity update restores previous Auth identity and records rollback
+ok 50 - failed profile identity update restores previous Auth identity and records rollback
+  ---
+  duration_ms: 5.8245
+  type: 'test'
+  ...
+# Subtest: protected deletion clears the audit target and preserves deleted identity in JSON
+ok 51 - protected deletion clears the audit target and preserves deleted identity in JSON
+  ---
+  duration_ms: 4.1572
+  type: 'test'
+  ...
+# Subtest: avatar cleanup exceptions do not reverse a successful account deletion
+ok 52 - avatar cleanup exceptions do not reverse a successful account deletion
+  ---
+  duration_ms: 3.5384
+  type: 'test'
+  ...
+# Subtest: Super Admin deletion is rejected before Auth mutation
+ok 53 - Super Admin deletion is rejected before Auth mutation
+  ---
+  duration_ms: 3.7045
+  type: 'test'
+  ...
+# Subtest: the last active Super Admin cannot be suspended or demoted
+ok 54 - the last active Super Admin cannot be suspended or demoted
+  ---
+  duration_ms: 4.1054
+  type: 'test'
+  ...
+# Subtest: access updates cannot demote the last active Super Admin
+ok 55 - access updates cannot demote the last active Super Admin
+  ---
+  duration_ms: 5.3523
+  type: 'test'
+  ...
+# Subtest: status mutation uses the guarded database RPC before mirroring Auth ban
+ok 56 - status mutation uses the guarded database RPC before mirroring Auth ban
+  ---
+  duration_ms: 6.4537
+  type: 'test'
+  ...
+# Subtest: authoritative status guard rejection after a stale precheck never mirrors Auth ban
+ok 57 - authoritative status guard rejection after a stale precheck never mirrors Auth ban
+  ---
+  duration_ms: 7.2206
+  type: 'test'
+  ...
+# Subtest: normal Admin self-promotion is rejected before account access mutation
+ok 58 - normal Admin self-promotion is rejected before account access mutation
+  ---
+  duration_ms: 7.493
+  type: 'test'
+  ...
+# Subtest: provisioning failure deletes the newly created Auth user
+ok 59 - provisioning failure deletes the newly created Auth user
+  ---
+  duration_ms: 5.5288
+  type: 'test'
+  ...
+# Subtest: provisioning verification mismatch deletes the newly created Auth user
+ok 60 - provisioning verification mismatch deletes the newly created Auth user
+  ---
+  duration_ms: 3.1463
+  type: 'test'
+  ...
+# Subtest: provisioning permission mismatch deletes the newly created Auth user
+ok 61 - provisioning permission mismatch deletes the newly created Auth user
+  ---
+  duration_ms: 3.7953
+  type: 'test'
+  ...
+# Subtest: failed Auth status mirror restores the previous guarded profile status
+ok 62 - failed Auth status mirror restores the previous guarded profile status
+  ---
+  duration_ms: 4.4727
+  type: 'test'
+  ...
+# Subtest: audit insert errors are surfaced to the request handler
+ok 63 - audit insert errors are surfaced to the request handler
+  ---
+  duration_ms: 3.5383
+  type: 'test'
+  ...
+# Subtest: account access audits store the verified internal after-state
+ok 64 - account access audits store the verified internal after-state
+  ---
+  duration_ms: 3.3737
+  type: 'test'
+  ...
+# Subtest: admin Edge Function authenticates and authorizes before constructing its privileged client
+ok 65 - admin Edge Function authenticates and authorizes before constructing its privileged client
+  ---
+  duration_ms: 1.3521
+  type: 'test'
+  ...
+# Subtest: admin Edge Function supports only the approved action and permission map
+ok 66 - admin Edge Function supports only the approved action and permission map
+  ---
+  duration_ms: 2.2958
+  type: 'test'
+  ...
+# Subtest: identity and deletion actions enforce server-side role boundaries and rollback
+ok 67 - identity and deletion actions enforce server-side role boundaries and rollback
+  ---
+  duration_ms: 2.6608
+  type: 'test'
+  ...
+# Subtest: admin Edge Function uses origin allowlisting, safe payloads, and mutation audit records
+ok 68 - admin Edge Function uses origin allowlisting, safe payloads, and mutation audit records
+  ---
+  duration_ms: 2.6033
+  type: 'test'
+  ...
+# Subtest: admin Edge Function returns a bodyless 204 response for allowed preflight requests
+ok 69 - admin Edge Function returns a bodyless 204 response for allowed preflight requests
+  ---
+  duration_ms: 27.513
+  type: 'test'
+  ...
+# Subtest: admin Edge Function creates pre-authorized admins and mirrors suspension to Auth
+ok 70 - admin Edge Function creates pre-authorized admins and mirrors suspension to Auth
+  ---
+  duration_ms: 2.5134
+  type: 'test'
+  ...
+# Subtest: create-admin explicitly provisions and compensates failed database setup
+ok 71 - create-admin explicitly provisions and compensates failed database setup
+  ---
+  duration_ms: 1.1343
+  type: 'test'
+  ...
+# Subtest: admin Edge Function uses authoritative actor access and atomic account access updates
+ok 72 - admin Edge Function uses authoritative actor access and atomic account access updates
+  ---
+  duration_ms: 1.8366
+  type: 'test'
+  ...
+# Subtest: profile summaries expose effective permissions and mutations carry safe audit state
+ok 73 - profile summaries expose effective permissions and mutations carry safe audit state
+  ---
+  duration_ms: 1.0368
+  type: 'test'
+  ...
+# Subtest: admin Edge Function import map pins the Supabase SDK
+ok 74 - admin Edge Function import map pins the Supabase SDK
+  ---
+  duration_ms: 0.8113
+  type: 'test'
+  ...
+# Subtest: admin profile relations make role and permission embeds valid for PostgREST
+ok 75 - admin profile relations make role and permission embeds valid for PostgREST
+  ---
+  duration_ms: 1.1661
+  type: 'test'
+  ...
+# Subtest: admin role filtering is delegated to the paginated account-list RPC and preserves database error details
+ok 76 - admin role filtering is delegated to the paginated account-list RPC and preserves database error details
+  ---
+  duration_ms: 1.0661
+  type: 'test'
+  ...
+# Subtest: admin Edge Function server role receives only the database privileges its actions require
+ok 77 - admin Edge Function server role receives only the database privileges its actions require
+  ---
+  duration_ms: 1.6726
+  type: 'test'
+  ...
+# Subtest: login metrics migration exposes only deduplicated service-side account aggregates
+ok 78 - login metrics migration exposes only deduplicated service-side account aggregates
+  ---
+  duration_ms: 1.3119
+  type: 'test'
+  ...
+# Subtest: admin Edge Function loads and normalizes the current account page through exactly one RPC
+ok 79 - admin Edge Function loads and normalizes the current account page through exactly one RPC
+  ---
+  duration_ms: 2.0723
+  type: 'test'
+  ...
+# Subtest: Admin Panel contains guarded account views, filters, states, drawer, dialog, and sign out
+ok 80 - Admin Panel contains guarded account views, filters, states, drawer, dialog, and sign out
+  ---
+  duration_ms: 1.2984
+  type: 'test'
+  ...
+# Subtest: Admin Panel mounts the shared Dot Grid behind its interactive content
+ok 81 - Admin Panel mounts the shared Dot Grid behind its interactive content
+  ---
+  duration_ms: 2.1252
+  type: 'test'
+  ...
+# Subtest: Admin Panel CSS provides desktop table, mobile cards, full-screen detail, and safe overflow
+ok 82 - Admin Panel CSS provides desktop table, mobile cards, full-screen detail, and safe overflow
+  ---
+  duration_ms: 1.5723
+  type: 'test'
+  ...
+# Subtest: desktop account table keeps its accessible action header inside the scroll container
+ok 83 - desktop account table keeps its accessible action header inside the scroll container
+  ---
+  duration_ms: 1.035
+  type: 'test'
+  ...
+# Subtest: Admin Panel capabilities follow canonical role and permission values
+ok 84 - Admin Panel capabilities follow canonical role and permission values
+  ---
+  duration_ms: 2.466
+  type: 'test'
+  ...
+# Subtest: profile actions are presented only for caller and target combinations they can manage
+ok 85 - profile actions are presented only for caller and target combinations they can manage
+  ---
+  duration_ms: 0.1367
+  type: 'test'
+  ...
+# Subtest: access presentation respects both caller role and target role
+ok 86 - access presentation respects both caller role and target role
+  ---
+  duration_ms: 0.1089
+  type: 'test'
+  ...
+# Subtest: profile request gate rejects deferred A after B opens and invalidates B on close
+ok 87 - profile request gate rejects deferred A after B opens and invalidates B on close
+  ---
+  duration_ms: 0.1011
+  type: 'test'
+  ...
+# Subtest: typed deletion compares normalized email but preserves raw confirmation payload
+ok 88 - typed deletion compares normalized email but preserves raw confirmation payload
+  ---
+  duration_ms: 0.0763
+  type: 'test'
+  ...
+# Subtest: submission lock rejects duplicate starts until the active request finishes
+ok 89 - submission lock rejects duplicate starts until the active request finishes
+  ---
+  duration_ms: 0.0715
+  type: 'test'
+  ...
+# Subtest: Admin Panel invokes only the named Edge Function and surfaces response errors
+ok 90 - Admin Panel invokes only the named Edge Function and surfaces response errors
+  ---
+  duration_ms: 0.3815
+  type: 'test'
+  ...
+# Subtest: Admin Panel rejects an expired local session before invoking the Edge Function
+ok 91 - Admin Panel rejects an expired local session before invoking the Edge Function
+  ---
+  duration_ms: 0.1833
+  type: 'test'
+  ...
+# Subtest: Admin Panel renders account identity, role, and first registration date
+ok 92 - Admin Panel renders account identity, role, and first registration date
+  ---
+  duration_ms: 16.8133
+  type: 'test'
+  ...
+# Subtest: Admin onboarding is not required in desktop and mobile account markup
+ok 93 - Admin onboarding is not required in desktop and mobile account markup
+  ---
+  duration_ms: 0.4662
+  type: 'test'
+  ...
+# Subtest: Admin Panel presents multi-word roles in readable title case
+ok 94 - Admin Panel presents multi-word roles in readable title case
+  ---
+  duration_ms: 0.1913
+  type: 'test'
+  ...
+# Subtest: Admin Panel stops an unresponsive Edge Function from leaving accounts loading forever
+ok 95 - Admin Panel stops an unresponsive Edge Function from leaving accounts loading forever
+  ---
+  duration_ms: 12.4129
+  type: 'test'
+  ...
+# Subtest: Admin Panel surfaces the Edge Function response message instead of a generic SDK error
+ok 96 - Admin Panel surfaces the Edge Function response message instead of a generic SDK error
+  ---
+  duration_ms: 3.3185
+  type: 'test'
+  ...
+# Subtest: Admin Panel wires permission-aware actions with confirmation and refresh
+ok 97 - Admin Panel wires permission-aware actions with confirmation and refresh
+  ---
+  duration_ms: 1.4371
+  type: 'test'
+  ...
+# Subtest: profile drawer exposes friendly access, guarded identity editing, and typed deletion
+ok 98 - profile drawer exposes friendly access, guarded identity editing, and typed deletion
+  ---
+  duration_ms: 2.6328
+  type: 'test'
+  ...
+# Subtest: account policy expands friendly permission keys without privilege escalation
+ok 99 - account policy expands friendly permission keys without privilege escalation
+  ---
+  duration_ms: 0.747
+  type: 'test'
+  ...
+# Subtest: account policy enforces the admin hierarchy
+ok 100 - account policy enforces the admin hierarchy
+  ---
+  duration_ms: 0.3134
+  type: 'test'
+  ...
+# Subtest: Admin permission UI uses short English copy and hides technical codes
+ok 101 - Admin permission UI uses short English copy and hides technical codes
+  ---
+  duration_ms: 2.9386
+  type: 'test'
+  ...
+# Subtest: Admin Panel loads the permission catalog before its page logic and provides Create Admin controls
+ok 102 - Admin Panel loads the permission catalog before its page logic and provides Create Admin controls
+  ---
+  duration_ms: 1.2278
+  type: 'test'
+  ...
+# Subtest: Admin Catalog UI is permission-aware and exposes managed CRUD states
+ok 103 - Admin Catalog UI is permission-aware and exposes managed CRUD states
+  ---
+  duration_ms: 3.3275
+  type: 'test'
+  ...
+# Subtest: Admin Catalog exposes and applies kind-specific search and select filters
+ok 104 - Admin Catalog exposes and applies kind-specific search and select filters
+  ---
+  duration_ms: 1.8572
+  type: 'test'
+  ...
+# Subtest: Create Admin uses the shared strong-password policy in the browser and server
+ok 105 - Create Admin uses the shared strong-password policy in the browser and server
+  ---
+  duration_ms: 4.3367
+  type: 'test'
+  ...
+# Subtest: Admin permission and danger controls are responsive and accessible
+ok 106 - Admin permission and danger controls are responsive and accessible
+  ---
+  duration_ms: 0.9138
+  type: 'test'
+  ...
+# Subtest: drawer focus return prefers a rerendered matching opener before stable fallbacks
+ok 107 - drawer focus return prefers a rerendered matching opener before stable fallbacks
+  ---
+  duration_ms: 0.1876
+  type: 'test'
+  ...
+# Subtest: post-deletion focus uses the stable Accounts control after the deleted row is gone
+ok 108 - post-deletion focus uses the stable Accounts control after the deleted row is gone
+  ---
+  duration_ms: 0.0785
+  type: 'test'
+  ...
+# Subtest: drawer Tab helper wraps focus and keeps in-drawer focus unchanged
+ok 109 - drawer Tab helper wraps focus and keeps in-drawer focus unchanged
+  ---
+  duration_ms: 0.094
+  type: 'test'
+  ...
+# Subtest: aria-busy helper restores its state after successful and failed work
+ok 110 - aria-busy helper restores its state after successful and failed work
+  ---
+  duration_ms: 0.1493
+  type: 'test'
+  ...
+# Subtest: OAuth callback surfaces the approved BRACU-domain rejection from query or hash parameters
+ok 111 - OAuth callback surfaces the approved BRACU-domain rejection from query or hash parameters
+  ---
+  duration_ms: 2.143
+  type: 'test'
+  ...
+# Subtest: deleted-user JWT is cleared locally and replaced with a friendly retry message
+ok 112 - deleted-user JWT is cleared locally and replaced with a friendly retry message
+  ---
+  duration_ms: 1.8936
+  type: 'test'
+  ...
+# Subtest: accepts only the exact BRACU G-Suite suffix
+ok 113 - accepts only the exact BRACU G-Suite suffix
+  ---
+  duration_ms: 0.4243
+  type: 'test'
+  ...
+# Subtest: routes authenticated accounts by canonical role, status, and onboarding state
+ok 114 - routes authenticated accounts by canonical role, status, and onboarding state
+  ---
+  duration_ms: 1.3249
+  type: 'test'
+  ...
+# Subtest: normalizes onboarding values without accepting identity or status fields
+ok 115 - normalizes onboarding values without accepting identity or status fields
+  ---
+  duration_ms: 0.2537
+  type: 'test'
+  ...
+# Subtest: public browser configuration contains the supplied project and no server secret field
+ok 116 - public browser configuration contains the supplied project and no server secret field
+  ---
+  duration_ms: 0.6142
+  type: 'test'
+  ...
+# Subtest: database migrations enforce profile, role, permission, hook, and onboarding boundaries
+ok 117 - database migrations enforce profile, role, permission, hook, and onboarding boundaries
+  ---
+  duration_ms: 1.6605
+  type: 'test'
+  ...
+# Subtest: login tracking records one event per browser session and never blocks session context
+ok 118 - login tracking records one event per browser session and never blocks session context
+  ---
+  duration_ms: 0.9254
+  type: 'test'
+  ...
+# Subtest: a pending login metrics request cannot hold the authenticated session open
+ok 119 - a pending login metrics request cannot hold the authenticated session open
+  ---
+  duration_ms: 0.6738
+  type: 'test'
+  ...
+# Subtest: login metrics migration deduplicates Auth sessions and uses Dhaka calendar periods
+ok 120 - login metrics migration deduplicates Auth sessions and uses Dhaka calendar periods
+  ---
+  duration_ms: 1.8784
+  type: 'test'
+  ...
+# Subtest: admin identity migration adds service-only atomic provisioning and guarded repair
+ok 121 - admin identity migration adds service-only atomic provisioning and guarded repair
+  ---
+  duration_ms: 2.5354
+  type: 'test'
+  ...
+# Subtest: admin identity migration atomically protects the last active Super Admin
+ok 122 - admin identity migration atomically protects the last active Super Admin
+  ---
+  duration_ms: 2.3498
+  type: 'test'
+  ...
+# Subtest: additive admin access hardening prevents Student permission grants after deployed migration 008
+ok 123 - additive admin access hardening prevents Student permission grants after deployed migration 008
+  ---
+  duration_ms: 3.314
+  type: 'test'
+  ...
+# Subtest: canonical avatar migration adds explicit preference and validated student profile RPCs
+ok 124 - canonical avatar migration adds explicit preference and validated student profile RPCs
+  ---
+  duration_ms: 2.0425
+  type: 'test'
+  ...
+# Subtest: one-off onboarding reset is guarded when retained locally and absent from website runtime
+ok 125 - one-off onboarding reset is guarded when retained locally and absent from website runtime
+  ---
+  duration_ms: 10.7946
+  type: 'test'
+  ...
+# Subtest: tracker and private avatar migrations scope every row and object to the signed-in user
+ok 126 - tracker and private avatar migrations scope every row and object to the signed-in user
+  ---
+  duration_ms: 3.3452
+  type: 'test'
+  ...
+# Subtest: authenticated API roles receive only the table privileges required by RLS policies
+ok 127 - authenticated API roles receive only the table privileges required by RLS policies
+  ---
+  duration_ms: 34.5781
+  type: 'test'
+  ...
+# Subtest: private avatar policies permit pending onboarding but reject suspended accounts
+ok 128 - private avatar policies permit pending onboarding but reject suspended accounts
+  ---
+  duration_ms: 3.0131
+  type: 'test'
+  ...
+# Subtest: browser JavaScript never contains a service-role credential
+ok 129 - browser JavaScript never contains a service-role credential
+  ---
+  duration_ms: 33.5916
+  type: 'test'
+  ...
+# Subtest: auth page exposes the approved centered brand, compact navigation, and unified student access
+ok 130 - auth page exposes the approved centered brand, compact navigation, and unified student access
+  ---
+  duration_ms: 3.0742
+  type: 'test'
+  ...
+# Subtest: auth page pins Vanta NET dependencies and provides an accessible reduced-motion fallback
+ok 131 - auth page pins Vanta NET dependencies and provides an accessible reduced-motion fallback
+  ---
+  duration_ms: 4.6052
+  type: 'test'
+  ...
+# Subtest: student Google access exchanges one ID token without login or signup intent
+ok 132 - student Google access exchanges one ID token without login or signup intent
+  ---
+  duration_ms: 0.5244
+  type: 'test'
+  ...
+# Subtest: student Google ID-token exchange rejects missing credentials and surfaces provider errors
+ok 133 - student Google ID-token exchange rejects missing credentials and surfaces provider errors
+  ---
+  duration_ms: 0.3841
+  type: 'test'
+  ...
+# Subtest: Google Identity Services renders one official button and forwards its credential
+ok 134 - Google Identity Services renders one official button and forwards its credential
+  ---
+  duration_ms: 11.5829
+  type: 'test'
+  ...
+# Subtest: OAuth completion signs out non-BRACU accounts with the exact required error
+ok 135 - OAuth completion signs out non-BRACU accounts with the exact required error
+  ---
+  duration_ms: 0.4359
+  type: 'test'
+  ...
+# Subtest: onboarding payload validates approved values and excludes immutable identity fields
+ok 136 - onboarding payload validates approved values and excludes immutable identity fields
+  ---
+  duration_ms: 0.3448
+  type: 'test'
+  ...
+# Subtest: photo validation accepts only JPEG, PNG, or WebP up to five megabytes
+ok 137 - photo validation accepts only JPEG, PNG, or WebP up to five megabytes
+  ---
+  duration_ms: 0.1322
+  type: 'test'
+  ...
+# Subtest: photo candidate selection uses the first file and the existing validation boundary
+ok 138 - photo candidate selection uses the first file and the existing validation boundary
+  ---
+  duration_ms: 0.1607
+  type: 'test'
+  ...
+# Subtest: profile photo control is a responsive dropzone with mutually exclusive media states
+ok 139 - profile photo control is a responsive dropzone with mutually exclusive media states
+  ---
+  duration_ms: 4.707
+  type: 'test'
+  ...
+# Subtest: onboarding avatar presentation keeps previews in the identity row and separates delete ownership
+ok 140 - onboarding avatar presentation keeps previews in the identity row and separates delete ownership
+  ---
+  duration_ms: 0.3352
+  type: 'test'
+  ...
+# Subtest: auth controller delegates onboarding photo transactions to the shared profile service
+ok 141 - auth controller delegates onboarding photo transactions to the shared profile service
+  ---
+  duration_ms: 0.229
+  type: 'test'
+  ...
+# Subtest: browser auth wiring connects Google, photo, onboarding, toast, and return-session flows
+ok 142 - browser auth wiring connects Google, photo, onboarding, toast, and return-session flows
+  ---
+  duration_ms: 2.7994
+  type: 'test'
+  ...
+# Subtest: admin password login sends CAPTCHA and rejects non-admin sessions
+ok 143 - admin password login sends CAPTCHA and rejects non-admin sessions
+  ---
+  duration_ms: 0.5985
+  type: 'test'
+  ...
+# Subtest: active admin login routes only to the admin panel
+ok 144 - active admin login routes only to the admin panel
+  ---
+  duration_ms: 0.2436
+  type: 'test'
+  ...
+# Subtest: AAL1 admin login routes to mandatory MFA setup or challenge
+ok 145 - AAL1 admin login routes to mandatory MFA setup or challenge
+  ---
+  duration_ms: 0.2443
+  type: 'test'
+  ...
+# Subtest: admin MFA enrolls TOTP when needed and challenges verified factors
+ok 146 - admin MFA enrolls TOTP when needed and challenges verified factors
+  ---
+  duration_ms: 0.5413
+  type: 'test'
+  ...
+# Subtest: admin MFA accepts only a six-digit code and confirms the upgraded AAL2 session
+ok 147 - admin MFA accepts only a six-digit code and confirms the upgraded AAL2 session
+  ---
+  duration_ms: 0.5015
+  type: 'test'
+  ...
+# Subtest: admin recovery requires CAPTCHA, uses the dedicated callback, and updates only the authenticated password
+ok 148 - admin recovery requires CAPTCHA, uses the dedicated callback, and updates only the authenticated password
+  ---
+  duration_ms: 0.9332
+  type: 'test'
+  ...
+# Subtest: admin UI renders explicit Turnstile with no sign-up path and wires password/recovery actions
+ok 149 - admin UI renders explicit Turnstile with no sign-up path and wires password/recovery actions
+  ---
+  duration_ms: 3.4605
+  type: 'test'
+  ...
+# Subtest: admin password recovery suppresses normal student-session resume routing
+ok 150 - admin password recovery suppresses normal student-session resume routing
+  ---
+  duration_ms: 0.2602
+  type: 'test'
+  ...
+# Subtest: migration 018 grants catalog management only to the Super Admin role by default
+ok 151 - migration 018 grants catalog management only to the Super Admin role by default
+  ---
+  duration_ms: 1.3131
+  type: 'test'
+  ...
+# Subtest: catalog importer normalizes course identity to one compact uppercase code
+ok 152 - catalog importer normalizes course identity to one compact uppercase code
+  ---
+  duration_ms: 15.9393
+  type: 'test'
+  ...
+# Subtest: catalog importer keeps one owning-unit row when the workbook repeats a course in SGE
+ok 153 - catalog importer keeps one owning-unit row when the workbook repeats a course in SGE
+  ---
+  duration_ms: 5.9561
+  type: 'test'
+  ...
+# Subtest: catalog seed preserves unknown credits and applies curriculum visibility metadata
+ok 154 - catalog seed preserves unknown credits and applies curriculum visibility metadata
+  ---
+  duration_ms: 16.2922
+  type: 'test'
+  ...
+# Subtest: canonical importer merges legacy department aliases and deduplicates their units
+ok 155 - canonical importer merges legacy department aliases and deduplicates their units
+  ---
+  duration_ms: 4.7154
+  type: 'test'
+  ...
+# Subtest: catalog importer generates deterministic SQL and safely escapes workbook text
+ok 156 - catalog importer generates deterministic SQL and safely escapes workbook text
+  ---
+  duration_ms: 4.788
+  type: 'test'
+  ...
+# Subtest: catalog visibility schema is forward-only, nullable-credit, validated, and service-role mutated
+ok 157 - catalog visibility schema is forward-only, nullable-credit, validated, and service-role mutated
+  ---
+  duration_ms: 2.4967
+  type: 'test'
+  ...
+# Subtest: generated complete catalog seed has the verified counts and no duplicate course codes
+ok 158 - generated complete catalog seed has the verified counts and no duplicate course codes
+  ---
+  duration_ms: 3.7524
+  type: 'test'
+  ...
+# Subtest: faculty lists sort lexicographically by normalized initial without changing saved order
+ok 159 - faculty lists sort lexicographically by normalized initial without changing saved order
+  ---
+  duration_ms: 2.1414
+  type: 'test'
+  ...
+# Subtest: student and admin faculty search preserve initial order for every search field and department
+ok 160 - student and admin faculty search preserve initial order for every search field and department
+  ---
+  duration_ms: 0.7897
+  type: 'test'
+  ...
+# Subtest: normalizeCatalogKey uses the normalized identity field for each catalog kind
+ok 161 - normalizeCatalogKey uses the normalized identity field for each catalog kind
+  ---
+  duration_ms: 0.1827
+  type: 'test'
+  ...
+# Subtest: legacy alternative identities and canonical department labels are centralized
+ok 162 - legacy alternative identities and canonical department labels are centralized
+  ---
+  duration_ms: 0.2036
+  type: 'test'
+  ...
+# Subtest: faculty identity ignores whitespace so a local row wins an equivalent global initial
+ok 163 - faculty identity ignores whitespace so a local row wins an equivalent global initial
+  ---
+  duration_ms: 0.5432
+  type: 'test'
+  ...
+# Subtest: catalog filters find the intended records by kind and exact select filters
+ok 164 - catalog filters find the intended records by kind and exact select filters
+  ---
+  duration_ms: 0.2931
+  type: 'test'
+  ...
+# Subtest: catalog partitions curriculum courses from Add Course only records
+ok 165 - catalog partitions curriculum courses from Add Course only records
+  ---
+  duration_ms: 0.2356
+  type: 'test'
+  ...
+# Subtest: curriculum fields preserve stable slugs while matching approved grouped filters
+ok 166 - curriculum fields preserve stable slugs while matching approved grouped filters
+  ---
+  duration_ms: 0.4583
+  type: 'test'
+  ...
+# Subtest: alternative pairs replace only their canonical roadmap requirement without rewriting attempts
+ok 167 - alternative pairs replace only their canonical roadmap requirement without rewriting attempts
+  ---
+  duration_ms: 1.8912
+  type: 'test'
+  ...
+# Subtest: alternative resolution prefers a satisfied path over an earlier partial path
+ok 168 - alternative resolution prefers a satisfied path over an earlier partial path
+  ---
+  duration_ms: 0.409
+  type: 'test'
+  ...
+# Subtest: student catalog search covers all courses while filtering by department
+ok 169 - student catalog search covers all courses while filtering by department
+  ---
+  duration_ms: 10.2594
+  type: 'test'
+  ...
+# Subtest: adding from the master catalog blocks duplicates and requires unknown credits
+ok 170 - adding from the master catalog blocks duplicates and requires unknown credits
+  ---
+  duration_ms: 0.6634
+  type: 'test'
+  ...
+# Subtest: alternative visibility follows an existing user course without overwriting its data
+ok 171 - alternative visibility follows an existing user course without overwriting its data
+  ---
+  duration_ms: 0.3053
+  type: 'test'
+  ...
+# Subtest: catalog presents friendly category labels while storing validated slugs
+ok 172 - catalog presents friendly category labels while storing validated slugs
+  ---
+  duration_ms: 0.3176
+  type: 'test'
+  ...
+# Subtest: catalog extracts the Edge Function JSON error instead of the generic SDK message
+ok 173 - catalog extracts the Edge Function JSON error instead of the generic SDK message
+  ---
+  duration_ms: 31.319
+  type: 'test'
+  ...
+# Subtest: catalog filtering preserves an actively edited faculty row when filters change
+ok 174 - catalog filtering preserves an actively edited faculty row when filters change
+  ---
+  duration_ms: 0.2284
+  type: 'test'
+  ...
+# Subtest: faculty edit draft keeps unsaved field values across list filtering
+ok 175 - faculty edit draft keeps unsaved field values across list filtering
+  ---
+  duration_ms: 0.5903
+  type: 'test'
+  ...
+# Subtest: prepareCatalogEdit marks every global edit as an override and preserves its original key
+ok 176 - prepareCatalogEdit marks every global edit as an override and preserves its original key
+  ---
+  duration_ms: 0.2585
+  type: 'test'
+  ...
+# Subtest: mergeGlobalCatalog refreshes untouched global rows while preserving local faculty identity
+ok 177 - mergeGlobalCatalog refreshes untouched global rows while preserving local faculty identity
+  ---
+  duration_ms: 0.227
+  type: 'test'
+  ...
+# Subtest: mergeGlobalCatalog keeps user overrides and matching user-owned rows unchanged
+ok 178 - mergeGlobalCatalog keeps user overrides and matching user-owned rows unchanged
+  ---
+  duration_ms: 0.1871
+  type: 'test'
+  ...
+# Subtest: mergeGlobalCatalog preserves user rows and injects missing globals with origin metadata
+ok 179 - mergeGlobalCatalog preserves user rows and injects missing globals with origin metadata
+  ---
+  duration_ms: 0.5453
+  type: 'test'
+  ...
+# Subtest: mergeGlobalCatalog is idempotent and non-course tombstones keep deleted globals out
+ok 180 - mergeGlobalCatalog is idempotent and non-course tombstones keep deleted globals out
+  ---
+  duration_ms: 0.4204
+  type: 'test'
+  ...
+# Subtest: mergeGlobalCatalog removes a previously injected non-course row once its tombstone is set
+ok 181 - mergeGlobalCatalog removes a previously injected non-course row once its tombstone is set
+  ---
+  duration_ms: 0.2372
+  type: 'test'
+  ...
+# Subtest: mergeGlobalCatalog repairs legacy course tombstones so curriculum courses stay canonical for every account
+ok 182 - mergeGlobalCatalog repairs legacy course tombstones so curriculum courses stay canonical for every account
+  ---
+  duration_ms: 0.2748
+  type: 'test'
+  ...
+# Subtest: mergeGlobalCatalog keeps Add Course only records out of the default Course List
+ok 183 - mergeGlobalCatalog keeps Add Course only records out of the default Course List
+  ---
+  duration_ms: 0.4294
+  type: 'test'
+  ...
+# Subtest: markCatalogDeleted records only global identities and leaves user data plus attempts intact
+ok 184 - markCatalogDeleted records only global identities and leaves user data plus attempts intact
+  ---
+  duration_ms: 0.25
+  type: 'test'
+  ...
+# Subtest: markCatalogDeleted never hides a canonical global course after its identity changes
+ok 185 - markCatalogDeleted never hides a canonical global course after its identity changes
+  ---
+  duration_ms: 0.0861
+  type: 'test'
+  ...
+# Subtest: edited global rows either retain their origin or tombstone the old key before future merges
+ok 186 - edited global rows either retain their origin or tombstone the old key before future merges
+  ---
+  duration_ms: 1.0679
+  type: 'test'
+  ...
+# Subtest: fetchGlobalCatalog reads only public catalog columns
+ok 187 - fetchGlobalCatalog reads only public catalog columns
+  ---
+  duration_ms: 0.5969
+  type: 'test'
+  ...
+# Subtest: authenticated boot merges catalog while preview never fetches it and catalog read failure is non-blocking
+ok 188 - authenticated boot merges catalog while preview never fetches it and catalog read failure is non-blocking
+  ---
+  duration_ms: 1.6472
+  type: 'test'
+  ...
+# Subtest: authenticated boot applies a successful global catalog before initializing the app
+ok 189 - authenticated boot applies a successful global catalog before initializing the app
+  ---
+  duration_ms: 1.1012
+  type: 'test'
+  ...
+# Subtest: authenticated boot persists fresh-account curriculum hydration to the cloud
+ok 190 - authenticated boot persists fresh-account curriculum hydration to the cloud
+  ---
+  duration_ms: 0.9562
+  type: 'test'
+  ...
+# Subtest: public copy uses canonical spelling and product terminology
+ok 191 - public copy uses canonical spelling and product terminology
+  ---
+  duration_ms: 11.3821
+  type: 'test'
+  ...
+# Subtest: deployed auth-function copy receives a forward-only correction migration
+ok 192 - deployed auth-function copy receives a forward-only correction migration
+  ---
+  duration_ms: 1.6753
+  type: 'test'
+  ...
+# Subtest: all runtime version surfaces use the current release candidate
+ok 193 - all runtime version surfaces use the current release candidate
+  ---
+  duration_ms: 7.7191
+  type: 'test'
+  ...
+# Subtest: shared catalog preserves owned metadata and the default tracker still yields 42 credits / 3.35 GPA
+ok 194 - shared catalog preserves owned metadata and the default tracker still yields 42 credits / 3.35 GPA
+  ---
+  duration_ms: 33.335
+  type: 'test'
+  ...
+# Subtest: main roadmap uses the pinned CSE slot and distinguishes special-topic variants
+ok 195 - main roadmap uses the pinned CSE slot and distinguishes special-topic variants
+  ---
+  duration_ms: 11.898
+  type: 'test'
+  ...
+# Subtest: Degree Plan markup escapes user-owned titles and keeps status cells annotation-free
+ok 196 - Degree Plan markup escapes user-owned titles and keeps status cells annotation-free
+  ---
+  duration_ms: 8.3527
+  type: 'test'
+  ...
+# Subtest: import metadata includes special topics and current stream membership
+ok 197 - import metadata includes special topics and current stream membership
+  ---
+  duration_ms: 10.9956
+  type: 'test'
+  ...
+# Subtest: planned/current special topics do not erase a completed generic elective or GPA
+ok 198 - planned/current special topics do not erase a completed generic elective or GPA
+  ---
+  duration_ms: 9.2597
+  type: 'test'
+  ...
+# Subtest: abandoned alternative history cannot replace an active canonical course
+ok 199 - abandoned alternative history cannot replace an active canonical course
+  ---
+  duration_ms: 9.0718
+  type: 'test'
+  ...
+# Subtest: empty tracker has all slots and zero of 124 credits without mutating state
+ok 200 - empty tracker has all slots and zero of 124 credits without mutating state
+  ---
+  duration_ms: 4.768
+  type: 'test'
+  ...
+# Subtest: passed credits exclude F and noncredit; P earns credit without GPA; best retake is counted once
+ok 201 - passed credits exclude F and noncredit; P earns credit without GPA; best retake is counted once
+  ---
+  duration_ms: 3.8212
+  type: 'test'
+  ...
+# Subtest: minimum choice precedes extras and extra credit is counted once in GenEd
+ok 202 - minimum choice precedes extras and extra credit is counted once in GenEd
+  ---
+  duration_ms: 6.007
+  type: 'test'
+  ...
+# Subtest: compulsory subjects cannot be substituted by other choices
+ok 203 - compulsory subjects cannot be substituted by other choices
+  ---
+  duration_ms: 4.5794
+  type: 'test'
+  ...
+# Subtest: GenEd excludes Stream 1 and CSE; non-CSE program electives wait for GenEd quota
+ok 204 - GenEd excludes Stream 1 and CSE; non-CSE program electives wait for GenEd quota
+  ---
+  duration_ms: 4.5611
+  type: 'test'
+  ...
+# Subtest: first completed CSE elective is pinned; current/planned slots earn no credit
+ok 205 - first completed CSE elective is pinned; current/planned slots earn no credit
+  ---
+  duration_ms: 3.7844
+  type: 'test'
+  ...
+# Subtest: same-semester aliases and canonical/alternative courses never earn duplicate credit
+ok 206 - same-semester aliases and canonical/alternative courses never earn duplicate credit
+  ---
+  duration_ms: 5.0119
+  type: 'test'
+  ...
+# Subtest: complete alternative pair replaces fixed requirement, incomplete pair does not complete it
+ok 207 - complete alternative pair replaces fixed requirement, incomplete pair does not complete it
+  ---
+  duration_ms: 8.9664
+  type: 'test'
+  ...
+# Subtest: requirement credit is capped at 124 and outside-CSE overflow follows three GenEd courses
+ok 208 - requirement credit is capped at 124 and outside-CSE overflow follows three GenEd courses
+  ---
+  duration_ms: 5.0984
+  type: 'test'
+  ...
+# Subtest: local ignore rules protect private and generated deployment artifacts
+ok 209 - local ignore rules protect private and generated deployment artifacts
+  ---
+  duration_ms: 6.0262
+  type: 'test'
+  ...
+# Subtest: Vercel deploys only the runtime website surface
+ok 210 - Vercel deploys only the runtime website surface
+  ---
+  duration_ms: 2.7603
+  type: 'test'
+  ...
+# Subtest: retired design prototypes and unused reference assets are absent
+ok 211 - retired design prototypes and unused reference assets are absent
+  ---
+  duration_ms: 5.0647
+  type: 'test'
+  ...
+# Subtest: approved CSE faculty catalog is complete and duplicate-free
+ok 212 - approved CSE faculty catalog is complete and duplicate-free
+  ---
+  duration_ms: 1.8697
+  type: 'test'
+  ...
+# Subtest: existing faculty records are preserved while verified corrections are used
+ok 213 - existing faculty records are preserved while verified corrections are used
+  ---
+  duration_ms: 0.4585
+  type: 'test'
+  ...
+# Subtest: verified faculty names and emails remain byte-for-byte stable
+ok 214 - verified faculty names and emails remain byte-for-byte stable
+  ---
+  duration_ms: 0.8624
+  type: 'test'
+  ...
+# Subtest: footer presents the approved compact brand copy
+ok 215 - footer presents the approved compact brand copy
+  ---
+  duration_ms: 3.0018
+  type: 'test'
+  ...
+# Subtest: footer exposes all approved contact destinations with icons
+ok 216 - footer exposes all approved contact destinations with icons
+  ---
+  duration_ms: 0.9904
+  type: 'test'
+  ...
+# Subtest: footer credits link to the approved portfolio and BRAC University
+ok 217 - footer credits link to the approved portfolio and BRAC University
+  ---
+  duration_ms: 0.278
+  type: 'test'
+  ...
+# Subtest: footer external destinations open safely in a new tab
+ok 218 - footer external destinations open safely in a new tab
+  ---
+  duration_ms: 0.326
+  type: 'test'
+  ...
+# Subtest: footer uses horizontal responsive link groups without the decorative watermark
+ok 219 - footer uses horizontal responsive link groups without the decorative watermark
+  ---
+  duration_ms: 0.5371
+  type: 'test'
+  ...
+# Subtest: footer credit links never use underlines
+ok 220 - footer credit links never use underlines
+  ---
+  duration_ms: 0.4087
+  type: 'test'
+  ...
+# Subtest: footer bottom reserves space for the fixed back-to-top button
+ok 221 - footer bottom reserves space for the fixed back-to-top button
+  ---
+  duration_ms: 0.8415
+  type: 'test'
+  ...
+# Subtest: buttons use the approved 260ms horizontal shutter without inner glow
+ok 222 - buttons use the approved 260ms horizontal shutter without inner glow
+  ---
+  duration_ms: 2.9095
+  type: 'test'
+  ...
+# Subtest: shutter variants keep semantic colors and accessible interaction gates
+ok 223 - shutter variants keep semantic colors and accessible interaction gates
+  ---
+  duration_ms: 3.0053
+  type: 'test'
+  ...
+# Subtest: cancel and destructive actions render the approved Lucide icons
+ok 224 - cancel and destructive actions render the approved Lucide icons
+  ---
+  duration_ms: 2.2315
+  type: 'test'
+  ...
+# Subtest: Admin Catalog tabs support keyboard navigation and panel relationships
+ok 225 - Admin Catalog tabs support keyboard navigation and panel relationships
+  ---
+  duration_ms: 2.9808
+  type: 'test'
+  ...
+# Subtest: dashboard profile controls remain responsive and touch accessible
+ok 226 - dashboard profile controls remain responsive and touch accessible
+  ---
+  duration_ms: 0.8509
+  type: 'test'
+  ...
+# Subtest: stream detail triggers are keyboard-visible and responsive
+ok 227 - stream detail triggers are keyboard-visible and responsive
+  ---
+  duration_ms: 0.563
+  type: 'test'
+  ...
+# Subtest: dashboard sign out uses the same section gap as the surrounding panels
+ok 228 - dashboard sign out uses the same section gap as the surrounding panels
+  ---
+  duration_ms: 0.3842
+  type: 'test'
+  ...
+# Subtest: course list keeps every card equal and long titles cannot wrap status badges
+ok 229 - course list keeps every card equal and long titles cannot wrap status badges
+  ---
+  duration_ms: 1.3848
+  type: 'test'
+  ...
+# Subtest: dashboard profile omits the redundant Google account management note
+ok 230 - dashboard profile omits the redundant Google account management note
+  ---
+  duration_ms: 0.5258
+  type: 'test'
+  ...
+# Subtest: faculty and grade settings use controlled responsive layouts
+ok 231 - faculty and grade settings use controlled responsive layouts
+  ---
+  duration_ms: 0.9641
+  type: 'test'
+  ...
+# Subtest: PDF report keeps attempt tags inside the course-code columns
+ok 232 - PDF report keeps attempt tags inside the course-code columns
+  ---
+  duration_ms: 1.2627
+  type: 'test'
+  ...
+# Subtest: dynamic Lucide renderers refresh icons after replacing placeholder markup
+ok 233 - dynamic Lucide renderers refresh icons after replacing placeholder markup
+  ---
+  duration_ms: 0.3909
+  type: 'test'
+  ...
+# Subtest: card spotlight color follows every academic status
+ok 234 - card spotlight color follows every academic status
+  ---
+  duration_ms: 1.4009
+  type: 'test'
+  ...
+# Subtest: modern control hover is fine-pointer-only and ignores disabled buttons
+ok 235 - modern control hover is fine-pointer-only and ignores disabled buttons
+  ---
+  duration_ms: 0.446
+  type: 'test'
+  ...
+# Subtest: modal lifecycle hosts the single dot grid below translucent modal content
+ok 236 - modal lifecycle hosts the single dot grid below translucent modal content
+  ---
+  duration_ms: 0.5605
+  type: 'test'
+  ...
+# Subtest: course catalog modal closes with Escape and restores the opening control focus
+ok 237 - course catalog modal closes with Escape and restores the opening control focus
+  ---
+  duration_ms: 0.5047
+  type: 'test'
+  ...
+# Subtest: privacy and terms are public, theme-matched documents with clear ownership
+ok 238 - privacy and terms are public, theme-matched documents with clear ownership
+  ---
+  duration_ms: 4.9783
+  type: 'test'
+  ...
+# Subtest: privacy policy describes only the data flows implemented by the service
+ok 239 - privacy policy describes only the data flows implemented by the service
+  ---
+  duration_ms: 2.0436
+  type: 'test'
+  ...
+# Subtest: terms state the academic, affiliation, and acceptable-use boundaries
+ok 240 - terms state the academic, affiliation, and acceptable-use boundaries
+  ---
+  duration_ms: 3.902
+  type: 'test'
+  ...
+# Subtest: legal links are visible at account entry, support, maintenance, and footer surfaces
+ok 241 - legal links are visible at account entry, support, maintenance, and footer surfaces
+  ---
+  duration_ms: 6.7665
+  type: 'test'
+  ...
+# Subtest: legal documents remain reachable while maintenance mode is active
+ok 242 - legal documents remain reachable while maintenance mode is active
+  ---
+  duration_ms: 3.9502
+  type: 'test'
+  ...
+# Subtest: password recovery guidance belongs to recovery and not MFA
+ok 243 - password recovery guidance belongs to recovery and not MFA
+  ---
+  duration_ms: 1.2439
+  type: 'test'
+  ...
+# Subtest: faculty dropdown source uses shared initial ordering while preserving identities
+ok 244 - faculty dropdown source uses shared initial ordering while preserving identities
+  ---
+  duration_ms: 6.8175
+  type: 'test'
+  ...
+# Subtest: main tracker uses the approved product name and guarded boot scripts
+ok 245 - main tracker uses the approved product name and guarded boot scripts
+  ---
+  duration_ms: 0.7746
+  type: 'test'
+  ...
+# Subtest: Add Course searches the master catalog without exposing internal visibility labels
+ok 246 - Add Course searches the master catalog without exposing internal visibility labels
+  ---
+  duration_ms: 0.3897
+  type: 'test'
+  ...
+# Subtest: Course List exposes every approved curriculum field and applies the shared category matcher
+ok 247 - Course List exposes every approved curriculum field and applies the shared category matcher
+  ---
+  duration_ms: 0.4627
+  type: 'test'
+  ...
+# Subtest: stream badges disclose full names and See more opens the matching Course List filter
+ok 248 - stream badges disclose full names and See more opens the matching Course List filter
+  ---
+  duration_ms: 0.3093
+  type: 'test'
+  ...
+# Subtest: course editing preserves Stream and grouped curriculum categories
+ok 249 - course editing preserves Stream and grouped curriculum categories
+  ---
+  duration_ms: 0.1948
+  type: 'test'
+  ...
+# Subtest: roadmap resolves semester alternatives without replacing stored attempt records
+ok 250 - roadmap resolves semester alternatives without replacing stored attempt records
+  ---
+  duration_ms: 0.2311
+  type: 'test'
+  ...
+# Subtest: dashboard profile is read-only until Edit and uses canonical Supabase controls
+ok 251 - dashboard profile is read-only until Edit and uses canonical Supabase controls
+  ---
+  duration_ms: 0.4635
+  type: 'test'
+  ...
+# Subtest: settings expose account sync without browser credentials
+ok 252 - settings expose account sync without browser credentials
+  ---
+  duration_ms: 0.4765
+  type: 'test'
+  ...
+# Subtest: only explicit reset and backup import may request a destructive cloud save
+ok 253 - only explicit reset and backup import may request a destructive cloud save
+  ---
+  duration_ms: 0.3878
+  type: 'test'
+  ...
+# Subtest: settings use a read-only faculty editor and a canonical grade scale table
+ok 254 - settings use a read-only faculty editor and a canonical grade scale table
+  ---
+  duration_ms: 0.4193
+  type: 'test'
+  ...
+# Subtest: faculty settings filter locally while preserving the active edit row
+ok 255 - faculty settings filter locally while preserving the active edit row
+  ---
+  duration_ms: 0.4444
+  type: 'test'
+  ...
+# Subtest: semester add and edit use canonical term and dynamic year selectors
+ok 256 - semester add and edit use canonical term and dynamic year selectors
+  ---
+  duration_ms: 0.2428
+  type: 'test'
+  ...
+# Subtest: preview mode blocks faculty saving before any state mutation
+ok 257 - preview mode blocks faculty saving before any state mutation
+  ---
+  duration_ms: 0.2439
+  type: 'test'
+  ...
+# Subtest: dashboard photo editor reuses private avatar choices and responsive drop behavior
+ok 258 - dashboard photo editor reuses private avatar choices and responsive drop behavior
+  ---
+  duration_ms: 0.3271
+  type: 'test'
+  ...
+# Subtest: theme preference is global while tracker data remains user scoped
+ok 259 - theme preference is global while tracker data remains user scoped
+  ---
+  duration_ms: 0.1384
+  type: 'test'
+  ...
+# Subtest: report metadata uses the deployed page URL and approved profile links
+ok 260 - report metadata uses the deployed page URL and approved profile links
+  ---
+  duration_ms: 0.3743
+  type: 'test'
+  ...
+# Subtest: production maintenance page uses Split design and exposes support plus admin access
+ok 261 - production maintenance page uses Split design and exposes support plus admin access
+  ---
+  duration_ms: 4.1858
+  type: 'test'
+  ...
+# Subtest: maintenance Check again makes one fresh request to the public entry point
+ok 262 - maintenance Check again makes one fresh request to the public entry point
+  ---
+  duration_ms: 3.1496
+  type: 'test'
+  ...
+# Subtest: production maintenance assets remain theme-safe, responsive, and motion-safe
+ok 263 - production maintenance assets remain theme-safe, responsive, and motion-safe
+  ---
+  duration_ms: 3.3032
+  type: 'test'
+  ...
+# Subtest: production maintenance layout has a compact landscape treatment instead of clipping
+ok 264 - production maintenance layout has a compact landscape treatment instead of clipping
+  ---
+  duration_ms: 1.2019
+  type: 'test'
+  ...
+# Subtest: support widget is available from auth and student dashboard
+ok 265 - support widget is available from auth and student dashboard
+  ---
+  duration_ms: 2.8251
+  type: 'test'
+  ...
+# Subtest: every production public entry loads the maintenance guard while Admin stays exempt
+ok 266 - every production public entry loads the maintenance guard while Admin stays exempt
+  ---
+  duration_ms: 5.2715
+  type: 'test'
+  ...
+# Subtest: admin login mode cannot navigate back into the student flow
+ok 267 - admin login mode cannot navigate back into the student flow
+  ---
+  duration_ms: 1.1016
+  type: 'test'
+  ...
+# Subtest: Vercel middleware enforces maintenance before public HTML is served
+ok 268 - Vercel middleware enforces maintenance before public HTML is served
+  ---
+  duration_ms: 1.7949
+  type: 'test'
+  ...
+# Subtest: admin panel contains support desk and maintenance controls
+ok 269 - admin panel contains support desk and maintenance controls
+  ---
+  duration_ms: 3.0608
+  type: 'test'
+  ...
+# Subtest: support schema has RLS, guest ownership separation, replies, statuses, and maintenance permissions
+ok 270 - support schema has RLS, guest ownership separation, replies, statuses, and maintenance permissions
+  ---
+  duration_ms: 1.907
+  type: 'test'
+  ...
+# Subtest: support Edge Function keeps Web3Forms key server-side and enforces privileged actions
+ok 271 - support Edge Function keeps Web3Forms key server-side and enforces privileged actions
+  ---
+  duration_ms: 1.537
+  type: 'test'
+  ...
+# Subtest: support dialog scrolls on short screens and renders a guest security challenge
+ok 272 - support dialog scrolls on short screens and renders a guest security challenge
+  ---
+  duration_ms: 2.2898
+  type: 'test'
+  ...
+# Subtest: student support panel uses the tracker theme surface, border, and text tokens
+ok 273 - student support panel uses the tracker theme surface, border, and text tokens
+  ---
+  duration_ms: 1.3241
+  type: 'test'
+  ...
+# Subtest: admin support desk paginates instead of permanently hiding older tickets
+ok 274 - admin support desk paginates instead of permanently hiding older tickets
+  ---
+  duration_ms: 2.147
+  type: 'test'
+  ...
+# Subtest: dot grid applies the approved 65 percent interaction intensity
+ok 275 - dot grid applies the approved 65 percent interaction intensity
+  ---
+  duration_ms: 0.8001
+  type: 'test'
+  ...
+# Subtest: dot grid only builds points that fit inside the drawing area
+ok 276 - dot grid only builds points that fit inside the drawing area
+  ---
+  duration_ms: 1.9494
+  type: 'test'
+  ...
+# Subtest: spotlight coordinates are local to the hovered card
+ok 277 - spotlight coordinates are local to the hovered card
+  ---
+  duration_ms: 0.2321
+  type: 'test'
+  ...
+# Subtest: dot grid renderer caps pixel ratio and draws the viewport grid
+ok 278 - dot grid renderer caps pixel ratio and draws the viewport grid
+  ---
+  duration_ms: 1.1163
+  type: 'test'
+  ...
+# Subtest: reduced motion keeps the grid static and skips pointer interaction
+ok 279 - reduced motion keeps the grid static and skips pointer interaction
+  ---
+  duration_ms: 0.2915
+  type: 'test'
+  ...
+# Subtest: reduced-motion grid redraws after resize and theme changes
+ok 280 - reduced-motion grid redraws after resize and theme changes
+  ---
+  duration_ms: 0.3198
+  type: 'test'
+  ...
+# Subtest: dot grid throttles frames that arrive too quickly
+ok 281 - dot grid throttles frames that arrive too quickly
+  ---
+  duration_ms: 0.3229
+  type: 'test'
+  ...
+# Subtest: dot grid stops requesting frames after it settles idle
+ok 282 - dot grid stops requesting frames after it settles idle
+  ---
+  duration_ms: 0.1932
+  type: 'test'
+  ...
+# Subtest: dot grid follows reduced-motion preference changes after load
+ok 283 - dot grid follows reduced-motion preference changes after load
+  ---
+  duration_ms: 0.3078
+  type: 'test'
+  ...
+# Subtest: card spotlight tracks local pointer coordinates and resets on exit
+ok 284 - card spotlight tracks local pointer coordinates and resets on exit
+  ---
+  duration_ms: 0.3608
+  type: 'test'
+  ...
+# Subtest: reduced motion skips card pointer tracking
+ok 285 - reduced motion skips card pointer tracking
+  ---
+  duration_ms: 0.1332
+  type: 'test'
+  ...
+# Subtest: card spotlight follows reduced-motion preference changes after load
+ok 286 - card spotlight follows reduced-motion preference changes after load
+  ---
+  duration_ms: 0.1798
+  type: 'test'
+  ...
+# Subtest: existing dot grid canvas mounts inside an opened modal
+ok 287 - existing dot grid canvas mounts inside an opened modal
+  ---
+  duration_ms: 0.0946
+  type: 'test'
+  ...
+# Subtest: dot grid restores to the last modal that remains open
+ok 288 - dot grid restores to the last modal that remains open
+  ---
+  duration_ms: 0.0947
+  type: 'test'
+  ...
+# Subtest: dot grid restores to body when every modal is closed
+ok 289 - dot grid restores to body when every modal is closed
+  ---
+  duration_ms: 0.0665
+  type: 'test'
+  ...
+# Subtest: administrator passwords require length, upper, lower, number, and symbol
+ok 290 - administrator passwords require length, upper, lower, number, and symbol
+  ---
+  duration_ms: 0.9687
+  type: 'test'
+  ...
+# Subtest: password assertion uses one concise, non-secret error message
+ok 291 - password assertion uses one concise, non-secret error message
+  ---
+  duration_ms: 0.5979
+  type: 'test'
+  ...
+# Subtest: a satisfied alternative pair unlocks the canonical prerequisite without rewriting attempts
+ok 292 - a satisfied alternative pair unlocks the canonical prerequisite without rewriting attempts
+  ---
+  duration_ms: 4.1024
+  type: 'test'
+  ...
+# Subtest: an incomplete or non-counted alternative pair does not unlock the canonical prerequisite
+ok 293 - an incomplete or non-counted alternative pair does not unlock the canonical prerequisite
+  ---
+  duration_ms: 2.8361
+  type: 'test'
+  ...
+# Subtest: semester choices use the Dhaka year and create one canonical term-year name
+ok 294 - semester choices use the Dhaka year and create one canonical term-year name
+  ---
+  duration_ms: 20.7484
+  type: 'test'
+  ...
+# Subtest: semester selection rejects incomplete, out-of-range, and duplicate choices but permits the edited row
+ok 295 - semester selection rejects incomplete, out-of-range, and duplicate choices but permits the edited row
+  ---
+  duration_ms: 0.3259
+  type: 'test'
+  ...
+# Subtest: canonical profile mapping uses database field names and serializable avatar identity only
+ok 296 - canonical profile mapping uses database field names and serializable avatar identity only
+  ---
+  duration_ms: 0.2569
+  type: 'test'
+  ...
+# Subtest: Google avatar resolution accepts provider metadata without persisting its URL
+ok 297 - Google avatar resolution accepts provider metadata without persisting its URL
+  ---
+  duration_ms: 0.1692
+  type: 'test'
+  ...
+# Subtest: avatar draft keeps Google, custom, and explicit no-photo choices separate
+ok 298 - avatar draft keeps Google, custom, and explicit no-photo choices separate
+  ---
+  duration_ms: 0.508
+  type: 'test'
+  ...
+# Subtest: avatar runtime downloads private custom photos and revokes temporary URLs
+ok 299 - avatar runtime downloads private custom photos and revokes temporary URLs
+  ---
+  duration_ms: 0.4146
+  type: 'test'
+  ...
+# Subtest: explicit none and failed custom avatar never fall back to Google
+ok 300 - explicit none and failed custom avatar never fall back to Google
+  ---
+  duration_ms: 0.2615
+  type: 'test'
+  ...
+# Subtest: profile service rolls back a new custom upload when the RPC fails
+ok 301 - profile service rolls back a new custom upload when the RPC fails
+  ---
+  duration_ms: 0.4817
+  type: 'test'
+  ...
+# Subtest: downloaded reports use a local PDF runtime with uniform page margins
+ok 302 - downloaded reports use a local PDF runtime with uniform page margins
+  ---
+  duration_ms: 5.2737
+  type: 'test'
+  ...
+# Subtest: report download coordinator applies the approved options without print fallback
+ok 303 - report download coordinator applies the approved options without print fallback
+  ---
+  duration_ms: 0.5673
+  type: 'test'
+  ...
+# Subtest: production CSP permits only the Google Identity Services browser boundaries it uses
+ok 304 - production CSP permits only the Google Identity Services browser boundaries it uses
+  ---
+  duration_ms: 3.8159
+  type: 'test'
+  ...
+# Subtest: Supabase Auth config mirrors the administrator password policy
+ok 305 - Supabase Auth config mirrors the administrator password policy
+  ---
+  duration_ms: 1.0842
+  type: 'test'
+  ...
+# Subtest: versioned tracker migration enforces ownership, optimistic concurrency, snapshots, and bounded history
+ok 306 - versioned tracker migration enforces ownership, optimistic concurrency, snapshots, and bounded history
+  ---
+  duration_ms: 1.2522
+  type: 'test'
+  ...
+# Subtest: roadmap renderer encodes every imported course field before inserting HTML
+ok 307 - roadmap renderer encodes every imported course field before inserting HTML
+  ---
+  duration_ms: 1.3733
+  type: 'test'
+  ...
+# Subtest: backup validation rejects executable identifiers and oversized collections
+ok 308 - backup validation rejects executable identifiers and oversized collections
+  ---
+  duration_ms: 1.3836
+  type: 'test'
+  ...
+# Subtest: edge responses hide database errors unless the message is explicitly public
+ok 309 - edge responses hide database errors unless the message is explicitly public
+  ---
+  duration_ms: 2.9261
+  type: 'test'
+  ...
+# Subtest: admin Edge Function uses the shared safe-error boundary
+ok 310 - admin Edge Function uses the shared safe-error boundary
+  ---
+  duration_ms: 0.8405
+  type: 'test'
+  ...
+# Subtest: security hardening migration narrows profile visibility and direct mutation
+ok 311 - security hardening migration narrows profile visibility and direct mutation
+  ---
+  duration_ms: 0.7987
+  type: 'test'
+  ...
+# Subtest: migration 014 revokes direct API execution of internal SECURITY DEFINER functions
+ok 312 - migration 014 revokes direct API execution of internal SECURITY DEFINER functions
+  ---
+  duration_ms: 0.8206
+  type: 'test'
+  ...
+# Subtest: admin Edge Function requires an AAL2 JWT after Supabase validates the user
+ok 313 - admin Edge Function requires an AAL2 JWT after Supabase validates the user
+  ---
+  duration_ms: 2.8288
+  type: 'test'
+  ...
+# Subtest: migration 015 requires AAL2 for privileged direct database access while preserving self reads
+ok 314 - migration 015 requires AAL2 for privileged direct database access while preserving self reads
+  ---
+  duration_ms: 1.0152
+  type: 'test'
+  ...
+# Subtest: migration 016 builds JWT roles from the protected role mapping without the caller-sensitive helper
+ok 315 - migration 016 builds JWT roles from the protected role mapping without the caller-sensitive helper
+  ---
+  duration_ms: 0.9452
+  type: 'test'
+  ...
+# Subtest: migration 018 makes the global catalog readable but never browser-writable
+ok 316 - migration 018 makes the global catalog readable but never browser-writable
+  ---
+  duration_ms: 1.5858
+  type: 'test'
+  ...
+# Subtest: migration 023 lets authenticated students read course visibility without opening catalog writes
+ok 317 - migration 023 lets authenticated students read course visibility without opening catalog writes
+  ---
+  duration_ms: 1.0343
+  type: 'test'
+  ...
+# Subtest: migrations 024 and 025 expand alternative visibility then consolidate catalog data without tracker writes
+ok 318 - migrations 024 and 025 expand alternative visibility then consolidate catalog data without tracker writes
+  ---
+  duration_ms: 2.0742
+  type: 'test'
+  ...
+# Subtest: migration 019 seeds every canonical global catalog item without overwriting existing rows
+ok 319 - migration 019 seeds every canonical global catalog item without overwriting existing rows
+  ---
+  duration_ms: 4.1992
+  type: 'test'
+  ...
+# Subtest: catalog Edge actions use explicit authorization, allowlists, AAL2, and audit-safe errors
+ok 320 - catalog Edge actions use explicit authorization, allowlists, AAL2, and audit-safe errors
+  ---
+  duration_ms: 1.6012
+  type: 'test'
+  ...
+# Subtest: support submission normalizes safe guest input
+ok 321 - support submission normalizes safe guest input
+  ---
+  duration_ms: 2.6674
+  type: 'test'
+  ...
+# Subtest: support submission rejects invalid or oversized input
+ok 322 - support submission rejects invalid or oversized input
+  ---
+  duration_ms: 0.4008
+  type: 'test'
+  ...
+# Subtest: guest reply opens mail while signed-in reply stays in dashboard
+ok 323 - guest reply opens mail while signed-in reply stays in dashboard
+  ---
+  duration_ms: 0.2176
+  type: 'test'
+  ...
+# Subtest: maintenance routing never blocks admin entry points
+ok 324 - maintenance routing never blocks admin entry points
+  ---
+  duration_ms: 0.1495
+  type: 'test'
+  ...
+# Subtest: support notice stays visible for eight seconds and supports manual dismissal
+ok 325 - support notice stays visible for eight seconds and supports manual dismissal
+  ---
+  duration_ms: 0.2248
+  type: 'test'
+  ...
+# (node:97872) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: support list-tickets rejects AAL1 before privileged data access
+ok 326 - support list-tickets rejects AAL1 before privileged data access
+  ---
+  duration_ms: 51.551
+  type: 'test'
+  ...
+# Subtest: support list-tickets still requires permission with AAL2
+ok 327 - support list-tickets still requires permission with AAL2
+  ---
+  duration_ms: 4.9868
+  type: 'test'
+  ...
+# Subtest: support update-status rejects AAL1 before privileged data access
+ok 328 - support update-status rejects AAL1 before privileged data access
+  ---
+  duration_ms: 3.659
+  type: 'test'
+  ...
+# Subtest: support update-status still requires permission with AAL2
+ok 329 - support update-status still requires permission with AAL2
+  ---
+  duration_ms: 3.3756
+  type: 'test'
+  ...
+# Subtest: support add-reply rejects AAL1 before privileged data access
+ok 330 - support add-reply rejects AAL1 before privileged data access
+  ---
+  duration_ms: 3.175
+  type: 'test'
+  ...
+# Subtest: support add-reply still requires permission with AAL2
+ok 331 - support add-reply still requires permission with AAL2
+  ---
+  duration_ms: 2.8266
+  type: 'test'
+  ...
+# Subtest: support update-reply rejects AAL1 before privileged data access
+ok 332 - support update-reply rejects AAL1 before privileged data access
+  ---
+  duration_ms: 2.6791
+  type: 'test'
+  ...
+# Subtest: support update-reply still requires permission with AAL2
+ok 333 - support update-reply still requires permission with AAL2
+  ---
+  duration_ms: 3.0636
+  type: 'test'
+  ...
+# Subtest: support resend-notification rejects AAL1 before privileged data access
+ok 334 - support resend-notification rejects AAL1 before privileged data access
+  ---
+  duration_ms: 3.1226
+  type: 'test'
+  ...
+# Subtest: support resend-notification still requires permission with AAL2
+ok 335 - support resend-notification still requires permission with AAL2
+  ---
+  duration_ms: 2.8327
+  type: 'test'
+  ...
+# Subtest: support set-maintenance rejects AAL1 before privileged data access
+ok 336 - support set-maintenance rejects AAL1 before privileged data access
+  ---
+  duration_ms: 2.163
+  type: 'test'
+  ...
+# Subtest: support set-maintenance still requires permission with AAL2
+ok 337 - support set-maintenance still requires permission with AAL2
+  ---
+  duration_ms: 1.9325
+  type: 'test'
+  ...
+# Subtest: support AAL2 read succeeds with permission and authenticated user
+ok 338 - support AAL2 read succeeds with permission and authenticated user
+  ---
+  duration_ms: 2.3451
+  type: 'test'
+  ...
+# Subtest: support AAL2 maintenance update succeeds only in the mock database
+ok 339 - support AAL2 maintenance update succeeds only in the mock database
+  ---
+  duration_ms: 3.6222
+  type: 'test'
+  ...
+# Subtest: an invalid token claiming AAL2 is rejected before privileged access
+ok 340 - an invalid token claiming AAL2 is rejected before privileged access
+  ---
+  duration_ms: 2.7408
+  type: 'test'
+  ...
+# Subtest: a suspended AAL2 user is rejected before privileged access
+ok 341 - a suspended AAL2 user is rejected before privileged access
+  ---
+  duration_ms: 2.4743
+  type: 'test'
+  ...
+# Subtest: missing or malformed assurance fails closed after authentication
+ok 342 - missing or malformed assurance fails closed after authentication
+  ---
+  duration_ms: 5.2263
+  type: 'test'
+  ...
+# Subtest: student own tickets remain available at AAL1 and scoped to the caller
+ok 343 - student own tickets remain available at AAL1 and scoped to the caller
+  ---
+  duration_ms: 2.5192
+  type: 'test'
+  ...
+# Subtest: public maintenance remains available without authentication
+ok 344 - public maintenance remains available without authentication
+  ---
+  duration_ms: 2.3891
+  type: 'test'
+  ...
+# Subtest: signed-in support submission still accepts AAL1 without Admin permission
+ok 345 - signed-in support submission still accepts AAL1 without Admin permission
+  ---
+  duration_ms: 8.2147
+  type: 'test'
+  ...
+# Subtest: guest submission reaches its security challenge, not the MFA guard
+ok 346 - guest submission reaches its security challenge, not the MFA guard
+  ---
+  duration_ms: 3.1563
+  type: 'test'
+  ...
+# Subtest: known HTTP status resolves to approved user-facing error content
+ok 347 - known HTTP status resolves to approved user-facing error content
+  ---
+  duration_ms: 2.1106
+  type: 'test'
+  ...
+# Subtest: unknown client and server statuses use safe family fallbacks
+ok 348 - unknown client and server statuses use safe family fallbacks
+  ---
+  duration_ms: 0.1148
+  type: 'test'
+  ...
+# Subtest: error page model ignores arbitrary messages and unsafe source values
+ok 349 - error page model ignores arbitrary messages and unsafe source values
+  ---
+  duration_ms: 0.2285
+  type: 'test'
+  ...
+# Subtest: error URLs contain only normalized status and allow-listed surface
+ok 350 - error URLs contain only normalized status and allow-listed surface
+  ---
+  duration_ms: 0.0986
+  type: 'test'
+  ...
+# Subtest: loading controller clears busy state and cancels its timeout after meaningful render
+ok 351 - loading controller clears busy state and cancels its timeout after meaningful render
+  ---
+  duration_ms: 0.2046
+  type: 'test'
+  ...
+# Subtest: loading controller converts a prolonged boot into a safe timeout state
+ok 352 - loading controller converts a prolonged boot into a safe timeout state
+  ---
+  duration_ms: 0.281
+  type: 'test'
+  ...
+# Subtest: one dynamic error page provides branded semantic targets and the shared background
+ok 353 - one dynamic error page provides branded semantic targets and the shared background
+  ---
+  duration_ms: 1.8652
+  type: 'test'
+  ...
+# Subtest: shared state styling supports themes, responsive actions, focus, and reduced motion
+ok 354 - shared state styling supports themes, responsive actions, focus, and reduced motion
+  ---
+  duration_ms: 0.825
+  type: 'test'
+  ...
+# Subtest: error page renderer writes approved copy with text content and creates only approved actions
+ok 355 - error page renderer writes approved copy with text content and creates only approved actions
+  ---
+  duration_ms: 0.5096
+  type: 'test'
+  ...
+# Subtest: Auth, Tracker, and Admin expose page-specific skeletons through one lifecycle
+ok 356 - Auth, Tracker, and Admin expose page-specific skeletons through one lifecycle
+  ---
+  duration_ms: 3.3081
+  type: 'test'
+  ...
+# Subtest: skeleton foundation matches real layouts without blocking themed backgrounds
+ok 357 - skeleton foundation matches real layouts without blocking themed backgrounds
+  ---
+  duration_ms: 0.7647
+  type: 'test'
+  ...
+# Subtest: shared state stylesheet does not replace existing page body or control styling
+ok 358 - shared state stylesheet does not replace existing page body or control styling
+  ---
+  duration_ms: 0.8116
+  type: 'test'
+  ...
+# Subtest: page loading mount turns timeout into the shared surface-specific error URL
+ok 359 - page loading mount turns timeout into the shared surface-specific error URL
+  ---
+  duration_ms: 0.2174
+  type: 'test'
+  ...
+# Subtest: each page boot marks its own skeleton ready after meaningful rendering
+ok 360 - each page boot marks its own skeleton ready after meaningful rendering
+  ---
+  duration_ms: 1.9787
+  type: 'test'
+  ...
+# Subtest: fatal Tracker and Admin boot errors use the dynamic page without raw messages
+ok 361 - fatal Tracker and Admin boot errors use the dynamic page without raw messages
+  ---
+  duration_ms: 1.4152
+  type: 'test'
+  ...
+# Subtest: Vercel serves existing files first and unknown document routes through the single 404 template
+ok 362 - Vercel serves existing files first and unknown document routes through the single 404 template
+  ---
+  duration_ms: 0.6599
+  type: 'test'
+  ...
+# Subtest: Admin list and profile loading reuse compact skeletons instead of spinners
+ok 363 - Admin list and profile loading reuse compact skeletons instead of spinners
+  ---
+  duration_ms: 2.5086
+  type: 'test'
+  ...
+# Subtest: error and skeleton backgrounds define theme-matched Dot Grid colors
+ok 364 - error and skeleton backgrounds define theme-matched Dot Grid colors
+  ---
+  duration_ms: 0.8451
+  type: 'test'
+  ...
+# Subtest: Try again returns to the allow-listed source instead of reloading the error page
+ok 365 - Try again returns to the allow-listed source instead of reloading the error page
+  ---
+  duration_ms: 0.3284
+  type: 'test'
+  ...
+1..365
+# tests 365
+# suites 0
+# pass 365
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 511.7423

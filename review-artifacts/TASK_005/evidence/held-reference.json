@@ -1,0 +1,28 @@
+{
+  "label": "HOLD — Reduced-Motion Reference",
+  "source": "Completed Demo C correction, after-evidence/motion.json",
+  "sourceSha256": "01c79e760f6cf73ed7a103afa28587b5f620e4975cb7212ed1319a93c661033d",
+  "method": "Historical programmatic button click with intercepted scroll request. Original trusted input and page positions were not recorded in this reference.",
+  "samples": [
+    {
+      "theme": "light",
+      "preference": "no-preference",
+      "behavior": "smooth"
+    },
+    {
+      "theme": "light",
+      "preference": "reduce",
+      "behavior": "instant"
+    },
+    {
+      "theme": "dark",
+      "preference": "no-preference",
+      "behavior": "smooth"
+    },
+    {
+      "theme": "dark",
+      "preference": "reduce",
+      "behavior": "instant"
+    }
+  ]
+}

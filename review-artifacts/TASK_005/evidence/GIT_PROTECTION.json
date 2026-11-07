@@ -1,0 +1,51 @@
+{
+  "base": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+  "parent": "ebe91e1ef559bf50e0c127c0126fe723370163c6",
+  "original": {
+    "head": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+    "branch": "main",
+    "status": "?? FRONTEND_UI_MULTISKILL_AUDIT.md",
+    "trackedDiff": "",
+    "stagedDiff": "",
+    "auditSha256": "9ad3924539bea8181d9337b6e8e970a116bf28b9109c7cdb589f9a1536ca54d9"
+  },
+  "completedWorkspaceChecks": [
+    {
+      "workspace": "bracu-ui-demo-9d86db46",
+      "files": 402,
+      "aggregateSha256": "111a3d4443a859f835f74db964219afe704a25eb3296e4f7fd5a50d167d1f983"
+    },
+    {
+      "workspace": "bracu-final-corrections",
+      "files": 52,
+      "aggregateSha256": "df783f1505b9b268c0f3b290f17548e9752ab72db07df8c5095c221ac90f5eb0"
+    },
+    {
+      "workspace": "bracu-task002-r010",
+      "files": 2292,
+      "aggregateSha256": "4940cba0c4aa6fb3ba6f0bc1b65b224807420d60a7a520aba2a7e77933b56602"
+    },
+    {
+      "workspace": "bracu-task003-r023",
+      "files": 624,
+      "aggregateSha256": "6a2fd447da46cad3419d3fbc7a695b46f77bc57ff81e6203e22a5596fd37319e"
+    },
+    {
+      "workspace": "bracu-task004-r024",
+      "files": 616,
+      "aggregateSha256": "f10940b95f32aaaa8c4f89eaae8ea5d52c0a30fa03531519a3352c8dcbf65256"
+    }
+  ],
+  "policy": "All regular files recursively; .git, node_modules and dedicated browser-profile directories excluded. No completed workspace was edited.",
+  "baselineFilesMatchedGitBlobs": 182,
+  "afterFiles": 182,
+  "changedSourcePaths": [
+    "js/app.js"
+  ],
+  "candidateSha256": "95ae279d4ac5b4d31579c4b2592a5ed434a7f898d127fae02cc3b90d2f5dea83",
+  "currentAuthority": {
+    "REGISTER.json": "b41fe0d08e46896238e258bb3dbb3f81362d1576021d51d00b9a53a9f6116a65",
+    "COUNTS.json": "f07078d52362cbbcadd387f6c8d36233e2ce726aae5a0129f8128c367caaab67"
+  },
+  "allowedPrefix": "review-artifacts/TASK_005/"
+}
