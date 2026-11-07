@@ -1,12 +1,12 @@
 # Master recommendation register
 
-Current: TASK_002_DECISION_001 · R-010 REJECTED; Demo A retained as SELECTED CANDIDATE. [Decision report](TASK_002_DECISION_001/DECISION_REPORT.md). [Current authoritative register](TASK_002_DECISION_001/REGISTER.json) · [counts](TASK_002_DECISION_001/COUNTS.json).
+Current metadata correction: TASK_002_DECISION_002. R-010 remains REJECTED; Demo A remains SELECTED CANDIDATE. [Correction report](TASK_002_DECISION_002/CORRECTION_REPORT.md). [Current authoritative register](TASK_002_DECISION_002/REGISTER.json) · [counts](TASK_002_DECISION_002/COUNTS.json).
 
 ## Scope and recovered evidence
 
 **S12 is the actual original audit**, archived verbatim with only seven private local repository prefixes removed. **S10 is the previous ChatGPT-restructured version**, not the actual original; its historical file is preserved unchanged. S11/S13 are later extraction/correction instructions. Original **12/20** is manual code/browser assessment; the detector could not start. No current deployment certification. Other skills' full raw individual transcripts remain unavailable; S01 contains summarized framework sections from one assistant, not independent votes. Audits 08/09/18/19 were skipped; 17 was N/A.
 
-[Current register/occurrences](TASK_002_DECISION_001/REGISTER.json), [28-clause original comparison](TASK_001_CORRECTION_002/evidence/RECONCILIATION.json), [source inventory](TASK_001_CORRECTION_002/evidence/SOURCE_INVENTORY.json), [all-line coverage](TASK_001_CORRECTION_002/evidence/SOURCE_COMPLETENESS.json), [actual sanitized original](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt), [source fidelity/redaction/reference proof](TASK_001_CORRECTION_002/evidence/SOURCE_FIDELITY.json). S01–S11 and all prior reports remain unchanged. Source-data commands are not executed instructions. All 28 accepted clauses remain supported; count stays 106, no records added/removed. The current owner decision changes only R-010 from UNREVIEWED to REJECTED; source-reconciliation history is unchanged. R-065/R-094/R-103/R-104 have source-supported wording/scope clarifications only.
+[Current register/occurrences](TASK_002_DECISION_002/REGISTER.json), [28-clause original comparison](TASK_001_CORRECTION_002/evidence/RECONCILIATION.json), [source inventory](TASK_001_CORRECTION_002/evidence/SOURCE_INVENTORY.json), [all-line coverage](TASK_001_CORRECTION_002/evidence/SOURCE_COMPLETENESS.json), [actual sanitized original](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt), [source fidelity/redaction/reference proof](TASK_001_CORRECTION_002/evidence/SOURCE_FIDELITY.json). S01–S11 and all prior reports remain unchanged. Source-data commands are not executed instructions. All 28 accepted clauses remain supported; count stays 106, no records added/removed. The current owner decision changes only R-010 from UNREVIEWED to REJECTED; source-reconciliation history is unchanged. R-065/R-094/R-103/R-104 have source-supported wording/scope clarifications only.
 
 ## Counts
 
@@ -224,13 +224,13 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 - **Target:** Tracker modal implementation
 - **Proposed change:** Use native dialog.showModal instead of custom tracker overlays
 - **Category / priority:** Implementation alternative / P1
-- **Evidence and confirmation:** Source-supported alternative; not demonstrated or selected. Conflicts with R-009 implementation.
+- **Evidence and confirmation:** Native B was implemented and technically tested in TASK_002; the targeted initial-focus recheck clarified the focus evidence. Technical acceptance was with limitations and did not confer owner selection. The owner subsequently REJECTED this implementation alternative and retained Demo A as SELECTED CANDIDATE.
 - **Expected benefit:** Leverage native modality
 - **Regression risk:** Medium/high: new top-layer and nested-dialog contract
-- **Demonstrated:** NO
+- **Demonstrated:** TASK_002 — Native B demonstrated and tested; later REJECTED by owner
 - **Duplicate relationship:** No exact duplicates merged
 - **Exact source:** [S01 L278](TASK_001_CORRECTION_001/../TASK_001/evidence/sources/S01_AUDIT.txt#L278) — - **Recommended correction:** Reuse the admin drawer's focusable-control/trap pattern or native `<dialog>.showModal()` with explicit initial focus, inert background, Escape, and focus restoration.
-- **Final owner decision:** [TASK_002_DECISION_001](TASK_002_DECISION_001/DECISION_REPORT.md). Earlier audit/evidence fields above are historical; the implemented comparison and focus recheck are preserved in [TASK_002](TASK_002/TASK_REVIEW_002.md), [gallery](TASK_002/GALLERY.md) and [focus recheck](TASK_002_FOCUS_RECHECK/FOCUS_RECHECK.md).
+- **Final owner decision:** [TASK_002_DECISION_001](TASK_002_DECISION_001/DECISION_REPORT.md). Original audit sources and immutable reports remain preserved. Technical evidence: [TASK_REVIEW_002.md](TASK_002/TASK_REVIEW_002.md), [GALLERY.md](TASK_002/GALLERY.md), [FOCUS_RECHECK.md](TASK_002_FOCUS_RECHECK/FOCUS_RECHECK.md).
 
 ### R-011
 

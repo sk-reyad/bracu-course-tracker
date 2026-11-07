@@ -1,0 +1,55 @@
+{
+  "task": "TASK_002_DECISION_002",
+  "parent": "4388d2960d714b9a7d46691c0873a516e01b9755",
+  "base": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+  "scope": "R-010 current demonstration/evidence metadata and pointers only; no owner status/reason/count/application change",
+  "expectedPackageFiles": 10,
+  "checksumPolicy": "All package files except manifest have SHA-256 checksums; manifest included without recursive self-hash",
+  "files": [
+    {
+      "path": "review-artifacts/MASTER_RECOMMENDATIONS.md",
+      "bytes": 161186,
+      "sha256": "032e201b9d364455b3f002d5e59dabb2c4c59323ab46e0b5e85d7f7686405a3e"
+    },
+    {
+      "path": "review-artifacts/REVIEW_LEDGER.md",
+      "bytes": 17822,
+      "sha256": "384f392444f0fd90e9c3ac12f069fb44399acda667892d6da3db4fff0a33c90b"
+    },
+    {
+      "path": "review-artifacts/TASK_002_DECISION_002/CORRECTION_REPORT.md",
+      "bytes": 5659,
+      "sha256": "19c4c1ace66dd046d2899caeb1e4d214b5fdb858ed9144378a749fdcd741bda1"
+    },
+    {
+      "path": "review-artifacts/TASK_002_DECISION_002/COUNTS.json",
+      "bytes": 296,
+      "sha256": "80227633d5c78590a4ecc1b8972dd4958145b2d026d02f16edd36f3b88b0d655"
+    },
+    {
+      "path": "review-artifacts/TASK_002_DECISION_002/GIT_PROTECTION.json",
+      "bytes": 2663,
+      "sha256": "ac29355b8a4547ea43cd0e340ae13de5018185256d3db5c31d16fd3c58ff0499"
+    },
+    {
+      "path": "review-artifacts/TASK_002_DECISION_002/METADATA_CHANGE.json",
+      "bytes": 1302,
+      "sha256": "2189362c238cc1b900bb5b4d6374d802a4aaef93a62d9bfaba9dadc1524974a8"
+    },
+    {
+      "path": "review-artifacts/TASK_002_DECISION_002/REGISTER.json",
+      "bytes": 264433,
+      "sha256": "f43db0bb4442c3f891edb920cf6b8903651ce713c9553d57d25ea5b6d7a69ad9"
+    },
+    {
+      "path": "review-artifacts/TASK_002_DECISION_002/VERIFICATION_RESULTS.txt",
+      "bytes": 1161,
+      "sha256": "0578aa20b17e0463fc8b6bd7d3cf4cc7f09f916452faa17f101405f3b318e51d"
+    },
+    {
+      "path": "review-artifacts/TASK_002_DECISION_002/verify-metadata.test.cjs",
+      "bytes": 5108,
+      "sha256": "99adc959a7739524901389fffa0b41d20ccf86ca1b98e0abc3e5d06bf32eb2a5"
+    }
+  ]
+}

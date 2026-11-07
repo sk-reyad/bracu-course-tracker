@@ -1,0 +1,20 @@
+{
+  "parent": "4388d2960d714b9a7d46691c0873a516e01b9755",
+  "id": "R-010",
+  "before": {
+    "demonstrated": "NO",
+    "evidence": "Source-supported alternative; not demonstrated or selected. Conflicts with R-009 implementation."
+  },
+  "after": {
+    "demonstrated": "TASK_002 — Native B demonstrated and tested; later REJECTED by owner",
+    "evidence": "Native B was implemented and technically tested in TASK_002; the targeted initial-focus recheck clarified the focus evidence. Technical acceptance was with limitations and did not confer owner selection. The owner subsequently REJECTED this implementation alternative and retained Demo A as SELECTED CANDIDATE.",
+    "demonstrationEvidence": {
+      "report": "https://github.com/sk-reyad/bracu-course-tracker/blob/7025af30d7152f7e90a5e507fa90b840427c49b7/review-artifacts/TASK_002/TASK_REVIEW_002.md",
+      "gallery": "https://github.com/sk-reyad/bracu-course-tracker/blob/7025af30d7152f7e90a5e507fa90b840427c49b7/review-artifacts/TASK_002/GALLERY.md",
+      "focusRecheck": "https://github.com/sk-reyad/bracu-course-tracker/blob/4f18b2c39ec089decc05a24e258da4d6d48698f3/review-artifacts/TASK_002_FOCUS_RECHECK/FOCUS_RECHECK.md"
+    }
+  },
+  "ownerStatusUnchanged": true,
+  "exactReasonUnchanged": true,
+  "other105RecordsUnchanged": true
+}

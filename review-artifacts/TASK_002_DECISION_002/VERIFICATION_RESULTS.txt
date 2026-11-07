@@ -1,0 +1,23 @@
+Node v24.16.0; Windows
+node --check review-artifacts/TASK_002_DECISION_002/verify-metadata.test.cjs: PASS
+node --test review-artifacts/TASK_002_DECISION_002/verify-metadata.test.cjs
+Exit: 0
+
+✔ 1: exactly 106 IDs and all other 105 records unchanged (6.6391ms)
+✔ 2: R-010 changes only demo/evidence metadata and direct links (1.0453ms)
+✔ 3: exact rejection reason, decision metadata and selected A preserved (0.0966ms)
+✔ 4: counts and all 106 statuses identical to final owner decision (0.3402ms)
+✔ 5: master and ledger show historical TASK_002 demonstration, not NO (1.1069ms)
+✔ 6: all three direct technical evidence links exist and retain immutable URLs (1.6037ms)
+✔ 7: original main and all five candidate/completed workspaces unchanged (0.1044ms)
+✔ 8: all historical reports/source/evidence and application paths unchanged (155.7547ms)
+✔ 9: authoritative pointers use the new snapshot and original owner decision source (0.194ms)
+✔ 10: report states scope, preserved reason, technical/owner distinction and stop (2.0911ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 292.6544
