@@ -1,0 +1,15 @@
+{
+  "retained": 106,
+  "rawAtomicSourceOccurrences": 119,
+  "exactDuplicateOccurrencesRemoved": 13,
+  "statuses": {
+    "SELECTED": 25,
+    "REJECTED": 10,
+    "HOLD": 7,
+    "UNREVIEWED": 64,
+    "IN REVIEW": 0
+  },
+  "statusChangesThisDecision": 1,
+  "addedRecords": 0,
+  "removedRecords": 0
+}

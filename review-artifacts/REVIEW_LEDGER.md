@@ -1,6 +1,6 @@
 # Review ledger
 
-Current owner decision: TASK_003_DECISION_001. R-023 SELECTED CANDIDATE; R-022 remains SELECTED as the minimum-size requirement. Other selected Demo B improvements are retained; only its earlier inner-trigger-only treatment is superseded by R-023. R-010 remains REJECTED; Demo A SELECTED CANDIDATE, Demo B SELECTED CANDIDATE, Demo C HOLD, Demo D rejected. 24 selected, 10 rejected, 7 held, 65 unreviewed, 0 in review. Only R-023 changed status in this decision. No production authorization.
+Current owner decision: TASK_004_DECISION_001. R-024 SELECTED as a scoped verification outcome; two original mobile See more observations remain INCONCLUSIVE and Roadmap stream targets NOT TESTED. No website-wide WCAG certification or UI implementation. R-022 SELECTED; R-023 remains the preferred full-badge SELECTED CANDIDATE. Other Demo B improvements retained. R-010 REJECTED; Demo A SELECTED CANDIDATE, Demo B SELECTED CANDIDATE, Demo C HOLD, Demo D rejected. 25 selected, 10 rejected, 7 held, 64 unreviewed, 0 in review. Only R-024 changed status in this decision. No production authorization.
 
 | ID | Recommendation | Status | Prior demonstration |
 | --- | --- | --- | --- |
@@ -27,7 +27,7 @@ Current owner decision: TASK_003_DECISION_001. R-023 SELECTED CANDIDATE; R-022 r
 | [R-021](MASTER_RECOMMENDATIONS.md#r-021) | Reuse the existing Admin Catalog tab interaction pattern | SELECTED | Demo A |
 | [R-022](MASTER_RECOMMENDATIONS.md#r-022) | Increase the actual stream trigger box to at least 24 by 24 CSS pixels | SELECTED | Demo B |
 | [R-023](MASTER_RECOMMENDATIONS.md#r-023) | Make the containing stream badge the interactive target | SELECTED | TASK_003 — Full-badge interactive alternative demonstrated and selected by owner · [report](TASK_003/TASK_REVIEW_003.md) · [gallery](TASK_003/GALLERY.md) · [hit area](TASK_003/evidence/HIT_AREA_COMPARISON.json) · [diff](TASK_003/CHANGES.diff) |
-| [R-024](MASTER_RECOMMENDATIONS.md#r-024) | Assess sufficient spacing and SC 2.5.8 exceptions before declaring target-size nonconformance | UNREVIEWED | NO |
+| [R-024](MASTER_RECOMMENDATIONS.md#r-024) | Assess sufficient spacing and SC 2.5.8 exceptions before declaring target-size nonconformance | SELECTED | TASK_004 — Scoped accessibility assessment completed and accepted by owner; no UI implementation · [report](TASK_004/TASK_REVIEW_004.md) · [assessment](TASK_004/WCAG_2_5_8_ASSESSMENT.md) · [measurements](TASK_004/evidence/target-measurements.json) · [closest pairs](TASK_004/evidence/closest-target-pairs.json) · [tests](TASK_004/TEST_RESULTS.txt) |
 | [R-025](MASTER_RECOMMENDATIONS.md#r-025) | Choose instant/auto scrolling under reduced motion for Back to Top, retaining smooth otherwise | HOLD | Demo C (Admin via synthetic DOM harness) |
 | [R-026](MASTER_RECOMMENDATIONS.md#r-026) | Choose instant/auto scrolling under reduced motion for stream See more, retaining smooth otherwise | HOLD | Demo C (Admin via synthetic DOM harness) |
 | [R-027](MASTER_RECOMMENDATIONS.md#r-027) | Choose instant/auto scrolling under reduced motion for Admin Catalog editor, retaining smooth otherwise | HOLD | Demo C (Admin via synthetic DOM harness) |
@@ -123,6 +123,8 @@ Current owner decision: TASK_003_DECISION_001. R-023 SELECTED CANDIDATE; R-022 r
 | [TASK_002_DECISION_002](TASK_002_DECISION_002/CORRECTION_REPORT.md) | R-010 demonstration/evidence metadata correction only | REJECTED decision unchanged | Wait for explicit NEXT |
 | [TASK_003](TASK_003/TASK_REVIEW_003.md) | Three-way R-023 technical demonstration | Historical technical verification with limitations; owner decision recorded below | Evidence remains unchanged |
 | [TASK_003_DECISION_001](TASK_003_DECISION_001/DECISION_REPORT.md) | R-023 selected; R-022 requirement and other Demo B improvements retained | FINAL OWNER DECISION RECORDED | Wait for explicit NEXT |
+| [TASK_004](TASK_004/TASK_REVIEW_004.md) | Read-only SC 2.5.8 target/spacing assessment | Historical technical evidence; limitations preserved | No UI implementation |
+| [TASK_004_DECISION_001](TASK_004_DECISION_001/DECISION_REPORT.md) | R-024 scoped verification accepted | FINAL OWNER DECISION RECORDED; 2 INCONCLUSIVE / Roadmap NOT TESTED preserved | Wait for explicit NEXT |
 
 R-056–R-064 were refined with recovered actions; R-065 remains a broader later-owner lead; actual S12 names Course List within broad overflow scope, but no distinct remaining cause was verified. R-090–R-106 are new and UNREVIEWED. R-009/R-011 gained exact source corroboration and retained selected status. No demo had started at that source-recovery checkpoint; later TASK_002/TASK_003 demonstrations are recorded separately.
 
@@ -132,7 +134,7 @@ Historical source identity correction (TASK_001_CORRECTION_002): S12 is the actu
 
 Owner rejected the native-dialog implementation alternative after comparing it with the previously selected Demo A. The existing custom-modal accessibility improvements in Demo A remain the preferred candidate. No distinct visual or tested usability advantage justified replacing the selected implementation.
 
-This architecture decision is distinct from the nine earlier Demo D visual-treatment rejections. F-002 and all related recommendations except R-010 retain their existing statuses. [Current authoritative register](TASK_003_DECISION_001/REGISTER.json) · [current counts](TASK_003_DECISION_001/COUNTS.json). Previous TASK_002 comparison/focus evidence remains available; neither selected A nor rejected Native B source is modified. Wait for explicit NEXT; no next recommendation started.
+This architecture decision is distinct from the nine earlier Demo D visual-treatment rejections. F-002 and all related recommendations except R-010 retain their existing statuses. [Current authoritative register](TASK_004_DECISION_001/REGISTER.json) · [current counts](TASK_004_DECISION_001/COUNTS.json). Previous TASK_002 comparison/focus evidence remains available; neither selected A nor rejected Native B source is modified. Wait for explicit NEXT; no next recommendation started.
 
 ## Final owner decision — R-023
 
@@ -142,4 +144,14 @@ Owner selected R-023's full-badge interactive target after reviewing TASK_003. T
 
 R-022 remains the selected minimum interactive target-size requirement, satisfied by R-023. R-023 is the owner-selected preferred implementation using the entire visible stream badge. It supersedes only the earlier inner-trigger-only treatment, preserving Demo B tooltip, accessibility, positioning, scrolling, dismissal and overflow improvements. Any eventual separately authorized production implementation must combine these requirements in one implementation, not create competing controls.
 
-Technical tests and owner selection are separate evidence. [Decision report](TASK_003_DECISION_001/DECISION_REPORT.md) · [current authoritative register](TASK_003_DECISION_001/REGISTER.json) · [current counts](TASK_003_DECISION_001/COUNTS.json). Historical TASK_003 files still describe the decision-pending state at their publication; they are immutable history, not current authority. STOP; wait for explicit NEXT.
+Technical tests and owner selection are separate evidence. [Decision report](TASK_003_DECISION_001/DECISION_REPORT.md) · [current authoritative register](TASK_004_DECISION_001/REGISTER.json) · [current counts](TASK_004_DECISION_001/COUNTS.json). Historical TASK_003 files still describe the decision-pending state at their publication; they are immutable history, not current authority. STOP; wait for explicit NEXT.
+
+## Final owner decision — R-024 verification outcome
+
+Owner accepted the scoped WCAG 2.2 SC 2.5.8 target-size and spacing assessment completed in TASK_004. Acceptance applies only to the documented measurements and conclusions. The two original mobile See more cases remain INCONCLUSIVE, and Roadmap stream targets remain NOT TESTED. No visual implementation or website-wide WCAG certification is implied.
+
+**Demonstrated/verified:** TASK_004 — Scoped accessibility assessment completed and accepted by owner; no UI implementation.
+
+Original Course List stream triggers passed spacing in tested arrangements; selected Demo B and R-023 targets passed direct minimum size. No conclusive SC 2.5.8 failure was established in tested observations. Original F-005 usability evidence remains unchanged. This accepts verification only; it does not authorize fixing the original mobile overlap, adding Roadmap content or performing additional verification.
+
+[Decision report](TASK_004_DECISION_001/DECISION_REPORT.md) · [current authoritative register](TASK_004_DECISION_001/REGISTER.json) · [current counts](TASK_004_DECISION_001/COUNTS.json). Historical TASK_004 reports and snapshots preserve their original publication state; they are not current decision authority. R-022 and preferred R-023 remain selected. STOP; wait for independent review and explicit NEXT.

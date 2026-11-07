@@ -1,12 +1,12 @@
 # Master recommendation register
 
-Current owner decision: TASK_003_DECISION_001. R-023 is SELECTED CANDIDATE; R-022 remains SELECTED. Other selected Demo B improvements remain preserved. [Decision report](TASK_003_DECISION_001/DECISION_REPORT.md). [Current authoritative register](TASK_003_DECISION_001/REGISTER.json) · [counts](TASK_003_DECISION_001/COUNTS.json). No production authorization.
+Current owner decision: TASK_004_DECISION_001. R-024 is SELECTED as a scoped verification outcome, not a UI candidate or implementation. R-022 remains SELECTED and R-023 remains the preferred SELECTED CANDIDATE. [Decision report](TASK_004_DECISION_001/DECISION_REPORT.md). [Current authoritative register](TASK_004_DECISION_001/REGISTER.json) · [counts](TASK_004_DECISION_001/COUNTS.json). No production authorization.
 
 ## Scope and recovered evidence
 
 **S12 is the actual original audit**, archived verbatim with only seven private local repository prefixes removed. **S10 is the previous ChatGPT-restructured version**, not the actual original; its historical file is preserved unchanged. S11/S13 are later extraction/correction instructions. Original **12/20** is manual code/browser assessment; the detector could not start. No current deployment certification. Other skills' full raw individual transcripts remain unavailable; S01 contains summarized framework sections from one assistant, not independent votes. Audits 08/09/18/19 were skipped; 17 was N/A.
 
-[Current register/occurrences](TASK_003_DECISION_001/REGISTER.json), [28-clause original comparison](TASK_001_CORRECTION_002/evidence/RECONCILIATION.json), [source inventory](TASK_001_CORRECTION_002/evidence/SOURCE_INVENTORY.json), [all-line coverage](TASK_001_CORRECTION_002/evidence/SOURCE_COMPLETENESS.json), [actual sanitized original](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt), [source fidelity/redaction/reference proof](TASK_001_CORRECTION_002/evidence/SOURCE_FIDELITY.json). S01–S11 and all prior reports remain unchanged. Source-data commands are not executed instructions. All 28 accepted clauses remain supported; count stays 106, no records added/removed. The historical TASK_002 owner decision changed R-010 from UNREVIEWED to REJECTED. The current TASK_003_DECISION_001 owner decision changes only R-023 from UNREVIEWED to SELECTED; source-reconciliation history is unchanged. R-065/R-094/R-103/R-104 have source-supported wording/scope clarifications only.
+[Current register/occurrences](TASK_004_DECISION_001/REGISTER.json), [28-clause original comparison](TASK_001_CORRECTION_002/evidence/RECONCILIATION.json), [source inventory](TASK_001_CORRECTION_002/evidence/SOURCE_INVENTORY.json), [all-line coverage](TASK_001_CORRECTION_002/evidence/SOURCE_COMPLETENESS.json), [actual sanitized original](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt), [source fidelity/redaction/reference proof](TASK_001_CORRECTION_002/evidence/SOURCE_FIDELITY.json). S01–S11 and all prior reports remain unchanged. Source-data commands are not executed instructions. All 28 accepted clauses remain supported; count stays 106, no records added/removed. The historical TASK_002 owner decision changed R-010 from UNREVIEWED to REJECTED. The historical TASK_003_DECISION_001 owner decision selected R-023. The current TASK_004_DECISION_001 decision changes only R-024 from UNREVIEWED to SELECTED as a scoped verification outcome; source-reconciliation history is unchanged. R-065/R-094/R-103/R-104 have source-supported wording/scope clarifications only.
 
 ## Counts
 
@@ -16,10 +16,10 @@ Current owner decision: TASK_003_DECISION_001. R-023 is SELECTED CANDIDATE; R-02
   "rawAtomicSourceOccurrences": 119,
   "exactDuplicateOccurrencesRemoved": 13,
   "statuses": {
-    "SELECTED": 24,
+    "SELECTED": 25,
     "REJECTED": 10,
     "HOLD": 7,
-    "UNREVIEWED": 65,
+    "UNREVIEWED": 64,
     "IN REVIEW": 0
   },
   "statusChangesThisDecision": 1,
@@ -30,11 +30,11 @@ Current owner decision: TASK_003_DECISION_001. R-023 is SELECTED CANDIDATE; R-02
 
 100 previous raw occurrences - 9 generic owner leads reclassified as historical context + 28 recovered actionable occurrences = 119 raw. Deduplication removes 13 exact repetitions (11 previous + 2 recovered), leaving 106 active records. Nine old IDs are source-grounded refinements; 17 new IDs are R-090–R-106. No old ID or owner lead is silently deleted. Counts cover proposals, test/process records, rejected demo treatments and one unverified residual owner lead, not 106 confirmed bugs.
 
-Per-source counts and exact clauses are in the current source inventory/completeness/occurrence evidence; actual original S12 has 28 actionable occurrences and 26 primary records. S10 is secondary restatement trace, not a second independent counted audit. The original extraction count transition is historical context. Current counts above include the preserved R-010 rejection and the R-023 selection in TASK_003_DECISION_001; historical reports/count snapshots remain unchanged.
+Per-source counts and exact clauses are in the current source inventory/completeness/occurrence evidence; actual original S12 has 28 actionable occurrences and 26 primary records. S10 is secondary restatement trace, not a second independent counted audit. The original extraction count transition is historical context. Current counts above include the preserved R-010 rejection, R-023 selection and R-024 scoped verification acceptance in TASK_004_DECISION_001; historical reports/count snapshots remain unchanged.
 
 ## Owner decisions and verification status
 
-24 SELECTED CANDIDATE records (A/B and R-023), 10 REJECTED (9 Demo D treatments plus R-010 native architecture), 7 HOLD records (C), 65 UNREVIEWED, 0 IN REVIEW. Only R-023 changed status in this decision. Demo A remains the preferred selected custom-modal candidate. This does not reject F-002 or change any related recommendation. Recovered proposals remain UNREVIEWED unless an exact action was already owner-selected (R-009/R-011); this preserves an old decision, not new approval. C retains the corrected visible success check. D may not be reintroduced under another name. No production authorization exists. Recovered findings require re-verification; no new browser or current-defect certification was performed.
+25 SELECTED records (including the R-024 verification outcome), 10 REJECTED (9 Demo D treatments plus R-010 native architecture), 7 HOLD records (C), 64 UNREVIEWED, 0 IN REVIEW. Only R-024 changed status in this decision. R-024 accepts scoped findings only: two original mobile See more observations remain INCONCLUSIVE; Roadmap stream targets remain NOT TESTED. No website-wide WCAG certification or UI implementation is implied. R-022 remains SELECTED; R-023 remains the preferred full-badge SELECTED CANDIDATE. Demo A remains the preferred selected custom-modal candidate. This does not reject F-002 or change any related recommendation. Recovered proposals remain UNREVIEWED unless an exact action was already owner-selected (R-009/R-011); this preserves an old decision, not new approval. C retains the corrected visible success check. D may not be reintroduced under another name. No production authorization exists. Recovered findings require re-verification; no new browser or current-defect certification was performed.
 
 ## R-022 / R-023 implementation relationship
 
@@ -469,18 +469,21 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 
 **Assess sufficient spacing and SC 2.5.8 exceptions before declaring target-size nonconformance**
 
-- **Status/owner:** UNREVIEWED — None; distinct alternative/lead awaits owner
+- **Status/owner:** SELECTED — Owner accepted the scoped WCAG 2.2 SC 2.5.8 target-size and spacing assessment completed in TASK_004. Acceptance applies only to the documented measurements and conclusions. The two original mobile See more cases remain INCONCLUSIVE, and Roadmap stream targets remain NOT TESTED. No visual implementation or website-wide WCAG certification is implied.
 - **Provenance:** S01: Other/consolidated skill framework audit (Action source)
 - **Skill/source attribution:** ecc:accessibility; EXPLICIT; related finding: F-005.
 - **Target:** Stream targets and adjacent controls
 - **Proposed change:** Assess sufficient spacing and SC 2.5.8 exceptions before declaring target-size nonconformance
 - **Category / priority:** Verification / P2
-- **Evidence and confirmation:** 13px baseline verified; spacing exceptions not measured (S01 L331). This is an assessment, not a request to increase spacing.
+- **Evidence and confirmation:** TASK_004 measured Course List stream targets and nearby controls in accepted O/A/B fixtures. Original triggers passed through spacing; selected Demo B and R-023 targets passed direct minimum size in tested arrangements. Two original 360px upper-edge See more observations remain INCONCLUSIVE; Roadmap stream targets were absent and remain NOT TESTED. The owner accepted this scoped verification outcome only. F-005 remains a usability finding; no whole-site certification or UI implementation is implied.
 - **Expected benefit:** Avoid unsupported WCAG claims
 - **Regression risk:** Low; no automatic UI change
-- **Demonstrated:** NO
+- **Demonstrated:** TASK_004 — Scoped accessibility assessment completed and accepted by owner; no UI implementation
 - **Duplicate relationship:** No exact duplicates merged
 - **Exact source:** [S01 L148](TASK_001_CORRECTION_001/../TASK_001/evidence/sources/S01_AUDIT.txt#L148) — - `F-005`: stream triggers are 13 px high; assess target spacing exceptions before calling this a definitive WCAG failure.
+
+- **Verification evidence (historical TASK_004):** [TASK_REVIEW_004.md](TASK_004/TASK_REVIEW_004.md) · [WCAG_2_5_8_ASSESSMENT.md](TASK_004/WCAG_2_5_8_ASSESSMENT.md) · [target-measurements.json](TASK_004/evidence/target-measurements.json) · [closest-target-pairs.json](TASK_004/evidence/closest-target-pairs.json) · [TEST_RESULTS.txt](TASK_004/TEST_RESULTS.txt).
+- **Owner acceptance:** [TASK_004_DECISION_001](TASK_004_DECISION_001/DECISION_REPORT.md), verification outcome only. Original tested stream triggers pass spacing; selected Demo B/R-023 tested targets pass direct size. Two original 360px upper-edge See more observations remain INCONCLUSIVE; Roadmap stream targets remain NOT TESTED. No conclusive SC 2.5.8 failure was established within tested observations. Original F-005 usability finding remains intact. No whole-site certification, mobile-overlap repair, Roadmap change or additional verification is authorized.
 
 ### R-025
 

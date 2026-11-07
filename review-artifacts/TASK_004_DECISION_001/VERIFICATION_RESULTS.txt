@@ -1,0 +1,45 @@
+TASK_004_DECISION_001 — actual documentation-only verification
+
+Live original/workspace protection enabled using BRACU_ORIGINAL_REPO and BRACU_REVIEW_EXTERNAL_ROOT; personal local paths omitted.
+
+$ node --check review-artifacts/TASK_004_DECISION_001/verify-decision.test.cjs
+exit 0
+
+$ node --test review-artifacts/TASK_004_DECISION_001/verify-decision.test.cjs
+✔ 01: all 106 IDs preserved and other 105 complete records deeply unchanged (2.5408ms)
+✔ 02: exactly R-024 changes UNREVIEWED to SELECTED (0.3426ms)
+✔ 03: R-024 changes only authorized decision/verification metadata (0.2376ms)
+✔ 04: exact owner decision and exact verification label match the instruction (0.9512ms)
+✔ 05: acceptance is verification only and contains no implementation/certification authorization (0.1374ms)
+✔ 06: original inconclusive observations are preserved, never relabeled PASS (2.1343ms)
+✔ 07: absent Roadmap targets remain NOT TESTED, not verified (2.8683ms)
+✔ 08: accepted historical results agree with every saved assessment classification (2.0819ms)
+✔ 09: counts reconcile exactly and preserve extraction/deduplication history (0.4896ms)
+✔ 10: current master and ledger agree for every recommendation (3.3269ms)
+✔ 11: all other 105 master blocks and ledger rows remain unchanged (71.232ms)
+✔ 12: five historical evidence links are pinned and all original evidence bytes remain intact (176.8837ms)
+✔ 13: prior selections, exact reasons and preferred full-badge relationship are preserved (0.1764ms)
+✔ 14: current authority points to this decision and retains explicit earlier decision sources (0.0705ms)
+✔ 15: all historical/application paths unchanged; Git scope allows only current docs/new decision (86.7149ms)
+✔ 16: recorded original Git state and all five completed workspaces match before/after (0.1579ms)
+✔ 17: live original repository remains unchanged (151.6403ms)
+✔ 18: live completed workspace fingerprints remain unchanged (2038.3237ms)
+✔ 19: report states documentation-only testing, preserved HOLD and mandatory stop (0.0922ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2661.8902
+
+exit 0
+
+$ git diff --check
+exit 0
+
+
+Application/browser/accessibility measurement tests NOT RERUN. TASK_004 runtime/browser numbers referenced by the decision are historical evidence. Only documentation consistency and repository/evidence protection tests executed for this task.
+
+Remaining accepted limitations: two original 360px upper-edge mobile See more observations INCONCLUSIVE; Roadmap stream targets NOT TESTED because absent from the accepted fixture; no website-wide WCAG certification; no additional implementation/verification authorized.

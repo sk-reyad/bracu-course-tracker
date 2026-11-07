@@ -1,0 +1,80 @@
+{
+  "task": "TASK_004_DECISION_001",
+  "parent": "c5be83a407b6d5ba7d8542335f169376452d1110",
+  "base": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+  "scope": "Current master/ledger and new acceptance evidence only; no runtime or historical-evidence changes",
+  "statusTransition": {
+    "id": "R-024",
+    "from": "UNREVIEWED",
+    "to": "SELECTED"
+  },
+  "acceptanceType": "SCOPED_VERIFICATION_OUTCOME",
+  "limitations": {
+    "originalMobileSeeMore": "2 INCONCLUSIVE",
+    "roadmapStreamTargets": "NOT TESTED",
+    "websiteWideCertification": false,
+    "uiImplementationAuthorized": false
+  },
+  "otherCompleteRecordsUnchanged": 105,
+  "verification": {
+    "documentationPassed": 19,
+    "failed": 0,
+    "skipped": 0,
+    "applicationTestsRerun": false,
+    "browserTestsRerun": false
+  },
+  "expectedChangedFiles": 12,
+  "checksumPolicy": "Hash both current documents and all decision files except MANIFEST.json and SHA256SUMS.txt; SHA256SUMS also hashes the manifest without recursive self-hashing",
+  "files": [
+    {
+      "path": "review-artifacts/MASTER_RECOMMENDATIONS.md",
+      "bytes": 165789,
+      "sha256": "95d1585d3ff7835a5a5903d6682c9e7f1842646657ce060dcb63b7c5734cf0e5"
+    },
+    {
+      "path": "review-artifacts/REVIEW_LEDGER.md",
+      "bytes": 22210,
+      "sha256": "036f09f9fcb0cf1edc06cac1928836e3602d531be358ade1bae4f3b9932cc943"
+    },
+    {
+      "path": "review-artifacts/TASK_004_DECISION_001/COUNTS.json",
+      "bytes": 296,
+      "sha256": "f07078d52362cbbcadd387f6c8d36233e2ce726aae5a0129f8128c367caaab67"
+    },
+    {
+      "path": "review-artifacts/TASK_004_DECISION_001/DECISION_CHANGE.json",
+      "bytes": 8084,
+      "sha256": "08bac4103809849f413e560e274a9e0f5837530feca87a6d90c32576034a6f80"
+    },
+    {
+      "path": "review-artifacts/TASK_004_DECISION_001/DECISION_REPORT.md",
+      "bytes": 7952,
+      "sha256": "3a148c0ea60d481613631a2acb7fb6575c59db0a9b5c5f1e1b74ca2a0050be53"
+    },
+    {
+      "path": "review-artifacts/TASK_004_DECISION_001/GIT_PROTECTION.json",
+      "bytes": 3014,
+      "sha256": "08302b2e872642dbcd8994b0043c954b562930f4dabf6c8654a66f63fa081cf5"
+    },
+    {
+      "path": "review-artifacts/TASK_004_DECISION_001/OWNER_DECISION.txt",
+      "bytes": 6258,
+      "sha256": "ead8054c7372919ca896687cf20ac97aa9f1d7fb6170f076727793aa5a0eeb7b"
+    },
+    {
+      "path": "review-artifacts/TASK_004_DECISION_001/REGISTER.json",
+      "bytes": 270892,
+      "sha256": "b41fe0d08e46896238e258bb3dbb3f81362d1576021d51d00b9a53a9f6116a65"
+    },
+    {
+      "path": "review-artifacts/TASK_004_DECISION_001/VERIFICATION_RESULTS.txt",
+      "bytes": 2739,
+      "sha256": "f4f6b295c13d0768d286c97716d1fc22769182dcc32dfc91a519484cab98bd0a"
+    },
+    {
+      "path": "review-artifacts/TASK_004_DECISION_001/verify-decision.test.cjs",
+      "bytes": 13467,
+      "sha256": "3246ec46858a33a1c6ea3bff4dfa808abf484e8b16d2ee0b15d2d307d3cc4120"
+    }
+  ]
+}

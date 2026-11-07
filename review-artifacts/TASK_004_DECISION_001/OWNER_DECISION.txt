@@ -1,0 +1,191 @@
+# TASK_004_DECISION_001 — Record R-024 Selection
+
+Repository: `sk-reyad/bracu-course-tracker`
+
+Review branch: `temp/ui-ux-audit-review`
+
+Starting review commit: `c5be83a407b6d5ba7d8542335f169376452d1110`
+
+Protected original main: `9d86db46b1134a3755a2e269252b1ee1234f2570`
+
+## 1. Official Owner Decision
+
+The owner has explicitly decided:
+
+**R-024 — SELECTED**
+
+Accept the scoped WCAG 2.2 SC 2.5.8 target-size and spacing assessment completed in TASK_004.
+
+This is the selection of a **verification outcome**, NOT a visual design or application implementation.
+
+No new UI, HTML, CSS, JavaScript or production change is authorized.
+
+## 2. Exact Scope of Acceptance
+
+Record that the owner accepts the following evidence-based conclusions:
+
+- The original Course List stream triggers were approximately 13px high, but satisfied the spacing exception in the tested arrangements.
+- Selected Demo B stream targets satisfied the direct minimum-size requirement in the tested arrangements.
+- Selected R-023 full-badge targets satisfied the direct minimum-size requirement in the tested arrangements.
+- Two original 360px mobile upper-edge "See more" observations remain INCONCLUSIVE.
+- Roadmap stream targets were absent from the accepted test fixture and remain NOT TESTED.
+- The assessment does NOT certify the entire website as WCAG 2.2 compliant.
+- No conclusive SC 2.5.8 failure was established within the tested observations.
+
+Preserve these limitations explicitly.
+
+Do not describe the inconclusive cases as PASS.
+
+Do not describe the untested Roadmap targets as verified.
+
+Do not remove or rewrite the original F-005 usability finding.
+
+## 3. Update Authoritative Decision Records
+
+Before modifying anything, inspect the current authoritative register, counts, Master Recommendation Register and Review Ledger.
+
+Update:
+
+- `review-artifacts/MASTER_RECOMMENDATIONS.md`
+- `review-artifacts/REVIEW_LEDGER.md`
+- New current authoritative REGISTER.json and COUNTS.json snapshots
+
+Change only R-024:
+
+`UNREVIEWED → SELECTED`
+
+Record this exact decision meaning:
+
+"Owner accepted the scoped WCAG 2.2 SC 2.5.8 target-size and spacing assessment completed in TASK_004. Acceptance applies only to the documented measurements and conclusions. The two original mobile See more cases remain INCONCLUSIVE, and Roadmap stream targets remain NOT TESTED. No visual implementation or website-wide WCAG certification is implied."
+
+Set its demonstration/verification metadata to:
+
+`TASK_004 — Scoped accessibility assessment completed and accepted by owner; no UI implementation`
+
+Link directly to:
+
+- `TASK_004/TASK_REVIEW_004.md`
+- `TASK_004/WCAG_2_5_8_ASSESSMENT.md`
+- `TASK_004/evidence/target-measurements.json`
+- `TASK_004/evidence/closest-target-pairs.json`
+- `TASK_004/TEST_RESULTS.txt`
+
+Keep all original audit citations and historical evidence intact.
+
+## 4. Preserve Previous Selections
+
+R-022 remains SELECTED.
+
+R-023 remains SELECTED CANDIDATE and the preferred full-badge implementation.
+
+Preserve all other Demo A/B/C/D decisions and the rejected Native B / R-010 alternative.
+
+Do not change the other 105 recommendation records.
+
+Do not interpret R-024's selection as authorization to fix the original mobile tooltip overlap or modify Roadmap.
+
+Any additional implementation or verification must be separately authorized.
+
+## 5. Expected Counts
+
+If the latest authoritative state is still unchanged:
+
+- Total recommendations: 106
+- SELECTED: 25
+- REJECTED: 10
+- HOLD: 7
+- UNREVIEWED: 64
+- IN REVIEW: 0
+
+Only one status transition is authorized:
+
+`R-024: UNREVIEWED → SELECTED`
+
+Preserve all existing IDs, exact source citations, priorities, deduplication and owner-decision history.
+
+## 6. Required Decision Artifacts
+
+Create:
+
+`review-artifacts/TASK_004_DECISION_001/`
+
+Include:
+
+- `DECISION_REPORT.md`
+- `REGISTER.json`
+- `COUNTS.json`
+- `OWNER_DECISION.txt`
+- Verification results
+- Git/repository protection evidence
+- Manifest and checksums
+
+The report must distinguish:
+
+1. What TASK_004 actually tested.
+2. What the owner accepted.
+3. Which observations passed directly.
+4. Which observations passed through spacing.
+5. Which observations remain INCONCLUSIVE.
+6. Which Roadmap cases remain NOT TESTED.
+7. The absence of any new visual or application implementation.
+8. Preservation of selected R-022 and R-023.
+9. Unchanged status and metadata for the other 105 recommendations.
+10. Repository and historical-evidence protection.
+
+## 7. Verification Requirements
+
+Run documentation consistency tests and verify:
+
+- R-024 is SELECTED in every current authoritative decision record.
+- All other 105 recommendation records are unchanged.
+- Counts reconcile exactly.
+- TASK_004 evidence links resolve correctly.
+- Two inconclusive observations remain documented.
+- Roadmap testing limitation remains documented.
+- No unsupported whole-site WCAG compliance claim is introduced.
+- Master Register and Review Ledger agree.
+- Historical snapshots and reports remain immutable.
+- Only authorized review-artifact files changed.
+- Original main, application code and completed demo workspaces remain unchanged.
+
+Record actual test commands and outputs.
+
+Do not claim to have rerun application/browser tests if only documentation tests were executed.
+
+## 8. Repository Protection
+
+Do NOT:
+
+- Modify production HTML, CSS or JavaScript.
+- Modify the original `main` branch.
+- Modify API, Supabase, Auth, persistence, PDF or academic calculations.
+- Change completed demos or previous decisions.
+- Rewrite TASK_004's historical evidence.
+- Implement changes to the mobile See more tooltip.
+- Add synthetic Roadmap content.
+- Start R-025 or any other recommendation.
+- Merge or deploy.
+
+Publish documentation and review evidence only to:
+
+`temp/ui-ux-audit-review`
+
+## 9. Commit and STOP
+
+Use a meaningful commit message:
+
+`docs(review): record R-024 assessment acceptance`
+
+After committing and pushing, provide:
+
+- Full commit SHA
+- Direct decision report URL
+- Updated Master Recommendation Register URL
+- Verification summary
+- Confirmation that all protected files and branches remain unchanged
+
+**STOP immediately after publication.**
+
+Wait for independent ChatGPT review and the owner's explicit NEXT instruction.
+
+**EXECUTE ONLY TASK_004_DECISION_001.**

@@ -1,0 +1,177 @@
+{
+  "task": "TASK_004_DECISION_001",
+  "parent": "c5be83a407b6d5ba7d8542335f169376452d1110",
+  "id": "R-024",
+  "before": {
+    "id": "R-024",
+    "action": "Assess sufficient spacing and SC 2.5.8 exceptions before declaring target-size nonconformance",
+    "component": "Stream targets and adjacent controls",
+    "category": "Verification",
+    "priority": "P2",
+    "status": "UNREVIEWED",
+    "finding": "F-005",
+    "skills": [
+      "ecc:accessibility"
+    ],
+    "evidence": "13px baseline verified; spacing exceptions not measured (S01 L331). This is an assessment, not a request to increase spacing.",
+    "benefit": "Avoid unsupported WCAG claims",
+    "risk": "Low; no automatic UI change",
+    "refs": [
+      {
+        "source": "S01",
+        "start": 148,
+        "end": 148,
+        "quote": "- `F-005`: stream triggers are 13 px high; assess target spacing exceptions before calling this a definitive WCAG failure."
+      }
+    ],
+    "demonstrated": "NO",
+    "kind": "EXPLICIT",
+    "implementation": "Assess sufficient spacing and SC 2.5.8 exceptions before declaring target-size nonconformance",
+    "ownerDecision": "None; distinct alternative/lead awaits owner",
+    "provenance": [
+      {
+        "source": "S01",
+        "origin": "Other/consolidated skill framework audit",
+        "role": "Action source"
+      }
+    ]
+  },
+  "after": {
+    "id": "R-024",
+    "action": "Assess sufficient spacing and SC 2.5.8 exceptions before declaring target-size nonconformance",
+    "component": "Stream targets and adjacent controls",
+    "category": "Verification",
+    "priority": "P2",
+    "status": "SELECTED",
+    "finding": "F-005",
+    "skills": [
+      "ecc:accessibility"
+    ],
+    "evidence": "TASK_004 measured Course List stream targets and nearby controls in accepted O/A/B fixtures. Original triggers passed through spacing; selected Demo B and R-023 targets passed direct minimum size in tested arrangements. Two original 360px upper-edge See more observations remain INCONCLUSIVE; Roadmap stream targets were absent and remain NOT TESTED. The owner accepted this scoped verification outcome only. F-005 remains a usability finding; no whole-site certification or UI implementation is implied.",
+    "benefit": "Avoid unsupported WCAG claims",
+    "risk": "Low; no automatic UI change",
+    "refs": [
+      {
+        "source": "S01",
+        "start": 148,
+        "end": 148,
+        "quote": "- `F-005`: stream triggers are 13 px high; assess target spacing exceptions before calling this a definitive WCAG failure."
+      }
+    ],
+    "demonstrated": "TASK_004 — Scoped accessibility assessment completed and accepted by owner; no UI implementation",
+    "kind": "EXPLICIT",
+    "implementation": "Assess sufficient spacing and SC 2.5.8 exceptions before declaring target-size nonconformance",
+    "ownerDecision": "Owner accepted the scoped WCAG 2.2 SC 2.5.8 target-size and spacing assessment completed in TASK_004. Acceptance applies only to the documented measurements and conclusions. The two original mobile See more cases remain INCONCLUSIVE, and Roadmap stream targets remain NOT TESTED. No visual implementation or website-wide WCAG certification is implied.",
+    "provenance": [
+      {
+        "source": "S01",
+        "origin": "Other/consolidated skill framework audit",
+        "role": "Action source"
+      }
+    ],
+    "verificationEvidence": {
+      "report": "https://github.com/sk-reyad/bracu-course-tracker/blob/c5be83a407b6d5ba7d8542335f169376452d1110/review-artifacts/TASK_004/TASK_REVIEW_004.md",
+      "assessment": "https://github.com/sk-reyad/bracu-course-tracker/blob/c5be83a407b6d5ba7d8542335f169376452d1110/review-artifacts/TASK_004/WCAG_2_5_8_ASSESSMENT.md",
+      "measurements": "https://github.com/sk-reyad/bracu-course-tracker/blob/c5be83a407b6d5ba7d8542335f169376452d1110/review-artifacts/TASK_004/evidence/target-measurements.json",
+      "closestPairs": "https://github.com/sk-reyad/bracu-course-tracker/blob/c5be83a407b6d5ba7d8542335f169376452d1110/review-artifacts/TASK_004/evidence/closest-target-pairs.json",
+      "testResults": "https://github.com/sk-reyad/bracu-course-tracker/blob/c5be83a407b6d5ba7d8542335f169376452d1110/review-artifacts/TASK_004/TEST_RESULTS.txt"
+    },
+    "ownerDecisionRecord": {
+      "task": "TASK_004_DECISION_001",
+      "recordedOn": "2026-11-08",
+      "timezone": "Asia/Dhaka",
+      "selection": "SELECTED",
+      "acceptanceType": "SCOPED_VERIFICATION_OUTCOME",
+      "previousStatus": "UNREVIEWED",
+      "newStatus": "SELECTED",
+      "reason": "Owner accepted the scoped WCAG 2.2 SC 2.5.8 target-size and spacing assessment completed in TASK_004. Acceptance applies only to the documented measurements and conclusions. The two original mobile See more cases remain INCONCLUSIVE, and Roadmap stream targets remain NOT TESTED. No visual implementation or website-wide WCAG certification is implied.",
+      "acceptedScope": {
+        "originalCourseListStreamTriggers": "Approximately 13px high; PASS — Spacing exception in the tested arrangements",
+        "selectedDemoBStreamTargets": "PASS — Direct minimum target size in the tested arrangements",
+        "selectedR023FullBadgeTargets": "PASS — Direct minimum target size in the tested arrangements",
+        "originalMobileSeeMore": {
+          "classification": "INCONCLUSIVE",
+          "observations": 2,
+          "widthCssPixels": 360,
+          "position": "upper edge",
+          "themes": [
+            "light",
+            "dark"
+          ]
+        },
+        "roadmapStreamTargets": {
+          "classification": "NOT TESTED",
+          "reason": "Absent from the accepted fixture"
+        },
+        "websiteWideWcagCertification": false,
+        "conclusiveSc258FailuresEstablished": 0,
+        "uiImplementationAuthorized": false,
+        "additionalVerificationOrRepairAuthorized": false
+      },
+      "source": "OWNER_DECISION.txt",
+      "productionImplementationAuthorized": false
+    }
+  },
+  "statusTransitions": [
+    {
+      "id": "R-024",
+      "from": "UNREVIEWED",
+      "to": "SELECTED"
+    }
+  ],
+  "exactOwnerDecision": "Owner accepted the scoped WCAG 2.2 SC 2.5.8 target-size and spacing assessment completed in TASK_004. Acceptance applies only to the documented measurements and conclusions. The two original mobile See more cases remain INCONCLUSIVE, and Roadmap stream targets remain NOT TESTED. No visual implementation or website-wide WCAG certification is implied.",
+  "acceptedScope": {
+    "originalCourseListStreamTriggers": "Approximately 13px high; PASS — Spacing exception in the tested arrangements",
+    "selectedDemoBStreamTargets": "PASS — Direct minimum target size in the tested arrangements",
+    "selectedR023FullBadgeTargets": "PASS — Direct minimum target size in the tested arrangements",
+    "originalMobileSeeMore": {
+      "classification": "INCONCLUSIVE",
+      "observations": 2,
+      "widthCssPixels": 360,
+      "position": "upper edge",
+      "themes": [
+        "light",
+        "dark"
+      ]
+    },
+    "roadmapStreamTargets": {
+      "classification": "NOT TESTED",
+      "reason": "Absent from the accepted fixture"
+    },
+    "websiteWideWcagCertification": false,
+    "conclusiveSc258FailuresEstablished": 0,
+    "uiImplementationAuthorized": false,
+    "additionalVerificationOrRepairAuthorized": false
+  },
+  "other105RecordsUnchanged": true,
+  "countsBefore": {
+    "retained": 106,
+    "rawAtomicSourceOccurrences": 119,
+    "exactDuplicateOccurrencesRemoved": 13,
+    "statuses": {
+      "SELECTED": 24,
+      "REJECTED": 10,
+      "HOLD": 7,
+      "UNREVIEWED": 65,
+      "IN REVIEW": 0
+    },
+    "statusChangesThisDecision": 1,
+    "addedRecords": 0,
+    "removedRecords": 0
+  },
+  "countsAfter": {
+    "retained": 106,
+    "rawAtomicSourceOccurrences": 119,
+    "exactDuplicateOccurrencesRemoved": 13,
+    "statuses": {
+      "SELECTED": 25,
+      "REJECTED": 10,
+      "HOLD": 7,
+      "UNREVIEWED": 64,
+      "IN REVIEW": 0
+    },
+    "statusChangesThisDecision": 1,
+    "addedRecords": 0,
+    "removedRecords": 0
+  }
+}
