@@ -1,0 +1,40 @@
+TASK_003_DECISION_001 — actual author verification
+
+BRACU_ORIGINAL_REPO and BRACU_REVIEW_EXTERNAL_ROOT supplied to enable both live protection tests. Local personal paths omitted.
+
+$ node --check review-artifacts/TASK_003_DECISION_001/verify-decision.test.cjs
+exit 0
+
+$ node --test review-artifacts/TASK_003_DECISION_001/verify-decision.test.cjs
+✔ 01: all 106 IDs retained; other 105 complete records unchanged (1.8989ms)
+✔ 02: exactly one authorized status transition (0.3517ms)
+✔ 03: R-023 changes decision/demonstration metadata only (0.1676ms)
+✔ 04: exact owner wording and demonstrated field preserved (1.8681ms)
+✔ 05: counts reconcile with every record and expected single transition (0.2891ms)
+✔ 06: current master and ledger agree with all 106 statuses (4.3773ms)
+✔ 07: R-022 is fully unchanged; single implementation relationship is explicit (0.8129ms)
+✔ 08: every other current recommendation block and ledger row is unchanged (107.5473ms)
+✔ 09: exact-only deduplication, source occurrences and reconciliation untouched (0.3591ms)
+✔ 10: all four technical evidence links are pinned and unchanged (137.696ms)
+✔ 11: authority points to this decision; technical evidence is separate from selection (0.9404ms)
+✔ 12: historical artifacts and application paths have no diff (108.7753ms)
+✔ 13: recorded original and completed-workspace protection matches before/after (0.1266ms)
+✔ 14: live original repository remains protected (166.2754ms)
+✔ 15: live completed demo files match recorded fingerprints (4834.8393ms)
+✔ 16: report is documentation-only and stops before further work (1.2097ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5491.6534
+
+exit 0
+
+$ git diff --check
+exit 0
+
+
+Application/browser/cloud tests NOT RERUN: documentation-only owner-decision recording. Historical TASK_003 results remain evidence from their original run.

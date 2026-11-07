@@ -1,0 +1,72 @@
+{
+  "task": "TASK_003_DECISION_001",
+  "parent": "426a1cebac9a617d7ef5ce27eeb2782aed2c70ee",
+  "base": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+  "authority": "REGISTER.json / COUNTS.json",
+  "scope": "Only current master/ledger and new owner-decision evidence; no runtime or historical evidence changes",
+  "statusTransition": {
+    "id": "R-023",
+    "from": "UNREVIEWED",
+    "to": "SELECTED"
+  },
+  "unchangedOtherRecords": 105,
+  "tests": {
+    "passed": 16,
+    "failed": 0,
+    "skipped": 0
+  },
+  "expectedChangedFiles": 12,
+  "checksumPolicy": "Files include current master/ledger and all decision files except MANIFEST.json and SHA256SUMS.txt. SHA256SUMS also hashes MANIFEST.json; no recursive self-hash.",
+  "files": [
+    {
+      "path": "review-artifacts/MASTER_RECOMMENDATIONS.md",
+      "bytes": 163578,
+      "sha256": "cd4475291cede897b5099cc6382a7d68b9fd195a45406c65fa68a569cedd476f"
+    },
+    {
+      "path": "review-artifacts/REVIEW_LEDGER.md",
+      "bytes": 20007,
+      "sha256": "62683fcf02ff0c3a389a5966c91d9713c10bd1b14016dc00a93e3cb2e667d557"
+    },
+    {
+      "path": "review-artifacts/TASK_003_DECISION_001/COUNTS.json",
+      "bytes": 296,
+      "sha256": "15d97ca9cea03dce304676b51c25e6ae6a96f70d2df24fc907acdeb87137e131"
+    },
+    {
+      "path": "review-artifacts/TASK_003_DECISION_001/DECISION_CHANGE.json",
+      "bytes": 5897,
+      "sha256": "9167697a667543cddcb3eef26f53729b9282e5f6d3bce7c3c845c157ae02de34"
+    },
+    {
+      "path": "review-artifacts/TASK_003_DECISION_001/DECISION_REPORT.md",
+      "bytes": 6736,
+      "sha256": "ccc65b62fc46c04c8184bd023ac220f1a2c9f6744428069072bef3c08eecf496"
+    },
+    {
+      "path": "review-artifacts/TASK_003_DECISION_001/GIT_PROTECTION.json",
+      "bytes": 2689,
+      "sha256": "b9b5a8cdb8cb06e4e1506da8b3546496da0d895d9a45fcf896a64a54a207f514"
+    },
+    {
+      "path": "review-artifacts/TASK_003_DECISION_001/OWNER_DECISION.txt",
+      "bytes": 5021,
+      "sha256": "79d4de82f34eb39a7e93c973240a8e3114ae2b0f86a2789ffffa9681e0771b97"
+    },
+    {
+      "path": "review-artifacts/TASK_003_DECISION_001/REGISTER.json",
+      "bytes": 267158,
+      "sha256": "5b745a8b14b677a600521563f7d65e1d54564eaa05ac9bd4b78e79200c77151c"
+    },
+    {
+      "path": "review-artifacts/TASK_003_DECISION_001/VERIFICATION_RESULTS.txt",
+      "bytes": 1938,
+      "sha256": "69a2ba2679e0e2611d736b4850add333c4244c7df8971d274258b06508e5293b"
+    },
+    {
+      "path": "review-artifacts/TASK_003_DECISION_001/verify-decision.test.cjs",
+      "bytes": 10284,
+      "sha256": "2bf1c73ae4b55ae6f9be3ab470bcb6d67eb9bbf8d65d678639b77f918e6e101a"
+    }
+  ]
+}

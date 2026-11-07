@@ -1,6 +1,6 @@
 # Review ledger
 
-Current metadata correction: TASK_002_DECISION_002; final decision remains TASK_002_DECISION_001. R-010 REJECTED; Demo A remains the preferred SELECTED CANDIDATE. Demo B SELECTED CANDIDATE; Demo C HOLD; Demo D rejected visual styling preserved. 23 selected, 10 rejected, 7 held, 66 unreviewed, 0 in review. Only R-010 changed status. No production authorization.
+Current owner decision: TASK_003_DECISION_001. R-023 SELECTED CANDIDATE; R-022 remains SELECTED as the minimum-size requirement. Other selected Demo B improvements are retained; only its earlier inner-trigger-only treatment is superseded by R-023. R-010 remains REJECTED; Demo A SELECTED CANDIDATE, Demo B SELECTED CANDIDATE, Demo C HOLD, Demo D rejected. 24 selected, 10 rejected, 7 held, 65 unreviewed, 0 in review. Only R-023 changed status in this decision. No production authorization.
 
 | ID | Recommendation | Status | Prior demonstration |
 | --- | --- | --- | --- |
@@ -26,7 +26,7 @@ Current metadata correction: TASK_002_DECISION_002; final decision remains TASK_
 | [R-020](MASTER_RECOMMENDATIONS.md#r-020) | Implement Home/End navigation to the first/last Settings tab | SELECTED | Demo A |
 | [R-021](MASTER_RECOMMENDATIONS.md#r-021) | Reuse the existing Admin Catalog tab interaction pattern | SELECTED | Demo A |
 | [R-022](MASTER_RECOMMENDATIONS.md#r-022) | Increase the actual stream trigger box to at least 24 by 24 CSS pixels | SELECTED | Demo B |
-| [R-023](MASTER_RECOMMENDATIONS.md#r-023) | Make the containing stream badge the interactive target | UNREVIEWED | NO |
+| [R-023](MASTER_RECOMMENDATIONS.md#r-023) | Make the containing stream badge the interactive target | SELECTED | TASK_003 — Full-badge interactive alternative demonstrated and selected by owner · [report](TASK_003/TASK_REVIEW_003.md) · [gallery](TASK_003/GALLERY.md) · [hit area](TASK_003/evidence/HIT_AREA_COMPARISON.json) · [diff](TASK_003/CHANGES.diff) |
 | [R-024](MASTER_RECOMMENDATIONS.md#r-024) | Assess sufficient spacing and SC 2.5.8 exceptions before declaring target-size nonconformance | UNREVIEWED | NO |
 | [R-025](MASTER_RECOMMENDATIONS.md#r-025) | Choose instant/auto scrolling under reduced motion for Back to Top, retaining smooth otherwise | HOLD | Demo C (Admin via synthetic DOM harness) |
 | [R-026](MASTER_RECOMMENDATIONS.md#r-026) | Choose instant/auto scrolling under reduced motion for stream See more, retaining smooth otherwise | HOLD | Demo C (Admin via synthetic DOM harness) |
@@ -121,8 +121,10 @@ Current metadata correction: TASK_002_DECISION_002; final decision remains TASK_
 
 | [TASK_002_DECISION_001](TASK_002_DECISION_001/DECISION_REPORT.md) | R-010 rejected; keep selected Demo A | FINAL OWNER DECISION RECORDED | Wait for explicit NEXT |
 | [TASK_002_DECISION_002](TASK_002_DECISION_002/CORRECTION_REPORT.md) | R-010 demonstration/evidence metadata correction only | REJECTED decision unchanged | Wait for explicit NEXT |
+| [TASK_003](TASK_003/TASK_REVIEW_003.md) | Three-way R-023 technical demonstration | Historical technical verification with limitations; owner decision recorded below | Evidence remains unchanged |
+| [TASK_003_DECISION_001](TASK_003_DECISION_001/DECISION_REPORT.md) | R-023 selected; R-022 requirement and other Demo B improvements retained | FINAL OWNER DECISION RECORDED | Wait for explicit NEXT |
 
-R-056–R-064 were refined with recovered actions; R-065 remains a broader later-owner lead; actual S12 names Course List within broad overflow scope, but no distinct remaining cause was verified. R-090–R-106 are new and UNREVIEWED. R-009/R-011 gained exact source corroboration and retained selected status. No demo has started.
+R-056–R-064 were refined with recovered actions; R-065 remains a broader later-owner lead; actual S12 names Course List within broad overflow scope, but no distinct remaining cause was verified. R-090–R-106 are new and UNREVIEWED. R-009/R-011 gained exact source corroboration and retained selected status. No demo had started at that source-recovery checkpoint; later TASK_002/TASK_003 demonstrations are recorded separately.
 
 Historical source identity correction (TASK_001_CORRECTION_002): S12 is the actual original (path-only sanitized); S10 is the preserved structured restatement; S11/S13 are later instructions. All 28 clauses supported. Count remains 106; no selection, rejection or hold changed.
 
@@ -130,4 +132,14 @@ Historical source identity correction (TASK_001_CORRECTION_002): S12 is the actu
 
 Owner rejected the native-dialog implementation alternative after comparing it with the previously selected Demo A. The existing custom-modal accessibility improvements in Demo A remain the preferred candidate. No distinct visual or tested usability advantage justified replacing the selected implementation.
 
-This architecture decision is distinct from the nine earlier Demo D visual-treatment rejections. F-002 and all related recommendations except R-010 retain their existing statuses. [Current authoritative register](TASK_002_DECISION_002/REGISTER.json) · [current counts](TASK_002_DECISION_002/COUNTS.json). Previous TASK_002 comparison/focus evidence remains available; neither selected A nor rejected Native B source is modified. Wait for explicit NEXT; no next recommendation started.
+This architecture decision is distinct from the nine earlier Demo D visual-treatment rejections. F-002 and all related recommendations except R-010 retain their existing statuses. [Current authoritative register](TASK_003_DECISION_001/REGISTER.json) · [current counts](TASK_003_DECISION_001/COUNTS.json). Previous TASK_002 comparison/focus evidence remains available; neither selected A nor rejected Native B source is modified. Wait for explicit NEXT; no next recommendation started.
+
+## Final owner decision — R-023
+
+Owner selected R-023's full-badge interactive target after reviewing TASK_003. The entire visible stream badge is the preferred clickable surface. The previously selected Demo B tooltip, accessibility, positioning and overflow improvements remain preserved.
+
+**Demonstrated:** TASK_003 — Full-badge interactive alternative demonstrated and selected by owner.
+
+R-022 remains the selected minimum interactive target-size requirement, satisfied by R-023. R-023 is the owner-selected preferred implementation using the entire visible stream badge. It supersedes only the earlier inner-trigger-only treatment, preserving Demo B tooltip, accessibility, positioning, scrolling, dismissal and overflow improvements. Any eventual separately authorized production implementation must combine these requirements in one implementation, not create competing controls.
+
+Technical tests and owner selection are separate evidence. [Decision report](TASK_003_DECISION_001/DECISION_REPORT.md) · [current authoritative register](TASK_003_DECISION_001/REGISTER.json) · [current counts](TASK_003_DECISION_001/COUNTS.json). Historical TASK_003 files still describe the decision-pending state at their publication; they are immutable history, not current authority. STOP; wait for explicit NEXT.

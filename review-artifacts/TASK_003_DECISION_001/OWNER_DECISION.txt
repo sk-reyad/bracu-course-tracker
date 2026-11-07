@@ -1,0 +1,177 @@
+# TASK_003_DECISION_001 — Record R-023 Selection
+
+Repository: `sk-reyad/bracu-course-tracker`
+
+Review branch: `temp/ui-ux-audit-review`
+
+Verified starting commit: `426a1cebac9a617d7ef5ce27eeb2782aed2c70ee`
+
+Original main baseline: `9d86db46b1134a3755a2e269252b1ee1234f2570`
+
+## 1. Official Owner Decision
+
+The owner explicitly selected:
+
+**R-023 — SELECTED CANDIDATE**
+
+Preferred implementation: Full-Badge Interactive Target, demonstrated in TASK_003.
+
+The owner prefers R-023 over the earlier inner-button-only target treatment in Demo B.
+
+This selection applies only to the curriculum stream badge's interactive target.
+
+Preserve the other previously selected Demo B improvements.
+
+No production implementation is authorized.
+
+## 2. Update the Master Register and Review Ledger
+
+Read the latest authoritative records before editing.
+
+Update:
+
+- `review-artifacts/MASTER_RECOMMENDATIONS.md`
+- `review-artifacts/REVIEW_LEDGER.md`
+- The new authoritative machine-readable register and counts
+
+Change R-023:
+
+`UNREVIEWED → SELECTED`
+
+Record the owner decision:
+
+"Owner selected R-023's full-badge interactive target after reviewing TASK_003. The entire visible stream badge is the preferred clickable surface. The previously selected Demo B tooltip, accessibility, positioning and overflow improvements remain preserved."
+
+Update the demonstrated field:
+
+`TASK_003 — Full-badge interactive alternative demonstrated and selected by owner`
+
+Link directly to:
+
+- TASK_003/TASK_REVIEW_003.md
+- TASK_003/GALLERY.md
+- TASK_003/evidence/HIT_AREA_COMPARISON.json
+- TASK_003/CHANGES.diff
+
+Distinguish technical test results from the owner's final design decision.
+
+## 3. Preserve R-022 Correctly
+
+Do NOT automatically reject R-022.
+
+R-022 remains SELECTED because its minimum target-size requirement is satisfied by the R-023 implementation.
+
+Document the relationship:
+
+- R-022: selected minimum interactive target-size requirement.
+- R-023: owner-selected preferred implementation using the entire visible badge.
+- Demo B: selected tooltip and interaction improvements retained.
+- R-023 supersedes only the earlier inner-trigger-only implementation treatment, not the target-size requirement or other Demo B improvements.
+
+Do not create two competing implementations in the eventual production implementation.
+
+Only R-023's status may change.
+
+Do not change R-022's existing status or other owner decisions.
+
+## 4. Expected Recommendation Counts
+
+If the current authoritative baseline remains unchanged:
+
+- Total: 106
+- SELECTED: 24
+- REJECTED: 10
+- HOLD: 7
+- UNREVIEWED: 65
+- IN REVIEW: 0
+
+Only one status transition is authorized:
+
+`R-023: UNREVIEWED → SELECTED`
+
+Preserve all recommendation IDs, source citations, priorities, identities and deduplication history.
+
+The other 105 statuses must remain unchanged.
+
+## 5. Required Decision Evidence
+
+Create:
+
+`review-artifacts/TASK_003_DECISION_001/`
+
+Include:
+
+- `DECISION_REPORT.md`
+- Current authoritative `REGISTER.json`
+- Current `COUNTS.json`
+- Owner decision record
+- Verification results
+- Git protection evidence
+- Manifest and checksums
+
+The report must confirm:
+
+1. Exact owner selection.
+2. R-023's previous and new statuses.
+3. R-022's unchanged selected status.
+4. The implementation relationship between R-022 and R-023.
+5. Preservation of other Demo B improvements.
+6. Updated recommendation totals.
+7. The other 105 recommendation statuses remain unchanged.
+8. Original main and application source remain untouched.
+9. Historical TASK_003 artifacts and all completed demos remain unchanged.
+10. No production merge, deployment or implementation occurred.
+
+## 6. Verification
+
+Run appropriate documentation consistency checks.
+
+Verify:
+
+- R-023 SELECTED in every current authoritative record.
+- R-022 SELECTED and not rejected.
+- All other owner decisions unchanged.
+- Updated counts reconcile.
+- Technical evidence links are correct.
+- No historical evidence or application code changed.
+- Git diff contains only authorized review-artifact changes.
+- Original main remains at the protected baseline commit.
+
+Record exact commands, outputs, failures and limitations.
+
+## 7. Strict Protection
+
+Do not:
+
+- Modify production HTML, CSS or JavaScript.
+- Modify the original main branch.
+- Modify completed demo workspaces.
+- Modify rejected Native B.
+- Change API, Supabase, Auth, academic calculations, PDF or persistence logic.
+- Rewrite earlier immutable reports.
+- Start R-024.
+- Merge or deploy.
+
+Only publish documentation and decision evidence under `review-artifacts/` to the temporary review branch.
+
+## 8. Commit, Publish and STOP
+
+Commit using a meaningful message:
+
+`docs(review): select R-023 full-badge interactive target`
+
+Push normally to:
+
+`temp/ui-ux-audit-review`
+
+Provide:
+
+- Full commit SHA
+- Direct GitHub decision report URL
+- Updated Master Recommendation Register URL
+- Verification results
+- Confirmation of repository protection
+
+**STOP after publishing.**
+
+Do not begin the next recommendation until the owner explicitly says NEXT.

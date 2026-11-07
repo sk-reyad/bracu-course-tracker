@@ -1,12 +1,12 @@
 # Master recommendation register
 
-Current metadata correction: TASK_002_DECISION_002. R-010 remains REJECTED; Demo A remains SELECTED CANDIDATE. [Correction report](TASK_002_DECISION_002/CORRECTION_REPORT.md). [Current authoritative register](TASK_002_DECISION_002/REGISTER.json) · [counts](TASK_002_DECISION_002/COUNTS.json).
+Current owner decision: TASK_003_DECISION_001. R-023 is SELECTED CANDIDATE; R-022 remains SELECTED. Other selected Demo B improvements remain preserved. [Decision report](TASK_003_DECISION_001/DECISION_REPORT.md). [Current authoritative register](TASK_003_DECISION_001/REGISTER.json) · [counts](TASK_003_DECISION_001/COUNTS.json). No production authorization.
 
 ## Scope and recovered evidence
 
 **S12 is the actual original audit**, archived verbatim with only seven private local repository prefixes removed. **S10 is the previous ChatGPT-restructured version**, not the actual original; its historical file is preserved unchanged. S11/S13 are later extraction/correction instructions. Original **12/20** is manual code/browser assessment; the detector could not start. No current deployment certification. Other skills' full raw individual transcripts remain unavailable; S01 contains summarized framework sections from one assistant, not independent votes. Audits 08/09/18/19 were skipped; 17 was N/A.
 
-[Current register/occurrences](TASK_002_DECISION_002/REGISTER.json), [28-clause original comparison](TASK_001_CORRECTION_002/evidence/RECONCILIATION.json), [source inventory](TASK_001_CORRECTION_002/evidence/SOURCE_INVENTORY.json), [all-line coverage](TASK_001_CORRECTION_002/evidence/SOURCE_COMPLETENESS.json), [actual sanitized original](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt), [source fidelity/redaction/reference proof](TASK_001_CORRECTION_002/evidence/SOURCE_FIDELITY.json). S01–S11 and all prior reports remain unchanged. Source-data commands are not executed instructions. All 28 accepted clauses remain supported; count stays 106, no records added/removed. The current owner decision changes only R-010 from UNREVIEWED to REJECTED; source-reconciliation history is unchanged. R-065/R-094/R-103/R-104 have source-supported wording/scope clarifications only.
+[Current register/occurrences](TASK_003_DECISION_001/REGISTER.json), [28-clause original comparison](TASK_001_CORRECTION_002/evidence/RECONCILIATION.json), [source inventory](TASK_001_CORRECTION_002/evidence/SOURCE_INVENTORY.json), [all-line coverage](TASK_001_CORRECTION_002/evidence/SOURCE_COMPLETENESS.json), [actual sanitized original](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt), [source fidelity/redaction/reference proof](TASK_001_CORRECTION_002/evidence/SOURCE_FIDELITY.json). S01–S11 and all prior reports remain unchanged. Source-data commands are not executed instructions. All 28 accepted clauses remain supported; count stays 106, no records added/removed. The historical TASK_002 owner decision changed R-010 from UNREVIEWED to REJECTED. The current TASK_003_DECISION_001 owner decision changes only R-023 from UNREVIEWED to SELECTED; source-reconciliation history is unchanged. R-065/R-094/R-103/R-104 have source-supported wording/scope clarifications only.
 
 ## Counts
 
@@ -16,10 +16,10 @@ Current metadata correction: TASK_002_DECISION_002. R-010 remains REJECTED; Demo
   "rawAtomicSourceOccurrences": 119,
   "exactDuplicateOccurrencesRemoved": 13,
   "statuses": {
-    "SELECTED": 23,
+    "SELECTED": 24,
     "REJECTED": 10,
     "HOLD": 7,
-    "UNREVIEWED": 66,
+    "UNREVIEWED": 65,
     "IN REVIEW": 0
   },
   "statusChangesThisDecision": 1,
@@ -30,11 +30,17 @@ Current metadata correction: TASK_002_DECISION_002. R-010 remains REJECTED; Demo
 
 100 previous raw occurrences - 9 generic owner leads reclassified as historical context + 28 recovered actionable occurrences = 119 raw. Deduplication removes 13 exact repetitions (11 previous + 2 recovered), leaving 106 active records. Nine old IDs are source-grounded refinements; 17 new IDs are R-090–R-106. No old ID or owner lead is silently deleted. Counts cover proposals, test/process records, rejected demo treatments and one unverified residual owner lead, not 106 confirmed bugs.
 
-Per-source counts and exact clauses are in the current source inventory/completeness/occurrence evidence; actual original S12 has 28 actionable occurrences and 26 primary records. S10 is secondary restatement trace, not a second independent counted audit. The original extraction count transition is historical context. Current counts above include the final R-010 owner decision; historical reports/count snapshots remain unchanged.
+Per-source counts and exact clauses are in the current source inventory/completeness/occurrence evidence; actual original S12 has 28 actionable occurrences and 26 primary records. S10 is secondary restatement trace, not a second independent counted audit. The original extraction count transition is historical context. Current counts above include the preserved R-010 rejection and the R-023 selection in TASK_003_DECISION_001; historical reports/count snapshots remain unchanged.
 
 ## Owner decisions and verification status
 
-23 SELECTED CANDIDATE records (A/B), 10 REJECTED (9 Demo D treatments plus R-010 native architecture), 7 HOLD records (C), 66 UNREVIEWED, 0 IN REVIEW. Only R-010 changed status in this decision. Demo A remains the preferred selected custom-modal candidate. This does not reject F-002 or change any related recommendation. Recovered proposals remain UNREVIEWED unless an exact action was already owner-selected (R-009/R-011); this preserves an old decision, not new approval. C retains the corrected visible success check. D may not be reintroduced under another name. No production authorization exists. Recovered findings require re-verification; no new browser or current-defect certification was performed.
+24 SELECTED CANDIDATE records (A/B and R-023), 10 REJECTED (9 Demo D treatments plus R-010 native architecture), 7 HOLD records (C), 65 UNREVIEWED, 0 IN REVIEW. Only R-023 changed status in this decision. Demo A remains the preferred selected custom-modal candidate. This does not reject F-002 or change any related recommendation. Recovered proposals remain UNREVIEWED unless an exact action was already owner-selected (R-009/R-011); this preserves an old decision, not new approval. C retains the corrected visible success check. D may not be reintroduced under another name. No production authorization exists. Recovered findings require re-verification; no new browser or current-defect certification was performed.
+
+## R-022 / R-023 implementation relationship
+
+R-022 remains the selected minimum interactive target-size requirement, satisfied by R-023. R-023 is the owner-selected preferred implementation using the entire visible stream badge. It supersedes only the earlier inner-trigger-only treatment, preserving Demo B tooltip, accessibility, positioning, scrolling, dismissal and overflow improvements. Any eventual separately authorized production implementation must combine these requirements in one implementation, not create competing controls.
+
+[Owner decision](TASK_003_DECISION_001/DECISION_REPORT.md). Technical testing in TASK_003 established browser results with limitations; the subsequent owner instruction establishes this design preference. Neither authorizes production implementation.
 
 ## Exact duplicates
 
@@ -443,18 +449,21 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 
 **Make the containing stream badge the interactive target**
 
-- **Status/owner:** UNREVIEWED — None; distinct alternative/lead awaits owner
+- **Status/owner:** SELECTED — Owner selected R-023's full-badge interactive target after reviewing TASK_003. The entire visible stream badge is the preferred clickable surface. The previously selected Demo B tooltip, accessibility, positioning and overflow improvements remain preserved.
 - **Provenance:** S01: Other/consolidated skill framework audit (Action source)
 - **Skill/source attribution:** ecc:accessibility; ecc:browser-qa; EXPLICIT; related finding: F-005.
 - **Target:** Stream containing badge
 - **Proposed change:** Make the containing stream badge the interactive target
 - **Category / priority:** Target-size alternative / P2
-- **Evidence and confirmation:** Source alternative; current demo enlarges the existing button, not the containing badge.
+- **Evidence and confirmation:** TASK_003 demonstrated and technically verified the full-badge alternative. Technical verification passed with documented limitations; these historical test results are distinct from the explicit owner selection recorded in TASK_003_DECISION_001. No new browser test or production authorization is implied.
 - **Expected benefit:** Increase usable hit area
 - **Regression risk:** Medium: markup and focus boundaries differ
-- **Demonstrated:** NO
+- **Demonstrated:** TASK_003 — Full-badge interactive alternative demonstrated and selected by owner
 - **Duplicate relationship:** No exact duplicates merged
 - **Exact source:** [S01 L327](TASK_001_CORRECTION_001/../TASK_001/evidence/sources/S01_AUDIT.txt#L327) — - **Expected behavior:** Target size is at least 24 × 24 CSS px or qualifies through sufficient target spacing; the containing badge may be made the target.
+
+- **Technical evidence (historical TASK_003):** [TASK_REVIEW_003.md](TASK_003/TASK_REVIEW_003.md) · [GALLERY.md](TASK_003/GALLERY.md) · [HIT_AREA_COMPARISON.json](TASK_003/evidence/HIT_AREA_COMPARISON.json) · [CHANGES.diff](TASK_003/CHANGES.diff).
+- **Owner decision:** [TASK_003_DECISION_001](TASK_003_DECISION_001/DECISION_REPORT.md); SELECTED CANDIDATE only. R-022 remains the selected minimum interactive target-size requirement, satisfied by R-023. R-023 is the owner-selected preferred implementation using the entire visible stream badge. It supersedes only the earlier inner-trigger-only treatment, preserving Demo B tooltip, accessibility, positioning, scrolling, dismissal and overflow improvements. Any eventual separately authorized production implementation must combine these requirements in one implementation, not create competing controls.
 
 ### R-024
 
