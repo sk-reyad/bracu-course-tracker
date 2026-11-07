@@ -1,0 +1,6 @@
+diff --git a/js/app.js b/js/app.js
+--- a/js/app.js
++++ b/js/app.js
+@@ -1843,1 +1843,1 @@
+-// Native modality owns focus containment and background blocking; no custom Tab trap.
++// Native modality owns background blocking; explicit first/last Tab wrapping is installed below.

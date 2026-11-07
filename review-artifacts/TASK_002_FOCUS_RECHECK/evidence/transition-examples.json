@@ -1,0 +1,134 @@
+[
+  {
+    "modal": "settingsModal",
+    "initial": {
+      "tag": "BUTTON",
+      "id": "",
+      "closeFor": "settingsModal",
+      "label": "Close Settings",
+      "tab": null,
+      "isHost": false,
+      "isClose": true,
+      "html": "<button class=\"icon-button\" type=\"button\" data-close-modal=\"settingsModal\" aria-label=\"Close Settings\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-lucide=\"x\" class=\"lucide lucide-x\"><path d=\"M18 "
+    },
+    "firstTab": {
+      "tag": "BUTTON",
+      "id": "settings-tab-facultyEditor",
+      "closeFor": null,
+      "label": null,
+      "tab": "tab",
+      "isHost": false,
+      "isClose": false,
+      "html": "<button class=\"tab-btn active\" data-tab=\"facultyEditor\" type=\"button\" id=\"settings-tab-facultyEditor\" role=\"tab\" aria-selected=\"true\" aria-controls=\"facultyEditor\" tabindex=\"0\">\n            Faculty List\n          </button>"
+    },
+    "firstShiftTab": {
+      "tag": "BUTTON",
+      "id": "",
+      "closeFor": null,
+      "label": null,
+      "tab": null,
+      "isHost": false,
+      "isClose": false,
+      "html": "<button class=\"secondary-btn\" type=\"button\" data-action=\"edit-faculty\" data-faculty-id=\"fac-cse-zyh\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-lucide=\"pencil\" class=\"lucide lucide-pencil\"><path d=\"M21.174 6"
+    }
+  },
+  {
+    "modal": "dashboardModal",
+    "initial": {
+      "tag": "BUTTON",
+      "id": "",
+      "closeFor": "dashboardModal",
+      "label": "Close Dashboard",
+      "tab": null,
+      "isHost": false,
+      "isClose": true,
+      "html": "<button class=\"icon-button\" type=\"button\" data-close-modal=\"dashboardModal\" aria-label=\"Close Dashboard\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-lucide=\"x\" class=\"lucide lucide-x\"><path d=\"M1"
+    },
+    "firstTab": {
+      "tag": "BUTTON",
+      "id": "",
+      "closeFor": null,
+      "label": null,
+      "tab": null,
+      "isHost": false,
+      "isClose": false,
+      "html": "<button class=\"secondary-btn small-btn\" type=\"button\" data-action=\"edit-profile\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-lucide=\"pencil\" class=\"lucide lucide-pencil\"><path d=\"M21.174 6.812a1 1 0 0 0-3.986"
+    },
+    "firstShiftTab": {
+      "tag": "BUTTON",
+      "id": "",
+      "closeFor": null,
+      "label": null,
+      "tab": null,
+      "isHost": false,
+      "isClose": false,
+      "html": "<button class=\"secondary-btn small-btn support-trigger\" type=\"button\" data-open-support=\"\">\n              <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-lucide=\"message-square-plus\" class=\"lucide lucide-message-"
+    }
+  },
+  {
+    "modal": "courseModal",
+    "initial": {
+      "tag": "BUTTON",
+      "id": "",
+      "closeFor": "courseModal",
+      "label": "Close Course Editor",
+      "tab": null,
+      "isHost": false,
+      "isClose": true,
+      "html": "<button class=\"icon-button\" type=\"button\" data-close-modal=\"courseModal\" aria-label=\"Close Course Editor\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-lucide=\"x\" class=\"lucide lucide-x\"><path d=\"M"
+    },
+    "firstTab": {
+      "tag": "INPUT",
+      "id": "",
+      "closeFor": null,
+      "label": null,
+      "tab": null,
+      "isHost": false,
+      "isClose": false,
+      "html": "<input name=\"code\" value=\"CSE110\" required=\"\">"
+    },
+    "firstShiftTab": {
+      "tag": "BUTTON",
+      "id": "",
+      "closeFor": "courseModal",
+      "label": null,
+      "tab": null,
+      "isHost": false,
+      "isClose": false,
+      "html": "<button class=\"ghost-btn\" type=\"button\" data-close-modal=\"courseModal\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-lucide=\"x\" class=\"lucide lucide-x\"><path d=\"M18 6 6 18\"></path><path d=\"m6 6 12 12\"></path></"
+    }
+  },
+  {
+    "modal": "departmentModal",
+    "initial": {
+      "tag": "BUTTON",
+      "id": "",
+      "closeFor": "departmentModal",
+      "label": "Close Department Editor",
+      "tab": null,
+      "isHost": false,
+      "isClose": true,
+      "html": "<button class=\"icon-button\" type=\"button\" data-close-modal=\"departmentModal\" aria-label=\"Close Department Editor\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-lucide=\"x\" class=\"lucide lucide-x\"><p"
+    },
+    "firstTab": {
+      "tag": "INPUT",
+      "id": "",
+      "closeFor": null,
+      "label": null,
+      "tab": null,
+      "isHost": false,
+      "isClose": false,
+      "html": "<input name=\"id\" value=\"CSE\" required=\"\">"
+    },
+    "firstShiftTab": {
+      "tag": "BUTTON",
+      "id": "",
+      "closeFor": "departmentModal",
+      "label": null,
+      "tab": null,
+      "isHost": false,
+      "isClose": false,
+      "html": "<button class=\"ghost-btn\" type=\"button\" data-close-modal=\"departmentModal\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-lucide=\"x\" class=\"lucide lucide-x\"><path d=\"M18 6 6 18\"></path><path d=\"m6 6 12 12\"></pat"
+    }
+  }
+]

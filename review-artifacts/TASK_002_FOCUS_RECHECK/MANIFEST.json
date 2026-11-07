@@ -1,0 +1,61 @@
+{
+  "task": "TASK_002_FOCUS_RECHECK",
+  "parent": "7025af30d7152f7e90a5e507fa90b840427c49b7",
+  "base": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+  "change": "One isolated Native B comment only; no executable change, old artifacts preserved",
+  "expectedPackageFiles": 11,
+  "zipPolicy": "ZIP root TASK_002_FOCUS_RECHECK; strip review-artifacts/ from repo paths",
+  "checksumPolicy": "All package files except this manifest are SHA-256 listed; manifest included without recursive self-hash",
+  "files": [
+    {
+      "path": "review-artifacts/TASK_002_FOCUS_RECHECK/COMMENT_ONLY.diff",
+      "bytes": 276,
+      "sha256": "340475ab67a3402b6f3b5b6721fa603422f6b37fdc8af75c83a048cdf8e22d1a"
+    },
+    {
+      "path": "review-artifacts/TASK_002_FOCUS_RECHECK/FOCUS_RECHECK.md",
+      "bytes": 7369,
+      "sha256": "61d1fcd6e9a39015e8251397cbf71276867ee2cd8fbe90d3bf1d7ea3271b1550"
+    },
+    {
+      "path": "review-artifacts/TASK_002_FOCUS_RECHECK/evidence/initial-focus.json",
+      "bytes": 511497,
+      "sha256": "07beef052235d9efb61c3a6031f2f883d99685984e5700b364f6b238ac411787"
+    },
+    {
+      "path": "review-artifacts/TASK_002_FOCUS_RECHECK/evidence/protection.json",
+      "bytes": 509,
+      "sha256": "1279be062bf1fd444b1cf08e2eb37a1020c143cba8b7babd3b2fc9e5c63e5b6e"
+    },
+    {
+      "path": "review-artifacts/TASK_002_FOCUS_RECHECK/evidence/summary.json",
+      "bytes": 247,
+      "sha256": "3792318aadde8325e61920bb93ae368bb59cfc568d88f66444f7e6cae2627c27"
+    },
+    {
+      "path": "review-artifacts/TASK_002_FOCUS_RECHECK/evidence/targeted-node-tests.txt",
+      "bytes": 2949,
+      "sha256": "04966714b3099d39bdd79d593d39833b5480d468db2f75f602dc8485a342d15b"
+    },
+    {
+      "path": "review-artifacts/TASK_002_FOCUS_RECHECK/evidence/transition-examples.json",
+      "bytes": 6395,
+      "sha256": "8f08a29fa7c5580d70729b6796b2055c7106cb981e451fbb7e8ecc64b098fef7"
+    },
+    {
+      "path": "review-artifacts/TASK_002_FOCUS_RECHECK/source/native/js/app.js",
+      "bytes": 104047,
+      "sha256": "6ff1611d74d85a15c9ccb2c0ebbb3baf60f49678ffdb353da7ca936c87d4bc98"
+    },
+    {
+      "path": "review-artifacts/TASK_002_FOCUS_RECHECK/tooling/cdp.mjs",
+      "bytes": 1868,
+      "sha256": "d9a1e0f3cebbbeae9dbe345cc0476500b201a15f030c257d7997bfceed752f00"
+    },
+    {
+      "path": "review-artifacts/TASK_002_FOCUS_RECHECK/tooling/recheck-focus.mjs",
+      "bytes": 4561,
+      "sha256": "ec5d467532e8a95a0033f43d9d9f9461615d3f5dc4d37650d1b44cc0d4829989"
+    }
+  ]
+}

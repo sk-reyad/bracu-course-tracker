@@ -1,0 +1,12 @@
+{
+  "cases": 64,
+  "assertions": 512,
+  "nativeCases": 32,
+  "aCases": 32,
+  "hostFocusedCases": 0,
+  "unexpectedHostFocusEvents": 0,
+  "frameSamplesPerCase": 3,
+  "matchingAComparisons": 32,
+  "behaviorChange": false,
+  "decisionChange": false
+}

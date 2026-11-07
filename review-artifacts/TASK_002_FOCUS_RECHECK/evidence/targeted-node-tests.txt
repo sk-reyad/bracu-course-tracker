@@ -1,0 +1,41 @@
+✔ buttons use the approved 260ms horizontal shutter without inner glow (1.3605ms)
+✔ shutter variants keep semantic colors and accessible interaction gates (0.8523ms)
+✔ cancel and destructive actions render the approved Lucide icons (2.0819ms)
+✔ Admin Catalog tabs support keyboard navigation and panel relationships (2.4764ms)
+✔ dashboard profile controls remain responsive and touch accessible (0.3576ms)
+✔ stream detail triggers are keyboard-visible and responsive (0.2991ms)
+✔ dashboard sign out uses the same section gap as the surrounding panels (0.1807ms)
+✔ course list keeps every card equal and long titles cannot wrap status badges (0.876ms)
+✔ dashboard profile omits the redundant Google account management note (0.2784ms)
+✔ faculty and grade settings use controlled responsive layouts (0.5421ms)
+✔ PDF report keeps attempt tags inside the course-code columns (0.6414ms)
+✔ dynamic Lucide renderers refresh icons after replacing placeholder markup (0.1739ms)
+✔ card spotlight color follows every academic status (0.7276ms)
+✔ modern control hover is fine-pointer-only and ignores disabled buttons (0.24ms)
+✔ modal lifecycle hosts the single dot grid below translucent modal content (0.3522ms)
+✔ course catalog modal closes with Escape and restores the opening control focus (0.1861ms)
+✔ faculty dropdown source uses shared initial ordering while preserving identities (4.4701ms)
+✔ main tracker uses the approved product name and guarded boot scripts (0.3556ms)
+✔ Add Course searches the master catalog without exposing internal visibility labels (0.2483ms)
+✔ Course List exposes every approved curriculum field and applies the shared category matcher (0.5906ms)
+✔ stream badges disclose full names and See more opens the matching Course List filter (0.2691ms)
+✔ course editing preserves Stream and grouped curriculum categories (0.1211ms)
+✔ roadmap resolves semester alternatives without replacing stored attempt records (0.1086ms)
+✔ dashboard profile is read-only until Edit and uses canonical Supabase controls (0.3277ms)
+✔ settings expose account sync without browser credentials (0.2826ms)
+✔ only explicit reset and backup import may request a destructive cloud save (0.234ms)
+✔ settings use a read-only faculty editor and a canonical grade scale table (0.2613ms)
+✔ faculty settings filter locally while preserving the active edit row (0.2292ms)
+✔ semester add and edit use canonical term and dynamic year selectors (0.1023ms)
+✔ preview mode blocks faculty saving before any state mutation (0.1363ms)
+✔ dashboard photo editor reuses private avatar choices and responsive drop behavior (0.2003ms)
+✔ theme preference is global while tracker data remains user scoped (0.0815ms)
+✔ report metadata uses the deployed page URL and approved profile links (0.222ms)
+ℹ tests 33
+ℹ suites 0
+ℹ pass 33
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 91.5617
