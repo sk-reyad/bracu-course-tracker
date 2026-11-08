@@ -1,0 +1,125 @@
+{
+  "base": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+  "parent": "567978b36a03f5e25360f8bda700e84b04372953",
+  "selectedSourceCommit": "426a1cebac9a617d7ef5ce27eeb2782aed2c70ee",
+  "originalBefore": {
+    "head": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+    "branch": "main",
+    "status": "?? FRONTEND_UI_MULTISKILL_AUDIT.md",
+    "trackedDiff": "",
+    "stagedDiff": "",
+    "auditSha256": "9ad3924539bea8181d9337b6e8e970a116bf28b9109c7cdb589f9a1536ca54d9"
+  },
+  "originalAfter": {
+    "head": "9d86db46b1134a3755a2e269252b1ee1234f2570",
+    "branch": "main",
+    "status": "?? FRONTEND_UI_MULTISKILL_AUDIT.md",
+    "trackedDiff": "",
+    "stagedDiff": "",
+    "auditSha256": "9ad3924539bea8181d9337b6e8e970a116bf28b9109c7cdb589f9a1536ca54d9"
+  },
+  "completedWorkspacesBefore": [
+    {
+      "workspace": "bracu-ui-demo-9d86db46",
+      "files": 402,
+      "aggregateSha256": "111a3d4443a859f835f74db964219afe704a25eb3296e4f7fd5a50d167d1f983"
+    },
+    {
+      "workspace": "bracu-final-corrections",
+      "files": 52,
+      "aggregateSha256": "df783f1505b9b268c0f3b290f17548e9752ab72db07df8c5095c221ac90f5eb0"
+    },
+    {
+      "workspace": "bracu-task002-r010",
+      "files": 2292,
+      "aggregateSha256": "4940cba0c4aa6fb3ba6f0bc1b65b224807420d60a7a520aba2a7e77933b56602"
+    },
+    {
+      "workspace": "bracu-task003-r023",
+      "files": 624,
+      "aggregateSha256": "6a2fd447da46cad3419d3fbc7a695b46f77bc57ff81e6203e22a5596fd37319e"
+    },
+    {
+      "workspace": "bracu-task004-r024",
+      "files": 616,
+      "aggregateSha256": "f10940b95f32aaaa8c4f89eaae8ea5d52c0a30fa03531519a3352c8dcbf65256"
+    },
+    {
+      "workspace": "bracu-task005-r029",
+      "files": 404,
+      "aggregateSha256": "5849c5ba75514bf153dd28d43b3c691e4eeb939dff4f9a479d933ce2e4f71e56"
+    }
+  ],
+  "completedWorkspacesAfter": [
+    {
+      "workspace": "bracu-ui-demo-9d86db46",
+      "files": 402,
+      "aggregateSha256": "111a3d4443a859f835f74db964219afe704a25eb3296e4f7fd5a50d167d1f983"
+    },
+    {
+      "workspace": "bracu-final-corrections",
+      "files": 52,
+      "aggregateSha256": "df783f1505b9b268c0f3b290f17548e9752ab72db07df8c5095c221ac90f5eb0"
+    },
+    {
+      "workspace": "bracu-task002-r010",
+      "files": 2292,
+      "aggregateSha256": "4940cba0c4aa6fb3ba6f0bc1b65b224807420d60a7a520aba2a7e77933b56602"
+    },
+    {
+      "workspace": "bracu-task003-r023",
+      "files": 624,
+      "aggregateSha256": "6a2fd447da46cad3419d3fbc7a695b46f77bc57ff81e6203e22a5596fd37319e"
+    },
+    {
+      "workspace": "bracu-task004-r024",
+      "files": 616,
+      "aggregateSha256": "f10940b95f32aaaa8c4f89eaae8ea5d52c0a30fa03531519a3352c8dcbf65256"
+    },
+    {
+      "workspace": "bracu-task005-r029",
+      "files": 404,
+      "aggregateSha256": "5849c5ba75514bf153dd28d43b3c691e4eeb939dff4f9a479d933ce2e4f71e56"
+    }
+  ],
+  "baselineByteExactFiles": 182,
+  "selectedOverlays": [
+    {
+      "path": "css/style.css",
+      "oid": "b404763386fe26e3499eadbca0c911ad9ac82983"
+    },
+    {
+      "path": "js/app.js",
+      "oid": "fb6b6ceb2fbe4e6049cad3c14567dffae2952d60"
+    },
+    {
+      "path": "js/roadmap.js",
+      "oid": "ac32a5d36bac06ef5b6d90a175267cc1f977ce96"
+    },
+    {
+      "path": "tests/main-integration.test.js",
+      "oid": "41e5c6453e03164ad69ccb68d8d62f1aecb970ee"
+    }
+  ],
+  "changedCandidateFiles": [
+    "js/app.js",
+    "tests/main-integration.test.js"
+  ],
+  "rebuildCopiesMatch": true,
+  "onlyAllowedPrefix": "review-artifacts/TASK_006/",
+  "authorityUnchanged": true,
+  "sourceCopies": {
+    "original": {
+      "files": 182,
+      "aggregateSha256": "e47c9147f36d30704dc2ca1a6d23ea8d6c16e6711b16ae88ca95ea89b1316550"
+    },
+    "before": {
+      "files": 182,
+      "aggregateSha256": "ee6db5d0a490aad15981eb78e702a6121555e997021b93b3f2285af82fae7304"
+    },
+    "after": {
+      "files": 182,
+      "aggregateSha256": "04635212f4c694d454f82c86f7f0ad654e4d344b5f8931431d5c363db6996890"
+    }
+  }
+}

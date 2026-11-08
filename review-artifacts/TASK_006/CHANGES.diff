@@ -1,0 +1,34 @@
+diff --git a/js/app.js b/js/app.js
+index fb6b6ce..28e10ad 100644
+--- a/js/app.js
++++ b/js/app.js
+@@ -1051,14 +1051,14 @@ function openStreamCategoryTooltip(trigger) {
+   tooltip.style.top = top + "px";
+ }
+ 
+-function openCurriculumField(fieldId) {
++function openCurriculumField(fieldId, scrollBehavior = "smooth") {
+   closeStreamCategoryTooltips();
+   const curriculumFieldFilter = document.getElementById("curriculumFieldFilter");
+   const coursesSection = document.getElementById("courses");
+   if (!curriculumFieldFilter || !coursesSection || !fieldId) return;
+   curriculumFieldFilter.value = fieldId;
+   renderCourseList();
+-  coursesSection.scrollIntoView({ behavior: "smooth", block: "start" });
++  coursesSection.scrollIntoView({ behavior: scrollBehavior, block: "start" });
+   curriculumFieldFilter.focus({ preventScroll: true });
+ }
+ 
+@@ -2005,7 +2005,11 @@ function bindEvents() {
+     if (streamSeeMore) {
+       event.preventDefault();
+       event.stopPropagation();
+-      openCurriculumField(streamSeeMore.dataset.curriculumField);
++      const keyboardActivation = event.isTrusted && event.detail === 0 && !event.pointerType;
++      openCurriculumField(
++        streamSeeMore.dataset.curriculumField,
++        keyboardActivation ? "instant" : "smooth",
++      );
+       return;
+     }
+     const streamTrigger = event.target.closest(".stream-category-trigger");

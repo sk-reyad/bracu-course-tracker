@@ -1,0 +1,850 @@
+TAP version 13
+# Subtest: complete trusted input matrix: 120 unique cases across widths, themes and preferences
+ok 1 - complete trusted input matrix: 120 unique cases across widths, themes and preferences
+  ---
+  duration_ms: 1.6284
+  type: 'test'
+  ...
+# Subtest: after-1024-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 2 - after-1024-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.2571
+  type: 'test'
+  ...
+# Subtest: after-1024-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 3 - after-1024-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0851
+  type: 'test'
+  ...
+# Subtest: after-1024-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 4 - after-1024-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0741
+  type: 'test'
+  ...
+# Subtest: after-1024-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 5 - after-1024-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0701
+  type: 'test'
+  ...
+# Subtest: after-1024-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 6 - after-1024-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0564
+  type: 'test'
+  ...
+# Subtest: after-1024-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 7 - after-1024-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.061
+  type: 'test'
+  ...
+# Subtest: after-1024-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 8 - after-1024-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0551
+  type: 'test'
+  ...
+# Subtest: after-1024-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 9 - after-1024-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 1.1037
+  type: 'test'
+  ...
+# Subtest: after-1024-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 10 - after-1024-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.1937
+  type: 'test'
+  ...
+# Subtest: after-1024-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 11 - after-1024-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.141
+  type: 'test'
+  ...
+# Subtest: after-1024-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 12 - after-1024-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0565
+  type: 'test'
+  ...
+# Subtest: after-1024-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 13 - after-1024-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0589
+  type: 'test'
+  ...
+# Subtest: after-1440-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 14 - after-1440-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0661
+  type: 'test'
+  ...
+# Subtest: after-1440-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 15 - after-1440-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0269
+  type: 'test'
+  ...
+# Subtest: after-1440-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 16 - after-1440-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0263
+  type: 'test'
+  ...
+# Subtest: after-1440-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 17 - after-1440-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0497
+  type: 'test'
+  ...
+# Subtest: after-1440-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 18 - after-1440-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0257
+  type: 'test'
+  ...
+# Subtest: after-1440-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 19 - after-1440-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0283
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 20 - after-1440-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0285
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 21 - after-1440-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0315
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 22 - after-1440-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0365
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-no-preference-programmatic-0-center-single action, scroll, focus, results and containment
+ok 23 - after-1440-dark-no-preference-programmatic-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0556
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-no-preference-Enter-0-center-repeat action, scroll, focus, results and containment
+ok 24 - after-1440-dark-no-preference-Enter-0-center-repeat action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0261
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-no-preference-Enter--1-edge-single action, scroll, focus, results and containment
+ok 25 - after-1440-dark-no-preference-Enter--1-edge-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0398
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 26 - after-1440-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0293
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 27 - after-1440-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0235
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 28 - after-1440-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0388
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-reduce-programmatic-0-center-single action, scroll, focus, results and containment
+ok 29 - after-1440-dark-reduce-programmatic-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0515
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-reduce-Enter-0-center-repeat action, scroll, focus, results and containment
+ok 30 - after-1440-dark-reduce-Enter-0-center-repeat action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0227
+  type: 'test'
+  ...
+# Subtest: after-1440-dark-reduce-Enter--1-edge-single action, scroll, focus, results and containment
+ok 31 - after-1440-dark-reduce-Enter--1-edge-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0206
+  type: 'test'
+  ...
+# Subtest: after-360-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 32 - after-360-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0256
+  type: 'test'
+  ...
+# Subtest: after-360-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 33 - after-360-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0267
+  type: 'test'
+  ...
+# Subtest: after-360-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 34 - after-360-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0249
+  type: 'test'
+  ...
+# Subtest: after-360-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 35 - after-360-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0198
+  type: 'test'
+  ...
+# Subtest: after-360-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 36 - after-360-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0287
+  type: 'test'
+  ...
+# Subtest: after-360-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 37 - after-360-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0435
+  type: 'test'
+  ...
+# Subtest: after-360-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 38 - after-360-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.033
+  type: 'test'
+  ...
+# Subtest: after-360-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 39 - after-360-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0322
+  type: 'test'
+  ...
+# Subtest: after-360-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 40 - after-360-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0212
+  type: 'test'
+  ...
+# Subtest: after-360-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 41 - after-360-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0283
+  type: 'test'
+  ...
+# Subtest: after-360-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 42 - after-360-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0251
+  type: 'test'
+  ...
+# Subtest: after-360-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 43 - after-360-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.03
+  type: 'test'
+  ...
+# Subtest: after-390-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 44 - after-390-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0305
+  type: 'test'
+  ...
+# Subtest: after-390-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 45 - after-390-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0244
+  type: 'test'
+  ...
+# Subtest: after-390-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 46 - after-390-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.023
+  type: 'test'
+  ...
+# Subtest: after-390-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 47 - after-390-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0197
+  type: 'test'
+  ...
+# Subtest: after-390-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 48 - after-390-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0259
+  type: 'test'
+  ...
+# Subtest: after-390-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 49 - after-390-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0339
+  type: 'test'
+  ...
+# Subtest: after-390-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 50 - after-390-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0236
+  type: 'test'
+  ...
+# Subtest: after-390-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 51 - after-390-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0193
+  type: 'test'
+  ...
+# Subtest: after-390-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 52 - after-390-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0193
+  type: 'test'
+  ...
+# Subtest: after-390-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 53 - after-390-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0219
+  type: 'test'
+  ...
+# Subtest: after-390-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 54 - after-390-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.022
+  type: 'test'
+  ...
+# Subtest: after-390-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 55 - after-390-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0234
+  type: 'test'
+  ...
+# Subtest: after-768-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 56 - after-768-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0189
+  type: 'test'
+  ...
+# Subtest: after-768-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 57 - after-768-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0182
+  type: 'test'
+  ...
+# Subtest: after-768-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 58 - after-768-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0203
+  type: 'test'
+  ...
+# Subtest: after-768-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 59 - after-768-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0204
+  type: 'test'
+  ...
+# Subtest: after-768-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 60 - after-768-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0179
+  type: 'test'
+  ...
+# Subtest: after-768-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 61 - after-768-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0205
+  type: 'test'
+  ...
+# Subtest: after-768-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 62 - after-768-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0179
+  type: 'test'
+  ...
+# Subtest: after-768-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 63 - after-768-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.019
+  type: 'test'
+  ...
+# Subtest: after-768-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 64 - after-768-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0342
+  type: 'test'
+  ...
+# Subtest: after-768-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 65 - after-768-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0217
+  type: 'test'
+  ...
+# Subtest: after-768-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 66 - after-768-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0213
+  type: 'test'
+  ...
+# Subtest: after-768-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 67 - after-768-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0191
+  type: 'test'
+  ...
+# Subtest: before-1024-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 68 - before-1024-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0217
+  type: 'test'
+  ...
+# Subtest: before-1024-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 69 - before-1024-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0246
+  type: 'test'
+  ...
+# Subtest: before-1024-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 70 - before-1024-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0202
+  type: 'test'
+  ...
+# Subtest: before-1024-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 71 - before-1024-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0197
+  type: 'test'
+  ...
+# Subtest: before-1024-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 72 - before-1024-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0315
+  type: 'test'
+  ...
+# Subtest: before-1024-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 73 - before-1024-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0417
+  type: 'test'
+  ...
+# Subtest: before-1024-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 74 - before-1024-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0416
+  type: 'test'
+  ...
+# Subtest: before-1024-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 75 - before-1024-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.021
+  type: 'test'
+  ...
+# Subtest: before-1024-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 76 - before-1024-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0278
+  type: 'test'
+  ...
+# Subtest: before-1024-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 77 - before-1024-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0353
+  type: 'test'
+  ...
+# Subtest: before-1024-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 78 - before-1024-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0195
+  type: 'test'
+  ...
+# Subtest: before-1024-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 79 - before-1024-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0179
+  type: 'test'
+  ...
+# Subtest: before-1440-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 80 - before-1440-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0185
+  type: 'test'
+  ...
+# Subtest: before-1440-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 81 - before-1440-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0178
+  type: 'test'
+  ...
+# Subtest: before-1440-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 82 - before-1440-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0178
+  type: 'test'
+  ...
+# Subtest: before-1440-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 83 - before-1440-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0199
+  type: 'test'
+  ...
+# Subtest: before-1440-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 84 - before-1440-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0175
+  type: 'test'
+  ...
+# Subtest: before-1440-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 85 - before-1440-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0173
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 86 - before-1440-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.022
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 87 - before-1440-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0205
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 88 - before-1440-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0587
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-no-preference-programmatic-0-center-single action, scroll, focus, results and containment
+ok 89 - before-1440-dark-no-preference-programmatic-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0243
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-no-preference-Enter-0-center-repeat action, scroll, focus, results and containment
+ok 90 - before-1440-dark-no-preference-Enter-0-center-repeat action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0197
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-no-preference-Enter--1-edge-single action, scroll, focus, results and containment
+ok 91 - before-1440-dark-no-preference-Enter--1-edge-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0181
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 92 - before-1440-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0244
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 93 - before-1440-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0183
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 94 - before-1440-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0317
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-reduce-programmatic-0-center-single action, scroll, focus, results and containment
+ok 95 - before-1440-dark-reduce-programmatic-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0212
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-reduce-Enter-0-center-repeat action, scroll, focus, results and containment
+ok 96 - before-1440-dark-reduce-Enter-0-center-repeat action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.02
+  type: 'test'
+  ...
+# Subtest: before-1440-dark-reduce-Enter--1-edge-single action, scroll, focus, results and containment
+ok 97 - before-1440-dark-reduce-Enter--1-edge-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0223
+  type: 'test'
+  ...
+# Subtest: before-360-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 98 - before-360-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0371
+  type: 'test'
+  ...
+# Subtest: before-360-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 99 - before-360-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0289
+  type: 'test'
+  ...
+# Subtest: before-360-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 100 - before-360-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0199
+  type: 'test'
+  ...
+# Subtest: before-360-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 101 - before-360-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0191
+  type: 'test'
+  ...
+# Subtest: before-360-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 102 - before-360-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0289
+  type: 'test'
+  ...
+# Subtest: before-360-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 103 - before-360-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0249
+  type: 'test'
+  ...
+# Subtest: before-360-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 104 - before-360-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0404
+  type: 'test'
+  ...
+# Subtest: before-360-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 105 - before-360-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0389
+  type: 'test'
+  ...
+# Subtest: before-360-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 106 - before-360-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0193
+  type: 'test'
+  ...
+# Subtest: before-360-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 107 - before-360-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0178
+  type: 'test'
+  ...
+# Subtest: before-360-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 108 - before-360-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.9791
+  type: 'test'
+  ...
+# Subtest: before-360-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 109 - before-360-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0494
+  type: 'test'
+  ...
+# Subtest: before-390-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 110 - before-390-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0344
+  type: 'test'
+  ...
+# Subtest: before-390-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 111 - before-390-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0186
+  type: 'test'
+  ...
+# Subtest: before-390-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 112 - before-390-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0175
+  type: 'test'
+  ...
+# Subtest: before-390-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 113 - before-390-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0209
+  type: 'test'
+  ...
+# Subtest: before-390-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 114 - before-390-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0268
+  type: 'test'
+  ...
+# Subtest: before-390-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 115 - before-390-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0198
+  type: 'test'
+  ...
+# Subtest: before-390-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 116 - before-390-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0193
+  type: 'test'
+  ...
+# Subtest: before-390-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 117 - before-390-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0169
+  type: 'test'
+  ...
+# Subtest: before-390-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 118 - before-390-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0187
+  type: 'test'
+  ...
+# Subtest: before-390-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 119 - before-390-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0198
+  type: 'test'
+  ...
+# Subtest: before-390-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 120 - before-390-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0164
+  type: 'test'
+  ...
+# Subtest: before-390-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 121 - before-390-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0165
+  type: 'test'
+  ...
+# Subtest: before-768-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 122 - before-768-light-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0176
+  type: 'test'
+  ...
+# Subtest: before-768-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 123 - before-768-light-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0294
+  type: 'test'
+  ...
+# Subtest: before-768-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 124 - before-768-light-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0192
+  type: 'test'
+  ...
+# Subtest: before-768-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 125 - before-768-light-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0245
+  type: 'test'
+  ...
+# Subtest: before-768-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 126 - before-768-light-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0362
+  type: 'test'
+  ...
+# Subtest: before-768-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 127 - before-768-light-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0217
+  type: 'test'
+  ...
+# Subtest: before-768-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+ok 128 - before-768-dark-no-preference-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0167
+  type: 'test'
+  ...
+# Subtest: before-768-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+ok 129 - before-768-dark-no-preference-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0173
+  type: 'test'
+  ...
+# Subtest: before-768-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+ok 130 - before-768-dark-no-preference-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0164
+  type: 'test'
+  ...
+# Subtest: before-768-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+ok 131 - before-768-dark-reduce-pointer-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0162
+  type: 'test'
+  ...
+# Subtest: before-768-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+ok 132 - before-768-dark-reduce-Enter-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0194
+  type: 'test'
+  ...
+# Subtest: before-768-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+ok 133 - before-768-dark-reduce-Space-0-center-single action, scroll, focus, results and containment
+  ---
+  duration_ms: 0.0166
+  type: 'test'
+  ...
+# Subtest: paired Before/After result sets, fields, layouts and scroll destinations agree
+ok 134 - paired Before/After result sets, fields, layouts and scroll destinations agree
+  ---
+  duration_ms: 0.6154
+  type: 'test'
+  ...
+# Subtest: real repeated keys cannot reactivate the closed disclosure or repeat filtering
+ok 135 - real repeated keys cannot reactivate the closed disclosure or repeat filtering
+  ---
+  duration_ms: 0.0938
+  type: 'test'
+  ...
+# Subtest: controls preserve Escape, outside click, multiple badges and absent Roadmap stream fixture
+ok 136 - controls preserve Escape, outside click, multiple badges and absent Roadmap stream fixture
+  ---
+  duration_ms: 0.9388
+  type: 'test'
+  ...
+# Subtest: candidate helper retains default smooth and guard behavior while forwarding instant explicitly
+ok 137 - candidate helper retains default smooth and guard behavior while forwarding instant explicitly
+  ---
+  duration_ms: 1.6763
+  type: 'test'
+  ...
+# Subtest: no unexpected final browser diagnostics
+ok 138 - no unexpected final browser diagnostics
+  ---
+  duration_ms: 0.6822
+  type: 'test'
+  ...
+# Subtest: both app regression suites and historical reference passed 365 tests each
+ok 139 - both app regression suites and historical reference passed 365 tests each
+  ---
+  duration_ms: 2.6005
+  type: 'test'
+  ...
+# Subtest: runtime change and accepted overlay isolation
+ok 140 - runtime change and accepted overlay isolation
+  ---
+  duration_ms: 0.5941
+  type: 'test'
+  ...
+1..140
+# tests 140
+# suites 0
+# pass 140
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 109.9355

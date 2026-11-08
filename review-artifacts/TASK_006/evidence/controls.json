@@ -1,0 +1,1322 @@
+[
+  {
+    "version": "before",
+    "width": 360,
+    "theme": "light",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 152.765625,
+          "right": 333,
+          "top": 399.890625,
+          "bottom": 479.359375,
+          "headerBottom": 176,
+          "client": 345,
+          "scroll": 345,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 152.765625,
+          "right": 333,
+          "top": 399.609375,
+          "bottom": 479.078125,
+          "headerBottom": 176,
+          "client": 345,
+          "scroll": 345,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 85.84375,
+          "right": 333,
+          "top": 399.828125,
+          "bottom": 479.296875,
+          "headerBottom": 176,
+          "client": 345,
+          "scroll": 345,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "before",
+    "width": 360,
+    "theme": "dark",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 152.765625,
+          "right": 333,
+          "top": 399.890625,
+          "bottom": 479.359375,
+          "headerBottom": 176,
+          "client": 345,
+          "scroll": 345,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 152.765625,
+          "right": 333,
+          "top": 399.609375,
+          "bottom": 479.078125,
+          "headerBottom": 176,
+          "client": 345,
+          "scroll": 345,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 85.84375,
+          "right": 333,
+          "top": 399.828125,
+          "bottom": 479.296875,
+          "headerBottom": 176,
+          "client": 345,
+          "scroll": 345,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "before",
+    "width": 390,
+    "theme": "light",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 166.84375,
+          "right": 347.078125,
+          "top": 399.15625,
+          "bottom": 478.625,
+          "headerBottom": 176,
+          "client": 375,
+          "scroll": 375,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 166.84375,
+          "right": 347.078125,
+          "top": 399.75,
+          "bottom": 479.21875,
+          "headerBottom": 176,
+          "client": 375,
+          "scroll": 375,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 115.84375,
+          "right": 363,
+          "top": 399.9375,
+          "bottom": 479.40625,
+          "headerBottom": 176,
+          "client": 375,
+          "scroll": 375,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "before",
+    "width": 390,
+    "theme": "dark",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 166.84375,
+          "right": 347.078125,
+          "top": 399.15625,
+          "bottom": 478.625,
+          "headerBottom": 176,
+          "client": 375,
+          "scroll": 375,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 166.84375,
+          "right": 347.078125,
+          "top": 399.75,
+          "bottom": 479.21875,
+          "headerBottom": 176,
+          "client": 375,
+          "scroll": 375,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 115.84375,
+          "right": 363,
+          "top": 399.9375,
+          "bottom": 479.40625,
+          "headerBottom": 176,
+          "client": 375,
+          "scroll": 375,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "before",
+    "width": 768,
+    "theme": "light",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 166.84375,
+          "right": 347.078125,
+          "top": 399.84375,
+          "bottom": 479.3125,
+          "headerBottom": 139,
+          "client": 753,
+          "scroll": 753,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 166.84375,
+          "right": 347.078125,
+          "top": 399.40625,
+          "bottom": 478.875,
+          "headerBottom": 139,
+          "client": 753,
+          "scroll": 753,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 156.515625,
+          "right": 403.671875,
+          "top": 399.53125,
+          "bottom": 479,
+          "headerBottom": 139,
+          "client": 753,
+          "scroll": 753,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "before",
+    "width": 768,
+    "theme": "dark",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 166.84375,
+          "right": 347.078125,
+          "top": 399.84375,
+          "bottom": 479.3125,
+          "headerBottom": 139,
+          "client": 753,
+          "scroll": 753,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 166.84375,
+          "right": 347.078125,
+          "top": 399.40625,
+          "bottom": 478.875,
+          "headerBottom": 139,
+          "client": 753,
+          "scroll": 753,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 156.515625,
+          "right": 403.671875,
+          "top": 399.53125,
+          "bottom": 479,
+          "headerBottom": 139,
+          "client": 753,
+          "scroll": 753,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "before",
+    "width": 1024,
+    "theme": "light",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 180.84375,
+          "right": 361.078125,
+          "top": 399.671875,
+          "bottom": 479.140625,
+          "headerBottom": 66,
+          "client": 1009,
+          "scroll": 1009,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 650.34375,
+          "right": 830.578125,
+          "top": 399.671875,
+          "bottom": 479.140625,
+          "headerBottom": 66,
+          "client": 1009,
+          "scroll": 1009,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 640.015625,
+          "right": 887.171875,
+          "top": 399.75,
+          "bottom": 479.21875,
+          "headerBottom": 66,
+          "client": 1009,
+          "scroll": 1009,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "before",
+    "width": 1024,
+    "theme": "dark",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 180.84375,
+          "right": 361.078125,
+          "top": 399.671875,
+          "bottom": 479.140625,
+          "headerBottom": 66,
+          "client": 1009,
+          "scroll": 1009,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 650.34375,
+          "right": 830.578125,
+          "top": 399.671875,
+          "bottom": 479.140625,
+          "headerBottom": 66,
+          "client": 1009,
+          "scroll": 1009,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 640.015625,
+          "right": 887.171875,
+          "top": 399.75,
+          "bottom": 479.21875,
+          "headerBottom": 66,
+          "client": 1009,
+          "scroll": 1009,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "before",
+    "width": 1440,
+    "theme": "light",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 180.84375,
+          "right": 361.078125,
+          "top": 399.328125,
+          "bottom": 478.796875,
+          "headerBottom": 66,
+          "client": 1425,
+          "scroll": 1425,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 632.5,
+          "right": 812.734375,
+          "top": 399.328125,
+          "bottom": 478.796875,
+          "headerBottom": 66,
+          "client": 1425,
+          "scroll": 1425,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 1073.84375,
+          "right": 1321,
+          "top": 399.6875,
+          "bottom": 479.15625,
+          "headerBottom": 66,
+          "client": 1425,
+          "scroll": 1425,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "before",
+    "width": 1440,
+    "theme": "dark",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 180.84375,
+          "right": 361.078125,
+          "top": 399.328125,
+          "bottom": 478.796875,
+          "headerBottom": 66,
+          "client": 1425,
+          "scroll": 1425,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 632.5,
+          "right": 812.734375,
+          "top": 399.328125,
+          "bottom": 478.796875,
+          "headerBottom": 66,
+          "client": 1425,
+          "scroll": 1425,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 1073.84375,
+          "right": 1321,
+          "top": 399.6875,
+          "bottom": 479.15625,
+          "headerBottom": 66,
+          "client": 1425,
+          "scroll": 1425,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "after",
+    "width": 360,
+    "theme": "light",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 152.765625,
+          "right": 333,
+          "top": 399.890625,
+          "bottom": 479.359375,
+          "headerBottom": 176,
+          "client": 345,
+          "scroll": 345,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 152.765625,
+          "right": 333,
+          "top": 399.609375,
+          "bottom": 479.078125,
+          "headerBottom": 176,
+          "client": 345,
+          "scroll": 345,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 85.84375,
+          "right": 333,
+          "top": 399.828125,
+          "bottom": 479.296875,
+          "headerBottom": 176,
+          "client": 345,
+          "scroll": 345,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "after",
+    "width": 360,
+    "theme": "dark",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 152.765625,
+          "right": 333,
+          "top": 399.890625,
+          "bottom": 479.359375,
+          "headerBottom": 176,
+          "client": 345,
+          "scroll": 345,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 152.765625,
+          "right": 333,
+          "top": 399.609375,
+          "bottom": 479.078125,
+          "headerBottom": 176,
+          "client": 345,
+          "scroll": 345,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 85.84375,
+          "right": 333,
+          "top": 399.828125,
+          "bottom": 479.296875,
+          "headerBottom": 176,
+          "client": 345,
+          "scroll": 345,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "after",
+    "width": 390,
+    "theme": "light",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 166.84375,
+          "right": 347.078125,
+          "top": 399.15625,
+          "bottom": 478.625,
+          "headerBottom": 176,
+          "client": 375,
+          "scroll": 375,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 166.84375,
+          "right": 347.078125,
+          "top": 399.75,
+          "bottom": 479.21875,
+          "headerBottom": 176,
+          "client": 375,
+          "scroll": 375,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 115.84375,
+          "right": 363,
+          "top": 399.9375,
+          "bottom": 479.40625,
+          "headerBottom": 176,
+          "client": 375,
+          "scroll": 375,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "after",
+    "width": 390,
+    "theme": "dark",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 166.84375,
+          "right": 347.078125,
+          "top": 399.15625,
+          "bottom": 478.625,
+          "headerBottom": 176,
+          "client": 375,
+          "scroll": 375,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 166.84375,
+          "right": 347.078125,
+          "top": 399.75,
+          "bottom": 479.21875,
+          "headerBottom": 176,
+          "client": 375,
+          "scroll": 375,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 115.84375,
+          "right": 363,
+          "top": 399.9375,
+          "bottom": 479.40625,
+          "headerBottom": 176,
+          "client": 375,
+          "scroll": 375,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "after",
+    "width": 768,
+    "theme": "light",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 166.84375,
+          "right": 347.078125,
+          "top": 399.84375,
+          "bottom": 479.3125,
+          "headerBottom": 139,
+          "client": 753,
+          "scroll": 753,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 166.84375,
+          "right": 347.078125,
+          "top": 399.40625,
+          "bottom": 478.875,
+          "headerBottom": 139,
+          "client": 753,
+          "scroll": 753,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 156.515625,
+          "right": 403.671875,
+          "top": 399.53125,
+          "bottom": 479,
+          "headerBottom": 139,
+          "client": 753,
+          "scroll": 753,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "after",
+    "width": 768,
+    "theme": "dark",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 166.84375,
+          "right": 347.078125,
+          "top": 399.84375,
+          "bottom": 479.3125,
+          "headerBottom": 139,
+          "client": 753,
+          "scroll": 753,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 166.84375,
+          "right": 347.078125,
+          "top": 399.40625,
+          "bottom": 478.875,
+          "headerBottom": 139,
+          "client": 753,
+          "scroll": 753,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 156.515625,
+          "right": 403.671875,
+          "top": 399.53125,
+          "bottom": 479,
+          "headerBottom": 139,
+          "client": 753,
+          "scroll": 753,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "after",
+    "width": 1024,
+    "theme": "light",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 180.84375,
+          "right": 361.078125,
+          "top": 399.671875,
+          "bottom": 479.140625,
+          "headerBottom": 66,
+          "client": 1009,
+          "scroll": 1009,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 650.34375,
+          "right": 830.578125,
+          "top": 399.671875,
+          "bottom": 479.140625,
+          "headerBottom": 66,
+          "client": 1009,
+          "scroll": 1009,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 640.015625,
+          "right": 887.171875,
+          "top": 399.75,
+          "bottom": 479.21875,
+          "headerBottom": 66,
+          "client": 1009,
+          "scroll": 1009,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "after",
+    "width": 1024,
+    "theme": "dark",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 180.84375,
+          "right": 361.078125,
+          "top": 399.671875,
+          "bottom": 479.140625,
+          "headerBottom": 66,
+          "client": 1009,
+          "scroll": 1009,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 650.34375,
+          "right": 830.578125,
+          "top": 399.671875,
+          "bottom": 479.140625,
+          "headerBottom": 66,
+          "client": 1009,
+          "scroll": 1009,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 640.015625,
+          "right": 887.171875,
+          "top": 399.75,
+          "bottom": 479.21875,
+          "headerBottom": 66,
+          "client": 1009,
+          "scroll": 1009,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "after",
+    "width": 1440,
+    "theme": "light",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 180.84375,
+          "right": 361.078125,
+          "top": 399.328125,
+          "bottom": 478.796875,
+          "headerBottom": 66,
+          "client": 1425,
+          "scroll": 1425,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 632.5,
+          "right": 812.734375,
+          "top": 399.328125,
+          "bottom": 478.796875,
+          "headerBottom": 66,
+          "client": 1425,
+          "scroll": 1425,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 1073.84375,
+          "right": 1321,
+          "top": 399.6875,
+          "bottom": 479.15625,
+          "headerBottom": 66,
+          "client": 1425,
+          "scroll": 1425,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  },
+  {
+    "version": "after",
+    "width": 1440,
+    "theme": "dark",
+    "checks": [
+      {
+        "index": 0,
+        "geometry": {
+          "left": 180.84375,
+          "right": 361.078125,
+          "top": 399.328125,
+          "bottom": 478.796875,
+          "headerBottom": 66,
+          "client": 1425,
+          "scroll": 1425,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": 1,
+        "geometry": {
+          "left": 632.5,
+          "right": 812.734375,
+          "top": 399.328125,
+          "bottom": 478.796875,
+          "headerBottom": 66,
+          "client": 1425,
+          "scroll": 1425,
+          "field": "stream-4",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      },
+      {
+        "index": -1,
+        "geometry": {
+          "left": 1073.84375,
+          "right": 1321,
+          "top": 399.6875,
+          "bottom": 479.15625,
+          "headerBottom": 66,
+          "client": 1425,
+          "scroll": 1425,
+          "field": "stream-2",
+          "parent": "BODY",
+          "role": "group",
+          "controls": true
+        },
+        "escapeRestoresFocus": true,
+        "outsideCloses": true
+      }
+    ],
+    "roadmap": {
+      "cards": 43,
+      "streams": 0
+    },
+    "multipleBadges": true
+  }
+]

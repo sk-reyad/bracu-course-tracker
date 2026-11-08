@@ -1,0 +1,13 @@
+diff --git a/tests/main-integration.test.js b/tests/main-integration.test.js
+index 41e5c64..10e7f29 100644
+--- a/tests/main-integration.test.js
++++ b/tests/main-integration.test.js
+@@ -60,7 +60,7 @@ test('stream badges disclose full names and See more opens the matching Course L
+   assert.match(roadmap, /<button class="badge category-badge stream-category-trigger" type="button"/);
+   assert.match(roadmap, /data-curriculum-field=/);
+   assert.match(roadmap, />See more<\/button>/);
+-  assert.match(app, /function openCurriculumField\(fieldId\)/);
++  assert.match(app, /function openCurriculumField\(fieldId, scrollBehavior = "smooth"\)/);
+   assert.match(app, /curriculumFieldFilter\.value\s*=\s*fieldId/);
+   assert.match(app, /document\.getElementById\("courses"\)/);
+   assert.match(app, /data-stream-see-more/);
