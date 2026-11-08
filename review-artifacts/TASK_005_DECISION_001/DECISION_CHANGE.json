@@ -1,0 +1,122 @@
+{
+  "task": "TASK_005_DECISION_001",
+  "parent": "70636d7bce53d8c2783d00142c54e1ee7c2ff222",
+  "id": "R-029",
+  "before": {
+    "id": "R-029",
+    "action": "Use instant scrolling for keyboard Back to Top activation independently of motion preference",
+    "component": "Back to Top keyboard path",
+    "category": "Interaction alternative",
+    "priority": "P2",
+    "status": "UNREVIEWED",
+    "finding": "F-006",
+    "skills": [
+      "emil-design-eng"
+    ],
+    "evidence": "Audit 10 explicitly includes keyboard paths. Existing Demo C only branches on motion preference.",
+    "benefit": "Immediate repeated keyboard response",
+    "risk": "Medium: distinguish keyboard from pointer activation",
+    "refs": [
+      {
+        "source": "S01",
+        "start": 193,
+        "end": 193,
+        "quote": "| Unconditional smooth scroll at `js/app.js:1025` and `:1875` | Instant scrolling for reduced-motion/keyboard paths (F-006) | Repeated keyboard actions should respond immediately |"
+      }
+    ],
+    "demonstrated": "NO",
+    "kind": "EXPLICIT",
+    "implementation": "Use instant scrolling for keyboard Back to Top activation independently of motion preference",
+    "ownerDecision": "None; distinct alternative/lead awaits owner",
+    "provenance": [
+      {
+        "source": "S01",
+        "origin": "Other/consolidated skill framework audit",
+        "role": "Action source"
+      }
+    ]
+  },
+  "after": {
+    "id": "R-029",
+    "action": "Use instant scrolling for keyboard Back to Top activation independently of motion preference",
+    "component": "Back to Top keyboard path",
+    "category": "Interaction alternative",
+    "priority": "P2",
+    "status": "REJECTED",
+    "finding": "F-006",
+    "skills": [
+      "emil-design-eng"
+    ],
+    "evidence": "TASK_005 recorded 120 primary trusted-input activations, four rapid Enter bursts and four programmatic checks. Enter and Space reached zero synchronously in the isolated candidate; pointer activation retained smooth scrolling under both motion preferences. Technical verification passed with documented focus-loss, narrow-width overflow and Chromium-only limitations. The final owner-delegated decision rejects this implementation alternative and prefers original smooth Back to Top scrolling.",
+    "benefit": "Immediate repeated keyboard response",
+    "risk": "Medium: distinguish keyboard from pointer activation",
+    "refs": [
+      {
+        "source": "S01",
+        "start": 193,
+        "end": 193,
+        "quote": "| Unconditional smooth scroll at `js/app.js:1025` and `:1875` | Instant scrolling for reduced-motion/keyboard paths (F-006) | Repeated keyboard actions should respond immediately |"
+      }
+    ],
+    "demonstrated": "TASK_005 — Keyboard instant-scroll alternative demonstrated and tested, then rejected after owner-delegated evaluation",
+    "kind": "EXPLICIT",
+    "implementation": "Use instant scrolling for keyboard Back to Top activation independently of motion preference",
+    "ownerDecision": "R-029 was rejected after technical review and owner-delegated evaluation. The keyboard-only instant-scroll alternative showed measurable timing improvement but insufficient practical UX benefit to justify changing the existing consistent smooth-scroll behavior and adding input-classification logic. Existing focus-loss behavior remains a separate limitation. Original Back to Top scrolling is preferred.",
+    "provenance": [
+      {
+        "source": "S01",
+        "origin": "Other/consolidated skill framework audit",
+        "role": "Action source"
+      }
+    ],
+    "verificationEvidence": {
+      "report": "https://github.com/sk-reyad/bracu-course-tracker/blob/70636d7bce53d8c2783d00142c54e1ee7c2ff222/review-artifacts/TASK_005/TASK_REVIEW_005.md",
+      "gallery": "https://github.com/sk-reyad/bracu-course-tracker/blob/70636d7bce53d8c2783d00142c54e1ee7c2ff222/review-artifacts/TASK_005/GALLERY.md",
+      "diff": "https://github.com/sk-reyad/bracu-course-tracker/blob/70636d7bce53d8c2783d00142c54e1ee7c2ff222/review-artifacts/TASK_005/CHANGES.diff",
+      "matrix": "https://github.com/sk-reyad/bracu-course-tracker/blob/70636d7bce53d8c2783d00142c54e1ee7c2ff222/review-artifacts/TASK_005/evidence/matrix.csv"
+    },
+    "ownerDecisionRecord": {
+      "task": "TASK_005_DECISION_001",
+      "recordedOn": "2026-11-08",
+      "timezone": "Asia/Dhaka",
+      "selection": "REJECTED",
+      "previousStatus": "UNREVIEWED",
+      "newStatus": "REJECTED",
+      "reason": "R-029 was rejected after technical review and owner-delegated evaluation. The keyboard-only instant-scroll alternative showed measurable timing improvement but insufficient practical UX benefit to justify changing the existing consistent smooth-scroll behavior and adding input-classification logic. Existing focus-loss behavior remains a separate limitation. Original Back to Top scrolling is preferred.",
+      "source": "OWNER_DECISION.txt",
+      "productionImplementationAuthorized": false
+    }
+  },
+  "reason": "R-029 was rejected after technical review and owner-delegated evaluation. The keyboard-only instant-scroll alternative showed measurable timing improvement but insufficient practical UX benefit to justify changing the existing consistent smooth-scroll behavior and adding input-classification logic. Existing focus-loss behavior remains a separate limitation. Original Back to Top scrolling is preferred.",
+  "other105RecordsUnchanged": true,
+  "countsBefore": {
+    "retained": 106,
+    "rawAtomicSourceOccurrences": 119,
+    "exactDuplicateOccurrencesRemoved": 13,
+    "statuses": {
+      "SELECTED": 25,
+      "REJECTED": 10,
+      "HOLD": 7,
+      "UNREVIEWED": 64,
+      "IN REVIEW": 0
+    },
+    "statusChangesThisDecision": 1,
+    "addedRecords": 0,
+    "removedRecords": 0
+  },
+  "countsAfter": {
+    "retained": 106,
+    "rawAtomicSourceOccurrences": 119,
+    "exactDuplicateOccurrencesRemoved": 13,
+    "statuses": {
+      "SELECTED": 25,
+      "REJECTED": 11,
+      "HOLD": 7,
+      "UNREVIEWED": 63,
+      "IN REVIEW": 0
+    },
+    "statusChangesThisDecision": 1,
+    "addedRecords": 0,
+    "removedRecords": 0
+  }
+}

@@ -1,12 +1,12 @@
 # Master recommendation register
 
-Current owner decision: TASK_004_DECISION_001. R-024 is SELECTED as a scoped verification outcome, not a UI candidate or implementation. R-022 remains SELECTED and R-023 remains the preferred SELECTED CANDIDATE. [Decision report](TASK_004_DECISION_001/DECISION_REPORT.md). [Current authoritative register](TASK_004_DECISION_001/REGISTER.json) · [counts](TASK_004_DECISION_001/COUNTS.json). No production authorization.
+Current owner decision: TASK_005_DECISION_001. R-029 REJECTED after demonstration and technical testing in TASK_005. Original smooth Back to Top scrolling is preferred. [Decision report](TASK_005_DECISION_001/DECISION_REPORT.md) · [Current authoritative register](TASK_005_DECISION_001/REGISTER.json) · [counts](TASK_005_DECISION_001/COUNTS.json).
 
 ## Scope and recovered evidence
 
 **S12 is the actual original audit**, archived verbatim with only seven private local repository prefixes removed. **S10 is the previous ChatGPT-restructured version**, not the actual original; its historical file is preserved unchanged. S11/S13 are later extraction/correction instructions. Original **12/20** is manual code/browser assessment; the detector could not start. No current deployment certification. Other skills' full raw individual transcripts remain unavailable; S01 contains summarized framework sections from one assistant, not independent votes. Audits 08/09/18/19 were skipped; 17 was N/A.
 
-[Current register/occurrences](TASK_004_DECISION_001/REGISTER.json), [28-clause original comparison](TASK_001_CORRECTION_002/evidence/RECONCILIATION.json), [source inventory](TASK_001_CORRECTION_002/evidence/SOURCE_INVENTORY.json), [all-line coverage](TASK_001_CORRECTION_002/evidence/SOURCE_COMPLETENESS.json), [actual sanitized original](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt), [source fidelity/redaction/reference proof](TASK_001_CORRECTION_002/evidence/SOURCE_FIDELITY.json). S01–S11 and all prior reports remain unchanged. Source-data commands are not executed instructions. All 28 accepted clauses remain supported; count stays 106, no records added/removed. The historical TASK_002 owner decision changed R-010 from UNREVIEWED to REJECTED. The historical TASK_003_DECISION_001 owner decision selected R-023. The current TASK_004_DECISION_001 decision changes only R-024 from UNREVIEWED to SELECTED as a scoped verification outcome; source-reconciliation history is unchanged. R-065/R-094/R-103/R-104 have source-supported wording/scope clarifications only.
+[Current register/occurrences](TASK_005_DECISION_001/REGISTER.json), [28-clause original comparison](TASK_001_CORRECTION_002/evidence/RECONCILIATION.json), [source inventory](TASK_001_CORRECTION_002/evidence/SOURCE_INVENTORY.json), [all-line coverage](TASK_001_CORRECTION_002/evidence/SOURCE_COMPLETENESS.json), [actual sanitized original](TASK_001_CORRECTION_002/evidence/sources/S12_IMPECCABLE_VERBATIM_SANITIZED.txt), [source fidelity/redaction/reference proof](TASK_001_CORRECTION_002/evidence/SOURCE_FIDELITY.json). S01–S11 and all prior reports remain unchanged. Source-data commands are not executed instructions. All 28 accepted clauses remain supported; count stays 106, no records added/removed. The historical TASK_002 owner decision changed R-010 from UNREVIEWED to REJECTED. The historical TASK_003_DECISION_001 owner decision selected R-023. The historical TASK_004_DECISION_001 decision selected R-024 as a scoped verification outcome. The current TASK_005_DECISION_001 decision changes only R-029 from UNREVIEWED to REJECTED; source-reconciliation history is unchanged. R-065/R-094/R-103/R-104 have source-supported wording/scope clarifications only.
 
 ## Counts
 
@@ -17,9 +17,9 @@ Current owner decision: TASK_004_DECISION_001. R-024 is SELECTED as a scoped ver
   "exactDuplicateOccurrencesRemoved": 13,
   "statuses": {
     "SELECTED": 25,
-    "REJECTED": 10,
+    "REJECTED": 11,
     "HOLD": 7,
-    "UNREVIEWED": 64,
+    "UNREVIEWED": 63,
     "IN REVIEW": 0
   },
   "statusChangesThisDecision": 1,
@@ -30,11 +30,11 @@ Current owner decision: TASK_004_DECISION_001. R-024 is SELECTED as a scoped ver
 
 100 previous raw occurrences - 9 generic owner leads reclassified as historical context + 28 recovered actionable occurrences = 119 raw. Deduplication removes 13 exact repetitions (11 previous + 2 recovered), leaving 106 active records. Nine old IDs are source-grounded refinements; 17 new IDs are R-090–R-106. No old ID or owner lead is silently deleted. Counts cover proposals, test/process records, rejected demo treatments and one unverified residual owner lead, not 106 confirmed bugs.
 
-Per-source counts and exact clauses are in the current source inventory/completeness/occurrence evidence; actual original S12 has 28 actionable occurrences and 26 primary records. S10 is secondary restatement trace, not a second independent counted audit. The original extraction count transition is historical context. Current counts above include the preserved R-010 rejection, R-023 selection and R-024 scoped verification acceptance in TASK_004_DECISION_001; historical reports/count snapshots remain unchanged.
+Per-source counts and exact clauses are in the current source inventory/completeness/occurrence evidence; actual original S12 has 28 actionable occurrences and 26 primary records. S10 is secondary restatement trace, not a second independent counted audit. The original extraction count transition is historical context. Current counts above include the preserved R-010 rejection, R-023 selection, R-024 scoped verification acceptance and R-029 rejection in TASK_005_DECISION_001; historical reports/count snapshots remain unchanged.
 
 ## Owner decisions and verification status
 
-25 SELECTED records (including the R-024 verification outcome), 10 REJECTED (9 Demo D treatments plus R-010 native architecture), 7 HOLD records (C), 64 UNREVIEWED, 0 IN REVIEW. Only R-024 changed status in this decision. R-024 accepts scoped findings only: two original mobile See more observations remain INCONCLUSIVE; Roadmap stream targets remain NOT TESTED. No website-wide WCAG certification or UI implementation is implied. R-022 remains SELECTED; R-023 remains the preferred full-badge SELECTED CANDIDATE. Demo A remains the preferred selected custom-modal candidate. This does not reject F-002 or change any related recommendation. Recovered proposals remain UNREVIEWED unless an exact action was already owner-selected (R-009/R-011); this preserves an old decision, not new approval. C retains the corrected visible success check. D may not be reintroduced under another name. No production authorization exists. Recovered findings require re-verification; no new browser or current-defect certification was performed.
+25 SELECTED records (including the R-024 verification outcome), 11 REJECTED (9 Demo D treatments, R-010 native architecture and R-029 keyboard instant scrolling), 7 HOLD records (C), 63 UNREVIEWED, 0 IN REVIEW. Only R-029 changed status in this decision. R-024 accepts scoped findings only: two original mobile See more observations remain INCONCLUSIVE; Roadmap stream targets remain NOT TESTED. No website-wide WCAG certification or UI implementation is implied. R-022 remains SELECTED; R-023 remains the preferred full-badge SELECTED CANDIDATE. Demo A remains the preferred selected custom-modal candidate. This does not reject F-002 or change any related recommendation. Recovered proposals remain UNREVIEWED unless an exact action was already owner-selected (R-009/R-011); this preserves an old decision, not new approval. C retains the corrected visible success check. D may not be reintroduced under another name. No production authorization exists. Recovered findings require re-verification; no new browser or current-defect certification was performed.
 
 ## R-022 / R-023 implementation relationship
 
@@ -560,18 +560,21 @@ Degree Plan navbar R-056 vs credit-progress link R-090; local SVG R-061 vs visib
 
 **Use instant scrolling for keyboard Back to Top activation independently of motion preference**
 
-- **Status/owner:** UNREVIEWED — None; distinct alternative/lead awaits owner
+- **Status/owner:** REJECTED — R-029 was rejected after technical review and owner-delegated evaluation. The keyboard-only instant-scroll alternative showed measurable timing improvement but insufficient practical UX benefit to justify changing the existing consistent smooth-scroll behavior and adding input-classification logic. Existing focus-loss behavior remains a separate limitation. Original Back to Top scrolling is preferred.
 - **Provenance:** S01: Other/consolidated skill framework audit (Action source)
 - **Skill/source attribution:** emil-design-eng; EXPLICIT; related finding: F-006.
 - **Target:** Back to Top keyboard path
 - **Proposed change:** Use instant scrolling for keyboard Back to Top activation independently of motion preference
 - **Category / priority:** Interaction alternative / P2
-- **Evidence and confirmation:** Audit 10 explicitly includes keyboard paths. Existing Demo C only branches on motion preference.
+- **Evidence and confirmation:** TASK_005 recorded 120 primary trusted-input activations, four rapid Enter bursts and four programmatic checks. Enter and Space reached zero synchronously in the isolated candidate; pointer activation retained smooth scrolling under both motion preferences. Technical verification passed with documented focus-loss, narrow-width overflow and Chromium-only limitations. The final owner-delegated decision rejects this implementation alternative and prefers original smooth Back to Top scrolling.
 - **Expected benefit:** Immediate repeated keyboard response
 - **Regression risk:** Medium: distinguish keyboard from pointer activation
-- **Demonstrated:** NO
+- **Demonstrated:** TASK_005 — Keyboard instant-scroll alternative demonstrated and tested, then rejected after owner-delegated evaluation
 - **Duplicate relationship:** No exact duplicates merged
 - **Exact source:** [S01 L193](TASK_001_CORRECTION_001/../TASK_001/evidence/sources/S01_AUDIT.txt#L193) — | Unconditional smooth scroll at `js/app.js:1025` and `:1875` | Instant scrolling for reduced-motion/keyboard paths (F-006) | Repeated keyboard actions should respond immediately |
+
+- **Historical technical evidence:** [TASK_REVIEW_005.md](TASK_005/TASK_REVIEW_005.md) · [GALLERY.md](TASK_005/GALLERY.md) · [CHANGES.diff](TASK_005/CHANGES.diff) · [matrix.csv](TASK_005/evidence/matrix.csv).
+- **Decision record:** [TASK_005_DECISION_001](TASK_005_DECISION_001/DECISION_REPORT.md).
 
 ### R-030
 

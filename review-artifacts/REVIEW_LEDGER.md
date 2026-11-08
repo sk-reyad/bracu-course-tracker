@@ -1,6 +1,6 @@
 # Review ledger
 
-Current owner decision: TASK_004_DECISION_001. R-024 SELECTED as a scoped verification outcome; two original mobile See more observations remain INCONCLUSIVE and Roadmap stream targets NOT TESTED. No website-wide WCAG certification or UI implementation. R-022 SELECTED; R-023 remains the preferred full-badge SELECTED CANDIDATE. Other Demo B improvements retained. R-010 REJECTED; Demo A SELECTED CANDIDATE, Demo B SELECTED CANDIDATE, Demo C HOLD, Demo D rejected. 25 selected, 10 rejected, 7 held, 64 unreviewed, 0 in review. Only R-024 changed status in this decision. No production authorization.
+Current owner decision: TASK_005_DECISION_001. R-029 REJECTED after demonstration and testing in TASK_005. Original smooth Back to Top scrolling is preferred. Demo C and R-025–R-028 HOLD; R-030 UNREVIEWED. 25 selected, 11 rejected, 7 held, 63 unreviewed, 0 in review. [Current authoritative register](TASK_005_DECISION_001/REGISTER.json) · [current counts](TASK_005_DECISION_001/COUNTS.json).
 
 | ID | Recommendation | Status | Prior demonstration |
 | --- | --- | --- | --- |
@@ -32,7 +32,7 @@ Current owner decision: TASK_004_DECISION_001. R-024 SELECTED as a scoped verifi
 | [R-026](MASTER_RECOMMENDATIONS.md#r-026) | Choose instant/auto scrolling under reduced motion for stream See more, retaining smooth otherwise | HOLD | Demo C (Admin via synthetic DOM harness) |
 | [R-027](MASTER_RECOMMENDATIONS.md#r-027) | Choose instant/auto scrolling under reduced motion for Admin Catalog editor, retaining smooth otherwise | HOLD | Demo C (Admin via synthetic DOM harness) |
 | [R-028](MASTER_RECOMMENDATIONS.md#r-028) | Centralize one reduced-motion scroll helper and reuse it in all three scroll paths | HOLD | PARTIAL: tracker helper only |
-| [R-029](MASTER_RECOMMENDATIONS.md#r-029) | Use instant scrolling for keyboard Back to Top activation independently of motion preference | UNREVIEWED | NO |
+| [R-029](MASTER_RECOMMENDATIONS.md#r-029) | Use instant scrolling for keyboard Back to Top activation independently of motion preference | REJECTED | TASK_005 — Keyboard instant-scroll alternative demonstrated and tested, then rejected after owner-delegated evaluation · [report](TASK_005/TASK_REVIEW_005.md) · [gallery](TASK_005/GALLERY.md) · [diff](TASK_005/CHANGES.diff) · [matrix](TASK_005/evidence/matrix.csv) |
 | [R-030](MASTER_RECOMMENDATIONS.md#r-030) | Use instant scrolling for keyboard stream See more activation independently of motion preference | UNREVIEWED | NO |
 | [R-031](MASTER_RECOMMENDATIONS.md#r-031) | Suppress the faculty copy-button pop keyframe under reduced motion while preserving non-motion confirmation | HOLD | Demo C corrected |
 | [R-032](MASTER_RECOMMENDATIONS.md#r-032) | Set copied-check opacity to 1 and transform to none under reduced motion | HOLD | Corrected Demo C |
@@ -134,7 +134,7 @@ Historical source identity correction (TASK_001_CORRECTION_002): S12 is the actu
 
 Owner rejected the native-dialog implementation alternative after comparing it with the previously selected Demo A. The existing custom-modal accessibility improvements in Demo A remain the preferred candidate. No distinct visual or tested usability advantage justified replacing the selected implementation.
 
-This architecture decision is distinct from the nine earlier Demo D visual-treatment rejections. F-002 and all related recommendations except R-010 retain their existing statuses. [Current authoritative register](TASK_004_DECISION_001/REGISTER.json) · [current counts](TASK_004_DECISION_001/COUNTS.json). Previous TASK_002 comparison/focus evidence remains available; neither selected A nor rejected Native B source is modified. Wait for explicit NEXT; no next recommendation started.
+This architecture decision is distinct from the nine earlier Demo D visual-treatment rejections. F-002 and all related recommendations except R-010 retain their existing statuses. [Current authoritative register](TASK_005_DECISION_001/REGISTER.json) · [current counts](TASK_005_DECISION_001/COUNTS.json). Previous TASK_002 comparison/focus evidence remains available; neither selected A nor rejected Native B source is modified. Wait for explicit NEXT; no next recommendation started.
 
 ## Final owner decision — R-023
 
@@ -144,7 +144,7 @@ Owner selected R-023's full-badge interactive target after reviewing TASK_003. T
 
 R-022 remains the selected minimum interactive target-size requirement, satisfied by R-023. R-023 is the owner-selected preferred implementation using the entire visible stream badge. It supersedes only the earlier inner-trigger-only treatment, preserving Demo B tooltip, accessibility, positioning, scrolling, dismissal and overflow improvements. Any eventual separately authorized production implementation must combine these requirements in one implementation, not create competing controls.
 
-Technical tests and owner selection are separate evidence. [Decision report](TASK_003_DECISION_001/DECISION_REPORT.md) · [current authoritative register](TASK_004_DECISION_001/REGISTER.json) · [current counts](TASK_004_DECISION_001/COUNTS.json). Historical TASK_003 files still describe the decision-pending state at their publication; they are immutable history, not current authority. STOP; wait for explicit NEXT.
+Technical tests and owner selection are separate evidence. [Decision report](TASK_003_DECISION_001/DECISION_REPORT.md) · [current authoritative register](TASK_005_DECISION_001/REGISTER.json) · [current counts](TASK_005_DECISION_001/COUNTS.json). Historical TASK_003 files still describe the decision-pending state at their publication; they are immutable history, not current authority. STOP; wait for explicit NEXT.
 
 ## Final owner decision — R-024 verification outcome
 
@@ -154,4 +154,12 @@ Owner accepted the scoped WCAG 2.2 SC 2.5.8 target-size and spacing assessment c
 
 Original Course List stream triggers passed spacing in tested arrangements; selected Demo B and R-023 targets passed direct minimum size. No conclusive SC 2.5.8 failure was established in tested observations. Original F-005 usability evidence remains unchanged. This accepts verification only; it does not authorize fixing the original mobile overlap, adding Roadmap content or performing additional verification.
 
-[Decision report](TASK_004_DECISION_001/DECISION_REPORT.md) · [current authoritative register](TASK_004_DECISION_001/REGISTER.json) · [current counts](TASK_004_DECISION_001/COUNTS.json). Historical TASK_004 reports and snapshots preserve their original publication state; they are not current decision authority. R-022 and preferred R-023 remain selected. STOP; wait for independent review and explicit NEXT.
+[Decision report](TASK_004_DECISION_001/DECISION_REPORT.md) · [current authoritative register](TASK_005_DECISION_001/REGISTER.json) · [current counts](TASK_005_DECISION_001/COUNTS.json). Historical TASK_004 reports and snapshots preserve their original publication state; they are not current decision authority. R-022 and preferred R-023 remain selected. STOP; wait for independent review and explicit NEXT.
+
+## Final owner decision — R-029
+
+R-029 was rejected after technical review and owner-delegated evaluation. The keyboard-only instant-scroll alternative showed measurable timing improvement but insufficient practical UX benefit to justify changing the existing consistent smooth-scroll behavior and adding input-classification logic. Existing focus-loss behavior remains a separate limitation. Original Back to Top scrolling is preferred.
+
+**Demonstrated:** TASK_005 — Keyboard instant-scroll alternative demonstrated and tested, then rejected after owner-delegated evaluation.
+
+[TASK_005 technical report](TASK_005/TASK_REVIEW_005.md) · [gallery](TASK_005/GALLERY.md) · [diff](TASK_005/CHANGES.diff) · [matrix](TASK_005/evidence/matrix.csv) · [decision report](TASK_005_DECISION_001/DECISION_REPORT.md). Historical TASK_005 retains its original decision-pending statements. R-025 through R-028 and Demo C remain HOLD; R-030 remains UNREVIEWED. STOP after publication; await independent review and explicit NEXT.

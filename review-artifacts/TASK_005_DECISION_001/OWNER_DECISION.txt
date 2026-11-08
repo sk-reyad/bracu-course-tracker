@@ -1,0 +1,9 @@
+# TASK_005_DECISION_001 — Record R-029 Rejection
+
+Recorded from the owner instruction in this chat on 2026-11-08 (Asia/Dhaka). This is a decision record, with the supplied reason preserved verbatim.
+
+R-029: REJECTED
+
+R-029 was rejected after technical review and owner-delegated evaluation. The keyboard-only instant-scroll alternative showed measurable timing improvement but insufficient practical UX benefit to justify changing the existing consistent smooth-scroll behavior and adding input-classification logic. Existing focus-loss behavior remains a separate limitation. Original Back to Top scrolling is preferred.
+
+The owner delegated the recommendation decision after reviewing the demo and reporting no meaningful perceived improvement. Independent review found insufficient overall UX benefit for the additional input-classification logic at this stage. The decision rejects the R-029 alternative and retains the original smooth Back to Top behavior. Keyboard and reduced-motion accessibility remain separate considerations. R-025 through R-028 and Demo C retain HOLD; R-030 retains UNREVIEWED. Historical TASK_005 evidence is retained. No application implementation, focus fix or reduced-motion change is authorized. Publish review artifacts to temp/ui-ux-audit-review and STOP.

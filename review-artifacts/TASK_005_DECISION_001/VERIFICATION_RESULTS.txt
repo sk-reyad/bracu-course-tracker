@@ -1,0 +1,95 @@
+Syntax check passed. Author run supplied both optional live-protection environment variables.
+TAP version 13
+# Subtest: one complete record changed; all other 105 retain their full contents
+ok 1 - one complete record changed; all other 105 retain their full contents
+  ---
+  duration_ms: 2.5997
+  type: 'test'
+  ...
+# Subtest: exact rejection reason, historical demonstration and delegated decision
+ok 2 - exact rejection reason, historical demonstration and delegated decision
+  ---
+  duration_ms: 1.7724
+  type: 'test'
+  ...
+# Subtest: held recommendations, unreviewed R-030 and counts reconcile
+ok 3 - held recommendations, unreviewed R-030 and counts reconcile
+  ---
+  duration_ms: 0.8489
+  type: 'test'
+  ...
+# Subtest: source fidelity, exact duplicates, occurrences and implementation relationships preserved
+ok 4 - source fidelity, exact duplicates, occurrences and implementation relationships preserved
+  ---
+  duration_ms: 0.3973
+  type: 'test'
+  ...
+# Subtest: authority points to current snapshots and preserves previous decision sources
+ok 5 - authority points to current snapshots and preserves previous decision sources
+  ---
+  duration_ms: 1.6987
+  type: 'test'
+  ...
+# Subtest: four technical links are pinned, present and checksum-identical historical evidence
+ok 6 - four technical links are pinned, present and checksum-identical historical evidence
+  ---
+  duration_ms: 165.8696
+  type: 'test'
+  ...
+# Subtest: all other 105 master recommendation blocks preserved
+ok 7 - all other 105 master recommendation blocks preserved
+  ---
+  duration_ms: 37.68
+  type: 'test'
+  ...
+# Subtest: all other 105 ledger rows preserved and R-029 records tested rejection
+ok 8 - all other 105 ledger rows preserved and R-029 records tested rejection
+  ---
+  duration_ms: 37.5648
+  type: 'test'
+  ...
+# Subtest: Git changes restricted to authorized current documents and new decision directory
+ok 9 - Git changes restricted to authorized current documents and new decision directory
+  ---
+  duration_ms: 92.0782
+  type: 'test'
+  ...
+# Subtest: historical TASK_005 and all application Git objects remain unchanged
+ok 10 - historical TASK_005 and all application Git objects remain unchanged
+  ---
+  duration_ms: 4077.5126
+  type: 'test'
+  ...
+# Subtest: recorded original and all six completed workspace fingerprints match
+ok 11 - recorded original and all six completed workspace fingerprints match
+  ---
+  duration_ms: 1.5151
+  type: 'test'
+  ...
+# Subtest: live original repository protection
+ok 12 - live original repository protection
+  ---
+  duration_ms: 198.1441
+  type: 'test'
+  ...
+# Subtest: live six completed workspace inventories
+ok 13 - live six completed workspace inventories
+  ---
+  duration_ms: 5661.9759
+  type: 'test'
+  ...
+# Subtest: report distinguishes historical tests, preserves limitations and stops
+ok 14 - report distinguishes historical tests, preserves limitations and stops
+  ---
+  duration_ms: 1.3918
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 10396.1372
